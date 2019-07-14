@@ -21,9 +21,9 @@ menu:
   github:
     url: https://github.com/QQ876684433
     target: _blank
-  weibo:
-    url: https://github.com/QQ876684433
-    target: _blank
+#  weibo:
+#    url: https://github.com/QQ876684433
+#    target: _blank
   link:
     text: 测试
     url: /custom
@@ -63,7 +63,7 @@ share: true
 
 # 是否开启打赏，关闭 reward: false
 reward:
-  title: 谢谢大爷~
+  title: 谢谢你~
   wechat: /img/wechat.png     #微信，关闭设为 false
   alipay: /img/alipay.jpg     #支付宝，关闭设为 false
 
