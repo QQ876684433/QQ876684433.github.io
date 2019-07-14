@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-keywords:
-author: John Doe
-language:
+title: chph's blog - chph个人博客
+subtitle: steve_chph's blog
+description: the blog website of steve_chph
+keywords: blog, chph, steve, steve_chph, 博客
+author: steve_chph
+language: zh_CN
 timezone:
 
 # URL
