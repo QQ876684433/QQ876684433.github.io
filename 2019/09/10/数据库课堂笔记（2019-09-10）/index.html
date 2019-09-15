@@ -36,7 +36,8 @@
 <meta property="og:image" content="https://i.loli.net/2019/09/15/46FHld1hWT7RkrV.png">
 <meta property="og:image" content="https://i.loli.net/2019/09/15/igh9kcW6peAYPBF.png">
 <meta property="og:image" content="https://i.loli.net/2019/09/15/KgdHEksYv37O1fA.png">
-<meta property="og:updated_time" content="2019-09-15T04:54:57.720Z">
+<meta property="og:image" content="https://i.loli.net/2019/09/15/jYNURDvFofVLiq6.png">
+<meta property="og:updated_time" content="2019-09-15T05:27:24.581Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库课堂笔记（2019-09-10）">
 <meta name="twitter:description" content="数据库课堂笔记 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著 《数据库系统概论》第五版 - 王珊 萨师煊 著 《数据库系统概念》   数据库课堂笔记（2019-09-10）Ch2. The Relational Model键、超键和空值（Keys，Superkeys，and Nu">
@@ -175,7 +176,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据库课堂笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据库课堂笔记</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据库课堂笔记（2019-09-10）"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">数据库课堂笔记（2019-09-10）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Ch2-The-Relational-Model"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">Ch2. The Relational Model</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#键、超键和空值（Keys，Superkeys，and-Null-Values）"><span class="post-toc-number">1.1.1.1.</span> <span class="post-toc-text">键、超键和空值（Keys，Superkeys，and Null Values）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#键（Keys）"><span class="post-toc-number">1.1.1.1.1.</span> <span class="post-toc-text">键（Keys）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#超键（Superkeys）"><span class="post-toc-number">1.1.1.1.2.</span> <span class="post-toc-text">超键（Superkeys）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#候选键和主键（Candidate-Key-amp-Primary-Key）"><span class="post-toc-number">1.1.1.1.3.</span> <span class="post-toc-text">候选键和主键（Candidate Key &amp; Primary Key）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#空值（Null-Values）"><span class="post-toc-number">1.1.1.1.4.</span> <span class="post-toc-text">空值（Null Values）</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据库课堂笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据库课堂笔记</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据库课堂笔记（2019-09-10）"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">数据库课堂笔记（2019-09-10）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Ch2-The-Relational-Model"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">Ch2. The Relational Model</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#键、超键和空值（Keys，Superkeys，and-Null-Values）"><span class="post-toc-number">1.1.1.1.</span> <span class="post-toc-text">键、超键和空值（Keys，Superkeys，and Null Values）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#键（Keys）"><span class="post-toc-number">1.1.1.1.1.</span> <span class="post-toc-text">键（Keys）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#超键（Superkeys）"><span class="post-toc-number">1.1.1.1.2.</span> <span class="post-toc-text">超键（Superkeys）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#候选键和主键（Candidate-Key-amp-Primary-Key）"><span class="post-toc-number">1.1.1.1.3.</span> <span class="post-toc-text">候选键和主键（Candidate Key &amp; Primary Key）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#空值（Null-Values）"><span class="post-toc-number">1.1.1.1.4.</span> <span class="post-toc-text">空值（Null Values）</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#关系代数（Relational-Algebra）"><span class="post-toc-number">1.1.1.2.</span> <span class="post-toc-text">关系代数（Relational Algebra）</span></a></li></ol></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -261,7 +262,22 @@
 <p><img src="https://i.loli.net/2019/09/15/KgdHEksYv37O1fA.png" alt></p>
 </li>
 </ul>
-<h5 id="空值（Null-Values）"><a href="#空值（Null-Values）" class="headerlink" title="空值（Null Values）"></a>空值（Null Values）</h5>
+<h5 id="空值（Null-Values）"><a href="#空值（Null-Values）" class="headerlink" title="空值（Null Values）"></a>空值（Null Values）</h5><ul>
+<li><p>空值应该被解释为<strong>未知的或者尚未定义的</strong>，意思是当我们<strong>以后知道更多情况的时候会重新填写该值。</strong></p>
+<blockquote>
+<p>A null value is placed in a field of a table when a specific value is either <strong>unknown or inappropriate</strong>.</p>
+</blockquote>
+</li>
+<li><p>要注意的是：<u>空值和数字0（对于数值属性）或者是空串（对于字符串属性）是不同的</u></p>
+</li>
+<li><p><strong>主键不能包含空值</strong>，因为表的主键是唯一区分表的单独行的，在还没确定主键的值之前，该行是不允许被存储到数据表中的</p>
+<p><img src="https://i.loli.net/2019/09/15/jYNURDvFofVLiq6.png" alt></p>
+<p>实体完整性规则与3NF等价</p>
+</li>
+<li><p><strong>空值无法与任何非空值进行比较</strong>，用属性的非空值作为条件进行查询，永远也无法查询到该属性为空值的所在行</p>
+</li>
+</ul>
+<h4 id="关系代数（Relational-Algebra）"><a href="#关系代数（Relational-Algebra）" class="headerlink" title="关系代数（Relational Algebra）"></a>关系代数（Relational Algebra）</h4>
         </div>
 
         <blockquote class="post-copyright">
@@ -269,7 +285,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-09-15T04:54:57.720Z" itemprop="dateUpdated">2019-09-15 12:54:57</time>
+    Last updated: <time datetime="2019-09-15T05:27:24.581Z" itemprop="dateUpdated">2019-09-15 13:27:24</time>
 </span><br>
 
 
