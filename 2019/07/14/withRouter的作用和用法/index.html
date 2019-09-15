@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>withRouter的作用和用法 | 至繁归于至简 - chph&#39;s blog | steve_chph personal website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="React,React-Router">
+    <meta name="description" content="withRouter的作用和用法 参考：https://www.cnblogs.com/luowenshuai/p/9526341.html  作用把不是通过路由切换过来的组件中，将react-router 的 history、location、match 三个对象传入props对象上 默认情况下必须是经过路由匹配渲染的组件才存在this.props，才拥有路由参数，才能使用编程式导航的写法，执行">
+<meta name="keywords" content="React,React-Router">
+<meta property="og:type" content="article">
+<meta property="og:title" content="withRouter的作用和用法">
+<meta property="og:url" content="http://QQ876684433.github.io/2019/07/14/withRouter的作用和用法/index.html">
+<meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
+<meta property="og:description" content="withRouter的作用和用法 参考：https://www.cnblogs.com/luowenshuai/p/9526341.html  作用把不是通过路由切换过来的组件中，将react-router 的 history、location、match 三个对象传入props对象上 默认情况下必须是经过路由匹配渲染的组件才存在this.props，才拥有路由参数，才能使用编程式导航的写法，执行">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2019-09-15T04:29:52.255Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="withRouter的作用和用法">
+<meta name="twitter:description" content="withRouter的作用和用法 参考：https://www.cnblogs.com/luowenshuai/p/9526341.html  作用把不是通过路由切换过来的组件中，将react-router 的 history、location、match 三个对象传入props对象上 默认情况下必须是经过路由匹配渲染的组件才存在this.props，才拥有路由参数，才能使用编程式导航的写法，执行">
+    
+        <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">steve_chph</h5>
+          <a href="mailto:chph13420146901@gmail.com" title="chph13420146901@gmail.com" class="mail">chph13420146901@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/QQ876684433" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">withRouter的作用和用法</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">withRouter的作用和用法</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-07-14T14:43:29.000Z" itemprop="datePublished" class="page-time">
+  2019-07-14
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/前端/">前端</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#withRouter的作用和用法"><span class="post-toc-number">1.</span> <span class="post-toc-text">withRouter的作用和用法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#作用"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">作用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#如何使用withRouter"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">如何使用withRouter</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#介绍一个简单应用"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">介绍一个简单应用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#如果使用编程式导航"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">如果使用编程式导航</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-withRouter的作用和用法"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">withRouter的作用和用法</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-07-14 22:43:29" datetime="2019-07-14T14:43:29.000Z"  itemprop="datePublished">2019-07-14</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/前端/">前端</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="withRouter的作用和用法"><a href="#withRouter的作用和用法" class="headerlink" title="withRouter的作用和用法"></a>withRouter的作用和用法</h1><blockquote>
+<p>参考：<a href="https://www.cnblogs.com/luowenshuai/p/9526341.html" target="_blank" rel="noopener">https://www.cnblogs.com/luowenshuai/p/9526341.html</a></p>
+</blockquote>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a><strong>作用</strong></h2><p>把不是通过路由切换过来的组件中，将react-router 的 history、location、match 三个对象传入props对象上</p>
+<p>默认情况下必须是经过路由匹配渲染的组件才存在this.props，才拥有路由参数，才能使用编程式导航的写法，执行this.props.history.push(‘/detail’)跳转到对应路由的页面</p>
+<p>然而不是所有组件都直接与路由相连（通过路由跳转到此组件）的，当这些组件需要路由参数时，使用withRouter就可以给此组件传入路由参数，此时就可以使用this.props</p>
+<h2 id="如何使用withRouter"><a href="#如何使用withRouter" class="headerlink" title="如何使用withRouter"></a><strong>如何使用withRouter</strong></h2><p>比如app.js这个组件，一般是首页，不是通过路由跳转过来的，而是直接从浏览器中输入地址打开的，如果不使用withRouter此组件的this.props为空，没法执行props中的history、location、match等方法。</p>
+<p>我就通过在App.js组件中使用withRouter来简单介绍一下：</p>
+<p>设置withRouter很简单只需要两步：（1）引入  （2）将App组件 withRouter() 一下</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React,&#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123;Switch,Route,NavLink,Redirect,withRouter&#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span> <span class="comment">//引入withRouter</span></span><br><span class="line"><span class="keyword">import</span> One <span class="keyword">from</span> <span class="string">'./One'</span></span><br><span class="line"><span class="keyword">import</span> NotFound <span class="keyword">from</span> <span class="string">'./NotFound'</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">    <span class="comment">//此时才能获取this.props,包含（history, match, location）三个对象</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.props);  <span class="comment">//输出&#123;match: &#123;…&#125;, location: &#123;…&#125;, history: &#123;…&#125;, 等&#125;</span></span><br><span class="line">    render()&#123;<span class="keyword">return</span> (&lt;div className='app'&gt;</span><br><span class="line">            &lt;NavLink to='/one/users'&gt;用户列表&lt;/NavLink&gt;</span><br><span class="line">            &lt;NavLink to='/one/companies'&gt;公司列表&lt;/NavLink&gt;</span><br><span class="line">            &lt;Switch&gt;</span><br><span class="line">                &lt;Route path='/one/:type?' component=&#123;One&#125; /&gt;</span><br><span class="line">                &lt;Redirect from='/' to='/one' exact /&gt;</span><br><span class="line">                &lt;Route component=&#123;NotFound&#125; /&gt;</span><br><span class="line">            &lt;/Switch&gt;</span><br><span class="line">        &lt;/div&gt;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">export default withRouter(App);  //这里要执行一下WithRouter</span><br></pre></td></tr></table></figure>
+
+<h2 id="介绍一个简单应用"><a href="#介绍一个简单应用" class="headerlink" title="介绍一个简单应用"></a><strong>介绍一个简单应用</strong></h2><p>可以根据路由切换浏览器的title属性，对props.history进行监听，切换路由的时候获取当前的路由路径，同时可以根据不同的路由设置不同的浏览器title标题。</p>
+<p>仍然是App.js组件：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React,&#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123;Switch,Route,NavLink,Redirect,withRouter&#125; <span class="keyword">from</span>  <span class="string">'react-router-dom'</span></span><br><span class="line"><span class="keyword">import</span> One <span class="keyword">from</span> <span class="string">'./One'</span></span><br><span class="line"><span class="keyword">import</span> NotFound <span class="keyword">from</span> <span class="string">'./NotFound'</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">        <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">                <span class="keyword">super</span>(props);</span><br><span class="line">                props.history.listen(<span class="function">(<span class="params">location</span>)=&gt;</span>&#123;  <span class="comment">//在这里监听location对象</span></span><br><span class="line">                        <span class="built_in">console</span>.log(location.pathname);  <span class="comment">//切换路由的时候输出"/one/users"和"/one/companies"</span></span><br><span class="line">                        <span class="keyword">switch</span>(location.pathname)&#123;   <span class="comment">//根据路径不同切换不同的浏览器title</span></span><br><span class="line">                                <span class="keyword">case</span> <span class="string">'/one/users'</span> : <span class="built_in">document</span>.title = <span class="string">'用户列表'</span>; <span class="keyword">break</span>;</span><br><span class="line">                                <span class="keyword">case</span> <span class="string">'/one/companies'</span> : <span class="built_in">document</span>.title = <span class="string">'公司列表'</span>; <span class="keyword">break</span>;</span><br><span class="line">                                <span class="keyword">default</span> : <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        render()&#123;</span><br><span class="line">                <span class="keyword">return</span> (&lt;div className='app'&gt;</span><br><span class="line">                        &lt;NavLink to='/one/users'&gt;用户列表&lt;/NavLink&gt;</span><br><span class="line">                        &lt;NavLink to='/one/companies'&gt;公司列表&lt;/NavLink&gt;</span><br><span class="line">                        &lt;Switch&gt;</span><br><span class="line">                                &lt;Route path='/one/:type?'  component=&#123;One&#125; /&gt;</span><br><span class="line">                                &lt;Redirect from='/' to='/one' exact /&gt;</span><br><span class="line">                                &lt;Route component=&#123;NotFound&#125; /&gt;</span><br><span class="line">                        &lt;/Switch&gt;</span><br><span class="line">                &lt;/div&gt;)</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line">export default withRouter(App);</span><br></pre></td></tr></table></figure>
+
+<h2 id="如果使用编程式导航"><a href="#如果使用编程式导航" class="headerlink" title="如果使用编程式导航"></a><strong>如果使用编程式导航</strong></h2><p>this.props.history.push(‘/detail’) 去跳转页面，但是报 this.props.history 错误 undefined，请在此组件中使用 withRouter 将 history 传入到 props上。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-09-15T04:29:52.255Z" itemprop="dateUpdated">2019-09-15 12:29:52</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/07/14/withRouter的作用和用法/" target="_blank" rel="external">http://QQ876684433.github.io/2019/07/14/withRouter的作用和用法/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://QQ876684433.github.io">
+            <img src="/img/avatar.jpg" alt="steve_chph">
+            steve_chph
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Router/">React-Router</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/07/14/withRouter的作用和用法/&title=《withRouter的作用和用法》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/07/14/withRouter的作用和用法/&title=《withRouter的作用和用法》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/07/14/withRouter的作用和用法/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《withRouter的作用和用法》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/07/14/withRouter的作用和用法/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/07/14/withRouter的作用和用法/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/07/14/css中常见的选择符/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">css中常见的选择符</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/07/14/区别React-Router中match的path和url/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">区别React-Router中match的path和url</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢你~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>steve_chph &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/07/14/withRouter的作用和用法/&title=《withRouter的作用和用法》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/07/14/withRouter的作用和用法/&title=《withRouter的作用和用法》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/07/14/withRouter的作用和用法/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《withRouter的作用和用法》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/07/14/withRouter的作用和用法/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/07/14/withRouter的作用和用法/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACwUlEQVR42u3aQY4bMQwEwP3/pxMgpwQbe7pJKfGh5rQwPFqVDiJN8usrfn78er5/8v3z5Du/f5KskHxz9eDh4eGNtv7qef+dV4z3+PebTo4y2TMeHh7ebd7mUk6u7PebaANMsmc8PDy8T+AlF3Ry3bcr58eNh4eH95m8Ns3Nk+xkBTw8PLzP4W2WTsJAvuamOIKHh4f3b3htA+wT/r7Y38PDw8NbdNXby3eWdp9qev1lZTw8PLwLvDz9zYeo9m2w9lAeggceHh7eUd6sUDtrceVrtuXghyoLHh4e3lFe+0IUZ8ohqhw82zMeHh7eDd5+FGCGmSXoeVDBw8PDu82bNZ/asYO2uNAOKzyURfDw8PDWvHah1aUcrJl/Eu0NDw8P7zIv39ym6JAfRz6g8PItPDw8vAu8/IW8QLAp3W6S74ehKzw8PLxrvDYtng0TtGEgGXd4GL3Cw8PDO8Rrh58S2L7dtQlRw14ZHh4eXsk7OwSQH9Os8Vasj4eHh3eBl4eBzSWek2YhZ1WMwMPDwyt5yUKbXlIeKmY7eUjx8fDw8C7wkq1v2vx58aItENc/CfDw8PAu8Nq202zr+YHmKXg7xICHh4e35yXBoC3dtulv3hjLd4uHh4d3j5ck0G0rKwkJeaSaHTQeHh7eDV5eYJ2VBjaFieRAHwIMHh4e3gXe7Kf+ZixgNgTQHgoeHh7ePV7btm83cWq4qk3N/5iMwMPDwzvK21z6yYV+sSBbpvJ4eHh4p3jHqr9B62s/yNUWR/Dw8PBu8PInT3nzMDArYez/Cx4eHt6el5dNN0WEvLCbF3+Tg8DDw8O7x5sFg5bUjlVtQhceHh7e5/DaksGsNDw7ypfFXDw8PLz/xDtVMmiLyHlR42UxAg8PD+8Cb7N0e4nnx9q+VQ8Q4OHh4W379fVYQHsobXqdt7uO9ffw8PDw3v2vn7GIxpsrODkCAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'chph个人博客';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Welcome to chph's blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

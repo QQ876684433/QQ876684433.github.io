@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>前端笔记 | 至繁归于至简 - chph&#39;s blog | steve_chph personal website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="前端">
+    <meta name="description" content="前端笔记摘要ReactPureComponent 参考：https://juejin.im/entry/5934c9bc570c35005b556e1a  为什么使用？React15.3中新加了一个 PureComponent 类，顾名思义， pure 是纯的意思，PureComponent 也就是纯组件，取代其前身 PureRenderMixin ,PureComponent 是优化 React">
+<meta name="keywords" content="前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端笔记">
+<meta property="og:url" content="http://QQ876684433.github.io/2019/07/14/前端笔记/index.html">
+<meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
+<meta property="og:description" content="前端笔记摘要ReactPureComponent 参考：https://juejin.im/entry/5934c9bc570c35005b556e1a  为什么使用？React15.3中新加了一个 PureComponent 类，顾名思义， pure 是纯的意思，PureComponent 也就是纯组件，取代其前身 PureRenderMixin ,PureComponent 是优化 React">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2019/07/04/5d1e10ad9b6d873438.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/04/5d1e110ab54e333768.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/04/5d1e126fab25166732.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/04/5d1e1359bcf0850375.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/04/5d1e13f324be160749.png">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/201105/bg2011050101.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/05/5d1f4b5aed0f933839.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/05/5d1f4ba8678ff64652.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/07/5d21d9ed878d544757.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/07/5d21dacbda01361621.png">
+<meta property="og:updated_time" content="2019-09-15T04:29:52.255Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端笔记">
+<meta name="twitter:description" content="前端笔记摘要ReactPureComponent 参考：https://juejin.im/entry/5934c9bc570c35005b556e1a  为什么使用？React15.3中新加了一个 PureComponent 类，顾名思义， pure 是纯的意思，PureComponent 也就是纯组件，取代其前身 PureRenderMixin ,PureComponent 是优化 React">
+<meta name="twitter:image" content="https://i.loli.net/2019/07/04/5d1e10ad9b6d873438.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">steve_chph</h5>
+          <a href="mailto:chph13420146901@gmail.com" title="chph13420146901@gmail.com" class="mail">chph13420146901@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/QQ876684433" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">前端笔记</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">前端笔记</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-07-14T13:49:44.000Z" itemprop="datePublished" class="page-time">
+  2019-07-14
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/笔记/">笔记</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前端笔记摘要"><span class="post-toc-number">1.</span> <span class="post-toc-text">前端笔记摘要</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#React"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">React</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#PureComponent"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">PureComponent</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#为什么使用？"><span class="post-toc-number">1.1.1.1.</span> <span class="post-toc-text">为什么使用？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#原理"><span class="post-toc-number">1.1.1.2.</span> <span class="post-toc-text">原理</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#React-Redux"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">React Redux</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#React-Router"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">React Router</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#区别React-Router中match的path和url"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">区别React-Router中match的path和url</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#withRouter的作用和用法"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">withRouter的作用和用法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#作用"><span class="post-toc-number">1.3.2.1.</span> <span class="post-toc-text">作用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何使用withRouter"><span class="post-toc-number">1.3.2.2.</span> <span class="post-toc-text">如何使用withRouter</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#介绍一个简单应用"><span class="post-toc-number">1.3.2.3.</span> <span class="post-toc-text">介绍一个简单应用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如果使用编程式导航"><span class="post-toc-number">1.3.2.4.</span> <span class="post-toc-text">如果使用编程式导航</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#HTML"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">HTML</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#CSS"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">CSS</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#传统css"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">传统css</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#css中常见的选择符"><span class="post-toc-number">1.5.1.1.</span> <span class="post-toc-text">css中常见的选择符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#基本选择器"><span class="post-toc-number">1.5.1.1.1.</span> <span class="post-toc-text">基本选择器</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#组合选择器"><span class="post-toc-number">1.5.1.1.2.</span> <span class="post-toc-text">组合选择器</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Sass-Syntactically-Awesome-StyleSheets"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">Sass (Syntactically Awesome StyleSheets)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Less-Leaner-Style-Sheets"><span class="post-toc-number">1.5.3.</span> <span class="post-toc-text">Less(Leaner Style Sheets)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一个变量多次定义"><span class="post-toc-number">1.5.3.1.</span> <span class="post-toc-text">一个变量多次定义</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#父选择器-amp"><span class="post-toc-number">1.5.3.2.</span> <span class="post-toc-text">父选择器&amp;</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JavaScript"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">JavaScript</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#async-await的基础用法"><span class="post-toc-number">1.6.1.</span> <span class="post-toc-text">async/await的基础用法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#进程、线程和协程"><span class="post-toc-number">1.6.1.1.</span> <span class="post-toc-text">进程、线程和协程</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#async-await的特点"><span class="post-toc-number">1.6.1.2.</span> <span class="post-toc-text">async/await的特点</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#await关键字使用的注意点"><span class="post-toc-number">1.6.1.3.</span> <span class="post-toc-text">await关键字使用的注意点</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#async关键字使用的注意点"><span class="post-toc-number">1.6.1.4.</span> <span class="post-toc-text">async关键字使用的注意点</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ES6、ES7、ES8、ES9、ES10新特性一览"><span class="post-toc-number">1.6.2.</span> <span class="post-toc-text">ES6、ES7、ES8、ES9、ES10新特性一览</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前端项目"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">前端项目</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将React项目部署到Github-Pages"><span class="post-toc-number">1.7.1.</span> <span class="post-toc-text">将React项目部署到Github Pages</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Github开源项目license选择问题"><span class="post-toc-number">1.7.2.</span> <span class="post-toc-text">Github开源项目license选择问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在React项目中使用Docz遇到的问题"><span class="post-toc-number">1.7.3.</span> <span class="post-toc-text">在React项目中使用Docz遇到的问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在React中使用Scss"><span class="post-toc-number">1.7.4.</span> <span class="post-toc-text">在React中使用Scss</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前端工具使用"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">前端工具使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#webpack"><span class="post-toc-number">1.8.1.</span> <span class="post-toc-text">webpack</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-前端笔记"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">前端笔记</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-07-14 21:49:44" datetime="2019-07-14T13:49:44.000Z"  itemprop="datePublished">2019-07-14</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/笔记/">笔记</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="前端笔记摘要"><a href="#前端笔记摘要" class="headerlink" title="前端笔记摘要"></a>前端笔记摘要</h1><h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><h3 id="PureComponent"><a href="#PureComponent" class="headerlink" title="PureComponent"></a>PureComponent</h3><blockquote>
+<p>参考：<a href="https://juejin.im/entry/5934c9bc570c35005b556e1a" target="_blank" rel="noopener">https://juejin.im/entry/5934c9bc570c35005b556e1a</a></p>
+</blockquote>
+<h4 id="为什么使用？"><a href="#为什么使用？" class="headerlink" title="为什么使用？"></a>为什么使用？</h4><p>React15.3中新加了一个 <code>PureComponent</code> 类，顾名思义， <code>pure</code> 是纯的意思，<code>PureComponent</code> 也就是纯组件，取代其前身 <code>PureRenderMixin</code> ,<code>PureComponent</code> 是优化 <code>React</code> 应用程序最重要的方法之一，易于实施，只要把继承类从 <code>Component</code> 换成 <code>PureComponent</code> 即可，可以减少不必要的 <code>render</code> 操作的次数，从而提高性能，而且可以少写 <code>shouldComponentUpdate</code> 函数，节省了点代码。</p>
+<h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p>当组件更新时，如果组件的 <code>props</code> 和 <code>state</code> 都没发生改变，<code>render</code> 方法就不会触发，省去 <code>Virtual DOM</code> 的生成和比对过程，达到提升性能的目的。具体就是 <code>React</code> 自动帮我们做了一层浅比较：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">this</span>._compositeType === CompositeTypes.PureClass) &#123;</span><br><span class="line">  shouldUpdate = !shallowEqual(prevProps, nextProps)</span><br><span class="line">  || !shallowEqual(inst.state, nextState);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>而 <code>shallowEqual</code> 又做了什么呢？会比较 <code>Object.keys(state | props)</code> 的长度是否一致，每一个 <code>key</code>是否两者都有，并且是否是一个引用，也就是只比较了第一层的值，确实很浅，所以深层的嵌套数据是对比不出来的。</p>
+<h2 id="React-Redux"><a href="#React-Redux" class="headerlink" title="React Redux"></a>React Redux</h2><h2 id="React-Router"><a href="#React-Router" class="headerlink" title="React Router"></a>React Router</h2><h3 id="区别React-Router中match的path和url"><a href="#区别React-Router中match的path和url" class="headerlink" title="区别React-Router中match的path和url"></a>区别React-Router中match的path和url</h3><blockquote>
+<p>参考：<a href="https://blog.51cto.com/zhuxianzhong/2120738" target="_blank" rel="noopener">https://blog.51cto.com/zhuxianzhong/2120738</a></p>
+</blockquote>
+<p>官方描述如下：</p>
+<ul>
+<li>path - (string) The path pattern used to match. Useful for building nested &lt;Route&gt;s</li>
+<li>url - (string) The matched portion of the URL. Useful for building nested &lt;Link&gt;s</li>
+</ul>
+<p>path用来标识路由匹配的URL部分。React Router使用了Path-to-RegExp库将路径字符串转为正则表达式。然后正则表达式会匹配当前路径。</p>
+<p><strong>当路由路径和当前路径成功匹配，会生成一个对象match</strong>。match对象有更多关于URL和path的信息。这些信息可以通过它的属性获取，如下所示：</p>
+<ul>
+<li><strong>match.url.返回URL中匹配部分的字符串。用于创建嵌套的&lt;Link&gt;很有用。</strong></li>
+<li><strong>match.path.用于匹配路径模式。用来创建嵌套的&lt;Route&gt;。</strong></li>
+<li>match.isExact.返回布尔值，如果准确（没有任何多余字符）匹配则返回true。</li>
+<li>match.params.返回一个对象包含Path-to-RegExp包从URL解析的键值对。</li>
+</ul>
+<h3 id="withRouter的作用和用法"><a href="#withRouter的作用和用法" class="headerlink" title="withRouter的作用和用法"></a>withRouter的作用和用法</h3><blockquote>
+<p>参考：<a href="https://www.cnblogs.com/luowenshuai/p/9526341.html" target="_blank" rel="noopener">https://www.cnblogs.com/luowenshuai/p/9526341.html</a></p>
+</blockquote>
+<h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a><strong>作用</strong></h4><p>把不是通过路由切换过来的组件中，将react-router 的 history、location、match 三个对象传入props对象上</p>
+<p>默认情况下必须是经过路由匹配渲染的组件才存在this.props，才拥有路由参数，才能使用编程式导航的写法，执行this.props.history.push(‘/detail’)跳转到对应路由的页面</p>
+<p>然而不是所有组件都直接与路由相连（通过路由跳转到此组件）的，当这些组件需要路由参数时，使用withRouter就可以给此组件传入路由参数，此时就可以使用this.props</p>
+<h4 id="如何使用withRouter"><a href="#如何使用withRouter" class="headerlink" title="如何使用withRouter"></a><strong>如何使用withRouter</strong></h4><p>比如app.js这个组件，一般是首页，不是通过路由跳转过来的，而是直接从浏览器中输入地址打开的，如果不使用withRouter此组件的this.props为空，没法执行props中的history、location、match等方法。</p>
+<p>我就通过在App.js组件中使用withRouter来简单介绍一下：</p>
+<p>设置withRouter很简单只需要两步：（1）引入  （2）将App组件 withRouter() 一下</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React,&#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123;Switch,Route,NavLink,Redirect,withRouter&#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span> <span class="comment">//引入withRouter</span></span><br><span class="line"><span class="keyword">import</span> One <span class="keyword">from</span> <span class="string">'./One'</span></span><br><span class="line"><span class="keyword">import</span> NotFound <span class="keyword">from</span> <span class="string">'./NotFound'</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">    <span class="comment">//此时才能获取this.props,包含（history, match, location）三个对象</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.props);  <span class="comment">//输出&#123;match: &#123;…&#125;, location: &#123;…&#125;, history: &#123;…&#125;, 等&#125;</span></span><br><span class="line">    render()&#123;<span class="keyword">return</span> (&lt;div className='app'&gt;</span><br><span class="line">            &lt;NavLink to='/one/users'&gt;用户列表&lt;/NavLink&gt;</span><br><span class="line">            &lt;NavLink to='/one/companies'&gt;公司列表&lt;/NavLink&gt;</span><br><span class="line">            &lt;Switch&gt;</span><br><span class="line">                &lt;Route path='/one/:type?' component=&#123;One&#125; /&gt;</span><br><span class="line">                &lt;Redirect from='/' to='/one' exact /&gt;</span><br><span class="line">                &lt;Route component=&#123;NotFound&#125; /&gt;</span><br><span class="line">            &lt;/Switch&gt;</span><br><span class="line">        &lt;/div&gt;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">export default withRouter(App);  //这里要执行一下WithRouter</span><br></pre></td></tr></table></figure>
+
+<h4 id="介绍一个简单应用"><a href="#介绍一个简单应用" class="headerlink" title="介绍一个简单应用"></a><strong>介绍一个简单应用</strong></h4><p>可以根据路由切换浏览器的title属性，对props.history进行监听，切换路由的时候获取当前的路由路径，同时可以根据不同的路由设置不同的浏览器title标题。</p>
+<p>仍然是App.js组件：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React,&#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123;Switch,Route,NavLink,Redirect,withRouter&#125; <span class="keyword">from</span>  <span class="string">'react-router-dom'</span></span><br><span class="line"><span class="keyword">import</span> One <span class="keyword">from</span> <span class="string">'./One'</span></span><br><span class="line"><span class="keyword">import</span> NotFound <span class="keyword">from</span> <span class="string">'./NotFound'</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">        <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">                <span class="keyword">super</span>(props);</span><br><span class="line">                props.history.listen(<span class="function">(<span class="params">location</span>)=&gt;</span>&#123;  <span class="comment">//在这里监听location对象</span></span><br><span class="line">                        <span class="built_in">console</span>.log(location.pathname);  <span class="comment">//切换路由的时候输出"/one/users"和"/one/companies"</span></span><br><span class="line">                        <span class="keyword">switch</span>(location.pathname)&#123;   <span class="comment">//根据路径不同切换不同的浏览器title</span></span><br><span class="line">                                <span class="keyword">case</span> <span class="string">'/one/users'</span> : <span class="built_in">document</span>.title = <span class="string">'用户列表'</span>; <span class="keyword">break</span>;</span><br><span class="line">                                <span class="keyword">case</span> <span class="string">'/one/companies'</span> : <span class="built_in">document</span>.title = <span class="string">'公司列表'</span>; <span class="keyword">break</span>;</span><br><span class="line">                                <span class="keyword">default</span> : <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        render()&#123;</span><br><span class="line">                <span class="keyword">return</span> (&lt;div className='app'&gt;</span><br><span class="line">                        &lt;NavLink to='/one/users'&gt;用户列表&lt;/NavLink&gt;</span><br><span class="line">                        &lt;NavLink to='/one/companies'&gt;公司列表&lt;/NavLink&gt;</span><br><span class="line">                        &lt;Switch&gt;</span><br><span class="line">                                &lt;Route path='/one/:type?'  component=&#123;One&#125; /&gt;</span><br><span class="line">                                &lt;Redirect from='/' to='/one' exact /&gt;</span><br><span class="line">                                &lt;Route component=&#123;NotFound&#125; /&gt;</span><br><span class="line">                        &lt;/Switch&gt;</span><br><span class="line">                &lt;/div&gt;)</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line">export default withRouter(App);</span><br></pre></td></tr></table></figure>
+
+<h4 id="如果使用编程式导航"><a href="#如果使用编程式导航" class="headerlink" title="如果使用编程式导航"></a><strong>如果使用编程式导航</strong></h4><p>this.props.history.push(‘/detail’) 去跳转页面，但是报 this.props.history 错误 undefined，请在此组件中使用 withRouter 将 history 传入到 props上。</p>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h3 id="传统css"><a href="#传统css" class="headerlink" title="传统css"></a>传统css</h3><h4 id="css中常见的选择符"><a href="#css中常见的选择符" class="headerlink" title="css中常见的选择符"></a>css中常见的选择符</h4><blockquote>
+<p>参考：<a href="https://yanhaijing.com/css/2014/01/04/the-30-css-selectors-you-must-memorize/" target="_blank" rel="noopener">https://yanhaijing.com/css/2014/01/04/the-30-css-selectors-you-must-memorize/</a></p>
+<p>官网：<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Selectors#Simple_selectors" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Selectors#Simple_selectors</a></p>
+</blockquote>
+<h5 id="基本选择器"><a href="#基本选择器" class="headerlink" title="基本选择器"></a>基本选择器</h5><ul>
+<li><p>Type（类型）选择器</p>
+<p>这种基本选择器会选择所有匹配给定元素名的元素。 </p>
+<p><strong>语法：</strong><code>elename</code> </p>
+<p><strong>例子：</strong>input 将会选择所有的 input 元素。</p>
+</li>
+<li><p>Class（类）选择器</p>
+<p>这种基本选择器会基于类属性的值来选择元素。 </p>
+<p><strong>语法：</strong> <code>.classname</code> </p>
+<p><strong>例子：</strong> <code>.index</code> 会匹配所有包含 <code>index 类的元素</code> (由类似于<code>class=&quot;index&quot;</code>这样的属性定义的).</p>
+</li>
+<li><p>ID选择器</p>
+<p>这种基本选择器会选择所有id属性与之匹配的元素。需要注意的是一个文档中每个id都应该是唯一的。 </p>
+<p><strong>语法：</strong><code>#idname</code> </p>
+<p><strong>例子：</strong><code>#toc</code> 将会匹配所有id属性为 toc 的元素 (类似于这样的定义 <code>id=&quot;toc&quot;</code>).</p>
+</li>
+<li><p>通用选择器</p>
+<p>这个基本选择器选择所有节点。它也常常和一个名词空间配合使用，用来选择该空间下的所有元素。 </p>
+<p><strong>语法：</strong> <code>* ns|* *|*</code> </p>
+<p><strong>例子：</strong><code>*</code> （通配符）将会选择所有元素。</p>
+</li>
+<li><p>属性选择器</p>
+<p>这个基本的选择器根据元素的属性来进行选择。（具体参考：<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors）" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors）</a> </p>
+<p><strong>语法：</strong><code>[attr] [attr=value] [attr~=value] [attr|=value] [attr^=value] [attr$=value] [attr*=value]</code> </p>
+<p><strong>例子：</strong><code>[autoplay]</code> 将会选择所有具有 autoplay 属性的元素（不论这个属性的值是什么）</p>
+</li>
+</ul>
+<h5 id="组合选择器"><a href="#组合选择器" class="headerlink" title="组合选择器"></a>组合选择器</h5><ul>
+<li><p>紧邻兄弟选择器</p>
+<p><code>&#39;+&#39;</code> 操作符选择相邻元素，即第二个节点<strong>紧邻着第一个节点</strong>，并且<strong>拥有共同的父节点</strong>。</p>
+<p><strong>语法:</strong> <code>A + B</code></p>
+<p><strong>例子:</strong> <code>ul + li</code> 会匹配任何 ul 元素后紧邻的 li 元素。</p>
+</li>
+<li><p>一般兄弟选择器</p>
+<p><code>&#39;~&#39;</code> 操作符选择兄弟元素，也就是说，第二个节点在第一个节点<strong>后面的任意位置</strong>，并且这俩<strong>节点的父节点相同</strong>。</p>
+<p><strong>语法:</strong> <code>A ~ B</code></p>
+<p><strong>例子:</strong> <code>p ~ span</code> 将会匹配同一父元素下，p 元素后的所有 span 元素。</p>
+</li>
+<li><p>子选择器</p>
+<p><code>&#39;&gt;&#39;</code> 操作符选择第一个元素的<strong>直接子节点</strong>。</p>
+<p><strong>语法:</strong> <code>A &gt; B</code></p>
+<p><strong>例子:</strong> <code>ul &gt; li</code> 将会匹配直接嵌套在 ul 元素内的所有 li 元素。</p>
+</li>
+<li><p>后代选择器</p>
+<p><code>&#39; &#39;</code>  (空格) 操作符将选择第一个元素的<strong>子代节点</strong>。</p>
+<p><strong>语法:</strong> <code>A B</code></p>
+<p><strong>例子:</strong> <code>div span</code> 将匹配 div 元素内所有的 span 元素。</p>
+</li>
+</ul>
+<h3 id="Sass-Syntactically-Awesome-StyleSheets"><a href="#Sass-Syntactically-Awesome-StyleSheets" class="headerlink" title="Sass (Syntactically Awesome StyleSheets)"></a>Sass (Syntactically Awesome StyleSheets)</h3><h3 id="Less-Leaner-Style-Sheets"><a href="#Less-Leaner-Style-Sheets" class="headerlink" title="Less(Leaner Style Sheets)"></a>Less(Leaner Style Sheets)</h3><h4 id="一个变量多次定义"><a href="#一个变量多次定义" class="headerlink" title="一个变量多次定义"></a>一个变量多次定义</h4><p>首先<strong>一个变量不需要在使用之前就定义</strong>，而且也<strong>可以在不同地方重复定义同一个变量</strong>，下面两个编译的结果一样：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.lazy-eval</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="variable">@var</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">@var:</span><span class="variable">@a</span>;</span><br><span class="line"><span class="variable">@a:</span><span class="number">9%</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.lazy-eval</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="variable">@var</span>;</span><br><span class="line">    <span class="variable">@a:</span><span class="number">9%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">@var:</span><span class="variable">@a</span>;</span><br><span class="line"><span class="variable">@a:</span><span class="number">100%</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义在块级作用域里的@a(9%)覆盖了全局作用域里的@a(100%)</span></span><br></pre></td></tr></table></figure>
+
+<p>编译出来的css是：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.lazy-eval</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">9%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>官网里的原话是：</p>
+<blockquote>
+<p>When defining a variable twice, the last definition of the variable is used, <strong>searching from the current scope upwards</strong>. This is similar to css itself where the last property inside a definition is used to determine the value.</p>
+</blockquote>
+<p>更经典的例子是：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@var:</span> <span class="number">0</span>;</span><br><span class="line"><span class="selector-class">.class</span> &#123;</span><br><span class="line">  <span class="variable">@var:</span> <span class="number">1</span>;</span><br><span class="line">  <span class="selector-class">.brass</span> &#123;</span><br><span class="line">    <span class="variable">@var:</span> <span class="number">2</span>;</span><br><span class="line">    <span class="attribute">three</span>: <span class="variable">@var</span>;</span><br><span class="line">    <span class="variable">@var:</span> <span class="number">3</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="attribute">one</span>: <span class="variable">@var</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>编译结果：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.class</span> &#123;</span><br><span class="line">  <span class="attribute">one</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.class</span> <span class="selector-class">.brass</span> &#123;</span><br><span class="line">  <span class="attribute">three</span>: <span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以看出，three首先被赋值<code>@var: 2;</code>，然后被下面定义的<code>@var: 3;</code>覆盖；而one的作用域内看不到<code>@var: 2;</code>和<code>@var: 3;</code>，因此最后被赋值为1</p>
+<h4 id="父选择器-amp"><a href="#父选择器-amp" class="headerlink" title="父选择器&amp;"></a>父选择器&amp;</h4><p>&amp;指的是所有的父选择器，而不单单指最近的一个父选择器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><h3 id="async-await的基础用法"><a href="#async-await的基础用法" class="headerlink" title="async/await的基础用法"></a>async/await的基础用法</h3><blockquote>
+<p>参考：<a href="https://www.jianshu.com/p/ffa5cbe9ab29" target="_blank" rel="noopener">https://www.jianshu.com/p/ffa5cbe9ab29</a></p>
+<p>推荐阅读：<a href="https://segmentfault.com/a/1190000007535316" target="_blank" rel="noopener">https://segmentfault.com/a/1190000007535316</a></p>
+<p>另外补充：进程、线程和协程的理解</p>
+<p>参考<a href="https://blog.csdn.net/hairetz/article/details/16119911" target="_blank" rel="noopener">https://blog.csdn.net/hairetz/article/details/16119911</a></p>
+</blockquote>
+<h4 id="进程、线程和协程"><a href="#进程、线程和协程" class="headerlink" title="进程、线程和协程"></a>进程、线程和协程</h4><table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">堆</th>
+<th align="center">栈</th>
+<th align="center">调度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">进程</td>
+<td align="center">独立</td>
+<td align="center">独立</td>
+<td align="center">操作系统</td>
+</tr>
+<tr>
+<td align="center">线程</td>
+<td align="center">共享</td>
+<td align="center">独立</td>
+<td align="center">操作系统</td>
+</tr>
+<tr>
+<td align="center">协程</td>
+<td align="center">共享</td>
+<td align="center">独立</td>
+<td align="center">程序员在代码中显式调度</td>
+</tr>
+</tbody></table>
+<ul>
+<li>进程拥有自己独立的堆和栈，既不共享堆，亦不共享栈，进程由操作系统调度。</li>
+<li>线程拥有自己独立的栈和共享的堆，共享堆，不共享栈，线程亦由操作系统调度(标准线程是的)。</li>
+<li>协程和线程一样共享堆，不共享栈，协程由程序员在协程的代码里显示调度。</li>
+</ul>
+<p>进程和其他两个的区别还是很明显的。</p>
+<p>协程和线程的区别是：<strong>协程避免了无意义的调度，由此可以提高性能</strong>，但也因此，程序员必须自己承担调度的责任，同时，<strong>协程也失去了标准线程使用多CPU的能力</strong>。</p>
+<h4 id="async-await的特点"><a href="#async-await的特点" class="headerlink" title="async/await的特点"></a>async/await的特点</h4><ul>
+<li><code>Promise</code>主要用then函数的链式调用，一直点点点，是一种从左向右的横向写法。<br><code>async/await</code>从上到下，顺序执行，就像写同步代码一样。这更符合人编写代码的习惯</li>
+<li><code>Promise</code>的then函数只能传递一个参数，虽然可以通过包装成对象，但是这会导致传递冗余信息，频繁的解析又重新组合参数，比较麻烦。<br><code>async/await</code>没有这个限制，就当做普通的局部变量来处理好了，用let或者const定义的块级变量，想怎么用就怎么用，想定义几个就定义几个，完全没有限制，也没有冗余的工作。</li>
+<li><code>Promise</code>在使用的时候最好将同步代码和异步代码放在不同的then节点中，这样结构更加清晰。<br><code>async/await</code>整个书写习惯都是同步的，不需要纠结同步和异步的区别。当然，异步过程需要包装成一个<code>Promise</code>对象，放在<code>await</code>关键字后面，这点还是要牢记的。</li>
+<li><code>Promise</code>是根据函数式编程的范式，对异步过程进行了一层封装。<br><code>async/await</code>是基于协程的机制，是真正的“保存上下文，控制权切换 … … 控制权恢复，取回上下文”这种机制，是对异步过程更精确的一种描述。</li>
+<li><code>async/await</code>是基于<code>Promise</code>的，是进一步的一种优化。不过再写代码的时候，<code>Promise</code>本身的API出现得很少，很接近同步代码的写法。</li>
+</ul>
+<h4 id="await关键字使用的注意点"><a href="#await关键字使用的注意点" class="headerlink" title="await关键字使用的注意点"></a><strong>await关键字使用的注意点</strong></h4><ul>
+<li><p>只能放在<code>async</code>函数内部使用，不能放在普通函数里面，否则会报错。</p>
+</li>
+<li><p>后面放<code>Promise</code>对象，在<code>Pending</code>状态时，相应的协程会交出控制权，进入等待状态。这个是本质。</p>
+</li>
+<li><p><code>await</code>是<code>async wait</code>的意思，<code>wait</code>的是<code>resolve(data)</code>消息，并把数据<code>data</code>返回。比如，下面代码中，当<code>Promise</code>对象由<code>Pending</code>变为<code>Resolved</code>的时候，变量<code>a</code>就等于<code>data</code>；然后再顺序执行下面的语句<code>console.log(a);</code><br>这真的是等待，真的是顺序执行，表现和同步代码几乎一模一样。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="keyword">await</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// async process ...</span></span><br><span class="line">    <span class="keyword">return</span> resolve(data);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>await</code>后面也可以跟同步代码，不过系统会自动转化成一个<code>Promise</code>对象。<br>比如<br><code>const a = await &#39;hello world&#39;;</code><br>其实就相当于<br><code>const a = await Promise.resolve(&#39;hello world&#39;);</code><br>这跟同步代码<br><code>const a = &#39;hello world&#39;;</code>是一样的，还不如省点事，去掉这里的<code>await</code>关键字。</p>
+</li>
+<li><p><code>await</code>只关心异步过程成功的消息<code>resolve(data)</code>，拿到相应的数据<code>data</code>。至于失败消息<code>reject(error)</code>，不关心，不处理。<br>当然对于错误消息的处理，有以下几种方法供选择：<br>（1）让<code>await</code>后面的<code>Promise</code>对象自己<code>catch</code><br>（2）也可以让外面的<code>async</code>函数返回的<code>Promise</code>对象统一<code>catch</code><br>（3）像同步代码一样，放在一个<code>try...catch</code>结构中</p>
+</li>
+</ul>
+<h4 id="async关键字使用的注意点"><a href="#async关键字使用的注意点" class="headerlink" title="async关键字使用的注意点"></a>async关键字使用的注意点</h4><ul>
+<li>有了这个<code>async</code>关键字，只是表明里面可能有异步过程，里面可以有<code>await</code>关键字。当然，全部是同步代码也没关系。当然，这时候这个<code>async</code>关键字就显得多余了。不是不能加，而是不应该加。</li>
+<li><code>async</code>函数，如果里面有异步过程，会等待；<br>但是<code>async</code>函数本身会马上返回，不会阻塞当前线程。</li>
+</ul>
+<blockquote>
+<p>可以简单认为，<code>async</code>函数工作在主线程，同步执行，不会阻塞界面渲染。<br><code>async</code>函数内部由<code>async</code>关键字修饰的异步过程，工作在相应的协程上，会阻塞等待异步任务的完成再返回。</p>
+</blockquote>
+<ul>
+<li><code>async</code>函数的返回值是一个<code>Promise</code>对象，这个是和普通函数本质不同的地方。这也是使用时重点注意的地方<br>（1）<code>return newPromise();</code>这个符合<code>async</code>函数本意；<br>（2）<code>return data;</code>这个是同步函数的写法，这里是要特别注意的。这个时候，其实就相当于<code>Promise.resolve(data);</code>还是一个<code>Promise</code>对象。<br>在调用<code>async</code>函数的地方通过简单的<code>=</code>是拿不到这个<code>data</code>的。<br>那么怎么样拿到这个<code>data</code>呢？<br>很简单，返回值是一个<code>Promise</code>对象，用<code>.then(data =&gt; { })</code>函数就可以。<br>（3）如果没有返回，相当于返回了<code>Promise.resolve(undefined);</code></li>
+<li><code>await</code>是不管异步过程的<code>reject(error)</code>消息的，<code>async</code>函数返回的这个<code>Promise</code>对象的<code>catch</code>函数就负责统一抓取内部所有异步过程的错误。<br><code>async</code>函数内部只要有一个异步过程发生错误，整个执行过程就中断，这个返回的<code>Promise</code>对象的<code>catch</code>就能抓到这个错误。</li>
+<li><code>async</code>函数执行和普通函数一样，函数名带个()就可以了，参数个数随意，没有限制；也需要有<code>async</code>关键字。<br>只是返回值是一个<code>Promise</code>对象，可以用then函数得到返回值，用catch抓去整个流程中发生的错误。</li>
+</ul>
+<h3 id="ES6、ES7、ES8、ES9、ES10新特性一览"><a href="#ES6、ES7、ES8、ES9、ES10新特性一览" class="headerlink" title="ES6、ES7、ES8、ES9、ES10新特性一览"></a>ES6、ES7、ES8、ES9、ES10新特性一览</h3><blockquote>
+<p>参考：<a href="https://juejin.im/post/5ca2e1935188254416288eb2" target="_blank" rel="noopener">https://juejin.im/post/5ca2e1935188254416288eb2</a></p>
+</blockquote>
+<h2 id="前端项目"><a href="#前端项目" class="headerlink" title="前端项目"></a>前端项目</h2><h3 id="将React项目部署到Github-Pages"><a href="#将React项目部署到Github-Pages" class="headerlink" title="将React项目部署到Github Pages"></a>将React项目部署到Github Pages</h3><blockquote>
+<p>参考：<a href="https://segmentfault.com/a/1190000019290048" target="_blank" rel="noopener">https://segmentfault.com/a/1190000019290048</a></p>
+</blockquote>
+<p>一些注意事项：</p>
+<p>（1）Github Pages自定义域名问题</p>
+<ul>
+<li><p>往gh-pages分支添加CNAME记录</p>
+<p><img src="https://i.loli.net/2019/07/04/5d1e10ad9b6d873438.png" alt></p>
+</li>
+<li><p>将要添加的域名写入CNAME，但是注意不要加入<code>http://</code></p>
+<p><img src="https://i.loli.net/2019/07/04/5d1e110ab54e333768.png" alt></p>
+</li>
+<li><p>这里还有个问题就是，由于gh-pages分支是将编译之后的内容上传的，如果直接在gh-pages分支添加CNAME文件，会导致出现重新部署的时候CNAME被删除，这时后如果再次访问自定义域名，就会出现Content Security Policy问题（参见：<a href="https://stackoverflow.com/questions/54380373/content-security-policy-while-deploying-to-github-pages-using-gatsby）" target="_blank" rel="noopener">https://stackoverflow.com/questions/54380373/content-security-policy-while-deploying-to-github-pages-using-gatsby）</a></p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Refused to load the image 'http://www.alexingberg.com/favicon.ico' because it violates the following Content Security Policy directive: "img-src data:".</span><br></pre></td></tr></table></figure>
+
+<p>你可以按照stackoverflow上面的方案解决（我没试过），但我这里提供一个简单的解决方案，就是将CNAME添加在项目的public文件夹下面，编译之后CNAME就会在build目录生成，这样就不会出现Content Security Policy问题了</p>
+<p><img src="https://i.loli.net/2019/07/04/5d1e126fab25166732.png" alt></p>
+</li>
+</ul>
+<p>（2）自定义域名后出现资源路径不正确的问题</p>
+<ul>
+<li><p>网上一些教程都是教你把Github Pages生成的那一串链接地址设置到<code>&quot;homepages&quot;</code>中</p>
+<p><img src="https://i.loli.net/2019/07/04/5d1e1359bcf0850375.png" alt></p>
+<p>这样会出现的问题就是，编译完成后，会在静态资源的路径前面都加上<code>/chph-blog</code>，这样肯定是找不到对应的资源的</p>
+</li>
+<li><p>可以通过把<code>&quot;homepages&quot;</code>设置成<code>&quot;./&quot;</code>即可</p>
+<p><img src="https://i.loli.net/2019/07/04/5d1e13f324be160749.png" alt></p>
+</li>
+</ul>
+<h3 id="Github开源项目license选择问题"><a href="#Github开源项目license选择问题" class="headerlink" title="Github开源项目license选择问题"></a>Github开源项目license选择问题</h3><p>简单一点，借用阮一峰博客上面的一张图：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://www.ruanyifeng.com/blogimg/asset/201105/bg2011050101.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h3 id="在React项目中使用Docz遇到的问题"><a href="#在React项目中使用Docz遇到的问题" class="headerlink" title="在React项目中使用Docz遇到的问题"></a>在React项目中使用Docz遇到的问题</h3><p>（1）按照官网的Getting Start添加依赖后执行<code>yarnpkg add docz</code>，出现的问题如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Failed to compile.</span><br><span class="line"></span><br><span class="line">./node_modules/docz/dist/index.esm.js <span class="number">23</span>:<span class="number">38</span></span><br><span class="line">Module parse failed: Unexpected token (<span class="number">23</span>:<span class="number">38</span>)</span><br><span class="line">Failed to compile.</span><br><span class="line"></span><br><span class="line">./node_modules/docz/dist/index.esm.js <span class="number">23</span>:<span class="number">38</span></span><br><span class="line">Module parse failed: Unexpected token (<span class="number">23</span>:<span class="number">38</span>)</span><br><span class="line">You may need an appropriate loader to handle <span class="keyword">this</span> file type, currently no loaders are configured to process <span class="keyword">this</span> file. See https:<span class="comment">//webpack.js.org/concepts#loaders</span></span><br><span class="line">| <span class="keyword">import</span> &#123; MDXProvider &#125; <span class="keyword">from</span> <span class="string">'@mdx-js/react'</span>;</span><br><span class="line">| </span><br><span class="line">&gt; <span class="keyword">const</span> BasePlayground = loadable(<span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">'./Playground.esm.js'</span>));</span><br><span class="line">| <span class="keyword">const</span> Playground = <span class="function"><span class="params">props</span> =&gt;</span> <span class="keyword">typeof</span> <span class="built_in">window</span> !== <span class="string">'undefined'</span> ? createElement(Suspense, &#123;</span><br><span class="line">|   fallback: <span class="literal">null</span></span><br></pre></td></tr></table></figure>
+
+<p>Github上面的相关issue是：<a href="https://github.com/pedronauck/docz/issues/596" target="_blank" rel="noopener">https://github.com/pedronauck/docz/issues/596</a></p>
+<p>最关键的是这一个：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/07/05/5d1f4b5aed0f933839.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>他给出的解决方案是对webpack降级：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -D webpack@<span class="number">4</span>.<span class="number">28</span>.<span class="number">4</span></span><br></pre></td></tr></table></figure>
+
+<p>问题解决！</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/07/05/5d1f4ba8678ff64652.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>然而，事情远远没有那么简单，当再次运行<code>yarn start</code>启动项目时，爆炸了：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/07/07/5d21d9ed878d544757.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>显然是docz和creact-react-app的webpack版本冲突了，我又在github搜罗了一番，解决方案是给docz单独指定一个webpack版本：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/07/07/5d21dacbda01361621.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>启动成功，舒服了</p>
+<h3 id="在React中使用Scss"><a href="#在React中使用Scss" class="headerlink" title="在React中使用Scss"></a>在React中使用Scss</h3><blockquote>
+<p>参考：<a href="https://segmentfault.com/a/1190000016571839" target="_blank" rel="noopener">https://segmentfault.com/a/1190000016571839</a></p>
+</blockquote>
+<h2 id="前端工具使用"><a href="#前端工具使用" class="headerlink" title="前端工具使用"></a>前端工具使用</h2><h3 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h3>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-09-15T04:29:52.255Z" itemprop="dateUpdated">2019-09-15 12:29:52</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/07/14/前端笔记/" target="_blank" rel="external">http://QQ876684433.github.io/2019/07/14/前端笔记/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://QQ876684433.github.io">
+            <img src="/img/avatar.jpg" alt="steve_chph">
+            steve_chph
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/07/14/前端笔记/&title=《前端笔记》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/07/14/前端笔记/&title=《前端笔记》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/07/14/前端笔记/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《前端笔记》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/07/14/前端笔记/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/07/14/前端笔记/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/07/14/PureComponent简介/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">PureComponent简介</h4>
+      </a>
+    </div>
+  
+
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢你~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>steve_chph &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/07/14/前端笔记/&title=《前端笔记》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/07/14/前端笔记/&title=《前端笔记》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/07/14/前端笔记/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《前端笔记》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/07/14/前端笔记/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/07/14/前端笔记/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJklEQVR42u3aQXLCMAwFUO5/6XTbGWr4klKGOM8rJoTEzwshy3o84nG8HL/veb7/+dvVldfXTxgYGBiXZeRTrE599ZbeM1f3Y2Bg3IfxOvAloXM+lSRML69jYGBgBOlab7rJEmBgYGD0GJNNaYLEwMDAmJTSqlvTeZHu5L04BgbGBRl51f3zn//lfAMDA+NSjKM4eqW0/GjzaA0MDIy9Gb1SWnIAOUkZe/PBwMDYldFL1JIGi2RCybdJSQ4DA2NvRvUF50b6sxo4MDAw9mZUDwuTA4MqLG/CWD4BAwNja0b1BUk6mBTRevdXlwkDA2M/Rt5OkW848yDeWyAMDIw7MObtWdXy3HyT/MdnDAyMGzB6B405bx6s3zwZAwPjNozCzwZpX29bG3WLYGBgbMqYbCl75bNHPAr7bwwMjK0ZvWSu+ts81PYOGzAwMO7DyAPrPDTPC3PLchsGBsZ2jLwZK2+GqDZMJM+JnoyBgbE1o5e05WW4XtG/+hYMDIy9GXn4yzexecNEPpM3iSMGBsYNGNVgmr+g15CBgYGBsWJUA+6kkeLko00MDIxNGUdx9MJxobUrXogoo8TAwNiCUQ1zSZksL6v1Qvmk1QwDA+O6jEmBrHz+UNzWYmBgYCTltmrad1a5LV8CDAwMjGZ71jgdbGavGBgYGHHaVw2ayXJ89H8DAwPjKxnVBK631UwmWm3gwMDAuAOj1+JQDZS9ze2kqIeBgbEF4wf+4zf1TiN6wAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'chph个人博客';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Welcome to chph's blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

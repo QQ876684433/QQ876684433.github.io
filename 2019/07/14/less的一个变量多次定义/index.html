@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>less的一个变量多次定义 | 至繁归于至简 - chph&#39;s blog | steve_chph personal website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="less">
+    <meta name="description" content="一个变量多次定义首先一个变量不需要在使用之前就定义，而且也可以在不同地方重复定义同一个变量，下面两个编译的结果一样： 123456.lazy-eval&amp;#123;    width: @var;&amp;#125;@var:@a;@a:9%;  123456789.lazy-eval&amp;#123;    width: @var;    @a:9%;&amp;#125;@var:@a;@a:100%;// 定义在块级">
+<meta name="keywords" content="less">
+<meta property="og:type" content="article">
+<meta property="og:title" content="less的一个变量多次定义">
+<meta property="og:url" content="http://QQ876684433.github.io/2019/07/14/less的一个变量多次定义/index.html">
+<meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
+<meta property="og:description" content="一个变量多次定义首先一个变量不需要在使用之前就定义，而且也可以在不同地方重复定义同一个变量，下面两个编译的结果一样： 123456.lazy-eval&amp;#123;    width: @var;&amp;#125;@var:@a;@a:9%;  123456789.lazy-eval&amp;#123;    width: @var;    @a:9%;&amp;#125;@var:@a;@a:100%;// 定义在块级">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2019-09-15T04:29:52.255Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="less的一个变量多次定义">
+<meta name="twitter:description" content="一个变量多次定义首先一个变量不需要在使用之前就定义，而且也可以在不同地方重复定义同一个变量，下面两个编译的结果一样： 123456.lazy-eval&amp;#123;    width: @var;&amp;#125;@var:@a;@a:9%;  123456789.lazy-eval&amp;#123;    width: @var;    @a:9%;&amp;#125;@var:@a;@a:100%;// 定义在块级">
+    
+        <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">steve_chph</h5>
+          <a href="mailto:chph13420146901@gmail.com" title="chph13420146901@gmail.com" class="mail">chph13420146901@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/QQ876684433" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">less的一个变量多次定义</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">less的一个变量多次定义</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-07-14T14:46:30.000Z" itemprop="datePublished" class="page-time">
+  2019-07-14
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/前端/">前端</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一个变量多次定义"><span class="post-toc-number">1.</span> <span class="post-toc-text">一个变量多次定义</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-less的一个变量多次定义"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">less的一个变量多次定义</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-07-14 22:46:30" datetime="2019-07-14T14:46:30.000Z"  itemprop="datePublished">2019-07-14</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/前端/">前端</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="一个变量多次定义"><a href="#一个变量多次定义" class="headerlink" title="一个变量多次定义"></a>一个变量多次定义</h1><p>首先<strong>一个变量不需要在使用之前就定义</strong>，而且也<strong>可以在不同地方重复定义同一个变量</strong>，下面两个编译的结果一样：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.lazy-eval</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="variable">@var</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">@var:</span><span class="variable">@a</span>;</span><br><span class="line"><span class="variable">@a:</span><span class="number">9%</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.lazy-eval</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="variable">@var</span>;</span><br><span class="line">    <span class="variable">@a:</span><span class="number">9%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">@var:</span><span class="variable">@a</span>;</span><br><span class="line"><span class="variable">@a:</span><span class="number">100%</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义在块级作用域里的@a(9%)覆盖了全局作用域里的@a(100%)</span></span><br></pre></td></tr></table></figure>
+
+<p>编译出来的css是：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.lazy-eval</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">9%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>官网里的原话是：</p>
+<blockquote>
+<p>When defining a variable twice, the last definition of the variable is used, <strong>searching from the current scope upwards</strong>. This is similar to css itself where the last property inside a definition is used to determine the value.</p>
+</blockquote>
+<p>更经典的例子是：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@var:</span> <span class="number">0</span>;</span><br><span class="line"><span class="selector-class">.class</span> &#123;</span><br><span class="line">  <span class="variable">@var:</span> <span class="number">1</span>;</span><br><span class="line">  <span class="selector-class">.brass</span> &#123;</span><br><span class="line">    <span class="variable">@var:</span> <span class="number">2</span>;</span><br><span class="line">    <span class="attribute">three</span>: <span class="variable">@var</span>;</span><br><span class="line">    <span class="variable">@var:</span> <span class="number">3</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="attribute">one</span>: <span class="variable">@var</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>编译结果：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.class</span> &#123;</span><br><span class="line">  <span class="attribute">one</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.class</span> <span class="selector-class">.brass</span> &#123;</span><br><span class="line">  <span class="attribute">three</span>: <span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以看出，three首先被赋值<code>@var: 2;</code>，然后被下面定义的<code>@var: 3;</code>覆盖；而one的作用域内看不到<code>@var: 2;</code>和<code>@var: 3;</code>，因此最后被赋值为1</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-09-15T04:29:52.255Z" itemprop="dateUpdated">2019-09-15 12:29:52</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/07/14/less的一个变量多次定义/" target="_blank" rel="external">http://QQ876684433.github.io/2019/07/14/less的一个变量多次定义/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://QQ876684433.github.io">
+            <img src="/img/avatar.jpg" alt="steve_chph">
+            steve_chph
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/less/">less</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/07/14/less的一个变量多次定义/&title=《less的一个变量多次定义》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/07/14/less的一个变量多次定义/&title=《less的一个变量多次定义》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/07/14/less的一个变量多次定义/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《less的一个变量多次定义》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/07/14/less的一个变量多次定义/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/07/14/less的一个变量多次定义/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/07/14/async-await的基础用法/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">async/await的基础用法</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/07/14/css中常见的选择符/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">css中常见的选择符</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢你~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>steve_chph &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/07/14/less的一个变量多次定义/&title=《less的一个变量多次定义》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/07/14/less的一个变量多次定义/&title=《less的一个变量多次定义》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/07/14/less的一个变量多次定义/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《less的一个变量多次定义》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/07/14/less的一个变量多次定义/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/07/14/less的一个变量多次定义/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsklEQVR42u3aUW7jMAwE0Nz/0t0L1MmMRG5b4PmrSBxbTwUkYcjXK76+3l7vf/X0hOTOp0+GLzw8PLyFoT998v7vp7e8H3T+lmi68fDw8NZ4ybL+dH++0CfTlN/5fsx4eHh4v5mXPC0BtFOGh4eH91d4eYjQBhNPpOROPDw8vP/POzv4ToURydSsZy14eHh4JxWrV17K+tm/V+p7eHh4eNdV9aTYf7M9nDUiFKPFw8PDW+DlC25S5s9bBPJwoW26wsPDw9vmtYX8KWrynDYK+eZ+PDw8vAVePqybJb59fov8sGHg4eHhLfDyobdF/ZuIoW1u+HA0x8PDwxvlzb7g7NubLefDJOLh4eEt8xJw/m1bKjv7bVQAw8PDwxvi3S/EZ5Fr3tTVHt+/Sanx8PDwRnlt6HB2jK7bpIZOxXh4eHgbvLPifbLE34e8+XTU/zc8PDy8C95ZtNoW7/PNoI056vgYDw8Pb4iXLPr5JtEO7iyizal4eHh4G7z80dGxtXxaG+Pmk4WHh4e3wTsDtI0F+TZwE4g8tg7g4eHhjfLaQ+1ZXJtM0E1rQpRV4+Hh4S3wbgpLyZ15SJFMZZ1M4+Hh4Q3x2p9NDSJHtq0Gj01XeHh4eEO8/Ig81Vw1xaiP8nh4eHgLvJvl/r7JIHlmG2Hg4eHh7fHaF+QH5SlYMp7iP4aHh4e3wEsKUTeFrnzpb1sKHmMIPDw8vGVevj3khbGzp+Vje9xy8PDw8EZ5X+WVF8ba+CA5drfbDB4eHt4G72Y/ydlng75pAqsvPDw8vJKXL+VJsNvGB+0ndSyCh4eHt8ZrmwDONo+2tWtsT8PDw8P7UV5emko2nrMtpwgp8PDw8H4Zr42AZzebq54yPDw8vGveWcnqLLot+hqOmhvw8PDwtnkbP2sxN5HEQJyBh4eHl77rHw2hAyfIkEkIAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'chph个人博客';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Welcome to chph's blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

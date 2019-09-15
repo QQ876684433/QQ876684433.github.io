@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>精读Java源码-String类 | 至繁归于至简 - chph&#39;s blog | steve_chph personal website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Java">
+    <meta name="description" content="精读Java源码 - String类 基于jdk1.8 推荐资料：  https://www.kaelli.com/33.html http://cmsblogs.com/?p=5256 http://cmsblogs.com/?p=5258   类定义public没什么好说的，final修饰符则决定了String类是不可继承的且对象是不可变的，你无法自己写一个继承自String的类，而Strin">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="精读Java源码-String类">
+<meta property="og:url" content="http://QQ876684433.github.io/2019/07/16/精读Java源码-String类/index.html">
+<meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
+<meta property="og:description" content="精读Java源码 - String类 基于jdk1.8 推荐资料：  https://www.kaelli.com/33.html http://cmsblogs.com/?p=5256 http://cmsblogs.com/?p=5258   类定义public没什么好说的，final修饰符则决定了String类是不可继承的且对象是不可变的，你无法自己写一个继承自String的类，而Strin">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2019-09-15T04:29:52.255Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="精读Java源码-String类">
+<meta name="twitter:description" content="精读Java源码 - String类 基于jdk1.8 推荐资料：  https://www.kaelli.com/33.html http://cmsblogs.com/?p=5256 http://cmsblogs.com/?p=5258   类定义public没什么好说的，final修饰符则决定了String类是不可继承的且对象是不可变的，你无法自己写一个继承自String的类，而Strin">
+    
+        <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">steve_chph</h5>
+          <a href="mailto:chph13420146901@gmail.com" title="chph13420146901@gmail.com" class="mail">chph13420146901@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/QQ876684433" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">精读Java源码-String类</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">精读Java源码-String类</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-07-16T12:59:00.000Z" itemprop="datePublished" class="page-time">
+  2019-07-16
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/源码/">源码</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#精读Java源码-String类"><span class="post-toc-number">1.</span> <span class="post-toc-text">精读Java源码 - String类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#类定义"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">类定义</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#重要属性"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">重要属性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#构造函数"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">构造函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#内部类"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">内部类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CaseInsensitiveComparator"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">CaseInsensitiveComparator</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#主要方法"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">主要方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#regionMatches"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">regionMatches</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#length"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">length</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#isEmpty"><span class="post-toc-number">1.5.3.</span> <span class="post-toc-text">isEmpty</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#charAt"><span class="post-toc-number">1.5.4.</span> <span class="post-toc-text">charAt</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#codePointAt"><span class="post-toc-number">1.5.5.</span> <span class="post-toc-text">codePointAt</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#codePointBefore"><span class="post-toc-number">1.5.6.</span> <span class="post-toc-text">codePointBefore</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#codePointCount"><span class="post-toc-number">1.5.7.</span> <span class="post-toc-text">codePointCount</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#offsetByCodePoints"><span class="post-toc-number">1.5.8.</span> <span class="post-toc-text">offsetByCodePoints</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#getChars"><span class="post-toc-number">1.5.9.</span> <span class="post-toc-text">getChars</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#getBytes"><span class="post-toc-number">1.5.10.</span> <span class="post-toc-text">getBytes</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#equals"><span class="post-toc-number">1.5.11.</span> <span class="post-toc-text">equals</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#contentEquals"><span class="post-toc-number">1.5.12.</span> <span class="post-toc-text">contentEquals</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#equalsIgnoreCase"><span class="post-toc-number">1.5.13.</span> <span class="post-toc-text">equalsIgnoreCase</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-精读Java源码-String类"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">精读Java源码-String类</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-07-16 20:59:00" datetime="2019-07-16T12:59:00.000Z"  itemprop="datePublished">2019-07-16</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/源码/">源码</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="精读Java源码-String类"><a href="#精读Java源码-String类" class="headerlink" title="精读Java源码 - String类"></a>精读Java源码 - String类</h1><blockquote>
+<p>基于jdk1.8</p>
+<p>推荐资料：</p>
+<ul>
+<li><a href="https://www.kaelli.com/33.html" target="_blank" rel="noopener">https://www.kaelli.com/33.html</a></li>
+<li><a href="http://cmsblogs.com/?p=5256" target="_blank" rel="noopener">http://cmsblogs.com/?p=5256</a></li>
+<li><a href="http://cmsblogs.com/?p=5258" target="_blank" rel="noopener">http://cmsblogs.com/?p=5258</a></li>
+</ul>
+</blockquote>
+<h2 id="类定义"><a href="#类定义" class="headerlink" title="类定义"></a>类定义</h2><p>public没什么好说的，final修饰符则决定了String类是不可继承的且对象是不可变的，你无法自己写一个继承自String的类，而String对象的不可变性也是大家耳熟能详的。</p>
+<p>实现了java.io.Serializable、Comparable和CharSequence共3个接口：</p>
+<ul>
+<li>Serializable是用来保证String可以序列化和反序列化的。</li>
+<li>Comparable的compareTo(String str)方法则是实现String的对比排序的。</li>
+<li>CharSequence的length()方法用来返回字符串长度，charAt(int index)则可以获取到给定位置的单个字符，subSequence(int start, int end)则提供了截取子字符串的功能，toString()方法对于String来说就是返回它自己了</li>
+</ul>
+<h2 id="重要属性"><a href="#重要属性" class="headerlink" title="重要属性"></a>重要属性</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** The value is used for character storage. */</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">char</span> value[];</span><br><span class="line"></span><br><span class="line"><span class="comment">/** Cache the hash code for the string */</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> hash; <span class="comment">// Default to 0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/** use serialVersionUID from JDK 1.0.2 for interoperability */</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = -<span class="number">6849794470754667710L</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Class String is special cased within the Serialization Stream Protocol.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> ObjectStreamField[] serialPersistentFields =</span><br><span class="line">        <span class="keyword">new</span> ObjectStreamField[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * A Comparator that orders &#123;<span class="doctag">@code</span> String&#125; objects as by</span></span><br><span class="line"><span class="comment"> * &#123;<span class="doctag">@code</span> compareToIgnoreCase&#125;. This comparator is serializable.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Comparator&lt;String&gt; CASE_INSENSITIVE_ORDER</span><br><span class="line">        = <span class="keyword">new</span> CaseInsensitiveComparator();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>value </p>
+<p>用于存储字符串对象的值，在jdk1.8里面是char数组，在后面的版本中改成了byte数组；被final修饰说明它是不可变的</p>
+</li>
+<li><p>hash </p>
+<p>为字符串对象的哈希值，默认值为0</p>
+</li>
+<li><p>serialPersistentFields </p>
+<p><em>看定义，它是一个私有的、静态的、不可改变的</em>ObjectStreamField数组，实际上在JDK源码里有很多类都有这样一个属性，这些类的共同点是都实现了java.io.Serializable接口。在默认情况下一个实现了Serializable接口的类，所有的非 transient 非 static 修饰的字段都会被序列化，但<strong>如果还定义了serialPersistentFields字段，则只有serialPersistentFields里添加的字段才会被序列化</strong>。当一个字段用transient修饰，但又位于serialPersistentFields数组里时，它依然会被序列化——说明<strong>serialPersistentFields的作用优先级是比transient高的</strong>。</p>
+<p>在String类里，<em>serialPersistentFields是一个容量为0的空数组，显然String的字段都不会被序列化</em></p>
+</li>
+<li><p>CASE_INSENSITIVE_ORDER </p>
+<p>表示用于排序的比较器</p>
+</li>
+</ul>
+<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><p>排除@Deprecated的构造函数，String类提供的构造函数主要有以下几类：</p>
+<ul>
+<li><p>无参构造函数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">String</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.value = <span class="string">""</span>.value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>从原有字符串构造新的字符串</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">String</span><span class="params">(String original)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.value = original.value;</span><br><span class="line">	<span class="keyword">this</span>.hash = original.hash;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>直接对参数里的原字符串进行浅拷贝构造新的字符串，由于String类是final的，而且内部的value也是final的，所以字符序列在不同的String实例中共享不会带来任何副作用</p>
+</li>
+<li><p>通过字符数组构造字符串</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">String</span><span class="params">(<span class="keyword">char</span> value[])</span> </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.value = Arrays.copyOf(value, value.length);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">String</span><span class="params">(<span class="keyword">char</span> value[], <span class="keyword">int</span> offset, <span class="keyword">int</span> count)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (offset &lt; <span class="number">0</span>) &#123;</span><br><span class="line">    	<span class="keyword">throw</span> <span class="keyword">new</span> StringIndexOutOfBoundsException(offset);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (count &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (count &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> StringIndexOutOfBoundsException(count);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (offset &lt;= value.length) &#123;</span><br><span class="line">            <span class="keyword">this</span>.value = <span class="string">""</span>.value;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="comment">// Note: offset or count might be near -1&gt;&gt;&gt;1.</span></span><br><span class="line">    <span class="keyword">if</span> (offset &gt; value.length - count) &#123;</span><br><span class="line">    	<span class="keyword">throw</span> <span class="keyword">new</span> StringIndexOutOfBoundsException(offset + count);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">this</span>.value = Arrays.copyOfRange(value, offset, offset+count);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这个也没什么好讲的，它直接对参数里的字节数组进行了拷贝，这样的目的是使得外部的字节数组更改之后不会对字符串的字符序列造成影响。<code>offset &gt; value.length - count</code>的处理是为了防止<code>offset+count</code>的int类型溢出</p>
+</li>
+<li><p>通过整型数组构造字符串</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">String</span><span class="params">(<span class="keyword">int</span>[] codePoints, <span class="keyword">int</span> offset, <span class="keyword">int</span> count)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (offset &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> StringIndexOutOfBoundsException(offset);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (count &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (count &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> StringIndexOutOfBoundsException(count);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (offset &lt;= codePoints.length) &#123;</span><br><span class="line">            <span class="keyword">this</span>.value = <span class="string">""</span>.value;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// Note: offset or count might be near -1&gt;&gt;&gt;1.</span></span><br><span class="line">    <span class="keyword">if</span> (offset &gt; codePoints.length - count) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> StringIndexOutOfBoundsException(offset + count);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//=============================分割线============================</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> end = offset + count;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Pass 1: Compute precise size of char[]</span></span><br><span class="line">    <span class="keyword">int</span> n = count;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = offset; i &lt; end; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> c = codePoints[i];</span><br><span class="line">        <span class="keyword">if</span> (Character.isBmpCodePoint(c))</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (Character.isValidCodePoint(c))</span><br><span class="line">            n++;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(Integer.toString(c));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Pass 2: Allocate and fill in char[]</span></span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">char</span>[] v = <span class="keyword">new</span> <span class="keyword">char</span>[n];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = offset, j = <span class="number">0</span>; i &lt; end; i++, j++) &#123;</span><br><span class="line">        <span class="keyword">int</span> c = codePoints[i];</span><br><span class="line">        <span class="keyword">if</span> (Character.isBmpCodePoint(c))</span><br><span class="line">            v[j] = (<span class="keyword">char</span>)c;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            Character.toSurrogates(c, v, j++);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.value = v;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>分割线上部分没什么好讲的，就是常规的参数边界检查，下半部分有点意思，它涉及到了代码点和代码单元的知识以及Java对Unicode字符集的处理方法，具体的可以参考：<a href="https://chph.xyz/2019/07/17/由String的构造方法引申出来的java字符编码/#由String的构造方法引申出来的java字符编码" target="_blank" rel="noopener">https://chph.xyz/2019/07/17/%E7%94%B1String%E7%9A%84%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%B3%E5%87%BA%E6%9D%A5%E7%9A%84java%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/#%E7%94%B1String%E7%9A%84%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%B3%E5%87%BA%E6%9D%A5%E7%9A%84java%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81</a></p>
+<p>通俗来讲，它的处理分为两个阶段：</p>
+<p>（1）计算int数组转成char数组后的精确长度，之所以两者不同，是因为Java采用了UTF-16字符编码，而Unicode代码点在不同的编码中的代码单元是不同的，UTF-16的字符编码由<strong>基本多语言面（BMP UBasic Multilingual Plane ）</strong>和<strong>增补字符（Supplementary Character）</strong>两部分组成，前者占用一个char，后者占用两个char，因此在遍历int数组时，<code>Character.isBmpCodePoint(c)</code>用来判断<code>c</code>是否是BMP，如果是，则长度不变，如果不是，而且它是有效的代码点<code>Character.isValidCodePoint(c)</code>，那么就要在原来int数组的长度是加一<code>n++</code></p>
+<p>（2）计算出char数组的长度后，就可以分配空间并填充该空间了，道理类似，如果是BMP，则直接将int转为char，否则的话就要使用<code>Character.toSurrogates(c, v, j++)</code>来转换</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">toSurrogates</span><span class="params">(<span class="keyword">int</span> codePoint, <span class="keyword">char</span>[] dst, <span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// We write elements "backwards" to guarantee all-or-nothing</span></span><br><span class="line">    dst[index+<span class="number">1</span>] = lowSurrogate(codePoint);</span><br><span class="line">    dst[index] = highSurrogate(codePoint);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这个涉及到增补字符的高代理项和低代理项的转换，具体的原理在上面的链接里有提到了，这里不再深究，留待精读<code>Character</code>源码时再研究</p>
+<p>最后将填充完成的char数组赋值给新的String实例的value即可</p>
+</li>
+<li><p>通过字节数组构造字符串</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">String</span><span class="params">(<span class="keyword">byte</span> bytes[], <span class="keyword">int</span> offset, <span class="keyword">int</span> length, String charsetName)</span></span></span><br><span class="line"><span class="function">        <span class="keyword">throws</span> UnsupportedEncodingException </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (charsetName == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException(<span class="string">"charsetName"</span>);</span><br><span class="line">    checkBounds(bytes, offset, length);</span><br><span class="line">    <span class="keyword">this</span>.value = StringCoding.decode(charsetName, bytes, offset, length);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">String</span><span class="params">(<span class="keyword">byte</span> bytes[], <span class="keyword">int</span> offset, <span class="keyword">int</span> length, Charset charset)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (charset == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException(<span class="string">"charset"</span>);</span><br><span class="line">    checkBounds(bytes, offset, length);</span><br><span class="line">    <span class="keyword">this</span>.value =  StringCoding.decode(charset, bytes, offset, length);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">String</span><span class="params">(<span class="keyword">byte</span> bytes[], String charsetName)</span></span></span><br><span class="line"><span class="function">        <span class="keyword">throws</span> UnsupportedEncodingException </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>(bytes, <span class="number">0</span>, bytes.length, charsetName);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">String</span><span class="params">(<span class="keyword">byte</span> bytes[], Charset charset)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>(bytes, <span class="number">0</span>, bytes.length, charset);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">String</span><span class="params">(<span class="keyword">byte</span> bytes[], <span class="keyword">int</span> offset, <span class="keyword">int</span> length)</span> </span>&#123;</span><br><span class="line">    checkBounds(bytes, offset, length);</span><br><span class="line">    <span class="keyword">this</span>.value = StringCoding.decode(bytes, offset, length);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">String</span><span class="params">(<span class="keyword">byte</span> bytes[])</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>(bytes, <span class="number">0</span>, bytes.length);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这几个构造函数的功能类似，根据给定的字符编码，调用<code>StringCoding.decode</code>来对字节数组进行解码来构造字符串，如果不提供字符编码的话，<code>StringCoding.decode</code>内部会调用<code>String csn = Charset.defaultCharset().name();</code>来使用Java默认的字符串编码来解码。</p>
+</li>
+</ul>
+<h2 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h2><h3 id="CaseInsensitiveComparator"><a href="#CaseInsensitiveComparator" class="headerlink" title="CaseInsensitiveComparator"></a>CaseInsensitiveComparator</h3><p><code>CaseInsensitiveComparator</code>是String类内部一个大小写不敏感的字符串比较器，被String类内部的方法<code>compareToIgnoreCase</code>使用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">CaseInsensitiveComparator</span></span></span><br><span class="line"><span class="class">        <span class="keyword">implements</span> <span class="title">Comparator</span>&lt;<span class="title">String</span>&gt;, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span> </span>&#123;</span><br><span class="line">    <span class="comment">// use serialVersionUID from JDK 1.2.2 for interoperability</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">8575799808933029326L</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(String s1, String s2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n1 = s1.length();</span><br><span class="line">        <span class="keyword">int</span> n2 = s2.length();</span><br><span class="line">        <span class="keyword">int</span> min = Math.min(n1, n2);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; min; i++) &#123;</span><br><span class="line">            <span class="keyword">char</span> c1 = s1.charAt(i);</span><br><span class="line">            <span class="keyword">char</span> c2 = s2.charAt(i);</span><br><span class="line">            <span class="keyword">if</span> (c1 != c2) &#123;</span><br><span class="line">                c1 = Character.toUpperCase(c1);</span><br><span class="line">                c2 = Character.toUpperCase(c2);</span><br><span class="line">                <span class="keyword">if</span> (c1 != c2) &#123;</span><br><span class="line">                    c1 = Character.toLowerCase(c1);</span><br><span class="line">                    c2 = Character.toLowerCase(c2);</span><br><span class="line">                    <span class="keyword">if</span> (c1 != c2) &#123;</span><br><span class="line">                        <span class="comment">// No overflow because of numeric promotion</span></span><br><span class="line">                        <span class="keyword">return</span> c1 - c2;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> n1 - n2;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Replaces the de-serialized object. */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> Object <span class="title">readResolve</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> CASE_INSENSITIVE_ORDER; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>compareTo</code>方法的主要思路是，循环遍历比较两个字符串长度匹配的部分，如果该部分忽略大小写后相等，那么比较的结果就是两者长度的比较，按照字典序，结果就是长度小的靠前。</p>
+<p>长度匹配部分的比较比较有意思，它有三次判断：直接比较、转成大写字母比较、转成小写字母比较。这么做的原因和<code>regionMatches</code>方法的处理方式大致相同，因为对有些语言比如格鲁吉亚字母（Georgian alphabet），它的大小写转换规则有点特殊：<strong>大写不等还不一定不等，还需要转小写   比如 ქართული დამწერლობა</strong>。因此在退出比较之前还要再次转换成小写字母进行最后一次检查。</p>
+<p>关于<code>readResolve</code>，我在stackoverflow找到的解释如下：</p>
+<blockquote>
+<p><code>readResolve</code> is used for <em>replacing</em> the object read from the stream. The only use I’ve ever seen for this is enforcing singletons; when an object is read, replace it with the singleton instance. This ensures that nobody can create another instance by serializing and deserializing the singleton.</p>
+<p>The <code>readResolve</code> method is called when <code>ObjectInputStream</code> has read an object from the stream and is preparing to return it to the caller. <code>ObjectInputStream</code> checks whether the class of the object defines the <code>readResolve</code> method. If the method is defined, the <code>readResolve</code> method is called to allow the object in the stream to designate the object to be returned. The object returned should be of a type that is compatible with all uses. If it is not compatible, a <code>ClassCastException</code> will be thrown when the type mismatch is discovered.</p>
+<p>Item 90, Effective Java, 3rd Ed covers <code>readResolve</code> and <code>writeReplace</code> for serial proxies - their main use. The examples do not write out <code>readObject</code> and <code>writeObject</code> methods because they are using default serialisation to read and write fields.</p>
+<p><code>readResolve</code> is called after <code>readObject</code> has returned (conversely <code>writeReplace</code> is called before <code>writeObject</code> and probably on a different object). The object the method returns replaces <code>this</code>object returned to the user of <code>ObjectInputStream.readObject</code> and any further back references to the object in the stream. Both <code>readResolve</code> and <code>writeReplace</code> may return objects of the same or different types. Returning the same type is useful in some cases where fields must be <code>final</code> and either backward compatibility is required or values must copied and/or validated.</p>
+<p>Use of <code>readResolve</code> does not enforce the singleton property.</p>
+<p>……</p>
+<p>源于：<a href="https://stackoverflow.com/questions/1168348/java-serialization-readobject-vs-readresolve/24459741" target="_blank" rel="noopener">https://stackoverflow.com/questions/1168348/java-serialization-readobject-vs-readresolve/24459741</a></p>
+</blockquote>
+<p>按照我的理解来讲就是当<code>ObjectInputStream</code>读到一个对象时，会检查这个对象的类是否定义了<code>readResolve</code>方法，如果定义了该方法，那么会将该方法的返回值作为对象返回，而不是返回<code>ObjectInputStream</code>在流中读到的对象，这样就可以强制实现单例模式。但是如果流中读到的对象和<code>readResolve</code>方法返回的对象类型不兼容，那么就会抛出<code>ClassCastException</code>。</p>
+<h2 id="主要方法"><a href="#主要方法" class="headerlink" title="主要方法"></a>主要方法</h2><h3 id="regionMatches"><a href="#regionMatches" class="headerlink" title="regionMatches"></a>regionMatches</h3><p><code>regionMatches</code>功能是判断两个字符串指定区间、且具有相同长度的子串是否相等，它有两个重载的方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">regionMatches</span><span class="params">(<span class="keyword">int</span> toffset, String other, <span class="keyword">int</span> ooffset, <span class="keyword">int</span> len)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">regionMatches</span><span class="params">(<span class="keyword">boolean</span> ignoreCase, <span class="keyword">int</span> toffset, String other, <span class="keyword">int</span> ooffset, <span class="keyword">int</span> len)</span></span></span><br></pre></td></tr></table></figure>
+
+<p>它们的唯一区别是前者大小写敏感，后者可以指定是否忽略大小写。只有当一下某一个条件满足（即返回值为true）时，该方法的结果是false，即两个子串不相等：</p>
+<ul>
+<li>下标越界：toffset&lt;0、ooffset&lt;0、toffset+len&gt;this.length()、ooffset+len&gt;other.length()</li>
+<li>下标不越界情况下，两个子串的某一个位置对应的字符不相等</li>
+</ul>
+<p>由于两个重载的方法中后者的功能涵盖了前者，因此我们只看后者的源码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">regionMatches</span><span class="params">(<span class="keyword">boolean</span> ignoreCase, <span class="keyword">int</span> toffset,</span></span></span><br><span class="line"><span class="function"><span class="params">                             String other, <span class="keyword">int</span> ooffset, <span class="keyword">int</span> len)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">char</span> ta[] = value;</span><br><span class="line">    <span class="keyword">int</span> to = toffset;</span><br><span class="line">    <span class="keyword">char</span> pa[] = other.value;</span><br><span class="line">    <span class="keyword">int</span> po = ooffset;</span><br><span class="line">    <span class="comment">// Note: toffset, ooffset, or len might be near -1&gt;&gt;&gt;1.</span></span><br><span class="line">    <span class="keyword">if</span> ((ooffset &lt; <span class="number">0</span>) || (toffset &lt; <span class="number">0</span>)</span><br><span class="line">            || (toffset &gt; (<span class="keyword">long</span>)value.length - len)</span><br><span class="line">            || (ooffset &gt; (<span class="keyword">long</span>)other.value.length - len)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (len-- &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">char</span> c1 = ta[to++];</span><br><span class="line">        <span class="keyword">char</span> c2 = pa[po++];</span><br><span class="line">        <span class="keyword">if</span> (c1 == c2) &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (ignoreCase) &#123;</span><br><span class="line">            <span class="comment">// If characters don't match but case may be ignored,</span></span><br><span class="line">            <span class="comment">// try converting both characters to uppercase.</span></span><br><span class="line">            <span class="comment">// If the results match, then the comparison scan should</span></span><br><span class="line">            <span class="comment">// continue.</span></span><br><span class="line">            <span class="keyword">char</span> u1 = Character.toUpperCase(c1);</span><br><span class="line">            <span class="keyword">char</span> u2 = Character.toUpperCase(c2);</span><br><span class="line">            <span class="keyword">if</span> (u1 == u2) &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// Unfortunately, conversion to uppercase does not work properly</span></span><br><span class="line">            <span class="comment">// for the Georgian alphabet, which has strange rules about case</span></span><br><span class="line">            <span class="comment">// conversion.  So we need to make one last check before</span></span><br><span class="line">            <span class="comment">// exiting.</span></span><br><span class="line">            <span class="keyword">if</span> (Character.toLowerCase(u1) == Character.toLowerCase(u2)) &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>转成大写再转小写这个做法在前面的部分<code>CaseInsensitiveComparator</code>中已经提到了，道理是类似的，我们来看看这个地方：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Note: toffset, ooffset, or len might be near -1&gt;&gt;&gt;1.</span></span><br><span class="line"><span class="keyword">if</span> ((ooffset &lt; <span class="number">0</span>) || (toffset &lt; <span class="number">0</span>)</span><br><span class="line">         || (toffset &gt; (<span class="keyword">long</span>)value.length - len)</span><br><span class="line">         || (ooffset &gt; (<span class="keyword">long</span>)other.value.length - len)) &#123;</span><br><span class="line">     <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这个地方的处理比较精妙，<code>-1&gt;&gt;&gt;1</code>等于2147483647，即int类型的上界，它考虑到了toffset和ooffset的值有可能是很靠近甚至等于这个上界的，如果使用<code>toffset + len &gt; (long)value.length</code>来判断的话，有可能出现<code>toffset + len</code>溢出的情况，而源码中的写法就能很好地解决了这个问题。</p>
+<h3 id="length"><a href="#length" class="headerlink" title="length"></a>length</h3><p>直接返回内部字符数组的长度</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">length</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> value.length;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="isEmpty"><a href="#isEmpty" class="headerlink" title="isEmpty"></a>isEmpty</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> value.length == <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="charAt"><a href="#charAt" class="headerlink" title="charAt"></a>charAt</h3><p>返回String类内部字符数组value在参数索引处的字符，如果该位置的字符是高低代理项，那么它返回的字符也是高低代理项的值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">char</span> <span class="title">charAt</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> ((index &lt; <span class="number">0</span>) || (index &gt;= value.length)) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> StringIndexOutOfBoundsException(index);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> value[index];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="codePointAt"><a href="#codePointAt" class="headerlink" title="codePointAt"></a>codePointAt</h3><p>这个方法和<code>charAt</code>不同的地方在于，它返回的是int型的Unicode代码点，因此他会有两种情况：</p>
+<ul>
+<li>index位置的字符是BMP的话，则直接返回index位置的字符对应的int值</li>
+<li>index位置的字符是在高代理项的范围内，如果index+1&lt;value.length，而且index+1位置的字符在低代理项范围内，那么将会返回(index, index+1)这对字符对应的Unicode增补代码点</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">codePointAt</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> ((index &lt; <span class="number">0</span>) || (index &gt;= value.length)) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> StringIndexOutOfBoundsException(index);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> Character.codePointAtImpl(value, index, value.length);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="codePointBefore"><a href="#codePointBefore" class="headerlink" title="codePointBefore"></a>codePointBefore</h3><p>返回参数index位置之前的Unicode代码点，因此它会有如下情况：</p>
+<ul>
+<li>index-1位置的字符在低代理项范围内，且index-2是非负数，那么返回(index-2, index-1)对应的Unicode代码点</li>
+<li>index-1位置的字符是没有配对的高代理项（可能的情况是index-1和index位置的字符是配对的）或者低代理项（<em>这个不是很理解</em>）的话，则直接返回index-1位置字符的int值，不作转换</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">codePointBefore</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = index - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> ((i &lt; <span class="number">0</span>) || (i &gt;= value.length)) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> StringIndexOutOfBoundsException(index);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> Character.codePointBeforeImpl(value, index, <span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="codePointCount"><a href="#codePointCount" class="headerlink" title="codePointCount"></a>codePointCount</h3><p>计算<code>[beginIndex, endIndex)</code>范围内的子串的代码点个数，怎么计算的很容易，只需要注意的是，对于该范围内的子串，如果有字符是没有配对的代理项，那么它也当成一个代码点来计数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">codePointCount</span><span class="params">(<span class="keyword">int</span> beginIndex, <span class="keyword">int</span> endIndex)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (beginIndex &lt; <span class="number">0</span> || endIndex &gt; value.length || beginIndex &gt; endIndex) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IndexOutOfBoundsException();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> Character.codePointCountImpl(value, beginIndex, endIndex - beginIndex);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="offsetByCodePoints"><a href="#offsetByCodePoints" class="headerlink" title="offsetByCodePoints"></a>offsetByCodePoints</h3><p>计算从index位置开始，偏移codePointOffset个代码点后的索引位置，注意，这个codePointOffset可以是负数，这种情况下是往左偏移；同理，如果遇到不匹配的代理项，也是当成一个代码点来计数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">offsetByCodePoints</span><span class="params">(<span class="keyword">int</span> index, <span class="keyword">int</span> codePointOffset)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (index &lt; <span class="number">0</span> || index &gt; value.length) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IndexOutOfBoundsException();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> Character.offsetByCodePointsImpl(value, <span class="number">0</span>, value.length,</span><br><span class="line">            index, codePointOffset);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="getChars"><a href="#getChars" class="headerlink" title="getChars"></a>getChars</h3><p>该方法的主要功能是将字符串读取成字符数组，默认修饰符的<code>getChars</code>是没有任何边界参数检测的，原因很简单，因为它只在类库内部才能使用（concat方法），按照契约式编程原则是不会有意外情况发生的；public修饰的方法，它会对参数进行边界条件检测，用于将指定范围（srcBegin、srcEnd）的子串复制到字符数组参数dst中</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getChars</span><span class="params">(<span class="keyword">char</span> dst[], <span class="keyword">int</span> dstBegin)</span> </span>&#123;</span><br><span class="line">    System.arraycopy(value, <span class="number">0</span>, dst, dstBegin, value.length);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getChars</span><span class="params">(<span class="keyword">int</span> srcBegin, <span class="keyword">int</span> srcEnd, <span class="keyword">char</span> dst[], <span class="keyword">int</span> dstBegin)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (srcBegin &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> StringIndexOutOfBoundsException(srcBegin);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (srcEnd &gt; value.length) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> StringIndexOutOfBoundsException(srcEnd);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (srcBegin &gt; srcEnd) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> StringIndexOutOfBoundsException(srcEnd - srcBegin);</span><br><span class="line">    &#125;</span><br><span class="line">    System.arraycopy(value, srcBegin, dst, dstBegin, srcEnd - srcBegin);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="getBytes"><a href="#getBytes" class="headerlink" title="getBytes"></a>getBytes</h3><p>获取字符串指定编码的字节数组，比如 charsetName 为 utf8，则将字符串转为 utf8 编码后对应的字节数组。如果不传参数则使用 JVM 默认编码，即<code>Charset.defaultCharset()</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">byte</span>[] getBytes(String charsetName)</span><br><span class="line">        <span class="keyword">throws</span> UnsupportedEncodingException &#123;</span><br><span class="line">    <span class="keyword">if</span> (charsetName == <span class="keyword">null</span>) <span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException();</span><br><span class="line">    <span class="keyword">return</span> StringCoding.encode(charsetName, value, <span class="number">0</span>, value.length);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">byte</span>[] getBytes(Charset charset) &#123;</span><br><span class="line">    <span class="keyword">if</span> (charset == <span class="keyword">null</span>) <span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException();</span><br><span class="line">    <span class="keyword">return</span> StringCoding.encode(charset, value, <span class="number">0</span>, value.length);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">byte</span>[] getBytes() &#123;</span><br><span class="line">    <span class="keyword">return</span> StringCoding.encode(value, <span class="number">0</span>, value.length);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="equals"><a href="#equals" class="headerlink" title="equals"></a>equals</h3><p>用来判断两个字符串的内容是否相同，但是仔细看可以发现，<code>equals</code>方法的参数其实是<code>Object</code>类型的，其实道理很简单，<code>String</code>类的<code>equals</code>方法是直接继承自<code>Object</code>类的，属于方法重写，参数个数和类型要相同，<code>Object</code>中的<code>equals</code>方法参数就是<code>Object</code>类型，该方法的实现思路如下：</p>
+<ul>
+<li>首先判断是不是同一个对象，如果是则返回<code>true</code></li>
+<li>判断参数<code>anObject</code>是否是<code>String</code>类型（防御式编程），如果不是，则直接返回<code>false</code></li>
+<li>最后再逐个字符进行比较，因为这是在<code>String</code>类内部，可以直接访问<code>value</code></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object anObject)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span> == anObject) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (anObject <span class="keyword">instanceof</span> String) &#123;</span><br><span class="line">        String anotherString = (String)anObject;</span><br><span class="line">        <span class="keyword">int</span> n = value.length;</span><br><span class="line">        <span class="keyword">if</span> (n == anotherString.value.length) &#123;</span><br><span class="line">            <span class="keyword">char</span> v1[] = value;</span><br><span class="line">            <span class="keyword">char</span> v2[] = anotherString.value;</span><br><span class="line">            <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (n-- != <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (v1[i] != v2[i])</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="contentEquals"><a href="#contentEquals" class="headerlink" title="contentEquals"></a>contentEquals</h3><p><code>contentEquals</code>的功能和<code>equals</code>差不多，都是比较字符串的内容是否相同，区别在于它的参数是<code>StringBuffer</code>或者<code>CharSequence</code>，适用范围更广。</p>
+<p><code>AbstractStringBuilder</code>是<code>StringBuffer</code>和<code>StringBuilder</code>的公共父类，前者是线程安全的，后者是非线程安全的，因此需要分别对他们进行处理，<code>StringBuffer</code>需要加上<code>synchronized</code>同步块；注意到，无论是<code>StringBuffer</code>还是<code>StringBuilder</code>，cs都被强制转换为<code>StringBuilder</code>，最后调用<code>nonSyncContentEquals</code>方法来进行内容比较。</p>
+<p>不同类型的字符串内容的比较算法都差不多，基本上都是先比较长度是否相同，这样可以避免不必要的循环遍历比较，如果相同再逐个字符比较</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">contentEquals</span><span class="params">(StringBuffer sb)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> contentEquals((CharSequence)sb);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">nonSyncContentEquals</span><span class="params">(AbstractStringBuilder sb)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">char</span> v1[] = value;</span><br><span class="line">    <span class="keyword">char</span> v2[] = sb.getValue();</span><br><span class="line">    <span class="keyword">int</span> n = v1.length;</span><br><span class="line">    <span class="keyword">if</span> (n != sb.length()) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (v1[i] != v2[i]) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">contentEquals</span><span class="params">(CharSequence cs)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// Argument is a StringBuffer, StringBuilder</span></span><br><span class="line">    <span class="keyword">if</span> (cs <span class="keyword">instanceof</span> AbstractStringBuilder) &#123;</span><br><span class="line">        <span class="keyword">if</span> (cs <span class="keyword">instanceof</span> StringBuffer) &#123;</span><br><span class="line">            <span class="keyword">synchronized</span>(cs) &#123;</span><br><span class="line">                <span class="keyword">return</span> nonSyncContentEquals((AbstractStringBuilder)cs);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> nonSyncContentEquals((AbstractStringBuilder)cs);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// Argument is a String</span></span><br><span class="line">    <span class="keyword">if</span> (cs <span class="keyword">instanceof</span> String) &#123;</span><br><span class="line">        <span class="keyword">return</span> equals(cs);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// Argument is a generic CharSequence</span></span><br><span class="line">    <span class="keyword">char</span> v1[] = value;</span><br><span class="line">    <span class="keyword">int</span> n = v1.length;</span><br><span class="line">    <span class="keyword">if</span> (n != cs.length()) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (v1[i] != cs.charAt(i)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="equalsIgnoreCase"><a href="#equalsIgnoreCase" class="headerlink" title="equalsIgnoreCase"></a>equalsIgnoreCase</h3><p>判断两个字符串在忽略大小写情况下内容是否相同，遇到大小写就应该想到个别字母的大小写转换规则比较特殊，参见<code>CaseInsensitiveComparator</code>部分具体说明，因此对应位置两个字符是否相同条件是以下其中一个：</p>
+<ul>
+<li>直接<code>==</code>比较返回true</li>
+<li><code>Character.toUpperCase</code>转换成大写字母后<code>==</code>比较相同</li>
+<li><code>Character.toLowerCase</code>转换成小写字母后<code>==</code>比较相同</li>
+</ul>
+<p>当然，这部分的判断直接调用了内部的方法<code>regionMatches</code>进行比较了。</p>
+<p>这个方法首先判断两个字符串是否是同一个对象，是则返回true，否则再判断参数字符串是否是null（防御式编程），然后再判断两个字符串长度是否相同，最后再比较字符串内容。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equalsIgnoreCase</span><span class="params">(String anotherString)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">this</span> == anotherString) ? <span class="keyword">true</span></span><br><span class="line">            : (anotherString != <span class="keyword">null</span>)</span><br><span class="line">            &amp;&amp; (anotherString.value.length == value.length)</span><br><span class="line">            &amp;&amp; regionMatches(<span class="keyword">true</span>, <span class="number">0</span>, anotherString, <span class="number">0</span>, value.length);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-09-15T04:29:52.255Z" itemprop="dateUpdated">2019-09-15 12:29:52</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/07/16/精读Java源码-String类/" target="_blank" rel="external">http://QQ876684433.github.io/2019/07/16/精读Java源码-String类/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://QQ876684433.github.io">
+            <img src="/img/avatar.jpg" alt="steve_chph">
+            steve_chph
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/07/16/精读Java源码-String类/&title=《精读Java源码-String类》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/07/16/精读Java源码-String类/&title=《精读Java源码-String类》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/07/16/精读Java源码-String类/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《精读Java源码-String类》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/07/16/精读Java源码-String类/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/07/16/精读Java源码-String类/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/07/16/深入剖析Java序列化与反序列化机制/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">深入剖析Java序列化与反序列化机制</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/07/16/软件学院大三上教材推荐/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">软件学院大三上教材推荐</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢你~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>steve_chph &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/07/16/精读Java源码-String类/&title=《精读Java源码-String类》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/07/16/精读Java源码-String类/&title=《精读Java源码-String类》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/07/16/精读Java源码-String类/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《精读Java源码-String类》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/07/16/精读Java源码-String类/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/07/16/精读Java源码-String类/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsElEQVR42u3awW7rMAwEwP7/T7fXAg+Od0krzQPGp8BJLI0OEk3y6yu+vn9d/95J7v/+Nnny688PX3h4eHiLqSeTvnpCwk5GnI1y+V88PDy8Y7zkcbPN+qlJJ+Pi4eHhfSavDbuTKDeZKB4eHt7/zpth8kRGHqDj4eHh/RUvD2HzdGqbon2d/D2ea8HDw8PrcqTRRD/n85H6Hh4eHt66qr7ZcNvkbDJi/V88PDy8A7xZinYTUifLsf8NHh4e3nt4SQog3/TbDT1nJCldPDw8vPfw2mJ/y87TuG3rwM2BgYeHh/coL9mU85LVCUYbZN+8K+Dh4eGtefuiV5uwaLf+tvHr4ZoeHh4e3oiXpxg2wfRrUns4RWA8PDy8h3ibjfvE/XbJ8PDw8E7z2s16NrkNJi+h3fRE4OHh4R3gzcLrPAHRhtp50Hy5NHh4eHjHeG2qND8kWkzephAloPHw8PAO814/Ih+yLX3NDomoAIaHh4d3gDcLppPQdrZ8M9jmCMHDw8NreW36dRZSb0j5nZsCGB4eHt6jvLYFKt+s2wNj37yFh4eHd5rXvtJvCv8zWD7DywXFw8PDO8CLiknr5MKscaoN0OuMCx4eHt6al5f2ZwFu0i7QpkLylAoeHh7es7y2vLQBtC0IszQHHh4e3jleMmS+TslytCWu4mSb9Yvh4eHhLXizBERb1M8PjwcCdzw8PLxjvDZZMFuOGTu/oncFPDw8vAVvVpRKQtt2OTZNXZezwsPDwzvAazfctrSfh7/5QbIppOHh4eE9xWubn05s3K+PhHwh8PDw8N7Ja5ur8rOlXbiDuRY8PDy8P+K1QXYbgrfh9c2i4+Hh4X0Ar3h0+ftZ4H5zUOHh4eEd4yWB76xZKg/BZznmm1Hw8PDwDvDal/xNYmI/reQ4wcPDwzvG+wGpE5xxJq/JFQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'chph个人博客';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Welcome to chph's blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

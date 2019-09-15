@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>数据结构与算法笔记 | 至繁归于至简 - chph&#39;s blog | steve_chph personal website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="算法">
+    <meta name="description" content="数据结构与算法动态规划动态规划算法介绍 参考：https://www.cnblogs.com/steven_oyj/archive/2010/05/22/1741374.html  基本概念动态规划过程是：每次决策依赖于当前状态，又随即引起状态的转移。一个决策序列就是在变化的状态中产生出来的，所以，这种多阶段最优化决策解决问题的过程就称为动态规划。 基本思想与策略基本思想与分治法类似，也是将待求解">
+<meta name="keywords" content="算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构与算法笔记">
+<meta property="og:url" content="http://QQ876684433.github.io/2019/07/14/数据结构与算法笔记/index.html">
+<meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
+<meta property="og:description" content="数据结构与算法动态规划动态规划算法介绍 参考：https://www.cnblogs.com/steven_oyj/archive/2010/05/22/1741374.html  基本概念动态规划过程是：每次决策依赖于当前状态，又随即引起状态的转移。一个决策序列就是在变化的状态中产生出来的，所以，这种多阶段最优化决策解决问题的过程就称为动态规划。 基本思想与策略基本思想与分治法类似，也是将待求解">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2019/07/07/5d219d5f0c51e87849.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/07/5d219e07a8f2a48616.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/07/5d219e70b890489832.png">
+<meta property="og:updated_time" content="2019-09-15T04:29:52.255Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据结构与算法笔记">
+<meta name="twitter:description" content="数据结构与算法动态规划动态规划算法介绍 参考：https://www.cnblogs.com/steven_oyj/archive/2010/05/22/1741374.html  基本概念动态规划过程是：每次决策依赖于当前状态，又随即引起状态的转移。一个决策序列就是在变化的状态中产生出来的，所以，这种多阶段最优化决策解决问题的过程就称为动态规划。 基本思想与策略基本思想与分治法类似，也是将待求解">
+<meta name="twitter:image" content="https://i.loli.net/2019/07/07/5d219d5f0c51e87849.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">steve_chph</h5>
+          <a href="mailto:chph13420146901@gmail.com" title="chph13420146901@gmail.com" class="mail">chph13420146901@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/QQ876684433" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">数据结构与算法笔记</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">数据结构与算法笔记</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-07-14T15:13:50.000Z" itemprop="datePublished" class="page-time">
+  2019-07-14
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/笔记/">笔记</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据结构与算法"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据结构与算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#动态规划"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">动态规划</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#动态规划算法介绍"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">动态规划算法介绍</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#基本概念"><span class="post-toc-number">1.1.1.1.</span> <span class="post-toc-text">基本概念</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#基本思想与策略"><span class="post-toc-number">1.1.1.2.</span> <span class="post-toc-text">基本思想与策略</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#适用的情况"><span class="post-toc-number">1.1.1.3.</span> <span class="post-toc-text">适用的情况</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#求解的基本步骤"><span class="post-toc-number">1.1.1.4.</span> <span class="post-toc-text">求解的基本步骤</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#算法实现的说明"><span class="post-toc-number">1.1.1.5.</span> <span class="post-toc-text">算法实现的说明</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#动态规划算法基本框架"><span class="post-toc-number">1.1.1.6.</span> <span class="post-toc-text">动态规划算法基本框架</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LeetCode刷题"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">LeetCode刷题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#338-比特位计数"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text">338. 比特位计数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#我的解法"><span class="post-toc-number">1.1.2.1.1.</span> <span class="post-toc-text">我的解法</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#其他解法"><span class="post-toc-number">1.1.2.1.2.</span> <span class="post-toc-text">其他解法</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#877-石子游戏"><span class="post-toc-number">1.1.2.2.</span> <span class="post-toc-text">877. 石子游戏</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#一个TLE的解法"><span class="post-toc-number">1.1.2.2.1.</span> <span class="post-toc-text">一个TLE的解法</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#题解"><span class="post-toc-number">1.1.2.2.2.</span> <span class="post-toc-text">题解</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#歪门邪道"><span class="post-toc-number">1.1.2.2.3.</span> <span class="post-toc-text">歪门邪道</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#64-最小路径和"><span class="post-toc-number">1.1.2.3.</span> <span class="post-toc-text">64. 最小路径和</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#我的解法-1"><span class="post-toc-number">1.1.2.3.1.</span> <span class="post-toc-text">我的解法</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#题解-1"><span class="post-toc-number">1.1.2.3.2.</span> <span class="post-toc-text">题解</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#96-不同的二叉搜索树"><span class="post-toc-number">1.1.2.4.</span> <span class="post-toc-text">96. 不同的二叉搜索树</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#我的解法-2"><span class="post-toc-number">1.1.2.4.1.</span> <span class="post-toc-text">我的解法</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#贪婪算法"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">贪婪算法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#分治算法"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">分治算法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#随机化算法"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">随机化算法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#回溯算法"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">回溯算法</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-数据结构与算法笔记"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">数据结构与算法笔记</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-07-14 23:13:50" datetime="2019-07-14T15:13:50.000Z"  itemprop="datePublished">2019-07-14</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/笔记/">笔记</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="数据结构与算法"><a href="#数据结构与算法" class="headerlink" title="数据结构与算法"></a>数据结构与算法</h1><h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h3 id="动态规划算法介绍"><a href="#动态规划算法介绍" class="headerlink" title="动态规划算法介绍"></a>动态规划算法介绍</h3><blockquote>
+<p>参考：<a href="https://www.cnblogs.com/steven_oyj/archive/2010/05/22/1741374.html" target="_blank" rel="noopener">https://www.cnblogs.com/steven_oyj/archive/2010/05/22/1741374.html</a></p>
+</blockquote>
+<h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a><strong>基本概念</strong></h4><p>动态规划过程是：每次决策依赖于当前状态，又随即引起状态的转移。一个决策序列就是在变化的状态中产生出来的，所以，这种多阶段最优化决策解决问题的过程就称为动态规划。</p>
+<h4 id="基本思想与策略"><a href="#基本思想与策略" class="headerlink" title="基本思想与策略"></a><strong>基本思想与策略</strong></h4><p>基本思想与分治法类似，也是将待求解的问题分解为若干个子问题（阶段），按顺序求解子阶段，前一子问题的解，为后一子问题的求解提供了有用的信息。在求解任一子问题时，列出各种可能的局部解，通过决策保留那些有可能达到最优的局部解，丢弃其他局部解。依次解决各子问题，最后一个子问题就是初始问题的解。</p>
+<p>由于动态规划解决的问题多数有重叠子问题这个特点，为减少重复计算，对每一个子问题只解一次，将其不同阶段的不同状态保存在一个二维数组中。</p>
+<p>与分治法最大的差别是：适合于用动态规划法求解的问题，经分解后得到的子问题往往不是互相独立的（即下一个子阶段的求解是建立在上一个子阶段的解的基础上，进行进一步的求解）。</p>
+<h4 id="适用的情况"><a href="#适用的情况" class="headerlink" title="适用的情况"></a>适用的情况</h4><p>能采用动态规划求解的问题的一般要具有3个性质：</p>
+<p>(1) 最优化原理：如果问题的最优解所包含的子问题的解也是最优的，就称该问题具有最优子结构，即满足最优化原理。</p>
+<p>(2) 无后效性：即某阶段状态一旦确定，就不受这个状态以后决策的影响。也就是说，某状态以后的过程不会影响以前的状态，只与当前状态有关。</p>
+<p>(3)有重叠子问题：即子问题之间是不独立的，一个子问题在下一阶段决策中可能被多次使用到。（该性质并不是动态规划适用的必要条件，但是如果没有这条性质，动态规划算法同其他算法相比就不具备优势）</p>
+<h4 id="求解的基本步骤"><a href="#求解的基本步骤" class="headerlink" title="求解的基本步骤"></a><strong>求解的基本步骤</strong></h4><p>动态规划所处理的问题是一个多阶段决策问题，一般由初始状态开始，通过对中间阶段决策的选择，达到结束状态。这些决策形成了一个决策序列，同时确定了完成整个过程的一条活动路线(通常是求最优的活动路线)。如图所示。动态规划的设计都有着一定的模式，一般要经历以下几个步骤。</p>
+<p>初始状态→│决策１│→│决策２│→…→│决策ｎ│→结束状态</p>
+<p>​                      图1 动态规划决策过程示意图</p>
+<p>(1)<strong>划分阶段</strong>：按照问题的时间或空间特征，把问题分为若干个阶段。在划分阶段时，注意划分后的阶段一定要是有序的或者是可排序的，否则问题就无法求解。</p>
+<p>(2)<strong>确定状态和状态变量</strong>：将问题发展到各个阶段时所处于的各种客观情况用不同的状态表示出来。当然，状态的选择要满足无后效性。</p>
+<p>(3)<strong>确定决策并写出状态转移方程</strong>：因为决策和状态转移有着天然的联系，状态转移就是根据上一阶段的状态和决策来导出本阶段的状态。所以如果确定了决策，状态转移方程也就可写出。但事实上常常是反过来做，根据相邻两个阶段的状态之间的关系来确定决策方法和状态转移方程。</p>
+<p>(4)<strong>寻找边界条件</strong>：给出的状态转移方程是一个递推式，需要一个递推的终止条件或边界条件。</p>
+<p>一般，只要解决问题的阶段、状态和状态转移决策确定了，就可以写出状态转移方程（包括边界条件）。</p>
+<p>实际应用中可以按以下几个简化的步骤进行设计：</p>
+<p>（1）分析最优解的性质，并刻画其结构特征。</p>
+<p>（2）递归的定义最优解。</p>
+<p>（3）以自底向上或自顶向下的记忆化方式（备忘录法）计算出最优值</p>
+<p>（4）根据计算最优值时得到的信息，构造问题的最优解</p>
+<h4 id="算法实现的说明"><a href="#算法实现的说明" class="headerlink" title="算法实现的说明"></a><strong>算法实现的说明</strong></h4><p>动态规划的主要难点在于理论上的设计，也就是上面4个步骤的确定，一旦设计完成，实现部分就会非常简单。</p>
+<p>使用动态规划求解问题，最重要的就是确定动态规划三要素：</p>
+<p>（1）问题的阶段 （2）每个阶段的状态 （3）从前一个阶段转化到后一个阶段之间的递推关系。</p>
+<p>递推关系必须是从次小的问题开始到较大的问题之间的转化，从这个角度来说，动态规划往往可以用递归程序来实现，不过因为递推可以充分利用前面保存的子问题的解来减少重复计算，所以对于大规模问题来说，有递归不可比拟的优势，这也是动态规划算法的核心之处。</p>
+<p>确定了动态规划的这三要素，整个求解过程就可以用一个最优决策表来描述，最优决策表是一个二维表，其中行表示决策的阶段，列表示问题状态，表格需要填写的数据一般对应此问题的在某个阶段某个状态下的最优值（如最短路径，最长公共子序列，最大价值等），填表的过程就是根据递推关系，从1行1列开始，以行或者列优先的顺序，依次填写表格，最后根据整个表格的数据通过简单的取舍或者运算求得问题的最优解。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f(n,m)=max&#123;f(n<span class="number">-1</span>,m), f(n<span class="number">-1</span>,m-w[n])+P(n,m)&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="动态规划算法基本框架"><a href="#动态规划算法基本框架" class="headerlink" title="动态规划算法基本框架"></a>动态规划算法基本框架</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(j=<span class="number">1</span>; j&lt;=m; j=j+<span class="number">1</span>) <span class="comment">// 第一个阶段</span></span><br><span class="line">   xn[j] = 初始值;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(i=n<span class="number">-1</span>; i&gt;=<span class="number">1</span>; i=i<span class="number">-1</span>)<span class="comment">// 其他n-1个阶段</span></span><br><span class="line">   <span class="keyword">for</span>(j=<span class="number">1</span>; j&gt;=f(i); j=j+<span class="number">1</span>)<span class="comment">//f(i)与i有关的表达式</span></span><br><span class="line">     xi[j]=j=max（或min）&#123;g(xi<span class="number">-1</span>[j1:j2]), ......, g(xi<span class="number">-1</span>[jk:jk+<span class="number">1</span>])&#125;;</span><br><span class="line"></span><br><span class="line">t = g(x1[j1:j2]); <span class="comment">// 由子问题的最优解求解整个问题的最优解的方案</span></span><br><span class="line"></span><br><span class="line">print(x1[j1]);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">2</span>; i&lt;=n<span class="number">-1</span>; i=i+<span class="number">1</span>）</span><br><span class="line">&#123;  </span><br><span class="line">     t = t-xi<span class="number">-1</span>[ji];</span><br><span class="line"></span><br><span class="line">     <span class="keyword">for</span>(j=<span class="number">1</span>; j&gt;=f(i); j=j+<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">if</span>(t=xi[ji])</span><br><span class="line">             <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="LeetCode刷题"><a href="#LeetCode刷题" class="headerlink" title="LeetCode刷题"></a>LeetCode刷题</h3><h4 id="338-比特位计数"><a href="#338-比特位计数" class="headerlink" title="338. 比特位计数"></a>338. 比特位计数</h4><h5 id="我的解法"><a href="#我的解法" class="headerlink" title="我的解法"></a>我的解法</h5><p>原题目如下：</p>
+<blockquote>
+<p>给定一个非负整数 num。对于 0 ≤ i ≤ num 范围中的每个数字 i ，计算其二进制数中的 1 的数目并将它们作为数组返回。</p>
+<p>示例 1:</p>
+<p>输入: 2</p>
+<p>输出: [0,1,1]</p>
+<p>示例 2:</p>
+<p>输入: 5</p>
+<p>输出: [0,1,1,2,1,2]</p>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/counting-bits" target="_blank" rel="noopener">https://leetcode-cn.com/problems/counting-bits</a><br>著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
+</blockquote>
+<p>其实这道题还算简单，看到题目的第一个想法就是首先列举一下，找找规律：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">二进制	十进制 <span class="number">1</span>的个数</span><br><span class="line"><span class="number">0000</span>	<span class="number">0</span>	<span class="number">0</span></span><br><span class="line"><span class="number">0001</span>	<span class="number">1</span>	<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="number">0010</span>	<span class="number">2</span>	<span class="number">1</span></span><br><span class="line"><span class="number">0011</span>	<span class="number">3</span>	<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="number">0100</span>	<span class="number">4</span>	<span class="number">1</span></span><br><span class="line"><span class="number">0101</span>	<span class="number">5</span>	<span class="number">2</span></span><br><span class="line"><span class="number">0110</span>	<span class="number">6</span>	<span class="number">2</span></span><br><span class="line"><span class="number">0111</span>	<span class="number">7</span>	<span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="number">1000</span>	<span class="number">8</span>	<span class="number">1</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>我给上面的结果分了个组，其实很容易看出来，<strong>每组的1的个数就是该组前面所有数的1的个数加一</strong>，所以答案已经很明显了：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; num</span></span><br><span class="line"><span class="comment"> * @return &#123;number[]&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> countBits = <span class="function"><span class="keyword">function</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> res = [<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i =<span class="number">0</span>;i&lt;num;i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">const</span> len = res.length;</span><br><span class="line">        <span class="keyword">for</span>(;j&lt;len;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(res.length==num+<span class="number">1</span>) <span class="keyword">return</span> res;</span><br><span class="line">            res.push(res[j]+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>这是我的第一个版本的代码，一次过：</p>
+<blockquote>
+<p>执行结果：</p>
+<p>通过</p>
+<p>显示详情</p>
+<p>执行用时 :116 ms, 在所有 JavaScript 提交中击败了100.00%的用户</p>
+<p>内存消耗 :39.9 MB, 在所有 JavaScript 提交中击败了30.30%的用户</p>
+</blockquote>
+<h5 id="其他解法"><a href="#其他解法" class="headerlink" title="其他解法"></a>其他解法</h5><p>然后我看了一下其他的答案，感觉还是有些地方可以学习的</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 奇数一定比上一个偶数多个 1，多的就是最低位的 1 </span></span><br><span class="line"><span class="comment">// 偶数中 1 的个数一定和除以 2 之后的那个数一样多。</span></span><br><span class="line"><span class="comment">// 因为最低位是0，除以 2 就是右移一位，也就是把那个0抹掉而已，所以1的个数是不变的。</span></span><br><span class="line"><span class="keyword">var</span> countBits = <span class="function"><span class="keyword">function</span> (<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> result = []</span><br><span class="line">    result[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= num; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i % <span class="number">2</span> === <span class="number">1</span>) &#123;</span><br><span class="line">            result[i] = result[i - <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            result[i] = result[i / <span class="number">2</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面这个解释的已经很清晰了，就不多说了，这位老哥还提供了另一个更优化的解法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Time: O(n), Space: O(1)</span></span><br><span class="line"><span class="comment">// i &amp; (i-1) 消除二进制最低位的 1 </span></span><br><span class="line"><span class="keyword">var</span> countBits = <span class="function"><span class="keyword">function</span> (<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> result = []</span><br><span class="line">    result[<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= num; i++) &#123;</span><br><span class="line">        result[i] = result[i &amp; (i - <span class="number">1</span>)] + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我发现有不少解法里有这个东西：<code>i &amp; (i - 1)</code>，他说的消除二进制最低位的1是什么意思？举两个例子：</p>
+<ul>
+<li><p>当i是奇数（例如xxx111），<code>i &amp; (i - 1)</code>很显然就是类似<code>xxx111 &amp; xxx110 = xxx110</code>，把xxx111的最低位1消去，效果相当于-1，和上上一个解法的这个说法</p>
+<blockquote>
+<p>奇数一定比上一个偶数多个 1</p>
+</blockquote>
+<p>道理一样</p>
+</li>
+<li><p>当i是偶数（例如xxx110），<code>i &amp; (i - 1)</code>类似于<code>xxx110 &amp; xxx101 = xxx100</code>，也是把最低位的1消掉，xxx110中1的个数和xxx100中1的个数相差1，这个是和上上个解法</p>
+<blockquote>
+<p>偶数中 1 的个数一定和除以 2 之后的那个数一样多</p>
+</blockquote>
+<p>有点不一样</p>
+</li>
+</ul>
+<h4 id="877-石子游戏"><a href="#877-石子游戏" class="headerlink" title="877. 石子游戏"></a>877. 石子游戏</h4><p>原题目如下：</p>
+<blockquote>
+<p>亚历克斯和李用几堆石子在做游戏。偶数堆石子排成一行，每堆都有正整数颗石子 piles[i] 。</p>
+<p>游戏以谁手中的石子最多来决出胜负。石子的总数是奇数，所以没有平局。</p>
+<p>亚历克斯和李轮流进行，亚历克斯先开始。 每回合，玩家从行的开始或结束处取走整堆石头。 这种情况一直持续到没有更多的石子堆为止，此时手中石子最多的玩家获胜。</p>
+<p>假设亚历克斯和李都发挥出最佳水平，当亚历克斯赢得比赛时返回 true ，当李赢得比赛时返回 false 。</p>
+<p>示例：</p>
+<p>输入：[5,3,4,5]</p>
+<p>输出：true</p>
+<p>解释：</p>
+<p>亚历克斯先开始，只能拿前 5 颗或后 5 颗石子 。</p>
+<p>假设他取了前 5 颗，这一行就变成了 [3,4,5] 。</p>
+<p>如果李拿走前 3 颗，那么剩下的是 [4,5]，亚历克斯拿走后 5 颗赢得 10 分。</p>
+<p>如果李拿走后 5 颗，那么剩下的是 [3,4]，亚历克斯拿走后 4 颗赢得 9 分。</p>
+<p>这表明，取前 5 颗石子对亚历克斯来说是一个胜利的举动，所以我们返回 true 。</p>
+<p>提示：</p>
+<p>2 &lt;= piles.length &lt;= 500<br>piles.length 是偶数。<br>1 &lt;= piles[i] &lt;= 500<br>sum(piles) 是奇数。</p>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/stone-game" target="_blank" rel="noopener">https://leetcode-cn.com/problems/stone-game</a><br>著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
+</blockquote>
+<h5 id="一个TLE的解法"><a href="#一个TLE的解法" class="headerlink" title="一个TLE的解法"></a>一个TLE的解法</h5><p>举个栗子，假设初始堆是：[1，2，3，4，5]，那么第一回合（即两个各拿一堆）后，会出现三种状态：</p>
+<ul>
+<li><p>亚4,李1，剩下[2，3]</p>
+<p>ps：这里其实会出现“亚1,李4，剩下[2，3]”的情况，但是想想就知道，这两种情况的子问题都是[2，3]，如果“亚4,李1”不能保证亚赢的话，那“亚1,李4”就更不可能了，所以这种情况可以排除了</p>
+</li>
+<li><p>亚4,李3，剩下[1，2]</p>
+</li>
+<li><p>亚1,李2，剩下[3，4]</p>
+</li>
+</ul>
+<p>然后接下来就是递归求解了，最后当剩下两堆时，可以保证亚取得最优解，直接返回两人的分差（亚-李）；然后递归计算完上面三个子问题之后，取最优的一种情况返回，最优的情况指的是两人得分差别最大的那种取法</p>
+<p>代码不仅冗长，甚至还超时了orz：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number[]&#125; piles</span></span><br><span class="line"><span class="comment"> * @return &#123;boolean&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> sub = <span class="function">(<span class="params">left, right, piles</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> l = piles[left], r = piles[right];</span><br><span class="line">    <span class="keyword">if</span>(right-left == <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(l&gt;r) <span class="keyword">return</span> [l, r];</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> [r, l];</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">const</span> subRes1 = sub(left+<span class="number">1</span>,right<span class="number">-1</span>,piles);</span><br><span class="line">        <span class="keyword">if</span> (l&gt;r)&#123;</span><br><span class="line">            subRes1[<span class="number">0</span>] += l;</span><br><span class="line">            subRes1[<span class="number">1</span>] += r;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            subRes1[<span class="number">0</span>] += r;</span><br><span class="line">            subRes1[<span class="number">1</span>] += l;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">const</span> subRes2 = sub(left+<span class="number">2</span>, right, piles);</span><br><span class="line">        subRes2[<span class="number">0</span>] += l;</span><br><span class="line">        subRes2[<span class="number">1</span>] += piles[left+<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">const</span> subRes3 = sub(left, right<span class="number">-2</span>, piles);</span><br><span class="line">        subRes3[<span class="number">0</span>] += r;</span><br><span class="line">        subRes3[<span class="number">1</span>] += piles[right<span class="number">-1</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> res = subRes1;</span><br><span class="line">        <span class="keyword">if</span> (subRes2[<span class="number">0</span>]-subRes2[<span class="number">1</span>]&gt;res[<span class="number">0</span>]-res[<span class="number">1</span>]) res = subRes2;</span><br><span class="line">        <span class="keyword">if</span> (subRes3[<span class="number">0</span>]- subRes3[<span class="number">1</span>]&gt;res[<span class="number">0</span>]-res[<span class="number">1</span>]) res = subRes3;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> stoneGame = <span class="function"><span class="keyword">function</span>(<span class="params">piles</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> res = sub(<span class="number">0</span>, piles.length<span class="number">-1</span>, piles);</span><br><span class="line">    <span class="keyword">return</span> res[<span class="number">0</span>]&gt;res[<span class="number">1</span>];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h5 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h5><p>让我们来见证一下真正的动态规划长啥样</p>
+<blockquote>
+<p>参考：<a href="https://leetcode-cn.com/problems/stone-game/solution/dong-tai-gui-hua-by-cliant/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/stone-game/solution/dong-tai-gui-hua-by-cliant/</a></p>
+</blockquote>
+<p>首先将问题转换为<strong>先手所能拿到的石子总数减去对手能拿到的石子总数是否为正数</strong>，用f(i,j)来表示第i堆到第j堆的石子，先手比对手多拿的石子总数，那么有如下的递推关系式：<br>$$<br>\begin{equation}<br>    \left{<br>        \begin{array}{}<br>        f(i,j)=max(piles[i]-f(i+1,j),;piles[j]-f(i,j-1)),&amp;i\ne j \<br>        f(i,j)=f(i),&amp;i==j<br>\end{array}<br>    \right.<br>\end{equation}<br>$$<br>所以问题的解决过程就变成了已知对角线值的二维数组的填表，二维数组用dp[i][j]表示，dp[0][n-1]即为问题的解，n是石子的堆数</p>
+<p>（1）初始条件，只有对角线的值已知，且是各堆石子的个数</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/07/07/5d219d5f0c51e87849.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>（2）数组值的生成关系如图，红色星号是问题的解：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/07/07/5d219e07a8f2a48616.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>（3）最终的计算顺序如红色箭头所示：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/07/07/5d219e70b890489832.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>这样是为了保证不会产生重复计算问题，也便于编码</p>
+<p>（4）代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> stoneGame = <span class="function"><span class="keyword">function</span>(<span class="params">piles</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> dp = [];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = piles.length<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">        dp[i] = [];</span><br><span class="line">        dp[i][i] = piles[i];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 填表</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j = i+<span class="number">1</span>;j&lt;piles.length;j++)&#123;</span><br><span class="line">            dp[i][j] = <span class="built_in">Math</span>.max(piles[i]-dp[i+<span class="number">1</span>][j], piles[j]-dp[i][j<span class="number">-1</span>])</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[<span class="number">0</span>][piles.length<span class="number">-1</span>]&gt;<span class="number">0</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>（5）这里其实可以优化一下，因为这个二维数组其实只有一半有数，而且随着填表的进行，之前的值不会再被使用到了：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> stoneGame = <span class="function"><span class="keyword">function</span>(<span class="params">piles</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> dp = [];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = piles.length<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">        dp[i] = piles[i];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 填表</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j = i+<span class="number">1</span>;j&lt;piles.length;j++)&#123;</span><br><span class="line">            dp[j] = <span class="built_in">Math</span>.max(piles[i]-dp[j], piles[j]-dp[j<span class="number">-1</span>])</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[piles.length<span class="number">-1</span>]&gt;<span class="number">0</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>主要的思想是，第i-1行的值可以覆盖到第i行上去，因为一旦第i-1行计算出来，第i行就不再需要了，计算i-2行只用到了第i-1行和第i-2行；所以填表的那个循环，只是单纯将dp数组与i有关的索引去掉</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">原来的：dp[i][j] = <span class="built_in">Math</span>.max(piles[i]-dp[i+<span class="number">1</span>][j], piles[j]-dp[i][j<span class="number">-1</span>])</span><br><span class="line">优化后：dp   [j] = <span class="built_in">Math</span>.max(piles[i]-dp     [j], piles[j]-dp   [j<span class="number">-1</span>])</span><br></pre></td></tr></table></figure>
+
+<h5 id="歪门邪道"><a href="#歪门邪道" class="headerlink" title="歪门邪道"></a>歪门邪道</h5><p><del>这道题可以钻空子，直接<code>return true</code>就可以AC了，不要问我为什么。。。</del></p>
+<p>其实这是数学规律来的，leetcode官方已经给出了解释，但我还是根据自己的理解说一下：</p>
+<ul>
+<li>首先只有两堆（假设是x1，y1）的时候，一定可以保证先手胜（假设x1&gt;y1，那么先手可选x1）</li>
+<li>然后当有四堆（假设是y2，x1，y1，x2）的时候，那么先手一定可以保证取到y1+y2或者x1+x2（因为取y2时，可以保证y1可以取到，x同理），所以先手只需取总和最大的一组即可</li>
+<li>那么显然，先手可以保证取到奇数位置的堆或者偶数位置的堆，先手从总和大的堆下手即可保证稳赢，所以结果是true</li>
+</ul>
+<h4 id="64-最小路径和"><a href="#64-最小路径和" class="headerlink" title="64. 最小路径和"></a>64. 最小路径和</h4><p>原题目如下：</p>
+<blockquote>
+<p>给定一个包含非负整数的 m x n 网格，请找出一条从左上角到右下角的路径，使得路径上的数字总和为最小。</p>
+<p>说明：每次只能向下或者向右移动一步。</p>
+<p>示例:</p>
+<p>输入:<br>[<br>[1,3,1],<br>[1,5,1],<br>[4,2,1]<br>]</p>
+<p>输出: 7</p>
+<p>解释: 因为路径 1→3→1→1→1 的总和最小。</p>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/minimum-path-sum" target="_blank" rel="noopener">https://leetcode-cn.com/problems/minimum-path-sum</a><br>著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
+</blockquote>
+<h5 id="我的解法-1"><a href="#我的解法-1" class="headerlink" title="我的解法"></a>我的解法</h5><p>这道题比较简单，也是填表的问题，递推公式如下：<br>$$<br>dp[i][j] = dp[i][j]+min{dp[i+1][j]+dp[i][j+1]}<br>$$<br>意思是：从点(i, j)到终点有两个选择，从下边(i+1, j)或者右边(i, j+1)走，所以最短路径是下边或者右边走的最小值加上当前点的值，因此可以从右下角开始填表，注意处理好边界条件：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number[][]&#125; grid</span></span><br><span class="line"><span class="comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> minPathSum = <span class="function"><span class="keyword">function</span>(<span class="params">grid</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = grid.length<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j = grid[<span class="number">0</span>].length<span class="number">-1</span>;j&gt;=<span class="number">0</span>;j--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i==grid.length<span class="number">-1</span> &amp;&amp; j==grid[<span class="number">0</span>].length<span class="number">-1</span>) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">let</span> right = <span class="literal">Infinity</span>, bottom = <span class="literal">Infinity</span>;</span><br><span class="line">            <span class="keyword">if</span>(i!=grid.length<span class="number">-1</span>) bottom = grid[i+<span class="number">1</span>][j];</span><br><span class="line">            <span class="keyword">if</span>(j!=grid[<span class="number">0</span>].length<span class="number">-1</span>) right = grid[i][j+<span class="number">1</span>];</span><br><span class="line">            grid[i][j] = grid[i][j]+<span class="built_in">Math</span>.min(bottom, right);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> grid[<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li>时间复杂度 ：O(m*n)。遍历整个矩阵恰好一次。</li>
+<li>空间复杂度 ：O(1)<em>O</em>(1)。不需要额外空间。</li>
+</ul>
+<h5 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h5><p>官方给的题解其实思路都差不多，只是具体实现有区别</p>
+<ul>
+<li><p>比如递归暴力解法，也是上面的思路，只是空间和时间开销巨大，我刚开始想的时候就直接拒绝了这种不优雅的做法；</p>
+</li>
+<li><p>二维数组动态规划和我的解法的唯一区别是它另外开辟了新的数组，这在一定情况下是必要的，当要求不能修改原数组时，就只能这么做；</p>
+</li>
+<li><p>针对二维数组动态规划的优化算法就是官解给出的一维动态规划，从我自己的解法中已经可以看出，我是从最下面一层开始往上面填表的，填完之后，下面的行就不再需要用了，所以可以复用一下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> minPathSum = <span class="function"><span class="keyword">function</span>(<span class="params">grid</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> res = grid[grid.length<span class="number">-1</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = grid.length<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j = grid[<span class="number">0</span>].length<span class="number">-1</span>;j&gt;=<span class="number">0</span>;j--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i==grid.length<span class="number">-1</span> &amp;&amp; j==grid[<span class="number">0</span>].length<span class="number">-1</span>) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">let</span> right = <span class="literal">Infinity</span>, bottom = <span class="literal">Infinity</span>;</span><br><span class="line">            <span class="keyword">if</span>(i!=grid.length<span class="number">-1</span>) bottom = res[j];</span><br><span class="line">            <span class="keyword">if</span>(j!=grid[<span class="number">0</span>].length<span class="number">-1</span>) right = res[j+<span class="number">1</span>];</span><br><span class="line">            res[j] = grid[i][j]+<span class="built_in">Math</span>.min(bottom, right);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res[<span class="number">0</span>];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="96-不同的二叉搜索树"><a href="#96-不同的二叉搜索树" class="headerlink" title="96. 不同的二叉搜索树"></a>96. 不同的二叉搜索树</h4><h5 id="我的解法-2"><a href="#我的解法-2" class="headerlink" title="我的解法"></a>我的解法</h5><h2 id="贪婪算法"><a href="#贪婪算法" class="headerlink" title="贪婪算法"></a>贪婪算法</h2><h2 id="分治算法"><a href="#分治算法" class="headerlink" title="分治算法"></a>分治算法</h2><h2 id="随机化算法"><a href="#随机化算法" class="headerlink" title="随机化算法"></a>随机化算法</h2><h2 id="回溯算法"><a href="#回溯算法" class="headerlink" title="回溯算法"></a>回溯算法</h2>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-09-15T04:29:52.255Z" itemprop="dateUpdated">2019-09-15 12:29:52</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/07/14/数据结构与算法笔记/" target="_blank" rel="external">http://QQ876684433.github.io/2019/07/14/数据结构与算法笔记/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://QQ876684433.github.io">
+            <img src="/img/avatar.jpg" alt="steve_chph">
+            steve_chph
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/07/14/数据结构与算法笔记/&title=《数据结构与算法笔记》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/07/14/数据结构与算法笔记/&title=《数据结构与算法笔记》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/07/14/数据结构与算法笔记/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《数据结构与算法笔记》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/07/14/数据结构与算法笔记/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/07/14/数据结构与算法笔记/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/07/14/动态规划算法介绍/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">动态规划算法介绍</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/07/14/在React项目中使用Docz遇到的问题/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">在React项目中使用Docz遇到的问题</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢你~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>steve_chph &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/07/14/数据结构与算法笔记/&title=《数据结构与算法笔记》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/07/14/数据结构与算法笔记/&title=《数据结构与算法笔记》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/07/14/数据结构与算法笔记/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《数据结构与算法笔记》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/07/14/数据结构与算法笔记/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/07/14/数据结构与算法笔记/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACq0lEQVR42u3a0U4DMQwEwP7/T5dXJLjr2o5phaZPSBwhc0iJWfvxiD/Pb5/7Z5IVvj/586fyJ4998PDw8AZbv186f/Lq6/s1kxXyPePh4eFt8+4P+vuNVn/9WfYLCx4eHt7H8JLnk3I5eVl4eHh4/4OXH/TJCpNLAg8PD+9dvDxiSBbNt57ExNVwBA8PD2+bl3eRPufrlf4eHh4e3rirnjfDksZ/HlLkIwUvdouHh4e3wMsP3GrB3Sum8zULw2F4eHh4R3krB3F83FdbX3mpjYeHh7fH622lGpvmhXXvKop2goeHh7fGy6+EJIDIGXkkUX2VeHh4eGd5p0YECgf0YLVyPIGHh4f3Jl6+aN4qyy+SXqGPh4eHt807Rc3HDqpR7P0LvXxleHh4eAu8yVhAb3SgFwcnVwseHh7e3/B6pO1Y9ljrCw8PD2+Zlx/K1WGCXjutV6b/MlOGh4eHt8bLj+w8zE0O8XkoXLhh8PDw8Ma8JFpNjvveCFe+h0ksgoeHh3eWV21QTS6G/GqZDDFcxrh4eHh4h3iTJlNvMKt6FfX+AHh4eHh7vF4UWw0RqiFF9WVdsvHw8PDexKsWvnP8pAS/DCPw8PDwDvHymLXaxMpj3Or4Ql5k4+Hh4f0lLw8pknI5P+h7owYv/jx4eHh4a7z83/48FKhuvVAo51EFHh4e3hqv2jc70HMLDvc8Do5Kajw8PLw1Xq/ZPwleC9udXwx4eHh4A96z+JlcJ/llU/2pSzAeHh7eAq8aMeT4XuCbx77VFh0eHh7eWd589CpvUFWHFUYxBB4eHt4yb9IY65Xd2604PDw8vM/kzZtb8/I6aoDh4eHhfQBvEuBWm1ujchwPDw9vjVc9rJMAtzoi0PtudDHg4eHhHeVV/6Ofl+C9Xtzhnh4eHh5eh/cF/dGSl9/4FAsAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'chph个人博客';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Welcome to chph's blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
