@@ -368,7 +368,7 @@ if ((ooffset < 0) || (toffset < 0)
 }
 ```
 
-这个地方的处理比较精妙，`-1>>>1`等于2147483647，即int类型的上界，它考虑到了toffset和ooffset的值有可能是很靠近甚至等于这个上界的，如果使用`toffset + len > (long)value.length`来判断的话，有可能出现`toffset + len`溢出的情况，而源码中的写法就能很好地解决了这个问题。
+这个地方的处理比较精妙，`-1>>>1`等于2147483647，即int类型的上界，它考虑到了toffset和ooffset的值有可能是很靠近甚至等于这个上界的，如果使用`toffset + len > (long)value.length`来判断的话，有可能出现`toffset + len`溢出的情况，而源码中的写法就能很好地解决了这个问题。
 
 ### length
 
@@ -385,6 +385,234 @@ public int length() {
 ```java
 public boolean isEmpty() {
     return value.length == 0;
+}
+```
+
+### charAt
+
+返回String类内部字符数组value在参数索引处的字符，如果该位置的字符是高低代理项，那么它返回的字符也是高低代理项的值
+
+```java
+public char charAt(int index) {
+    if ((index < 0) || (index >= value.length)) {
+        throw new StringIndexOutOfBoundsException(index);
+    }
+    return value[index];
+}
+```
+
+### codePointAt
+
+这个方法和`charAt`不同的地方在于，它返回的是int型的Unicode代码点，因此他会有两种情况：
+
+- index位置的字符是BMP的话，则直接返回index位置的字符对应的int值
+- index位置的字符是在高代理项的范围内，如果index+1<value.length，而且index+1位置的字符在低代理项范围内，那么将会返回(index, index+1)这对字符对应的Unicode增补代码点
+
+```java
+public int codePointAt(int index) {
+    if ((index < 0) || (index >= value.length)) {
+        throw new StringIndexOutOfBoundsException(index);
+    }
+    return Character.codePointAtImpl(value, index, value.length);
+}
+```
+
+### codePointBefore
+
+返回参数index位置之前的Unicode代码点，因此它会有如下情况：
+
+- index-1位置的字符在低代理项范围内，且index-2是非负数，那么返回(index-2, index-1)对应的Unicode代码点
+- index-1位置的字符是没有配对的高代理项（可能的情况是index-1和index位置的字符是配对的）或者低代理项（*这个不是很理解*）的话，则直接返回index-1位置字符的int值，不作转换
+
+```java
+public int codePointBefore(int index) {
+    int i = index - 1;
+    if ((i < 0) || (i >= value.length)) {
+        throw new StringIndexOutOfBoundsException(index);
+    }
+    return Character.codePointBeforeImpl(value, index, 0);
+}
+```
+
+### codePointCount
+
+计算`[beginIndex, endIndex)`范围内的子串的代码点个数，怎么计算的很容易，只需要注意的是，对于该范围内的子串，如果有字符是没有配对的代理项，那么它也当成一个代码点来计数
+
+```java
+public int codePointCount(int beginIndex, int endIndex) {
+    if (beginIndex < 0 || endIndex > value.length || beginIndex > endIndex) {
+        throw new IndexOutOfBoundsException();
+    }
+    return Character.codePointCountImpl(value, beginIndex, endIndex - beginIndex);
+}
+```
+
+### offsetByCodePoints
+
+计算从index位置开始，偏移codePointOffset个代码点后的索引位置，注意，这个codePointOffset可以是负数，这种情况下是往左偏移；同理，如果遇到不匹配的代理项，也是当成一个代码点来计数
+
+```java
+public int offsetByCodePoints(int index, int codePointOffset) {
+    if (index < 0 || index > value.length) {
+        throw new IndexOutOfBoundsException();
+    }
+    return Character.offsetByCodePointsImpl(value, 0, value.length,
+            index, codePointOffset);
+}
+```
+
+### getChars
+
+该方法的主要功能是将字符串读取成字符数组，默认修饰符的`getChars`是没有任何边界参数检测的，原因很简单，因为它只在类库内部才能使用（concat方法），按照契约式编程原则是不会有意外情况发生的；public修饰的方法，它会对参数进行边界条件检测，用于将指定范围（srcBegin、srcEnd）的子串复制到字符数组参数dst中
+
+```java
+void getChars(char dst[], int dstBegin) {
+    System.arraycopy(value, 0, dst, dstBegin, value.length);
+}
+
+public void getChars(int srcBegin, int srcEnd, char dst[], int dstBegin) {
+    if (srcBegin < 0) {
+        throw new StringIndexOutOfBoundsException(srcBegin);
+    }
+    if (srcEnd > value.length) {
+        throw new StringIndexOutOfBoundsException(srcEnd);
+    }
+    if (srcBegin > srcEnd) {
+        throw new StringIndexOutOfBoundsException(srcEnd - srcBegin);
+    }
+    System.arraycopy(value, srcBegin, dst, dstBegin, srcEnd - srcBegin);
+}
+```
+
+### getBytes
+
+获取字符串指定编码的字节数组，比如 charsetName 为 utf8，则将字符串转为 utf8 编码后对应的字节数组。如果不传参数则使用 JVM 默认编码，即`Charset.defaultCharset()`
+
+```java
+public byte[] getBytes(String charsetName)
+        throws UnsupportedEncodingException {
+    if (charsetName == null) throw new NullPointerException();
+    return StringCoding.encode(charsetName, value, 0, value.length);
+}
+
+public byte[] getBytes(Charset charset) {
+    if (charset == null) throw new NullPointerException();
+    return StringCoding.encode(charset, value, 0, value.length);
+}
+
+public byte[] getBytes() {
+    return StringCoding.encode(value, 0, value.length);
+}
+```
+
+### equals
+
+用来判断两个字符串的内容是否相同，但是仔细看可以发现，`equals`方法的参数其实是`Object`类型的，其实道理很简单，`String`类的`equals`方法是直接继承自`Object`类的，属于方法重写，参数个数和类型要相同，`Object`中的`equals`方法参数就是`Object`类型，该方法的实现思路如下：
+
+- 首先判断是不是同一个对象，如果是则返回`true`
+- 判断参数`anObject`是否是`String`类型（防御式编程），如果不是，则直接返回`false`
+- 最后再逐个字符进行比较，因为这是在`String`类内部，可以直接访问`value`
+
+```java
+public boolean equals(Object anObject) {
+    if (this == anObject) {
+        return true;
+    }
+    if (anObject instanceof String) {
+        String anotherString = (String)anObject;
+        int n = value.length;
+        if (n == anotherString.value.length) {
+            char v1[] = value;
+            char v2[] = anotherString.value;
+            int i = 0;
+            while (n-- != 0) {
+                if (v1[i] != v2[i])
+                    return false;
+                i++;
+            }
+            return true;
+        }
+    }
+    return false;
+}
+```
+
+### contentEquals
+
+`contentEquals`的功能和`equals`差不多，都是比较字符串的内容是否相同，区别在于它的参数是`StringBuffer`或者`CharSequence`，适用范围更广。
+
+`AbstractStringBuilder`是`StringBuffer`和`StringBuilder`的公共父类，前者是线程安全的，后者是非线程安全的，因此需要分别对他们进行处理，`StringBuffer`需要加上`synchronized`同步块；注意到，无论是`StringBuffer`还是`StringBuilder`，cs都被强制转换为`StringBuilder`，最后调用`nonSyncContentEquals`方法来进行内容比较。
+
+不同类型的字符串内容的比较算法都差不多，基本上都是先比较长度是否相同，这样可以避免不必要的循环遍历比较，如果相同再逐个字符比较
+
+```java
+public boolean contentEquals(StringBuffer sb) {
+    return contentEquals((CharSequence)sb);
+}
+
+private boolean nonSyncContentEquals(AbstractStringBuilder sb) {
+    char v1[] = value;
+    char v2[] = sb.getValue();
+    int n = v1.length;
+    if (n != sb.length()) {
+        return false;
+    }
+    for (int i = 0; i < n; i++) {
+        if (v1[i] != v2[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+public boolean contentEquals(CharSequence cs) {
+    // Argument is a StringBuffer, StringBuilder
+    if (cs instanceof AbstractStringBuilder) {
+        if (cs instanceof StringBuffer) {
+            synchronized(cs) {
+                return nonSyncContentEquals((AbstractStringBuilder)cs);
+            }
+        } else {
+            return nonSyncContentEquals((AbstractStringBuilder)cs);
+        }
+    }
+    // Argument is a String
+    if (cs instanceof String) {
+        return equals(cs);
+    }
+    // Argument is a generic CharSequence
+    char v1[] = value;
+    int n = v1.length;
+    if (n != cs.length()) {
+        return false;
+    }
+    for (int i = 0; i < n; i++) {
+        if (v1[i] != cs.charAt(i)) {
+            return false;
+        }
+    }
+    return true;
+}
+```
+
+### equalsIgnoreCase
+
+判断两个字符串在忽略大小写情况下内容是否相同，遇到大小写就应该想到个别字母的大小写转换规则比较特殊，参见`CaseInsensitiveComparator`部分具体说明，因此对应位置两个字符是否相同条件是以下其中一个：
+
+- 直接`==`比较返回true
+- `Character.toUpperCase`转换成大写字母后`==`比较相同
+- `Character.toLowerCase`转换成小写字母后`==`比较相同
+
+当然，这部分的判断直接调用了内部的方法`regionMatches`进行比较了。
+
+这个方法首先判断两个字符串是否是同一个对象，是则返回true，否则再判断参数字符串是否是null（防御式编程），然后再判断两个字符串长度是否相同，最后再比较字符串内容。
+
+```java
+public boolean equalsIgnoreCase(String anotherString) {
+    return (this == anotherString) ? true
+            : (anotherString != null)
+            && (anotherString.value.length == value.length)
+            && regionMatches(true, 0, anotherString, 0, value.length);
 }
 ```
 
