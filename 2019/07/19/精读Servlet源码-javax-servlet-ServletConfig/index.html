@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>精读Servlet源码-javax.servlet.ServletConfig | 至繁归于至简 - chph&#39;s blog | steve_chph personal website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Java,servlet">
+    <meta name="description" content="精读Servlet源码-javax.servlet.ServletConfig 参考：https://www.cnblogs.com/smyhvae/p/4140877.html  ServletConfig的实例是servlet容器在初始化一个servlet时传递到init()方法的对象，它携带了一个servlet的相关配置以及初始化参数。 123456789101112131415161718">
+<meta name="keywords" content="Java,servlet">
+<meta property="og:type" content="article">
+<meta property="og:title" content="精读Servlet源码-javax.servlet.ServletConfig">
+<meta property="og:url" content="http://QQ876684433.github.io/2019/07/19/精读Servlet源码-javax-servlet-ServletConfig/index.html">
+<meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
+<meta property="og:description" content="精读Servlet源码-javax.servlet.ServletConfig 参考：https://www.cnblogs.com/smyhvae/p/4140877.html  ServletConfig的实例是servlet容器在初始化一个servlet时传递到init()方法的对象，它携带了一个servlet的相关配置以及初始化参数。 123456789101112131415161718">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2019/07/19/5d312f57b095347163.png">
+<meta property="og:updated_time" content="2019-09-15T04:21:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="精读Servlet源码-javax.servlet.ServletConfig">
+<meta name="twitter:description" content="精读Servlet源码-javax.servlet.ServletConfig 参考：https://www.cnblogs.com/smyhvae/p/4140877.html  ServletConfig的实例是servlet容器在初始化一个servlet时传递到init()方法的对象，它携带了一个servlet的相关配置以及初始化参数。 123456789101112131415161718">
+<meta name="twitter:image" content="https://i.loli.net/2019/07/19/5d312f57b095347163.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">steve_chph</h5>
+          <a href="mailto:chph13420146901@gmail.com" title="chph13420146901@gmail.com" class="mail">chph13420146901@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/QQ876684433" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">精读Servlet源码-javax.servlet.ServletConfig</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">精读Servlet源码-javax.servlet.ServletConfig</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-07-19T01:43:08.000Z" itemprop="datePublished" class="page-time">
+  2019-07-19
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/源码/">源码</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#精读Servlet源码-javax-servlet-ServletConfig"><span class="post-toc-number">1.</span> <span class="post-toc-text">精读Servlet源码-javax.servlet.ServletConfig</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#各个接口方法的说明"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">各个接口方法的说明</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#getServletName"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">getServletName</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#getServletContext"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">getServletContext</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#getInitParameter"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">getInitParameter</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#getInitParameterNames"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">getInitParameterNames</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#追根溯源：ServletConfig-vs-ServletContext"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">追根溯源：ServletConfig vs ServletContext</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ServletConfig"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">ServletConfig</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ServletContext"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">ServletContext</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ServletConfig实例"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">ServletConfig实例</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#编写Servlet"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">编写Servlet</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置web-xml"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">配置web.xml</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#输出结果"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">输出结果</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-精读Servlet源码-javax-servlet-ServletConfig"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">精读Servlet源码-javax.servlet.ServletConfig</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-07-19 09:43:08" datetime="2019-07-19T01:43:08.000Z"  itemprop="datePublished">2019-07-19</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/源码/">源码</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="精读Servlet源码-javax-servlet-ServletConfig"><a href="#精读Servlet源码-javax-servlet-ServletConfig" class="headerlink" title="精读Servlet源码-javax.servlet.ServletConfig"></a>精读Servlet源码-javax.servlet.ServletConfig</h1><blockquote>
+<p>参考：<a href="https://www.cnblogs.com/smyhvae/p/4140877.html" target="_blank" rel="noopener">https://www.cnblogs.com/smyhvae/p/4140877.html</a></p>
+</blockquote>
+<p><code>ServletConfig</code>的实例是servlet容器在初始化一个servlet时传递到<code>init()</code>方法的对象，它携带了一个servlet的相关配置以及初始化参数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> javax.servlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Enumeration;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * A servlet configuration object used by a servlet container</span></span><br><span class="line"><span class="comment"> * to pass information to a servlet during initialization. </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> <span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ServletConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getServletName</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ServletContext <span class="title">getServletContext</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInitParameter</span><span class="params">(String name)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Enumeration&lt;String&gt; <span class="title">getInitParameterNames</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="各个接口方法的说明"><a href="#各个接口方法的说明" class="headerlink" title="各个接口方法的说明"></a>各个接口方法的说明</h2><h3 id="getServletName"><a href="#getServletName" class="headerlink" title="getServletName"></a>getServletName</h3><p>返回servlet实例的名称，它可能是在web服务器中由服务器管理者提供的，如果servlet没有被注册到服务中，那么它将返回servlet实例的类名。</p>
+<h3 id="getServletContext"><a href="#getServletContext" class="headerlink" title="getServletContext"></a>getServletContext</h3><p><code>getServletContext</code>返回<code>ServletContext</code>实例的引用，WEB容器在启动时，它会为<strong>每个WEB应用程序都创建一个对应的ServletContext对象，它代表当前web应用</strong>，并且保存在<code>ServletConfig</code>实例中并传递给对应的servlet，通过它可以允许调用者与servlet容器进行交互。</p>
+<h3 id="getInitParameter"><a href="#getInitParameter" class="headerlink" title="getInitParameter"></a>getInitParameter</h3><p>初始化参数在<code>ServletConfig</code>中是以键值对方式存储的，<code>getInitParameter()</code>可以通过给定的参数名字获取对应的参数值，键和值都是以字符串的形式存储；如果对应的参数名字不存在，则返回null。</p>
+<h3 id="getInitParameterNames"><a href="#getInitParameterNames" class="headerlink" title="getInitParameterNames"></a>getInitParameterNames</h3><p>获取所有的初始化参数，以Enumeration类型返回；如果没有，则返回一个空的Enumeration。Enumeration类似于迭代器，Enumeration接口中定义了一些方法，通过这些方法可以枚举（一次获得一个）对象集合中的元素。</p>
+<h2 id="追根溯源：ServletConfig-vs-ServletContext"><a href="#追根溯源：ServletConfig-vs-ServletContext" class="headerlink" title="追根溯源：ServletConfig vs ServletContext"></a>追根溯源：ServletConfig vs ServletContext</h2><h3 id="ServletConfig"><a href="#ServletConfig" class="headerlink" title="ServletConfig"></a>ServletConfig</h3><p>从更本质上来看，<code>ServletConfig</code>实际上代表的是当前Servlet在web.xml中的配置信息，在Servlet的配置文件中，可以使用&lt;servlet&gt;标签下的一个或多个&lt;init-param&gt;标签为servlet配置一些初始化参数。&lt;init-param&gt;标签是<strong>为某一个单独的servlet加配置信息，这种配置信息在其他的Servlet中是无法访问到的</strong>。</p>
+<p>当servlet配置了初始化参数后，web容器在创建servlet实例对象时，会自动将这些初始化参数封装到ServletConfig对象中，并在调用servlet的init方法时，将ServletConfig对象传递给servlet。进而，程序员通过ServletConfig对象就可以得到当前servlet的初始化参数信息。</p>
+<p>这样做的好处是：如果将数据库信息、编码方式等配置信息放在web.xml中，如果以后数据库的用户名、密码改变了，则<strong>直接很方便地修改web.xml就行了，避免了直接修改源代码的麻烦</strong>。</p>
+<h3 id="ServletContext"><a href="#ServletContext" class="headerlink" title="ServletContext"></a>ServletContext</h3><p>WEB容器在启动时，它会为<strong>每个WEB应用程序都创建一个对应的ServletContext对象，它代表当前web应用</strong>。</p>
+<p>ServletConfig对象中维护了ServletContext对象的引用，它是由servlet容器提供的，开发人员在编写servlet时，可以通过ServletConfig.getServletContext方法获得ServletContext对象。</p>
+<p>由于一个WEB应用中的<strong>所有Servlet共享同一个ServletContext对象</strong>，因此Servlet对象之间可以通过ServletContext对象来实现通讯。ServletContext对象通常也被称之为<strong>context域对象</strong>。</p>
+<p><u><em>对ServletContext更深入的研究请移步：精读Servlet源码-javax.servlet.ServletContext</em></u></p>
+<h2 id="ServletConfig实例"><a href="#ServletConfig实例" class="headerlink" title="ServletConfig实例"></a>ServletConfig实例</h2><h3 id="编写Servlet"><a href="#编写Servlet" class="headerlink" title="编写Servlet"></a>编写Servlet</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> servlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletConfig;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"><span class="keyword">import</span> java.util.Enumeration;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ServletConfigDemo</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.init();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        ServletConfig servletConfig = <span class="keyword">this</span>.getServletConfig();</span><br><span class="line">        PrintWriter out = resp.getWriter();</span><br><span class="line">        resp.setContentType(<span class="string">"text/plain"</span>);</span><br><span class="line"></span><br><span class="line">        String servletName = servletConfig.getServletName();</span><br><span class="line">        out.println(<span class="string">"Servlet name: "</span> + servletName);</span><br><span class="line"></span><br><span class="line">        String username = servletConfig.getInitParameter(<span class="string">"username"</span>);</span><br><span class="line">        String password = servletConfig.getInitParameter(<span class="string">"password"</span>);</span><br><span class="line">        out.println(<span class="string">"=================servletConfig.getInitParameter================"</span>);</span><br><span class="line">        out.println(<span class="string">"username: "</span> + username);</span><br><span class="line">        out.println(<span class="string">"password: "</span> + password);</span><br><span class="line"></span><br><span class="line">        out.println(<span class="string">"=================servletConfig.getInitParameterNames================"</span>);</span><br><span class="line">        Enumeration&lt;String&gt; params = servletConfig.getInitParameterNames();</span><br><span class="line">        <span class="keyword">while</span> (params.hasMoreElements()) &#123;</span><br><span class="line">            String name = params.nextElement();</span><br><span class="line">            out.println(name + <span class="string">": "</span> + servletConfig.getInitParameter(name));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        doGet(req, resp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置web-xml"><a href="#配置web-xml" class="headerlink" title="配置web.xml"></a>配置web.xml</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>ServletConfigDemo-xxxx<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>servlet.ServletConfigDemo<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>username<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>steve_chph<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>password<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>mypassword123456<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>name1<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>value1<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>name2<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>value2<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>ServletConfigDemo-xxxx<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/ServletConfigDemo<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="输出结果"><a href="#输出结果" class="headerlink" title="输出结果"></a>输出结果</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/07/19/5d312f57b095347163.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-09-15T04:21:56.000Z" itemprop="dateUpdated">2019-09-15 12:21:56</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/07/19/精读Servlet源码-javax-servlet-ServletConfig/" target="_blank" rel="external">http://QQ876684433.github.io/2019/07/19/精读Servlet源码-javax-servlet-ServletConfig/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://QQ876684433.github.io">
+            <img src="/img/avatar.jpg" alt="steve_chph">
+            steve_chph
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/servlet/">servlet</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/07/19/精读Servlet源码-javax-servlet-ServletConfig/&title=《精读Servlet源码-javax.servlet.ServletConfig》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/07/19/精读Servlet源码-javax-servlet-ServletConfig/&title=《精读Servlet源码-javax.servlet.ServletConfig》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/07/19/精读Servlet源码-javax-servlet-ServletConfig/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《精读Servlet源码-javax.servlet.ServletConfig》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/07/19/精读Servlet源码-javax-servlet-ServletConfig/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/07/19/精读Servlet源码-javax-servlet-ServletConfig/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/07/19/精读Servlet源码-javax-servlet-ServletContext/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">精读Servlet源码-javax.servlet.ServletContext</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">精读Servlet源码-javax.servlet.http.HttpServlet</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢你~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>steve_chph &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/07/19/精读Servlet源码-javax-servlet-ServletConfig/&title=《精读Servlet源码-javax.servlet.ServletConfig》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/07/19/精读Servlet源码-javax-servlet-ServletConfig/&title=《精读Servlet源码-javax.servlet.ServletConfig》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/07/19/精读Servlet源码-javax-servlet-ServletConfig/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《精读Servlet源码-javax.servlet.ServletConfig》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/07/19/精读Servlet源码-javax-servlet-ServletConfig/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/07/19/精读Servlet源码-javax-servlet-ServletConfig/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADKElEQVR42u3aQW7DMAwEwPz/0+21QJp0SdpAxI5PhZs4GvlAkKvHI76+flyv7jzff76eP5l8N/nW444LGxsb+xB2stD7PpOD37+A6qZjY2Nj72O/+oHk0ZPil2/T+1eVW7CxsbGxe4vrNTD5f7GxsbGxq+zq38mm5GtI2hJsbGzs/8auFom8OakGBtU13D5Lw8bGxv54dp6Kfv7ft+Tb2NjY2B/M/ipe1Z/Jg9vJaKmswMbGxl7Ezhm9aDZpYPJ4OB82RU/DxsbGXsSuUpOhf7W8VUtadSBVWBs2Njb2Uewqqbo1kxlOshG9qAAbGxt7EztpEuYtQW9DqyOn98d6fvkvNjY29iJ23h7kx3SuPUY5OdwTbTc2Njb24exkTD/5ZK/I9Qph8l1sbGzsfezeIZtJG5AUpKRwlnnY2NjYq9kJMqdOjuZUi99ogIWNjY19OPuqn8wPZfaKZa/heXkHGxsbex07LwC9MGAeG0wK2KO3l9jY2NjHsvOR0/ttyrdsEhUnd6ICho2NjX04O1l6b7nVILZ3rCdpfrCxsbG3sifFIC9gvYAhHzwlUXGhGmNjY2MfyJ6MmXLw5NhQoSy1mhxsbGzsrexrlzsJd/Mgodk4YWNjYx/Lnhenasm5I2AuN07Y2NjYi9iT8lANBvIyU24kWivExsbG3sFOBvF5WHvVBt1RzH6JeLGxsbFXsHulZXK4Jw8SepFAdW3Y2NjYp7PzYpCPafJhU95a5GOvSIGNjY29lN07KJMEBtUhfh4zV9snbGxs7H3svJD0HpFvVrWZmWwWNjY29j528rikLPXC3UlskI+c/piiYWNjY69gT2LXamzcG2PlB32i14mNjY29lF19XG+sU+2TqkFvUnqxsbGxd7Anh2mqw6DeuKp6J9ogbGxs7EXsUd2Li1Peuswj4asODGFjY2OfxZ63FnlR7JWc92+p+T6xsbGx17HzoVK+xGqEPAkJquvHxsbG/s/svDhdO0LqNTm3pyLY2NjYK9jzlqbaeFww58fGxsZex66WpV5g0BsP5flGXuSwsbGxN7Grs/RqqzCPbPNIIx9vYWNjY69gfwOmnLC8Dc7G2QAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'chph个人博客';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Welcome to chph's blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

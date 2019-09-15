@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>JavaWeb敲门砖-servlet概览 | 至繁归于至简 - chph&#39;s blog | steve_chph personal website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Java,servlet">
+    <meta name="description" content="JavaWeb敲门砖-Servlet概览Servlet生命周期 来源：https://www.runoob.com/servlet/servlet-life-cycle.html  Servlet 生命周期可被定义为从创建直到毁灭的整个过程。以下是 Servlet 遵循的过程：  Servlet 通过调用 init () 方法进行初始化。 Servlet 调用 service() 方法来处理客户端">
+<meta name="keywords" content="Java,servlet">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaWeb敲门砖-servlet概览">
+<meta property="og:url" content="http://QQ876684433.github.io/2019/07/18/JavaWeb敲门砖-servlet概览/index.html">
+<meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
+<meta property="og:description" content="JavaWeb敲门砖-Servlet概览Servlet生命周期 来源：https://www.runoob.com/servlet/servlet-life-cycle.html  Servlet 生命周期可被定义为从创建直到毁灭的整个过程。以下是 Servlet 遵循的过程：  Servlet 通过调用 init () 方法进行初始化。 Servlet 调用 service() 方法来处理客户端">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2019/07/18/5d3079b72175b79338.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/18/5d307bbf775da27042.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/18/5d307d724192099566.png">
+<meta property="og:updated_time" content="2019-09-15T04:21:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaWeb敲门砖-servlet概览">
+<meta name="twitter:description" content="JavaWeb敲门砖-Servlet概览Servlet生命周期 来源：https://www.runoob.com/servlet/servlet-life-cycle.html  Servlet 生命周期可被定义为从创建直到毁灭的整个过程。以下是 Servlet 遵循的过程：  Servlet 通过调用 init () 方法进行初始化。 Servlet 调用 service() 方法来处理客户端">
+<meta name="twitter:image" content="https://i.loli.net/2019/07/18/5d3079b72175b79338.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">steve_chph</h5>
+          <a href="mailto:chph13420146901@gmail.com" title="chph13420146901@gmail.com" class="mail">chph13420146901@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/QQ876684433" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">JavaWeb敲门砖-servlet概览</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">JavaWeb敲门砖-servlet概览</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-07-18T07:50:49.000Z" itemprop="datePublished" class="page-time">
+  2019-07-18
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/后端/">后端</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#JavaWeb敲门砖-Servlet概览"><span class="post-toc-number">1.</span> <span class="post-toc-text">JavaWeb敲门砖-Servlet概览</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Servlet生命周期"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Servlet生命周期</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Servlet实例"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Servlet实例</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#编写Servlet类"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">编写Servlet类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#编译Servlet"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">编译Servlet</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#部署Servlet"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">部署Servlet</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#注意事项"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">注意事项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#servlet配置"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text">servlet配置</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-JavaWeb敲门砖-servlet概览"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">JavaWeb敲门砖-servlet概览</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-07-18 15:50:49" datetime="2019-07-18T07:50:49.000Z"  itemprop="datePublished">2019-07-18</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/后端/">后端</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="JavaWeb敲门砖-Servlet概览"><a href="#JavaWeb敲门砖-Servlet概览" class="headerlink" title="JavaWeb敲门砖-Servlet概览"></a>JavaWeb敲门砖-Servlet概览</h1><h2 id="Servlet生命周期"><a href="#Servlet生命周期" class="headerlink" title="Servlet生命周期"></a>Servlet生命周期</h2><blockquote>
+<p>来源：<a href="https://www.runoob.com/servlet/servlet-life-cycle.html" target="_blank" rel="noopener">https://www.runoob.com/servlet/servlet-life-cycle.html</a></p>
+</blockquote>
+<p>Servlet 生命周期可被定义为从创建直到毁灭的整个过程。以下是 Servlet 遵循的过程：</p>
+<ul>
+<li>Servlet 通过调用 <strong>init ()</strong> 方法进行初始化。</li>
+<li>Servlet 调用 <strong>service()</strong> 方法来处理客户端的请求。</li>
+<li>Servlet 通过调用 <strong>destroy()</strong> 方法终止（结束）。</li>
+<li>最后，Servlet 是由 JVM 的垃圾回收器进行垃圾回收的。</li>
+</ul>
+<h2 id="Servlet实例"><a href="#Servlet实例" class="headerlink" title="Servlet实例"></a>Servlet实例</h2><h3 id="编写Servlet类"><a href="#编写Servlet类" class="headerlink" title="编写Servlet类"></a>编写Servlet类</h3><p>开发web应用时，通常是继承HttpServlet类来编写自己的Servlet应用，用以处理客户端的HTTP请求。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> servlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String message;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line">        message = <span class="string">"Hello World!"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        resp.setContentType(<span class="string">"text/html"</span>);</span><br><span class="line">        PrintWriter pw = resp.getWriter();</span><br><span class="line">        pw.println(<span class="string">"&lt;h1&gt;"</span>+message+<span class="string">"&lt;/h1&gt;"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"end of servlet"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="编译Servlet"><a href="#编译Servlet" class="headerlink" title="编译Servlet"></a>编译Servlet</h3><p>如果直接javac编译<code>.java</code>文件，会出现依赖问题，因为servlet默认不是标准jdk自带的：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line">                    ^</span><br><span class="line">HelloWorld.java:<span class="number">4</span>: 错误: 程序包javax.servlet.http不存在</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line">                         ^</span><br><span class="line">HelloWorld.java:<span class="number">5</span>: 错误: 程序包javax.servlet.http不存在</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line">                         ^</span><br><span class="line">HelloWorld.java:<span class="number">6</span>: 错误: 程序包javax.servlet.http不存在</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line">                         ^</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+
+<p>为了方便解决依赖问题，建议使用maven来编译整个项目，然后再在<code>target/classes</code>下面找到需要的class文件：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/07/18/5d3079b72175b79338.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h3 id="部署Servlet"><a href="#部署Servlet" class="headerlink" title="部署Servlet"></a>部署Servlet</h3><p>进入在tomcat目录，在<code>webapps/</code>下面建立项目结构</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">webapps</span><br><span class="line">└── serv</span><br><span class="line">    ├── index.html*</span><br><span class="line">    └── WEB-INF</span><br><span class="line">        ├── classes</span><br><span class="line">        │   └── HelloWorld.class</span><br><span class="line">        └── web.xml</span><br></pre></td></tr></table></figure>
+
+<p>其中index.html是可选的，在这里我们只是为了测试我们的servlet，因此可以不用建立这个文件。然后将我们之前编译好的HelloWorld.class复制到classes下，然后编写web.xml文件：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns</span>=<span class="string">"http://java.sun.com/xml/ns/j2ee"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">version</span>=<span class="string">"2.4"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">display-name</span>&gt;</span>Welcome to my first jsp <span class="tag">&lt;/<span class="name">display-name</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">description</span>&gt;</span></span><br><span class="line">     Welcome to my jsp</span><br><span class="line">  <span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">  <span class="tag">&lt;<span class="name">servlet</span>&gt;</span> </span><br><span class="line">      <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span> </span><br><span class="line">      <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>HelloWorld<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span> </span><br><span class="line">  <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">  <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span>   </span><br><span class="line">      <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/HelloWorld<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">  </span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>保存后启动tomcat服务器<code>bin/startup.sh</code>，访问”<a href="http://localhost:8080/serv/HelloWorld&quot;就可以了。。。" target="_blank" rel="noopener">http://localhost:8080/serv/HelloWorld&quot;就可以了。。。</a></p>
+<p>。。。。。。</p>
+<p>wtf？为什么报错了？</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/07/18/5d307bbf775da27042.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>别急，往下看</p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>如果你细心的话可以发现，我们的HelloWorld类是在<code>servlet</code>包下面的，但是我们的classes结构和web.xml描述是这样的：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">WEB-INF</span><br><span class="line">    ├── classes</span><br><span class="line">    │   └── HelloWorld.class <span class="comment">// 看这里</span></span><br><span class="line">    └── web.xml</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;servlet&gt; </span><br><span class="line">    &lt;servlet-name&gt;Hello&lt;/servlet-name&gt; </span><br><span class="line">    &lt;servlet-<span class="class"><span class="keyword">class</span>&gt;<span class="title">HelloWorld</span>&lt;/<span class="title">servlet</span>-<span class="title">class</span>&gt; // 看这里</span></span><br><span class="line"><span class="class">&lt;/<span class="title">servlet</span>&gt;</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">&lt;<span class="title">servlet</span>-<span class="title">mapping</span>&gt;   </span></span><br><span class="line"><span class="class">    &lt;<span class="title">servlet</span>-<span class="title">name</span>&gt;<span class="title">Hello</span>&lt;/<span class="title">servlet</span>-<span class="title">name</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;<span class="title">url</span>-<span class="title">pattern</span>&gt;/<span class="title">HelloWorld</span>&lt;/<span class="title">url</span>-<span class="title">pattern</span>&gt;  </span></span><br><span class="line"><span class="class">&lt;/<span class="title">servlet</span>-<span class="title">mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>但是实际上HelloWorld这个类的完整类名是<code>servlet.HelloWorld</code>，很显然跟我们的配置不匹配，所以我们需要修改：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">webapps/serv/WEB-INF/</span><br><span class="line">├── classes</span><br><span class="line">│   └── servlet <span class="comment">// 看这里</span></span><br><span class="line">│       └── HelloWorld.class <span class="comment">// 看这里</span></span><br><span class="line">└── web.xml</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;servlet&gt; </span><br><span class="line">    &lt;servlet-name&gt;Hello&lt;/servlet-name&gt; </span><br><span class="line">    &lt;servlet-<span class="class"><span class="keyword">class</span>&gt;<span class="title">servlet</span>.<span class="title">HelloWorld</span>&lt;/<span class="title">servlet</span>-<span class="title">class</span>&gt; // 看这里</span></span><br><span class="line"><span class="class">&lt;/<span class="title">servlet</span>&gt;</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">&lt;<span class="title">servlet</span>-<span class="title">mapping</span>&gt;   </span></span><br><span class="line"><span class="class">    &lt;<span class="title">servlet</span>-<span class="title">name</span>&gt;<span class="title">Hello</span>&lt;/<span class="title">servlet</span>-<span class="title">name</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;<span class="title">url</span>-<span class="title">pattern</span>&gt;/<span class="title">HelloWorld</span>&lt;/<span class="title">url</span>-<span class="title">pattern</span>&gt;  </span></span><br><span class="line"><span class="class">&lt;/<span class="title">servlet</span>-<span class="title">mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>保存后重启tomcat，然后再次访问页面：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/07/18/5d307d724192099566.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>这很舒服了！</p>
+<h3 id="servlet配置"><a href="#servlet配置" class="headerlink" title="servlet配置"></a>servlet配置</h3><p>为了让Servlet能响应用户请求，还必须将Servlet配置在web应用中，配置Servlet需要修改web.xml文件。从Servlet3.0开始，配置Servlet有两种方式：</p>
+<ul>
+<li>在Servlet类中使用@WebServlet Annotation进行配置。</li>
+<li>在web.xml文件中进行配置。</li>
+</ul>
+<p>这里面我们用的是web.xml配置的方式。这里只介绍一下最核心的部分，更详细的内容可以参考：<a href="https://blog.csdn.net/believejava/article/details/43229361" target="_blank" rel="noopener">https://blog.csdn.net/believejava/article/details/43229361</a></p>
+<ul>
+<li>&lt;servlet&gt;定义一个servlet，它必须含有&lt;servlet-name&gt;和&lt;servlet-class&gt;<ul>
+<li>&lt;servlet-name&gt;：用来定义servlet的名称，该名称<strong>在整个应用中必须是惟一的</strong></li>
+<li>&lt;servlet-class&gt;：用来指定servlet的完全限定的名称，例如我们定义的servlet全限定名为<code>servlet.HelloWorld</code></li>
+</ul>
+</li>
+<li>&lt;servlet-mapping&gt;用来定义servlet与请求url的匹配规则，它含有&lt;servlet-name&gt;和&lt;url-pattern&gt;<ul>
+<li>&lt;servlet-name&gt;：Servlet的名字，唯一性和一致性，与&lt;servlet&gt;元素中声明的名字一致</li>
+<li>&lt;url-pattern&gt;：指定相对于Servlet的URL的路径。该路径<strong>相对于web应用程序上下文的根路径</strong>，例如我们上面定义了应用的根路径是<code>/serv</code>，那么最后我们访问该servlet的url就是：<code>http://localhost:8080/serv/&lt;url-pattern&gt;</code>。&lt;servlet-mapping&gt;将URL模式映射到某个Servlet，即该Servlet处理的URL</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-09-15T04:21:56.000Z" itemprop="dateUpdated">2019-09-15 12:21:56</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/07/18/JavaWeb敲门砖-servlet概览/" target="_blank" rel="external">http://QQ876684433.github.io/2019/07/18/JavaWeb敲门砖-servlet概览/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://QQ876684433.github.io">
+            <img src="/img/avatar.jpg" alt="steve_chph">
+            steve_chph
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/servlet/">servlet</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/07/18/JavaWeb敲门砖-servlet概览/&title=《JavaWeb敲门砖-servlet概览》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/07/18/JavaWeb敲门砖-servlet概览/&title=《JavaWeb敲门砖-servlet概览》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/07/18/JavaWeb敲门砖-servlet概览/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JavaWeb敲门砖-servlet概览》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/07/18/JavaWeb敲门砖-servlet概览/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/07/18/JavaWeb敲门砖-servlet概览/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/07/18/精读Servlet源码-javax-servlet-Servlet/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">精读Servlet源码-javax.servlet.Servlet</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/07/17/由String的构造方法引申出来的java字符编码/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">由String的构造方法引申出来的java字符编码</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢你~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>steve_chph &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/07/18/JavaWeb敲门砖-servlet概览/&title=《JavaWeb敲门砖-servlet概览》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/07/18/JavaWeb敲门砖-servlet概览/&title=《JavaWeb敲门砖-servlet概览》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/07/18/JavaWeb敲门砖-servlet概览/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JavaWeb敲门砖-servlet概览》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/07/18/JavaWeb敲门砖-servlet概览/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/07/18/JavaWeb敲门砖-servlet概览/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtElEQVR42u3aQW7DMAwEwPz/0ynQW9HKWZKSExTjU5E4skcHkV3p8Yiv5/e1+nv17fU416NVRx5deHh4eK1Xz4f+/e1qtBw8eYfV/Xh4eHineUkx6C3T16+Y3Jl8u/wcDw8P76285P7qnasFHQ8PD+9/8PLXum67k0nplSU8PDy8O3lJEJCUiutJmSz0x7MWPDw8vJi3K1C48+9b9/fw8PDwiptPyXbX5PO8KS+/LR4eHt4BXv7IPH6tNtZVUnlDDg8PD+8AL1+mJ9TJ4aptxxrw8PDwNvGqwWu1JFRH7hWt5Th4eHh4W3n5gp4Ug16s0DtYgIeHh/cuXjV+nT8mKRv5E5tbYnh4eHgD3t5/+/O2uBfR5hP6o+7h4eHhHeDNI4C8wPRC3mp8jIeHh3ea14tcd22bTcrPi1gZDw8P7wBv16JfLQPVUDifvhdHB/Dw8PDGvGfrymPc3nbXJJUtd+t4eHh4Rd7kMdXWdteB1MlBBDw8PLxdvOrPeoFCfhCh+tsXU4aHh4e3lZccSK02ypPPd12P5AwCHh4eXouXRxWTCKBaWnrxbhmJh4eH1+JVF/F8GywZs3pEoBqL4OHh4Z3m5e31fIM/KTkbDhng4eHh3cLrtcvzqDd/+vVERFtfeHh4eId5vSBgXjx64S8eHh7ePbxJAZgXmPzQQDnqxcPDwzvAqwYB+aLcu3+y6bWsCHh4eHhbeZG+2F6PFvHiJtwLMB4eHt5hXnJNXqLXNFePahVmFw8PD6/F60UG56LeyTGF0YWHh4dX5FUb36QFrwYW18FHXhj+eBYeHh7eMV7+T37ezibNcV5mqis/Hh4e3ifwep1qvn1V3VSLDi7g4eHhfQwvR/bSkeo0LUsOHh4e3jHeZInfFewmTfnBrAUPDw8v5k2W6cmgvd9Wow08PDy8rbwvE3xzqL1Bd9EAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'chph个人博客';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Welcome to chph's blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

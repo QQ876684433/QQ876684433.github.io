@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Linux系统基础 | 至繁归于至简 - chph&#39;s blog | steve_chph personal website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="linux">
+    <meta name="description" content="Linux系统基础 此文章是根据南大软院曾老师的《Linux系统基础》课程ppt的学习笔记整理  推荐：http://man.linuxde.net/ ，关于Linux命令大全的实用网站 认识Linux系统Linux系统的组成Linux系统一般有4个主要部分：内核、Shell、文件系统 和 应用程序 内核内核是操作系统的核心，Linux内核的主要模块包括：存储管理、CPU和进程管理、文件系统、设备">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux系统基础">
+<meta property="og:url" content="http://QQ876684433.github.io/2019/07/25/Linux系统基础/index.html">
+<meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
+<meta property="og:description" content="Linux系统基础 此文章是根据南大软院曾老师的《Linux系统基础》课程ppt的学习笔记整理  推荐：http://man.linuxde.net/ ，关于Linux命令大全的实用网站 认识Linux系统Linux系统的组成Linux系统一般有4个主要部分：内核、Shell、文件系统 和 应用程序 内核内核是操作系统的核心，Linux内核的主要模块包括：存储管理、CPU和进程管理、文件系统、设备">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2019/07/25/5d390b6c0f41545469.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/25/5d39652fb49c266836.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/25/5d3964b167a0847483.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/25/5d39656a7607c78493.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/26/5d3a5d5e57a2f97173.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/26/5d3ab0c1d837547899.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/29/5d3ea1207389631335.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/29/5d3ea44904bdc53896.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/29/5d3eae591ea3b22405.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/29/5d3eb098a186369791.png">
+<meta property="og:updated_time" content="2019-09-15T04:21:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux系统基础">
+<meta name="twitter:description" content="Linux系统基础 此文章是根据南大软院曾老师的《Linux系统基础》课程ppt的学习笔记整理  推荐：http://man.linuxde.net/ ，关于Linux命令大全的实用网站 认识Linux系统Linux系统的组成Linux系统一般有4个主要部分：内核、Shell、文件系统 和 应用程序 内核内核是操作系统的核心，Linux内核的主要模块包括：存储管理、CPU和进程管理、文件系统、设备">
+<meta name="twitter:image" content="https://i.loli.net/2019/07/25/5d390b6c0f41545469.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">steve_chph</h5>
+          <a href="mailto:chph13420146901@gmail.com" title="chph13420146901@gmail.com" class="mail">chph13420146901@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/QQ876684433" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Linux系统基础</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Linux系统基础</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-07-25T01:34:24.000Z" itemprop="datePublished" class="page-time">
+  2019-07-25
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux/">linux</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Linux系统基础"><span class="post-toc-number">1.</span> <span class="post-toc-text">Linux系统基础</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#认识Linux系统"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">认识Linux系统</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Linux系统的组成"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">Linux系统的组成</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#内核"><span class="post-toc-number">1.1.1.1.</span> <span class="post-toc-text">内核</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#shell"><span class="post-toc-number">1.1.1.2.</span> <span class="post-toc-text">shell</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件系统"><span class="post-toc-number">1.1.1.3.</span> <span class="post-toc-text">文件系统</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#应用程序"><span class="post-toc-number">1.1.1.4.</span> <span class="post-toc-text">应用程序</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Linux系统与Windows系统的比较"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">Linux系统与Windows系统的比较</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#共性"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text">共性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#区别"><span class="post-toc-number">1.1.2.2.</span> <span class="post-toc-text">区别</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Linux版本"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">Linux版本</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Linux内核版本"><span class="post-toc-number">1.1.3.1.</span> <span class="post-toc-text">Linux内核版本</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Linux发行版本"><span class="post-toc-number">1.1.3.2.</span> <span class="post-toc-text">Linux发行版本</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Linux系统的安装与删除"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Linux系统的安装与删除</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Linux系统下硬盘的基本知识"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">Linux系统下硬盘的基本知识</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#分区命名方案"><span class="post-toc-number">1.2.1.1.</span> <span class="post-toc-text">分区命名方案</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#磁盘分区和挂载目录"><span class="post-toc-number">1.2.1.2.</span> <span class="post-toc-text">磁盘分区和挂载目录</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Linux字符界面操作"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Linux字符界面操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字符界面"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">字符界面</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#虚拟控制台"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">虚拟控制台</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关闭和重启系统"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">关闭和重启系统</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#shutdown"><span class="post-toc-number">1.3.3.1.</span> <span class="post-toc-text">shutdown</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#halt"><span class="post-toc-number">1.3.3.2.</span> <span class="post-toc-text">halt</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#reboot"><span class="post-toc-number">1.3.3.3.</span> <span class="post-toc-text">reboot</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#init"><span class="post-toc-number">1.3.3.4.</span> <span class="post-toc-text">init</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统运行级别"><span class="post-toc-number">1.3.4.</span> <span class="post-toc-text">系统运行级别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#其他一些常用命令"><span class="post-toc-number">1.3.5.</span> <span class="post-toc-text">其他一些常用命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#man"><span class="post-toc-number">1.3.5.1.</span> <span class="post-toc-text">man</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#help"><span class="post-toc-number">1.3.5.2.</span> <span class="post-toc-text">help</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#which-whereis-locate-find"><span class="post-toc-number">1.3.5.3.</span> <span class="post-toc-text">which, whereis, locate, find</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Shell基础"><span class="post-toc-number">1.3.6.</span> <span class="post-toc-text">Shell基础</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#开始使用bash"><span class="post-toc-number">1.3.6.1.</span> <span class="post-toc-text">开始使用bash</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#通配符"><span class="post-toc-number">1.3.6.1.1.</span> <span class="post-toc-text">通配符</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#特殊字符和引号"><span class="post-toc-number">1.3.6.1.2.</span> <span class="post-toc-text">特殊字符和引号</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#常用控制组合键"><span class="post-toc-number">1.3.6.1.3.</span> <span class="post-toc-text">常用控制组合键</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Shell实用功能"><span class="post-toc-number">1.3.7.</span> <span class="post-toc-text">Shell实用功能</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#命令的排列"><span class="post-toc-number">1.3.7.1.</span> <span class="post-toc-text">命令的排列</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#命令替换"><span class="post-toc-number">1.3.7.2.</span> <span class="post-toc-text">命令替换</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#命令别名"><span class="post-toc-number">1.3.7.3.</span> <span class="post-toc-text">命令别名</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件名匹配和输出重定向"><span class="post-toc-number">1.3.7.4.</span> <span class="post-toc-text">文件名匹配和输出重定向</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#文件名匹配"><span class="post-toc-number">1.3.7.4.1.</span> <span class="post-toc-text">文件名匹配</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#管道"><span class="post-toc-number">1.3.7.4.2.</span> <span class="post-toc-text">管道</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#重定向文件"><span class="post-toc-number">1.3.7.4.3.</span> <span class="post-toc-text">重定向文件</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#vi编辑器基本使用"><span class="post-toc-number">1.3.8.</span> <span class="post-toc-text">vi编辑器基本使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#vim和vi的区别"><span class="post-toc-number">1.3.8.1.</span> <span class="post-toc-text">vim和vi的区别</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#vi的工作模式"><span class="post-toc-number">1.3.8.2.</span> <span class="post-toc-text">vi的工作模式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#vi基本操作"><span class="post-toc-number">1.3.8.3.</span> <span class="post-toc-text">vi基本操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#进入插入模式"><span class="post-toc-number">1.3.8.3.1.</span> <span class="post-toc-text">进入插入模式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#从插入模式切换为命令行模式"><span class="post-toc-number">1.3.8.3.2.</span> <span class="post-toc-text">从插入模式切换为命令行模式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#移动光标"><span class="post-toc-number">1.3.8.3.3.</span> <span class="post-toc-text">移动光标</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#删除文字"><span class="post-toc-number">1.3.8.3.4.</span> <span class="post-toc-text">删除文字</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#复制"><span class="post-toc-number">1.3.8.3.5.</span> <span class="post-toc-text">复制</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#替换"><span class="post-toc-number">1.3.8.3.6.</span> <span class="post-toc-text">替换</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#撤销"><span class="post-toc-number">1.3.8.3.7.</span> <span class="post-toc-text">撤销</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#跳至指定行"><span class="post-toc-number">1.3.8.3.8.</span> <span class="post-toc-text">跳至指定行</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#存盘退出"><span class="post-toc-number">1.3.8.3.9.</span> <span class="post-toc-text">存盘退出</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#不保存退出"><span class="post-toc-number">1.3.8.3.10.</span> <span class="post-toc-text">不保存退出</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#末行模式操作"><span class="post-toc-number">1.3.8.4.</span> <span class="post-toc-text">末行模式操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#列出行号"><span class="post-toc-number">1.3.8.4.1.</span> <span class="post-toc-text">列出行号</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#取消列出行号"><span class="post-toc-number">1.3.8.4.2.</span> <span class="post-toc-text">取消列出行号</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#跳到文件中的某一行"><span class="post-toc-number">1.3.8.4.3.</span> <span class="post-toc-text">跳到文件中的某一行</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#查找字符"><span class="post-toc-number">1.3.8.4.4.</span> <span class="post-toc-text">查找字符</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#运行Shell命令"><span class="post-toc-number">1.3.8.4.5.</span> <span class="post-toc-text">运行Shell命令</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#替换字符"><span class="post-toc-number">1.3.8.4.6.</span> <span class="post-toc-text">替换字符</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#保存文件"><span class="post-toc-number">1.3.8.4.7.</span> <span class="post-toc-text">保存文件</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#退出vi"><span class="post-toc-number">1.3.8.4.8.</span> <span class="post-toc-text">退出vi</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件和目录"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">文件和目录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Linux文件"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">Linux文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Linux文件类型"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">Linux文件类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Linux目录结构"><span class="post-toc-number">1.4.3.</span> <span class="post-toc-text">Linux目录结构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件和目录操作"><span class="post-toc-number">1.4.4.</span> <span class="post-toc-text">文件和目录操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#链接文件"><span class="post-toc-number">1.4.5.</span> <span class="post-toc-text">链接文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#硬链接"><span class="post-toc-number">1.4.5.1.</span> <span class="post-toc-text">硬链接</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#软链接"><span class="post-toc-number">1.4.5.2.</span> <span class="post-toc-text">软链接</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#硬链接和软链接的区别"><span class="post-toc-number">1.4.5.3.</span> <span class="post-toc-text">硬链接和软链接的区别</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建链接"><span class="post-toc-number">1.4.5.4.</span> <span class="post-toc-text">创建链接</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Linux常用操作命令"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">Linux常用操作命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文本显示和处理"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">文本显示和处理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件和命令查找"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">文件和命令查找</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统信息显示"><span class="post-toc-number">1.5.3.</span> <span class="post-toc-text">系统信息显示</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#信息交流"><span class="post-toc-number">1.5.4.</span> <span class="post-toc-text">信息交流</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#其他命令"><span class="post-toc-number">1.5.5.</span> <span class="post-toc-text">其他命令</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Shell编程"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">Shell编程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#语法基础"><span class="post-toc-number">1.6.1.</span> <span class="post-toc-text">语法基础</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#开头"><span class="post-toc-number">1.6.1.1.</span> <span class="post-toc-text">开头</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#注释"><span class="post-toc-number">1.6.1.2.</span> <span class="post-toc-text">注释</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#执行部分"><span class="post-toc-number">1.6.1.3.</span> <span class="post-toc-text">执行部分</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#变量"><span class="post-toc-number">1.6.2.</span> <span class="post-toc-text">变量</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Shell定义的环境变量"><span class="post-toc-number">1.6.2.1.</span> <span class="post-toc-text">Shell定义的环境变量</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#用户定义的变量"><span class="post-toc-number">1.6.2.2.</span> <span class="post-toc-text">用户定义的变量</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#位置参数"><span class="post-toc-number">1.6.2.3.</span> <span class="post-toc-text">位置参数</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#预定义变量"><span class="post-toc-number">1.6.2.4.</span> <span class="post-toc-text">预定义变量</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#参数置换的变量"><span class="post-toc-number">1.6.2.5.</span> <span class="post-toc-text">参数置换的变量</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#变量表达式"><span class="post-toc-number">1.6.3.</span> <span class="post-toc-text">变量表达式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#字符串比较"><span class="post-toc-number">1.6.3.1.</span> <span class="post-toc-text">字符串比较</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#数字比较"><span class="post-toc-number">1.6.3.2.</span> <span class="post-toc-text">数字比较</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#逻辑测试"><span class="post-toc-number">1.6.3.3.</span> <span class="post-toc-text">逻辑测试</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件操作"><span class="post-toc-number">1.6.3.4.</span> <span class="post-toc-text">文件操作</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Shell程序的执行和跟踪"><span class="post-toc-number">1.6.4.</span> <span class="post-toc-text">Shell程序的执行和跟踪</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Shell程序的执行和调试"><span class="post-toc-number">1.6.4.1.</span> <span class="post-toc-text">Shell程序的执行和调试</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Shell程序的执行"><span class="post-toc-number">1.6.4.1.1.</span> <span class="post-toc-text">Shell程序的执行</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Shell程序的调试"><span class="post-toc-number">1.6.4.1.2.</span> <span class="post-toc-text">Shell程序的调试</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Shell流程控制语句"><span class="post-toc-number">1.6.5.</span> <span class="post-toc-text">Shell流程控制语句</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#条件判断"><span class="post-toc-number">1.6.5.1.</span> <span class="post-toc-text">条件判断</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#if条件语句"><span class="post-toc-number">1.6.5.1.1.</span> <span class="post-toc-text">if条件语句</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#case条件语句"><span class="post-toc-number">1.6.5.1.2.</span> <span class="post-toc-text">case条件语句</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#循环控制"><span class="post-toc-number">1.6.5.2.</span> <span class="post-toc-text">循环控制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#for循环语句"><span class="post-toc-number">1.6.5.2.1.</span> <span class="post-toc-text">for循环语句</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#while循环语句"><span class="post-toc-number">1.6.5.2.2.</span> <span class="post-toc-text">while循环语句</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#until循环语句"><span class="post-toc-number">1.6.5.2.3.</span> <span class="post-toc-text">until循环语句</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#break和continue语句"><span class="post-toc-number">1.6.5.2.4.</span> <span class="post-toc-text">break和continue语句</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#source语句"><span class="post-toc-number">1.6.5.2.5.</span> <span class="post-toc-text">source语句</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#函数"><span class="post-toc-number">1.6.6.</span> <span class="post-toc-text">函数</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#用户和组群账户管理"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">用户和组群账户管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#用户账户管理"><span class="post-toc-number">1.7.1.</span> <span class="post-toc-text">用户账户管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Linux用户账户概述"><span class="post-toc-number">1.7.1.1.</span> <span class="post-toc-text">Linux用户账户概述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Linux用户账户配置文件"><span class="post-toc-number">1.7.1.2.</span> <span class="post-toc-text">Linux用户账户配置文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#etc-passwd文件"><span class="post-toc-number">1.7.1.2.1.</span> <span class="post-toc-text">/etc/passwd文件</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#etc-shadow文件"><span class="post-toc-number">1.7.1.2.2.</span> <span class="post-toc-text">/etc/shadow文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#字符界面下用户账户的设置"><span class="post-toc-number">1.7.1.3.</span> <span class="post-toc-text">字符界面下用户账户的设置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#创建新账户"><span class="post-toc-number">1.7.1.3.1.</span> <span class="post-toc-text">创建新账户</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#修改账户"><span class="post-toc-number">1.7.1.3.2.</span> <span class="post-toc-text">修改账户</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#删除用户账户"><span class="post-toc-number">1.7.1.3.3.</span> <span class="post-toc-text">删除用户账户</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#组群账户管理"><span class="post-toc-number">1.7.2.</span> <span class="post-toc-text">组群账户管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Linux组群账户配置文件"><span class="post-toc-number">1.7.2.1.</span> <span class="post-toc-text">Linux组群账户配置文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#etc-group文件"><span class="post-toc-number">1.7.2.1.1.</span> <span class="post-toc-text">/etc/group文件</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#etc-gshadow文件"><span class="post-toc-number">1.7.2.1.2.</span> <span class="post-toc-text">/etc/gshadow文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#字符界面下组群账户的设置"><span class="post-toc-number">1.7.2.2.</span> <span class="post-toc-text">字符界面下组群账户的设置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#创建组群账户"><span class="post-toc-number">1.7.2.2.1.</span> <span class="post-toc-text">创建组群账户</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#修改组群账户"><span class="post-toc-number">1.7.2.2.2.</span> <span class="post-toc-text">修改组群账户</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#删除组群账户"><span class="post-toc-number">1.7.2.2.3.</span> <span class="post-toc-text">删除组群账户</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#账户相关文件或目录"><span class="post-toc-number">1.7.3.</span> <span class="post-toc-text">账户相关文件或目录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#etc-skel目录"><span class="post-toc-number">1.7.3.1.</span> <span class="post-toc-text">/etc/skel目录</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#etc-login-defs配置文件"><span class="post-toc-number">1.7.3.2.</span> <span class="post-toc-text">/etc/login.defs配置文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#etc-default-useradd文件"><span class="post-toc-number">1.7.3.3.</span> <span class="post-toc-text">/etc/default/useradd文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#用户和组群维护命令"><span class="post-toc-number">1.7.4.</span> <span class="post-toc-text">用户和组群维护命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#账户维护命令"><span class="post-toc-number">1.7.4.1.</span> <span class="post-toc-text">账户维护命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#passwd命令"><span class="post-toc-number">1.7.4.1.1.</span> <span class="post-toc-text">passwd命令</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#gpasswd命令"><span class="post-toc-number">1.7.4.1.2.</span> <span class="post-toc-text">gpasswd命令</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Linux系统基础"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Linux系统基础</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-07-25 09:34:24" datetime="2019-07-25T01:34:24.000Z"  itemprop="datePublished">2019-07-25</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux/">linux</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Linux系统基础"><a href="#Linux系统基础" class="headerlink" title="Linux系统基础"></a>Linux系统基础</h1><blockquote>
+<p>此文章是根据南大软院曾老师的《Linux系统基础》课程ppt的学习笔记整理</p>
+</blockquote>
+<p><strong>推荐：<a href="http://man.linuxde.net/" target="_blank" rel="noopener">http://man.linuxde.net/</a> ，关于Linux命令大全的实用网站</strong></p>
+<h2 id="认识Linux系统"><a href="#认识Linux系统" class="headerlink" title="认识Linux系统"></a>认识Linux系统</h2><h3 id="Linux系统的组成"><a href="#Linux系统的组成" class="headerlink" title="Linux系统的组成"></a>Linux系统的组成</h3><p>Linux系统一般有4个主要部分：内核、Shell、文件系统 和 应用程序</p>
+<h4 id="内核"><a href="#内核" class="headerlink" title="内核"></a>内核</h4><p>内核是操作系统的核心，Linux内核的主要模块包括：存储管理、CPU和进程管理、文件系统、设备管理和驱动、网络通信、系统的初始化和系统调用等几个部分</p>
+<h4 id="shell"><a href="#shell" class="headerlink" title="shell"></a>shell</h4><p>Shell是系统的用户界面，提供了<strong>用户</strong>与<strong>内核</strong>进行交互操作的一种接口，它接收用户输入的命令并把它送入内核去执行</p>
+<h4 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h4><p>文件系统是文件存放在磁盘等存储设备上的组织方法，Linux系统能支持多种目前流行的文件系统，如ext3、 ext4、 FAT、 FAT32、VFAT和ISO9660等</p>
+<h4 id="应用程序"><a href="#应用程序" class="headerlink" title="应用程序"></a>应用程序</h4><p>包括文本编辑器、编程语言、 X Window、办公软件、 Internet工具和数据库等的程序集</p>
+<h3 id="Linux系统与Windows系统的比较"><a href="#Linux系统与Windows系统的比较" class="headerlink" title="Linux系统与Windows系统的比较"></a>Linux系统与Windows系统的比较</h3><h4 id="共性"><a href="#共性" class="headerlink" title="共性"></a>共性</h4><ul>
+<li><p>多用户操作系统</p>
+<blockquote>
+<p>​    这里补充一点，摘录自<a href="https://blog.csdn.net/yangkuiwu/article/details/53224239" target="_blank" rel="noopener">https://blog.csdn.net/yangkuiwu/article/details/53224239</a></p>
+<p>​    1.<strong>单用户、多用户</strong>。根据在同一时间使用计算机用户的多少，操作系统可分为单用户操作系统和多用户操作系统。单用户操作系统是指一台计算机在同一时间只能由一个用户使用，*<u>一个用户独自享用系统的全部硬件和软件资源</u>，*而如果在同一时间允许多个用户同时使用计算机，则称为多用户操作系统。</p>
+<p>​    2.<strong>单任务、多任务</strong>。用户在同一时间可以运行多个应用程序（每个应用程序被称作一个任务），则这样的操作系统被称为多任务操作系统。如果一个用户在同一时间只能运行一个应用程序，则对应的操作系统称为单任务操作系统。</p>
+<p>​    现代操作系统一般属于多用户、多任务的操作系统，也就是说，同一台机器可以为多个用户建立各自的账户，也允许拥有这些账户的用户同时登录这台计算机，每个账号可以同时运行多个程序。</p>
+<p>​    多个用户能够同时访问和使用同一台计算机，其中的一个用户具有管理所有这些用户账户和整个计算机的资源的权限，在Windows上，这个具有管理其他用户和计算机资源的用户一般叫administrator，而在Linux上一般叫做root。</p>
+<p>​    个人计算机操作系统早期一般都是单用户操作系统，其主要特点是在某一时间为单个用户服务。早期的DOS操作系统是单用户单任务操作系统，Windows XP则是单用户多任务操作系统。Linux、UNIX是多用户多任务操作系统。现在常用的Windows操作系统都是多用户、多任务的操作系统，使用最广泛的win7，win10都是多用户，多任务操作系统。</p>
+</blockquote>
+</li>
+<li><p>支持多种文件系统</p>
+</li>
+<li><p>支持多种端口和设备</p>
+</li>
+<li><p>支持联网功能</p>
+</li>
+<li><p>服务</p>
+</li>
+</ul>
+<h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/07/25/5d390b6c0f41545469.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>总结一下，Linux独有的特点如下：</p>
+<ul>
+<li>定位于网络操作系统，Linux的系统配置文件和数据都以文本为基础</li>
+<li>可选图形化界面</li>
+<li>Linux系统不使用文件扩展名来识别文件的类型，而是使用文件的头内容来识别其类型</li>
+<li>除了Linux内核，其他软件的安装、启动、停止和重新配置都不用重新引导系统（即不需要重启）</li>
+<li>Linux系统下的命令、文件和口令等都区分大小写</li>
+</ul>
+<h3 id="Linux版本"><a href="#Linux版本" class="headerlink" title="Linux版本"></a>Linux版本</h3><p>Linux的版本号分为两部分，即<strong>内核版本</strong>与<strong>发行版本</strong></p>
+<h4 id="Linux内核版本"><a href="#Linux内核版本" class="headerlink" title="Linux内核版本"></a>Linux内核版本</h4><p>内核版本号由3个数字组成： r.x.y</p>
+<ul>
+<li>r：目前发布的内核主版本。</li>
+<li>x：偶数表示稳定版本；奇数表示开发版本。</li>
+<li>y：错误修补的次数。</li>
+</ul>
+<h4 id="Linux发行版本"><a href="#Linux发行版本" class="headerlink" title="Linux发行版本"></a>Linux发行版本</h4><p>一些组织和厂家，将Linux系统的内核、应用软件和文档包装起来，并提供一些系统安装界面、系统配置设定管理工具，就构成了Linux发行版本最著名的便是<strong>Red Hat公司开发的Red Hat系列</strong>以及<strong>社区组织开发的Debian系列发行版本</strong></p>
+<h2 id="Linux系统的安装与删除"><a href="#Linux系统的安装与删除" class="headerlink" title="Linux系统的安装与删除"></a>Linux系统的安装与删除</h2><h3 id="Linux系统下硬盘的基本知识"><a href="#Linux系统下硬盘的基本知识" class="headerlink" title="Linux系统下硬盘的基本知识"></a>Linux系统下硬盘的基本知识</h3><h4 id="分区命名方案"><a href="#分区命名方案" class="headerlink" title="分区命名方案"></a>分区命名方案</h4><p>Linux系统使用<strong>字母和数字的组合</strong>来指代硬盘分区，命名方案是<strong>基于文件</strong>的，文件名的格式为/dev/xxyN</p>
+<ul>
+<li>/dev/：这是Linux系统下<strong>所有设备文件</strong>所在的目录名。</li>
+<li>xx：分区名的前两个字母表示分区所在设备的类型，通常是hd（ IDE硬盘）或sd（ SCSI硬盘）。</li>
+<li>y：这个字母表示分区<strong>所在的设备</strong>。</li>
+<li>N：最后的数字N代表分区。</li>
+</ul>
+<p>例如：/dev/sda1表示这个分区在sd类型的设备上，如果有多个sd类型设备，那么该分区是在编号为a的设备上的分区1中</p>
+<h4 id="磁盘分区和挂载目录"><a href="#磁盘分区和挂载目录" class="headerlink" title="磁盘分区和挂载目录"></a>磁盘分区和挂载目录</h4><p>分区是Linux系统上一组文件和目录的存储区，它通过挂载来实现，<strong>挂载</strong>是<strong>将分区关联到某一目录的过程</strong>，挂载分区使起始于这个指定目录（通称为挂载目录）的存储区能够被使用</p>
+<ul>
+<li>/boot分区：用来存放与Linux系统启动有关的程序，比如启动引导装载程序等</li>
+<li>/usr分区：用来存放Linux系统中的应用程序</li>
+<li>/var分区：用来存放Linux系统中经常变化的数据以及日志文件</li>
+<li>/分区： Linux系统的根目录，所有的目录都挂在这个目录下面</li>
+<li>SWAP分区：实现虚拟内存</li>
+<li>/home分区：存放普通用户的数据，是普通用户的宿主目录</li>
+</ul>
+<h2 id="Linux字符界面操作"><a href="#Linux字符界面操作" class="headerlink" title="Linux字符界面操作"></a>Linux字符界面操作</h2><p>命令行界面可以通过字符界面、图形界面下的终端以及虚拟控制台等多种方式进入</p>
+<h3 id="字符界面"><a href="#字符界面" class="headerlink" title="字符界面"></a>字符界面</h3><p>很多Linux发行版系统启动默认进入的是图形化界面，可以通过如下指令修改：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -sf</span><br></pre></td></tr></table></figure>
+
+<p>重启后生效，默认进入字符界面，进入字符界面后，超级用户登录后提示符是“ #”，而其他用户登录后提示符是“ $”</p>
+<h3 id="虚拟控制台"><a href="#虚拟控制台" class="headerlink" title="虚拟控制台"></a>虚拟控制台</h3><p>Linux系统提供了虚拟控制台的访问方式使得允许多个用户同时登录，还允许用户进行多次登录</p>
+<ul>
+<li>在<strong>字符界面</strong>下，虚拟控制台的切换可以通过按下[Alt+ F1]~ [Alt+ F6]键来实现</li>
+<li>在<strong>图形界面</strong>下，可以使用[Ctrl+Alt+F2]~[Ctrl+Alt+F6]键切换不同的字符虚拟控制台，再使用[Ctrl+Alt+F1]可以切换回图形界面</li>
+</ul>
+<h3 id="关闭和重启系统"><a href="#关闭和重启系统" class="headerlink" title="关闭和重启系统"></a>关闭和重启系统</h3><h4 id="shutdown"><a href="#shutdown" class="headerlink" title="shutdown"></a>shutdown</h4><blockquote>
+<p>参考原文：<a href="https://blog.csdn.net/xmc281141947/article/details/61191212" target="_blank" rel="noopener">https://blog.csdn.net/xmc281141947/article/details/61191212</a> </p>
+</blockquote>
+<p>在Linux中可以用Shutdown命令实现自动定时关机的功能，它在Linux系统关闭之前给系统上的所有登录用户提示一条警告信息</p>
+<p>命令语法：shutdown [选项] [时间] [警告信息]</p>
+<ul>
+<li>-h 关闭计算机</li>
+<li>-r 重启计算机</li>
+<li>-c 取消正在等待的shutdown命令</li>
+</ul>
+<p><strong>精确时间</strong>的格式是hh:mm，表示小时和分钟。<br><strong>时间段（延迟）</strong>由“+” 和“分钟数”表示。<br>系统执行该命令后会自动进行数据同步的工作。时间部分如果是<code>now</code>，则上述命令则立即执行，否则延迟默认60s或者设定的时间</p>
+<p>具体例子：</p>
+<p>1、Shutdown -r now 关机后重启</p>
+<p>2、Shutdown -h now 关机后不重启</p>
+<p>3、Shutdown -r +11 11分钟后重启</p>
+<p>4、Shutdown -r 11:00 11点钟重启</p>
+<p>5、Shutdown -h +11 11分钟后关机</p>
+<p>6、Shutdown -h 11:00 11点钟关机</p>
+<h4 id="halt"><a href="#halt" class="headerlink" title="halt"></a>halt</h4><p>“ halt” 命令就是调用“ shutdown<br>–h”命令执行关闭系统，它是立即执行</p>
+<h4 id="reboot"><a href="#reboot" class="headerlink" title="reboot"></a>reboot</h4><p>“reboot”命令就是调用“shutdown -r”命令来重启系统，它是立即执行</p>
+<h4 id="init"><a href="#init" class="headerlink" title="init"></a>init</h4><p>“ init” 命令是所有进程的祖先，它的进程号始终为“ 1” ，所以发送“ TERM” 信号给“ init” 会终止所有的用户进程和守护进程等。“ shutdown” 命令就是使用这种机制。“init”定义了7个运行级别：</p>
+<ul>
+<li>0    Halt    Shuts down the system.</li>
+<li>1    Single-user mode    Mode for administrative tasks.（注意这里，说明系统返回的shell有root权限）</li>
+<li>2    Multi-user mode    Does not configure network interfaces and does not export networks services.</li>
+<li>3    Multi-user mode with networking    Starts the system normally.</li>
+<li><u>4    Not used/user-definable    For special purposes.</u></li>
+<li>5    Start the system normally with appropriate display manager (with GUI)    Same as runlevel 3 + display manager.</li>
+<li>6    Reboot    Reboots the system.</li>
+</ul>
+<h3 id="系统运行级别"><a href="#系统运行级别" class="headerlink" title="系统运行级别"></a>系统运行级别</h3><p>Linux系统的运行级别由列在/etc/rc.d/rc&lt;x&gt;.d目录中的服务来定义，其中&lt;x&gt;是代表运行级别的符号，七种运行级别的定义如下：</p>
+<ul>
+<li>0：停止运行，所有进程中止，关闭系统。</li>
+<li>1：单用户模式，用于维护系统，只有少数进程运行。</li>
+<li>2：多用户模式，除了NFS服务没有启动外，其他和运行级别3一样。</li>
+<li><strong>3：完整的多用户模式，进入Linux系统的字符界面。</strong></li>
+<li>4：没有使用（可由用户定义）。</li>
+<li><strong>5：完整的多用户模式（带有基于X Window的图形界面）。</strong></li>
+<li>6：重新引导计算机。</li>
+</ul>
+<p>可以在使用<code>runlevel</code>命令查看当前的运行级别</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">steve@ubuntu-17-10:~$ runlevel </span><br><span class="line">N 5</span><br></pre></td></tr></table></figure>
+
+<p>表示当前运行级别是5，N表示没有上一次运行级别</p>
+<h3 id="其他一些常用命令"><a href="#其他一些常用命令" class="headerlink" title="其他一些常用命令"></a>其他一些常用命令</h3><h4 id="man"><a href="#man" class="headerlink" title="man"></a>man</h4><p>获取shell命令的帮助手册，命令语法：man [选项] [命令名称]</p>
+<h4 id="help"><a href="#help" class="headerlink" title="help"></a>help</h4><p>可以通过help来获取shell命令的用法，命令语法：[命令] ––help</p>
+<h4 id="which-whereis-locate-find"><a href="#which-whereis-locate-find" class="headerlink" title="which, whereis, locate, find"></a>which, whereis, locate, find</h4><blockquote>
+<p>来源：<a href="https://zhuanlan.zhihu.com/p/35727707" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/35727707</a></p>
+</blockquote>
+<ul>
+<li><strong>which</strong>：常用于查找<strong>可直接执行的命令</strong>。只能查找可执行文件，该命令基本<strong>只在$PATH路径中搜索</strong>，查找范围最小，查找速度快。<strong>默认只返回第一个匹配的文件路径</strong>，通过选项 <em>-a</em> 可以返回所有匹配结果。</li>
+<li><strong>whereis</strong>：不只可以查找命令，其他文件类型都可以（man中说只能查命令、源文件和man文件，实际测试可以查大多数文件）。在$PATH路径基础上增加了一些系统目录的查找，查找范围比which稍大，查找速度快。<u>可以通过 <em>-b</em> 选项，限定只搜索二进制文件</u>。</li>
+<li><strong>locate</strong>：超快速查找任意文件。它会<strong>从linux内置的索引数据库查找文件的路径</strong>，索引速度超快。刚刚新建的文件可能需要一定时间才能加入该索引数据库，可以通过执行updatedb命令来强制更新一次索引，这样确保不会遗漏文件。该命令通常会返回大量匹配项，可以<strong>使用 <em>-r</em> 选项通过正则表达式来精确匹配</strong>。</li>
+<li><strong>find</strong>：直接搜索整个文件目录，<strong>默认直接从根目录开始搜索</strong>，建议在以上命令都无法解决问题时才用它，功能最强大但速度超慢。除非你指定一个很小的搜索范围。通过 <em>-name</em> 选项指定要查找的文件名，支持通配符。</li>
+</ul>
+<h3 id="Shell基础"><a href="#Shell基础" class="headerlink" title="Shell基础"></a>Shell基础</h3><p>通俗地讲，Shell就是位于内核和操作者之间的一层使用者界面。一个Shell命令可能含有一些可选项和参数，其一般格式为：[Shell命令] [可选项] [参数]。目前流行的Shell有sh， csh， ksh， tcsh<br>和bash等。</p>
+<h4 id="开始使用bash"><a href="#开始使用bash" class="headerlink" title="开始使用bash"></a>开始使用bash</h4><p>Shell命令可分为如下两大类：</p>
+<p>（1） bash内置的命令</p>
+<p>（2）应用程序</p>
+<h5 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h5><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/07/25/5d39652fb49c266836.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h5 id="特殊字符和引号"><a href="#特殊字符和引号" class="headerlink" title="特殊字符和引号"></a>特殊字符和引号</h5><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/07/25/5d3964b167a0847483.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h5 id="常用控制组合键"><a href="#常用控制组合键" class="headerlink" title="常用控制组合键"></a>常用控制组合键</h5><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/07/25/5d39656a7607c78493.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>说明：</p>
+<ul>
+<li>&amp; 使命令在后台运行，不阻塞当前控制台</li>
+<li>CTRL+Z停止进程并放入后台</li>
+<li>jobs 显示当前暂停的进程</li>
+<li>bg %N 使第N个任务在后台运行（%前有空格）（<u>好像也会阻塞控制台？不太懂，在Ubuntu17.10上测试就是，bg执行后，控制台也被占用，但可以使用Ctr+S和Ctr+Q来暂停和恢复屏幕输出</u>）</li>
+<li>fg %N 使第N个任务在前台运行，阻塞当前控制台</li>
+<li>默认bg，fg不带%N时表示对最后一个进程操作！</li>
+<li>Ctr+U是清空当前输入的命令行</li>
+</ul>
+<p>补充：</p>
+<ul>
+<li>控制台可以使用Ctr+Shift+C/V来执行复制粘贴功能</li>
+</ul>
+<h3 id="Shell实用功能"><a href="#Shell实用功能" class="headerlink" title="Shell实用功能"></a>Shell实用功能</h3><h4 id="命令的排列"><a href="#命令的排列" class="headerlink" title="命令的排列"></a>命令的排列</h4><p>如果希望一次执行多个命令， Shell允许在不同的命令之间，放上特殊的排列字符</p>
+<ul>
+<li><p>使用“; ”</p>
+<p>使用“; ”命令时先执行命令1，不管命令1是否出错，接下来就执行命令2。<strong>命令语法：命令1; 命令2</strong></p>
+</li>
+<li><p>使用“ &amp;&amp;”</p>
+<p>使用“ &amp;&amp;”命令时<strong>只有当命令1正确运行完毕</strong>后，才能执行命令2。<strong>命令语法：命令1&amp;&amp;命令2</strong></p>
+</li>
+</ul>
+<h4 id="命令替换"><a href="#命令替换" class="headerlink" title="命令替换"></a>命令替换</h4><p>有两种方式：</p>
+<ul>
+<li>命令1 $(命令2)</li>
+<li>命令1 `命令2`</li>
+</ul>
+<p>意思是将命令2的输出结果与命令1拼接成新的命令执行，例如：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pidof less //查看less的进程号，假如为4163</span><br><span class="line">kill -9 4163</span><br></pre></td></tr></table></figure>
+
+<p>等价于</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">kill -9 $(pidof less)</span><br><span class="line">// 或者</span><br><span class="line">kill -9 `pidof less`</span><br></pre></td></tr></table></figure>
+
+<h4 id="命令别名"><a href="#命令别名" class="headerlink" title="命令别名"></a>命令别名</h4><p>alias命令用来设置指令的别名。我们可以使用该命令可以将一些较长的命令进行简化。使用alias时，用户必须使用单引号<code>&#39;&#39;</code>将原来的命令引起来，防止特殊字符导致错误。命令语法：</p>
+<p><strong>alias [别名]＝[需要定义别名的命令]</strong></p>
+<p>alias命令的作用<strong>只局限于该次登入的操作</strong>。若要每次登入都能够使用这些命令别名，则可将相应的alias命令存放到bash的初始化文件<code>/etc/bashrc</code>中。</p>
+<p>要删除一个别名，可以使用 <a href="http://man.linuxde.net/unalias" target="_blank" rel="noopener">unalias</a> 命令，如 unalias l。</p>
+<h4 id="文件名匹配和输出重定向"><a href="#文件名匹配和输出重定向" class="headerlink" title="文件名匹配和输出重定向"></a>文件名匹配和输出重定向</h4><h5 id="文件名匹配"><a href="#文件名匹配" class="headerlink" title="文件名匹配"></a>文件名匹配</h5><ul>
+<li>“*” 可匹配任意一个或多个字符</li>
+<li>“?” 可以匹配任意一个字符</li>
+</ul>
+<h5 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h5><p>管道可以将某个命令的输出信息当作某个命令的输入，由管道符号“|” 来标识，命令语法：</p>
+<p><strong>[命令1]|[ 命令2]|[ 命令3]</strong></p>
+<p>例如：<code>alias tr=&#39;cd / &amp;&amp; tree | more &amp;&amp; cd ~&#39;</code>，就是将tree的输出内容作为more的输入，more的作用是将输出内容分页显示</p>
+<h5 id="重定向文件"><a href="#重定向文件" class="headerlink" title="重定向文件"></a>重定向文件</h5><p>重定向有5种方式，分别是：输出重定向、输入重定向、错误重定向、追加重定向以及同时实现输出和错误的重定向</p>
+<ul>
+<li><p>输出重定向</p>
+<p>将command命令的输出保存到文件file中，如果存在相同的文件，则<strong>覆盖file文件中的内容</strong>。</p>
+<p><strong>命令语法：command &gt; file</strong></p>
+<p>可以实用echo和输出重定向来创建文本文件：<code>echo hello &gt; hello.txt</code>，即创建文件hello.txt并写入内容“hello”</p>
+</li>
+<li><p>输入重定向</p>
+<p>将文件file的内容作为command命令的输入。</p>
+<p><strong>命令语法：command &lt; file</strong></p>
+</li>
+<li><p>错误重定向</p>
+<p>将command命令执行的出错信息输出到文件file中。</p>
+<p><strong>命令语法：command 2&gt; file</strong></p>
+</li>
+<li><p>追加重定向</p>
+<p>将command命令执行的输出添加到已存在的文件file中。</p>
+<p><strong>命令语法：command &gt;&gt; file</strong></p>
+<p>补充：错误重定向和追加重定向可以组合使用，command 2&gt;&gt; file表示command的错误信息追加到file末尾</p>
+</li>
+<li><p>同时实现输出和错误的重定向</p>
+<p>可以同时实现输出重定向和错误重定向的功能。</p>
+<p><strong>命令语法：command &amp;&gt; file</strong></p>
+<p>补充：同理，该命令可以和追加重定向组合使用，command &amp;&gt;&gt; file表示command的输出和错误信息追加到file末尾</p>
+</li>
+</ul>
+<h3 id="vi编辑器基本使用"><a href="#vi编辑器基本使用" class="headerlink" title="vi编辑器基本使用"></a>vi编辑器基本使用</h3><h4 id="vim和vi的区别"><a href="#vim和vi的区别" class="headerlink" title="vim和vi的区别"></a>vim和vi的区别</h4><blockquote>
+<p>摘录自：<a href="https://blog.csdn.net/allenlinrui/article/details/7269481" target="_blank" rel="noopener">https://blog.csdn.net/allenlinrui/article/details/7269481</a> </p>
+</blockquote>
+<p>简单来说一下vi和vim的区别与联系</p>
+<p>首先，它们都是多模式编辑器，但vim是vi的升级版本，它不仅兼容vi的所有指令，而且还有一些新的特性。总的来说，vim比vi更具优势的地方在于：</p>
+<ul>
+<li><p>多级撤消</p>
+<p>在vi的命令模式里，<strong>按 u只能撤消上次命令，而在vim里可以无限制的撤消</strong>，几乎等同于windows下的ctrl+z了</p>
+</li>
+<li><p>多操作系统支持</p>
+<p>vi只能运行于unix中，而vim不仅可以运行于unix,还有windows ,mac等操作系统上</p>
+</li>
+<li><p>语法加亮</p>
+<p>作为一名程序员，我觉得这个效果用处最大了- vim可以对代码进行多颜色的语法加亮</p>
+</li>
+<li><p>可视化操作</p>
+<p>因为vim不仅可以在终端运行，也可以运行于x window、 mac os、 windows， 所以说他“可视化”</p>
+</li>
+<li><p>对vi的完全兼容</p>
+<p>某些情况下，vim可以完全被当成vi来使用</p>
+</li>
+</ul>
+<h4 id="vi的工作模式"><a href="#vi的工作模式" class="headerlink" title="vi的工作模式"></a>vi的工作模式</h4><p>vi编辑器有3种基本工作模式，分别是命令行模式、插入模式和末行模式</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/07/26/5d3a5d5e57a2f97173.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<ul>
+<li>命令行模式：控制屏幕光标的移动，字符、字或行的删除，移动、复制某区域，该模式下是不能输入文本数据的</li>
+<li>插入模式：只有在插入模式下，才可以做文字输入，按“ Esc” 键可回到命令行模式</li>
+<li>末行模式：将文件保存或退出vi编辑器，也可以设置编辑环境，如寻找字符串、列出行号等</li>
+</ul>
+<h4 id="vi基本操作"><a href="#vi基本操作" class="headerlink" title="vi基本操作"></a>vi基本操作</h4><h5 id="进入插入模式"><a href="#进入插入模式" class="headerlink" title="进入插入模式"></a>进入插入模式</h5><ul>
+<li>按“ i” ：从光标当前位置开始输入文件</li>
+<li>按“ I” ：在光标所在行的行首插入</li>
+<li>按“ a” ：从目前光标所在位置的下一个位置开始输入文字</li>
+<li>按“ A” ：在光标所在行的行末插入</li>
+<li>按“ o” ：在光标所在的行的下面插入一行，从行首开始输入文字</li>
+<li>按“ O” ：在光标所在的行的上面插入一行</li>
+<li>按“ s” ：删除光标位置的一个字符，然后进入插入模式</li>
+<li>按“ S” ：删除光标所在的行，然后进入插入模式</li>
+</ul>
+<h5 id="从插入模式切换为命令行模式"><a href="#从插入模式切换为命令行模式" class="headerlink" title="从插入模式切换为命令行模式"></a>从插入模式切换为命令行模式</h5><p>从插入模式切换为命令行模式只需按“ Esc” 键</p>
+<h5 id="移动光标"><a href="#移动光标" class="headerlink" title="移动光标"></a>移动光标</h5><p>可以使用键盘的方向键移动光标，也可以使用vi定义的移动命令：<strong>h、j、k、l分别表示←、↓、↑、→移动一格</strong>。如果需要翻页：</p>
+<ul>
+<li>按[Ctrl+b]：屏幕往前移动一页（back）</li>
+<li>按[Ctrl+f]：屏幕往后移动一页（front）</li>
+<li>按[Ctrl+u]：屏幕往前移动半页（up）</li>
+<li>按[Ctrl+d]：屏幕往后移动半页（down）</li>
+</ul>
+<p>其他的：</p>
+<ul>
+<li>按“ G” ：移动到文本的最后一行</li>
+<li>按“ $” ：移动到光标所在行的行尾（助记：正则表达式的$）</li>
+<li>按“ ^” 或数字“ 0”：移动到光标所在行的行首（助记：正则表达式的^）</li>
+<li>按“ w” ：光标跳到下个字的开头</li>
+<li>按“ e” ：光标跳到下个字的字尾</li>
+<li>按“ b” ：光标回到上个字的开头</li>
+</ul>
+<p>解释：”e”和”b”的“下个字”和“上个字”的含义是当前光标停在某个字上，即当前字；而“w”的“下个字”真的就是下一个字，不是当前光标停留的字。举个例子：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">word----</span><br><span class="line">↑</span><br></pre></td></tr></table></figure>
+
+<p>箭头指向的是当前光标位置，如果按”w”，那么结果是：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">word----</span><br><span class="line">    ↑</span><br><span class="line">// 因为当前字是word，那么对"w"来说，下一个字就是"----"，因此光标指向"-"</span><br></pre></td></tr></table></figure>
+
+<p>而如果按的是”e”，那么结果将是：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">word----</span><br><span class="line">   ↑</span><br><span class="line">// 因为当前字是word，那么对"e"来说，下一个字就是"word"，因此光标指向"d"</span><br></pre></td></tr></table></figure>
+
+<h5 id="删除文字"><a href="#删除文字" class="headerlink" title="删除文字"></a>删除文字</h5><ul>
+<li>“ x” ：每按一次，删除光标所在位置的一个字符</li>
+<li>“ nx” ：例如， “ 6x” 表示删除光标所在位置开始的6个字符<u>（包括当前位置的字符）</u></li>
+<li>“ X” ：大写的X，每按一次，删除光标所在位置的前面一个字符</li>
+<li>“ nX”：例如， “ 20X”表示删除光标所在位置前面20个字符<u>（不包括当前位置的字符）</u></li>
+<li>“ dd” ：删除光标所在行</li>
+<li>“ ndd”：从光标所在行开始删除n行。例如， “ 4dd” 表示删除从光标所在行开始的4行字符<u>（包括当前行）</u></li>
+<li>”dG“：删除当前后之后的全部行<u>（包括当前行）</u></li>
+</ul>
+<h5 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h5><ul>
+<li>“ yw” ：将光标所在之处到字尾的字符复制到缓冲区中（复制的是一个字的内容）</li>
+<li>“ nyw” ：复制n个字到缓冲区<u>（包括当前字）</u></li>
+<li>“ yy” ：复制光标所在行到缓冲区</li>
+<li>“nyy” ：例如， “6yy” 表示复制从光标所在行开始的6行字符</li>
+<li>“p” ：将缓冲区内的内容写到光标所在的<strong>后一个位置</strong>（原ppt这里错了，这里写的才是正确的）</li>
+<li>”P“：将缓冲区内的内容写到光标所在的前一个位置</li>
+</ul>
+<p><strong>解释：”p“后一个位置有两种含义，如果复制的是字，那么写在光标所在位置的后面；如果复制的是行内容，那么写在光标所在行的下一行</strong>；”P“同理，替换成上一个位置或者上一行</p>
+<h5 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h5><ul>
+<li>“ r” ：替换光标所在处的字符</li>
+<li>“ R” ：替换光标所到之处的字符，直到按下“ Esc” 键为止</li>
+</ul>
+<h5 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h5><ul>
+<li>“ u” ：如果误执行一个命令，可以马上按下“ u” ，回到上一个操作。</li>
+<li>按多次“ u” 可以执行多次撤销</li>
+</ul>
+<p>补充：vi兼容模式下，多次”u“并不能多次撤销，原因是后一次”u“会把上一次”u“当做操作来撤销，即撤销”撤销操作“，所以”uu“会恢复原样</p>
+<h5 id="跳至指定行"><a href="#跳至指定行" class="headerlink" title="跳至指定行"></a>跳至指定行</h5><ul>
+<li>[Ctrl+g]：列出光标所在行的行号</li>
+<li>“nG” ：例如， “ 15G” ，表示移动光标至该文本的第15行行首</li>
+</ul>
+<h5 id="存盘退出"><a href="#存盘退出" class="headerlink" title="存盘退出"></a>存盘退出</h5><ul>
+<li>“ZZ” ：存盘退出</li>
+</ul>
+<h5 id="不保存退出"><a href="#不保存退出" class="headerlink" title="不保存退出"></a>不保存退出</h5><ul>
+<li>“ZQ” ：不存盘退出</li>
+</ul>
+<h4 id="末行模式操作"><a href="#末行模式操作" class="headerlink" title="末行模式操作"></a>末行模式操作</h4><p>在使用末行模式之前，先按“ Esc”键确定已经处于命令行模式后，再按冒号“:”<br>即可进入末行模式</p>
+<h5 id="列出行号"><a href="#列出行号" class="headerlink" title="列出行号"></a>列出行号</h5><p>“set nu” ：在文件中的每一行前面列出行号</p>
+<h5 id="取消列出行号"><a href="#取消列出行号" class="headerlink" title="取消列出行号"></a>取消列出行号</h5><p>“set nonu” ：取消文件中的每一行前面列出的行号</p>
+<h5 id="跳到文件中的某一行"><a href="#跳到文件中的某一行" class="headerlink" title="跳到文件中的某一行"></a>跳到文件中的某一行</h5><p>“n”：输入行号n后回车，光标会跳转到文本的指定行——第n行的行首</p>
+<h5 id="查找字符"><a href="#查找字符" class="headerlink" title="查找字符"></a>查找字符</h5><ul>
+<li>“/关键字”：向后查找关键字，可以按n往后查找下一个匹配的关键字</li>
+<li>“?关键字”：向前查找关键字，可以按n往前查找下一个匹配的关键字</li>
+</ul>
+<h5 id="运行Shell命令"><a href="#运行Shell命令" class="headerlink" title="运行Shell命令"></a>运行Shell命令</h5><p>“!命令” ：运行Shell命令</p>
+<h5 id="替换字符"><a href="#替换字符" class="headerlink" title="替换字符"></a>替换字符</h5><ul>
+<li>“s /a/b” ：将光标所在行第一个a替换为b</li>
+<li>“s /a/b/g” ：将光标所在行所有的a替换为b</li>
+</ul>
+<h5 id="保存文件"><a href="#保存文件" class="headerlink" title="保存文件"></a>保存文件</h5><p>“w” ：在冒号后输入字母“w” 就可以将文件保存起来</p>
+<h5 id="退出vi"><a href="#退出vi" class="headerlink" title="退出vi"></a>退出vi</h5><ul>
+<li>“q” ：按“q” 即退出vi，如果无法离开vi，可以在“q” 后跟一个“!” 强制符离开vi</li>
+<li>“wq” ：一般建议离开时，搭配“w” 一起使用，这样在退出的时候还可以保存文件</li>
+</ul>
+<h2 id="文件和目录"><a href="#文件和目录" class="headerlink" title="文件和目录"></a>文件和目录</h2><p>Linux系统中<strong>以目录的形式挂载文件系统</strong>，其目录结构是一个<strong>分层的树形结构</strong>。链接是一种在共享文件和访问它的用户的若干目录项之间建立联系的方法， Linux系统中包括<strong>硬链接和软链接</strong>两种方式</p>
+<h3 id="Linux文件"><a href="#Linux文件" class="headerlink" title="Linux文件"></a>Linux文件</h3><p>如果一个文件没有扩展名，或者与它的扩展名不相符时，可以使用file命令查看该文件的类型，例如：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">steve@ubuntu-17-10:~$ file db.json </span><br><span class="line">db.json: UTF-8 Unicode text, with very long lines, with no line terminators</span><br><span class="line">steve@ubuntu-17-10:~$ file _config.yml </span><br><span class="line">_config.yml: UTF-8 Unicode text</span><br><span class="line">steve@ubuntu-17-10:~$ file package-lock.json </span><br><span class="line">package-lock.json: ASCII text</span><br></pre></td></tr></table></figure>
+
+<h3 id="Linux文件类型"><a href="#Linux文件类型" class="headerlink" title="Linux文件类型"></a>Linux文件类型</h3><p>Linux文件类型常见的有：普通文件、目录文件、字符设备文件、块设备文件和符号链接文件等，可以用<code>ls -lh</code>命令查看某个文件的属性</p>
+<ul>
+<li><p>普通文件</p>
+<p>类似“ -rw-r–r–”的属性符号，其<strong>属性第一个符号是“ -”</strong>，这样的文件在Linux系统中就是普通文件</p>
+</li>
+<li><p>目录文件（<strong>d</strong>irectory）</p>
+<p>类似“ drwxr-xr-x”的属性符号，其<strong>属性第一个符号是“ d”</strong>，这样的文件在Linux系统中就是目录文件</p>
+</li>
+<li><p>设备文件</p>
+<p>Linux系统下的/dev目录中有大量的设备文件</p>
+<ul>
+<li><p>块设备文件（<strong>b</strong>lock）</p>
+<p>块设备的主要特点是可以随机读写，而最常见的块设备就是磁盘，如/dev/hda1、/dev/sda2等</p>
+<p>类似“ brw-rw—-”的属性符号，其<strong>属性第一个符号是“ b”</strong>，这样的文件在Linux系统中就是块设备文件</p>
+</li>
+<li><p>字符设备文件（<strong>c</strong>haracter）</p>
+<p>最常见的字符设备文件是打印机和终端，可以接收字符流。 /dev/null是一个非常有用的字符设备文件，送入这个设备的所有内容都被忽略</p>
+<p>类似“ crw-r—–”的属性符号，其<strong>属性第一个符号是“ c”</strong>，这样的文件在Linux系统中就是字符设备文件</p>
+</li>
+</ul>
+</li>
+<li><p>管道文件（<strong>p</strong>ipe）</p>
+<p>管道文件有时候也被叫做FIFO文件（ FIFO是先进先出的意思），管道文件就是从一头流入，从另一头流出</p>
+<p>类似“ prw——-”的属性符号，其<strong>属性第一个符号是“ p”</strong>，这样的文件在Linux系统中就是管道文件</p>
+</li>
+<li><p>链接文件（<strong>l</strong>ink）</p>
+<p>链接文件有点类似于Windows系统中的快捷方式，链接有两种方式：软链接和硬链接</p>
+<ul>
+<li><p>软链接文件</p>
+<p>软链接（也叫符号链接），文件<strong>用户数据块中存放的内容是另一文件的路径名的指向</strong>。软链接就是一个普通文件，只是数据块内容有点特殊。<strong>软链接可对文件或目录创建</strong>。删除软链接并不影响被指向的文件，但若被指向的原文件被删除，则相关软连接就变成了死链接</p>
+<p>类似“ lrwxrwxrwx”的属性符号，其<strong>属性第一个符号是“ l”</strong>，这样的文件在Linux系统中就是软链接文件</p>
+</li>
+<li><p>硬链接文件</p>
+<p>硬链接就是同一个文件使用了多个别名（他们<strong>有共同的 inode</strong>）。由于<strong>硬链接是有着相同inode</strong><br><strong>号仅文件名不同的文件</strong>，因此，删除一个硬链接文件并不影响其他有相同 inode 号的文件。硬链接<strong>不能对目录进行创建，只可对文件创建</strong></p>
+<p>用“ ls -l”命令查看某个文件的属性，可以看到<strong>第二列的文件硬链接数大于1</strong> ，这样的文件在Linux系统中就是硬链接文件</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Linux目录结构"><a href="#Linux目录结构" class="headerlink" title="Linux目录结构"></a>Linux目录结构</h3><p>Linux系统都有根文件系统，它包含<strong>系统引导和使其他文件系统得以挂载所必要的文件</strong>，根文件系统需要有<strong>单用户状态所必须的足够的内容</strong>，还应该包括<strong>修复损坏系统、恢复备份等工具</strong>。</p>
+<p>Linux系统的目录结构是分层的树形结构，都是挂载在根文件系统“ /” 下</p>
+<h3 id="文件和目录操作"><a href="#文件和目录操作" class="headerlink" title="文件和目录操作"></a>文件和目录操作</h3><ul>
+<li><p>pwd：显示当前用户所处的工作目录的绝对路径</p>
+</li>
+<li><p>cd：更改工作目录路径，工作目录路径可以使用绝对或相对路径名，绝对路径从/（根）开始，然后循序到所需的目录下；相对路径从当前目录开始</p>
+<p><strong>命令语法：cd [目录名]</strong></p>
+</li>
+<li><p>ls：对于目录而言将列出其中的所有子目录与文件信息；对于文件而言将输出其文件名以及所要求的其他信息</p>
+<p><strong>命令语法：ls [选项] [目录或是文件]</strong></p>
+<p>ls命令显示的详细信息：</p>
+<p><img src="https://i.loli.net/2019/07/26/5d3ab0c1d837547899.png" alt="ls命令显示的详细信息"></p>
+</li>
+<li><p>touch：创建空文件以及更改文件或目录的时间，其中时间格式为MMDDHHmm</p>
+<p><strong>命令语法：touch [-acfm] [-d &lt;日期时间&gt;] [-r &lt;参考 文件或目录&gt;] [-t &lt;日期时间&gt;] [文件]</strong></p>
+</li>
+<li><p>mkdir：在Linux系统中创建目录，其默认权限为rwxr-xr-x（ 755）</p>
+<p><strong>命令语法：mkdir [选项] [目录名]</strong></p>
+<p>-m 可以在创建目录时设置其权限，例如mkdir -m 777 newdir，其权限是rwxrwxrwx（ 777）</p>
+</li>
+<li><p>rmdir：删除空目录</p>
+<p><strong>命令语法：rmdir [选项] [目录名]</strong></p>
+<p>-p或–parents：删除指定目录后，若该目录的上层目录已变成空目录，则将其一并删除</p>
+</li>
+<li><p>cp：复制文件和目录到其他目录中</p>
+<p><strong>命令语法：cp [选项] [源文件或目录] [目标文件或目录]</strong></p>
+</li>
+<li><p>mv：对<u>文件和目录更改名称</u>以及移动文件和目录的路径</p>
+<p><strong>命令语法：mv [选项] [源文件或目录] [目标文件或目录]</strong></p>
+</li>
+<li><p>rm：删除系统中的文件或目录</p>
+<p><strong>命令语法：rm [选项] [文件或目录]</strong></p>
+<p>-r或-R：递归处理，将指定目录下的所有文件与子目录一并处理；-f：强制删除文件或目录；-i：在删除文件之前提示信息</p>
+</li>
+<li><p>wc：统计指定文件中的行数、单词数或字节数，并将统计结果显示输出到屏幕</p>
+<p><strong>命令语法：wc [选项] [文件]</strong></p>
+<p>选项部分可以有-lwc，即将行数、单词数和字节数都显示出来</p>
+</li>
+</ul>
+<h3 id="链接文件"><a href="#链接文件" class="headerlink" title="链接文件"></a>链接文件</h3><p>在Linux系统中，内核为每一个新创建的文件分配一个inode（索引节点）号，文件属性保存在索引节点里，在访问文件时，索引节点被复制到内存里，从而实现文件的快速访问</p>
+<h4 id="硬链接"><a href="#硬链接" class="headerlink" title="硬链接"></a>硬链接</h4><p>硬链接是一个指针，指向文件索引节点，系统并不为它重新分配inode，可以用ln命令来建立硬链接。硬链接节省空间，也是Linux系统整合文件系统的传统方式。硬链接文件有两个限制：</p>
+<p>（ 1）不允许给目录创建硬链接</p>
+<p>（ 2）只有在同一文件系统中的文件之间才能创建链接</p>
+<h4 id="软链接"><a href="#软链接" class="headerlink" title="软链接"></a>软链接</h4><p>软链接又称为符号链接，这个文件包含了另一个文件的路径名</p>
+<h4 id="硬链接和软链接的区别"><a href="#硬链接和软链接的区别" class="headerlink" title="硬链接和软链接的区别"></a>硬链接和软链接的区别</h4><p><strong>硬链接记录的是目标的inode</strong>，<strong>软链接记录的是目标的路径</strong>。<strong>软链接就像是快捷方式，而硬链接就像是备份</strong>。软链接可以做跨分区的链接，而硬链接由于inode的缘故，只能在本分区中做链接。所以，软链接的使用频率要高得多</p>
+<h4 id="创建链接"><a href="#创建链接" class="headerlink" title="创建链接"></a>创建链接</h4><p>ln命令可以创建链接文件（包括软链接文件和硬链接文件）</p>
+<p><strong>命令语法：ln [选项] [源文件名] [链接文件名]</strong>，默认创建的是硬链接，加上-s后创建的是软链接</p>
+<p>使用rm删除源文件后，硬链接文件依然能打开，而软链接变成死链接</p>
+<h2 id="Linux常用操作命令"><a href="#Linux常用操作命令" class="headerlink" title="Linux常用操作命令"></a>Linux常用操作命令</h2><p><em>这部分挺琐碎的，直接参考<a href="http://man.linuxde.net/即可" target="_blank" rel="noopener">http://man.linuxde.net/即可</a> ，关于Linux命令大全的实用网站</em></p>
+<h3 id="文本显示和处理"><a href="#文本显示和处理" class="headerlink" title="文本显示和处理"></a>文本显示和处理</h3><p>cat，more，less，head，tail，sort，uniq，cut，comm以及diff等</p>
+<h3 id="文件和命令查找"><a href="#文件和命令查找" class="headerlink" title="文件和命令查找"></a>文件和命令查找</h3><p>grep，find，locate，whereis，file，whatis以及which等</p>
+<h3 id="系统信息显示"><a href="#系统信息显示" class="headerlink" title="系统信息显示"></a>系统信息显示</h3><p>uname， hostname， dmesg， cal以及date等</p>
+<h3 id="信息交流"><a href="#信息交流" class="headerlink" title="信息交流"></a>信息交流</h3><p>echo， mesg， wall以及write等</p>
+<h3 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h3><p>clear， sync， uptime以及last等</p>
+<h2 id="Shell编程"><a href="#Shell编程" class="headerlink" title="Shell编程"></a>Shell编程</h2><h3 id="语法基础"><a href="#语法基础" class="headerlink" title="语法基础"></a>语法基础</h3><p>Shell程序由开头部分、注释部分以及语句执行部分组成</p>
+<h4 id="开头"><a href="#开头" class="headerlink" title="开头"></a>开头</h4><p>Shell程序必须以下面的行开始（必须放在文件的第一行）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br></pre></td></tr></table></figure>
+
+<p>符号“ #!” 用来告诉系统它后面的参数是<strong>用来执行该文件的程序</strong>，在这个例子中使用/bin/bash来执行程序。当编辑好脚本时，如果要执行该脚本，还必须<strong>使其可执行</strong>（即赋予可执行权限）：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod u+x [文件名]</span><br></pre></td></tr></table></figure>
+
+<p>如果不设置可执行权限的话，可以手动受用bash命令告诉系统它是一个可执行的脚本，这样也可以执行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash file.sh</span><br></pre></td></tr></table></figure>
+
+<h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><p>以“ #” 开头的句子表示注释，直到这一行的结束</p>
+<h4 id="执行部分"><a href="#执行部分" class="headerlink" title="执行部分"></a>执行部分</h4><p>例子：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"><span class="meta">#</span><span class="bash">filename:welcome</span></span><br><span class="line">first()</span><br><span class="line">&#123;</span><br><span class="line">echo "=========================================="</span><br><span class="line">echo "Hello! Everyone! Welcome to the Linux world."</span><br><span class="line">echo "=========================================="</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">second()</span><br><span class="line">&#123;</span><br><span class="line">echo "******************************************"</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">first</span><br><span class="line">second</span><br><span class="line">second</span><br><span class="line">first</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">==========================================</span><br><span class="line">Hello! Everyone! Welcome to the Linux world.</span><br><span class="line">==========================================</span><br><span class="line">******************************************</span><br><span class="line">******************************************</span><br><span class="line">==========================================</span><br><span class="line">Hello! Everyone! Welcome to the Linux world.</span><br><span class="line">==========================================</span><br></pre></td></tr></table></figure>
+
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>对Shell来讲，<strong>所有变量的取值都是一个字符</strong>， Shell程序采用“ $var” 的形式来引用名为var的变量的值</p>
+<h4 id="Shell定义的环境变量"><a href="#Shell定义的环境变量" class="headerlink" title="Shell定义的环境变量"></a>Shell定义的环境变量</h4><p>Shell在开始执行时就已经定义了一些与系统的工作环境有关的变量，用户还可以重新定义这些变量，常见的环境变量如下：</p>
+<ul>
+<li>HOME：用于保存用户宿主目录的完全路径名</li>
+<li>PATH：默认命令搜索路径</li>
+<li>TERM：终端的类型</li>
+<li>UID：当前用户的识别号</li>
+<li>PWD：当前工作目录的绝对路径名</li>
+<li>PS1： 用户平时的提示符</li>
+<li>PS2： 第一行没输完，等待第二行输入的提示符</li>
+</ul>
+<h4 id="用户定义的变量"><a href="#用户定义的变量" class="headerlink" title="用户定义的变量"></a>用户定义的变量</h4><p>语法规则：<code>变量名=变量值</code></p>
+<p>在定义变量时，<strong>变量名前不应加符号“ $”</strong> ；在引用变量的内容时，则应<strong>在变量名前加符号“ $”或“ ${变量名}”</strong> 。在给变量<strong>赋值时，等号两边一定不能留空格</strong>，若<strong>变量中本身就包含了空格，则整个字符串都要用双引号括起来</strong>。在编写Shell程序时，为了使变量名和命令名相区别，<strong>建议所有的变量名都用大写字母来表示</strong>。</p>
+<p>有时需要在说明一个变量并对它设置为一个特定值后就不再改变它的值时，可以用下面的命令来保证一个变量的只读性：<code>readonly 变量名</code>。</p>
+<p>在任何时候创建的变量都<strong>只是当前Shell的局部变量</strong>，所以不能被Shell运行的其他命令或Shell程序所利用，而export命令可以将一个局部变量提供给Shell命令使用，其格式是：<code>export 变量名</code>。也可以在给变量赋值的同时使用export命令：<code>export 变量名=变量值</code>。</p>
+<h4 id="位置参数"><a href="#位置参数" class="headerlink" title="位置参数"></a>位置参数</h4><p>位置参数是一种在调用Shell程序的命令行中按照各自的位置决定的变量，<strong>是在程序名之后输入的参数</strong>。位置参数之间用空格分隔，Shell取第一个位置参数替换程序文件中的$1，第二个替换$2，依次类推。<strong>$0是一个特殊的变量，它的内容是当前这个Shell程序的文件名</strong>，所以， $0不是一个位置参数，在显示当前所有的位置参数时是不包括$0的</p>
+<h4 id="预定义变量"><a href="#预定义变量" class="headerlink" title="预定义变量"></a>预定义变量</h4><p>预定义变量和环境变量相类似，也是在Shell一开始时就定义了的变量。所不同的是，用户只能根据Shell的定义来使用这些变量，所有预定义变量都是<strong>由符号“ $” 和另一个符号组成</strong>的。常见的预定义变量如下：</p>
+<ul>
+<li>$#：位置参数的数量</li>
+<li>$*：所有位置参数的内容</li>
+<li>$?：命令执行后返回的状态</li>
+<li>$$：当前进程的进程号</li>
+<li>$!：后台运行的最后一个进程号</li>
+<li>$0：当前执行的进程名。</li>
+</ul>
+<h4 id="参数置换的变量"><a href="#参数置换的变量" class="headerlink" title="参数置换的变量"></a>参数置换的变量</h4><p>Shell提供了参数置换功能以便用户可以根据不同的条件来给变量赋不同的值，下面Variable是变量名， value代表一个具体的值：</p>
+<ul>
+<li>${variable:-value}: 如果变量variable存在，则返回variable的值，否则返回值value</li>
+<li>${variable:=value}: 如果变量variable存在，则返回variable的值，否则，先将值value赋给变量variable，然后返回值value</li>
+<li>${variable:+value}: 如果变量variable存在，则返回value的值，否则返回空值</li>
+<li>${variable:?value}: 如果变量variable存在，则返回variable的值，否则将value送到标准错误输出显示并退出shell程序，这里value通常为一个错误提示消息</li>
+<li>${variable:offset[:length]}:其中offset和length为整数数字，中括号代表可选部分。此引用方式表示返回从变量variable的第(offset+1)个字符开始的、长度为length的子串。如果中括号内的部分省略，则返回其后的所有子串</li>
+</ul>
+<h3 id="变量表达式"><a href="#变量表达式" class="headerlink" title="变量表达式"></a>变量表达式</h3><p>首先要注意的是，<strong>这些表达式符号前后都需要有空格</strong>，否则会出错</p>
+<h4 id="字符串比较"><a href="#字符串比较" class="headerlink" title="字符串比较"></a>字符串比较</h4><p>测试字符串是否相等，长度是否为零，字符串是否为NULL：</p>
+<ul>
+<li>=：比较两个字符串是否相同，相同则为“是” （结果显示0）</li>
+<li>!=：比较两个字符串是否相同，不同则为“是”（结果显示0）</li>
+<li>-n：比较字符串的长度是否大于0，如果大于0则为“是” （结果显示0）</li>
+<li>-z：比较字符串的<strong>长度是否等于0</strong>，如果等于0则为“是” （结果显示0）</li>
+</ul>
+<p>补充：</p>
+<ul>
+<li><p>直接测试时，控制台是不会有输出结果的，需要使用<code>$?</code>来获取输出结果</p>
+</li>
+<li><p>如果变量字符串含有空格，需要使用双引号，否则会出错</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">steve@ubuntu-17-10:~/$ str1="ab cd"</span><br><span class="line">steve@ubuntu-17-10:~/$ test $str1 = ab</span><br><span class="line">bash: test: 参数太多</span><br><span class="line">steve@ubuntu-17-10:~/$ test "$str1" = ab</span><br><span class="line">steve@ubuntu-17-10:~/$ echo $?</span><br><span class="line">1</span><br><span class="line">steve@ubuntu-17-10:~/$ test "$str1" = ab cd</span><br><span class="line">bash: test: 参数太多</span><br><span class="line">steve@ubuntu-17-10:~/$ test "$str1" = "ab cd"</span><br><span class="line">steve@ubuntu-17-10:~/$ echo $?</span><br><span class="line">0</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="数字比较"><a href="#数字比较" class="headerlink" title="数字比较"></a>数字比较</h4><p>test语句不使用<code>&gt;?</code> 类似的符号来表达大小的比较，而是用参数来表示：</p>
+<ul>
+<li>-eq：相等</li>
+<li>-ge：大于等于</li>
+<li>-le：小于等于</li>
+<li>-ne：不等于</li>
+<li>-gt：大于</li>
+<li>-lt：小于</li>
+</ul>
+<h4 id="逻辑测试"><a href="#逻辑测试" class="headerlink" title="逻辑测试"></a>逻辑测试</h4><ul>
+<li>!：与一个逻辑值相反的逻辑值</li>
+<li>-a与（ and）：两个逻辑值都为“是” 返回值才为“是” ，反之为“否”</li>
+<li>-o或（ or）：两个逻辑值有一个为“是” ，返回值就为“是” </li>
+</ul>
+<p>例子：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@PC-LINUX ~]# test -r empty -a -s empty</span><br><span class="line">[root@PC-LINUX ~]# echo $?</span><br><span class="line">1</span><br><span class="line">// 结果显示1表示文件empty存在且只读以及长度为非0是不对的</span><br></pre></td></tr></table></figure>
+
+<h4 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h4><p>文件测试表达式通常是为了测试文件的文件操作逻辑：</p>
+<ul>
+<li>-d：对象存在且为目录，则返回值为“是” </li>
+<li>-f：对象存在且为文件，则返回值为“是” </li>
+<li>-L：对象存在且为符号连接，则返回值为“是” </li>
+<li>-r：对象存在且可读，则返回值为“ 是”</li>
+<li>-s：对象存在且<strong>长度非0</strong>，则返回值为“是” </li>
+<li>-w：对象存在且可写，则返回值为“是” </li>
+<li>-x：对象存在且可执行，则返回值为“是” </li>
+<li>!：测试条件的否定</li>
+</ul>
+<h3 id="Shell程序的执行和跟踪"><a href="#Shell程序的执行和跟踪" class="headerlink" title="Shell程序的执行和跟踪"></a>Shell程序的执行和跟踪</h3><h4 id="Shell程序的执行和调试"><a href="#Shell程序的执行和调试" class="headerlink" title="Shell程序的执行和调试"></a>Shell程序的执行和调试</h4><p>程序的第一行一般为<code>#!/bin/bash</code> ，其中“ #” 表示该行是注释，感叹号“ ！ ” 表示Shell运行感叹号之后的命令<strong>并用文档的其余部分作为输入</strong>，也就是运行/bin/bash并让/bin/bash去执行Shell程序的内容</p>
+<h5 id="Shell程序的执行"><a href="#Shell程序的执行" class="headerlink" title="Shell程序的执行"></a>Shell程序的执行</h5><p>有如下三种方式运行shell程序：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">steve@ubuntu-17-10:~/$ vim exe.sh</span><br><span class="line">steve@ubuntu-17-10:~/$ bash &lt; exe.sh </span><br><span class="line">hello world</span><br><span class="line">steve@ubuntu-17-10:~/$ bash exe.sh </span><br><span class="line">hello world</span><br><span class="line">steve@ubuntu-17-10:~/$ chmod u+x exe.sh </span><br><span class="line">steve@ubuntu-17-10:~/$ ./exe.sh </span><br><span class="line">hello world</span><br></pre></td></tr></table></figure>
+
+<p><u>发现一个问题：使用<code>bash &lt; exe.sh</code>运行程序时，read指令好像不生效，控制台不会等待标准输入，具体原因还不知道</u></p>
+<h5 id="Shell程序的调试"><a href="#Shell程序的调试" class="headerlink" title="Shell程序的调试"></a>Shell程序的调试</h5><p>调用bash的形式是：<code>bash [选项] [Shell程序文件名]</code></p>
+<ul>
+<li>-v：当读入Shell输入行时，把它们显示出来（输出的命令是<strong>未经执行的源程序命令</strong>）</li>
+<li>-x：执行命令时把命令和它们的参数显示出来（输出的命令是<strong>解释后实际执行的命令</strong>）</li>
+</ul>
+<p>示例：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">steve@ubuntu-17-10:~/$ vim exe.sh ; cat exe.sh </span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">echo "shell file name is $0"</span><br><span class="line">echo "hello world"</span><br><span class="line">echo $1</span><br><span class="line">echo $2</span><br><span class="line">steve@ubuntu-17-10:~/$ bash -x exe.sh a b</span><br><span class="line">+ echo 'shell file name is exe.sh'</span><br><span class="line">shell file name is exe.sh</span><br><span class="line">+ echo 'hello world'</span><br><span class="line">hello world</span><br><span class="line">+ echo a</span><br><span class="line">a</span><br><span class="line">+ echo b</span><br><span class="line">b</span><br><span class="line">steve@ubuntu-17-10:~/$ bash -v exe.sh a b</span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">echo "shell file name is $0"</span><br><span class="line">shell file name is exe.sh</span><br><span class="line">echo "hello world"</span><br><span class="line">hello world</span><br><span class="line">echo $1</span><br><span class="line">a</span><br><span class="line">echo $2</span><br><span class="line">b</span><br></pre></td></tr></table></figure>
+
+<h3 id="Shell流程控制语句"><a href="#Shell流程控制语句" class="headerlink" title="Shell流程控制语句"></a>Shell流程控制语句</h3><p>与传统语言不同的是， Shell用于指定条件值的不是布尔运算式，而是命令和字符串</p>
+<h4 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h4><h5 id="if条件语句"><a href="#if条件语句" class="headerlink" title="if条件语句"></a>if条件语句</h5><blockquote>
+<p>可以参考：<a href="https://blog.csdn.net/doiido/article/details/43966819" target="_blank" rel="noopener">https://blog.csdn.net/doiido/article/details/43966819</a></p>
+</blockquote>
+<p>Shell程序中的条件分支有如下两种方式：</p>
+<ul>
+<li><p>if-then语句</p>
+<p>语法如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if [ 命令行1 ];then</span><br><span class="line">	命令行2</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是，在 <strong>‘[‘后面</strong> 和 <strong>‘]’前面</strong> 都必须要有空格，不然会出错，例如要<code>[ $a=a ]</code></p>
+</li>
+<li><p>if-then-else语句</p>
+<p>语法如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if [ 命令行1 ]</span><br><span class="line">then</span><br><span class="line">	命令行2</span><br><span class="line">else</span><br><span class="line">	命令行3</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h5 id="case条件语句"><a href="#case条件语句" class="headerlink" title="case条件语句"></a>case条件语句</h5><p>Shell通过计算字符串string的值，将其结果依次与运算式exp-1和exp-2等进行比较，直到找到一个匹配的运算式为止。如果找到了匹配项，则执行它下面的命令直到遇到一对分号<code>;;</code>为止，语法格式：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">case string in</span><br><span class="line">exp-1)</span><br><span class="line">	若干个命令行1</span><br><span class="line">;;</span><br><span class="line">exp-2)</span><br><span class="line">	若干个命令行2</span><br><span class="line">;;</span><br><span class="line">……</span><br><span class="line">*)</span><br><span class="line">	其他命令行</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
+
+<p>在case运算式中也可以使用Shell的通配符（ <code>*</code> ， <code>?</code> ， <code>[]</code>）。通常用<code>*</code>作为case命令的最后运算式以便在前面找不到任何相应的匹配项时执行“其他命令行” 的命令，样例：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">steve@ubuntu-17-10:~/$ cat menu.sh </span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">echo _</span><br><span class="line">echo "1 Restore"</span><br><span class="line">echo "2 Backup"</span><br><span class="line">echo "3 Unload"</span><br><span class="line">echo </span><br><span class="line">echo -n "Enter Choice: "</span><br><span class="line">read CHOICE</span><br><span class="line">case "$CHOICE" in</span><br><span class="line">1) echo "Restore";;</span><br><span class="line">2) echo "Backup";;</span><br><span class="line">3) echo "Unload";;</span><br><span class="line">*) echo "Sorry $CHOICE is not a valid choice."</span><br><span class="line">exit 1</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
+
+<h4 id="循环控制"><a href="#循环控制" class="headerlink" title="循环控制"></a>循环控制</h4><h5 id="for循环语句"><a href="#for循环语句" class="headerlink" title="for循环语句"></a>for循环语句</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for 变量名 [in数值列表]</span><br><span class="line">do</span><br><span class="line">	若干个命令行</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果变量名是var，则在in之后给出的数值将顺序替换循环命令列表中的“ $var” </li>
+<li>如果省略了in，则变量var的取值将是位置参数</li>
+</ul>
+<p>例子：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">steve@ubuntu-17-10:~/$ vim mm.sh ; cat mm.sh</span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash </span></span><br><span class="line">for ab in 1 2 3 4</span><br><span class="line">do</span><br><span class="line">	echo $ab</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">steve@ubuntu-17-10:~/$ bash mm.sh </span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td></tr></table></figure>
+
+<p>求和示例：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">steve@ubuntu-17-10:~/$ cat qqq.sh </span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash </span></span><br><span class="line">sum=0</span><br><span class="line">for INT in $*;do</span><br><span class="line">	sum=`expr $sum + $INT`</span><br><span class="line">done </span><br><span class="line">echo $sum</span><br><span class="line">steve@ubuntu-17-10:~/$ bash qqq.sh 1 2 3 4 </span><br><span class="line">10</span><br></pre></td></tr></table></figure>
+
+<p>要注意，原ppt中expr指令使用的是单引号<code>&#39;&#39;</code>括起来的，这样不对，应该使用反单引号``才能执行后面的加法计算</p>
+<h5 id="while循环语句"><a href="#while循环语句" class="headerlink" title="while循环语句"></a>while循环语句</h5><p>语法格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">while</span><br><span class="line">	若干个命令行1</span><br><span class="line">do</span><br><span class="line">	若干个命令行2</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+
+<p>只要while的“若干个命令行1” 中<strong>最后一个命令的返回状态为真</strong>， while循环就继续执行“ do…done” 之间的“ 若干个命令行2”，示例：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">steve@ubuntu-17-10:~/桌面$ cat zx.sh </span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash </span></span><br><span class="line">int=1</span><br><span class="line">while [ $int -le 5 ]; do</span><br><span class="line">	sq=`expr $int \* $int`</span><br><span class="line">	echo $sq</span><br><span class="line">	int=`expr $int + 1`</span><br><span class="line">done</span><br><span class="line">echo "Job completed!"</span><br><span class="line">steve@ubuntu-17-10:~/桌面$ bash zx.sh </span><br><span class="line">1</span><br><span class="line">4</span><br><span class="line">9</span><br><span class="line">16</span><br><span class="line">25</span><br><span class="line">Job completed!</span><br></pre></td></tr></table></figure>
+
+<h5 id="until循环语句"><a href="#until循环语句" class="headerlink" title="until循环语句"></a>until循环语句</h5><p>语法格式：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">until</span><br><span class="line">	若干个命令行1</span><br><span class="line">do</span><br><span class="line">	若干个命令行2</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+
+<p>until循环和while循环的区别在于：<strong>while循环在条件为真时继续执行循环，而until则是在条件为假时继续执行循环</strong>。Shell还提供了true和false两条命令用于创建无限循环结构，它们的返回状态分别是总为0或总为非0</p>
+<h5 id="break和continue语句"><a href="#break和continue语句" class="headerlink" title="break和continue语句"></a>break和continue语句</h5><p>用法和传统C语言中的用法无异</p>
+<h5 id="source语句"><a href="#source语句" class="headerlink" title="source语句"></a>source语句</h5><p>source命令用法：<code>source FileName</code></p>
+<p>作用：在<strong>当前bash环境下</strong>读取并执行FileName中的命令。</p>
+<p>注：该命令<strong>通常用命令“ .”来替代</strong>。如： source .bash_rc 与 . .bash_rc 是等效的。</p>
+<p>source命令与shell scripts的区别是， <strong>source在当前bash环境下执行命令</strong>，而<strong>scripts是启动一个子shell来执行命令</strong>。这样如果把设置环境变量（或alias等等）的命令写进scripts中，就只会影响子shell,无法改变当前的BASH,所以<strong>通过文件设置环境变量时，要用source 命令。</strong></p>
+<p>source命令(从 C Shell 而来)是bash shell的内置命令。点命令(从Bourne Shell而来) 是source的另一名称。 <strong>source(或点)命令通常用于重新执行刚修改的初始化文档</strong>，如 .bash_profile 和<br>.profile 等等。</p>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p><strong>所有函数在使用前必须定义</strong>。函数的调用，只需要使用函数名就可以调用已经定义好的函数。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 定义：</span></span><br><span class="line">[function] 函数名()</span><br><span class="line">&#123;</span><br><span class="line">	命令</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 引用：</span></span><br><span class="line">函数名 [ 参数1 参数2 ...参数n ]</span><br></pre></td></tr></table></figure>
+
+<p>在函数中得到函数返回值可以使用以下两种方法：</p>
+<ul>
+<li>在函数末尾加return，从函数中返回，用最后的<strong>命令状态</strong>决定返回值（<code>$?</code>）</li>
+<li>返回一个数值，如0或1。格式如： return 0或者return 1</li>
+</ul>
+<p>示例：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">steve@ubuntu-17-10:~/桌面$ cat func.sh </span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash </span></span><br><span class="line">function func()&#123;</span><br><span class="line">	echo "hello"</span><br><span class="line">	echo "world"</span><br><span class="line">&#125;</span><br><span class="line">func</span><br><span class="line">echo $?</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">steve@ubuntu-17-10:~/桌面$ bash func.sh </span><br><span class="line">hello</span><br><span class="line">world</span><br><span class="line">0</span><br></pre></td></tr></table></figure>
+
+<p>说明获取的是<strong>命令状态</strong>而不是命令的输出值</p>
+<h2 id="用户和组群账户管理"><a href="#用户和组群账户管理" class="headerlink" title="用户和组群账户管理"></a>用户和组群账户管理</h2><h3 id="用户账户管理"><a href="#用户账户管理" class="headerlink" title="用户账户管理"></a>用户账户管理</h3><h4 id="Linux用户账户概述"><a href="#Linux用户账户概述" class="headerlink" title="Linux用户账户概述"></a>Linux用户账户概述</h4><p>用户在Linux系统中是分角色的，用户的角色是通过UID（用户ID号）来标识的，每个用户的UID都是不同的。在Linux系统中主要有<strong>root用户、虚拟用户和普通用户</strong>这3类用户。</p>
+<ul>
+<li><p>root用户</p>
+<p>root用户是Linux系统的内置用户，在系统中的权限最高，也被称之为超级管理用户。在系统中的每个文件、目录和进程都归属于某一个用户，没有用户许可，<strong>除root用户外</strong>的其它普通用户无法进行操作</p>
+</li>
+<li><p>虚拟用户</p>
+<p>这类用户也被称为伪用户或假用户，<strong>这类用户不具有登录系统的能力</strong>，但却是系统运行不可缺少的用户，比如bin， daemon， adm，ftp以及mail等用户账户，这类用户都是Linux系统的<strong>内置用户</strong></p>
+</li>
+<li><p>普通用户</p>
+<p>这类用户是由系统管理员创建，并且能登录Linux系统。只能操作自己目录内的文件，权限有限</p>
+</li>
+</ul>
+<h4 id="Linux用户账户配置文件"><a href="#Linux用户账户配置文件" class="headerlink" title="Linux用户账户配置文件"></a>Linux用户账户配置文件</h4><p>用户管理主要是<strong>通过修改用户配置文件完成</strong>的，使用用户管理控制工具的最终目的也是为了修改用户配置文件。</p>
+<h5 id="etc-passwd文件"><a href="#etc-passwd文件" class="headerlink" title="/etc/passwd文件"></a>/etc/passwd文件</h5><p>/etc/passwd是系统识别用户的一个文件，Linux系统中所有的用户都记录在该文件中。<strong>任何用户</strong>都可以读取该文件内容，在/etc/passwd文件中，<strong>每一行表示的是一个用户账户信息</strong>，<strong>一行有7个段位，每个段位用“:”分隔</strong>。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/07/29/5d3ea1207389631335.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>每个用户都对应一个唯一的UID，Linux的用户UID值是非负整数， root的UID是0，拥有系统最高权限。UID的唯一性关系到系统的安全，比如在/etc/passwd文件中把用户zhangsan的UID改为0后， zhangsan这个用户会被确认为root用户。</p>
+<p><strong>UID是确认用户权限的标识，用户登录系统所处的角色是通过UID来实现的，而不是用户名</strong>。</p>
+<h5 id="etc-shadow文件"><a href="#etc-shadow文件" class="headerlink" title="/etc/shadow文件"></a>/etc/shadow文件</h5><p>/etc/shadow文件是/etc/passwd文件的影子文件，这个文件并不是由/etc/passwd文件产生，这两个文件是<strong>对应互补</strong>的。/etc/shadow文件内容包括<strong>用户及被加密的口令</strong>及<strong>其他/etc/passwd不能包括的信息，比如用户账户的有效期限</strong>等。/etc/shadow文件的内容包括9个段位，每个段位之间用“ :”分隔：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/07/29/5d3ea44904bdc53896.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h4 id="字符界面下用户账户的设置"><a href="#字符界面下用户账户的设置" class="headerlink" title="字符界面下用户账户的设置"></a>字符界面下用户账户的设置</h4><h5 id="创建新账户"><a href="#创建新账户" class="headerlink" title="创建新账户"></a>创建新账户</h5><p>创建用户账户就是在系统中创建一个新账户，然后为新账户分配<u>用户UID、用户组群、主目录和登录Shell</u>等资源，新创建的用户账户<strong>默认是被锁定的，无法使用</strong>，需要<strong>使用passwd命令设置密码</strong>以后才能使用。使用useradd命令可以在Linux系统下创建用户账户。</p>
+<h5 id="修改账户"><a href="#修改账户" class="headerlink" title="修改账户"></a>修改账户</h5><p>使用usermod命令能更改用户的Shell类型、所属的用户组群、用户口令的有效期，还能更改用户的登录名</p>
+<h5 id="删除用户账户"><a href="#删除用户账户" class="headerlink" title="删除用户账户"></a>删除用户账户</h5><p>使用userdel命令可以在Linux系统下删除用户账户：<code>userdel [-r][用户名]</code>，其中-r是指在删除该用户的同时一起删除主目录</p>
+<h3 id="组群账户管理"><a href="#组群账户管理" class="headerlink" title="组群账户管理"></a>组群账户管理</h3><h4 id="Linux组群账户配置文件"><a href="#Linux组群账户配置文件" class="headerlink" title="Linux组群账户配置文件"></a>Linux组群账户配置文件</h4><p>/etc/gshadow是/etc/group的加密信息文件</p>
+<h5 id="etc-group文件"><a href="#etc-group文件" class="headerlink" title="/etc/group文件"></a>/etc/group文件</h5><p>/etc/group文件的内容包括用户组群名、用户组群口令、 GID及该用户组群所包含的用户，每个用户组群都有一条记录。一行有4个段位，每个段位用“:” 分隔。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/07/29/5d3eae591ea3b22405.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>组群GID和UID类似，是一个从0开始的非负整数， <strong>GID为0的组群是root组群</strong>。Fedora 17系统会预留1000个GID号给系统虚拟用户组群使用，创建的新组群GID是从1000开始的。</p>
+<h5 id="etc-gshadow文件"><a href="#etc-gshadow文件" class="headerlink" title="/etc/gshadow文件"></a>/etc/gshadow文件</h5><p>/etc/gshadow文件是/etc/group的加密文件，比如<strong>用户组群管理口令</strong>就是存放在这个文件中。/etc/gshadow文件中每个用户组群都有一条记录。一行有4个段位，每个段位之间用“ :”分隔。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/07/29/5d3eb098a186369791.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h4 id="字符界面下组群账户的设置"><a href="#字符界面下组群账户的设置" class="headerlink" title="字符界面下组群账户的设置"></a>字符界面下组群账户的设置</h4><p>在Linux系统字符界面下创建、修改以及删除组群账户主要使用groupadd，groupmod<br>和groupdel这3个命令。</p>
+<h5 id="创建组群账户"><a href="#创建组群账户" class="headerlink" title="创建组群账户"></a>创建组群账户</h5><p>命令语法：<code>groupadd [-g gid [-o]] [-f] [组群名]</code></p>
+<p>默认创建的是用户群组，即默认分配的GID大于等于1000，可以通过-g指定GID；-r选项可以创建系统群组，即默认分配的GID小于1000</p>
+<h5 id="修改组群账户"><a href="#修改组群账户" class="headerlink" title="修改组群账户"></a>修改组群账户</h5><p>命令语法：<code>groupmod [-g &lt;组群识别码&gt; &lt;-o&gt;]
+[-n &lt;新组群名称&gt;] [组群名称]</code></p>
+<h5 id="删除组群账户"><a href="#删除组群账户" class="headerlink" title="删除组群账户"></a>删除组群账户</h5><p>命令语法：<code>groupdel [组群名称]</code></p>
+<h3 id="账户相关文件或目录"><a href="#账户相关文件或目录" class="headerlink" title="账户相关文件或目录"></a>账户相关文件或目录</h3><h4 id="etc-skel目录"><a href="#etc-skel目录" class="headerlink" title="/etc/skel目录"></a>/etc/skel目录</h4><p>/etc/skel目录是存放用户启动文件的目录，这个目录由root用户管理，当管理员创建新用户时，这个目录下的文件会自动复制到新创建的用户的主目录下。/etc/skel目录下的文件都是隐藏文件，也就是类似“ .file” 格式的，可以通过添加、修改和删除/etc/skel目录下的文件，来为用户提供一个统一、标准和默认的用户环境。</p>
+<h4 id="etc-login-defs配置文件"><a href="#etc-login-defs配置文件" class="headerlink" title="/etc/login.defs配置文件"></a>/etc/login.defs配置文件</h4><p>/etc/login.defs文件规定了<strong>创建新用户时的一些默认设置</strong>，比如创建用户时是否需要主目录、 UID和GID的范围、用户账户口令的期限等，这个文件可以通过root用户来修改</p>
+<h4 id="etc-default-useradd文件"><a href="#etc-default-useradd文件" class="headerlink" title="/etc/default/useradd文件"></a>/etc/default/useradd文件</h4><p>/etc/default/useradd文件是在使用useradd命令创建用户账户时的规则文件</p>
+<h3 id="用户和组群维护命令"><a href="#用户和组群维护命令" class="headerlink" title="用户和组群维护命令"></a>用户和组群维护命令</h3><h4 id="账户维护命令"><a href="#账户维护命令" class="headerlink" title="账户维护命令"></a>账户维护命令</h4><h5 id="passwd命令"><a href="#passwd命令" class="headerlink" title="passwd命令"></a>passwd命令</h5><p>使用passwd命令可以设置或修改用户的口令，普通用户和超级权限用户都可以运行passwd。<strong>普通用户只能更改自己的用户口令</strong>，root用户可以设置或修改任何用户的口令。如果passwd命令后面<strong>不接任何选项或用户名，则表示修改当前用户的口令</strong>。</p>
+<p>命令语法：<code>passwd [选项] [用户名]</code></p>
+<p>可以使用-l选项来锁住某个用户的口令，这样该用户就无法登录，但是可以从其他用户中通过su切换到被锁定的用户，被锁定的用户口令前面有<code>!</code>标识（Ubuntu系统，其他系统可能会有差异，比如Fedora17系统上是双感叹号<code>!!</code>）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">test:!$6$N8tiFTQb$ViLVGgYXVKoOIdIcoXVfmug5tOfzwIVoeKia4uY6Wtw6n0sIEs1uTf9Ff6DI1.iOPX6/jzs.CDus8h.x6AonJ.:18106:0:99999:7:::</span><br></pre></td></tr></table></figure>
+
+<p>可以使用-u选项来解锁某用户的口令；-d是直接删除某用户的口令，使其无法登录系统。</p>
+<h5 id="gpasswd命令"><a href="#gpasswd命令" class="headerlink" title="gpasswd命令"></a>gpasswd命令</h5><p>使用gpasswd命令可以设置一个组群的组群密码，或是在组群中添加、删除用户。</p>
+<p>命令语法：<code>gpasswd [-r|-R][组群名]</code> <code>gpasswd [选项][用户名][组群名]</code></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-09-15T04:21:56.000Z" itemprop="dateUpdated">2019-09-15 12:21:56</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/07/25/Linux系统基础/" target="_blank" rel="external">http://QQ876684433.github.io/2019/07/25/Linux系统基础/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://QQ876684433.github.io">
+            <img src="/img/avatar.jpg" alt="steve_chph">
+            steve_chph
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/07/25/Linux系统基础/&title=《Linux系统基础》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/07/25/Linux系统基础/&title=《Linux系统基础》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/07/25/Linux系统基础/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Linux系统基础》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/07/25/Linux系统基础/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/07/25/Linux系统基础/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/07/25/Java NIO学习笔记/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Java NIO学习笔记</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/07/24/Java分布式应用知识点/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Java分布式应用知识点</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢你~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>steve_chph &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/07/25/Linux系统基础/&title=《Linux系统基础》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/07/25/Linux系统基础/&title=《Linux系统基础》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/07/25/Linux系统基础/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Linux系统基础》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/07/25/Linux系统基础/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/07/25/Linux系统基础/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJElEQVR42u3awW7rMAwEwPz/T7vXB7R1dk2nD5ZGpyCwFY0OjETy9YrH8c/4/n3yfPvu6xMDAwPjsYzjdPz2zDmv3YjfwMnaMDAw9mGcB77zhSawdrPqoIyBgYERh9TJ8xgYGBh3MY5g5E/+t4CLgYHxQEbyA+fPn6fVksRcuxEYGBj7MPKs+99//kh9AwMD41GMoxyTcJmE42sDAwNjbUabGkt4k6vvqCCKgYGxAaO9Orahdt7lVaTbMDAwlmO0k+ZHw2uX4bZdDAMDYx9GngjLiwd5Cu/afmNgYOzDyFsc5shRQi0JtRgYGEsz5qS7CqV5Cg8DA2MHRhvU8ivltUR/cij8YQ0YGBgbMJLpkmaLOtJfujz/8A0GBsbSjGvpsEnJM5nnHF9XNjAwMB7OmEw9OTi2m/jmXQwMjKUZf9mvMSkDRGvAwMDYhlGUDC+F3fzduiyBgYGxASNvw8qvrO1sbV0SAwNjN0Z+gWwPc215MnnrTVsYBgbGNoxJ80RbkWhLC29OuBgYGIsy8pfzAsMkeVcXODEwMDZgTKaYLP228I2BgbEo4yhHmw6bFBuK0I+BgbE0496LaH5MTDaibrbAwMBYmtGmuiaBeHJwxMDAwEhCZ142yJfSHvuKZgsMDIyNGXmLxicaMqIzKQYGxvaMNiXXNljkF+Pb/jcwMDAewkiOdO3S2yRdwr7hLo6BgfFAxuTc1RYdrzWE5cVRDAyM5Rhfz7dBz+qqSycAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'chph个人博客';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Welcome to chph's blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

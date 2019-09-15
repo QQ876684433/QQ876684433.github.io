@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>软件系统设计02-质量属性策略 | 至繁归于至简 - chph&#39;s blog | steve_chph personal website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="架构">
+    <meta name="description" content="软件系统设计02-质量属性策略第四章 理解质量属性质量属性定义质量属性（Quality Attribute，QA）：它是一个系统可度量或者可测试的属性，用来指示系统在多大程度上满足了它的利益相关者的需求">
+<meta name="keywords" content="架构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件系统设计02-质量属性策略">
+<meta property="og:url" content="http://QQ876684433.github.io/2019/09/09/软件系统设计02-质量属性策略/index.html">
+<meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
+<meta property="og:description" content="软件系统设计02-质量属性策略第四章 理解质量属性质量属性定义质量属性（Quality Attribute，QA）：它是一个系统可度量或者可测试的属性，用来指示系统在多大程度上满足了它的利益相关者的需求">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2019/09/09/Dmh8IoW5f4c2MF3.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/09/jdH9W4NpQTciDoX.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/09/sAGFdjfNtq1pyU5.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/09/1k7jC4bmetfMHdS.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/09/ARi5bKTxBnFCMLz.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/09/VNMErefpAtXSTcy.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/09/zIuGqswZ8JO3tvi.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/09/PYTGwBznM42QHN8.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/10/NZ4BG2OqXTiDuzw.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/10/Q8yB2pgMoIGvmDt.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/10/xOyBMiYCUJd1jXz.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/10/YLOvhojfMnNRxpB.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/10/D9BrKmp7Fjqgwfb.png">
+<meta property="og:updated_time" content="2019-09-15T04:21:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="软件系统设计02-质量属性策略">
+<meta name="twitter:description" content="软件系统设计02-质量属性策略第四章 理解质量属性质量属性定义质量属性（Quality Attribute，QA）：它是一个系统可度量或者可测试的属性，用来指示系统在多大程度上满足了它的利益相关者的需求">
+<meta name="twitter:image" content="https://i.loli.net/2019/09/09/Dmh8IoW5f4c2MF3.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">steve_chph</h5>
+          <a href="mailto:chph13420146901@gmail.com" title="chph13420146901@gmail.com" class="mail">chph13420146901@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/QQ876684433" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">软件系统设计02-质量属性策略</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">软件系统设计02-质量属性策略</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-09-09T12:37:15.000Z" itemprop="datePublished" class="page-time">
+  2019-09-09
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/笔记/">笔记</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/笔记/软件系统设计/">软件系统设计</a></li></ul></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#软件系统设计02-质量属性策略"><span class="post-toc-number">1.</span> <span class="post-toc-text">软件系统设计02-质量属性策略</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第四章-理解质量属性"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">第四章 理解质量属性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#质量属性定义"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">质量属性定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#架构和需求"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">架构和需求</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#需求的分类"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text">需求的分类</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#不同种类的需求在架构中的体现"><span class="post-toc-number">1.1.2.2.</span> <span class="post-toc-text">不同种类的需求在架构中的体现</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#功能性需求"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">功能性需求</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#质量属性考量"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">质量属性考量</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#质量属性分类"><span class="post-toc-number">1.1.4.1.</span> <span class="post-toc-text">质量属性分类</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#制定质量属性需求"><span class="post-toc-number">1.1.5.</span> <span class="post-toc-text">制定质量属性需求</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#质量属性场景示例图"><span class="post-toc-number">1.1.5.1.</span> <span class="post-toc-text">质量属性场景示例图</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#通过策略来实现质量属性需求"><span class="post-toc-number">1.1.6.</span> <span class="post-toc-text">通过策略来实现质量属性需求</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#架构策略（Architectural-Tactics）"><span class="post-toc-number">1.1.6.1.</span> <span class="post-toc-text">架构策略（Architectural Tactics）</span></a></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-软件系统设计02-质量属性策略"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">软件系统设计02-质量属性策略</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-09-09 20:37:15" datetime="2019-09-09T12:37:15.000Z"  itemprop="datePublished">2019-09-09</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/笔记/">笔记</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/笔记/软件系统设计/">软件系统设计</a></li></ul></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="软件系统设计02-质量属性策略"><a href="#软件系统设计02-质量属性策略" class="headerlink" title="软件系统设计02-质量属性策略"></a>软件系统设计02-质量属性策略</h1><h2 id="第四章-理解质量属性"><a href="#第四章-理解质量属性" class="headerlink" title="第四章 理解质量属性"></a>第四章 理解质量属性</h2><h3 id="质量属性定义"><a href="#质量属性定义" class="headerlink" title="质量属性定义"></a>质量属性定义</h3><p><strong>质量属性（Quality Attribute，QA）</strong>：它是一个系统可度量或者可测试的属性，用来指示系统在多大程度上满足了它的利益相关者的需求</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/09/09/Dmh8IoW5f4c2MF3.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h3 id="架构和需求"><a href="#架构和需求" class="headerlink" title="架构和需求"></a>架构和需求</h3><h4 id="需求的分类"><a href="#需求的分类" class="headerlink" title="需求的分类"></a>需求的分类</h4><ul>
+<li><strong>功能性需求（Functional Requirements）</strong>：描述了系统必须做的事情（必须实现的功能），以及在运行时接受外部刺激时系统应该表现出的行为或者反应</li>
+<li><strong>质量属性需求（Quality Attribute Requirements）</strong>：它是功能性需求或者整个产品的质量或者限定条件——对于功能性需求来说，它描述了系统响应有多快或者在接受错误输入时必须具备多大的弹性等；对于整个系统来说，它描述了产品的部署需要的时间或者对运营成本的限制</li>
+<li><strong>约束（Constraints）</strong>：约束条件是<strong>具有零自由度的设计决策</strong>，即是说它是一个已经做出的设计决策，不能再修改。例如系统使用的编程语言或者要依赖的指定模块等</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/09/09/jdH9W4NpQTciDoX.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h4 id="不同种类的需求在架构中的体现"><a href="#不同种类的需求在架构中的体现" class="headerlink" title="不同种类的需求在架构中的体现"></a>不同种类的需求在架构中的体现</h4><ul>
+<li>功能性需求：通过整个设计中合适的职责分配来满足</li>
+<li>质量属性需求：通过设计到架构中的各种结构以及填充这些结构的元素的行为和交互来满足</li>
+<li>约束：通过接受设计决策并将其与其他受影响的设计决策进行协调来满足约束条件</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/09/09/sAGFdjfNtq1pyU5.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h3 id="功能性需求"><a href="#功能性需求" class="headerlink" title="功能性需求"></a>功能性需求</h3><p>功能性需求<strong>不能决定架构</strong>。原因是对于一个给定的功能性需求集合，我们可以有很多不同的方法来将功能性需求划分到不同的架构模块中；事实上，即使我们不划分模块，甚至内部毫无架构结构可言，也依旧有可能将功能性需求实现。</p>
+<p>我们进行架构设计是为了使得系统更加易于理解，以便支持各种各样的<strong>其他目的——即质量属性需求</strong>。</p>
+<p>尽管功能性需求<strong>独立于特定的系统结构</strong>，但是它是通过将系统的职责分配到不同的架构元素中来实现的；虽然职责可以被任意分配到某一个模块中，但是当质量属性占很重要地位的时候，软件架构会约束系统职责的分配。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/09/09/1k7jC4bmetfMHdS.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h3 id="质量属性考量"><a href="#质量属性考量" class="headerlink" title="质量属性考量"></a>质量属性考量</h3><p>功能性需求和质量属性都不是自身独立的。</p>
+<p>从架构师的角度，系统质量属性会有以下三个问题：</p>
+<ul>
+<li>某个质量属性的定义是不可测试的</li>
+<li>对质量属性的讨论通常侧重于特定问题所属的质量，而且这个问题往往在不同的质量属性范围中有重叠</li>
+<li>每个质量社区都发展出了自己的属性词汇</li>
+</ul>
+<p>前两个问题可以通过才用“质量属性场景”这个工具来区分不同的质量属性；第三个问题可以通过对每一个属性的多个社区词汇进行讨论，寻找出某个质量属性的不通社区词汇之间最本质最基础的概念</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/09/09/ARi5bKTxBnFCMLz.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/09/09/VNMErefpAtXSTcy.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h4 id="质量属性分类"><a href="#质量属性分类" class="headerlink" title="质量属性分类"></a>质量属性分类</h4><ul>
+<li>系统运行时的属性：可用性（Availability）、性能（Performance）、易用性（Usability）等</li>
+<li>系统开发时的属性：可修改性（Modifiability）、可测试性（Testability）</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/09/09/zIuGqswZ8JO3tvi.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>在复杂的系统中，质量属性相互之间不可能是独立开的，一个质量属性的实现对其他质量属性产生或积极或负面的影响，因此在架构设计时需要在这些设计决策之间作出合适的权衡。</p>
+<h3 id="制定质量属性需求"><a href="#制定质量属性需求" class="headerlink" title="制定质量属性需求"></a>制定质量属性需求</h3><p>质量属性需求应当是<strong>明确的和可测试的</strong>。质量属性表达的常用形式包含这些部分：</p>
+<ul>
+<li><strong>刺激（Stimulus）</strong>：到达系统的事件，例如易用性中的用户操作，安全性中的外部攻击，可修改性中的修改需求，可测试性中的某个开发阶段的完成等</li>
+<li><strong>刺激源（Stimulus source）</strong>：不同的刺激源，系统对待和处理的方式会不一样，例如受信任用户和不受信任用户经历的审查是不一样的</li>
+<li><strong>响应（Response）</strong>：对于刺激，系统应当采取的措施，例如在可修改性的场景中，一个修改需求的到达要求开发者将这个修改需求实现、测试并部署所作出的修改</li>
+<li><strong>响应度量（Response measure）</strong>：判断系统的响应是否满足需求，例如性能的度量可以是延迟或者吞吐量，可修改性的度量可以是工作量或者修改、测试和部署修改所需的时间等</li>
+<li><strong>环境（Environment）</strong>：需求的环境是一系列场景发生情况的集合，它充当了刺激的限定词，例如对待代码冻结以发布前后发生的错误，处理的方式是不一样的</li>
+<li><strong>工件（Artifact）</strong>：它是系统中需求适用的部分，不同的问题，它可能影响整个系统，也有可能只影响系统的某一个部分，例如数据库出错和元数据库出错的处理方式是不一样的，用户接口的修改需求和中间件的修改需求所需要的时间也是不一样的，等等</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/09/09/PYTGwBznM42QHN8.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/09/10/NZ4BG2OqXTiDuzw.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>质量属性需求可以划分为六个场景，它们可能单独发生，也有可能伴随发生，特别是系统架构设计初期</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/09/10/Q8yB2pgMoIGvmDt.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h4 id="质量属性场景示例图"><a href="#质量属性场景示例图" class="headerlink" title="质量属性场景示例图"></a>质量属性场景示例图</h4><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/09/10/xOyBMiYCUJd1jXz.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/09/10/YLOvhojfMnNRxpB.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+
+<h3 id="通过策略来实现质量属性需求"><a href="#通过策略来实现质量属性需求" class="headerlink" title="通过策略来实现质量属性需求"></a>通过策略来实现质量属性需求</h3><h4 id="架构策略（Architectural-Tactics）"><a href="#架构策略（Architectural-Tactics）" class="headerlink" title="架构策略（Architectural Tactics）"></a>架构策略（Architectural Tactics）</h4><p>架构策略是用来实现需要的质量属性的技术，它是一种设计决策，会影响质量属性响应的实现以及会直接影响系统对某些刺激的响应。<strong>策略赋予一种设计可移植性，将性能传递给另一种设计，并将可集成性传递给第三种设计</strong>。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/09/10/D9BrKmp7Fjqgwfb.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-09-15T04:21:56.000Z" itemprop="dateUpdated">2019-09-15 12:21:56</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/09/09/软件系统设计02-质量属性策略/" target="_blank" rel="external">http://QQ876684433.github.io/2019/09/09/软件系统设计02-质量属性策略/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://QQ876684433.github.io">
+            <img src="/img/avatar.jpg" alt="steve_chph">
+            steve_chph
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/架构/">架构</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/09/09/软件系统设计02-质量属性策略/&title=《软件系统设计02-质量属性策略》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/09/09/软件系统设计02-质量属性策略/&title=《软件系统设计02-质量属性策略》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/09/09/软件系统设计02-质量属性策略/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《软件系统设计02-质量属性策略》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/09/09/软件系统设计02-质量属性策略/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/09/09/软件系统设计02-质量属性策略/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/09/10/数据库课堂笔记（2019-09-10）/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">数据库课堂笔记（2019-09-10）</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/09/06/91-解码方法/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">91.解码方法</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢你~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>steve_chph &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/09/09/软件系统设计02-质量属性策略/&title=《软件系统设计02-质量属性策略》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/09/09/软件系统设计02-质量属性策略/&title=《软件系统设计02-质量属性策略》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/09/09/软件系统设计02-质量属性策略/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《软件系统设计02-质量属性策略》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/09/09/软件系统设计02-质量属性策略/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/09/09/软件系统设计02-质量属性策略/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACwklEQVR42u3aS24jMQwFwNz/0hlgtna3H0nR9mCqV0Y+apUCSMyjfn7i5/fv0/v8OM7jk4x2NeaBBw8PD6819eTFjy/IJ5GPcPXzV9+9mjMeHh7eNi85DK4md//i3sGTL8QLCx4eHt5HeflxUt3E82MADw8P71/k5QHEnISHh4f3zbw8YJ2EC0khfj+3xawFDw8PL+ZtN8A2Pn9Rfw8PD+8/4/0Wn+Q1+QEwiYaj2eLh4eEt8JKyNWHcf71aTOfXEZISHw8PD2+D14sbzsYEk4sC97+Lh4eHt8HrbbvJRatqe6z3l4lKajw8PLxDvLyJ1QwC4pI3X7hC4w0PDw9vgZc3vSbXAnpler4EB3p6eHh4eMW9MYkJ5phegJu/sXDu4eHh4Q14OWMSSSRtszy8yEfDw8PD2+BVN/R5c6vaPMvHefKTeHh4eGu8fMOtbvrVYr16bSs6GPDw8PDewrsvoCdXrCaldjm8wMPDw1vg5ZFrHhZUD5s8+MjDFDw8PLw9Xm87nlwRyKOKXrQRZS14eHh4Y15SOk8aZpM2WHIsXc4cDw8Pb4GXt7vyrbxXiOfBbh6I4OHh4W3wzm7c1UK8dyDlBToeHh7eO3n5gVEobauN//jgwcPDw/sUbxLLnt3Qewv6ZDQ8PDy8Bd7kX/1y5hFs9PkiJm/Hw8PD2+AV1mDQpupNd1Km4+Hh4b2H12vYT8ros8V04dIVHh4e3oBXDU/zMGK+ZL2Fi34LDw8Pb9xbrza67lcrP0gmixi9BQ8PD2+BNz9PqvFBNeq9Z5RPPDw8PLxDvGpza75aeWibsF+MjIeHh7fGyyODjRK5GcgmhwQeHh7eR3l5235eCudNrxcBBB4eHt7X8KpXsvIrAr1W2eU4eHh4eGu8XhjRu0xQvT6VtLUux8TDw8Nb4PUaYJPLUtUmWd48O9bfw8PDw3v+/AFECXOo1Z0ZbQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'chph个人博客';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Welcome to chph's blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

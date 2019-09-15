@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>91.解码方法 | 至繁归于至简 - chph&#39;s blog | steve_chph personal website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="动态规划,leetcode">
+    <meta name="description" content="91.解码方法原题目如下：  一条包含字母 A-Z 的消息通过以下方式进行了编码： ‘A’ -&amp;gt; 1‘B’ -&amp;gt; 2…‘Z’ -&amp;gt; 26 给定一个只包含数字的非空字符串，请计算解码方法的总数。 示例 1: 输入: “12” 输出: 2 解释: 它可以解码为 “AB”（1 2）或者 “L”（12）。 示例 2: 输入: “226” 输出: 3 解释: 它可以解码为 “BZ” (2">
+<meta name="keywords" content="动态规划,leetcode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="91.解码方法">
+<meta property="og:url" content="http://QQ876684433.github.io/2019/09/06/91-解码方法/index.html">
+<meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
+<meta property="og:description" content="91.解码方法原题目如下：  一条包含字母 A-Z 的消息通过以下方式进行了编码： ‘A’ -&amp;gt; 1‘B’ -&amp;gt; 2…‘Z’ -&amp;gt; 26 给定一个只包含数字的非空字符串，请计算解码方法的总数。 示例 1: 输入: “12” 输出: 2 解释: 它可以解码为 “AB”（1 2）或者 “L”（12）。 示例 2: 输入: “226” 输出: 3 解释: 它可以解码为 “BZ” (2">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2019/09/06/YuE7XgBWSrZz51w.png">
+<meta property="og:updated_time" content="2019-09-15T04:21:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="91.解码方法">
+<meta name="twitter:description" content="91.解码方法原题目如下：  一条包含字母 A-Z 的消息通过以下方式进行了编码： ‘A’ -&amp;gt; 1‘B’ -&amp;gt; 2…‘Z’ -&amp;gt; 26 给定一个只包含数字的非空字符串，请计算解码方法的总数。 示例 1: 输入: “12” 输出: 2 解释: 它可以解码为 “AB”（1 2）或者 “L”（12）。 示例 2: 输入: “226” 输出: 3 解释: 它可以解码为 “BZ” (2">
+<meta name="twitter:image" content="https://i.loli.net/2019/09/06/YuE7XgBWSrZz51w.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">steve_chph</h5>
+          <a href="mailto:chph13420146901@gmail.com" title="chph13420146901@gmail.com" class="mail">chph13420146901@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/QQ876684433" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">91.解码方法</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">91.解码方法</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-09-06T11:29:49.000Z" itemprop="datePublished" class="page-time">
+  2019-09-06
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/算法/">算法</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#91-解码方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">91.解码方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解题思路"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">解题思路</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#题解"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">题解</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-91-解码方法"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">91.解码方法</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-09-06 19:29:49" datetime="2019-09-06T11:29:49.000Z"  itemprop="datePublished">2019-09-06</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/算法/">算法</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="91-解码方法"><a href="#91-解码方法" class="headerlink" title="91.解码方法"></a>91.解码方法</h1><p>原题目如下：</p>
+<blockquote>
+<p>一条包含字母 A-Z 的消息通过以下方式进行了编码：</p>
+<p>‘A’ -&gt; 1<br>‘B’ -&gt; 2<br>…<br>‘Z’ -&gt; 26</p>
+<p>给定一个只包含数字的非空字符串，请计算解码方法的总数。</p>
+<p>示例 1:</p>
+<p>输入: “12”</p>
+<p>输出: 2</p>
+<p>解释: 它可以解码为 “AB”（1 2）或者 “L”（12）。</p>
+<p>示例 2:</p>
+<p>输入: “226”</p>
+<p>输出: 3</p>
+<p>解释: 它可以解码为 “BZ” (2 26), “VF” (22 6), 或者 “BBF” (2 2 6) 。</p>
+<p>来源：力扣（LeetCode）</p>
+<p>链接：<a href="https://leetcode-cn.com/problems/decode-ways著作权归领扣网络所有。" target="_blank" rel="noopener">https://leetcode-cn.com/problems/decode-ways著作权归领扣网络所有。</a></p>
+</blockquote>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>这道题刚开始做的时候思路是挺清晰的，就是动态规划，从左往右遍历一遍即可。对于一个长度为n的串s，由于编码只有一位数和两位数这两种可能，因此很容易得出</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numDecodings(s[<span class="number">1</span>:n]) = numDecodings(s[<span class="number">1</span>:n<span class="number">-1</span>]) + numDecodings(s[<span class="number">1</span>:n<span class="number">-2</span>])</span><br></pre></td></tr></table></figure>
+
+<p>当然不是直接相加那么简单，这要分情况讨论一下：</p>
+<p>（1）如果s[i]非0（由题可知，0不是合法的编码），s[1:n]一定可以按照在s[1:n-1]的所有解码方式后面加上s[i]来解码</p>
+<p>（2）如果s[i-1]s[i]是合法的编码（<strong>即10&lt;=int(s[i-1]s[i])&lt;=26，大于等于10的是因为01、02等待这种以0开头的两位数不是合法的编码</strong>），那么s[1:n]也一定可以按照在s[1:n-2]的所有解码方式后面加上s[i-1]s[i]来得到</p>
+<p>（3）否则上面两种情况都不符合，那么s[1:n]无论如何也无法进行解码，比如出现连续两个0的情况</p>
+<p>我当时做的时候，因为没有考虑编码串中出现0的情况，所以出现了偏差。另外，由于前面做题的惯性思维，动态规划问题老是想构造数组，后来细细想这道题才发现根本不需要那么大的空间开销，只需要记录dp[i-1]和dp[i-2]即可计算出dp[i]。最终的解决方案如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numDecodings</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = s.size();</span><br><span class="line">        <span class="keyword">if</span>(s.empty()) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">1</span>) <span class="keyword">return</span> s[<span class="number">0</span>]!=<span class="string">'0'</span>;</span><br><span class="line">        <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> prev = <span class="number">1</span>, target = s[<span class="number">0</span>]==<span class="string">'0'</span>?<span class="number">0</span>:<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span>  temp = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span>(s[i]!=<span class="string">'0'</span>) temp = target;</span><br><span class="line">            <span class="comment">// int val = (s[i-1]-'0')*10+(s[i]-'0');</span></span><br><span class="line">            <span class="comment">// if(val&gt;=10&amp;&amp;val&lt;=26) temp+=prev;</span></span><br><span class="line">            <span class="keyword">if</span>(s[i<span class="number">-1</span>]==<span class="string">'1'</span>||s[i<span class="number">-1</span>]==<span class="string">'2'</span>&amp;&amp;(s[i]&lt;=<span class="string">'6'</span>))temp+=prev;</span><br><span class="line">            </span><br><span class="line">            prev = target;</span><br><span class="line">            target = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> target;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>测评的结果如下，然后我看了一下最高分的解答，思路跟我的差不多，就没必要去优化了</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/09/06/YuE7XgBWSrZz51w.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>题解没什么比较新的角度，跟我的想法差不多，就不再赘述</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-09-15T04:21:56.000Z" itemprop="dateUpdated">2019-09-15 12:21:56</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/09/06/91-解码方法/" target="_blank" rel="external">http://QQ876684433.github.io/2019/09/06/91-解码方法/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://QQ876684433.github.io">
+            <img src="/img/avatar.jpg" alt="steve_chph">
+            steve_chph
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动态规划/">动态规划</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/09/06/91-解码方法/&title=《91.解码方法》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/09/06/91-解码方法/&title=《91.解码方法》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/09/06/91-解码方法/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《91.解码方法》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/09/06/91-解码方法/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/09/06/91-解码方法/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/09/09/软件系统设计02-质量属性策略/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">软件系统设计02-质量属性策略</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/09/04/63-不同路径II/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">63.不同路径II</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢你~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>steve_chph &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/09/06/91-解码方法/&title=《91.解码方法》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/09/06/91-解码方法/&title=《91.解码方法》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/09/06/91-解码方法/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《91.解码方法》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/09/06/91-解码方法/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/09/06/91-解码方法/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMklEQVR42u3aQW7DMAwEwPz/0+kDjCi7klPA0vgUuE6l8YEhRb5e8fW+XNe/jp+/PjNe6/WLCwMD47GM9/C6PvPpu/kq1+2OP0cvBQMD4wDGOPCNg2wCzgP3eN2P9zEwMDDi4Jukd0lwx8DAwFgPuHny16aVGBgYGCtFbJsm5sni+L/dXItjYGA8kNEe1v/n55/0NzAwMB7FeJfXejuhvRPtCgMDY2vGXIGaD17kjcn1higGBsYJjHzkq20ezGWs9a4wMDC2ZuRNgvxoLGfPDV58WQsDA2NTRj7Itd48yFsI+UvBwMDYlZGXkfkzc9SlEQ0MDIytGePl8xRtvdxdHxTDwMDYmzE34jAXcNs0tH5xGBgYmzLaJGzlmGxl619CMwYGxgGMfAyiHRpbL3GLIhYDA2NTRjF6VQ6NTS7cFq4YGBgHMMahLdlKm/ytNCSi1BADA2MjRp6K5QVnW+62dz4OW2BgYGzKaP9de79NKNvjPAwMjDMZbbuxzUPbtkHxLQwMjAMYcyXrXZto2wbRsAUGBsbWjLv6DOMkr006J2dGMDAwtmPkAS5pTK6Ma9SNVQwMjE0Z7/KaDIXLLc8v38LAwNia8eskrx2nWDnIw8DA2Jtxw1FXnBSOV8wDLgYGxpmMlYO2disrvwDFzAgGBsbBjDYQr7yC6LwQAwMDI3imXjJIEJNXc9vvBgYGxkMYc82AuWDdvpSba3EMDIwHMvLSMS9QkzZA/mTSeMDAwNiU8QetrkupOy24igAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'chph个人博客';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Welcome to chph's blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

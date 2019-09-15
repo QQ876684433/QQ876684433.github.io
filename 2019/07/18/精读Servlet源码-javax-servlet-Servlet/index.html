@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>精读Servlet源码-javax.servlet.Servlet | 至繁归于至简 - chph&#39;s blog | steve_chph personal website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Java,servlet">
+    <meta name="description" content="精读Servlet源码-javax.servlet.Servletservlet是运行在Web服务器上面的Java应用程序，Servlet接口类是servlet最核心的一个类，它定义了所有的servlet应该实现的方法，即servlet的生命周期方法，这些声明周期方法是由Web容器比如tomcat来调用的；同时也定义了获取一个servlet配置参数或者信息的方法。 GenericServlet类实">
+<meta name="keywords" content="Java,servlet">
+<meta property="og:type" content="article">
+<meta property="og:title" content="精读Servlet源码-javax.servlet.Servlet">
+<meta property="og:url" content="http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-Servlet/index.html">
+<meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
+<meta property="og:description" content="精读Servlet源码-javax.servlet.Servletservlet是运行在Web服务器上面的Java应用程序，Servlet接口类是servlet最核心的一个类，它定义了所有的servlet应该实现的方法，即servlet的生命周期方法，这些声明周期方法是由Web容器比如tomcat来调用的；同时也定义了获取一个servlet配置参数或者信息的方法。 GenericServlet类实">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2019/07/18/5d30365eae30f77247.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/18/5d305e348bdc550818.jpg">
+<meta property="og:updated_time" content="2019-09-15T04:21:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="精读Servlet源码-javax.servlet.Servlet">
+<meta name="twitter:description" content="精读Servlet源码-javax.servlet.Servletservlet是运行在Web服务器上面的Java应用程序，Servlet接口类是servlet最核心的一个类，它定义了所有的servlet应该实现的方法，即servlet的生命周期方法，这些声明周期方法是由Web容器比如tomcat来调用的；同时也定义了获取一个servlet配置参数或者信息的方法。 GenericServlet类实">
+<meta name="twitter:image" content="https://i.loli.net/2019/07/18/5d30365eae30f77247.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">steve_chph</h5>
+          <a href="mailto:chph13420146901@gmail.com" title="chph13420146901@gmail.com" class="mail">chph13420146901@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/QQ876684433" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">精读Servlet源码-javax.servlet.Servlet</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">精读Servlet源码-javax.servlet.Servlet</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-07-18T08:41:32.000Z" itemprop="datePublished" class="page-time">
+  2019-07-18
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/源码/">源码</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#精读Servlet源码-javax-servlet-Servlet"><span class="post-toc-number">1.</span> <span class="post-toc-text">精读Servlet源码-javax.servlet.Servlet</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#各个接口方法的说明"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">各个接口方法的说明</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#init"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">init</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#service"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">service</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#destroy"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">destroy</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#getServletConfig"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">getServletConfig</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#getServletInfo"><span class="post-toc-number">1.1.5.</span> <span class="post-toc-text">getServletInfo</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Servlet生命周期架构图"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Servlet生命周期架构图</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-精读Servlet源码-javax-servlet-Servlet"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">精读Servlet源码-javax.servlet.Servlet</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-07-18 16:41:32" datetime="2019-07-18T08:41:32.000Z"  itemprop="datePublished">2019-07-18</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/源码/">源码</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="精读Servlet源码-javax-servlet-Servlet"><a href="#精读Servlet源码-javax-servlet-Servlet" class="headerlink" title="精读Servlet源码-javax.servlet.Servlet"></a>精读Servlet源码-javax.servlet.Servlet</h1><p>servlet是运行在Web服务器上面的Java应用程序，Servlet接口类是servlet最核心的一个类，它定义了所有的servlet应该实现的方法，即servlet的生命周期方法，这些声明周期方法是由Web容器比如tomcat来调用的；同时也定义了获取一个servlet配置参数或者信息的方法。</p>
+<p>GenericServlet类实现了Servlet类，定义了一个通用的、协议无关的servlet；而HttpServlet类继承了GenericServlet类，定义了HTTP协议下的servlet，它是抽象类，开发者必须继承HttpServlet并实现所有的抽象方法来创建具体的http servlet应用，它们的依赖关系如图：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/07/18/5d30365eae30f77247.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Servlet</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(ServletConfig config)</span> <span class="keyword">throws</span> ServletException</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> ServletConfig <span class="title">getServletConfig</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest req, ServletResponse res)</span></span></span><br><span class="line"><span class="function">	<span class="keyword">throws</span> ServletException, IOException</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getServletInfo</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="各个接口方法的说明"><a href="#各个接口方法的说明" class="headerlink" title="各个接口方法的说明"></a>各个接口方法的说明</h2><h3 id="init"><a href="#init" class="headerlink" title="init"></a>init</h3><p><code>init()</code>方法是用来指示一个servlet将被加载到web服务器的服务中，这个方法是在servlet初始化完成之后立即调用的，只有<code>init()</code>被调用并成功返回后，这个servlet才能接受、处理并响应客户端的请求。</p>
+<p>当<code>inti()</code>调用过程中发生以下情况时，servlet是不会被加载到服务里面的：</p>
+<ul>
+<li><code>init()</code>抛出<code>ServletException</code>异常</li>
+<li><code>init()</code>方法在Web服务器设定的时间内没有返回，即执行超时</li>
+</ul>
+<p>一个servlet的<code>init()</code>方法只会在初始化时会且只会被调用一次，它接受<code>ServletConfig</code>类型的参数，<code>ServletConfig</code>包含了servlet的配置和初始化参数，这些参数可以作用域Servlet的整个生命周期，<code>init()</code>方法可以使用这些参数完成相关的初始化工作。</p>
+<h3 id="service"><a href="#service" class="headerlink" title="service"></a>service</h3><p>只有当<code>init()</code>成功调用并将servlet加载进服务中时，<code>service()</code>才能被servlet容器调用用来处理客户端的请求。一般servlet应用都是运行在多线程的servlet容器中，可以并行处理多个客户端请求，servlet每当接收到一个请求时都会产生一个新的线程来处理和该请求，因此就会出现多个servlet 同时访问相同的共享资源（如文件、内存资源等）的情况，这时要注意处理好线程同步的问题。</p>
+<p><code>service()</code>方法由容器调用，<code>service()</code> 方法在适当的时候调用 doGet、doPost、doPut、doDelete 等方法。所以开发者不用对 <code>service()</code> 方法做任何动作，只需要根据来自客户端的请求类型来重写 <code>doGet()</code> 或 <code>doPost()</code> 即可。</p>
+<p>它接受两个参数：<code>ServletRequest</code>和<code>ServletResponse</code>，分别对应客户端的请求和servlet对该请求作出的响应。</p>
+<h3 id="destroy"><a href="#destroy" class="headerlink" title="destroy"></a>destroy</h3><p>在servlet被从容器中卸载之前调用，它可以用来清除该servlet占用的资源（例如关闭数据库连接、停止后台线程、把 Cookie 列表或点击计数器写入到磁盘，并执行其他类似的清理活动等）。</p>
+<p><code>destroy()</code>方法仅当该servlet所有的service方法都成功返回之后、或者执行时间超时才能调用，而且<code>destroy()</code>方法一旦调用完成，这个servlet的<code>service()</code>就放就不会被调用了，而且servlet 对象被标记为垃圾回收，会等待JVM回收。</p>
+<h3 id="getServletConfig"><a href="#getServletConfig" class="headerlink" title="getServletConfig"></a>getServletConfig</h3><p>该方法返回一个<code>ServletConfig</code>对象，这个对象恰好是servlet容器初始化servlet时传入<code>init()</code>方法的<code>ServletConfig</code>对象，因此在实现Servlet接口的时候要求<code>init()</code>方法能够将参数<code>ServletConfig</code>对象保存在servlet实例内部，而这个功能已经在Servlet接口实现类<code>GenericServlet</code>中实现了：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ServletConfig <span class="title">getServletConfig</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> config;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(ServletConfig config)</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.config = config;</span><br><span class="line">    <span class="keyword">this</span>.init();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="getServletInfo"><a href="#getServletInfo" class="headerlink" title="getServletInfo"></a>getServletInfo</h3><p>这是留给开发者自定义的方法，它的作用是用来返回servlet的相关信息比如：作者、版本和版权信息等等；这个方法在Servlet接口实现类<code>GenericServlet</code>中默认是返回一个空的字符串，具体的返回值是由实际的开发者决定的，但是有一个约定是：返回值应该是普通文本而不是标记文本（例如HTML、XML等等）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getServletInfo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Servlet生命周期架构图"><a href="#Servlet生命周期架构图" class="headerlink" title="Servlet生命周期架构图"></a>Servlet生命周期架构图</h2><p>典型的 Servlet 生命周期方案：</p>
+<ul>
+<li>第一个到达服务器的 HTTP 请求被委派到 Servlet 容器</li>
+<li>Servlet 容器在调用 service() 方法之前加载 Servlet</li>
+<li>然后 Servlet 容器处理由多个线程产生的多个请求，<strong>每个线程执行一个单一的 Servlet 实例的 service() 方法</strong></li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/07/18/5d305e348bdc550818.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-09-15T04:21:56.000Z" itemprop="dateUpdated">2019-09-15 12:21:56</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/07/18/精读Servlet源码-javax-servlet-Servlet/" target="_blank" rel="external">http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-Servlet/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://QQ876684433.github.io">
+            <img src="/img/avatar.jpg" alt="steve_chph">
+            steve_chph
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/servlet/">servlet</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-Servlet/&title=《精读Servlet源码-javax.servlet.Servlet》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-Servlet/&title=《精读Servlet源码-javax.servlet.Servlet》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-Servlet/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《精读Servlet源码-javax.servlet.Servlet》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-Servlet/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-Servlet/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/07/18/精读Servlet源码-javax-servlet-GenericServlet/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">精读Servlet源码-javax.servlet.GenericServlet</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/07/18/JavaWeb敲门砖-servlet概览/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">JavaWeb敲门砖-servlet概览</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢你~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>steve_chph &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-Servlet/&title=《精读Servlet源码-javax.servlet.Servlet》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-Servlet/&title=《精读Servlet源码-javax.servlet.Servlet》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-Servlet/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《精读Servlet源码-javax.servlet.Servlet》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-Servlet/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-Servlet/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrUlEQVR42u3aQXIiMRAEQP7/ae8DDGxVt8SyETknBx40yjlIorofj/j6+XUln/8e4dXI+VMeNy48PDy89dRnjPcTSsZsn/v+u3h4eHi3ecmS/f5b7RSTcd5/8n7OeHh4eN/GSz5PXkHLxsPDw/t/ebONYXMQx8PDw/s2XhIKJHlpsjHkWesmyMDDw8O7x8urSN/z95X6Hh4eHt66qp4suPk9bUhxYLZ4eHh4F3jtcXlWrNo0FrRNV3h4eHif5LWL9aZlKg+C25Diych4eHh4R3l5iWt/XN6Uvt7f/3LDwMPDw7vAy5fjvB0qP4jnpa9Z3IyHh4d3m5dEDPuy/WYrSuYZifHw8PDWvD1gFiLkpAMvGg8PD+8QLy/5Jwfc2USTY3QbheDh4eHd47WFrlkosIlrZ6Wyoi8MDw8Pr+S1xf62HaplbILgJ/fj4eHhXeDtm6iSbSOPHtpWrfzHAB4eHt4pXjuttuSft2S1h+Zog8HDw8O7wGsfnA+6P6ZvXgEeHh7eZ3j7x7Thb/vfVZiLh4eHd4iXF/LzMtWpeGLWsIWHh4d3mzfbGDbNAbNGq7xU9uR+PDw8vKO8fQlq9iJyfBt/vNz38PDw8I7yhoWl/DGjgtk+pMDDw8O7wcsX7rwwlgS1p4KGYRiBh4eHd4HXTnR25N23ZBVNV3h4eHgf5M0W7n3TVXs0H24MeHh4eAveqTCiXdDbyLiNKvDw8PDO8n7Ka7Y9tI1cmw0mSqnx8PDwFrwbC30SQMzuzEMTPDw8vNu8dujZw5LtZDZaVADDw8PDu8CbVY7ygtbZsKPOWvDw8PD+KW9TmkqatzbzKZIJPDw8vA/y2oN4HgEn4UL++vDw8PBu89qJbl5EHhYnx+6/jI+Hh4d3gTf8kb9uimqnlRThzmUYeHh4eE+/+wdrHUEFF8nhpgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'chph个人博客';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Welcome to chph's blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

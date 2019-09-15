@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>数据库课堂笔记（2019-09-03） | 至繁归于至简 - chph&#39;s blog | steve_chph personal website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="数据库">
+    <meta name="description" content="数据库课堂笔记 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著 《数据库系统概论》第五版 - 王珊 萨师煊 著 《数据库系统概念》   数据库课堂笔记（2019-09-03）Ch1. Introduction术语 数据库管理系统（DataBase Management System">
+<meta name="keywords" content="数据库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库课堂笔记（2019-09-03）">
+<meta property="og:url" content="http://QQ876684433.github.io/2019/09/03/数据库课堂笔记（2019-09-03）/index.html">
+<meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
+<meta property="og:description" content="数据库课堂笔记 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著 《数据库系统概论》第五版 - 王珊 萨师煊 著 《数据库系统概念》   数据库课堂笔记（2019-09-03）Ch1. Introduction术语 数据库管理系统（DataBase Management System">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2019/09/03/EOwYuHP6gxaQci4.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/03/LPcK7sEfn54vDgG.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/03/mv7GcaV85YwBzZp.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/03/NUSipYC8havWjgk.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/15/iuv9bsDBzYrlxfH.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/15/iWSvPMBGA8Ugund.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/15/zhZUMOiyYNAvbCG.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/15/HjTJYBkUtcneDRm.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/06/I9yhKi46BRAufOP.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/06/FP2NDfJ3zABGlWc.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/06/4NQEAOFYoPzXt8a.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/06/3IUhzBc2NtJkwag.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/06/2RnTzvfjHdbMVZA.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/06/zF83mwJsyaNvYHM.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/06/xueCP3KHmVn4cIr.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/11/XHPZu8mCs9biJfL.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/11/O9k6jhLcb1sXWPz.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/11/ov6eLOjT4EaNVci.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/11/DCoqxLYdlN8Wcmj.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/11/IHocynCRgkUAuMe.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/15/2YerOAFicub759g.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/15/njuJqea9ZcNTSfA.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/15/TbAfJF4jM5exQk6.png">
+<meta property="og:updated_time" content="2019-09-15T04:21:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据库课堂笔记（2019-09-03）">
+<meta name="twitter:description" content="数据库课堂笔记 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著 《数据库系统概论》第五版 - 王珊 萨师煊 著 《数据库系统概念》   数据库课堂笔记（2019-09-03）Ch1. Introduction术语 数据库管理系统（DataBase Management System">
+<meta name="twitter:image" content="https://i.loli.net/2019/09/03/EOwYuHP6gxaQci4.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">steve_chph</h5>
+          <a href="mailto:chph13420146901@gmail.com" title="chph13420146901@gmail.com" class="mail">chph13420146901@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/QQ876684433" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">数据库课堂笔记（2019-09-03）</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">数据库课堂笔记（2019-09-03）</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-09-03T11:53:37.000Z" itemprop="datePublished" class="page-time">
+  2019-09-03
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/数据库/">数据库</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/数据库/笔记/">笔记</a></li></ul></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据库课堂笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据库课堂笔记</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据库课堂笔记（2019-09-03）"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">数据库课堂笔记（2019-09-03）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Ch1-Introduction"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">Ch1. Introduction</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#术语"><span class="post-toc-number">1.1.1.1.</span> <span class="post-toc-text">术语</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据库系统的架构"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">数据库系统的架构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据模型"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">数据模型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#概念模型"><span class="post-toc-number">1.1.3.1.</span> <span class="post-toc-text">概念模型</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#常见的数据模型"><span class="post-toc-number">1.1.3.2.</span> <span class="post-toc-text">常见的数据模型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#层次数据模型（Hierarchical-Data-Model-）"><span class="post-toc-number">1.1.3.2.1.</span> <span class="post-toc-text">层次数据模型（Hierarchical Data Model ）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#网状数据模型（Network-Data-Model）"><span class="post-toc-number">1.1.3.2.2.</span> <span class="post-toc-text">网状数据模型（Network Data Model）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#关系模型（Relational-Model）"><span class="post-toc-number">1.1.3.2.3.</span> <span class="post-toc-text">关系模型（Relational Model）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#面向对象模型（Object-Oriented-Model）"><span class="post-toc-number">1.1.3.2.4.</span> <span class="post-toc-text">面向对象模型（Object-Oriented Model）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#对象关系模型（Object-Relational-Model）"><span class="post-toc-number">1.1.3.2.5.</span> <span class="post-toc-text">对象关系模型（Object-Relational Model）</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Ch2-The-Relational-Model"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">Ch2. The Relational Model</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#CAP数据库"><span class="post-toc-number">1.1.4.1.</span> <span class="post-toc-text">CAP数据库</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#术语-1"><span class="post-toc-number">1.1.4.2.</span> <span class="post-toc-text">术语</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#数据库各部分的命名"><span class="post-toc-number">1.1.4.3.</span> <span class="post-toc-text">数据库各部分的命名</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#程序数据独立性（Program-Data-Independence-）"><span class="post-toc-number">1.1.4.3.1.</span> <span class="post-toc-text">程序数据独立性（Program-Data Independence ）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#域类型（Column-type，也称-Domain和-Datatype）"><span class="post-toc-number">1.1.4.3.2.</span> <span class="post-toc-text">域类型（Column type，也称 Domain和 Datatype）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#关系代数（Relational-Algebra-）"><span class="post-toc-number">1.1.4.3.3.</span> <span class="post-toc-text">关系代数（Relational Algebra ）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#笛卡尔积"><span class="post-toc-number">1.1.4.3.4.</span> <span class="post-toc-text">笛卡尔积</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#关系规则"><span class="post-toc-number">1.1.4.4.</span> <span class="post-toc-text">关系规则</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#第一范式（1NF）：First-Normal-Form-Rule"><span class="post-toc-number">1.1.4.4.1.</span> <span class="post-toc-text">第一范式（1NF）：First Normal Form Rule</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#第二范式（2NF）：Access-Rows-by-Content-Only-Rule"><span class="post-toc-number">1.1.4.4.2.</span> <span class="post-toc-text">第二范式（2NF）：Access Rows by Content Only Rule</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#第三范式（3NF）：The-Unique-Row-Rule"><span class="post-toc-number">1.1.4.4.3.</span> <span class="post-toc-text">第三范式（3NF）：The Unique Row Rule</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-数据库课堂笔记（2019-09-03）"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">数据库课堂笔记（2019-09-03）</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-09-03 19:53:37" datetime="2019-09-03T11:53:37.000Z"  itemprop="datePublished">2019-09-03</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/数据库/">数据库</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/数据库/笔记/">笔记</a></li></ul></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="数据库课堂笔记"><a href="#数据库课堂笔记" class="headerlink" title="数据库课堂笔记"></a>数据库课堂笔记</h1><blockquote>
+<p>参考资料：</p>
+<ul>
+<li>南大软件学院课程《数据管理基础》课程资料</li>
+<li>《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著</li>
+<li>《数据库系统概论》第五版 - 王珊 萨师煊 著</li>
+<li>《数据库系统概念》</li>
+</ul>
+</blockquote>
+<h2 id="数据库课堂笔记（2019-09-03）"><a href="#数据库课堂笔记（2019-09-03）" class="headerlink" title="数据库课堂笔记（2019-09-03）"></a>数据库课堂笔记（2019-09-03）</h2><h3 id="Ch1-Introduction"><a href="#Ch1-Introduction" class="headerlink" title="Ch1. Introduction"></a>Ch1. Introduction</h3><h4 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h4><ul>
+<li><p>数据库管理系统（DataBase Management System，DBMS）</p>
+<p>Connolly and Begg define Database Management System (DBMS) as a “<strong>software system that enables users to define, create, maintain and control access to the database</strong>“. … <strong>The core functionality is the storage, retrieval and update of data</strong>.</p>
+<blockquote>
+<p>The <a href="https://en.wikipedia.org/wiki/Database#Database_management_system" target="_blank" rel="noopener">database management system</a> (DBMS) is the <a href="https://en.wikipedia.org/wiki/Software" target="_blank" rel="noopener">software</a> that interacts with <a href="https://en.wikipedia.org/wiki/End_user" target="_blank" rel="noopener">end users</a>, applications, and the database itself to capture and analyze the data.</p>
+<p>—— from wikipedia</p>
+</blockquote>
+<p>简单理解就是，数据库管理系统是终端用户、应用程序同数据库本身交互的软件</p>
+</li>
+<li><p>数据库（Database）</p>
+<blockquote>
+<p>A <strong>database</strong> is an organized collection of <a href="https://en.wikipedia.org/wiki/Data_(computing)" target="_blank" rel="noopener">data</a>, generally stored and accessed electronically from a computer system. Where databases are more complex they are often developed using formal <a href="https://en.wikipedia.org/wiki/Database#Design_and_modeling" target="_blank" rel="noopener">design and modeling</a> techniques.</p>
+<p>—— from wikipedia</p>
+</blockquote>
+<p>简单理解就是，数据库是一个有组织的数据集合</p>
+</li>
+<li><p>数据库用户（DataBase User）</p>
+<ul>
+<li><p>最终用户——交互式用户</p>
+<ul>
+<li>临时用户——用SQL访问DBMS的用户</li>
+<li>初级用户——通过菜单访问DBMS的用户</li>
+</ul>
+</li>
+<li><p>应用程序员——编写菜单程序的程序员</p>
+</li>
+<li><p>数据库管理员（Database Administrator，DBA）——管理DBMS的专家</p>
+<p><img src="https://i.loli.net/2019/09/03/EOwYuHP6gxaQci4.png" alt></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="数据库系统的架构"><a href="#数据库系统的架构" class="headerlink" title="数据库系统的架构"></a>数据库系统的架构</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/09/03/LPcK7sEfn54vDgG.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>主要有<strong>两层C/S架构</strong>和<strong>三层B/S架构</strong>两种：</p>
+<ul>
+<li><p>两层C/S架构：数据库和DBMS运行在数据库服务器，数据库应用程序运行在客户机中，两者之间通过局域网实现数据访问（<em>但是更多的时候， 数据库服务器及其应用程序可能分布在距</em><br><em>离遥远的不同地方，这是得使用三层B/S架构来解决</em>）</p>
+<p><img src="https://i.loli.net/2019/09/03/mv7GcaV85YwBzZp.png" alt></p>
+</li>
+<li><p>三层B/S架构：数据库和DBMS运行在数据库服务器中，<br>数据库应用程序运行在应用服务器（也称“Web服务器”）<br>中， 用户客户端只需要安装常用的浏览器， 负责接收用户<br>输入和结果展示</p>
+<p><img src="https://i.loli.net/2019/09/03/NUSipYC8havWjgk.png" alt></p>
+</li>
+</ul>
+<h3 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h3><p>数据模型（data model）是对现实世界数据特征的抽象，它是数据库系统的核心和基础。根据应用的不同目的可以划分为两大类：第一类是概念模型，第二类是逻辑模型和物理模型。</p>
+<ul>
+<li>概念模型：按用户的观点来对数据和信息进行建模，主要用于数据库设计</li>
+<li>逻辑模型：按计算机系统的观点对数据建模，主要用于数据库管理系统的实现</li>
+<li>物理模型：对数据最底层的抽象，它描述数据在系统内部的表示方式和存取方法</li>
+</ul>
+<h4 id="概念模型"><a href="#概念模型" class="headerlink" title="概念模型"></a>概念模型</h4><ul>
+<li>实体（entity）：客观存在并可互相区别的事物</li>
+<li>属性（attribute）：实体所具有的某一特性</li>
+<li>码（key）：唯一标识实体的属性集</li>
+<li>实体型（entity type）：用实体名及其属性名集合来抽象和刻画同类实体</li>
+<li>实体集（entity set）：同一类型实体的集合</li>
+<li>联系（relationship）：实体之间的联系通常是指不同实体集之间的联系，具有一对一、一对多和多对多等多种类型</li>
+</ul>
+<p>概念模型的表示方法：实体-联系方法（Entity-Relationship approach），E-R方法也称为E-R模型</p>
+<p>数据模型的组成要素：</p>
+<ul>
+<li>数据结构：数据库的组成对象以及对象之间的联系</li>
+<li>数据操作：对数据库汇总各种对象的实例运行执行的操作的集合，包括操作以及有关的操作规则</li>
+<li>数据的完整性约束条件：一组完整性规则</li>
+</ul>
+<h4 id="常见的数据模型"><a href="#常见的数据模型" class="headerlink" title="常见的数据模型"></a>常见的数据模型</h4><h5 id="层次数据模型（Hierarchical-Data-Model-）"><a href="#层次数据模型（Hierarchical-Data-Model-）" class="headerlink" title="层次数据模型（Hierarchical Data Model ）"></a>层次数据模型（Hierarchical Data Model ）</h5><p>满足两个条件：</p>
+<ul>
+<li>有且只有一个结点没有双亲结点，这个结点称为根结点</li>
+<li>根以外的其他结点有且只有一个双亲结点</li>
+</ul>
+<p>层次模型中，每个结点表示一个记录类型，记录类型之间的联系用结点之间的有向边表示，这种联系是父子之间的一对多的联系，可以看做有向树结构</p>
+<h5 id="网状数据模型（Network-Data-Model）"><a href="#网状数据模型（Network-Data-Model）" class="headerlink" title="网状数据模型（Network Data Model）"></a>网状数据模型（Network Data Model）</h5><p>满足两个条件：</p>
+<ul>
+<li>允许一个以上的结点无双亲</li>
+<li>一个结点可以有多于一个的双亲</li>
+</ul>
+<p>层次模型中子女结点与双亲结点的关系是唯一的，在网状模型中，这种关系可以不唯一</p>
+<h5 id="关系模型（Relational-Model）"><a href="#关系模型（Relational-Model）" class="headerlink" title="关系模型（Relational Model）"></a>关系模型（Relational Model）</h5><p>从用户的观点看，关系模型由一组关系组成，每个关系的数据结构都是一张规范化的二维表：</p>
+<ul>
+<li>关系：一个关系对应通常说的一张表</li>
+<li>元组：表中的一行即为一个元组</li>
+<li>属性：表中的一列即为一个属性</li>
+<li>码：也称为码键，它是表中的某个属性组，可以唯一确定一个元组</li>
+<li>域：域是一组具有相同数据类型的值集合，属性的取值范围来自某个域</li>
+<li>分量：元组中的一个属性值</li>
+<li>关系模式：对关系的描述，通常表示为<code>关系名(属性1，属性2，属性3，...，属性n)</code></li>
+</ul>
+<h5 id="面向对象模型（Object-Oriented-Model）"><a href="#面向对象模型（Object-Oriented-Model）" class="headerlink" title="面向对象模型（Object-Oriented Model）"></a>面向对象模型（Object-Oriented Model）</h5><h5 id="对象关系模型（Object-Relational-Model）"><a href="#对象关系模型（Object-Relational-Model）" class="headerlink" title="对象关系模型（Object-Relational Model）"></a>对象关系模型（Object-Relational Model）</h5><h3 id="Ch2-The-Relational-Model"><a href="#Ch2-The-Relational-Model" class="headerlink" title="Ch2. The Relational Model"></a>Ch2. The Relational Model</h3><h4 id="CAP数据库"><a href="#CAP数据库" class="headerlink" title="CAP数据库"></a>CAP数据库</h4><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/09/15/iuv9bsDBzYrlxfH.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/09/15/iWSvPMBGA8Ugund.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/09/15/zhZUMOiyYNAvbCG.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/09/15/HjTJYBkUtcneDRm.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h4 id="术语-1"><a href="#术语-1" class="headerlink" title="术语"></a>术语</h4><ul>
+<li><p><strong>数据模型（Data Model）</strong>：也称为数据库模型</p>
+<ul>
+<li>它是一组描述如何用计算机化的信息表示现实世界中的数据的定义</li>
+<li>也描述了<strong>访问</strong>和<strong>更新</strong>这些信息的操作类型</li>
+</ul>
+</li>
+<li><p><strong>数据库（Database）</strong>：<strong>表（Table）</strong>，或者说<strong>关系（Relation）</strong>的集合</p>
+</li>
+<li><p><strong>表的标题（Table Heading）</strong>：表的<strong>列名（Column Name）</strong>集合，又称为<strong>模式（Scheme）</strong></p>
+<p><img src="https://i.loli.net/2019/09/06/I9yhKi46BRAufOP.png" alt></p>
+</li>
+<li><p>表的<strong>行（Row）</strong>集合：也就是<strong>元组（Tuple）</strong>的集合，称为表的内容，表的行数称为表的基数</p>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/09/06/FP2NDfJ3zABGlWc.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h4 id="数据库各部分的命名"><a href="#数据库各部分的命名" class="headerlink" title="数据库各部分的命名"></a>数据库各部分的命名</h4><p>由于数据库的行是经常改变的，而列通常来说不会改变，一般推荐数据库用户使用列来进行数据库查询</p>
+<h5 id="程序数据独立性（Program-Data-Independence-）"><a href="#程序数据独立性（Program-Data-Independence-）" class="headerlink" title="程序数据独立性（Program-Data Independence ）"></a>程序数据独立性（Program-Data Independence ）</h5><blockquote>
+<p>when asked to make up a query to answer a<br>question, query must still answer the<br>question even if all the data changes.</p>
+</blockquote>
+<p>查询语句和表的数据无关，二者是相互独立的，即使数据库中的表数据改变了，原有的查询依然能够执行（但是查询结果可能发生了改变）</p>
+<h5 id="域类型（Column-type，也称-Domain和-Datatype）"><a href="#域类型（Column-type，也称-Domain和-Datatype）" class="headerlink" title="域类型（Column type，也称 Domain和 Datatype）"></a>域类型（Column type，也称 Domain和 Datatype）</h5><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/09/06/4NQEAOFYoPzXt8a.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<ul>
+<li><p>大多数商业数据库系统都不支持有枚举集组成的类型（如city，month等），它体现了数据库的<strong>完整性约束（Integrity）</strong></p>
+<blockquote>
+<p><strong>域完整性（Domain Integrity）</strong><br>域完整性是指保证指定列的数据具有正确的数据类型、格式和有效的数据范围。</p>
+</blockquote>
+</li>
+<li><p><strong>particular type</strong></p>
+<p>例子：Domain(city in CUSTOMERS) vs<br>Domain(city in AGENTS) ?</p>
+<p><img src="https://i.loli.net/2019/09/06/3IUhzBc2NtJkwag.png" alt></p>
+<p><img src="https://i.loli.net/2019/09/06/2RnTzvfjHdbMVZA.png" alt></p>
+</li>
+</ul>
+<h5 id="关系代数（Relational-Algebra-）"><a href="#关系代数（Relational-Algebra-）" class="headerlink" title="关系代数（Relational Algebra ）"></a>关系代数（Relational Algebra ）</h5><p>数据表中的列的域类似于大多数编程语言中的枚举类型</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/09/06/zF83mwJsyaNvYHM.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/09/06/xueCP3KHmVn4cIr.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h5 id="笛卡尔积"><a href="#笛卡尔积" class="headerlink" title="笛卡尔积"></a>笛卡尔积</h5><p>数学上的笛卡尔积定义：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/09/11/XHPZu8mCs9biJfL.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>但是数据表的关系——即行的集合并没有包含数据表所有列的笛卡尔积中的所有元素，一般来说有如下关系：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/09/11/O9k6jhLcb1sXWPz.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+
+<h4 id="关系规则"><a href="#关系规则" class="headerlink" title="关系规则"></a>关系规则</h4><p><strong>数据库范式（Database Normalization）</strong>：一张数据表的表结构所符合的某种设计标准的级别。符合高一级范式的设计，必定符合低一级范式，例如符合2NF的关系模式，必定符合1NF。</p>
+<p>数据库三大范式：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/09/11/ov6eLOjT4EaNVci.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h5 id="第一范式（1NF）：First-Normal-Form-Rule"><a href="#第一范式（1NF）：First-Normal-Form-Rule" class="headerlink" title="第一范式（1NF）：First Normal Form Rule"></a>第一范式（1NF）：First Normal Form Rule</h5><p>数据表的列不允许有多值属性（重复的域）或者属性具有内部结构，也就是说要求列属性是原子的。</p>
+<blockquote>
+<p>columns that have multi-valued attributes (repeating fields) or have any internal structure (record) are not permitted</p>
+</blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/09/11/DCoqxLYdlN8Wcmj.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>以这个数据表为例，<code>name</code>具有内部结构，<code>enrollment</code>是多值属性（重复的域）（<em>实际上enrollment也具有内部结构</em>）</p>
+<p>它有两方面的含义：</p>
+<ul>
+<li><p>多值属性（重复的域）意思是某个属性的取值是某些元素的列表或者集合，例如第一行中的enrollment属性取值是((101, No), (108, Yes))，它是元素(cno, major)的列表或集合，解决方法有三种：</p>
+<ul>
+<li>将多值属性拆分成多个属性 -&gt;（<strong>浪费空间并使得查询变得困难</strong>）</li>
+<li>将具有多值属性的行（元组），按照多值属性的值集合拆分成多个行（元组）来表示，新的元组不再包含多值属性，这些元组在该属性的取值的集合等于原多值属性取值 -&gt; （<strong>包含大量冗余数据，浪费空间</strong>）</li>
+<li>将多值属性和其他属性分拆到两个不同的表中，通过表的join运算来获得原数据表 -&gt;（<strong>最常用的操作</strong>）</li>
+</ul>
+</li>
+<li><p>内部结构意思是某个属性的取值不是原子的，或者是不是基本类型，例如name属性具有内部结构(name.Iname, name.fname)，解决方法是：</p>
+<p><img src="https://i.loli.net/2019/09/11/IHocynCRgkUAuMe.png" alt></p>
+</li>
+</ul>
+<p><em>ps：第一范式规则被对象-关系数据库系统的数据表打破，这些表是非第一范式（NFNF）。</em></p>
+<h5 id="第二范式（2NF）：Access-Rows-by-Content-Only-Rule"><a href="#第二范式（2NF）：Access-Rows-by-Content-Only-Rule" class="headerlink" title="第二范式（2NF）：Access Rows by Content Only Rule"></a>第二范式（2NF）：Access Rows by Content Only Rule</h5><p>只能基于内容存取行的规则，说明我们只可以通过行的内容即每一行中所存在的属性值来检索列</p>
+<blockquote>
+<p>can only retrieve rows by their content, the attribute values that exist in each row.</p>
+</blockquote>
+<p>它暗示了：</p>
+<ul>
+<li><p>行是无序的：即使用行号来访问数据表中指定行是无意义的</p>
+<p><img src="https://i.loli.net/2019/09/15/2YerOAFicub759g.png" alt></p>
+</li>
+<li><p><strong>列是无序的</strong>：2NF中没有指明需要根据一定的属性次序来访问指定行</p>
+</li>
+</ul>
+<p><em>ps：大多数的关系型数据库产品打破了这条规则，允许用户通过RID-row ID来访问行；而且新的对象-关系数据库产品有<code>refs</code>语法允许某一行上列值指向另一行。</em></p>
+<h5 id="第三范式（3NF）：The-Unique-Row-Rule"><a href="#第三范式（3NF）：The-Unique-Row-Rule" class="headerlink" title="第三范式（3NF）：The Unique Row Rule"></a>第三范式（3NF）：The Unique Row Rule</h5><p>行唯一性规则，它要求关系中任何两个元组的值在同一时刻不能是完全相同的，也就是说<strong>关系是元组的无序集合</strong></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/09/15/njuJqea9ZcNTSfA.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/09/15/TbAfJF4jM5exQk6.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-09-15T04:21:56.000Z" itemprop="dateUpdated">2019-09-15 12:21:56</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/09/03/数据库课堂笔记（2019-09-03）/" target="_blank" rel="external">http://QQ876684433.github.io/2019/09/03/数据库课堂笔记（2019-09-03）/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://QQ876684433.github.io">
+            <img src="/img/avatar.jpg" alt="steve_chph">
+            steve_chph
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/09/03/数据库课堂笔记（2019-09-03）/&title=《数据库课堂笔记（2019-09-03）》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/09/03/数据库课堂笔记（2019-09-03）/&title=《数据库课堂笔记（2019-09-03）》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/09/03/数据库课堂笔记（2019-09-03）/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《数据库课堂笔记（2019-09-03）》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/09/03/数据库课堂笔记（2019-09-03）/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/09/03/数据库课堂笔记（2019-09-03）/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/09/04/62-不同路径/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">62.不同路径</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/08/09/J-U-C-深入理解ConcurrentHashMap原理/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">J.U.C-深入理解ConcurrentHashMap原理</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢你~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>steve_chph &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/09/03/数据库课堂笔记（2019-09-03）/&title=《数据库课堂笔记（2019-09-03）》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/09/03/数据库课堂笔记（2019-09-03）/&title=《数据库课堂笔记（2019-09-03）》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/09/03/数据库课堂笔记（2019-09-03）/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《数据库课堂笔记（2019-09-03）》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/09/03/数据库课堂笔记（2019-09-03）/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/09/03/数据库课堂笔记（2019-09-03）/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACwklEQVR42u3awW7bQAwEUP//T6dATwVqyzPkyjWKp1MQOyu9PWiZIR+P+Pr5ff398/V3/ryuV75eM1lndeHh4eGNHv3Vdf2d5BHzjXi1ffnzPHkGPDw8vNt47WFwTZ0dLfnhkdwFDw8P7xt4yWGQsJPiO18BDw8P7//g5YV4W9bj4eHhfQ8vXzqJGPKjYhY03JK14OHh4cW8TQPsX/38of4eHh4eXtlVz1+719/JD4NN0+vJynh4eHg38NphqfzR80dMBrBmUS8eHh7e3bzkpT9rX22aYflGF3MHeHh4eEd5CXUWVeT3yhtd9cGAh4eHt+a1tz/Vvto03oqyHg8PD+8jvHzRfDvaUvv6N3nsi4eHh3cHbzY0MKO2RfNmoLaOKvDw8PBiXv7obQSct6n2bbCXbDw8PLwbeLPG/GwgYH+vWfGNh4eHd5bXhhGz4LUt1pPgOCri8fDw8D7I2xe4eRDc3qvYRDw8PLwbeG1LfjNulUceeZBRrIyHh4d3iLcfq5qNHeQHQBvjPmmA4eHh4R3lzV76+1f5vhwvjjE8PDy8o7w8aMhj1k1ouymjo5IaDw8P7xBvHxbkW/NYXElZ/+Q/Bjw8PLyjvE240DLav9o/Dx4eHt7dvLNDBu34VBvU5t/Hw8PDO8tLRj+L8dCgbbYJjpNC/+WRgIeHh3eIN4sD8oXauLbdoDzwxcPDwzvF25e/s4ZZe+TMtgAPDw/vDt4+bshf9MlwwKxhFv0tHh4e3iHeT3nNBq2SQ2XW6IoOAzw8PLyjvNnAU/5pe+PNtq7AeHh4eCWvDRFmzbC8pG4HBerEBQ8PD+8QbzbeNAsRNmV6PTqAh4eH9wW8WUTbNs9m4wJvJsvw8PDwPs578woOPs1Jedl97GDAw8PDK3ltGLHBJNvXRh5vDgY8PDy8o7y2AdYWvvuy+PYxAjw8PLx0nV/vdvk+IUWS8wAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'chph个人博客';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Welcome to chph's blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
