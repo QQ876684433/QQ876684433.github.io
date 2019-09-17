@@ -14,25 +14,25 @@
     
     
     
-    <title>深入理解红黑树 | 至繁归于至简 - chph&#39;s blog | steve_chph personal website</title>
+    <title>数据库课堂笔记（2019-09-12） | 至繁归于至简 - chph&#39;s blog | steve_chph personal website</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content>
-    <meta name="description" content="the blog website of steve_chph, steve_chph的个人博客网站">
-<meta name="keywords" content="blog, chph, steve, steve_chph, 博客, 至繁归于至简">
+    <meta name="keywords" content="数据库">
+    <meta name="description" content="数据库课堂笔记 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著 《数据库系统概论》第五版 - 王珊 萨师煊 著 《数据库系统概念》   数据库课堂笔记（2019-09-12）Ch2. The Relational Model">
+<meta name="keywords" content="数据库">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深入理解红黑树">
-<meta property="og:url" content="http://QQ876684433.github.io/2019/08/09/深入理解红黑树/index.html">
+<meta property="og:title" content="数据库课堂笔记（2019-09-12）">
+<meta property="og:url" content="http://QQ876684433.github.io/2019/09/12/数据库课堂笔记（2019-09-12）/index.html">
 <meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
-<meta property="og:description" content="the blog website of steve_chph, steve_chph的个人博客网站">
+<meta property="og:description" content="数据库课堂笔记 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著 《数据库系统概论》第五版 - 王珊 萨师煊 著 《数据库系统概念》   数据库课堂笔记（2019-09-12）Ch2. The Relational Model">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-09-15T05:02:14.666Z">
+<meta property="og:updated_time" content="2019-09-17T14:25:57.521Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深入理解红黑树">
-<meta name="twitter:description" content="the blog website of steve_chph, steve_chph的个人博客网站">
+<meta name="twitter:title" content="数据库课堂笔记（2019-09-12）">
+<meta name="twitter:description" content="数据库课堂笔记 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著 《数据库系统概论》第五版 - 王珊 萨师煊 著 《数据库系统概念》   数据库课堂笔记（2019-09-12）Ch2. The Relational Model">
     
         <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
     
@@ -120,7 +120,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">深入理解红黑树</div>
+        <div class="flex-col header-title ellipsis">数据库课堂笔记（2019-09-12）</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -142,13 +142,15 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">深入理解红黑树</h1>
+        <h1 class="title">数据库课堂笔记（2019-09-12）</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-08-09T04:20:24.000Z" itemprop="datePublished" class="page-time">
-  2019-08-09
+                <time datetime="2019-09-12T03:25:09.000Z" itemprop="datePublished" class="page-time">
+  2019-09-12
 </time>
 
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/数据库/">数据库</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/数据库/笔记/">笔记</a></li></ul></li></ul>
 
             
         </h5>
@@ -162,16 +164,25 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据库课堂笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据库课堂笔记</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据库课堂笔记（2019-09-12）"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">数据库课堂笔记（2019-09-12）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Ch2-The-Relational-Model"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">Ch2. The Relational Model</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
 
-<article id="post-深入理解红黑树"
+
+<article id="post-数据库课堂笔记（2019-09-12）"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">深入理解红黑树</h1>
+        <h1 class="post-card-title">数据库课堂笔记（2019-09-12）</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-08-09 12:20:24" datetime="2019-08-09T04:20:24.000Z"  itemprop="datePublished">2019-08-09</time>
+            <time class="post-time" title="2019-09-12 11:25:09" datetime="2019-09-12T03:25:09.000Z"  itemprop="datePublished">2019-09-12</time>
 
             
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/数据库/">数据库</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/数据库/笔记/">笔记</a></li></ul></li></ul>
+
 
 
             
@@ -182,7 +193,16 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            
+            <h1 id="数据库课堂笔记"><a href="#数据库课堂笔记" class="headerlink" title="数据库课堂笔记"></a>数据库课堂笔记</h1><blockquote>
+<p>参考资料：</p>
+<ul>
+<li>南大软件学院课程《数据管理基础》课程资料</li>
+<li>《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著</li>
+<li>《数据库系统概论》第五版 - 王珊 萨师煊 著</li>
+<li>《数据库系统概念》</li>
+</ul>
+</blockquote>
+<h2 id="数据库课堂笔记（2019-09-12）"><a href="#数据库课堂笔记（2019-09-12）" class="headerlink" title="数据库课堂笔记（2019-09-12）"></a>数据库课堂笔记（2019-09-12）</h2><h3 id="Ch2-The-Relational-Model"><a href="#Ch2-The-Relational-Model" class="headerlink" title="Ch2. The Relational Model"></a>Ch2. The Relational Model</h3>
         </div>
 
         <blockquote class="post-copyright">
@@ -190,12 +210,12 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-09-15T05:02:14.666Z" itemprop="dateUpdated">2019-09-15 13:02:14</time>
+    Last updated: <time datetime="2019-09-17T14:25:57.521Z" itemprop="dateUpdated">2019-09-17 22:25:57</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/08/09/深入理解红黑树/" target="_blank" rel="external">http://QQ876684433.github.io/2019/08/09/深入理解红黑树/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/09/12/数据库课堂笔记（2019-09-12）/" target="_blank" rel="external">http://QQ876684433.github.io/2019/09/12/数据库课堂笔记（2019-09-12）/</a>
         
     </div>
     
@@ -216,6 +236,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
+
 
             
 <div class="page-share-wrap">
@@ -224,7 +246,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/08/09/深入理解红黑树/&title=《深入理解红黑树》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/09/12/数据库课堂笔记（2019-09-12）/&title=《数据库课堂笔记（2019-09-12）》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -234,22 +256,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/08/09/深入理解红黑树/&title=《深入理解红黑树》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/09/12/数据库课堂笔记（2019-09-12）/&title=《数据库课堂笔记（2019-09-12）》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/08/09/深入理解红黑树/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/09/12/数据库课堂笔记（2019-09-12）/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《深入理解红黑树》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/08/09/深入理解红黑树/&via=http://QQ876684433.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《数据库课堂笔记（2019-09-12）》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/09/12/数据库课堂笔记（2019-09-12）/&via=http://QQ876684433.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/08/09/深入理解红黑树/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/09/12/数据库课堂笔记（2019-09-12）/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -272,18 +294,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2019/08/09/J-U-C-深入理解ConcurrentHashMap原理/" id="post-prev" class="post-nav-link">
+      <a href="/2019/09/15/hello-world/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">J.U.C-深入理解ConcurrentHashMap原理</h4>
+        <h4 class="title">Hello World</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2019/07/25/Java NIO学习笔记/" id="post-next" class="post-nav-link">
+      <a href="/2019/09/10/152-乘积最大子序列/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Java NIO学习笔记</h4>
+        <h4 class="title">152.乘积最大子序列</h4>
       </a>
     </div>
   
@@ -383,7 +405,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/08/09/深入理解红黑树/&title=《深入理解红黑树》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/09/12/数据库课堂笔记（2019-09-12）/&title=《数据库课堂笔记（2019-09-12）》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -393,22 +415,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/08/09/深入理解红黑树/&title=《深入理解红黑树》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/09/12/数据库课堂笔记（2019-09-12）/&title=《数据库课堂笔记（2019-09-12）》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/08/09/深入理解红黑树/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/09/12/数据库课堂笔记（2019-09-12）/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《深入理解红黑树》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/08/09/深入理解红黑树/&via=http://QQ876684433.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《数据库课堂笔记（2019-09-12）》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/09/12/数据库课堂笔记（2019-09-12）/&via=http://QQ876684433.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/08/09/深入理解红黑树/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/09/12/数据库课堂笔记（2019-09-12）/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -419,7 +441,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLElEQVR42u3aQW4CMQwFUO5/6ekWqWX4tqFSkpcVoppMXpDc2M7jEY/rabz6/vmv14uRv+vxjYGBgbEs47od94x7TLIRv5eebMcf82BgYBzAqE59v8QkNPfmefk9BgYGxu1xLQ/NCQkDAwPjU4w8XPYSYAwMDIxeEtsrwFXT16/n4hgYGAsyqsX6//z8lf4GBgbGUoyrOPK2ZRKUe2v44+0YGBhbM/IAN2lATqJiYT0YGBhbM6rFr7wcNjmrJqW6wmMYGBhbMOYXLKrJ8DxJfvObYGBgbMTIm4u9klxO6l3awMDA2JtRfSwvt80vWCQzNPUYGBiLM3rp6PyCRbWRUI70GBgYyzImpGShvcNlEo4/9stgYGAswpgc4ybNg2qQjcptGBgYmzImIfIbly1GR1UMDIytGb1wWS3DzbemfFMDAwNjcUZe2Prs4vLZovVgYGAcwKg+3PtcjZOFGTAwMA5gJI/1yme95DaBFf5vYGBgLM6olvXzklzeSMgDcbkHi4GBsR0jT1B7B8T5ZY4324GBgXEYI78MkV+SmBwZo+MpBgbGMYxJqjlJXKuN0lH2jIGBsRTjKo78bkM1Ta1uCgYGxjmMT12S6BXv8hl6m4WBgbETYxJkq63HvKyWH1UxMDDOYfQaADms14QovAUDAwMjOPBVg/JktkJmjIGBcTBjXm7L2wMRFQMD4wBGNbGctDyThkF5szAwMLZmTF6Qh8jepbEk7GJgYGzN+AFzg0upiJ4TCgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuElEQVR42u3aS24bMRAFQN3/0g7grcPR6w8jB6hZGZZMsmZB0q/79Yqfr+/n+TenT5Nvnr7z9eN53Xjw8PDwWks/PadFJFM+L/p55OdXkKwZDw8P7zYv39xz6vMIvb09XzMeHh7eb+A9b8HJ0ZKMnJDw8PDw/i9eHihUwb0XhIeHh/cp3ta2Pvm0F46sZS14eHh4Ma9aAPsNP1+s7+Hh4eENquq9DboaamwVvf4yMh4eHt4FXj59L5Kovo481CgUxvDw8PBWeb0te3Jr7UUbz00Jhf8D8PDw8Ma8vPG0Fw1US2LVQlfh3MPDw8Nb4lXL+ckE8yatJKSIWhzw8PDwrvGqV+ceoNpMkMQTb443PDw8vGu83kY8D3wnV/PoGMPDw8O7xustK7rUxpnApAx2XA8eHh7eZV7v4lu9/vYu083LNx4eHt6t/+tHRalJUb/auNALRPDw8PB2eb0yVQ+Zhw55HFxot8LDw8Nb5eW/r0YS1ZHzwyB6NXh4eHj/nLdVxOoFtZNVHVNqPDw8vDFvsvkmMWvefFC9judxCR4eHt4uL9nQq2X+ZoPUYMw3MS4eHh7eKq+61SbFp+TY6D15m8KxyoeHh4c35vWK972gtorPxz+OhoeHh3eBtwWoXourbQq9qzkeHh7eDV4+Tf6dXrCbh795dIKHh4d3g7fVaJUcAL0YtzcyHh4e3j3e88S9yXqw/FDBw8PD+ywvv5LmG/QkqugVzKK/xcPDw1vi9Qr/ecSQgCeFrsJhgIeHh7fE22p42ppsEgSP1oCHh4dX5OWHQS94rV6pq40ChcQFDw8Pb5XXa2/qhQg3jpY3KQseHh7eR3mTC3c1CJ6X4vDw8PA+y5sUvaqhQ37tXjsY8PDw8Iq8fMqkWJW/pt1XeTwY8PDw8FZ5WwWwXngxuZSvtRHg4eHhpeP8ATeG72RCkdUPAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 
