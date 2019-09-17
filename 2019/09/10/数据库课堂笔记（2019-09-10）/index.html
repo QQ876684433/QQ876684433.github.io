@@ -45,9 +45,12 @@
 <meta property="og:image" content="https://i.loli.net/2019/09/17/i8kaOMNA1heVzu2.png">
 <meta property="og:image" content="https://i.loli.net/2019/09/17/UbSqeLfFAyH1wxO.png">
 <meta property="og:image" content="https://i.loli.net/2019/09/17/eLwW2dxrtYy5sKk.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/17/E3XRvUaQdhzOAmi.png">
 <meta property="og:image" content="https://i.loli.net/2019/09/17/u9waNYiOZhQ4ARj.png">
 <meta property="og:image" content="https://i.loli.net/2019/09/17/COaoQDtgiY9Sb8e.png">
-<meta property="og:updated_time" content="2019-09-17T13:38:33.435Z">
+<meta property="og:image" content="https://i.loli.net/2019/09/17/oyprhnLcR7Y2JtQ.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/17/k7g5TqnPr6dHlFs.png">
+<meta property="og:updated_time" content="2019-09-17T13:55:05.456Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库课堂笔记（2019-09-10）">
 <meta name="twitter:description" content="数据库课堂笔记 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著 《数据库系统概论》第五版 - 王珊 萨师煊 著 《数据库系统概念》   数据库课堂笔记（2019-09-10）Ch2. The Relational Model键、超键和空值（Keys，Superkeys，and Nu">
@@ -355,14 +358,34 @@
 
 <p>我们可以使用相对较小的表来构造大表，例如1000行的表的积可以有100万行</p>
 <p>当要计算表与自身的乘积时，会存在限定符名重复的问题，例如乘积R×R是不允许的，我们<strong>可以通过使用表的别名来避免</strong>，例如S:=R，那么R与自身的乘积可以表示为：R×S</p>
-<h5 id="自然关系运算"><a href="#自然关系运算" class="headerlink" title="自然关系运算"></a>自然关系运算</h5><p>用关系代数表达式回答用自然语言表达的对数据的查询要求，我们称这样的表达式为<strong>关系代数查询</strong>，简称为查询</p>
+<h5 id="自然关系运算"><a href="#自然关系运算" class="headerlink" title="自然关系运算"></a>自然关系运算</h5><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/09/17/E3XRvUaQdhzOAmi.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>用关系代数表达式回答用自然语言表达的对数据的查询要求，我们称这样的表达式为<strong>关系代数查询</strong>，简称为查询</p>
 <ul>
 <li><p><strong>投影运算（project）</strong></p>
 <p><img src="https://i.loli.net/2019/09/17/u9waNYiOZhQ4ARj.png" alt></p>
 <p><img src="https://i.loli.net/2019/09/17/COaoQDtgiY9Sb8e.png" alt></p>
 <p>投影运算实际上是在表中选择列的运算，运算结果其实是新的表，因此它会<strong>将重复的行删除</strong>，以保证任意两行是不一样的</p>
 </li>
-<li></li>
+<li><p><strong>选择运算（selection）</strong></p>
+<p>从给定的表中选择出满足特定准则的行来构成新的表</p>
+<p><img src="https://i.loli.net/2019/09/17/oyprhnLcR7Y2JtQ.png" alt></p>
+<ul>
+<li><p>C是比较表达式，比较符号有：<code>&lt;, &gt;, =, &lt;=, &gt;=, 和&lt;&gt;</code>，其中<code>&lt;&gt;</code>为不等符号，类似于<code>!=</code></p>
+</li>
+<li><p>如果比较的条件中有字符常量，那么要使用引号，例如<code>city=&#39;Dallas&#39;</code>，其中字符常量是按照字典顺序来比较的</p>
+</li>
+<li><p>比较条件可以是复合表达式，例如<code>C AND C&#39;</code>等</p>
+<p><img src="https://i.loli.net/2019/09/17/k7g5TqnPr6dHlFs.png" alt></p>
+</li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -372,7 +395,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-09-17T13:38:33.435Z" itemprop="dateUpdated">2019-09-17 21:38:33</time>
+    Last updated: <time datetime="2019-09-17T13:55:05.456Z" itemprop="dateUpdated">2019-09-17 21:55:05</time>
 </span><br>
 
 
