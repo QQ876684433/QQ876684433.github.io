@@ -21,18 +21,21 @@
     
     
     <meta name="keywords" content="数据库">
-    <meta name="description" content="数据库课堂笔记 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著 《数据库系统概论》第五版 - 王珊 萨师煊 著 《数据库系统概念》   数据库课堂笔记（2019-09-12）Ch2. The Relational Model">
+    <meta name="description" content="数据库课堂笔记 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著 《数据库系统概论》第五版 - 王珊 萨师煊 著 《数据库系统概念》   数据库课堂笔记（2019-09-12）Ch2. The Relational Model关系代数（Relational Algebra）自然关系运">
 <meta name="keywords" content="数据库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据库课堂笔记（2019-09-12）">
 <meta property="og:url" content="http://QQ876684433.github.io/2019/09/12/数据库课堂笔记（2019-09-12）/index.html">
 <meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
-<meta property="og:description" content="数据库课堂笔记 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著 《数据库系统概论》第五版 - 王珊 萨师煊 著 《数据库系统概念》   数据库课堂笔记（2019-09-12）Ch2. The Relational Model">
+<meta property="og:description" content="数据库课堂笔记 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著 《数据库系统概论》第五版 - 王珊 萨师煊 著 《数据库系统概念》   数据库课堂笔记（2019-09-12）Ch2. The Relational Model关系代数（Relational Algebra）自然关系运">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-09-17T14:25:57.521Z">
+<meta property="og:image" content="https://i.loli.net/2019/09/18/uBaTPweGtvfmRqx.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/18/12rtzW58wGhNulb.png">
+<meta property="og:updated_time" content="2019-09-18T14:10:31.987Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库课堂笔记（2019-09-12）">
-<meta name="twitter:description" content="数据库课堂笔记 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著 《数据库系统概论》第五版 - 王珊 萨师煊 著 《数据库系统概念》   数据库课堂笔记（2019-09-12）Ch2. The Relational Model">
+<meta name="twitter:description" content="数据库课堂笔记 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著 《数据库系统概论》第五版 - 王珊 萨师煊 著 《数据库系统概念》   数据库课堂笔记（2019-09-12）Ch2. The Relational Model关系代数（Relational Algebra）自然关系运">
+<meta name="twitter:image" content="https://i.loli.net/2019/09/18/uBaTPweGtvfmRqx.png">
     
         <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
     
@@ -167,7 +170,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据库课堂笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据库课堂笔记</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据库课堂笔记（2019-09-12）"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">数据库课堂笔记（2019-09-12）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Ch2-The-Relational-Model"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">Ch2. The Relational Model</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据库课堂笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据库课堂笔记</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据库课堂笔记（2019-09-12）"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">数据库课堂笔记（2019-09-12）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Ch2-The-Relational-Model"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">Ch2. The Relational Model</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#关系代数（Relational-Algebra）"><span class="post-toc-number">1.1.1.1.</span> <span class="post-toc-text">关系代数（Relational Algebra）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#自然关系运算"><span class="post-toc-number">1.1.1.1.1.</span> <span class="post-toc-text">自然关系运算</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -202,7 +205,20 @@
 <li>《数据库系统概念》</li>
 </ul>
 </blockquote>
-<h2 id="数据库课堂笔记（2019-09-12）"><a href="#数据库课堂笔记（2019-09-12）" class="headerlink" title="数据库课堂笔记（2019-09-12）"></a>数据库课堂笔记（2019-09-12）</h2><h3 id="Ch2-The-Relational-Model"><a href="#Ch2-The-Relational-Model" class="headerlink" title="Ch2. The Relational Model"></a>Ch2. The Relational Model</h3>
+<h2 id="数据库课堂笔记（2019-09-12）"><a href="#数据库课堂笔记（2019-09-12）" class="headerlink" title="数据库课堂笔记（2019-09-12）"></a>数据库课堂笔记（2019-09-12）</h2><h3 id="Ch2-The-Relational-Model"><a href="#Ch2-The-Relational-Model" class="headerlink" title="Ch2. The Relational Model"></a>Ch2. The Relational Model</h3><h4 id="关系代数（Relational-Algebra）"><a href="#关系代数（Relational-Algebra）" class="headerlink" title="关系代数（Relational Algebra）"></a>关系代数（Relational Algebra）</h4><h5 id="自然关系运算"><a href="#自然关系运算" class="headerlink" title="自然关系运算"></a>自然关系运算</h5><ul>
+<li><p><strong>连接（等值连接，自然连接，JOIN）</strong></p>
+<blockquote>
+<p>其作用是： 根据两个关系中的<strong>同名属性的相等比较</strong>， 来实现两个关系的合并；可以表示为 <code>R join S</code> 或者 <code>R ∞ S</code></p>
+</blockquote>
+<p><img src="https://i.loli.net/2019/09/18/uBaTPweGtvfmRqx.png" alt></p>
+<p>如果R和S的同名属性为B1和B2，那么这里的<code>R ∞ S</code>相当于：<code>((R × S) where R.B1 = S.B1 and R.B2 = S.B2 ) [R.A, R.B1, R.B2, S.C]</code>。注意与<code>R × S</code>的区别：<code>R × S</code>没有进行任何同名属性的比较，只是单纯进行笛卡尔积，并且新的表的表头是原来两个表的表头的拼接。</p>
+<p><img src="https://i.loli.net/2019/09/18/12rtzW58wGhNulb.png" alt></p>
+<blockquote>
+<p>If Head(R) ∩ Head(S) = ∅ , then R ∞ S = R x S<br>If Head(R) = Head(S) , then R ∞ S = R ∩ S<br>If Head(R) is subset of Head(S) , then R ∞ S is subset of S</p>
+</blockquote>
+</li>
+</ul>
+
         </div>
 
         <blockquote class="post-copyright">
@@ -210,7 +226,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-09-17T14:25:57.521Z" itemprop="dateUpdated">2019-09-17 22:25:57</time>
+    Last updated: <time datetime="2019-09-18T14:10:31.987Z" itemprop="dateUpdated">2019-09-18 22:10:31</time>
 </span><br>
 
 
