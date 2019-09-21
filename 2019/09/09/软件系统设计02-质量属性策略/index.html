@@ -49,7 +49,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/09/20/6gajKyc8shDd5Ye.png">
 <meta property="og:image" content="https://i.loli.net/2019/09/20/vRDBag8P3GhYspi.png">
 <meta property="og:image" content="https://i.loli.net/2019/09/20/PHsiaK7hrEX2jDB.png">
-<meta property="og:updated_time" content="2019-09-21T01:40:59.159Z">
+<meta property="og:updated_time" content="2019-09-21T02:02:20.102Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="软件系统设计02-质量属性策略">
 <meta name="twitter:description" content="软件系统设计02-质量属性策略第四章 理解质量属性质量属性定义质量属性（Quality Attribute，QA）：它是一个系统可度量或者可测试的属性，用来指示系统在多大程度上满足了它的利益相关者的需求">
@@ -147,7 +147,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -583,15 +583,24 @@
 </ul>
 <h4 id="错误恢复（Recover-from-Faults）"><a href="#错误恢复（Recover-from-Faults）" class="headerlink" title="错误恢复（Recover from Faults）"></a>错误恢复（Recover from Faults）</h4><h5 id="预备和恢复策略（Preparation-and-Repair）"><a href="#预备和恢复策略（Preparation-and-Repair）" class="headerlink" title="预备和恢复策略（Preparation and Repair）"></a>预备和恢复策略（Preparation and Repair）</h5><ul>
 <li><p><strong>Active Redundancy（hot spare，主动冗余，热备份）</strong></p>
-<p>它将所有的节点（主动节点和冗余备份节点）配置在一个保护组中，它们并行地接收和处理相同的输入，这样可以使得冗余备份节点和主动节点保持同步的状态，因此它们可以在主动节点失效的时候立刻切换和接管工作。最简单的实现方式是1+1冗余（一个主动节点+一个冗余备份节点）。主动冗余可以用来作为基础设施北湖，例如活跃的网络链路和支援的网络链路一起使用可以提高网络连接的高可用性。</p>
+<p>它将所有的节点（主动节点和冗余备份节点）配置在一个保护组中，它们并行地接收和处理相同的输入（只会才用主动节点的输出，其他的输出会被舍弃），这样可以使得冗余备份节点和主动节点保持同步的状态，因此它们可以在主动节点失效的时候立刻切换和接管工作。最简单的实现方式是1+1冗余（一个主动节点+一个冗余备份节点）。主动冗余可以用来作为基础设施北湖，例如活跃的网络链路和支援的网络链路一起使用可以提高网络连接的高可用性</p>
 </li>
 <li><p><strong>Passive Redundancy（warm spare，被动冗余，热备用）</strong></p>
+<p>在保护组中只有主动成员才处理输入流量，同时给保护组中的冗余备份节点提供<strong>周期性的状态更新</strong>。当主动节点出错的时候，系统必须确定冗余备份节点的备份状态足够新（即足够接近主动节点出故障时的状态）才能够被作为替补恢复到正常的系统服务体系中，因此恢复的时间可能比主动冗余要慢</p>
+</li>
+<li><p><strong>Spare（cold spare，候补，冷备用）</strong></p>
+<p>这个策略下冗余备份节点在主动节点发生故障前都是不提供服务的，因此当备份节点需要替换到正常系统体系中前，它需要启动一个power-on-reset进程来将自身的状态更新到主动节点出故障前的状态。由于它糟糕的恢复性能，它一般更适用于只有高可靠性需求（而对高可用性需求不高）的系统中</p>
+</li>
+<li><p><strong>Exception Handling（异常处理）</strong></p>
+<p>一旦检测到系统异常，系统必须以某种方式进行处理。异常处理的方式很大程度上取决于所使用的开发环境，从简单的函数返回状态码/错误码，到使用包含了对错误纠正有用的信息的异常类，例如异常的名字、异常源头以及异常的原因，软件可以利用这些信息来掩盖出错，一般来说是<strong>纠正出错的原因</strong>然后<strong>重新尝试操作</strong></p>
+</li>
+<li><p><strong>Rollback（回退）</strong></p>
 </li>
 </ul>
 <ul>
-<li><strong>Spare（cold spare，候补，冷备用）</strong></li>
+<li><h5 id="重新引入策略（Reintroduction）"><a href="#重新引入策略（Reintroduction）" class="headerlink" title="重新引入策略（Reintroduction）"></a>重新引入策略（Reintroduction）</h5></li>
 </ul>
-<h5 id="重新引入策略（Reintroduction）"><a href="#重新引入策略（Reintroduction）" class="headerlink" title="重新引入策略（Reintroduction）"></a>重新引入策略（Reintroduction）</h5><p>这个部分关注将一个失效（但是已经恢复）的组件引入到正常的系统体系中</p>
+<p>这个部分关注将一个失效（但是已经恢复）的组件引入到正常的系统体系中</p>
 
         </div>
 
@@ -600,7 +609,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-09-21T01:40:59.159Z" itemprop="dateUpdated">2019-09-21 09:40:59</time>
+    最終更新：<time datetime="2019-09-21T02:02:20.102Z" itemprop="dateUpdated">2019-09-21 10:02:20</time>
 </span><br>
 
 
@@ -773,7 +782,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
         </p>
     </div>
     <div class="bottom">
