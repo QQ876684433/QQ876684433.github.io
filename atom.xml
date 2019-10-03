@@ -31,6 +31,36 @@
   </entry>
   
   <entry>
+    <title>数据库课堂笔记（2019-09-24）</title>
+    <link href="http://QQ876684433.github.io/2019/09/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0%EF%BC%882019-09-24%EF%BC%89/"/>
+    <id>http://QQ876684433.github.io/2019/09/24/数据库课堂笔记（2019-09-24）/</id>
+    <published>2019-09-24T03:25:09.000Z</published>
+    <updated>2019-10-03T06:55:34.384Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="数据库课堂笔记"><a href="#数据库课堂笔记" class="headerlink" title="数据库课堂笔记"></a>数据库课堂笔记</h1><blockquote><p>参考资料：</p><ul><li>南大软件学院课程《数据管理基础》课程资料</li><li>《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著</li><li>《数据库系统概论》第五版 - 王珊 萨师煊 著</li><li>《数据库系统概念》</li></ul></blockquote><h2 id="数据库课堂笔记（2019-09-24）"><a href="#数据库课堂笔记（2019-09-24）" class="headerlink" title="数据库课堂笔记（2019-09-24）"></a>数据库课堂笔记（2019-09-24）</h2><h3 id="Ch3-Basic-SQL-Query-Language"><a href="#Ch3-Basic-SQL-Query-Language" class="headerlink" title="Ch3. Basic SQL Query Language"></a>Ch3. Basic SQL Query Language</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;数据库课堂笔记&quot;&gt;&lt;a href=&quot;#数据库课堂笔记&quot; class=&quot;headerlink&quot; title=&quot;数据库课堂笔记&quot;&gt;&lt;/a&gt;数据库课堂笔记&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;参考资料：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;南大软件学院课程《数据管理基础》课程
+      
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://QQ876684433.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="笔记" scheme="http://QQ876684433.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="数据库" scheme="http://QQ876684433.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
     <title>数据库课堂笔记（2019-09-17）</title>
     <link href="http://QQ876684433.github.io/2019/09/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0%EF%BC%882019-09-17%EF%BC%89/"/>
     <id>http://QQ876684433.github.io/2019/09/17/数据库课堂笔记（2019-09-17）/</id>
@@ -205,9 +235,9 @@
       <category term="算法" scheme="http://QQ876684433.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="leetcode" scheme="http://QQ876684433.github.io/tags/leetcode/"/>
-    
       <category term="动态规划" scheme="http://QQ876684433.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+      <category term="leetcode" scheme="http://QQ876684433.github.io/tags/leetcode/"/>
     
   </entry>
   
@@ -234,9 +264,9 @@
       <category term="算法" scheme="http://QQ876684433.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="leetcode" scheme="http://QQ876684433.github.io/tags/leetcode/"/>
-    
       <category term="动态规划" scheme="http://QQ876684433.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+      <category term="leetcode" scheme="http://QQ876684433.github.io/tags/leetcode/"/>
     
   </entry>
   
@@ -263,9 +293,9 @@
       <category term="算法" scheme="http://QQ876684433.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="leetcode" scheme="http://QQ876684433.github.io/tags/leetcode/"/>
-    
       <category term="动态规划" scheme="http://QQ876684433.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+      <category term="leetcode" scheme="http://QQ876684433.github.io/tags/leetcode/"/>
     
   </entry>
   
@@ -470,33 +500,6 @@
     <updated>2019-09-15T05:02:14.670Z</updated>
     
     <summary type="html">
-    
-    </summary>
-    
-      <category term="源码" scheme="http://QQ876684433.github.io/categories/%E6%BA%90%E7%A0%81/"/>
-    
-    
-      <category term="Java" scheme="http://QQ876684433.github.io/tags/Java/"/>
-    
-      <category term="servlet" scheme="http://QQ876684433.github.io/tags/servlet/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>精读Servlet源码-javax.servlet.GenericServlet</title>
-    <link href="http://QQ876684433.github.io/2019/07/18/%E7%B2%BE%E8%AF%BBServlet%E6%BA%90%E7%A0%81-javax-servlet-GenericServlet/"/>
-    <id>http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-GenericServlet/</id>
-    <published>2019-07-18T11:57:19.000Z</published>
-    <updated>2019-09-15T05:02:14.670Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="精读Servlet源码-javax-servlet-GenericServlet"><a href="#精读Servlet源码-javax-servlet-GenericServlet" class="headerlink" title="精读Servlet源码-javax.servlet.GenericServlet"></a>精读Servlet源码-javax.servlet.GenericServlet</h1><p><code>GenericServlet</code>定义了通用的、协议独立的servlet，HTTP协议版的servlet即<code>HttpServlet</code>直接继承了<code>GenericServlet</code>；<code>GenericServlet</code>实现了<code>Servlet</code>和<code>ServletConfig</code>接口，它提供了<code>Servlet</code>接口生命周期方法的简单实现版本（<code>init</code>和<code>destroy</code>），同时对<code>ServletConfig</code>的接口方法作进一步的封装。</p><p><code>ServletConfig</code>作为<code>GenericServlet</code>的私有属性保存，它是在servlet在初始化时<code>init()</code>方法中传递进来的，这样就能在servlet的各个生命周期方法中以及servlet容器中访问到servlet配置及初始化参数。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">GenericServlet</span> </span></span><br><span class="line"><span class="class">    <span class="keyword">implements</span> <span class="title">Servlet</span>, <span class="title">ServletConfig</span>, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String LSTRING_FILE = <span class="string">"javax.servlet.LocalStrings"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> ResourceBundle lStrings =</span><br><span class="line">        ResourceBundle.getBundle(LSTRING_FILE);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">transient</span> ServletConfig config;</span><br><span class="line"></span><br><span class="line">    ... ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="各个方法的说明"><a href="#各个方法的说明" class="headerlink" title="各个方法的说明"></a>各个方法的说明</h2><h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><p>因为servlet的初始化工作是由<code>init()</code>完成的，所以在构造函数里什么也不做。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">GenericServlet</span><span class="params">()</span> </span>&#123; &#125;</span><br></pre></td></tr></table></figure><h3 id="Servlet接口方法"><a href="#Servlet接口方法" class="headerlink" title="Servlet接口方法"></a>Servlet接口方法</h3><h4 id="init"><a href="#init" class="headerlink" title="init"></a>init</h4><p><code>GenericServlet</code>除了实现<code>Servlet</code>接口的<code>init()</code>方法外，还提供了一个无参的<code>init()</code>方法：</p><ul><li><code>void init(ServletConfig config)</code> 由servlet容器调用，它将<code>ServletConfig</code>实例传递进来，<code>init()</code>的工作是将<code>ServletConfig</code>保存起来以备后用，然后再调用无参的<code>init()</code>来完成开发者自定义的初始化过程</li><li><code>void init()</code> 提供给开发者重写<code>init()</code>的便利方式，开发者可以根据需要在<code>init()</code>中完成servlet的初始化工作</li></ul><p>理论上，在开发servlet时重写任何一个<code>init()</code>都是可行的，区别在于如果重写的是带参数的<code>init()</code>，需要手动调用<code>super(config);</code>以将参数<code>ServletConfig</code>保存在servlet内部；如果重写的是无参的<code>init()</code>，那么就没有必要手动调用父类中对应的方法，因为servlet容器始终调用的是带参数的<code>init()</code>，带参数的<code>init()</code>随后又会调用无参的<code>init()</code>，如果开发者重写了无参的<code>init()</code>，那么也能完成自定义的servlet初始化工作。</p><p>一般来说推荐重写无参的<code>init()</code>，这样可以避免由于忘记调用<code>super(config);</code>而带来的不必要的麻烦。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(ServletConfig config)</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.config = config;</span><br><span class="line">    <span class="keyword">this</span>.init();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="service"><a href="#service" class="headerlink" title="service"></a>service</h4><p>抽象方法，<code>GenericServlet</code>没有提供任何实现，意味着任何一个具体子类必须实现<code>service()</code>方法以完成相应的业务逻辑。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest req, ServletResponse res)</span><span class="keyword">throws</span> ServletException, IOException</span>;</span><br></pre></td></tr></table></figure><h4 id="destroy"><a href="#destroy" class="headerlink" title="destroy"></a>destroy</h4><p>实现了一个空方法，由servlet容器调用，开发者可以根据需要重写该方法来完成servlet卸载前的相关资源清理工作。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure><h4 id="getServletInfo"><a href="#getServletInfo" class="headerlink" title="getServletInfo"></a>getServletInfo</h4><p>这是留给开发者自定义的方法，它的作用是用来返回servlet的相关信息比如：作者、版本和版权信息等等；<code>GenericServlet</code>中默认是返回一个空的字符串，因为具体的返回值是由实际的开发者决定的，但是有一个约定是：返回值应该是普通文本而不是标记文本（例如HTML、XML等等）。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getServletInfo</span><span class="params">()</span> </span>&#123;<span class="keyword">return</span> <span class="string">""</span>;   &#125;</span><br></pre></td></tr></table></figure><h4 id="getServletConfig"><a href="#getServletConfig" class="headerlink" title="getServletConfig"></a>getServletConfig</h4><p>返回servlet保存的<code>ServletConfig</code>引用。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ServletConfig <span class="title">getServletConfig</span><span class="params">()</span> </span>&#123;<span class="keyword">return</span> config;   &#125;</span><br></pre></td></tr></table></figure><h3 id="ServletConfig接口方法"><a href="#ServletConfig接口方法" class="headerlink" title="ServletConfig接口方法"></a>ServletConfig接口方法</h3><p>这些接口方法实际上只是对<code>ServletConfig</code>的接口方法作了进一步的封装，实际上的工作是由servlet容器传递到<code>init()</code>方法的<code>ServletConfig</code>实例完成的。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getInitParameter</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">    ServletConfig sc = getServletConfig();</span><br><span class="line">    <span class="keyword">if</span> (sc == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(</span><br><span class="line">        lStrings.getString(<span class="string">"err.servlet_config_not_initialized"</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> sc.getInitParameter(name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> Enumeration&lt;String&gt; <span class="title">getInitParameterNames</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ServletConfig sc = getServletConfig();</span><br><span class="line">    <span class="keyword">if</span> (sc == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(</span><br><span class="line">        lStrings.getString(<span class="string">"err.servlet_config_not_initialized"</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> sc.getInitParameterNames();</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> ServletContext <span class="title">getServletContext</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ServletConfig sc = getServletConfig();</span><br><span class="line">    <span class="keyword">if</span> (sc == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(</span><br><span class="line">        lStrings.getString(<span class="string">"err.servlet_config_not_initialized"</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> sc.getServletContext();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getServletName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ServletConfig sc = getServletConfig();</span><br><span class="line">    <span class="keyword">if</span> (sc == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(</span><br><span class="line">        lStrings.getString(<span class="string">"err.servlet_config_not_initialized"</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> sc.getServletName();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="扩展方法"><a href="#扩展方法" class="headerlink" title="扩展方法"></a>扩展方法</h3><h4 id="log"><a href="#log" class="headerlink" title="log"></a>log</h4><p>这个方法是对<code>getServletContext().log(...)</code>方法的进一步封装，用来向<code>ServletContext</code>输出servlet运行时的日志信息：</p><ul><li><code>void log(String msg)</code> 正常运行的日志信息，以对应的servlet名称作为日志信息前缀</li><li><code>void log(String message, Throwable t)</code> 运行时异常的日志信息，信息内容还包含了异常的调用栈追踪信息，以对应的servlet名称作为日志信息前缀</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">log</span><span class="params">(String msg)</span> </span>&#123;</span><br><span class="line">    getServletContext().log(getServletName() + <span class="string">": "</span>+ msg);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">log</span><span class="params">(String message, Throwable t)</span> </span>&#123;</span><br><span class="line">    getServletContext().log(getServletName() + <span class="string">": "</span> + message, t);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;精读Servlet源码-javax-servlet-GenericServlet&quot;&gt;&lt;a href=&quot;#精读Servlet源码-javax-servlet-GenericServlet&quot; class=&quot;headerlink&quot; title=&quot;精读Servlet源码-
-      
     
     </summary>
     
