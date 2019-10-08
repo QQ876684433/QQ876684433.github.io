@@ -49,7 +49,33 @@
 <meta property="og:image" content="https://img-blog.csdn.net/20140721230517324">
 <meta property="og:image" content="https://img-blog.csdn.net/20140721230250468">
 <meta property="og:image" content="https://img-blog.csdn.net/20140728110939595">
-<meta property="og:updated_time" content="2019-10-07T16:09:07.512Z">
+<meta property="og:image" content="https://img-blog.csdn.net/20140721223809617">
+<meta property="og:image" content="https://img-blog.csdn.net/20140721223539765">
+<meta property="og:image" content="https://img-blog.csdn.net/20140729181940812">
+<meta property="og:image" content="https://img-blog.csdn.net/20150812214857858">
+<meta property="og:image" content="https://img-blog.csdn.net/20140809163257703">
+<meta property="og:image" content="https://img-blog.csdn.net/20140723224710203">
+<meta property="og:image" content="https://img-blog.csdn.net/20140726213602848">
+<meta property="og:image" content="https://img-blog.csdn.net/20140721223809617">
+<meta property="og:image" content="https://img-blog.csdn.net/20140721223539765">
+<meta property="og:image" content="https://img-blog.csdn.net/20140721223823548">
+<meta property="og:image" content="https://img-blog.csdn.net/20140721223558140">
+<meta property="og:image" content="https://img-blog.csdn.net/20140721223611515">
+<meta property="og:image" content="https://img-blog.csdn.net/20140725232020608">
+<meta property="og:image" content="https://img-blog.csdn.net/20140805003320486">
+<meta property="og:image" content="http://hi.csdn.net/attachment/201106/14/8394323_13080758591kyV.jpg">
+<meta property="og:image" content="http://hi.csdn.net/attachment/201106/14/8394323_130807585714lW.jpg">
+<meta property="og:image" content="http://hi.csdn.net/attachment/201106/14/8394323_13080758571390.jpg">
+<meta property="og:image" content="http://hi.csdn.net/attachment/201106/14/8394323_1308075857e40u.jpg">
+<meta property="og:image" content="https://img-blog.csdn.net/20140728192101322">
+<meta property="og:image" content="https://img-blog.csdn.net/20140728192109185">
+<meta property="og:image" content="https://img-blog.csdn.net/20140728192118623">
+<meta property="og:image" content="https://img-blog.csdn.net/20140728193254930">
+<meta property="og:image" content="https://img-blog.csdn.net/20140728193420403">
+<meta property="og:image" content="https://img-blog.csdn.net/20140728193428671">
+<meta property="og:image" content="https://img-blog.csdn.net/20140728194226031">
+<meta property="og:image" content="https://img-blog.csdn.net/20140728194006343">
+<meta property="og:updated_time" content="2019-10-08T03:43:51.929Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从头到尾彻底理解KMP&#x2F;BM&#x2F;Sunday算法">
 <meta name="twitter:description" content="【转载】从头到尾彻底理解KMP/BM/Sunday算法暴力匹配算法假设现在我们面临这样一个问题：有一个文本串S，和一个模式串P，现在要查找P在S中的位置，怎么查找呢？  如果用暴力匹配的思路，并假设现在文本串S匹配到 i 位置，模式串P匹配到 j 位置，则有：如果当前字符匹配成功（即S[i] == P[j]），则i++，j++，继续匹配下一个字符；如果失配（即S[i]! = P[j]），令i =">
@@ -188,7 +214,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#【转载】从头到尾彻底理解KMP-BM-Sunday算法"><span class="post-toc-number">1.</span> <span class="post-toc-text">【转载】从头到尾彻底理解KMP/BM/Sunday算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#暴力匹配算法"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">暴力匹配算法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#KMP算法"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">KMP算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#定义"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#步骤"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">步骤</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解释"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">解释</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#寻找最长前缀后缀"><span class="post-toc-number">1.2.3.1.</span> <span class="post-toc-text">寻找最长前缀后缀</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#基于《最大长度表》匹配"><span class="post-toc-number">1.2.3.2.</span> <span class="post-toc-text">基于《最大长度表》匹配</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#根据《最大长度表》求next-数组"><span class="post-toc-number">1.2.3.3.</span> <span class="post-toc-text">根据《最大长度表》求next 数组</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#通过代码递推计算next-数组"><span class="post-toc-number">1.2.3.4.</span> <span class="post-toc-text">通过代码递推计算next 数组</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#扩展1：BM算法"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">扩展1：BM算法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#扩展2：Sunday算法"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">扩展2：Sunday算法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考文献"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">参考文献</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#【转载】从头到尾彻底理解KMP-BM-Sunday算法"><span class="post-toc-number">1.</span> <span class="post-toc-text">【转载】从头到尾彻底理解KMP/BM/Sunday算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#暴力匹配算法"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">暴力匹配算法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#KMP算法"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">KMP算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#定义"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#步骤"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">步骤</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解释"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">解释</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#寻找最长前缀后缀"><span class="post-toc-number">1.2.3.1.</span> <span class="post-toc-text">寻找最长前缀后缀</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#基于《最大长度表》匹配"><span class="post-toc-number">1.2.3.2.</span> <span class="post-toc-text">基于《最大长度表》匹配</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#根据《最大长度表》求next-数组"><span class="post-toc-number">1.2.3.3.</span> <span class="post-toc-text">根据《最大长度表》求next 数组</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#通过代码递推计算next-数组"><span class="post-toc-number">1.2.3.4.</span> <span class="post-toc-text">通过代码递推计算next 数组</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#基于《next-数组》匹配"><span class="post-toc-number">1.2.3.5.</span> <span class="post-toc-text">基于《next 数组》匹配</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#基于《最大长度表》与基于《next-数组》等价"><span class="post-toc-number">1.2.3.6.</span> <span class="post-toc-text">基于《最大长度表》与基于《next 数组》等价</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Next-数组与有限状态自动机"><span class="post-toc-number">1.2.3.7.</span> <span class="post-toc-text">Next 数组与有限状态自动机</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Next-数组的优化"><span class="post-toc-number">1.2.3.8.</span> <span class="post-toc-text">Next 数组的优化</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#KMP的时间复杂度分析"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">KMP的时间复杂度分析</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#扩展1：BM算法"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">扩展1：BM算法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#扩展2：Sunday算法"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">扩展2：Sunday算法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考文献"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">参考文献</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -379,131 +405,357 @@
 <h4 id="通过代码递推计算next-数组"><a href="#通过代码递推计算next-数组" class="headerlink" title="通过代码递推计算next 数组"></a>通过代码递推计算next 数组</h4><pre><code>接下来，咱们来写代码求下next 数组。
 
 基于之前的理解，可知计算next 数组的方法可以采用递推：</code></pre><ol>
-<li>如果对于值k，已有p0 p1, …, pk-1 = pj-k pj-k+1, …, pj-1，相当于next[j] = k。<br>此意味着什么呢？究其本质，next[j] = k 代表p[j] 之前的模式串子串中，有长度为k 的相同前缀和后缀。有了这个next 数组，在KMP匹配中，当模式串中j 处的字符失配时，下一步用next[j]处的字符继续跟文本串匹配，相当于模式串向右移动j - next[j] 位。<br>举个例子，如下图，根据模式串“ABCDABD”的next 数组可知失配位置的字符D对应的next 值为2，代表字符D前有长度为2的相同前缀和后缀（这个相同的前缀后缀即为“AB”），失配后，模式串需要向右移动j - next [j] = 6 - 2 =4位。</li>
-</ol>
+<li><p>如果对于值k，已有p0 p1, …, pk-1 = pj-k pj-k+1, …, pj-1，相当于next[j] = k。</p>
+<ul>
+<li>此意味着什么呢？究其本质，next[j] = k 代表p[j] 之前的模式串子串中，有长度为k 的相同前缀和后缀。有了这个next 数组，在KMP匹配中，当模式串中j 处的字符失配时，下一步用next[j]处的字符继续跟文本串匹配，相当于模式串向右移动j - next[j] 位。</li>
+</ul>
+<blockquote>
+<p>举个例子，如下图，根据模式串“ABCDABD”的next 数组可知失配位置的字符D对应的next 值为2，代表字符D前有长度为2的相同前缀和后缀（这个相同的前缀后缀即为“AB”），失配后，模式串需要向右移动j - next [j] = 6 - 2 =4位。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://img-blog.csdn.net/20140721223809617" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
 <p>向右移动4位后，模式串中的字符C继续跟文本串匹配。</p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://img-blog.csdn.net/20140721223539765" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+</blockquote>
 <ol start="2">
 <li>下面的问题是：已知next [0, …, j]，如何求出next [j + 1]呢？<pre><code>对于P的前j+1个序列字符：</code></pre></li>
 </ol>
-<p>若p[k] == p[j]，则next[j + 1 ] = next [j] + 1 = k + 1；<br>若p[k ] ≠ p[j]，如果此时p[ next[k] ] == p[j ]，则next[ j + 1 ] =  next[k] + 1，否则继续递归前缀索引k = next[k]，而后重复此过程。 相当于在字符p[j+1]之前不存在长度为k+1的前缀”p0 p1, …, pk-1 pk”跟后缀“pj-k pj-k+1, …, pj-1 pj”相等，那么是否可能存在另一个值t+1 &lt; k+1，使得长度更小的前缀 “p0 p1, …, pt-1 pt” 等于长度更小的后缀 “pj-t pj-t+1, …, pj-1 pj” 呢？如果存在，那么这个t+1 便是next[ j+1]的值，此相当于利用已经求得的next 数组（next [0, …, k, …, j]）进行P串前缀跟P串后缀的匹配。<br>   一般的文章或教材可能就此一笔带过，但大部分的初学者可能还是不能很好的理解上述求解next 数组的原理，故接下来，我再来着重说明下。</p>
-<pre><code>如下图所示，假定给定模式串ABCDABCE，且已知next [j] = k（相当于“p0 pk-1” = “pj-k pj-1” = AB，可以看出k为2），现要求next [j + 1]等于多少？因为pk = pj = C，所以next[j + 1] = next[j] + 1 = k + 1（可以看出next[j + 1] = 3）。代表字符E前的模式串中，有长度k+1 的相同前缀后缀。
+<ul>
+<li><p>若p[k] == p[j]，则next[j + 1 ] = next [j] + 1 = k + 1；</p>
+</li>
+<li><p>若p[k ] ≠ p[j]，如果此时p[ next[k] ] == p[j ]，则next[ j + 1 ] =  next[k] + 1，否则继续递归前缀索引k = next[k]，而后重复此过程。 相当于在字符p[j+1]之前不存在长度为k+1的前缀”p0 p1, …, pk-1 pk”跟后缀“pj-k pj-k+1, …, pj-1 pj”相等，那么是否可能存在另一个值t+1 &lt; k+1，使得长度更小的前缀 “p0 p1, …, pt-1 pt” 等于长度更小的后缀 “pj-t pj-t+1, …, pj-1 pj” 呢？如果存在，那么这个t+1 便是next[ j+1]的值，此相当于利用已经求得的next 数组（next [0, …, k, …, j]）进行P串前缀跟P串后缀的匹配。</p>
+<p> 一般的文章或教材可能就此一笔带过，但大部分的初学者可能还是不能很好的理解上述求解next 数组的原理，故接下来，我再来着重说明下。</p>
+<p>  如下图所示，假定给定模式串ABCDABCE，且已知next [j] = k（相当于“p0 pk-1” = “pj-k pj-1” = AB，可以看出k为2），现要求next [j + 1]等于多少？因为pk = pj = C，所以next[j + 1] = next[j] + 1 = k + 1（可以看出next[j + 1] = 3）。代表字符E前的模式串中，有长度k+1 的相同前缀后缀。</p>
+</li>
+</ul>
+{% image https://img-blog.csdn.net/20140729182154066 '' '' %}
+
+<pre><code>但如果pk != pj 呢？说明“p0 pk-1 pk”  ≠ “pj-k pj-1 pj”。换言之，当pk != pj后，字符E前有多大长度的相同前缀后缀呢？很明显，因为C不同于D，所以ABC 跟 ABD不相同，即字符E前的模式串没有长度为k+1的相同前缀后缀，也就不能再简单的令：next[j + 1] = next[j] + 1 。所以，咱们只能去寻找长度更短一点的相同前缀后缀。</code></pre><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://img-blog.csdn.net/20140729181940812" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
 
 
-但如果pk != pj 呢？说明“p0 pk-1 pk”  ≠ “pj-k pj-1 pj”。换言之，当pk != pj后，字符E前有多大长度的相同前缀后缀呢？很明显，因为C不同于D，所以ABC 跟 ABD不相同，即字符E前的模式串没有长度为k+1的相同前缀后缀，也就不能再简单的令：next[j + 1] = next[j] + 1 。所以，咱们只能去寻找长度更短一点的相同前缀后缀。
+<pre><code>结合上图来讲，若能在前缀“ p0 pk-1 pk ” 中不断的递归前缀索引k = next [k]，找到一个字符pk’ 也为D，代表pk’ = pj，且满足p0 pk&apos;-1 pk&apos; = pj-k&apos; pj-1 pj，则最大相同的前缀后缀长度为k&apos; + 1，从而next [j + 1] = k’ + 1 = next [k&apos; ] + 1。否则前缀中没有D，则代表没有相同的前缀后缀，next [j + 1] = 0。
 
+那为何递归前缀索引k = next[k]，就能找到长度更短的相同前缀后缀呢？这又归根到next数组的含义。我们拿前缀 p0 pk-1 pk 去跟后缀pj-k pj-1 pj匹配，如果pk 跟pj 失配，下一步就是用p[next[k]] 去跟pj 继续匹配，如果p[ next[k] ]跟pj还是不匹配，则需要寻找长度更短的相同前缀后缀，即下一步用p[ next[ next[k] ] ]去跟pj匹配。此过程相当于模式串的自我匹配，所以不断的递归k = next[k]，直到要么找到长度更短的相同前缀后缀，要么没有长度更短的相同前缀后缀。如下图所示：</code></pre><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://img-blog.csdn.net/20150812214857858" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>    
 
-结合上图来讲，若能在前缀“ p0 pk-1 pk ” 中不断的递归前缀索引k = next [k]，找到一个字符pk’ 也为D，代表pk’ = pj，且满足p0 pk&apos;-1 pk&apos; = pj-k&apos; pj-1 pj，则最大相同的前缀后缀长度为k&apos; + 1，从而next [j + 1] = k’ + 1 = next [k&apos; ] + 1。否则前缀中没有D，则代表没有相同的前缀后缀，next [j + 1] = 0。
-
-那为何递归前缀索引k = next[k]，就能找到长度更短的相同前缀后缀呢？这又归根到next数组的含义。我们拿前缀 p0 pk-1 pk 去跟后缀pj-k pj-1 pj匹配，如果pk 跟pj 失配，下一步就是用p[next[k]] 去跟pj 继续匹配，如果p[ next[k] ]跟pj还是不匹配，则需要寻找长度更短的相同前缀后缀，即下一步用p[ next[ next[k] ] ]去跟pj匹配。此过程相当于模式串的自我匹配，所以不断的递归k = next[k]，直到要么找到长度更短的相同前缀后缀，要么没有长度更短的相同前缀后缀。如下图所示：</code></pre><p>引用下一读者wudehua55555于本文评论下留言，以辅助大家从另一个角度理解：“ 一直以为博主在用递归求next数组时没讲清楚，为何要用k = next[k],仔细看了这个红黄蓝分区图才突然恍然大悟，就是找到p[k]对应的next[k]，根据对称性，只需再判断p[next[k]]与p[j]是否相等即可，于是令k = next[k],这里恰好就使用了递归的思路。其实我觉得不要一开始就陷入递归的方法中，换一种思路，直接从考虑对称性入手，可直接得出k = next[k]，而这正好是递归罢了。以上是一些个人看法，非常感谢博主提供的解析，非计算机的学生也能看懂，虽然从昨晚9点看到了现在。高兴。”</p>
-<pre><code>所以，因最终在前缀ABC中没有找到D，故E的next 值为0：</code></pre><p>模式串的后缀：ABDE<br>模式串的前缀：ABC<br>前缀右移两位：     ABC<br>    读到此，有的读者可能又有疑问了，那能否举一个能在前缀中找到字符D的例子呢？OK，咱们便来看一个能在前缀中找到字符D的例子，如下图所示：</p>
+<blockquote>
+<p>引用下一读者wudehua55555于本文评论下留言，以辅助大家从另一个角度理解：“ 一直以为博主在用递归求next数组时没讲清楚，为何要用k = next[k],仔细看了这个红黄蓝分区图才突然恍然大悟，就是找到p[k]对应的next[k]，根据对称性，只需再判断p[next[k]]与p[j]是否相等即可，于是令k = next[k],这里恰好就使用了递归的思路。其实我觉得不要一开始就陷入递归的方法中，换一种思路，直接从考虑对称性入手，可直接得出k = next[k]，而这正好是递归罢了。以上是一些个人看法，非常感谢博主提供的解析，非计算机的学生也能看懂，虽然从昨晚9点看到了现在。高兴。”</p>
+</blockquote>
+<pre><code>所以，因最终在前缀ABC中没有找到D，故E的next 值为0：</code></pre><blockquote>
+<p>模式串的后缀：ABDE</p>
+</blockquote>
+<blockquote>
+<p>模式串的前缀：ABC</p>
+</blockquote>
+<blockquote>
+<p>前缀右移两位：     ABC</p>
+</blockquote>
+<pre><code>读到此，有的读者可能又有疑问了，那能否举一个能在前缀中找到字符D的例子呢？OK，咱们便来看一个能在前缀中找到字符D的例子，如下图所示：</code></pre><p> <img src="https://img-blog.csdn.net/20140809163257703" alt></p>
 <pre><code>给定模式串DABCDABDE，我们很顺利的求得字符D之前的“DABCDAB”的各个子串的最长相同前缀后缀的长度分别为0 0 0 0 1 2 3，但当遍历到字符D，要求包括D在内的“DABCDABD”最长相同前缀后缀时，我们发现pj处的字符D跟pk处的字符C不一样，换言之，前缀DABC的最后一个字符C 跟后缀DABD的最后一个字符D不相同，所以不存在长度为4的相同前缀后缀。
 
 怎么办呢？既然没有长度为4的相同前缀后缀，咱们可以寻找长度短点的相同前缀后缀，最终，因在p0处发现也有个字符D，p0 = pj，所以p[j]对应的长度值为1，相当于E对应的next 值为1（即字符E之前的字符串“DABCDABD”中有长度为1的相同前缀和后缀）。
 
-综上，可以通过递推求得next 数组，代码如下所示：</code></pre><p>void GetNext(char* p,int next[])<br>{<br>    int pLen = strlen(p);<br>    next[0] = -1;<br>    int k = -1;<br>    int j = 0;<br>    while (j &lt; pLen - 1)<br>    {<br>        //p[k]表示前缀，p[j]表示后缀<br>        if (k == -1 || p[j] == p[k])<br>        {<br>            ++k;<br>            ++j;<br>            next[j] = k;<br>        }<br>        else<br>        {<br>            k = next[k];<br>        }<br>    }<br>}<br>    用代码重新计算下“ABCDABD”的next 数组，以验证之前通过“最长相同前缀后缀长度值右移一位，然后初值赋为-1”得到的next 数组是否正确，计算结果如下表格所示：</p>
-<pre><code>从上述表格可以看出，无论是之前通过“最长相同前缀后缀长度值右移一位，然后初值赋为-1”得到的next 数组，还是之后通过代码递推计算求得的next 数组，结果是完全一致的。</code></pre><p>3.3.5 基于《next 数组》匹配</p>
-<pre><code>下面，我们来基于next 数组进行匹配。
+综上，可以通过递推求得next 数组，代码如下所示：</code></pre><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">GetNext</span><span class="params">(<span class="keyword">char</span>* p,<span class="keyword">int</span> next[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> pLen = <span class="built_in">strlen</span>(p);</span><br><span class="line">	next[<span class="number">0</span>] = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">int</span> k = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (j &lt; pLen - <span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//p[k]表示前缀，p[j]表示后缀</span></span><br><span class="line">		<span class="keyword">if</span> (k == <span class="number">-1</span> || p[j] == p[k]) </span><br><span class="line">		&#123;</span><br><span class="line">			++k;</span><br><span class="line">			++j;</span><br><span class="line">			next[j] = k;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> </span><br><span class="line">		&#123;</span><br><span class="line">			k = next[k];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<pre><code>用代码重新计算下“ABCDABD”的next 数组，以验证之前通过“最长相同前缀后缀长度值右移一位，然后初值赋为-1”得到的next 数组是否正确，计算结果如下表格所示：</code></pre>{% image https://img-blog.csdn.net/20140812004705968 '' '' %} 
 
+<pre><code>从上述表格可以看出，无论是之前通过“最长相同前缀后缀长度值右移一位，然后初值赋为-1”得到的next 数组，还是之后通过代码递推计算求得的next 数组，结果是完全一致的。</code></pre><h4 id="基于《next-数组》匹配"><a href="#基于《next-数组》匹配" class="headerlink" title="基于《next 数组》匹配"></a>基于《next 数组》匹配</h4><pre><code>下面，我们来基于next 数组进行匹配。</code></pre>{% image https://img-blog.csdn.net/20140721231622000 '' '' %}
 
+<pre><code>还是给定文本串“BBC ABCDAB ABCDABCDABDE”，和模式串“ABCDABD”，现在要拿模式串去跟文本串匹配，如下图所示：</code></pre><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://img-blog.csdn.net/20140723224710203" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
 
-
-还是给定文本串“BBC ABCDAB ABCDABCDABDE”，和模式串“ABCDABD”，现在要拿模式串去跟文本串匹配，如下图所示：
-
-
-
-在正式匹配之前，让我们来再次回顾下上文2.1节所述的KMP算法的匹配流程：</code></pre><p>“假设现在文本串S匹配到 i 位置，模式串P匹配到 j 位置<br>如果j = -1，或者当前字符匹配成功（即S[i] == P[j]），都令i++，j++，继续匹配下一个字符；<br>如果j != -1，且当前字符匹配失败（即S[i] != P[j]），则令 i 不变，j = next[j]。此举意味着失配时，模式串P相对于文本串S向右移动了j - next [j] 位。<br>换言之，当匹配失败时，模式串向右移动的位数为：失配字符所在位置 - 失配字符对应的next 值，即移动的实际位数为：j - next[j]，且此值大于等于1。”</p>
-<ol>
-<li><p>最开始匹配时<br>P[0]跟S[0]匹配失败<br>所以执行“如果j != -1，且当前字符匹配失败（即S[i] != P[j]），则令 i 不变，j = next[j]”，所以j = -1，故转而执行“如果j = -1，或者当前字符匹配成功（即S[i] == P[j]），都令i++，j++”，得到i = 1，j = 0，即P[0]继续跟S[1]匹配。<br>P[0]跟S[1]又失配，j再次等于-1，i、j继续自增，从而P[0]跟S[2]匹配。<br>P[0]跟S[2]失配后，P[0]又跟S[3]匹配。<br>P[0]跟S[3]再失配，直到P[0]跟S[4]匹配成功，开始执行此条指令的后半段：“如果j = -1，或者当前字符匹配成功（即S[i] == P[j]），都令i++，j++”。</p>
+<pre><code>在正式匹配之前，让我们来再次回顾下上文2.1节所述的KMP算法的匹配流程：</code></pre><ul>
+<li><p>“假设现在文本串S匹配到 i 位置，模式串P匹配到 j 位置</p>
+<ul>
+<li>如果j = -1，或者当前字符匹配成功（即S[i] == P[j]），都令i++，j++，继续匹配下一个字符；</li>
+<li>如果j != -1，且当前字符匹配失败（即S[i] != P[j]），则令 i 不变，j = next[j]。此举意味着失配时，模式串P相对于文本串S向右移动了j - next [j] 位。<ul>
+<li>换言之，当匹配失败时，模式串向右移动的位数为：失配字符所在位置 - 失配字符对应的next 值，即移动的实际位数为：j - next[j]，且此值大于等于1。”</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>最开始匹配时</p>
+<ul>
+<li><p>P[0]跟S[0]匹配失败</p>
+<ul>
+<li>所以执行“如果j != -1，且当前字符匹配失败（即S[i] != P[j]），则令 i 不变，j = next[j]”，所以j = -1，故转而执行“如果j = -1，或者当前字符匹配成功（即S[i] == P[j]），都令i++，j++”，得到i = 1，j = 0，即P[0]继续跟S[1]匹配。</li>
+</ul>
+</li>
+<li><p>P[0]跟S[1]又失配，j再次等于-1，i、j继续自增，从而P[0]跟S[2]匹配。</p>
+</li>
+<li><p>P[0]跟S[2]失配后，P[0]又跟S[3]匹配。</p>
+</li>
+<li><p>P[0]跟S[3]再失配，直到P[0]跟S[4]匹配成功，开始执行此条指令的后半段：“如果j = -1，或者当前字符匹配成功（即S[i] == P[j]），都令i++，j++”。</p>
+<p><img src="https://img-blog.csdn.net/20140726213602848" alt></p>
+</li>
+</ul>
 </li>
 <li><p>P[1]跟S[5]匹配成功，P[2]跟S[6]也匹配成功, …，直到当匹配到P[6]处的字符D时失配（即S[10] != P[6]），由于P[6]处的D对应的next 值为2，所以下一步用P[2]处的字符C继续跟S[10]匹配，相当于向右移动：j - next[j] = 6 - 2 =4 位。</p>
+<p><img src="https://img-blog.csdn.net/20140721223809617" alt></p>
 </li>
-</ol>
-<ol start="3">
-<li>向右移动4位后，P[2]处的C再次失配，由于C对应的next值为0，所以下一步用P[0]处的字符继续跟S[10]匹配，相当于向右移动：j - next[j] = 2 - 0 = 2 位。</li>
-</ol>
-<ol start="4">
-<li>移动两位之后，A 跟空格不匹配，模式串后移1 位。</li>
-</ol>
-<ol start="5">
+<li><p>向右移动4位后，P[2]处的C再次失配，由于C对应的next值为0，所以下一步用P[0]处的字符继续跟S[10]匹配，相当于向右移动：j - next[j] = 2 - 0 = 2 位。</p>
+<p><img src="https://img-blog.csdn.net/20140721223539765" alt></p>
+</li>
+<li><p>移动两位之后，A 跟空格不匹配，模式串后移1 位。</p>
+<p><img src="https://img-blog.csdn.net/20140721223823548" alt></p>
+</li>
 <li><p>P[6]处的D再次失配，因为P[6]对应的next值为2，故下一步用P[2]继续跟文本串匹配，相当于模式串向右移动 j - next[j] = 6 - 2 = 4 位。</p>
+<p><img src="https://img-blog.csdn.net/20140721223558140" alt></p>
 </li>
 <li><p>匹配成功，过程结束。</p>
+<p><img src="https://img-blog.csdn.net/20140721223611515" alt></p>
+</li>
+</ul>
+<pre><code>匹配过程一模一样。也从侧面佐证了，next 数组确实是只要将各个最大前缀后缀的公共元素的长度值右移一位，且把初值赋为-1 即可。</code></pre><h4 id="基于《最大长度表》与基于《next-数组》等价"><a href="#基于《最大长度表》与基于《next-数组》等价" class="headerlink" title="基于《最大长度表》与基于《next 数组》等价"></a>基于《最大长度表》与基于《next 数组》等价</h4><pre><code>我们已经知道，利用next 数组进行匹配失配时，模式串向右移动 j - next [ j ] 位，等价于已匹配字符数 - 失配字符的上一位字符所对应的最大长度值。原因是：</code></pre><ol>
+<li><p>j 从0开始计数，那么当数到失配字符时，j 的数值就是已匹配的字符数；</p>
+</li>
+<li><p>由于next 数组是由最大长度值表整体向右移动一位（且初值赋为-1）得到的，那么失配字符的上一位字符所对应的最大长度值，即为当前失配字符的next 值。</p>
+<p> 但为何本文不直接利用next 数组进行匹配呢？因为next 数组不好求，而一个字符串的前缀后缀的公共元素的最大长度值很容易求。例如若给定模式串“ababa”，要你快速口算出其next 数组，乍一看，每次求对应字符的next值时，还得把该字符排除之外，然后看该字符之前的字符串中有最大长度为多大的相同前缀后缀，此过程不够直接。而如果让你求其前缀后缀公共元素的最大长度，则很容易直接得出结果：0 0 1 2 3，如下表格所示：</p>
+<p><img src="https://img-blog.csdn.net/20140725232020608" alt></p>
+<p> 然后这5个数字 全部整体右移一位，且初值赋为-1，即得到其next 数组：-1 0 0 1 2。</p>
 </li>
 </ol>
-<pre><code>匹配过程一模一样。也从侧面佐证了，next 数组确实是只要将各个最大前缀后缀的公共元素的长度值右移一位，且把初值赋为-1 即可。</code></pre><p>3.3.6 基于《最大长度表》与基于《next 数组》等价</p>
-<pre><code>我们已经知道，利用next 数组进行匹配失配时，模式串向右移动 j - next [ j ] 位，等价于已匹配字符数 - 失配字符的上一位字符所对应的最大长度值。原因是：</code></pre><p>j 从0开始计数，那么当数到失配字符时，j 的数值就是已匹配的字符数；<br>由于next 数组是由最大长度值表整体向右移动一位（且初值赋为-1）得到的，那么失配字符的上一位字符所对应的最大长度值，即为当前失配字符的next 值。<br>    但为何本文不直接利用next 数组进行匹配呢？因为next 数组不好求，而一个字符串的前缀后缀的公共元素的最大长度值很容易求。例如若给定模式串“ababa”，要你快速口算出其next 数组，乍一看，每次求对应字符的next值时，还得把该字符排除之外，然后看该字符之前的字符串中有最大长度为多大的相同前缀后缀，此过程不够直接。而如果让你求其前缀后缀公共元素的最大长度，则很容易直接得出结果：0 0 1 2 3，如下表格所示：</p>
-<pre><code>然后这5个数字 全部整体右移一位，且初值赋为-1，即得到其next 数组：-1 0 0 1 2。</code></pre><p>3.3.7 Next 数组与有限状态自动机</p>
-<pre><code>next 负责把模式串向前移动，且当第j位不匹配的时候，用第next[j]位和主串匹配，就像打了张“表”。此外，next 也可以看作有限状态自动机的状态，在已经读了多少字符的情况下，失配后，前面读的若干个字符是有用的。</code></pre><p>3.3.8 Next 数组的优化</p>
-<p>   行文至此，咱们全面了解了暴力匹配的思路、KMP算法的原理、流程、流程之间的内在逻辑联系，以及next 数组的简单求解（《最大长度表》整体右移一位，然后初值赋为-1）和代码求解，最后基于《next 数组》的匹配，看似洋洋洒洒，清晰透彻，但以上忽略了一个小问题。</p>
-<pre><code>比如，如果用之前的next 数组方法求模式串“abab”的next 数组，可得其next 数组为-1 0 0 1（0 0 1 2整体右移一位，初值赋为-1），当它跟下图中的文本串去匹配的时候，发现b跟c失配，于是模式串右移j - next[j] = 3 - 1 =2位。
+<h4 id="Next-数组与有限状态自动机"><a href="#Next-数组与有限状态自动机" class="headerlink" title="Next 数组与有限状态自动机"></a>Next 数组与有限状态自动机</h4><pre><code>next 负责把模式串向前移动，且当第j位不匹配的时候，用第next[j]位和主串匹配，就像打了张“表”。此外，next 也可以看作有限状态自动机的状态，在已经读了多少字符的情况下，失配后，前面读的若干个字符是有用的。</code></pre><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://img-blog.csdn.net/20140805003320486" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
 
+<h4 id="Next-数组的优化"><a href="#Next-数组的优化" class="headerlink" title="Next 数组的优化"></a>Next 数组的优化</h4><p>   行文至此，咱们全面了解了暴力匹配的思路、KMP算法的原理、流程、流程之间的内在逻辑联系，以及next 数组的简单求解（《最大长度表》整体右移一位，然后初值赋为-1）和代码求解，最后基于《next 数组》的匹配，看似洋洋洒洒，清晰透彻，但以上忽略了一个小问题。</p>
+<pre><code>比如，如果用之前的next 数组方法求模式串“abab”的next 数组，可得其next 数组为-1 0 0 1（0 0 1 2整体右移一位，初值赋为-1），当它跟下图中的文本串去匹配的时候，发现b跟c失配，于是模式串右移j - next[j] = 3 - 1 =2位。</code></pre>{% image http://hi.csdn.net/attachment/201106/14/8394323_1308075859Zfue.jpg '' '' %}
 
+<pre><code>右移2位后，b又跟c失配。事实上，因为在上一步的匹配中，已经得知p[3] = b，与s[3] = c失配，而右移两位之后，让p[ next[3] ] = p[1] = b 再跟s[3]匹配时，必然失配。问题出在哪呢？</code></pre><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://hi.csdn.net/attachment/201106/14/8394323_13080758591kyV.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
 
-右移2位后，b又跟c失配。事实上，因为在上一步的匹配中，已经得知p[3] = b，与s[3] = c失配，而右移两位之后，让p[ next[3] ] = p[1] = b 再跟s[3]匹配时，必然失配。问题出在哪呢？
+<pre><code>问题出在不该出现p[j] = p[ next[j] ]。为什么呢？理由是：当p[j] != s[i] 时，下次匹配必然是p[ next [j]] 跟s[i]匹配，如果p[j] = p[ next[j] ]，必然导致后一步匹配失败（因为p[j]已经跟s[i]失配，然后你还用跟p[j]等同的值p[next[j]]去跟s[i]匹配，很显然，必然失配），所以不能允许p[j] = p[ next[j ]]。如果出现了p[j] = p[ next[j] ]咋办呢？如果出现了，则需要再次递归，即令next[j] = next[ next[j] ]。
 
+所以，咱们得修改下求next 数组的代码。</code></pre><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//优化过后的next 数组求法</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">GetNextval</span><span class="params">(<span class="keyword">char</span>* p, <span class="keyword">int</span> next[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> pLen = <span class="built_in">strlen</span>(p);</span><br><span class="line">	next[<span class="number">0</span>] = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">int</span> k = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (j &lt; pLen - <span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//p[k]表示前缀，p[j]表示后缀  </span></span><br><span class="line">		<span class="keyword">if</span> (k == <span class="number">-1</span> || p[j] == p[k])</span><br><span class="line">		&#123;</span><br><span class="line">			++j;</span><br><span class="line">			++k;</span><br><span class="line">			<span class="comment">//较之前next数组求法，改动在下面4行</span></span><br><span class="line">			<span class="keyword">if</span> (p[j] != p[k])</span><br><span class="line">				next[j] = k;   <span class="comment">//之前只有这一行</span></span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				<span class="comment">//因为不能出现p[j] = p[ next[j ]]，所以当出现时需要继续递归，k = next[k] = next[next[k]]</span></span><br><span class="line">				next[j] = next[k];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			k = next[k];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<pre><code>利用优化过后的next 数组求法，可知模式串“abab”的新next数组为：-1 0 -1 0。可能有些读者会问：原始next 数组是前缀后缀最长公共元素长度值右移一位， 然后初值赋为-1而得，那么优化后的next 数组如何快速心算出呢？实际上，只要求出了原始next 数组，便可以根据原始next 数组快速求出优化后的next 数组。还是以abab为例，如下表格所示：</code></pre>{% image https://img-blog.csdn.net/20140801160510832 '' '' %}
 
-问题出在不该出现p[j] = p[ next[j] ]。为什么呢？理由是：当p[j] != s[i] 时，下次匹配必然是p[ next [j]] 跟s[i]匹配，如果p[j] = p[ next[j] ]，必然导致后一步匹配失败（因为p[j]已经跟s[i]失配，然后你还用跟p[j]等同的值p[next[j]]去跟s[i]匹配，很显然，必然失配），所以不能允许p[j] = p[ next[j ]]。如果出现了p[j] = p[ next[j] ]咋办呢？如果出现了，则需要再次递归，即令next[j] = next[ next[j] ]。
-
-所以，咱们得修改下求next 数组的代码。</code></pre><p>//优化过后的next 数组求法<br>void GetNextval(char* p, int next[])<br>{<br>    int pLen = strlen(p);<br>    next[0] = -1;<br>    int k = -1;<br>    int j = 0;<br>    while (j &lt; pLen - 1)<br>    {<br>        //p[k]表示前缀，p[j]表示后缀<br>        if (k == -1 || p[j] == p[k])<br>        {<br>            ++j;<br>            ++k;<br>            //较之前next数组求法，改动在下面4行<br>            if (p[j] != p[k])<br>                next[j] = k;   //之前只有这一行<br>            else<br>                //因为不能出现p[j] = p[ next[j ]]，所以当出现时需要继续递归，k = next[k] = next[next[k]]<br>                next[j] = next[k];<br>        }<br>        else<br>        {<br>            k = next[k];<br>        }<br>    }<br>}<br>    利用优化过后的next 数组求法，可知模式串“abab”的新next数组为：-1 0 -1 0。可能有些读者会问：原始next 数组是前缀后缀最长公共元素长度值右移一位， 然后初值赋为-1而得，那么优化后的next 数组如何快速心算出呢？实际上，只要求出了原始next 数组，便可以根据原始next 数组快速求出优化后的next 数组。还是以abab为例，如下表格所示：</p>
 <pre><code>只要出现了p[next[j]] = p[j]的情况，则把next[j]的值再次递归。例如在求模式串“abab”的第2个a的next值时，如果是未优化的next值的话，第2个a对应的next值为0，相当于第2个a失配时，下一步匹配模式串会用p[0]处的a再次跟文本串匹配，必然失配。所以求第2个a的next值时，需要再次递归：next[2] = next[ next[2] ] = next[0] = -1（此后，根据优化后的新next值可知，第2个a失配时，执行“如果j = -1，或者当前字符匹配成功（即S[i] == P[j]），都令i++，j++，继续匹配下一个字符”），同理，第2个b对应的next值为0。</code></pre><p>对于优化后的next数组可以发现一点：如果模式串的后缀跟前缀相同，那么它们的next值也是相同的，例如模式串abcabc，它的前缀后缀都是abc，其优化后的next数组为：-1 0 0 -1 0 0，前缀后缀abc的next值都为-1 0 0。</p>
-<pre><code>然后引用下之前3.1节的KMP代码：</code></pre><p>int KmpSearch(char* s, char* p)<br>{<br>    int i = 0;<br>    int j = 0;<br>    int sLen = strlen(s);<br>    int pLen = strlen(p);<br>    while (i &lt; sLen &amp;&amp; j &lt; pLen)<br>    {<br>        //①如果j = -1，或者当前字符匹配成功（即S[i] == P[j]），都令i++，j++<br>        if (j == -1 || s[i] == p[j])<br>        {<br>            i++;<br>            j++;<br>        }<br>        else<br>        {<br>            //②如果j != -1，且当前字符匹配失败（即S[i] != P[j]），则令 i 不变，j = next[j]<br>            //next[j]即为j所对应的next值<br>            j = next[j];<br>        }<br>    }<br>    if (j == pLen)<br>        return i - j;<br>    else<br>        return -1;<br>}<br>    接下来，咱们继续拿之前的例子说明，整个匹配过程如下：</p>
-<pre><code>1. S[3]与P[3]匹配失败。
+<pre><code>然后引用下之前3.1节的KMP代码：</code></pre><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">KmpSearch</span><span class="params">(<span class="keyword">char</span>* s, <span class="keyword">char</span>* p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> sLen = <span class="built_in">strlen</span>(s);</span><br><span class="line">	<span class="keyword">int</span> pLen = <span class="built_in">strlen</span>(p);</span><br><span class="line">	<span class="keyword">while</span> (i &lt; sLen &amp;&amp; j &lt; pLen)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//①如果j = -1，或者当前字符匹配成功（即S[i] == P[j]），都令i++，j++    </span></span><br><span class="line">		<span class="keyword">if</span> (j == <span class="number">-1</span> || s[i] == p[j])</span><br><span class="line">		&#123;</span><br><span class="line">			i++;</span><br><span class="line">			j++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">//②如果j != -1，且当前字符匹配失败（即S[i] != P[j]），则令 i 不变，j = next[j]    </span></span><br><span class="line">			<span class="comment">//next[j]即为j所对应的next值      </span></span><br><span class="line">			j = next[j];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (j == pLen)</span><br><span class="line">		<span class="keyword">return</span> i - j;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<pre><code>接下来，咱们继续拿之前的例子说明，整个匹配过程如下：</code></pre><ol>
+<li>S[3]与P[3]匹配失败。</li>
+</ol>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://hi.csdn.net/attachment/201106/14/8394323_130807585714lW.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure> 
 
 
 
-2. S[3]保持不变，P的下一个匹配位置是P[next[3]]，而next[3]=0，所以P[next[3]]=P[0]与S[3]匹配。
+<ol start="2">
+<li><p>S[3]保持不变，P的下一个匹配位置是P[next[3]]，而next[3]=0，所以P[next[3]]=P[0]与S[3]匹配。</p>
+<p><img src="http://hi.csdn.net/attachment/201106/14/8394323_13080758571390.jpg" alt></p>
+</li>
+<li><p>由于上一步骤中P[0]与S[3]还是不匹配。此时i=3，j=next [0]=-1，由于满足条件j==-1，所以执行“++i, ++j”，即主串指针下移一个位置，P[0]与S[4]开始匹配。最后j==pLen，跳出循环，输出结果i - j = 4（即模式串第一次在文本串中出现的位置），匹配成功，算法结束。</p>
+<p><img src="http://hi.csdn.net/attachment/201106/14/8394323_1308075857e40u.jpg" alt>   </p>
+</li>
+</ol>
+<h2 id="KMP的时间复杂度分析"><a href="#KMP的时间复杂度分析" class="headerlink" title="KMP的时间复杂度分析"></a>KMP的时间复杂度分析</h2><pre><code>相信大部分读者读完上文之后，已经发觉其实理解KMP非常容易，无非是循序渐进把握好下面几点：</code></pre><ol>
+<li><p>如果模式串中存在相同前缀和后缀，即pj-k pj-k+1, …, pj-1 = p0 p1, …, pk-1，那么在pj跟si失配后，让模式串的前缀p0 p1…pk-1对应着文本串si-k si-k+1…si-1，而后让pk跟si继续匹配。</p>
+</li>
+<li><p>之前本应是pj跟si匹配，结果失配了，失配后，令pk跟si匹配，相当于j 变成了k，模式串向右移动j - k位。</p>
+</li>
+<li><p>因为k 的值是可变的，所以我们用next[j]表示j处字符失配后，下一次匹配模式串应该跳到的位置。换言之，失配前是j，pj跟si失配时，用p[ next[j] ]继续跟si匹配，相当于j变成了next[j]，所以，j = next[j]，等价于把模式串向右移动j - next [j] 位。</p>
+</li>
+<li><p>而next[j]应该等于多少呢？next[j]的值由j 之前的模式串子串中有多大长度的相同前缀后缀所决定，如果j 之前的模式串子串中（不含j）有最大长度为k的相同前缀后缀，那么next [j] = k。</p>
+<p> 如之前的图所示：</p>
+</li>
+</ol>
+{% image https://img-blog.csdn.net/20140812223633281 '' '' %}
 
-
-
-3.  由于上一步骤中P[0]与S[3]还是不匹配。此时i=3，j=next [0]=-1，由于满足条件j==-1，所以执行“++i, ++j”，即主串指针下移一个位置，P[0]与S[4]开始匹配。最后j==pLen，跳出循环，输出结果i - j = 4（即模式串第一次在文本串中出现的位置），匹配成功，算法结束。</code></pre><p>3.4 KMP的时间复杂度分析<br>    相信大部分读者读完上文之后，已经发觉其实理解KMP非常容易，无非是循序渐进把握好下面几点：</p>
-<p>如果模式串中存在相同前缀和后缀，即pj-k pj-k+1, …, pj-1 = p0 p1, …, pk-1，那么在pj跟si失配后，让模式串的前缀p0 p1…pk-1对应着文本串si-k si-k+1…si-1，而后让pk跟si继续匹配。<br>之前本应是pj跟si匹配，结果失配了，失配后，令pk跟si匹配，相当于j 变成了k，模式串向右移动j - k位。<br>因为k 的值是可变的，所以我们用next[j]表示j处字符失配后，下一次匹配模式串应该跳到的位置。换言之，失配前是j，pj跟si失配时，用p[ next[j] ]继续跟si匹配，相当于j变成了next[j]，所以，j = next[j]，等价于把模式串向右移动j - next [j] 位。<br>而next[j]应该等于多少呢？next[j]的值由j 之前的模式串子串中有多大长度的相同前缀后缀所决定，如果j 之前的模式串子串中（不含j）有最大长度为k的相同前缀后缀，那么next [j] = k。<br>    如之前的图所示：</p>
 <pre><code>接下来，咱们来分析下KMP的时间复杂度。分析之前，先来回顾下KMP匹配算法的流程：</code></pre><p>“KMP的算法流程：</p>
-<p>假设现在文本串S匹配到 i 位置，模式串P匹配到 j 位置<br>如果j = -1，或者当前字符匹配成功（即S[i] == P[j]），都令i++，j++，继续匹配下一个字符；<br>如果j != -1，且当前字符匹配失败（即S[i] != P[j]），则令 i 不变，j = next[j]。此举意味着失配时，模式串P相对于文本串S向右移动了j - next [j] 位。”<br>    我们发现如果某个字符匹配成功，模式串首字符的位置保持不动，仅仅是i++、j++；如果匹配失配，i 不变（即 i 不回溯），模式串会跳过匹配过的next [j]个字符。整个算法最坏的情况是，当模式串首字符位于i - j的位置时才匹配成功，算法结束。<br>    所以，如果文本串的长度为n，模式串的长度为m，那么匹配过程的时间复杂度为O(n)，算上计算next的O(m)时间，KMP的整体时间复杂度为O(m + n)。</p>
+<ul>
+<li><p>假设现在文本串S匹配到 i 位置，模式串P匹配到 j 位置</p>
+<ul>
+<li><p>如果j = -1，或者当前字符匹配成功（即S[i] == P[j]），都令i++，j++，继续匹配下一个字符；</p>
+</li>
+<li><p>如果j != -1，且当前字符匹配失败（即S[i] != P[j]），则令 i 不变，j = next[j]。此举意味着失配时，模式串P相对于文本串S向右移动了j - next [j] 位。”</p>
+<p>我们发现如果某个字符匹配成功，模式串首字符的位置保持不动，仅仅是i++、j++；如果匹配失配，i 不变（即 i 不回溯），模式串会跳过匹配过的next [j]个字符。整个算法最坏的情况是，当模式串首字符位于i - j的位置时才匹配成功，算法结束。</p>
+<p>所以，如果文本串的长度为n，模式串的长度为m，那么匹配过程的时间复杂度为O(n)，算上计算next的O(m)时间，KMP的整体时间复杂度为O(m + n)。</p>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="扩展1：BM算法"><a href="#扩展1：BM算法" class="headerlink" title="扩展1：BM算法"></a>扩展1：BM算法</h2><pre><code>KMP的匹配是从模式串的开头开始匹配的，而1977年，德克萨斯大学的Robert S. Boyer教授和J Strother Moore教授发明了一种新的字符串匹配算法：Boyer-Moore算法，简称BM算法。该算法从模式串的尾部开始匹配，且拥有在最坏情况下O(N)的时间复杂度。在实践中，比KMP算法的实际效能高。
 
-BM算法定义了两个规则：</code></pre><p>坏字符规则：当文本串中的某个字符跟模式串的某个字符不匹配时，我们称文本串中的这个失配字符为坏字符，此时模式串需要向右移动，移动的位数 = 坏字符在模式串中的位置 - 坏字符在模式串中最右出现的位置。此外，如果”坏字符”不包含在模式串之中，则最右出现位置为-1。<br>好后缀规则：当字符失配时，后移位数 = 好后缀在模式串中的位置 - 好后缀在模式串上一次出现的位置，且如果好后缀在模式串中没有再次出现，则为-1。<br>    下面举例说明BM算法。例如，给定文本串“HERE IS A SIMPLE EXAMPLE”，和模式串“EXAMPLE”，现要查找模式串是否在文本串中，如果存在，返回模式串在文本串中的位置。</p>
-<pre><code>    1. 首先，&quot;文本串&quot;与&quot;模式串&quot;头部对齐，从尾部开始比较。&quot;S&quot;与&quot;E&quot;不匹配。这时，&quot;S&quot;就被称为&quot;坏字符&quot;（bad character），即不匹配的字符，它对应着模式串的第6位。且&quot;S&quot;不包含在模式串&quot;EXAMPLE&quot;之中（相当于最右出现位置是-1），这意味着可以把模式串后移6-(-1)=7位，从而直接移到&quot;S&quot;的后一位。
+BM算法定义了两个规则：</code></pre><ul>
+<li><p>坏字符规则：当文本串中的某个字符跟模式串的某个字符不匹配时，我们称文本串中的这个失配字符为坏字符，此时模式串需要向右移动，移动的位数 = 坏字符在模式串中的位置 - 坏字符在模式串中最右出现的位置。此外，如果”坏字符”不包含在模式串之中，则最右出现位置为-1。</p>
+</li>
+<li><p>好后缀规则：当字符失配时，后移位数 = 好后缀在模式串中的位置 - 好后缀在模式串上一次出现的位置，且如果好后缀在模式串中没有再次出现，则为-1。</p>
+<p>  下面举例说明BM算法。例如，给定文本串“HERE IS A SIMPLE EXAMPLE”，和模式串“EXAMPLE”，现要查找模式串是否在文本串中，如果存在，返回模式串在文本串中的位置。</p>
+</li>
+</ul>
+<ol>
+<li>首先，”文本串”与”模式串”头部对齐，从尾部开始比较。”S”与”E”不匹配。这时，”S”就被称为”坏字符”（bad character），即不匹配的字符，它对应着模式串的第6位。且”S”不包含在模式串”EXAMPLE”之中（相当于最右出现位置是-1），这意味着可以把模式串后移6-(-1)=7位，从而直接移到”S”的后一位。</li>
+</ol>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://img-blog.csdn.net/20140728192101322" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<ol start="2">
+<li><p>依然从尾部开始比较，发现”P”与”E”不匹配，所以”P”是”坏字符”。但是，”P”包含在模式串”EXAMPLE”之中。因为“P”这个“坏字符”对应着模式串的第6位（从0开始编号），且在模式串中的最右出现位置为4，所以，将模式串后移6-4=2位，两个”P”对齐。</p>
+<p><img src="https://img-blog.csdn.net/20140728192109185" alt></p>
+<p><img src="https://img-blog.csdn.net/20140728192118623" alt></p>
+</li>
+<li><p>依次比较，得到 “MPLE”匹配，称为”好后缀”（good suffix），即所有尾部匹配的字符串。注意，”MPLE”、”PLE”、”LE”、”E”都是好后缀。</p>
+</li>
+</ol>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://img-blog.csdn.net/20140728193254930" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<ol start="4">
+<li><p>发现“I”与“A”不匹配：“I”是坏字符。如果是根据坏字符规则，此时模式串应该后移2-(-1)=3位。问题是，有没有更优的移法？</p>
+<p><img src="https://img-blog.csdn.net/20140728193420403" alt></p>
+<p><img src="https://img-blog.csdn.net/20140728193428671" alt> </p>
+</li>
+<li><p>更优的移法是利用好后缀规则：当字符失配时，后移位数 = 好后缀在模式串中的位置 - 好后缀在模式串中上一次出现的位置，且如果好后缀在模式串中没有再次出现，则为-1。</p>
+<p>所有的“好后缀”（MPLE、PLE、LE、E）之中，只有“E”在“EXAMPLE”的头部出现，所以后移6-0=6位。</p>
+<p>可以看出，“坏字符规则”只能移3位，“好后缀规则”可以移6位。每次后移这两个规则之中的较大值。这两个规则的移动位数，只与模式串有关，与原文本串无关。</p>
+</li>
+</ol>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://img-blog.csdn.net/20140728194226031" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>       
+
+<ol start="6">
+<li>继续从尾部开始比较，“P”与“E”不匹配，因此“P”是“坏字符”，根据“坏字符规则”，后移 6 - 4 = 2位。因为是最后一位就失配，尚未获得好后缀。</li>
+</ol>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://img-blog.csdn.net/20140728194006343" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
 
 
+<pre><code>由上可知，BM算法不仅效率高，而且构思巧妙，容易理解。</code></pre><h2 id="扩展2：Sunday算法"><a href="#扩展2：Sunday算法" class="headerlink" title="扩展2：Sunday算法"></a>扩展2：Sunday算法</h2><pre><code>上文中，我们已经介绍了KMP算法和BM算法，这两个算法在最坏情况下均具有线性的查找时间。但实际上，KMP算法并不比最简单的c库函数strstr()快多少，而BM算法虽然通常比KMP算法快，但BM算法也还不是现有字符串查找算法中最快的算法，本文最后再介绍一种比BM算法更快的查找算法即Sunday算法。
 
-    2. 依然从尾部开始比较，发现&quot;P&quot;与&quot;E&quot;不匹配，所以&quot;P&quot;是&quot;坏字符&quot;。但是，&quot;P&quot;包含在模式串&quot;EXAMPLE&quot;之中。因为“P”这个“坏字符”对应着模式串的第6位（从0开始编号），且在模式串中的最右出现位置为4，所以，将模式串后移6-4=2位，两个&quot;P&quot;对齐。
+Sunday算法由Daniel M.Sunday在1990年提出，它的思想跟BM算法很相似：</code></pre><ul>
+<li><p>只不过Sunday算法是从前往后匹配，在匹配失败时关注的是文本串中参加匹配的最末位字符的下一位字符。</p>
+<ul>
+<li><p>如果该字符没有在模式串中出现则直接跳过，即移动位数 = 匹配串长度 + 1；</p>
+</li>
+<li><p>否则，其移动位数 = 模式串中最右端的该字符到末尾的距离+1。</p>
+<p>下面举个例子说明下Sunday算法。假定现在要在文本串”substring searching algorithm”中查找模式串”search”。</p>
+</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>刚开始时，把模式串与文本串左边对齐：</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">substring searching algorithm</span><br><span class="line">search</span><br><span class="line">^</span><br></pre></td></tr></table></figure>
 
+<ol start="2">
+<li>结果发现在第2个字符处发现不匹配，不匹配时关注文本串中参加匹配的最末位字符的下一位字符，即标粗的字符 i，因为模式串search中并不存在i，所以模式串直接跳过一大片，向右移动位数 = 匹配串长度 + 1 = 6 + 1 = 7，从 i 之后的那个字符（即字符n）开始下一步的匹配，如下图：</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">substring searching algorithm</span><br><span class="line">　　　 search</span><br><span class="line">　　　　^</span><br></pre></td></tr></table></figure>
 
+<ol start="3">
+<li>结果第一个字符就不匹配，再看文本串中参加匹配的最末位字符的下一位字符，是’r’，它出现在模式串中的倒数第3位，于是把模式串向右移动3位（r 到模式串末尾的距离 + 1 = 2 + 1 =3），使两个’r’对齐，如下：</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">substring searching algorithm</span><br><span class="line">          search</span><br><span class="line">               ^</span><br></pre></td></tr></table></figure>
 
-
-
-    3. 依次比较，得到 “MPLE”匹配，称为&quot;好后缀&quot;（good suffix），即所有尾部匹配的字符串。注意，&quot;MPLE&quot;、&quot;PLE&quot;、&quot;LE&quot;、&quot;E&quot;都是好后缀。
-
-
-
-
-
-    4. 发现“I”与“A”不匹配：“I”是坏字符。如果是根据坏字符规则，此时模式串应该后移2-(-1)=3位。问题是，有没有更优的移法？
-
-
-
-
-
-    5. 更优的移法是利用好后缀规则：当字符失配时，后移位数 = 好后缀在模式串中的位置 - 好后缀在模式串中上一次出现的位置，且如果好后缀在模式串中没有再次出现，则为-1。
-       所有的“好后缀”（MPLE、PLE、LE、E）之中，只有“E”在“EXAMPLE”的头部出现，所以后移6-0=6位。
-           可以看出，“坏字符规则”只能移3位，“好后缀规则”可以移6位。每次后移这两个规则之中的较大值。这两个规则的移动位数，只与模式串有关，与原文本串无关。
-
-
-
-    6. 继续从尾部开始比较，“P”与“E”不匹配，因此“P”是“坏字符”，根据“坏字符规则”，后移 6 - 4 = 2位。因为是最后一位就失配，尚未获得好后缀。
-
-
-
-由上可知，BM算法不仅效率高，而且构思巧妙，容易理解。</code></pre><h2 id="扩展2：Sunday算法"><a href="#扩展2：Sunday算法" class="headerlink" title="扩展2：Sunday算法"></a>扩展2：Sunday算法</h2><pre><code>上文中，我们已经介绍了KMP算法和BM算法，这两个算法在最坏情况下均具有线性的查找时间。但实际上，KMP算法并不比最简单的c库函数strstr()快多少，而BM算法虽然通常比KMP算法快，但BM算法也还不是现有字符串查找算法中最快的算法，本文最后再介绍一种比BM算法更快的查找算法即Sunday算法。
-
-Sunday算法由Daniel M.Sunday在1990年提出，它的思想跟BM算法很相似：</code></pre><p>只不过Sunday算法是从前往后匹配，在匹配失败时关注的是文本串中参加匹配的最末位字符的下一位字符。<br>如果该字符没有在模式串中出现则直接跳过，即移动位数 = 匹配串长度 + 1；<br>否则，其移动位数 = 模式串中最右端的该字符到末尾的距离+1。<br>    下面举个例子说明下Sunday算法。假定现在要在文本串”substring searching algorithm”中查找模式串”search”。</p>
-<pre><code>1. 刚开始时，把模式串与文本串左边对齐：</code></pre><p>  substring searching algorithm<br>  search<br>  ^<br>          2. 结果发现在第2个字符处发现不匹配，不匹配时关注文本串中参加匹配的最末位字符的下一位字符，即标粗的字符 i，因为模式串search中并不存在i，所以模式串直接跳过一大片，向右移动位数 = 匹配串长度 + 1 = 6 + 1 = 7，从 i 之后的那个字符（即字符n）开始下一步的匹配，如下图：</p>
-<p>substring searching algorithm<br>　　　 search<br>　　　　^<br>        3. 结果第一个字符就不匹配，再看文本串中参加匹配的最末位字符的下一位字符，是’r’，它出现在模式串中的倒数第3位，于是把模式串向右移动3位（r 到模式串末尾的距离 + 1 = 2 + 1 =3），使两个’r’对齐，如下：<br>  substring searching algorithm<br>  　　　　  search<br>  　　　　　　　^</p>
-<pre><code>      4. 匹配成功。
-
-回顾整个过程，我们只移动了两次模式串就找到了匹配位置，缘于Sunday算法每一步的移动量都比较大，效率很高。完。</code></pre><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>《算法导论》的第十二章：字符串匹配；<br>本文中模式串“ABCDABD”的部分图来自于此文：<a href="http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html；" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html；</a><br>本文3.3.7节中有限状态自动机的图由微博网友@龚陆安 绘制：<a href="http://d.pr/i/NEiz；" target="_blank" rel="noopener">http://d.pr/i/NEiz；</a><br>北京7月暑假班邹博半小时KMP视频：<a href="http://www.julyedu.com/video/play/id/5；" target="_blank" rel="noopener">http://www.julyedu.com/video/play/id/5；</a><br>北京7月暑假班邹博第二次课的PPT：<a href="http://yun.baidu.com/s/1mgFmw7u；" target="_blank" rel="noopener">http://yun.baidu.com/s/1mgFmw7u；</a><br>理解KMP 的9张PPT：<a href="http://weibo.com/1580904460/BeCCYrKz3#_rnd1405957424876；" target="_blank" rel="noopener">http://weibo.com/1580904460/BeCCYrKz3#_rnd1405957424876；</a><br>详解KMP算法（多图）：<a href="http://www.cnblogs.com/yjiyjige/p/3263858.html；" target="_blank" rel="noopener">http://www.cnblogs.com/yjiyjige/p/3263858.html；</a><br>本文第4部分的BM算法参考自此文：<a href="http://www.ruanyifeng.com/blog/2013/05/boyer-moore_string_search_algorithm.html；" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2013/05/boyer-moore_string_search_algorithm.html；</a><br><a href="http://youlvconglin.blog.163.com/blog/static/5232042010530101020857；" target="_blank" rel="noopener">http://youlvconglin.blog.163.com/blog/static/5232042010530101020857；</a><br>《数据结构 第二版》，严蔚敏 &amp; 吴伟民编著；<br><a href="http://blog.csdn.net/v_JULY_v/article/details/6545192；" target="_blank" rel="noopener">http://blog.csdn.net/v_JULY_v/article/details/6545192；</a><br><a href="http://blog.csdn.net/v_JULY_v/article/details/6111565；" target="_blank" rel="noopener">http://blog.csdn.net/v_JULY_v/article/details/6111565；</a><br>Sunday算法的原理与实现：<a href="http://blog.chinaunix.net/uid-22237530-id-1781825.html；" target="_blank" rel="noopener">http://blog.chinaunix.net/uid-22237530-id-1781825.html；</a><br>模式匹配之Sunday算法：<a href="http://blog.csdn.net/sunnianzhong/article/details/8820123；" target="_blank" rel="noopener">http://blog.csdn.net/sunnianzhong/article/details/8820123；</a><br>一篇KMP的英文介绍：<a href="http://www.inf.fh-flensburg.de/lang/algorithmen/pattern/kmpen.htm；" target="_blank" rel="noopener">http://www.inf.fh-flensburg.de/lang/algorithmen/pattern/kmpen.htm；</a><br>我2014年9月3日在西安电子科大的面试&amp;算法讲座视频（第36分钟~第94分钟讲KMP）：<a href="http://www.julyedu.com/video/play/21；" target="_blank" rel="noopener">http://www.julyedu.com/video/play/21；</a><br>一幅图理解KMP next数组的求法：<a href="http://v.atob.site/kmp-next.html" target="_blank" rel="noopener">http://v.atob.site/kmp-next.html</a></p>
+<ol start="4">
+<li><p>匹配成功。</p>
+<p> 回顾整个过程，我们只移动了两次模式串就找到了匹配位置，缘于Sunday算法每一步的移动量都比较大，效率很高。完。</p>
+</li>
+</ol>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
+<li><p>《算法导论》的第十二章：字符串匹配；</p>
+</li>
+<li><p>本文中模式串“ABCDABD”的部分图来自于此文：<a href="http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html；" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html；</a></p>
+</li>
+<li><p>本文3.3.7节中有限状态自动机的图由微博网友@龚陆安 绘制：<a href="http://d.pr/i/NEiz；" target="_blank" rel="noopener">http://d.pr/i/NEiz；</a></p>
+</li>
+<li><p>北京7月暑假班邹博半小时KMP视频：<a href="http://www.julyedu.com/video/play/id/5；" target="_blank" rel="noopener">http://www.julyedu.com/video/play/id/5；</a></p>
+</li>
+<li><p>北京7月暑假班邹博第二次课的PPT：<a href="http://yun.baidu.com/s/1mgFmw7u；" target="_blank" rel="noopener">http://yun.baidu.com/s/1mgFmw7u；</a></p>
+</li>
+<li><p>理解KMP 的9张PPT：<a href="http://weibo.com/1580904460/BeCCYrKz3#_rnd1405957424876；" target="_blank" rel="noopener">http://weibo.com/1580904460/BeCCYrKz3#_rnd1405957424876；</a></p>
+</li>
+<li><p>详解KMP算法（多图）：<a href="http://www.cnblogs.com/yjiyjige/p/3263858.html；" target="_blank" rel="noopener">http://www.cnblogs.com/yjiyjige/p/3263858.html；</a></p>
+</li>
+<li><p>本文第4部分的BM算法参考自此文：<a href="http://www.ruanyifeng.com/blog/2013/05/boyer-moore_string_search_algorithm.html；" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2013/05/boyer-moore_string_search_algorithm.html；</a></p>
+</li>
+<li><p><a href="http://youlvconglin.blog.163.com/blog/static/5232042010530101020857；" target="_blank" rel="noopener">http://youlvconglin.blog.163.com/blog/static/5232042010530101020857；</a></p>
+</li>
+<li><p>《数据结构 第二版》，严蔚敏 &amp; 吴伟民编著；</p>
+</li>
+<li><p><a href="http://blog.csdn.net/v_JULY_v/article/details/6545192；" target="_blank" rel="noopener">http://blog.csdn.net/v_JULY_v/article/details/6545192；</a></p>
+</li>
+<li><p><a href="http://blog.csdn.net/v_JULY_v/article/details/6111565；" target="_blank" rel="noopener">http://blog.csdn.net/v_JULY_v/article/details/6111565；</a></p>
+</li>
+<li><p>Sunday算法的原理与实现：<a href="http://blog.chinaunix.net/uid-22237530-id-1781825.html；" target="_blank" rel="noopener">http://blog.chinaunix.net/uid-22237530-id-1781825.html；</a></p>
+</li>
+<li><p>模式匹配之Sunday算法：<a href="http://blog.csdn.net/sunnianzhong/article/details/8820123；" target="_blank" rel="noopener">http://blog.csdn.net/sunnianzhong/article/details/8820123；</a></p>
+</li>
+<li><p>一篇KMP的英文介绍：<a href="http://www.inf.fh-flensburg.de/lang/algorithmen/pattern/kmpen.htm；" target="_blank" rel="noopener">http://www.inf.fh-flensburg.de/lang/algorithmen/pattern/kmpen.htm；</a></p>
+</li>
+<li><p>我2014年9月3日在西安电子科大的面试&amp;算法讲座视频（第36分钟~第94分钟讲KMP）：<a href="http://www.julyedu.com/video/play/21；" target="_blank" rel="noopener">http://www.julyedu.com/video/play/21；</a></p>
+</li>
+<li><p>一幅图理解KMP next数组的求法：<a href="http://v.atob.site/kmp-next.html" target="_blank" rel="noopener">http://v.atob.site/kmp-next.html</a></p>
+</li>
+</ol>
 <blockquote>
 <p>版权声明：本文为CSDN博主「v_JULY_v」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/v_july_v/article/details/7041827" target="_blank" rel="noopener">https://blog.csdn.net/v_july_v/article/details/7041827</a></p>
 </blockquote>
@@ -515,7 +767,7 @@ Sunday算法由Daniel M.Sunday在1990年提出，它的思想跟BM算法很相�
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-10-07T16:09:07.512Z" itemprop="dateUpdated">2019-10-08 00:09:07</time>
+    Last updated: <time datetime="2019-10-08T03:43:51.929Z" itemprop="dateUpdated">2019-10-08 11:43:51</time>
 </span><br>
 
 
