@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://QQ876684433.github.io/"/>
-  <updated>2019-10-08T03:43:51.929Z</updated>
+  <updated>2019-10-15T06:17:09.535Z</updated>
   <id>http://QQ876684433.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据库课堂笔记（2019-10-15）</title>
+    <link href="http://QQ876684433.github.io/2019/10/15/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0%EF%BC%882019-10-15%EF%BC%89/"/>
+    <id>http://QQ876684433.github.io/2019/10/15/数据库课堂笔记（2019-10-15）/</id>
+    <published>2019-10-15T03:25:09.000Z</published>
+    <updated>2019-10-15T06:17:09.535Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="数据库课堂笔记"><a href="#数据库课堂笔记" class="headerlink" title="数据库课堂笔记"></a>数据库课堂笔记</h1><blockquote><p>参考资料：</p><ul><li>南大软件学院课程《数据管理基础》课程资料</li><li>《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著</li><li>《数据库系统概论》第五版 - 王珊 萨师煊 著</li><li>《数据库系统概念》</li></ul></blockquote><h2 id="数据库课堂笔记（2019-10-15）"><a href="#数据库课堂笔记（2019-10-15）" class="headerlink" title="数据库课堂笔记（2019-10-15）"></a>数据库课堂笔记（2019-10-15）</h2><h3 id="Ch4-Object-Relational-SQL-Oracle"><a href="#Ch4-Object-Relational-SQL-Oracle" class="headerlink" title="Ch4. Object-Relational SQL (Oracle)"></a>Ch4. Object-Relational SQL (Oracle)</h3><p>#### </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;数据库课堂笔记&quot;&gt;&lt;a href=&quot;#数据库课堂笔记&quot; class=&quot;headerlink&quot; title=&quot;数据库课堂笔记&quot;&gt;&lt;/a&gt;数据库课堂笔记&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;参考资料：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;南大软件学院课程《数据管理基础》课程
+      
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://QQ876684433.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="笔记" scheme="http://QQ876684433.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="数据库" scheme="http://QQ876684433.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
   
   <entry>
     <title>从头到尾彻底理解KMP/BM/Sunday算法</title>
@@ -39,9 +69,9 @@
       <category term="转载" scheme="http://QQ876684433.github.io/categories/%E7%AE%97%E6%B3%95/%E8%BD%AC%E8%BD%BD/"/>
     
     
-      <category term="动态规划" scheme="http://QQ876684433.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
       <category term="leetcode" scheme="http://QQ876684433.github.io/tags/leetcode/"/>
+    
+      <category term="动态规划" scheme="http://QQ876684433.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
   </entry>
   
@@ -68,9 +98,9 @@
       <category term="转载" scheme="http://QQ876684433.github.io/categories/%E7%AE%97%E6%B3%95/%E8%BD%AC%E8%BD%BD/"/>
     
     
-      <category term="动态规划" scheme="http://QQ876684433.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
       <category term="leetcode" scheme="http://QQ876684433.github.io/tags/leetcode/"/>
+    
+      <category term="动态规划" scheme="http://QQ876684433.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
   </entry>
   
@@ -279,9 +309,9 @@
       <category term="算法" scheme="http://QQ876684433.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="动态规划" scheme="http://QQ876684433.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
       <category term="leetcode" scheme="http://QQ876684433.github.io/tags/leetcode/"/>
+    
+      <category term="动态规划" scheme="http://QQ876684433.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
   </entry>
   
@@ -308,9 +338,9 @@
       <category term="算法" scheme="http://QQ876684433.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="动态规划" scheme="http://QQ876684433.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
       <category term="leetcode" scheme="http://QQ876684433.github.io/tags/leetcode/"/>
+    
+      <category term="动态规划" scheme="http://QQ876684433.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
   </entry>
   
@@ -337,9 +367,9 @@
       <category term="算法" scheme="http://QQ876684433.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="动态规划" scheme="http://QQ876684433.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
       <category term="leetcode" scheme="http://QQ876684433.github.io/tags/leetcode/"/>
+    
+      <category term="动态规划" scheme="http://QQ876684433.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
   </entry>
   
@@ -496,33 +526,6 @@
       
       
         &lt;h1 id=&quot;精读Servlet源码-javax-servlet-ServletContext&quot;&gt;&lt;a href=&quot;#精读Servlet源码-javax-servlet-ServletContext&quot; class=&quot;headerlink&quot; title=&quot;精读Servlet源码-
-      
-    
-    </summary>
-    
-      <category term="源码" scheme="http://QQ876684433.github.io/categories/%E6%BA%90%E7%A0%81/"/>
-    
-    
-      <category term="Java" scheme="http://QQ876684433.github.io/tags/Java/"/>
-    
-      <category term="servlet" scheme="http://QQ876684433.github.io/tags/servlet/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>精读Servlet源码-javax.servlet.ServletConfig</title>
-    <link href="http://QQ876684433.github.io/2019/07/19/%E7%B2%BE%E8%AF%BBServlet%E6%BA%90%E7%A0%81-javax-servlet-ServletConfig/"/>
-    <id>http://QQ876684433.github.io/2019/07/19/精读Servlet源码-javax-servlet-ServletConfig/</id>
-    <published>2019-07-19T01:43:08.000Z</published>
-    <updated>2019-09-15T05:02:14.670Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="精读Servlet源码-javax-servlet-ServletConfig"><a href="#精读Servlet源码-javax-servlet-ServletConfig" class="headerlink" title="精读Servlet源码-javax.servlet.ServletConfig"></a>精读Servlet源码-javax.servlet.ServletConfig</h1><blockquote><p>参考：<a href="https://www.cnblogs.com/smyhvae/p/4140877.html" target="_blank" rel="noopener">https://www.cnblogs.com/smyhvae/p/4140877.html</a></p></blockquote><p><code>ServletConfig</code>的实例是servlet容器在初始化一个servlet时传递到<code>init()</code>方法的对象，它携带了一个servlet的相关配置以及初始化参数。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> javax.servlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Enumeration;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * A servlet configuration object used by a servlet container</span></span><br><span class="line"><span class="comment"> * to pass information to a servlet during initialization. </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> <span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ServletConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getServletName</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ServletContext <span class="title">getServletContext</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInitParameter</span><span class="params">(String name)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Enumeration&lt;String&gt; <span class="title">getInitParameterNames</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="各个接口方法的说明"><a href="#各个接口方法的说明" class="headerlink" title="各个接口方法的说明"></a>各个接口方法的说明</h2><h3 id="getServletName"><a href="#getServletName" class="headerlink" title="getServletName"></a>getServletName</h3><p>返回servlet实例的名称，它可能是在web服务器中由服务器管理者提供的，如果servlet没有被注册到服务中，那么它将返回servlet实例的类名。</p><h3 id="getServletContext"><a href="#getServletContext" class="headerlink" title="getServletContext"></a>getServletContext</h3><p><code>getServletContext</code>返回<code>ServletContext</code>实例的引用，WEB容器在启动时，它会为<strong>每个WEB应用程序都创建一个对应的ServletContext对象，它代表当前web应用</strong>，并且保存在<code>ServletConfig</code>实例中并传递给对应的servlet，通过它可以允许调用者与servlet容器进行交互。</p><h3 id="getInitParameter"><a href="#getInitParameter" class="headerlink" title="getInitParameter"></a>getInitParameter</h3><p>初始化参数在<code>ServletConfig</code>中是以键值对方式存储的，<code>getInitParameter()</code>可以通过给定的参数名字获取对应的参数值，键和值都是以字符串的形式存储；如果对应的参数名字不存在，则返回null。</p><h3 id="getInitParameterNames"><a href="#getInitParameterNames" class="headerlink" title="getInitParameterNames"></a>getInitParameterNames</h3><p>获取所有的初始化参数，以Enumeration类型返回；如果没有，则返回一个空的Enumeration。Enumeration类似于迭代器，Enumeration接口中定义了一些方法，通过这些方法可以枚举（一次获得一个）对象集合中的元素。</p><h2 id="追根溯源：ServletConfig-vs-ServletContext"><a href="#追根溯源：ServletConfig-vs-ServletContext" class="headerlink" title="追根溯源：ServletConfig vs ServletContext"></a>追根溯源：ServletConfig vs ServletContext</h2><h3 id="ServletConfig"><a href="#ServletConfig" class="headerlink" title="ServletConfig"></a>ServletConfig</h3><p>从更本质上来看，<code>ServletConfig</code>实际上代表的是当前Servlet在web.xml中的配置信息，在Servlet的配置文件中，可以使用&lt;servlet&gt;标签下的一个或多个&lt;init-param&gt;标签为servlet配置一些初始化参数。&lt;init-param&gt;标签是<strong>为某一个单独的servlet加配置信息，这种配置信息在其他的Servlet中是无法访问到的</strong>。</p><p>当servlet配置了初始化参数后，web容器在创建servlet实例对象时，会自动将这些初始化参数封装到ServletConfig对象中，并在调用servlet的init方法时，将ServletConfig对象传递给servlet。进而，程序员通过ServletConfig对象就可以得到当前servlet的初始化参数信息。</p><p>这样做的好处是：如果将数据库信息、编码方式等配置信息放在web.xml中，如果以后数据库的用户名、密码改变了，则<strong>直接很方便地修改web.xml就行了，避免了直接修改源代码的麻烦</strong>。</p><h3 id="ServletContext"><a href="#ServletContext" class="headerlink" title="ServletContext"></a>ServletContext</h3><p>WEB容器在启动时，它会为<strong>每个WEB应用程序都创建一个对应的ServletContext对象，它代表当前web应用</strong>。</p><p>ServletConfig对象中维护了ServletContext对象的引用，它是由servlet容器提供的，开发人员在编写servlet时，可以通过ServletConfig.getServletContext方法获得ServletContext对象。</p><p>由于一个WEB应用中的<strong>所有Servlet共享同一个ServletContext对象</strong>，因此Servlet对象之间可以通过ServletContext对象来实现通讯。ServletContext对象通常也被称之为<strong>context域对象</strong>。</p><p><u><em>对ServletContext更深入的研究请移步：精读Servlet源码-javax.servlet.ServletContext</em></u></p><h2 id="ServletConfig实例"><a href="#ServletConfig实例" class="headerlink" title="ServletConfig实例"></a>ServletConfig实例</h2><h3 id="编写Servlet"><a href="#编写Servlet" class="headerlink" title="编写Servlet"></a>编写Servlet</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> servlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletConfig;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"><span class="keyword">import</span> java.util.Enumeration;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ServletConfigDemo</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.init();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        ServletConfig servletConfig = <span class="keyword">this</span>.getServletConfig();</span><br><span class="line">        PrintWriter out = resp.getWriter();</span><br><span class="line">        resp.setContentType(<span class="string">"text/plain"</span>);</span><br><span class="line"></span><br><span class="line">        String servletName = servletConfig.getServletName();</span><br><span class="line">        out.println(<span class="string">"Servlet name: "</span> + servletName);</span><br><span class="line"></span><br><span class="line">        String username = servletConfig.getInitParameter(<span class="string">"username"</span>);</span><br><span class="line">        String password = servletConfig.getInitParameter(<span class="string">"password"</span>);</span><br><span class="line">        out.println(<span class="string">"=================servletConfig.getInitParameter================"</span>);</span><br><span class="line">        out.println(<span class="string">"username: "</span> + username);</span><br><span class="line">        out.println(<span class="string">"password: "</span> + password);</span><br><span class="line"></span><br><span class="line">        out.println(<span class="string">"=================servletConfig.getInitParameterNames================"</span>);</span><br><span class="line">        Enumeration&lt;String&gt; params = servletConfig.getInitParameterNames();</span><br><span class="line">        <span class="keyword">while</span> (params.hasMoreElements()) &#123;</span><br><span class="line">            String name = params.nextElement();</span><br><span class="line">            out.println(name + <span class="string">": "</span> + servletConfig.getInitParameter(name));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        doGet(req, resp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="配置web-xml"><a href="#配置web-xml" class="headerlink" title="配置web.xml"></a>配置web.xml</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>ServletConfigDemo-xxxx<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>servlet.ServletConfigDemo<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>username<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>steve_chph<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>password<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>mypassword123456<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>name1<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>value1<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>name2<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>value2<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>ServletConfigDemo-xxxx<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/ServletConfigDemo<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="输出结果"><a href="#输出结果" class="headerlink" title="输出结果"></a>输出结果</h3><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/07/19/5d312f57b095347163.png" alt title>                </div>                <div class="image-caption"></div>            </figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;精读Servlet源码-javax-servlet-ServletConfig&quot;&gt;&lt;a href=&quot;#精读Servlet源码-javax-servlet-ServletConfig&quot; class=&quot;headerlink&quot; title=&quot;精读Servlet源码-ja
       
     
     </summary>
