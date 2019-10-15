@@ -21,18 +21,21 @@
     
     
     <meta name="keywords" content="数据库">
-    <meta name="description" content="数据库课堂笔记 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著 《数据库系统概论》第五版 - 王珊 萨师煊 著 《数据库系统概念》   数据库课堂笔记（2019-10-15）Ch4. Object-Relational SQL (Oracle)####">
+    <meta name="description" content="数据库课堂笔记 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著 《数据库系统概论》第五版 - 王珊 萨师煊 著 《数据库系统概念》   数据库课堂笔记（2019-10-15）Ch4. Object-Relational SQL (Oracle)对象关系型数据表相关例子如下：">
 <meta name="keywords" content="数据库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据库课堂笔记（2019-10-15）">
 <meta property="og:url" content="http://QQ876684433.github.io/2019/10/15/数据库课堂笔记（2019-10-15）/index.html">
 <meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
-<meta property="og:description" content="数据库课堂笔记 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著 《数据库系统概论》第五版 - 王珊 萨师煊 著 《数据库系统概念》   数据库课堂笔记（2019-10-15）Ch4. Object-Relational SQL (Oracle)####">
+<meta property="og:description" content="数据库课堂笔记 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著 《数据库系统概论》第五版 - 王珊 萨师煊 著 《数据库系统概念》   数据库课堂笔记（2019-10-15）Ch4. Object-Relational SQL (Oracle)对象关系型数据表相关例子如下：">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-10-15T06:17:09.535Z">
+<meta property="og:image" content="https://i.loli.net/2019/10/15/cVmO6Xky84isWf5.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/15/ZhLsu87Y6iJI4Bn.png">
+<meta property="og:updated_time" content="2019-10-15T07:10:36.577Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库课堂笔记（2019-10-15）">
-<meta name="twitter:description" content="数据库课堂笔记 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著 《数据库系统概论》第五版 - 王珊 萨师煊 著 《数据库系统概念》   数据库课堂笔记（2019-10-15）Ch4. Object-Relational SQL (Oracle)####">
+<meta name="twitter:description" content="数据库课堂笔记 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著 《数据库系统概论》第五版 - 王珊 萨师煊 著 《数据库系统概念》   数据库课堂笔记（2019-10-15）Ch4. Object-Relational SQL (Oracle)对象关系型数据表相关例子如下：">
+<meta name="twitter:image" content="https://i.loli.net/2019/10/15/cVmO6Xky84isWf5.png">
     
         <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
     
@@ -126,7 +129,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -167,7 +170,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据库课堂笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据库课堂笔记</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据库课堂笔记（2019-10-15）"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">数据库课堂笔记（2019-10-15）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Ch4-Object-Relational-SQL-Oracle"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">Ch4. Object-Relational SQL (Oracle)</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据库课堂笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据库课堂笔记</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据库课堂笔记（2019-10-15）"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">数据库课堂笔记（2019-10-15）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Ch4-Object-Relational-SQL-Oracle"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">Ch4. Object-Relational SQL (Oracle)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Object-Types"><span class="post-toc-number">1.1.1.1.</span> <span class="post-toc-text">Object Types</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#定义新的数据类型"><span class="post-toc-number">1.1.1.1.1.</span> <span class="post-toc-text">定义新的数据类型</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#对象类型的使用"><span class="post-toc-number">1.1.1.1.2.</span> <span class="post-toc-text">对象类型的使用</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -202,7 +205,52 @@
 <li>《数据库系统概念》</li>
 </ul>
 </blockquote>
-<h2 id="数据库课堂笔记（2019-10-15）"><a href="#数据库课堂笔记（2019-10-15）" class="headerlink" title="数据库课堂笔记（2019-10-15）"></a>数据库课堂笔记（2019-10-15）</h2><h3 id="Ch4-Object-Relational-SQL-Oracle"><a href="#Ch4-Object-Relational-SQL-Oracle" class="headerlink" title="Ch4. Object-Relational SQL (Oracle)"></a>Ch4. Object-Relational SQL (Oracle)</h3><p>#### </p>
+<h2 id="数据库课堂笔记（2019-10-15）"><a href="#数据库课堂笔记（2019-10-15）" class="headerlink" title="数据库课堂笔记（2019-10-15）"></a>数据库课堂笔记（2019-10-15）</h2><h3 id="Ch4-Object-Relational-SQL-Oracle"><a href="#Ch4-Object-Relational-SQL-Oracle" class="headerlink" title="Ch4. Object-Relational SQL (Oracle)"></a>Ch4. Object-Relational SQL (Oracle)</h3><p>对象关系型数据表相关例子如下：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/10/15/cVmO6Xky84isWf5.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/10/15/ZhLsu87Y6iJI4Bn.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h4 id="Object-Types"><a href="#Object-Types" class="headerlink" title="Object Types"></a>Object Types</h4><h5 id="定义新的数据类型"><a href="#定义新的数据类型" class="headerlink" title="定义新的数据类型"></a>定义新的数据类型</h5><p>对象类型的创建和删除语法（CREATE TYPE … AS OBJECT）如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TYPE</span> typename <span class="keyword">AS</span> <span class="keyword">OBJECT</span></span><br><span class="line">(attrname datatype, ......);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这些数据类型一经定义， 便以持久形式保存在数据库系统中， 用户可以<strong>像使用系统内置的数据类型</strong>一样使用这些复杂的数据类型， 以此来扩充系统的数据类型</p>
+</blockquote>
+<p>创建对象类型的语法跟创建表的语法差不多，只不过对象类型的定义中没有约束条件的定义（constraint define），创建一个person_t的类型如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TYPE</span> person_t <span class="keyword">AS</span> <span class="keyword">OBJECT</span></span><br><span class="line">(</span><br><span class="line">    ssno <span class="built_in">int</span>,</span><br><span class="line">    pname name_t,</span><br><span class="line">    age <span class="built_in">int</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h5 id="对象类型的使用"><a href="#对象类型的使用" class="headerlink" title="对象类型的使用"></a>对象类型的使用</h5><p>自定义的对象类型可以有以下用法：</p>
+<ul>
+<li><p>使用所创建的对象类型来创建新类型</p>
+<p>用于定义<strong>新类型中的属性</strong> (类型的嵌套定义)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TYPE</span> person_t <span class="keyword">AS</span> <span class="keyword">OBJECT</span></span><br><span class="line">(</span><br><span class="line">    ssno <span class="built_in">int</span>,</span><br><span class="line">    pname name_t,</span><br><span class="line">    age <span class="built_in">int</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>其中name_t就是一个对象类型</p>
+</li>
+<li><p>使用所创建的对象类型来创建新的表<br>用于定义<strong>表中的属性</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> teachers (</span><br><span class="line">    tid <span class="built_in">int</span>,</span><br><span class="line">    tname name_t,</span><br><span class="line">    room <span class="built_in">int</span> </span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>其中name_t就是一个对象类型</p>
+</li>
+<li><p>使用对象数据类型来直接创建一张表</p>
+<ul>
+<li>新创建的‘表’ 的结构与对象类型的结构相同</li>
+<li>可以在创建的‘表’ 中<strong>增加完整性约束定义</strong></li>
+</ul>
+</li>
+</ul>
 
         </div>
 
@@ -211,7 +259,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-10-15T06:17:09.535Z" itemprop="dateUpdated">2019-10-15 14:17:09</time>
+    最終更新：<time datetime="2019-10-15T07:10:36.577Z" itemprop="dateUpdated">2019-10-15 15:10:36</time>
 </span><br>
 
 
@@ -377,7 +425,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
         </p>
     </div>
     <div class="bottom">
