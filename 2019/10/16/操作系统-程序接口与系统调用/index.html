@@ -21,18 +21,27 @@
     
     
     <meta name="keywords" content="操作系统,系统调用">
-    <meta name="description" content="程序接口与系统调用">
+    <meta name="description" content="程序接口与系统调用 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著   用户接口操作系统通过“程序接口”和“操作接口”将其服务和功能提供给用户：  程序接口是操作系统对外提供服务和功能的手段，它由一组系统调用组成，在应用程序中使用“系统调用”可获得操作系统的低层服务，访问或使用系统管理的各种软硬件资源 操作接口由一组控制命令和（或）作业控制语言组成，是操作系统为用户提供的组织和控制其">
 <meta name="keywords" content="操作系统,系统调用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="操作系统-程序接口与系统调用">
 <meta property="og:url" content="http://QQ876684433.github.io/2019/10/16/操作系统-程序接口与系统调用/index.html">
 <meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
-<meta property="og:description" content="程序接口与系统调用">
+<meta property="og:description" content="程序接口与系统调用 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著   用户接口操作系统通过“程序接口”和“操作接口”将其服务和功能提供给用户：  程序接口是操作系统对外提供服务和功能的手段，它由一组系统调用组成，在应用程序中使用“系统调用”可获得操作系统的低层服务，访问或使用系统管理的各种软硬件资源 操作接口由一组控制命令和（或）作业控制语言组成，是操作系统为用户提供的组织和控制其">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-10-16T00:04:45.354Z">
+<meta property="og:image" content="https://i.loli.net/2019/10/16/uS6gCQYp4I3mBRW.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/16/UBGqYT2x7A3KvE8.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/16/MkKoNrVWsL6afz2.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/16/m28cC6uSbAKaOlJ.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/16/AuwnP7WCJk6LHfs.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/16/lPKFso3z5XwkBd6.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/16/ZRPfL1eghsjGz6S.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/16/tjFvOqmTol53EsP.png">
+<meta property="og:updated_time" content="2019-10-16T00:47:09.807Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统-程序接口与系统调用">
-<meta name="twitter:description" content="程序接口与系统调用">
+<meta name="twitter:description" content="程序接口与系统调用 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著   用户接口操作系统通过“程序接口”和“操作接口”将其服务和功能提供给用户：  程序接口是操作系统对外提供服务和功能的手段，它由一组系统调用组成，在应用程序中使用“系统调用”可获得操作系统的低层服务，访问或使用系统管理的各种软硬件资源 操作接口由一组控制命令和（或）作业控制语言组成，是操作系统为用户提供的组织和控制其">
+<meta name="twitter:image" content="https://i.loli.net/2019/10/16/uS6gCQYp4I3mBRW.png">
     
         <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
     
@@ -126,7 +135,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -167,7 +176,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#程序接口与系统调用"><span class="post-toc-number">1.</span> <span class="post-toc-text">程序接口与系统调用</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#程序接口与系统调用"><span class="post-toc-number">1.</span> <span class="post-toc-text">程序接口与系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#用户接口"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">用户接口</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#程序接口与系统调用-1"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">程序接口与系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统调用"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#概念"><span class="post-toc-number">1.2.1.1.</span> <span class="post-toc-text">概念</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#为什么使用系统调用"><span class="post-toc-number">1.2.1.2.</span> <span class="post-toc-text">为什么使用系统调用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#系统调用的作用"><span class="post-toc-number">1.2.1.3.</span> <span class="post-toc-text">系统调用的作用</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#API、库函数和系统调用"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">API、库函数和系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#不同操作系统之间的可移植性"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text">不同操作系统之间的可移植性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#库函数和系统调用"><span class="post-toc-number">1.2.2.2.</span> <span class="post-toc-text">库函数和系统调用</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统调用分类"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">系统调用分类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统调用实现"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">系统调用实现</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -193,7 +202,103 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="程序接口与系统调用"><a href="#程序接口与系统调用" class="headerlink" title="程序接口与系统调用"></a>程序接口与系统调用</h1>
+            <h1 id="程序接口与系统调用"><a href="#程序接口与系统调用" class="headerlink" title="程序接口与系统调用"></a>程序接口与系统调用</h1><blockquote>
+<p>参考资料：</p>
+<ul>
+<li>操作系统教程（第5版） - 费翔林 骆斌 编著</li>
+</ul>
+</blockquote>
+<h2 id="用户接口"><a href="#用户接口" class="headerlink" title="用户接口"></a>用户接口</h2><p>操作系统通过“程序接口”和“操作接口”将其服务和功能提供给用户：</p>
+<ul>
+<li>程序接口是操作系统对外提供服务和功能的手段，它由一组系统调用组成，在应用程序中使用“系统调用”可<strong>获得操作系统的低层服务</strong>，访问或使用系统管理的<strong>各种软硬件资源</strong></li>
+<li>操作接口由一组控制命令和（或）作业控制语言组成，是操作系统为用户提供的<strong>组织和控制其作业（应用程序）执行</strong>的手段</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/10/16/uS6gCQYp4I3mBRW.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+
+<h2 id="程序接口与系统调用-1"><a href="#程序接口与系统调用-1" class="headerlink" title="程序接口与系统调用"></a>程序接口与系统调用</h2><h3 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/10/16/UBGqYT2x7A3KvE8.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>因此可以这样认为，<strong>内核的主体是系统调用的集合</strong></p>
+<h4 id="为什么使用系统调用"><a href="#为什么使用系统调用" class="headerlink" title="为什么使用系统调用"></a>为什么使用系统调用</h4><ul>
+<li>根本原因是<strong>为了对系统进行“保护”</strong></li>
+<li><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/10/16/MkKoNrVWsL6afz2.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure></li>
+<li>系统调用是一种中介角色，<strong>把用户和硬件资源隔离开来</strong>，应用程序只有通过系统调用才能请求系统服务并使用系统资源</li>
+</ul>
+<h4 id="系统调用的作用"><a href="#系统调用的作用" class="headerlink" title="系统调用的作用"></a>系统调用的作用</h4><ul>
+<li>内核可以基于权限和规则<strong>对资源访问进行裁决</strong>，保证系统的安全性</li>
+<li>系统调用<strong>对资源进行抽象</strong>，提供一致性接口，避免用户在使用资源时发生错误，且使编程效率大大提高</li>
+</ul>
+<p><strong>系统调用是应用程序获得操作系统服务的唯一途径</strong></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/10/16/m28cC6uSbAKaOlJ.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h3 id="API、库函数和系统调用"><a href="#API、库函数和系统调用" class="headerlink" title="API、库函数和系统调用"></a>API、库函数和系统调用</h3><p>不同操作系统提供的系统调用功能虽然大同小异，但是实现细节不尽相同，因此如果应用程序直接使用系统调用，那么会存在问题：</p>
+<ul>
+<li>接口复杂，使用困难</li>
+<li>应用程序跨平台可移植性受到很大限制</li>
+</ul>
+<h4 id="不同操作系统之间的可移植性"><a href="#不同操作系统之间的可移植性" class="headerlink" title="不同操作系统之间的可移植性"></a>不同操作系统之间的可移植性</h4><p>POSIX（Portable Operating System Interface）为不同平台下的应用程序提供相同的<strong>应用程序接口（API）</strong>，但是它并没有保证相同的API的内部实现是一致的。其中系统调用只是其中一种API</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/10/16/AuwnP7WCJk6LHfs.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/10/16/lPKFso3z5XwkBd6.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h4 id="库函数和系统调用"><a href="#库函数和系统调用" class="headerlink" title="库函数和系统调用"></a>库函数和系统调用</h4><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/10/16/ZRPfL1eghsjGz6S.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<ul>
+<li>库函数属于应用程序，在<strong>用户态运行</strong>（用户可以替换库函数）</li>
+<li>系统调用对应的服务例程属于系统程序，在<strong>内核态运行</strong>（用户通常不能替换系统调用）</li>
+</ul>
+<h3 id="系统调用分类"><a href="#系统调用分类" class="headerlink" title="系统调用分类"></a>系统调用分类</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/10/16/tjFvOqmTol53EsP.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h3 id="系统调用实现"><a href="#系统调用实现" class="headerlink" title="系统调用实现"></a>系统调用实现</h3>
         </div>
 
         <blockquote class="post-copyright">
@@ -201,7 +306,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-10-16T00:04:45.354Z" itemprop="dateUpdated">2019-10-16 08:04:45</time>
+    最后更新时间：<time datetime="2019-10-16T00:47:09.807Z" itemprop="dateUpdated">2019-10-16 08:47:09</time>
 </span><br>
 
 
@@ -367,7 +472,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">
