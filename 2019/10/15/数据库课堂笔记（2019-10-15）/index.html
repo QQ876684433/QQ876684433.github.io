@@ -36,7 +36,8 @@
 <meta property="og:image" content="https://i.loli.net/2019/10/15/8JBQ6jSWw1ehUpH.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/15/zAnDOIjicFoG1wK.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/15/JN4XUpO1E6GwadZ.png">
-<meta property="og:updated_time" content="2019-10-15T12:36:17.732Z">
+<meta property="og:image" content="https://i.loli.net/2019/10/15/OPnxQpyh635CqWk.png">
+<meta property="og:updated_time" content="2019-10-15T15:24:26.996Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库课堂笔记（2019-10-15）">
 <meta name="twitter:description" content="数据库课堂笔记 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著 《数据库系统概论》第五版 - 王珊 萨师煊 著 《数据库系统概念》   数据库课堂笔记（2019-10-15）Ch4. Object-Relational SQL (Oracle)对象关系型数据表相关例子如下：">
@@ -134,7 +135,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -274,9 +275,23 @@
 
 <p>例如：<code>name_t ( ‘Einstein’, ‘Albert’, ‘E’ )</code>，就跟普通关系型数据表的行的创建一样</p>
 </li>
-<li><p>返回对象取值的函数</p>
+<li><p><strong>返回对象取值</strong>的函数</p>
+<blockquote>
+<p>Ø <strong>Even though the primary table is object table, still it displays the rows in general format.</strong></p>
+<p>Ø <strong>To display the entire structure of the object, this will be used.</strong></p>
+<p>reference：<a href="http://oracle-knowledgeshare.blogspot.com/2011/09/ref-deref-value.html" target="_blank" rel="noopener">http://oracle-knowledgeshare.blogspot.com/2011/09/ref-deref-value.html</a></p>
+</blockquote>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">value ( … )</span><br></pre></td></tr></table></figure>
 
+<p>尽管oracle是对象关系型数据库，但是在直接查询一个对象关系表的时候，<strong>表中数据的类型是不会被返回的</strong>，因此需要使用value(…)函数来将表中属性类型返回回来</p>
+<blockquote>
+<p>Even though the vendors table is object table it will not show the adt along with data, to see the data along with the adt</p>
+<p><strong>SQL&gt;Select * from vendors;</strong></p>
+<p>This will give the data without adt.</p>
+<p><strong>SQL&gt;Select value(v) from vendors v;</strong></p>
+<p>This will give the columns data along wih the type.</p>
+<p>reference：<a href="http://oracle-knowledgeshare.blogspot.com/2011/09/ref-deref-value.html" target="_blank" rel="noopener">http://oracle-knowledgeshare.blogspot.com/2011/09/ref-deref-value.html</a></p>
+</blockquote>
 </li>
 </ul>
 <p>对象值的创建（使用对象构造函数）：</p>
@@ -338,6 +353,61 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> o.ordcust.cname,</span><br><span class="line">				o.ordagent.aname</span><br><span class="line"><span class="keyword">from</span> orders o</span><br></pre></td></tr></table></figure>
 
 <p>其中ordcust和ordagent都是引用类型</p>
+<p>引用类型两个函数和两个谓词：</p>
+<p>两个函数</p>
+<ul>
+<li><p>获取对象(元组)的引用指针: REF(……)</p>
+<blockquote>
+<p>Ø <strong>The ref function allows referencing of existing row objects.</strong></p>
+<p>Ø <strong>Each of the row objects has an object id value assigned to it.</strong></p>
+<p>Ø <strong>The object id assigned can be seen by using ref function.</strong></p>
+<p>reference：<a href="http://oracle-knowledgeshare.blogspot.com/2011/09/ref-deref-value.html" target="_blank" rel="noopener">http://oracle-knowledgeshare.blogspot.com/2011/09/ref-deref-value.html</a></p>
+</blockquote>
+<p>从上面可以看出，ref实际返回的是引用对象的id，因此如果需要查询并查看引用对象的内容，需要使用下面要介绍的deref。可以用来判断一个引用类型的引用对象是不是给定的对象，例如：</p>
+<p><img src="https://i.loli.net/2019/10/15/OPnxQpyh635CqWk.png" alt></p>
+</li>
+<li><p>返回引用指针所指向对象的值: DEREF(……)</p>
+<blockquote>
+<p>Ø <strong>The deref function performs opposite action.</strong></p>
+<p>Ø <strong>It takes a reference value of object id and returns the value of the row objects.</strong></p>
+<p>reference：<a href="http://oracle-knowledgeshare.blogspot.com/2011/09/ref-deref-value.html" target="_blank" rel="noopener">http://oracle-knowledgeshare.blogspot.com/2011/09/ref-deref-value.html</a></p>
+</blockquote>
+<p>它用来检索整个被引用对象， 而不是仅仅获得该对象的引用指针，例如：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">value</span> ( p ), deref ( p.partner )</span><br><span class="line"><span class="keyword">from</span> police_officers p</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">type</span> police_officer_t <span class="keyword">as</span> <span class="keyword">object</span> (</span><br><span class="line">    pol_person person_t,</span><br><span class="line">    badge_number <span class="built_in">integer</span>,</span><br><span class="line">    partner <span class="keyword">ref</span> police_officer_t </span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>两个判定谓词：</p>
+<ul>
+<li><p>IS DANGLING</p>
+<ul>
+<li>用于判断所引用的元组对象是否存在</li>
+<li>如果<strong>所引用的元组对象不存在， 那么该谓词返回逻辑真(TRUE)</strong>， 否则返回逻辑假(FALSE)</li>
+<li>该谓词主要用于检查那些错误的对象引用指针</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> o.cid <span class="keyword">from</span> orders o</span><br><span class="line"><span class="keyword">where</span> o.ordcust <span class="keyword">IS</span> DANGLING;</span><br></pre></td></tr></table></figure>
+
+<p>等价于</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> o.cid <span class="keyword">from</span> orders o</span><br><span class="line"><span class="keyword">where</span> o.ordcust &lt;&gt;</span><br><span class="line">    (<span class="keyword">select</span> <span class="keyword">ref</span>(c) <span class="keyword">from</span> customers c</span><br><span class="line">    	<span class="keyword">where</span> c.cid = o.cid)</span><br></pre></td></tr></table></figure>
+
+<p>即可以用来检索cid和引用的对象是否一致</p>
+</li>
+<li><p>IS NULL</p>
+<ul>
+<li>可以使用 IS NULL 谓词来查找取值为空(NULL) 的 <strong>REF 属性</strong>，但是‘is dangling’不等于‘is null’</li>
+<li>对象引用指针的使用规则<ul>
+<li>A dangling REF is non-null but useless</li>
+<li>If o.ordcust is null or dangling, then o.ordcust.cname is null</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>A null pointer just means the pointer isn’t pointing to anything, or in some languages means it is unknown what it is pointing at. But because it is a null pointer, you know this, the code knows this, so no problem. A dangling pointer is one that you think is pointing at something but in reality is no longer there, hence the pointer is actually inaccurate but doesn’t know it.</p>
+<p>reference：<a href="https://stackoverflow.com/questions/12714199/null-pointer-vs-dangling-pointer" target="_blank" rel="noopener">https://stackoverflow.com/questions/12714199/null-pointer-vs-dangling-pointer</a></p>
+</blockquote>
 
         </div>
 
@@ -346,7 +416,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-10-15T12:36:17.732Z" itemprop="dateUpdated">2019-10-15 20:36:17</time>
+    最終更新：<time datetime="2019-10-15T15:24:26.996Z" itemprop="dateUpdated">2019-10-15 23:24:26</time>
 </span><br>
 
 
@@ -512,7 +582,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
         </p>
     </div>
     <div class="bottom">
