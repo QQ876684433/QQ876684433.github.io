@@ -37,7 +37,11 @@
 <meta property="og:image" content="https://i.loli.net/2019/10/16/lPKFso3z5XwkBd6.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/16/ZRPfL1eghsjGz6S.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/16/tjFvOqmTol53EsP.png">
-<meta property="og:updated_time" content="2019-10-16T00:47:09.807Z">
+<meta property="og:image" content="https://i.loli.net/2019/10/16/uXIv26L59FMnryR.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/16/WDl4MKQNdikSoHj.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/16/BYsGkhpDeNqu3RX.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/16/blihXo7WxKufDLZ.png">
+<meta property="og:updated_time" content="2019-10-16T01:16:48.146Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统-程序接口与系统调用">
 <meta name="twitter:description" content="程序接口与系统调用 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著   用户接口操作系统通过“程序接口”和“操作接口”将其服务和功能提供给用户：  程序接口是操作系统对外提供服务和功能的手段，它由一组系统调用组成，在应用程序中使用“系统调用”可获得操作系统的低层服务，访问或使用系统管理的各种软硬件资源 操作接口由一组控制命令和（或）作业控制语言组成，是操作系统为用户提供的组织和控制其">
@@ -135,7 +139,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -298,7 +302,109 @@
                 <div class="image-caption"></div>
             </figure>
 
-<h3 id="系统调用实现"><a href="#系统调用实现" class="headerlink" title="系统调用实现"></a>系统调用实现</h3>
+<h3 id="系统调用实现"><a href="#系统调用实现" class="headerlink" title="系统调用实现"></a>系统调用实现</h3><ul>
+<li>操作系统实现系统调用功能的机制称为<strong>陷阱或异常处理机制</strong></li>
+<li>由于系统调用引起处理器中断的机器指令称为<strong>访管指令、自陷指令或中断指令</strong></li>
+</ul>
+<p>其中访管指令为非特权指令，在目态下执行时会将CPU转换到内核态</p>
+<p>每个系统调用都事先规定编号，称为功能号，发出访管指令、自陷指令或中断指令时，必须通过某种方式指明对应系统调用的功能号（另外还要附带传递给相应服务例程的参数）</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/10/16/uXIv26L59FMnryR.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/10/16/WDl4MKQNdikSoHj.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/10/16/BYsGkhpDeNqu3RX.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>应用程序和系统调用之间传递参数所采用的方法：</p>
+<ul>
+<li>访管指令或自陷指令自带参数</li>
+<li>通过CPU通用寄存器传递参数</li>
+<li>在内存区中开辟专用堆栈区传递参数</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/10/16/blihXo7WxKufDLZ.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
 
         <blockquote class="post-copyright">
@@ -306,7 +412,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-10-16T00:47:09.807Z" itemprop="dateUpdated">2019-10-16 08:47:09</time>
+    Last updated: <time datetime="2019-10-16T01:16:48.146Z" itemprop="dateUpdated">2019-10-16 09:16:48</time>
 </span><br>
 
 
@@ -472,7 +578,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">
