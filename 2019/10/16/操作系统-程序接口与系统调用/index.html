@@ -21,13 +21,13 @@
     
     
     <meta name="keywords" content="操作系统,系统调用">
-    <meta name="description" content="程序接口与系统调用 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著   用户接口操作系统通过“程序接口”和“操作接口”将其服务和功能提供给用户：  程序接口是操作系统对外提供服务和功能的手段，它由一组系统调用组成，在应用程序中使用“系统调用”可获得操作系统的低层服务，访问或使用系统管理的各种软硬件资源 操作接口由一组控制命令和（或）作业控制语言组成，是操作系统为用户提供的组织和控制其">
+    <meta name="description" content="程序接口与系统调用 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著 Linux Kernel Teaching - https://linux-kernel-labs.github.io/master/index.html   用户接口操作系统通过“程序接口”和“操作接口”将其服务和功能提供给用户：  程序接口是操作系统对外提供服务和功能的手段，它由一组系统调用组成，在应用程序中使用">
 <meta name="keywords" content="操作系统,系统调用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="操作系统-程序接口与系统调用">
 <meta property="og:url" content="http://QQ876684433.github.io/2019/10/16/操作系统-程序接口与系统调用/index.html">
 <meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
-<meta property="og:description" content="程序接口与系统调用 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著   用户接口操作系统通过“程序接口”和“操作接口”将其服务和功能提供给用户：  程序接口是操作系统对外提供服务和功能的手段，它由一组系统调用组成，在应用程序中使用“系统调用”可获得操作系统的低层服务，访问或使用系统管理的各种软硬件资源 操作接口由一组控制命令和（或）作业控制语言组成，是操作系统为用户提供的组织和控制其">
+<meta property="og:description" content="程序接口与系统调用 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著 Linux Kernel Teaching - https://linux-kernel-labs.github.io/master/index.html   用户接口操作系统通过“程序接口”和“操作接口”将其服务和功能提供给用户：  程序接口是操作系统对外提供服务和功能的手段，它由一组系统调用组成，在应用程序中使用">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2019/10/16/uS6gCQYp4I3mBRW.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/16/UBGqYT2x7A3KvE8.png">
@@ -42,10 +42,10 @@
 <meta property="og:image" content="https://i.loli.net/2019/10/16/BYsGkhpDeNqu3RX.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/16/blihXo7WxKufDLZ.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/16/iHQXv2lD6sajo1u.png">
-<meta property="og:updated_time" content="2019-10-16T01:19:47.762Z">
+<meta property="og:updated_time" content="2019-10-16T01:30:51.634Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统-程序接口与系统调用">
-<meta name="twitter:description" content="程序接口与系统调用 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著   用户接口操作系统通过“程序接口”和“操作接口”将其服务和功能提供给用户：  程序接口是操作系统对外提供服务和功能的手段，它由一组系统调用组成，在应用程序中使用“系统调用”可获得操作系统的低层服务，访问或使用系统管理的各种软硬件资源 操作接口由一组控制命令和（或）作业控制语言组成，是操作系统为用户提供的组织和控制其">
+<meta name="twitter:description" content="程序接口与系统调用 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著 Linux Kernel Teaching - https://linux-kernel-labs.github.io/master/index.html   用户接口操作系统通过“程序接口”和“操作接口”将其服务和功能提供给用户：  程序接口是操作系统对外提供服务和功能的手段，它由一组系统调用组成，在应用程序中使用">
 <meta name="twitter:image" content="https://i.loli.net/2019/10/16/uS6gCQYp4I3mBRW.png">
     
         <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
@@ -140,7 +140,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -181,7 +181,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#程序接口与系统调用"><span class="post-toc-number">1.</span> <span class="post-toc-text">程序接口与系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#用户接口"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">用户接口</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#程序接口与系统调用-1"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">程序接口与系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统调用"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#概念"><span class="post-toc-number">1.2.1.1.</span> <span class="post-toc-text">概念</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#为什么使用系统调用"><span class="post-toc-number">1.2.1.2.</span> <span class="post-toc-text">为什么使用系统调用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#系统调用的作用"><span class="post-toc-number">1.2.1.3.</span> <span class="post-toc-text">系统调用的作用</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#API、库函数和系统调用"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">API、库函数和系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#不同操作系统之间的可移植性"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text">不同操作系统之间的可移植性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#库函数和系统调用"><span class="post-toc-number">1.2.2.2.</span> <span class="post-toc-text">库函数和系统调用</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统调用分类"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">系统调用分类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统调用实现"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">系统调用实现</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统调用与函数调用的区别"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text">系统调用与函数调用的区别</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#程序接口与系统调用"><span class="post-toc-number">1.</span> <span class="post-toc-text">程序接口与系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#用户接口"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">用户接口</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#程序接口与系统调用-1"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">程序接口与系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统调用"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#概念"><span class="post-toc-number">1.2.1.1.</span> <span class="post-toc-text">概念</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#为什么使用系统调用"><span class="post-toc-number">1.2.1.2.</span> <span class="post-toc-text">为什么使用系统调用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#系统调用的作用"><span class="post-toc-number">1.2.1.3.</span> <span class="post-toc-text">系统调用的作用</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#API、库函数和系统调用"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">API、库函数和系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#不同操作系统之间的可移植性"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text">不同操作系统之间的可移植性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#库函数和系统调用"><span class="post-toc-number">1.2.2.2.</span> <span class="post-toc-text">库函数和系统调用</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统调用分类"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">系统调用分类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统调用实现"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">系统调用实现</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统调用与函数调用的区别"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text">系统调用与函数调用的区别</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#System-Call-in-Linux-Kernel"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">System Call in Linux Kernel</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -211,6 +211,7 @@
 <p>参考资料：</p>
 <ul>
 <li>操作系统教程（第5版） - 费翔林 骆斌 编著</li>
+<li>Linux Kernel Teaching - <a href="https://linux-kernel-labs.github.io/master/index.html" target="_blank" rel="noopener">https://linux-kernel-labs.github.io/master/index.html</a></li>
 </ul>
 </blockquote>
 <h2 id="用户接口"><a href="#用户接口" class="headerlink" title="用户接口"></a>用户接口</h2><p>操作系统通过“程序接口”和“操作接口”将其服务和功能提供给用户：</p>
@@ -357,62 +358,9 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<h2 id="System-Call-in-Linux-Kernel"><a href="#System-Call-in-Linux-Kernel" class="headerlink" title="System Call in Linux Kernel"></a>System Call in Linux Kernel</h2><blockquote>
+<p>reference：<a href="https://linux-kernel-labs.github.io/master/lectures/syscalls.html" target="_blank" rel="noopener">https://linux-kernel-labs.github.io/master/lectures/syscalls.html</a></p>
+</blockquote>
 
         </div>
 
@@ -421,7 +369,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-10-16T01:19:47.762Z" itemprop="dateUpdated">2019-10-16 09:19:47</time>
+    最后更新时间：<time datetime="2019-10-16T01:30:51.634Z" itemprop="dateUpdated">2019-10-16 09:30:51</time>
 </span><br>
 
 
@@ -587,7 +535,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">
