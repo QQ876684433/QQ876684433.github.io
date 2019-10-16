@@ -41,7 +41,8 @@
 <meta property="og:image" content="https://i.loli.net/2019/10/16/WDl4MKQNdikSoHj.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/16/BYsGkhpDeNqu3RX.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/16/blihXo7WxKufDLZ.png">
-<meta property="og:updated_time" content="2019-10-16T01:16:48.146Z">
+<meta property="og:image" content="https://i.loli.net/2019/10/16/iHQXv2lD6sajo1u.png">
+<meta property="og:updated_time" content="2019-10-16T01:19:47.762Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统-程序接口与系统调用">
 <meta name="twitter:description" content="程序接口与系统调用 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著   用户接口操作系统通过“程序接口”和“操作接口”将其服务和功能提供给用户：  程序接口是操作系统对外提供服务和功能的手段，它由一组系统调用组成，在应用程序中使用“系统调用”可获得操作系统的低层服务，访问或使用系统管理的各种软硬件资源 操作接口由一组控制命令和（或）作业控制语言组成，是操作系统为用户提供的组织和控制其">
@@ -180,7 +181,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#程序接口与系统调用"><span class="post-toc-number">1.</span> <span class="post-toc-text">程序接口与系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#用户接口"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">用户接口</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#程序接口与系统调用-1"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">程序接口与系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统调用"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#概念"><span class="post-toc-number">1.2.1.1.</span> <span class="post-toc-text">概念</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#为什么使用系统调用"><span class="post-toc-number">1.2.1.2.</span> <span class="post-toc-text">为什么使用系统调用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#系统调用的作用"><span class="post-toc-number">1.2.1.3.</span> <span class="post-toc-text">系统调用的作用</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#API、库函数和系统调用"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">API、库函数和系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#不同操作系统之间的可移植性"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text">不同操作系统之间的可移植性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#库函数和系统调用"><span class="post-toc-number">1.2.2.2.</span> <span class="post-toc-text">库函数和系统调用</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统调用分类"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">系统调用分类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统调用实现"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">系统调用实现</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#程序接口与系统调用"><span class="post-toc-number">1.</span> <span class="post-toc-text">程序接口与系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#用户接口"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">用户接口</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#程序接口与系统调用-1"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">程序接口与系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统调用"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#概念"><span class="post-toc-number">1.2.1.1.</span> <span class="post-toc-text">概念</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#为什么使用系统调用"><span class="post-toc-number">1.2.1.2.</span> <span class="post-toc-text">为什么使用系统调用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#系统调用的作用"><span class="post-toc-number">1.2.1.3.</span> <span class="post-toc-text">系统调用的作用</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#API、库函数和系统调用"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">API、库函数和系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#不同操作系统之间的可移植性"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text">不同操作系统之间的可移植性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#库函数和系统调用"><span class="post-toc-number">1.2.2.2.</span> <span class="post-toc-text">库函数和系统调用</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统调用分类"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">系统调用分类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统调用实现"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">系统调用实现</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统调用与函数调用的区别"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text">系统调用与函数调用的区别</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -346,6 +347,14 @@
                 <div class="image-caption"></div>
             </figure>
 
+<h3 id="系统调用与函数调用的区别"><a href="#系统调用与函数调用的区别" class="headerlink" title="系统调用与函数调用的区别"></a>系统调用与函数调用的区别</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/10/16/iHQXv2lD6sajo1u.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
 
 
 
@@ -412,7 +421,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-10-16T01:16:48.146Z" itemprop="dateUpdated">2019-10-16 09:16:48</time>
+    Last updated: <time datetime="2019-10-16T01:19:47.762Z" itemprop="dateUpdated">2019-10-16 09:19:47</time>
 </span><br>
 
 
