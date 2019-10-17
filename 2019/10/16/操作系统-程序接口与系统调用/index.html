@@ -44,7 +44,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/10/16/iHQXv2lD6sajo1u.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/16/NIOgQMqSlaHjkye.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/17/8CD37Y9OcLZaHut.png">
-<meta property="og:updated_time" content="2019-10-17T01:40:28.954Z">
+<meta property="og:updated_time" content="2019-10-17T10:33:35.081Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统-程序接口与系统调用">
 <meta name="twitter:description" content="程序接口与系统调用 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著 Linux Kernel Teaching - https://linux-kernel-labs.github.io/master/index.html   用户接口操作系统通过“程序接口”和“操作接口”将其服务和功能提供给用户：  程序接口是操作系统对外提供服务和功能的手段，它由一组系统调用组成，在应用程序中使用">
@@ -183,7 +183,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#程序接口与系统调用"><span class="post-toc-number">1.</span> <span class="post-toc-text">程序接口与系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#用户接口"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">用户接口</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#程序接口与系统调用-1"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">程序接口与系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统调用"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#概念"><span class="post-toc-number">1.2.1.1.</span> <span class="post-toc-text">概念</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#为什么使用系统调用"><span class="post-toc-number">1.2.1.2.</span> <span class="post-toc-text">为什么使用系统调用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#系统调用的作用"><span class="post-toc-number">1.2.1.3.</span> <span class="post-toc-text">系统调用的作用</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#API、库函数和系统调用"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">API、库函数和系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#不同操作系统之间的可移植性"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text">不同操作系统之间的可移植性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#库函数和系统调用"><span class="post-toc-number">1.2.2.2.</span> <span class="post-toc-text">库函数和系统调用</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统调用分类"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">系统调用分类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统调用实现"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">系统调用实现</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统调用与函数调用的区别"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text">系统调用与函数调用的区别</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#System-Calls-in-Linux-Kernel"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">System Calls in Linux Kernel</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统调用例子"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">系统调用例子</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#程序接口与系统调用"><span class="post-toc-number">1.</span> <span class="post-toc-text">程序接口与系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#用户接口"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">用户接口</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#程序接口与系统调用-1"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">程序接口与系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统调用"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#概念"><span class="post-toc-number">1.2.1.1.</span> <span class="post-toc-text">概念</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#为什么使用系统调用"><span class="post-toc-number">1.2.1.2.</span> <span class="post-toc-text">为什么使用系统调用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#系统调用的作用"><span class="post-toc-number">1.2.1.3.</span> <span class="post-toc-text">系统调用的作用</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#API、库函数和系统调用"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">API、库函数和系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#不同操作系统之间的可移植性"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text">不同操作系统之间的可移植性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#库函数和系统调用"><span class="post-toc-number">1.2.2.2.</span> <span class="post-toc-text">库函数和系统调用</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统调用分类"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">系统调用分类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统调用实现"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">系统调用实现</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统调用与函数调用的区别"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text">系统调用与函数调用的区别</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#System-Calls-in-Linux-Kernel"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">System Calls in Linux Kernel</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统调用例子"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">系统调用例子</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统调用表"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">系统调用表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统调用参数处理"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">系统调用参数处理</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -545,10 +545,28 @@
 <li>The application is setting up the system call number and parameters and it issues a trap instruction</li>
 <li>The execution mode switches from user to kernel; the CPU switches to a kernel stack; the user stack and the return address to user space is saved on the kernel stack</li>
 <li>The kernel entry point saves registers on the kernel stack</li>
-<li>The system call dispatcher identifies the system call function and runs it</li>
+<li><strong>The system call dispatcher</strong> identifies the system call function and runs it</li>
 <li>The user space registers are restored and execution is switched back to user (e.g. calling IRET)</li>
 <li>The user space application resumes</li>
 </ul>
+<h3 id="系统调用表"><a href="#系统调用表" class="headerlink" title="系统调用表"></a>系统调用表</h3><p>系统调用调度器通过系统调用表来将系统调用号映射到内核函数（系统调用服务例程）：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> __SYSCALL_I386(nr, sym, qual) [nr] = sym,</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">sys_call_ptr_t</span> ia32_sys_call_table[] = &#123;</span><br><span class="line">  [<span class="number">0</span> ... __NR_syscall_compat_max] = &amp;sys_ni_syscall,</span><br><span class="line">  #include &lt;<span class="keyword">asm</span>/syscalls_32.h&gt;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">__SYSCALL_I386(<span class="number">0</span>, sys_restart_syscall, )</span><br><span class="line">__SYSCALL_I386(<span class="number">1</span>, sys_exit, )</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> CONFIG_X86_32</span></span><br><span class="line">__SYSCALL_I386(<span class="number">2</span>, sys_fork, )</span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">__SYSCALL_I386(<span class="number">2</span>, sys_fork, )</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">__SYSCALL_I386(<span class="number">3</span>, sys_read, )</span><br><span class="line">__SYSCALL_I386(<span class="number">4</span>, sys_write, )</span><br></pre></td></tr></table></figure>
+
+<h3 id="系统调用参数处理"><a href="#系统调用参数处理" class="headerlink" title="系统调用参数处理"></a>系统调用参数处理</h3><p>因为系统调用的参数是由用户空间设置的，内核不能保证参数的正确性，因此必须每次都对参数进行验证。指针参数有以下特殊情况是必须要检验的：</p>
+<ul>
+<li>不允许指针指向内核空间</li>
+<li>检测指针是否有效</li>
+</ul>
+<p>因为<strong>系统调用是在内核态执行的，它们有访问内核空间的权限</strong>，因此如果没有对指针进行合适的检测，那么就会使得用户应用程序拥有读或者写内核空间的权限（甚至不正确的写内核空间会破坏内核内存）。</p>
+<p>类似的，如果用户程序传递的指针是无效的（例如一个写指针指向一个只读的内存区域），它也会导致内核崩溃。</p>
+<p>有以下两种方法来解决以上问题：</p>
+<ul>
+<li>在使用指针之前，先对照用户地址空间检查指针</li>
+<li>避免检查指针，依靠MMU来检测指针何时无效，并使用页错误处理程序确定指针无效</li>
+</ul>
+<p><em>（原文中还有些比较高级的内容，这里不再列出，毕竟涉及的知识比较高深，参见：<a href="https://linux-kernel-labs.github.io/master/lectures/syscalls.html）" target="_blank" rel="noopener">https://linux-kernel-labs.github.io/master/lectures/syscalls.html）</a></em></p>
 
         </div>
 
@@ -557,7 +575,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-10-17T01:40:28.954Z" itemprop="dateUpdated">2019-10-17 09:40:28</time>
+    Last updated: <time datetime="2019-10-17T10:33:35.081Z" itemprop="dateUpdated">2019-10-17 18:33:35</time>
 </span><br>
 
 
