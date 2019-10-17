@@ -44,7 +44,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/10/16/iHQXv2lD6sajo1u.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/16/NIOgQMqSlaHjkye.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/17/8CD37Y9OcLZaHut.png">
-<meta property="og:updated_time" content="2019-10-17T01:36:18.603Z">
+<meta property="og:updated_time" content="2019-10-17T01:40:28.954Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统-程序接口与系统调用">
 <meta name="twitter:description" content="程序接口与系统调用 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著 Linux Kernel Teaching - https://linux-kernel-labs.github.io/master/index.html   用户接口操作系统通过“程序接口”和“操作接口”将其服务和功能提供给用户：  程序接口是操作系统对外提供服务和功能的手段，它由一组系统调用组成，在应用程序中使用">
@@ -142,7 +142,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -406,7 +406,7 @@
             </figure>
 
 <p><strong>系统调用调度器（system call dispatcher）</strong>的功能是验证系统调用的数字编号，然后运行和系统调用相关的内核函数，如下代码所示：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Handles int $0x80 */</span></span><br><span class="line"><span class="comment">/* 在进入内核之前，通过push和SAVE_ALL将当前用户态的寄存器，保存在pt_regs结构里面，然后调用do_int80_syscall_32 */</span></span><br><span class="line">__<span class="function">visible <span class="keyword">void</span> <span class="title">do_int80_syscall_32</span><span class="params">(struct pt_regs *regs)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    enter_from_user_mode();</span><br><span class="line">    local_irq_enable();</span><br><span class="line">    do_syscall_32_irqs_on(regs);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* simplified version of the Linux x86 32bit System Call Dispatcher */</span></span><br><span class="line"><span class="keyword">static</span> __<span class="function">always_inline <span class="keyword">void</span> <span class="title">do_syscall_32_irqs_on</span><span class="params">(struct pt_regs *regs)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> nr = regs-&gt;orig_ax;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 系统调用的数量由 NR_syscalls 宏给定，这个判断似乎是检查系统调用号是不是合法的，如果合法则进行接下来的实际内核函数的执行，并且把返回结果保存到ax中 */</span></span><br><span class="line">    <span class="keyword">if</span> (nr &lt; IA32_NR_syscalls)</span><br><span class="line">        regs-&gt;ax = ia32_sys_call_table[nr](regs-&gt;bx, regs-&gt;cx,</span><br><span class="line">                                           regs-&gt;dx, regs-&gt;si,</span><br><span class="line">                                           regs-&gt;di, regs-&gt;bp);</span><br><span class="line">    syscall_return_slowpath(regs);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Handles int $0x80 */</span></span><br><span class="line"><span class="comment">/* 在进入内核之前，通过push和SAVE_ALL将当前用户态的寄存器，保存在pt_regs结构里面，然后调用do_int80_syscall_32 */</span></span><br><span class="line">__<span class="function">visible <span class="keyword">void</span> <span class="title">do_int80_syscall_32</span><span class="params">(struct pt_regs *regs)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    enter_from_user_mode();</span><br><span class="line">    local_irq_enable();</span><br><span class="line">    do_syscall_32_irqs_on(regs);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* simplified version of the Linux x86 32bit System Call Dispatcher */</span></span><br><span class="line"><span class="keyword">static</span> __<span class="function">always_inline <span class="keyword">void</span> <span class="title">do_syscall_32_irqs_on</span><span class="params">(struct pt_regs *regs)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> nr = regs-&gt;orig_ax;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 系统调用的数量由 NR_syscalls 宏给定，这个判断似乎是检查系统调用号是不是合法的，如果合法则进行接下来的实际内核函数的执行，并且把返回结果保存到ax中 */</span></span><br><span class="line">    <span class="comment">/* 似乎这里的 regs-&gt;ax 指的是eax（32bit）或者rax（64bit）的统称，而不是x86中16bit的ax寄存器 */</span></span><br><span class="line">    <span class="keyword">if</span> (nr &lt; IA32_NR_syscalls)</span><br><span class="line">        regs-&gt;ax = ia32_sys_call_table[nr](regs-&gt;bx, regs-&gt;cx,</span><br><span class="line">                                           regs-&gt;dx, regs-&gt;si,</span><br><span class="line">                                           regs-&gt;di, regs-&gt;bp);</span><br><span class="line">    syscall_return_slowpath(regs);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>下面参考自：<a href="https://blog.csdn.net/hq815601489/article/details/80009791" target="_blank" rel="noopener">https://blog.csdn.net/hq815601489/article/details/80009791</a></p>
@@ -540,6 +540,15 @@
 <blockquote>
 <p>上面参考自：<a href="https://blog.csdn.net/hq815601489/article/details/80009791" target="_blank" rel="noopener">https://blog.csdn.net/hq815601489/article/details/80009791</a></p>
 </blockquote>
+<p>概括来说，系统调用过程中会发生如下的事情：</p>
+<ul>
+<li>The application is setting up the system call number and parameters and it issues a trap instruction</li>
+<li>The execution mode switches from user to kernel; the CPU switches to a kernel stack; the user stack and the return address to user space is saved on the kernel stack</li>
+<li>The kernel entry point saves registers on the kernel stack</li>
+<li>The system call dispatcher identifies the system call function and runs it</li>
+<li>The user space registers are restored and execution is switched back to user (e.g. calling IRET)</li>
+<li>The user space application resumes</li>
+</ul>
 
         </div>
 
@@ -548,7 +557,7 @@
     <div class="content">
         
 <span class="post-time">
-    最終更新：<time datetime="2019-10-17T01:36:18.603Z" itemprop="dateUpdated">2019-10-17 09:36:18</time>
+    Last updated: <time datetime="2019-10-17T01:40:28.954Z" itemprop="dateUpdated">2019-10-17 09:40:28</time>
 </span><br>
 
 
@@ -714,7 +723,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">
