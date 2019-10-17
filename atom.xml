@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://QQ876684433.github.io/"/>
-  <updated>2019-10-17T10:33:35.081Z</updated>
+  <updated>2019-10-17T10:38:25.793Z</updated>
   <id>http://QQ876684433.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux写时拷贝技术（copy-on-write）</title>
+    <link href="http://QQ876684433.github.io/2019/10/17/Linux%E5%86%99%E6%97%B6%E6%8B%B7%E8%B4%9D%E6%8A%80%E6%9C%AF%EF%BC%88copy-on-write%EF%BC%89/"/>
+    <id>http://QQ876684433.github.io/2019/10/17/Linux写时拷贝技术（copy-on-write）/</id>
+    <published>2019-10-17T10:36:13.000Z</published>
+    <updated>2019-10-17T10:38:25.793Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Linux写时拷贝技术（copy-on-write）"><a href="#Linux写时拷贝技术（copy-on-write）" class="headerlink" title="Linux写时拷贝技术（copy on write）"></a>Linux写时拷贝技术（copy on write）</h1><blockquote><p>参考资料：<a href="https://www.cnblogs.com/biyeymyhjob/archive/2012/07/20/2601655.html" target="_blank" rel="noopener">https://www.cnblogs.com/biyeymyhjob/archive/2012/07/20/2601655.html</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Linux写时拷贝技术（copy-on-write）&quot;&gt;&lt;a href=&quot;#Linux写时拷贝技术（copy-on-write）&quot; class=&quot;headerlink&quot; title=&quot;Linux写时拷贝技术（copy on write）&quot;&gt;&lt;/a&gt;Linux写时拷
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://QQ876684433.github.io/categories/Linux/"/>
+    
+    
+      <category term="操作系统" scheme="http://QQ876684433.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="Linux" scheme="http://QQ876684433.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>操作系统-程序接口与系统调用</title>
@@ -514,33 +541,6 @@
     
     
       <category term="linux" scheme="http://QQ876684433.github.io/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java分布式应用知识点</title>
-    <link href="http://QQ876684433.github.io/2019/07/24/Java%E5%88%86%E5%B8%83%E5%BC%8F%E5%BA%94%E7%94%A8%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
-    <id>http://QQ876684433.github.io/2019/07/24/Java分布式应用知识点/</id>
-    <published>2019-07-24T15:10:12.000Z</published>
-    <updated>2019-09-15T05:02:14.666Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Java分布式应用知识点"><a href="#Java分布式应用知识点" class="headerlink" title="Java分布式应用知识点"></a>Java分布式应用知识点</h1><h2 id="相关知识点"><a href="#相关知识点" class="headerlink" title="相关知识点"></a>相关知识点</h2><blockquote><p>来源：问题<a href="https://www.zhihu.com/question/22764869下的回答" target="_blank" rel="noopener">https://www.zhihu.com/question/22764869下的回答</a></p><p>知乎用户——by <a href="https://www.zhihu.com/people/yongxinge" target="_blank" rel="noopener">用心阁</a> 软件工程师</p></blockquote><ul><li><p>网络通讯，网络是分布式的基础，对分布式的理解建立在对网络的理解上，包括：</p></li><li><ul><li>OSI模型的7层</li><li>TCP/IP，DNS，NAT</li><li>HTTP，SPDY/HTTP2</li><li>Telnet</li></ul></li><li><p>网络编程，是通过程序在多个主机之间通信。包括：</p></li><li><ul><li><p>Socket</p></li><li><p>多线程</p></li><li><p>非阻塞IO</p></li><li><p>网络框架</p></li><li><ul><li>Netty</li><li>Mina</li><li>ZeroMQ</li></ul></li></ul></li><li><p>操作系统的网络部分</p></li><li><p>RPC，Socket使用不是很方便，很多分布式应用是基于RPC的，包括：</p></li><li><ul><li><p>同步RPC</p></li><li><p>异步RPC</p></li><li><p>主要的一些RPC协议</p></li><li><ul><li>RMI</li><li>Rest API</li><li>Thrift</li></ul></li></ul></li><li><p>集群，分布式计算离不开集群。集群就是多台主机被当作一个系统</p></li><li><ul><li><p>集群类型</p></li><li><ul><li>高可用，如主机备机切换，冷备，热备，双活</li><li>伸缩性，如Web服务器集群，数据库服务器的Sharding</li><li>并行计算，如网格，大数据</li></ul></li><li><p>集群相关技术，包括：</p></li><li><ul><li><p>高可用性，保证服务一直能够被访问，延长MTBF，缩短MTTR</p></li><li><ul><li>冗余的设备</li><li>多副本，为了避免单点失效</li></ul></li><li><p>负载均衡，如何将大量工作负载分配到多个主机上，最大化吞吐量，最小化平均响应时间，最大化资源利用率。</p></li><li><p>伸缩性（横向），能够添加计算机和设备来应对增长的计算压力</p></li><li><p>分片（Sharding），把数据分成多个数据集，由多个服务器来分别处理。</p></li><li><ul><li>自动分片</li></ul></li><li><p>容错性，当硬件或软件发生故障，能够继续运转</p></li><li><p>故障检测，以及故障预测</p></li><li><ul><li>心跳包</li><li>告警</li><li>性能预警</li></ul></li><li><p>故障转移，当出现错误，如何解决，为了高可用性和容错性</p></li><li><p>分布式一致性，在分布式环境中如何维持状态的一致性，严格一致性，还是最终一致性</p></li><li><p>集群状态协调，如Zookeeper，etcd等。</p></li><li><ul><li>分布式锁，在分布式环境中如何进行加锁</li><li>选主，当Master宕机，如何选择出新的Master，协议如Raft</li></ul></li><li><p>一致性哈希，如何将数据分布到集群中的多个主机。</p></li><li><p>分布式事务，保证在多台服务器上完成的操作符合事务的ACID属性。</p></li></ul></li></ul></li><li><p>安全，网络通常需要保证安全。</p></li><li><ul><li><p>身份认证，如何验证人或机器是他们声明的身份</p></li><li><ul><li>基于用户名/口令</li><li>基于数字证书</li></ul></li><li><p>私密性，如何防止窃听和嗅探</p></li><li><ul><li>对称加密</li><li>非对称加密</li></ul></li><li><p>完整性，如何保证数据不被篡改</p></li><li><ul><li>安全散列</li><li>消息认证码（MAC）</li></ul></li><li><p>不可否认性</p></li><li><ul><li>基于数字证书的数字签名和验签</li><li>基于密钥的散列，如HMAC</li></ul></li></ul></li><li><p>互联网站的基本架构</p></li><li><ul><li>页面缓存</li><li>负载均衡器，如HAProxy,Nginx</li><li>分布式缓存，如Memcache，Redis</li><li>消息队列，如ActiveMQ，Kafka</li></ul></li><li><p>分布式框架</p></li><li><ul><li><p>关系型数据库（Sharding，主从同步）</p></li><li><p>NoSQL</p></li><li><ul><li>HBase，基于HDFS和Zookeeper的NoSQL</li><li>Cassandra，无主集群</li></ul></li><li><p>大数据</p></li><li><ul><li>HDFS，分布式文件系统</li><li>MapReduce，将数据处理任务拆分为多个工作，通过集群来完成。</li><li>Spark，提供分布式的数据集抽象</li></ul></li></ul></li></ul><h2 id="书籍推荐"><a href="#书籍推荐" class="headerlink" title="书籍推荐"></a>书籍推荐</h2><ul><li>大型分布式网站架构设计与实践</li><li>大型网站技术架构：核心原理与案例分析</li><li>大型网站系统与Java中间件实践</li><li>分布式Java应用：基础与实践</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Java分布式应用知识点&quot;&gt;&lt;a href=&quot;#Java分布式应用知识点&quot; class=&quot;headerlink&quot; title=&quot;Java分布式应用知识点&quot;&gt;&lt;/a&gt;Java分布式应用知识点&lt;/h1&gt;&lt;h2 id=&quot;相关知识点&quot;&gt;&lt;a href=&quot;#相关知识点&quot; c
-      
-    
-    </summary>
-    
-      <category term="分布式" scheme="http://QQ876684433.github.io/categories/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
-    
-    
-      <category term="Java" scheme="http://QQ876684433.github.io/tags/Java/"/>
-    
-      <category term="分布式" scheme="http://QQ876684433.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
     
   </entry>
   
