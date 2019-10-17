@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
 <meta property="og:description" content="Linux写时拷贝技术（copy on write） 参考资料：https://www.cnblogs.com/biyeymyhjob/archive/2012/07/20/2601655.html  fork() 和 exec() 参考资料：  https://www.geeksforgeeks.org/difference-fork-exec/ https://stackoverflow.co">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-10-17T12:10:08.334Z">
+<meta property="og:updated_time" content="2019-10-17T12:15:28.030Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux写时拷贝技术（copy-on-write）">
 <meta name="twitter:description" content="Linux写时拷贝技术（copy on write） 参考资料：https://www.cnblogs.com/biyeymyhjob/archive/2012/07/20/2601655.html  fork() 和 exec() 参考资料：  https://www.geeksforgeeks.org/difference-fork-exec/ https://stackoverflow.co">
@@ -126,7 +126,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -167,7 +167,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Linux写时拷贝技术（copy-on-write）"><span class="post-toc-number">1.</span> <span class="post-toc-text">Linux写时拷贝技术（copy on write）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#fork-和-exec"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">fork() 和 exec()</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#fork"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">fork()</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#fork-的返回值"><span class="post-toc-number">1.1.1.1.</span> <span class="post-toc-text">fork()的返回值</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#exec"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">exec()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#fork-和exec-的区别"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">fork()和exec()的区别</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Linux写时拷贝技术（copy-on-write）"><span class="post-toc-number">1.</span> <span class="post-toc-text">Linux写时拷贝技术（copy on write）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#fork-和-exec"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">fork() 和 exec()</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#fork"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">fork()</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#fork-的返回值"><span class="post-toc-number">1.1.1.1.</span> <span class="post-toc-text">fork()的返回值</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#exec"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">exec()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#fork-和exec-的区别"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">fork()和exec()的区别</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Copy-On-Write"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Copy On Write</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -241,7 +241,7 @@
 <li>fork starts a new process which is a copy of the one that calls it, while exec replaces the current process image with another (different) one.</li>
 <li>Both parent and child processes are executed simultaneously in case of fork() while Control never returns to the original program unless there is an exec() error.</li>
 </ul>
-
+<h2 id="Copy-On-Write"><a href="#Copy-On-Write" class="headerlink" title="Copy On Write"></a>Copy On Write</h2>
         </div>
 
         <blockquote class="post-copyright">
@@ -249,7 +249,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-10-17T12:10:08.334Z" itemprop="dateUpdated">2019-10-17 20:10:08</time>
+    最終更新：<time datetime="2019-10-17T12:15:28.030Z" itemprop="dateUpdated">2019-10-17 20:15:28</time>
 </span><br>
 
 
@@ -415,7 +415,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
         </p>
     </div>
     <div class="bottom">
