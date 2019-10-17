@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/10/17/Vct5I6YNm7jHJSX.jpg">
 <meta property="og:image" content="https://i.loli.net/2019/10/17/QKVqc6bECtrJn2X.jpg">
 <meta property="og:image" content="https://i.loli.net/2019/10/17/9SGa4vYgzFTHhIk.jpg">
-<meta property="og:updated_time" content="2019-10-17T12:53:14.650Z">
+<meta property="og:updated_time" content="2019-10-17T12:55:08.093Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux写时拷贝技术（copy-on-write）">
 <meta name="twitter:description" content="Linux写时拷贝技术（copy on write）fork() 和 exec() 参考资料：  https://www.geeksforgeeks.org/difference-fork-exec/ https://stackoverflow.com/questions/1653340/differences-between-fork-and-exec   每一个应用程序都是通过进程来运行的，进">
@@ -286,6 +286,7 @@
 <blockquote>
 <p>传统的fork()系统调用直接把所有的资源复制给新创建的进程。这种实现过于简单并且效率低下，因为它拷贝的数据也许并不共享，更糟的情况是，如果新进程打算立即执行一个新的映像，那么所有的拷贝都将前功尽弃。Linux的fork()使用写时拷贝（copy-on-write）页实现。写时拷贝是一种可以推迟甚至免除拷贝数据的技术。内核此时并不复制整个进程地址空间，而是让父进程和子进程共享同一个拷贝。只有在需要写入的时候，数据才会被复制，从而使各个进程拥有各自的拷贝。也就是说，<strong>资源的复制只有在需要写入的时候才进行</strong>，在此之前，只是以只读方式共享。这种技术使地址空间上的页的拷贝被推迟到实际发生写入的时候。<strong>在页根本不会被写入的情况下（<em>举例来说，fork()后立即调用exec()</em>）它们就无需复制了。fork()的实际开销就是复制父进程的页表以及给子进程创建惟一的进程描述符</strong>。在一般情况下，进程创建后都会马上运行一个可执行的文件，这种优化可以<strong>避免拷贝大量根本就不会被使用的数据</strong>（地址空间里常常包含数十兆的数据）。由于Unix强调进程快速执行的能力，所以这个优化是很重要的。这里补充一点：<strong>Linux COW与exec没有必然联系</strong></p>
 </blockquote>
+<p>（<em>原文中还提到C++中string的copy-on-write技术，因为这个与本主题无关，想要了解的话可以通过上面的参考链接查看</em>）</p>
 
         </div>
 
@@ -294,7 +295,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-10-17T12:53:14.650Z" itemprop="dateUpdated">2019-10-17 20:53:14</time>
+    Last updated: <time datetime="2019-10-17T12:55:08.093Z" itemprop="dateUpdated">2019-10-17 20:55:08</time>
 </span><br>
 
 
