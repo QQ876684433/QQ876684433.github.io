@@ -37,7 +37,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/10/15/zAnDOIjicFoG1wK.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/15/JN4XUpO1E6GwadZ.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/15/OPnxQpyh635CqWk.png">
-<meta property="og:updated_time" content="2019-10-15T15:24:26.996Z">
+<meta property="og:updated_time" content="2019-10-22T06:15:38.487Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库课堂笔记（2019-10-15）">
 <meta name="twitter:description" content="数据库课堂笔记 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著 《数据库系统概论》第五版 - 王珊 萨师煊 著 《数据库系统概念》   数据库课堂笔记（2019-10-15）Ch4. Object-Relational SQL (Oracle)对象关系型数据表相关例子如下：">
@@ -135,7 +135,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -176,7 +176,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据库课堂笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据库课堂笔记</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据库课堂笔记（2019-10-15）"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">数据库课堂笔记（2019-10-15）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Ch4-Object-Relational-SQL-Oracle"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">Ch4. Object-Relational SQL (Oracle)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Object-Types"><span class="post-toc-number">1.1.1.1.</span> <span class="post-toc-text">Object Types</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#定义新的数据类型"><span class="post-toc-number">1.1.1.1.1.</span> <span class="post-toc-text">定义新的数据类型</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#对象类型的使用"><span class="post-toc-number">1.1.1.1.2.</span> <span class="post-toc-text">对象类型的使用</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#对象值的创建、-查询与更新"><span class="post-toc-number">1.1.1.1.3.</span> <span class="post-toc-text">对象值的创建、 查询与更新</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#对象的引用类型"><span class="post-toc-number">1.1.1.1.4.</span> <span class="post-toc-text">对象的引用类型</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据库课堂笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据库课堂笔记</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据库课堂笔记（2019-10-15）"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">数据库课堂笔记（2019-10-15）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Ch4-Object-Relational-SQL-Oracle"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">Ch4. Object-Relational SQL (Oracle)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Object-Types（对象类型）"><span class="post-toc-number">1.1.1.1.</span> <span class="post-toc-text">Object Types（对象类型）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#定义新的数据类型"><span class="post-toc-number">1.1.1.1.1.</span> <span class="post-toc-text">定义新的数据类型</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#对象类型的使用"><span class="post-toc-number">1.1.1.1.2.</span> <span class="post-toc-text">对象类型的使用</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#对象值的创建、-查询与更新"><span class="post-toc-number">1.1.1.1.3.</span> <span class="post-toc-text">对象值的创建、 查询与更新</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#对象的引用类型"><span class="post-toc-number">1.1.1.1.4.</span> <span class="post-toc-text">对象的引用类型</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -228,7 +228,7 @@
                 <div class="image-caption"></div>
             </figure>
 
-<h4 id="Object-Types"><a href="#Object-Types" class="headerlink" title="Object Types"></a>Object Types</h4><h5 id="定义新的数据类型"><a href="#定义新的数据类型" class="headerlink" title="定义新的数据类型"></a>定义新的数据类型</h5><p>对象类型的创建和删除语法（CREATE TYPE … AS OBJECT）如下：</p>
+<h4 id="Object-Types（对象类型）"><a href="#Object-Types（对象类型）" class="headerlink" title="Object Types（对象类型）"></a>Object Types（对象类型）</h4><h5 id="定义新的数据类型"><a href="#定义新的数据类型" class="headerlink" title="定义新的数据类型"></a>定义新的数据类型</h5><p>对象类型的创建和删除语法（CREATE TYPE … AS OBJECT）如下：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TYPE</span> typename <span class="keyword">AS</span> <span class="keyword">OBJECT</span></span><br><span class="line">(attrname datatype, ......);</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TYPE</span> typename;</span><br></pre></td></tr></table></figure>
@@ -416,7 +416,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-10-15T15:24:26.996Z" itemprop="dateUpdated">2019-10-15 23:24:26</time>
+    最終更新：<time datetime="2019-10-22T06:15:38.487Z" itemprop="dateUpdated">2019-10-22 14:15:38</time>
 </span><br>
 
 
@@ -589,7 +589,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
         </p>
     </div>
     <div class="bottom">
