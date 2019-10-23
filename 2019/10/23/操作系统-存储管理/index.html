@@ -32,7 +32,12 @@
 <meta property="og:image" content="https://i.loli.net/2019/10/23/4QPXOMmnc6V8RBg.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/23/jqZwMSNIoas5r3x.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/23/sSd2pJmYozEWDj5.png">
-<meta property="og:updated_time" content="2019-10-23T14:36:00.922Z">
+<meta property="og:image" content="https://i.loli.net/2019/10/23/UlP8L6R12y3XbVC.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/23/yAb246iZNMTedSD.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/23/fL1H2gUhyRE9CMT.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/23/KgY5IQmcdjeyVsH.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/23/eQkOVLR5i8HtPh9.png">
+<meta property="og:updated_time" content="2019-10-23T15:33:45.239Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统-存储管理">
 <meta name="twitter:description" content="存储管理 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著   内存空间一般分为两部分：  系统区：存放操作系统内核程序和数据结构等 用户区：存放应用程序和数据  有效的存储管理也是多道程序设计技术的关键支撑，存储管理包含以下功能：">
@@ -171,7 +176,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#存储管理"><span class="post-toc-number">1.</span> <span class="post-toc-text">存储管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#存储器工作原理"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">存储器工作原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#存储器层次"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">存储器层次</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#地址转换与存储保护"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">地址转换与存储保护</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#程序编译"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text">程序编译</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#程序链接"><span class="post-toc-number">1.1.2.2.</span> <span class="post-toc-text">程序链接</span></a></li></ol></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#存储管理"><span class="post-toc-number">1.</span> <span class="post-toc-text">存储管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#存储器工作原理"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">存储器工作原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#存储器层次"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">存储器层次</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#地址转换与存储保护"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">地址转换与存储保护</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#程序编译"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text">程序编译</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#程序链接"><span class="post-toc-number">1.1.2.2.</span> <span class="post-toc-text">程序链接</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#程序装载"><span class="post-toc-number">1.1.2.3.</span> <span class="post-toc-text">程序装载</span></a></li></ol></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -264,7 +269,47 @@
 <li>若已装入，则直接将其链接到调用者程序中</li>
 <li>否则进行该模块在外存上的搜索，以及装入内存和进行链接，生成一个可执行程序</li>
 </ul>
+<p>运行时链接的好处：</p>
+<ul>
+<li>避免事先无法知道本次要运行哪些目标模块</li>
+<li>避免程序执行过程中不被调用的某些目标模块在执行前进行链接和装载而引起的开销，提高系统资源利用率和系统效率</li>
+</ul>
+<p>采用运行时链接时，程序执行所需要的库函数所在的部分目标模块是伴随着其被调用才动态进行装载和链接。具体的做法是：<u>不必将程序所需的外部函数代码从系统库中提取出并链入目标模块中，而仅仅是在程序调用处登记调用信息，记录函数名及入口号，形成调用链接；一旦函数库调入内存后，就可以确定所调函数在内存的物理地址</u>。</p>
 </li>
+</ul>
+<h4 id="程序装载"><a href="#程序装载" class="headerlink" title="程序装载"></a>程序装载</h4><p>装载程序（loader）把可执行程序装入内存的方式有三种：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/10/23/UlP8L6R12y3XbVC.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>磁盘中的装载模块使用的是逻辑地址，逻辑地址的集合称为进程的<strong>逻辑地址空间</strong>：</p>
+<ul>
+<li>逻辑地址空间可以是一维的，这时逻辑地址限制在从0开始顺序排序的地址空间内</li>
+<li>逻辑地址空间也可以是二维的，这时整个程序被分为若干段，每段都有不同段号，<strong>段内地址从0开始顺序编址</strong></li>
+</ul>
+<p>物理内存从统一的基地址开始顺序编址的存储单元称为物理地址或绝对地址，物理地址的总体构成物理地址空间</p>
+<p><strong>可执行程序逻辑地址转换（绑定）为物理地址的过程称为地址重定位、地址映射或地址转换</strong>，基于程序装入方式的不同，可以区分三种地址重定位：</p>
+<ul>
+<li><p>静态地址重定位</p>
+<p><img src="https://i.loli.net/2019/10/23/yAb246iZNMTedSD.png" alt></p>
+</li>
+<li><p>动态地址重定位</p>
+<p><img src="https://i.loli.net/2019/10/23/fL1H2gUhyRE9CMT.png" alt></p>
+<p><img src="https://i.loli.net/2019/10/23/KgY5IQmcdjeyVsH.png" alt></p>
+</li>
+<li><p>运行时链接地址重定位</p>
+<p><img src="https://i.loli.net/2019/10/23/eQkOVLR5i8HtPh9.png" alt></p>
+</li>
+</ul>
+<p>为了允许程序呢因对换或空闲区收集而被移动（会导致正在执行的程序在不同时刻处于内存的不同位置），必须使用动态地址重定位。动态地址重定位要借助于硬件地址转换机制来实现，<strong>重定位寄存器的内容通常保护在进程控制块中</strong>，每当执行进程上下文切换时，当前运行进程的重定位寄存器中的内容与其他信息被一起保护起来，新进程的重定位寄存器的内容会被恢复，这样进程就在上次中断的位置恢复运行，所使用的是与上次在此位置的同样的内存基地址。</p>
+<p>存储保护涉及防止地址越界和控制正确存取：</p>
+<ul>
+<li>地址越界保护：无论采用何种地址重定位方式，通常进程运行时产生的所有内存访问地址都应进行检查，确保进程仅访问自己的内存区，以免破坏其他进程的内存区</li>
+<li>信息存取保护：进程在访问分配给自己的内存区时，要对访问权限进行检查，如允许读、写、执行等，从而确保数据的安全性和完整性，防止有意或无意的误操作而破坏内存信息</li>
 </ul>
 
         </div>
@@ -274,7 +319,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-10-23T14:36:00.922Z" itemprop="dateUpdated">2019-10-23 22:36:00</time>
+    Last updated: <time datetime="2019-10-23T15:33:45.239Z" itemprop="dateUpdated">2019-10-23 23:33:45</time>
 </span><br>
 
 
