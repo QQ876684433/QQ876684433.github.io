@@ -37,7 +37,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/10/23/fL1H2gUhyRE9CMT.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/23/KgY5IQmcdjeyVsH.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/23/eQkOVLR5i8HtPh9.png">
-<meta property="og:updated_time" content="2019-10-23T15:33:45.239Z">
+<meta property="og:updated_time" content="2019-10-23T15:35:08.818Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统-存储管理">
 <meta name="twitter:description" content="存储管理 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著   内存空间一般分为两部分：  系统区：存放操作系统内核程序和数据结构等 用户区：存放应用程序和数据  有效的存储管理也是多道程序设计技术的关键支撑，存储管理包含以下功能：">
@@ -305,7 +305,7 @@
 <p><img src="https://i.loli.net/2019/10/23/eQkOVLR5i8HtPh9.png" alt></p>
 </li>
 </ul>
-<p>为了允许程序呢因对换或空闲区收集而被移动（会导致正在执行的程序在不同时刻处于内存的不同位置），必须使用动态地址重定位。动态地址重定位要借助于硬件地址转换机制来实现，<strong>重定位寄存器的内容通常保护在进程控制块中</strong>，每当执行进程上下文切换时，当前运行进程的重定位寄存器中的内容与其他信息被一起保护起来，新进程的重定位寄存器的内容会被恢复，这样进程就在上次中断的位置恢复运行，所使用的是与上次在此位置的同样的内存基地址。</p>
+<p>为了允许程序因对换或空闲区收集而被移动（会导致正在执行的程序在不同时刻处于内存的不同位置），必须使用动态地址重定位。动态地址重定位要借助于硬件地址转换机制来实现，<strong>重定位寄存器的内容通常保护在进程控制块中</strong>，每当执行进程上下文切换时，当前运行进程的重定位寄存器中的内容与其他信息被一起保护起来，新进程的重定位寄存器的内容会被恢复，这样进程就在上次中断的位置恢复运行，所使用的是与上次在此位置的同样的内存基地址。</p>
 <p>存储保护涉及防止地址越界和控制正确存取：</p>
 <ul>
 <li>地址越界保护：无论采用何种地址重定位方式，通常进程运行时产生的所有内存访问地址都应进行检查，确保进程仅访问自己的内存区，以免破坏其他进程的内存区</li>
@@ -319,7 +319,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-10-23T15:33:45.239Z" itemprop="dateUpdated">2019-10-23 23:33:45</time>
+    Last updated: <time datetime="2019-10-23T15:35:08.818Z" itemprop="dateUpdated">2019-10-23 23:35:08</time>
 </span><br>
 
 
