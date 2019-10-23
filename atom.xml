@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://QQ876684433.github.io/"/>
-  <updated>2019-10-23T07:12:45.518Z</updated>
+  <updated>2019-10-23T13:58:29.325Z</updated>
   <id>http://QQ876684433.github.io/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>操作系统-存储管理</title>
+    <link href="http://QQ876684433.github.io/2019/10/23/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/"/>
+    <id>http://QQ876684433.github.io/2019/10/23/操作系统-存储管理/</id>
+    <published>2019-10-23T13:23:37.000Z</published>
+    <updated>2019-10-23T13:58:29.325Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="存储管理"><a href="#存储管理" class="headerlink" title="存储管理"></a>存储管理</h1><blockquote><p>参考资料：</p><ul><li>操作系统教程（第5版） - 费翔林 骆斌 编著</li></ul></blockquote><p>内存空间一般分为两部分：</p><ul><li>系统区：存放操作系统内核程序和数据结构等</li><li>用户区：存放应用程序和数据</li></ul><p>有效的存储管理也是多道程序设计技术的关键支撑，存储管理包含以下功能：</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/10/23/4QPXOMmnc6V8RBg.png" alt title>                </div>                <div class="image-caption"></div>            </figure><h2 id="存储器工作原理"><a href="#存储器工作原理" class="headerlink" title="存储器工作原理"></a>存储器工作原理</h2><h3 id="存储器层次"><a href="#存储器层次" class="headerlink" title="存储器层次"></a>存储器层次</h3><p>目前计算机均采用层次结构的存储子系统，自上至下依次为：寄存器、缓存、内存、磁盘、磁带5层。其中<strong>寄存器、缓存和内存是操作系统存储管理的管辖范畴</strong>；磁盘和磁带属于文件管理和设备管理的管辖对象。</p><h3 id="地址转换与存储保护"><a href="#地址转换与存储保护" class="headerlink" title="地址转换与存储保护"></a>地址转换与存储保护</h3><p>源程序在计算机上运行涉及的过程：</p><ul><li>编译程序或汇编程序处理源程序并生成目标代码（程序）</li><li>链接程序将目标代码链接为一个<strong>可重定位代码（程序）</strong>，此时程序处在<strong>逻辑地址空间</strong>中</li><li>装载程序将可执行代码装入物理地址空间，直到此时程序才能运行</li></ul><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/10/23/jqZwMSNIoas5r3x.png" alt title>                </div>                <div class="image-caption"></div>            </figure><h4 id="程序编译"><a href="#程序编译" class="headerlink" title="程序编译"></a>程序编译</h4><p>程序编译指的是编译程序（compiler）或汇编程序（assembly）的处理生成目标模块（目标代码）。一个程序可以由独立编写的且具有不同功能的多个源程序模块组成，由于模块包含外部引用，即指向<strong>其他模块中的数据或指令地址</strong>，或包含<strong>对库函数的引用</strong>，<strong>编译程序或汇编程序负责记录引用发生的位置</strong>，其处理结果将产生相应的多个目标模块，每个目标模块都附有<strong>供引用使用的内部符号表和外部符号表</strong>。符号表中依次给出<strong>各个符号名及在本目标模块中的名字地址</strong>，在模块<strong>被链接时</strong>进行转换</p><h4 id="程序链接"><a href="#程序链接" class="headerlink" title="程序链接"></a>程序链接</h4>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;存储管理&quot;&gt;&lt;a href=&quot;#存储管理&quot; class=&quot;headerlink&quot; title=&quot;存储管理&quot;&gt;&lt;/a&gt;存储管理&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;参考资料：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;操作系统教程（第5版） - 费翔林 骆斌 编著&lt;/li&gt;
+&lt;
+      
+    
+    </summary>
+    
+      <category term="操作系统" scheme="http://QQ876684433.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="笔记" scheme="http://QQ876684433.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="操作系统" scheme="http://QQ876684433.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="存储管理" scheme="http://QQ876684433.github.io/tags/%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>数据库课堂笔记（2019-10-22）</title>
@@ -87,9 +120,9 @@
       <category term="笔记" scheme="http://QQ876684433.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="中断" scheme="http://QQ876684433.github.io/tags/%E4%B8%AD%E6%96%AD/"/>
-    
       <category term="操作系统" scheme="http://QQ876684433.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="中断" scheme="http://QQ876684433.github.io/tags/%E4%B8%AD%E6%96%AD/"/>
     
   </entry>
   
@@ -205,9 +238,9 @@
       <category term="转载" scheme="http://QQ876684433.github.io/categories/%E7%AE%97%E6%B3%95/%E8%BD%AC%E8%BD%BD/"/>
     
     
-      <category term="动态规划" scheme="http://QQ876684433.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
       <category term="leetcode" scheme="http://QQ876684433.github.io/tags/leetcode/"/>
+    
+      <category term="动态规划" scheme="http://QQ876684433.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
   </entry>
   
@@ -234,9 +267,9 @@
       <category term="转载" scheme="http://QQ876684433.github.io/categories/%E7%AE%97%E6%B3%95/%E8%BD%AC%E8%BD%BD/"/>
     
     
-      <category term="动态规划" scheme="http://QQ876684433.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
       <category term="leetcode" scheme="http://QQ876684433.github.io/tags/leetcode/"/>
+    
+      <category term="动态规划" scheme="http://QQ876684433.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
   </entry>
   
@@ -475,9 +508,9 @@
       <category term="算法" scheme="http://QQ876684433.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="动态规划" scheme="http://QQ876684433.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
       <category term="leetcode" scheme="http://QQ876684433.github.io/tags/leetcode/"/>
+    
+      <category term="动态规划" scheme="http://QQ876684433.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
   </entry>
   
@@ -504,9 +537,9 @@
       <category term="算法" scheme="http://QQ876684433.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="动态规划" scheme="http://QQ876684433.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
       <category term="leetcode" scheme="http://QQ876684433.github.io/tags/leetcode/"/>
+    
+      <category term="动态规划" scheme="http://QQ876684433.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
   </entry>
   
@@ -533,39 +566,9 @@
       <category term="算法" scheme="http://QQ876684433.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="动态规划" scheme="http://QQ876684433.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
       <category term="leetcode" scheme="http://QQ876684433.github.io/tags/leetcode/"/>
     
-  </entry>
-  
-  <entry>
-    <title>数据库课堂笔记（2019-09-03）</title>
-    <link href="http://QQ876684433.github.io/2019/09/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0%EF%BC%882019-09-03%EF%BC%89/"/>
-    <id>http://QQ876684433.github.io/2019/09/03/数据库课堂笔记（2019-09-03）/</id>
-    <published>2019-09-03T11:53:37.000Z</published>
-    <updated>2019-09-15T05:02:14.666Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="数据库课堂笔记"><a href="#数据库课堂笔记" class="headerlink" title="数据库课堂笔记"></a>数据库课堂笔记</h1><blockquote><p>参考资料：</p><ul><li>南大软件学院课程《数据管理基础》课程资料</li><li>《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著</li><li>《数据库系统概论》第五版 - 王珊 萨师煊 著</li><li>《数据库系统概念》</li></ul></blockquote><h2 id="数据库课堂笔记（2019-09-03）"><a href="#数据库课堂笔记（2019-09-03）" class="headerlink" title="数据库课堂笔记（2019-09-03）"></a>数据库课堂笔记（2019-09-03）</h2><h3 id="Ch1-Introduction"><a href="#Ch1-Introduction" class="headerlink" title="Ch1. Introduction"></a>Ch1. Introduction</h3><h4 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h4><ul><li><p>数据库管理系统（DataBase Management System，DBMS）</p><p>Connolly and Begg define Database Management System (DBMS) as a “<strong>software system that enables users to define, create, maintain and control access to the database</strong>“. … <strong>The core functionality is the storage, retrieval and update of data</strong>.</p><blockquote><p>The <a href="https://en.wikipedia.org/wiki/Database#Database_management_system" target="_blank" rel="noopener">database management system</a> (DBMS) is the <a href="https://en.wikipedia.org/wiki/Software" target="_blank" rel="noopener">software</a> that interacts with <a href="https://en.wikipedia.org/wiki/End_user" target="_blank" rel="noopener">end users</a>, applications, and the database itself to capture and analyze the data.</p><p>—— from wikipedia</p></blockquote><p>简单理解就是，数据库管理系统是终端用户、应用程序同数据库本身交互的软件</p></li><li><p>数据库（Database）</p><blockquote><p>A <strong>database</strong> is an organized collection of <a href="https://en.wikipedia.org/wiki/Data_(computing)" target="_blank" rel="noopener">data</a>, generally stored and accessed electronically from a computer system. Where databases are more complex they are often developed using formal <a href="https://en.wikipedia.org/wiki/Database#Design_and_modeling" target="_blank" rel="noopener">design and modeling</a> techniques.</p><p>—— from wikipedia</p></blockquote><p>简单理解就是，数据库是一个有组织的数据集合</p></li><li><p>数据库用户（DataBase User）</p><ul><li><p>最终用户——交互式用户</p><ul><li>临时用户——用SQL访问DBMS的用户</li><li>初级用户——通过菜单访问DBMS的用户</li></ul></li><li><p>应用程序员——编写菜单程序的程序员</p></li><li><p>数据库管理员（Database Administrator，DBA）——管理DBMS的专家</p><p><img src="https://i.loli.net/2019/09/03/EOwYuHP6gxaQci4.png" alt></p></li></ul></li></ul><h3 id="数据库系统的架构"><a href="#数据库系统的架构" class="headerlink" title="数据库系统的架构"></a>数据库系统的架构</h3><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/09/03/LPcK7sEfn54vDgG.png" alt title>                </div>                <div class="image-caption"></div>            </figure><p>主要有<strong>两层C/S架构</strong>和<strong>三层B/S架构</strong>两种：</p><ul><li><p>两层C/S架构：数据库和DBMS运行在数据库服务器，数据库应用程序运行在客户机中，两者之间通过局域网实现数据访问（<em>但是更多的时候， 数据库服务器及其应用程序可能分布在距</em><br><em>离遥远的不同地方，这是得使用三层B/S架构来解决</em>）</p><p><img src="https://i.loli.net/2019/09/03/mv7GcaV85YwBzZp.png" alt></p></li><li><p>三层B/S架构：数据库和DBMS运行在数据库服务器中，<br>数据库应用程序运行在应用服务器（也称“Web服务器”）<br>中， 用户客户端只需要安装常用的浏览器， 负责接收用户<br>输入和结果展示</p><p><img src="https://i.loli.net/2019/09/03/NUSipYC8havWjgk.png" alt></p></li></ul><h3 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h3><p>数据模型（data model）是对现实世界数据特征的抽象，它是数据库系统的核心和基础。根据应用的不同目的可以划分为两大类：第一类是概念模型，第二类是逻辑模型和物理模型。</p><ul><li>概念模型：按用户的观点来对数据和信息进行建模，主要用于数据库设计</li><li>逻辑模型：按计算机系统的观点对数据建模，主要用于数据库管理系统的实现</li><li>物理模型：对数据最底层的抽象，它描述数据在系统内部的表示方式和存取方法</li></ul><h4 id="概念模型"><a href="#概念模型" class="headerlink" title="概念模型"></a>概念模型</h4><ul><li>实体（entity）：客观存在并可互相区别的事物</li><li>属性（attribute）：实体所具有的某一特性</li><li>码（key）：唯一标识实体的属性集</li><li>实体型（entity type）：用实体名及其属性名集合来抽象和刻画同类实体</li><li>实体集（entity set）：同一类型实体的集合</li><li>联系（relationship）：实体之间的联系通常是指不同实体集之间的联系，具有一对一、一对多和多对多等多种类型</li></ul><p>概念模型的表示方法：实体-联系方法（Entity-Relationship approach），E-R方法也称为E-R模型</p><p>数据模型的组成要素：</p><ul><li>数据结构：数据库的组成对象以及对象之间的联系</li><li>数据操作：对数据库汇总各种对象的实例运行执行的操作的集合，包括操作以及有关的操作规则</li><li>数据的完整性约束条件：一组完整性规则</li></ul><h4 id="常见的数据模型"><a href="#常见的数据模型" class="headerlink" title="常见的数据模型"></a>常见的数据模型</h4><h5 id="层次数据模型（Hierarchical-Data-Model-）"><a href="#层次数据模型（Hierarchical-Data-Model-）" class="headerlink" title="层次数据模型（Hierarchical Data Model ）"></a>层次数据模型（Hierarchical Data Model ）</h5><p>满足两个条件：</p><ul><li>有且只有一个结点没有双亲结点，这个结点称为根结点</li><li>根以外的其他结点有且只有一个双亲结点</li></ul><p>层次模型中，每个结点表示一个记录类型，记录类型之间的联系用结点之间的有向边表示，这种联系是父子之间的一对多的联系，可以看做有向树结构</p><h5 id="网状数据模型（Network-Data-Model）"><a href="#网状数据模型（Network-Data-Model）" class="headerlink" title="网状数据模型（Network Data Model）"></a>网状数据模型（Network Data Model）</h5><p>满足两个条件：</p><ul><li>允许一个以上的结点无双亲</li><li>一个结点可以有多于一个的双亲</li></ul><p>层次模型中子女结点与双亲结点的关系是唯一的，在网状模型中，这种关系可以不唯一</p><h5 id="关系模型（Relational-Model）"><a href="#关系模型（Relational-Model）" class="headerlink" title="关系模型（Relational Model）"></a>关系模型（Relational Model）</h5><p>从用户的观点看，关系模型由一组关系组成，每个关系的数据结构都是一张规范化的二维表：</p><ul><li>关系：一个关系对应通常说的一张表</li><li>元组：表中的一行即为一个元组</li><li>属性：表中的一列即为一个属性</li><li>码：也称为码键，它是表中的某个属性组，可以唯一确定一个元组</li><li>域：域是一组具有相同数据类型的值集合，属性的取值范围来自某个域</li><li>分量：元组中的一个属性值</li><li>关系模式：对关系的描述，通常表示为<code>关系名(属性1，属性2，属性3，...，属性n)</code></li></ul><h5 id="面向对象模型（Object-Oriented-Model）"><a href="#面向对象模型（Object-Oriented-Model）" class="headerlink" title="面向对象模型（Object-Oriented Model）"></a>面向对象模型（Object-Oriented Model）</h5><h5 id="对象关系模型（Object-Relational-Model）"><a href="#对象关系模型（Object-Relational-Model）" class="headerlink" title="对象关系模型（Object-Relational Model）"></a>对象关系模型（Object-Relational Model）</h5><h3 id="Ch2-The-Relational-Model"><a href="#Ch2-The-Relational-Model" class="headerlink" title="Ch2. The Relational Model"></a>Ch2. The Relational Model</h3><h4 id="CAP数据库"><a href="#CAP数据库" class="headerlink" title="CAP数据库"></a>CAP数据库</h4><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/09/15/iuv9bsDBzYrlxfH.png" alt title>                </div>                <div class="image-caption"></div>            </figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/09/15/iWSvPMBGA8Ugund.png" alt title>                </div>                <div class="image-caption"></div>            </figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/09/15/zhZUMOiyYNAvbCG.png" alt title>                </div>                <div class="image-caption"></div>            </figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/09/15/HjTJYBkUtcneDRm.png" alt title>                </div>                <div class="image-caption"></div>            </figure><h4 id="术语-1"><a href="#术语-1" class="headerlink" title="术语"></a>术语</h4><ul><li><p><strong>数据模型（Data Model）</strong>：也称为数据库模型</p><ul><li>它是一组描述如何用计算机化的信息表示现实世界中的数据的定义</li><li>也描述了<strong>访问</strong>和<strong>更新</strong>这些信息的操作类型</li></ul></li><li><p><strong>数据库（Database）</strong>：<strong>表（Table）</strong>，或者说<strong>关系（Relation）</strong>的集合</p></li><li><p><strong>表的标题（Table Heading）</strong>：表的<strong>列名（Column Name）</strong>集合，又称为<strong>模式（Scheme）</strong></p><p><img src="https://i.loli.net/2019/09/06/I9yhKi46BRAufOP.png" alt></p></li><li><p>表的<strong>行（Row）</strong>集合：也就是<strong>元组（Tuple）</strong>的集合，称为表的内容，表的行数称为表的基数</p></li></ul><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/09/06/FP2NDfJ3zABGlWc.png" alt title>                </div>                <div class="image-caption"></div>            </figure><h4 id="数据库各部分的命名"><a href="#数据库各部分的命名" class="headerlink" title="数据库各部分的命名"></a>数据库各部分的命名</h4><p>由于数据库的行是经常改变的，而列通常来说不会改变，一般推荐数据库用户使用列来进行数据库查询</p><h5 id="程序数据独立性（Program-Data-Independence-）"><a href="#程序数据独立性（Program-Data-Independence-）" class="headerlink" title="程序数据独立性（Program-Data Independence ）"></a>程序数据独立性（Program-Data Independence ）</h5><blockquote><p>when asked to make up a query to answer a<br>question, query must still answer the<br>question even if all the data changes.</p></blockquote><p>查询语句和表的数据无关，二者是相互独立的，即使数据库中的表数据改变了，原有的查询依然能够执行（但是查询结果可能发生了改变）</p><h5 id="域类型（Column-type，也称-Domain和-Datatype）"><a href="#域类型（Column-type，也称-Domain和-Datatype）" class="headerlink" title="域类型（Column type，也称 Domain和 Datatype）"></a>域类型（Column type，也称 Domain和 Datatype）</h5><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/09/06/4NQEAOFYoPzXt8a.png" alt title>                </div>                <div class="image-caption"></div>            </figure><ul><li><p>大多数商业数据库系统都不支持有枚举集组成的类型（如city，month等），它体现了数据库的<strong>完整性约束（Integrity）</strong></p><blockquote><p><strong>域完整性（Domain Integrity）</strong><br>域完整性是指保证指定列的数据具有正确的数据类型、格式和有效的数据范围。</p></blockquote></li><li><p><strong>particular type</strong></p><p>例子：Domain(city in CUSTOMERS) vs<br>Domain(city in AGENTS) ?</p><p><img src="https://i.loli.net/2019/09/06/3IUhzBc2NtJkwag.png" alt></p><p><img src="https://i.loli.net/2019/09/06/2RnTzvfjHdbMVZA.png" alt></p></li></ul><h5 id="关系代数（Relational-Algebra-）"><a href="#关系代数（Relational-Algebra-）" class="headerlink" title="关系代数（Relational Algebra ）"></a>关系代数（Relational Algebra ）</h5><p>数据表中的列的域类似于大多数编程语言中的枚举类型</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/09/06/zF83mwJsyaNvYHM.png" alt title>                </div>                <div class="image-caption"></div>            </figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/09/06/xueCP3KHmVn4cIr.png" alt title>                </div>                <div class="image-caption"></div>            </figure><h5 id="笛卡尔积"><a href="#笛卡尔积" class="headerlink" title="笛卡尔积"></a>笛卡尔积</h5><p>数学上的笛卡尔积定义：</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/09/11/XHPZu8mCs9biJfL.png" alt title>                </div>                <div class="image-caption"></div>            </figure><p>但是数据表的关系——即行的集合并没有包含数据表所有列的笛卡尔积中的所有元素，一般来说有如下关系：</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/09/11/O9k6jhLcb1sXWPz.png" alt title>                </div>                <div class="image-caption"></div>            </figure><h4 id="关系规则"><a href="#关系规则" class="headerlink" title="关系规则"></a>关系规则</h4><p><strong>数据库范式（Database Normalization）</strong>：一张数据表的表结构所符合的某种设计标准的级别。符合高一级范式的设计，必定符合低一级范式，例如符合2NF的关系模式，必定符合1NF。</p><p>数据库三大范式：</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/09/11/ov6eLOjT4EaNVci.png" alt title>                </div>                <div class="image-caption"></div>            </figure><h5 id="第一范式（1NF）：First-Normal-Form-Rule"><a href="#第一范式（1NF）：First-Normal-Form-Rule" class="headerlink" title="第一范式（1NF）：First Normal Form Rule"></a>第一范式（1NF）：First Normal Form Rule</h5><p>数据表的列不允许有多值属性（重复的域）或者属性具有内部结构，也就是说要求列属性是原子的。</p><blockquote><p>columns that have multi-valued attributes (repeating fields) or have any internal structure (record) are not permitted</p></blockquote><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/09/11/DCoqxLYdlN8Wcmj.png" alt title>                </div>                <div class="image-caption"></div>            </figure><p>以这个数据表为例，<code>name</code>具有内部结构，<code>enrollment</code>是多值属性（重复的域）（<em>实际上enrollment也具有内部结构</em>）</p><p>它有两方面的含义：</p><ul><li><p>多值属性（重复的域）意思是某个属性的取值是某些元素的列表或者集合，例如第一行中的enrollment属性取值是((101, No), (108, Yes))，它是元素(cno, major)的列表或集合，解决方法有三种：</p><ul><li>将多值属性拆分成多个属性 -&gt;（<strong>浪费空间并使得查询变得困难</strong>）</li><li>将具有多值属性的行（元组），按照多值属性的值集合拆分成多个行（元组）来表示，新的元组不再包含多值属性，这些元组在该属性的取值的集合等于原多值属性取值 -&gt; （<strong>包含大量冗余数据，浪费空间</strong>）</li><li>将多值属性和其他属性分拆到两个不同的表中，通过表的join运算来获得原数据表 -&gt;（<strong>最常用的操作</strong>）</li></ul></li><li><p>内部结构意思是某个属性的取值不是原子的，或者是不是基本类型，例如name属性具有内部结构(name.Iname, name.fname)，解决方法是：</p><p><img src="https://i.loli.net/2019/09/11/IHocynCRgkUAuMe.png" alt></p></li></ul><p><em>ps：第一范式规则被对象-关系数据库系统的数据表打破，这些表是非第一范式（NFNF）。</em></p><h5 id="第二范式（2NF）：Access-Rows-by-Content-Only-Rule"><a href="#第二范式（2NF）：Access-Rows-by-Content-Only-Rule" class="headerlink" title="第二范式（2NF）：Access Rows by Content Only Rule"></a>第二范式（2NF）：Access Rows by Content Only Rule</h5><p>只能基于内容存取行的规则，说明我们只可以通过行的内容即每一行中所存在的属性值来检索列</p><blockquote><p>can only retrieve rows by their content, the attribute values that exist in each row.</p></blockquote><p>它暗示了：</p><ul><li><p>行是无序的：即使用行号来访问数据表中指定行是无意义的</p><p><img src="https://i.loli.net/2019/09/15/2YerOAFicub759g.png" alt></p></li><li><p><strong>列是无序的</strong>：2NF中没有指明需要根据一定的属性次序来访问指定行</p></li></ul><p><em>ps：大多数的关系型数据库产品打破了这条规则，允许用户通过RID-row ID来访问行；而且新的对象-关系数据库产品有<code>refs</code>语法允许某一行上列值指向另一行。</em></p><h5 id="第三范式（3NF）：The-Unique-Row-Rule"><a href="#第三范式（3NF）：The-Unique-Row-Rule" class="headerlink" title="第三范式（3NF）：The Unique Row Rule"></a>第三范式（3NF）：The Unique Row Rule</h5><p>行唯一性规则，它要求关系中任何两个元组的值在同一时刻不能是完全相同的，也就是说<strong>关系是元组的无序集合</strong></p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/09/15/njuJqea9ZcNTSfA.png" alt title>                </div>                <div class="image-caption"></div>            </figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/09/15/TbAfJF4jM5exQk6.png" alt title>                </div>                <div class="image-caption"></div>            </figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;数据库课堂笔记&quot;&gt;&lt;a href=&quot;#数据库课堂笔记&quot; class=&quot;headerlink&quot; title=&quot;数据库课堂笔记&quot;&gt;&lt;/a&gt;数据库课堂笔记&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;参考资料：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;南大软件学院课程《数据管理基础》课程
-      
-    
-    </summary>
-    
-      <category term="数据库" scheme="http://QQ876684433.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-      <category term="笔记" scheme="http://QQ876684433.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="数据库" scheme="http://QQ876684433.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="动态规划" scheme="http://QQ876684433.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
   </entry>
   
