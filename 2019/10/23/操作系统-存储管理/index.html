@@ -31,7 +31,8 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2019/10/23/4QPXOMmnc6V8RBg.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/23/jqZwMSNIoas5r3x.png">
-<meta property="og:updated_time" content="2019-10-23T13:58:29.325Z">
+<meta property="og:image" content="https://i.loli.net/2019/10/23/sSd2pJmYozEWDj5.png">
+<meta property="og:updated_time" content="2019-10-23T14:36:00.922Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统-存储管理">
 <meta name="twitter:description" content="存储管理 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著   内存空间一般分为两部分：  系统区：存放操作系统内核程序和数据结构等 用户区：存放应用程序和数据  有效的存储管理也是多道程序设计技术的关键支撑，存储管理包含以下功能：">
@@ -232,7 +233,40 @@
             </figure>
 
 <h4 id="程序编译"><a href="#程序编译" class="headerlink" title="程序编译"></a>程序编译</h4><p>程序编译指的是编译程序（compiler）或汇编程序（assembly）的处理生成目标模块（目标代码）。一个程序可以由独立编写的且具有不同功能的多个源程序模块组成，由于模块包含外部引用，即指向<strong>其他模块中的数据或指令地址</strong>，或包含<strong>对库函数的引用</strong>，<strong>编译程序或汇编程序负责记录引用发生的位置</strong>，其处理结果将产生相应的多个目标模块，每个目标模块都附有<strong>供引用使用的内部符号表和外部符号表</strong>。符号表中依次给出<strong>各个符号名及在本目标模块中的名字地址</strong>，在模块<strong>被链接时</strong>进行转换</p>
-<h4 id="程序链接"><a href="#程序链接" class="headerlink" title="程序链接"></a>程序链接</h4>
+<h4 id="程序链接"><a href="#程序链接" class="headerlink" title="程序链接"></a>程序链接</h4><p>链接程序（linker）的作用是<strong>根据目标模块之间的调用和依赖关系，将主模块、被调模块以及所用到的库函数装配和链接成一个完整的可装载执行模块</strong>。</p>
+<p>根据程序链接发生的时刻和链接的方式，程序链接可以分成以下三种方式：</p>
+<ul>
+<li><p>静态链接</p>
+<p>在程序装载到内存和运行之前，就已经将它的所有目标模块及所需要的库函数进行链接和装配成一个<strong>完整的可执行程序</strong>且此后不再拆分</p>
+<blockquote>
+<p>简单来说就是在链接阶段，将源文件中用到的库函数与汇编生成的目标文件.o合并生成可执行文件，该可执行文件可能会比较大</p>
+<ul>
+<li><p>这种链接方式的好处是：方便程序移植，因为可执行程序与库函数再无关系，放在如何环境当中都可以执行</p>
+</li>
+<li><p>缺点是：文件太大，一个全静态方式生成的简单print文件都有857K。而动态链接生成的一样的可执行文件却只要8.４Ｋ</p>
+</li>
+</ul>
+<p>reference：<a href="https://blog.csdn.net/freestyle4568world/article/details/49817799" target="_blank" rel="noopener">https://blog.csdn.net/freestyle4568world/article/details/49817799</a></p>
+</blockquote>
+<p>可重定位目标程序：</p>
+<p><img src="https://i.loli.net/2019/10/23/sSd2pJmYozEWDj5.png" alt></p>
+</li>
+<li><p>动态链接</p>
+<p>程序在装入内存前并未事先进行程序各目标模块的链接，而是在程序装载时一边装载一遍链接，生成一个可执行程序。</p>
+<ul>
+<li>在装载目标模块时，若发生外部模块调用，将引发外部目标模块的搜索、装载和链接</li>
+<li>同时若发现所需某部目标模块已在内存，可<strong>直接进行链接且无需再次装载，支持目标模块的共享</strong></li>
+</ul>
+</li>
+<li><p>运行时链接</p>
+<p>将某些目标模块或库函数的链接推迟到执行时才进行。在程序执行过程中，若发现被调用模块或库函数尚未链接，先在内存中进行搜索以查看其是否装入内存</p>
+<ul>
+<li>若已装入，则直接将其链接到调用者程序中</li>
+<li>否则进行该模块在外存上的搜索，以及装入内存和进行链接，生成一个可执行程序</li>
+</ul>
+</li>
+</ul>
+
         </div>
 
         <blockquote class="post-copyright">
@@ -240,7 +274,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-10-23T13:58:29.325Z" itemprop="dateUpdated">2019-10-23 21:58:29</time>
+    Last updated: <time datetime="2019-10-23T14:36:00.922Z" itemprop="dateUpdated">2019-10-23 22:36:00</time>
 </span><br>
 
 
