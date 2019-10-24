@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://QQ876684433.github.io/"/>
-  <updated>2019-10-24T05:53:08.052Z</updated>
+  <updated>2019-10-24T08:24:38.556Z</updated>
   <id>http://QQ876684433.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用Oracle嵌入式SQL预处理器Pro*C过程记录</title>
+    <link href="http://QQ876684433.github.io/2019/10/24/%E4%BD%BF%E7%94%A8Oracle%E5%B5%8C%E5%85%A5%E5%BC%8FSQL%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8Pro-C%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/"/>
+    <id>http://QQ876684433.github.io/2019/10/24/使用Oracle嵌入式SQL预处理器Pro-C过程记录/</id>
+    <published>2019-10-24T08:23:28.000Z</published>
+    <updated>2019-10-24T08:24:38.556Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="使用Oracle嵌入式SQL预处理器Pro-C过程记录"><a href="#使用Oracle嵌入式SQL预处理器Pro-C过程记录" class="headerlink" title="使用Oracle嵌入式SQL预处理器Pro*C过程记录"></a>使用Oracle嵌入式SQL预处理器Pro*C过程记录</h1>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;使用Oracle嵌入式SQL预处理器Pro-C过程记录&quot;&gt;&lt;a href=&quot;#使用Oracle嵌入式SQL预处理器Pro-C过程记录&quot; class=&quot;headerlink&quot; title=&quot;使用Oracle嵌入式SQL预处理器Pro*C过程记录&quot;&gt;&lt;/a&gt;使用Ora
+      
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://QQ876684433.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="Pro*C" scheme="http://QQ876684433.github.io/tags/Pro-C/"/>
+    
+      <category term="Oracle" scheme="http://QQ876684433.github.io/tags/Oracle/"/>
+    
+      <category term="嵌入式SQL" scheme="http://QQ876684433.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FSQL/"/>
+    
+      <category term="Embedded SQL" scheme="http://QQ876684433.github.io/tags/Embedded-SQL/"/>
+    
+  </entry>
   
   <entry>
     <title>数据库课堂笔记（2019-10-24）</title>
@@ -545,35 +576,6 @@
     
     
       <category term="架构" scheme="http://QQ876684433.github.io/tags/%E6%9E%B6%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>91.解码方法</title>
-    <link href="http://QQ876684433.github.io/2019/09/06/91-%E8%A7%A3%E7%A0%81%E6%96%B9%E6%B3%95/"/>
-    <id>http://QQ876684433.github.io/2019/09/06/91-解码方法/</id>
-    <published>2019-09-06T11:29:49.000Z</published>
-    <updated>2019-09-15T05:02:14.662Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="91-解码方法"><a href="#91-解码方法" class="headerlink" title="91.解码方法"></a>91.解码方法</h1><p>原题目如下：</p><blockquote><p>一条包含字母 A-Z 的消息通过以下方式进行了编码：</p><p>‘A’ -&gt; 1<br>‘B’ -&gt; 2<br>…<br>‘Z’ -&gt; 26</p><p>给定一个只包含数字的非空字符串，请计算解码方法的总数。</p><p>示例 1:</p><p>输入: “12”</p><p>输出: 2</p><p>解释: 它可以解码为 “AB”（1 2）或者 “L”（12）。</p><p>示例 2:</p><p>输入: “226”</p><p>输出: 3</p><p>解释: 它可以解码为 “BZ” (2 26), “VF” (22 6), 或者 “BBF” (2 2 6) 。</p><p>来源：力扣（LeetCode）</p><p>链接：<a href="https://leetcode-cn.com/problems/decode-ways著作权归领扣网络所有。" target="_blank" rel="noopener">https://leetcode-cn.com/problems/decode-ways著作权归领扣网络所有。</a></p></blockquote><h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>这道题刚开始做的时候思路是挺清晰的，就是动态规划，从左往右遍历一遍即可。对于一个长度为n的串s，由于编码只有一位数和两位数这两种可能，因此很容易得出</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numDecodings(s[<span class="number">1</span>:n]) = numDecodings(s[<span class="number">1</span>:n<span class="number">-1</span>]) + numDecodings(s[<span class="number">1</span>:n<span class="number">-2</span>])</span><br></pre></td></tr></table></figure><p>当然不是直接相加那么简单，这要分情况讨论一下：</p><p>（1）如果s[i]非0（由题可知，0不是合法的编码），s[1:n]一定可以按照在s[1:n-1]的所有解码方式后面加上s[i]来解码</p><p>（2）如果s[i-1]s[i]是合法的编码（<strong>即10&lt;=int(s[i-1]s[i])&lt;=26，大于等于10的是因为01、02等待这种以0开头的两位数不是合法的编码</strong>），那么s[1:n]也一定可以按照在s[1:n-2]的所有解码方式后面加上s[i-1]s[i]来得到</p><p>（3）否则上面两种情况都不符合，那么s[1:n]无论如何也无法进行解码，比如出现连续两个0的情况</p><p>我当时做的时候，因为没有考虑编码串中出现0的情况，所以出现了偏差。另外，由于前面做题的惯性思维，动态规划问题老是想构造数组，后来细细想这道题才发现根本不需要那么大的空间开销，只需要记录dp[i-1]和dp[i-2]即可计算出dp[i]。最终的解决方案如下：</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numDecodings</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = s.size();</span><br><span class="line">        <span class="keyword">if</span>(s.empty()) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">1</span>) <span class="keyword">return</span> s[<span class="number">0</span>]!=<span class="string">'0'</span>;</span><br><span class="line">        <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> prev = <span class="number">1</span>, target = s[<span class="number">0</span>]==<span class="string">'0'</span>?<span class="number">0</span>:<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span>  temp = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span>(s[i]!=<span class="string">'0'</span>) temp = target;</span><br><span class="line">            <span class="comment">// int val = (s[i-1]-'0')*10+(s[i]-'0');</span></span><br><span class="line">            <span class="comment">// if(val&gt;=10&amp;&amp;val&lt;=26) temp+=prev;</span></span><br><span class="line">            <span class="keyword">if</span>(s[i<span class="number">-1</span>]==<span class="string">'1'</span>||s[i<span class="number">-1</span>]==<span class="string">'2'</span>&amp;&amp;(s[i]&lt;=<span class="string">'6'</span>))temp+=prev;</span><br><span class="line">            </span><br><span class="line">            prev = target;</span><br><span class="line">            target = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> target;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>测评的结果如下，然后我看了一下最高分的解答，思路跟我的差不多，就没必要去优化了</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/09/06/YuE7XgBWSrZz51w.png" alt title>                </div>                <div class="image-caption"></div>            </figure><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>题解没什么比较新的角度，跟我的想法差不多，就不再赘述</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;91-解码方法&quot;&gt;&lt;a href=&quot;#91-解码方法&quot; class=&quot;headerlink&quot; title=&quot;91.解码方法&quot;&gt;&lt;/a&gt;91.解码方法&lt;/h1&gt;&lt;p&gt;原题目如下：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;一条包含字母 A-Z 的消息通过以下方式进行了
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="http://QQ876684433.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="动态规划" scheme="http://QQ876684433.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-      <category term="leetcode" scheme="http://QQ876684433.github.io/tags/leetcode/"/>
     
   </entry>
   
