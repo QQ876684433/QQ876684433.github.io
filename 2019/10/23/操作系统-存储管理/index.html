@@ -40,7 +40,15 @@
 <meta property="og:image" content="https://i.loli.net/2019/10/24/vj71eTxgNHQmV4u.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/24/7ctDUWL4kFdGoBe.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/24/X1MqKhHCI2Pktmf.png">
-<meta property="og:updated_time" content="2019-10-24T13:59:37.484Z">
+<meta property="og:image" content="https://i.loli.net/2019/10/24/ysHQ2ujJPRqnGFA.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/24/OoZfarJ8cnb7jLz.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/24/X1UnbyGSFuCQwlp.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/24/SazlsLRt4kGqNi8.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/24/9ND4cXHgiChMtjW.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/24/F1VD3ClEqyweZsn.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/24/dUAWKD9CcVY3vtF.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/24/85L24gcDBvHqblZ.png">
+<meta property="og:updated_time" content="2019-10-24T15:11:44.648Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统-存储管理">
 <meta name="twitter:description" content="存储管理 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著   内存空间一般分为两部分：  系统区：存放操作系统内核程序和数据结构等 用户区：存放应用程序和数据  有效的存储管理也是多道程序设计技术的关键支撑，存储管理包含以下功能：">
@@ -138,7 +146,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -179,7 +187,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#存储管理"><span class="post-toc-number">1.</span> <span class="post-toc-text">存储管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#存储器工作原理"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">存储器工作原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#存储器层次"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">存储器层次</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#地址转换与存储保护"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">地址转换与存储保护</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#程序编译"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text">程序编译</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#程序链接"><span class="post-toc-number">1.1.2.2.</span> <span class="post-toc-text">程序链接</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#程序装载"><span class="post-toc-number">1.1.2.3.</span> <span class="post-toc-text">程序装载</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#连续存储管理"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">连续存储管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#固定分区存储管理"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">固定分区存储管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#排队策略"><span class="post-toc-number">1.2.1.1.</span> <span class="post-toc-text">排队策略</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#优缺点"><span class="post-toc-number">1.2.1.2.</span> <span class="post-toc-text">优缺点</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#可变分区存储管理"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">可变分区存储管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#可变分区内存空间的分配和去配"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text">可变分区内存空间的分配和去配</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#可变分区分配算法"><span class="post-toc-number">1.2.2.1.1.</span> <span class="post-toc-text">可变分区分配算法</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#存储管理"><span class="post-toc-number">1.</span> <span class="post-toc-text">存储管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#存储器工作原理"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">存储器工作原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#存储器层次"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">存储器层次</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#地址转换与存储保护"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">地址转换与存储保护</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#程序编译"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text">程序编译</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#程序链接"><span class="post-toc-number">1.1.2.2.</span> <span class="post-toc-text">程序链接</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#程序装载"><span class="post-toc-number">1.1.2.3.</span> <span class="post-toc-text">程序装载</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#连续存储管理"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">连续存储管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#固定分区存储管理"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">固定分区存储管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#排队策略"><span class="post-toc-number">1.2.1.1.</span> <span class="post-toc-text">排队策略</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#优缺点"><span class="post-toc-number">1.2.1.2.</span> <span class="post-toc-text">优缺点</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#可变分区存储管理"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">可变分区存储管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#可变分区内存空间的分配和去配"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text">可变分区内存空间的分配和去配</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#可变分区分配算法"><span class="post-toc-number">1.2.2.1.1.</span> <span class="post-toc-text">可变分区分配算法</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#地址转换和存储保护"><span class="post-toc-number">1.2.2.2.</span> <span class="post-toc-text">地址转换和存储保护</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#内存不足的存储管理技术"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">内存不足的存储管理技术</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#移动技术"><span class="post-toc-number">1.2.3.1.</span> <span class="post-toc-text">移动技术</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#对换技术"><span class="post-toc-number">1.2.3.2.</span> <span class="post-toc-text">对换技术</span></a></li></ol></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -311,8 +319,8 @@
 <p>为了允许程序因对换或空闲区收集而被移动（会导致正在执行的程序在不同时刻处于内存的不同位置），必须使用动态地址重定位。动态地址重定位要借助于<strong>硬件地址转换机制</strong>来实现，<strong>重定位寄存器的内容通常保护在进程控制块中</strong>，每当执行进程上下文切换时，当前运行进程的重定位寄存器中的内容与其他信息被一起保护起来，新进程的重定位寄存器的内容会被恢复，这样进程就在上次中断的位置恢复运行，所使用的是与上次在此位置的同样的内存基地址。</p>
 <p>存储保护涉及防止地址越界和控制正确存取：</p>
 <ul>
-<li>地址越界保护：无论采用何种地址重定位方式，通常进程运行时产生的所有内存访问地址都应进行检查，确保进程仅访问自己的内存区，以免破坏其他进程的内存区</li>
-<li>信息存取保护：进程在访问分配给自己的内存区时，要对访问权限进行检查，如允许读、写、执行等，从而确保数据的安全性和完整性，防止有意或无意的误操作而破坏内存信息</li>
+<li><strong>地址越界保护</strong>：无论采用何种地址重定位方式，通常进程运行时产生的所有内存访问地址都应进行检查，确保进程仅访问自己的内存区，以免破坏其他进程的内存区</li>
+<li><strong>信息存取保护</strong>：进程在访问分配给自己的内存区时，要对访问权限进行检查，如允许读、写、执行等，从而确保数据的安全性和完整性，防止有意或无意的误操作而破坏内存信息</li>
 </ul>
 <h2 id="连续存储管理"><a href="#连续存储管理" class="headerlink" title="连续存储管理"></a>连续存储管理</h2><h3 id="固定分区存储管理"><a href="#固定分区存储管理" class="headerlink" title="固定分区存储管理"></a>固定分区存储管理</h3><p>固定分区又称为静态分区模式，基本思想是：内存空间被划分为<strong>数目固定不变的分区，各分区大小不等，每个分区只装入一个作业</strong>，若多个分区中都装有作业，则它们可以并发执行。</p>
 <p>为了说明各分区分配和使用情况，需要设置一张内存分配表，记录内存中划分的分区及其使用情况。<strong>内存分配表指出各分区起始地址和长度</strong>，占用标志用来指示此分区是否被使用，当其值为0时，表明此分区尚未被占用。</p>
@@ -375,8 +383,83 @@
 <li>归还时，把此空闲区链入空闲区链表的相应位置即可</li>
 </ul>
 <p>空闲区链表管理比空闲区表格管理复杂，但是优点是链表自身并不占用存储单元</p>
-<h5 id="可变分区分配算法"><a href="#可变分区分配算法" class="headerlink" title="可变分区分配算法"></a>可变分区分配算法</h5><p>- </p>
+<h5 id="可变分区分配算法"><a href="#可变分区分配算法" class="headerlink" title="可变分区分配算法"></a>可变分区分配算法</h5><ul>
+<li><p>最先适应（first fit）分配算法</p>
+<p><img src="https://i.loli.net/2019/10/24/ysHQ2ujJPRqnGFA.png" alt></p>
+</li>
+<li><p>下次/邻近适应（next fit）分配算法</p>
+<p><img src="https://i.loli.net/2019/10/24/OoZfarJ8cnb7jLz.png" alt></p>
+</li>
+<li><p>最优适应（best fit）分配算法</p>
+<p><img src="https://i.loli.net/2019/10/24/X1UnbyGSFuCQwlp.png" alt></p>
+</li>
+<li><p>最坏适应（worst fit）分配算法</p>
+<p><img src="https://i.loli.net/2019/10/24/SazlsLRt4kGqNi8.png" alt></p>
+</li>
+<li><p>快速适应（quick fit）分配算法</p>
+<p><img src="https://i.loli.net/2019/10/24/9ND4cXHgiChMtjW.png" alt></p>
+</li>
+</ul>
+<h4 id="地址转换和存储保护"><a href="#地址转换和存储保护" class="headerlink" title="地址转换和存储保护"></a>地址转换和存储保护</h4><ul>
+<li><p>对固定分区采用静态地址重定位，进程运行时使用绝对地址，可由加载程序进行地址越界检查</p>
+</li>
+<li><p>对可变分区则采用动态地址重定位，进程的程序和数据的地址转换由硬件完成，硬件设置两个专用控制寄存器：</p>
+<ul>
+<li>基址寄存器：存放分配给进程使用的分区的起始地址</li>
+<li>限长寄存器：存放分配给进程所占用的连续存储空间的长度</li>
+</ul>
+<p><img src="https://i.loli.net/2019/10/24/F1VD3ClEqyweZsn.png" alt></p>
+<p>多道程序系统中，硬件只需要设置一对基址/限长寄存器：</p>
+<ul>
+<li>进程在执行过程中出现等待事件时，操作系统把基址/限长寄存器的内容随此进程的其他信息（如PSW、通用寄存器等）一起保护起来</li>
+<li>另一个被选中执行的线程，则将其基址/限长值再送入基址/限长寄存器</li>
+</ul>
+<p>在有N个重定位寄存器的机器中，允许每个进程获得N个不同的内存段，并在运行时进行动态地址重定位：</p>
+<ul>
+<li><p>如果每个进程只能占用一个分区，则不允许各个进程之间有公共区域（因为有存取保护机制）</p>
+</li>
+<li><p>提供两对或者多对基址/限长寄存器的机器中，允许一个进程占用两个或者多个分区，这样可以通过规定某对基址/限长寄存器的区域是共享的来实现不同进程之间的共享区域，且进程共享部分取相同的基址/限长值：</p>
+<p><img src="https://i.loli.net/2019/10/24/dUAWKD9CcVY3vtF.png" alt></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="内存不足的存储管理技术"><a href="#内存不足的存储管理技术" class="headerlink" title="内存不足的存储管理技术"></a>内存不足的存储管理技术</h3><blockquote>
+<p>补充：内部碎片和外部碎片</p>
+<p>来源：<a href="https://www.cnblogs.com/zlcxbb/p/5759790.html" target="_blank" rel="noopener">https://www.cnblogs.com/zlcxbb/p/5759790.html</a></p>
+<ul>
+<li><p><strong>internal fragmentation:</strong>when memory allocated to a process is larger than requested memory, the difference between these two numbers is internal fragmentation.</p>
+<p>在内存管理中，<strong>内部碎片是已经被分配出去的的内存空间大于请求所需的内存空间</strong></p>
+</li>
+<li><p><strong>external fragmentation:</strong>External fragments exists when total memory space exists to satisfy a request, but it is not continous. storage is broken into little pieces. </p>
+<p><strong>外部碎片</strong>是指<strong>还没有分配出去，但是由于大小太小而无法分配给申请空间的新进程的内存空间空闲块</strong>。</p>
+</li>
+</ul>
+<p>一般情况下，<strong>固定分区存在内部碎片，可变式分区分配会存在外部碎片</strong>；</p>
+<p><strong>页式虚拟存储系统</strong>存在内部碎片（为了有效的利用内存，使内存产生更少的碎片，要<strong>对内存分页</strong>，内存以页为单位来使用，最后一页往往装不满，于是形成了内部碎片）</p>
+<p><strong>段式虚拟存储系统</strong>存在外部碎片（为了共享要分段，在段的换入换出时形成外部碎片，比如5K的段换出后，有一个4k的段进来放到原来5k的地方，于是形成1k的外部碎片）</p>
+</blockquote>
+<h4 id="移动技术"><a href="#移动技术" class="headerlink" title="移动技术"></a>移动技术</h4><p>当在未分配分区表中找不到足够大的空闲区来装入新进程时，可采用移动技术把已在内存中的进程分区连接到一起，使分散的空闲区汇集成片，也叫内存紧凑（compact）</p>
+<ul>
+<li>第一种方式是把<strong>所有</strong>当前占用的分区内容移动到内存的一端</li>
+<li>第二种方式是把占用分区内容移动到内存的一端，但是当<strong>产生足够大小的空闲区时就停止移动</strong></li>
+</ul>
+<p>内存中的进程在移动过程中，凡是涉及地址的信息都需要进行修改，例如基址寄存器、地址指针、内存分配表等。那么什么时候进行移动？</p>
+<ul>
+<li>一是进程撤销之后释放分区时，如果它不与空闲区邻接，立即实施移动，于是系统始终保持只有一个空闲区</li>
+<li>二是进程装入分区时，若空闲区的总和够用，但是没有一个空闲区能容纳此进程时实施移动</li>
+</ul>
+<p>移动技术分配内存空间的算法：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/10/24/85L24gcDBvHqblZ.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
 
+<p>移动操作也为进程运行过程中<strong>动态扩充内存空间</strong>提供了方便，当进程执行过程中要求增加内存空间时，只需要适当移动邻近的占用分区内容就可以增加其所占有的连续区的长度，<strong>移动后的基址值和经扩大的限长值都要相应修改</strong></p>
+<h4 id="对换技术"><a href="#对换技术" class="headerlink" title="对换技术"></a>对换技术</h4>
         </div>
 
         <blockquote class="post-copyright">
@@ -384,7 +467,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-10-24T13:59:37.484Z" itemprop="dateUpdated">2019-10-24 21:59:37</time>
+    Last updated: <time datetime="2019-10-24T15:11:44.648Z" itemprop="dateUpdated">2019-10-24 23:11:44</time>
 </span><br>
 
 
@@ -557,7 +640,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">
