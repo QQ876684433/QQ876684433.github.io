@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://QQ876684433.github.io/"/>
-  <updated>2019-10-24T01:51:45.876Z</updated>
+  <updated>2019-10-24T04:10:25.784Z</updated>
   <id>http://QQ876684433.github.io/</id>
   
   <author>
@@ -17,13 +17,46 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>new/delete vs malloc/free</title>
+    <link href="http://QQ876684433.github.io/2019/10/24/new_delete%20vs%20malloc_free/"/>
+    <id>http://QQ876684433.github.io/2019/10/24/new_delete vs malloc_free/</id>
+    <published>2019-10-24T04:08:04.000Z</published>
+    <updated>2019-10-24T04:10:25.784Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="new-delete-vs-malloc-free"><a href="#new-delete-vs-malloc-free" class="headerlink" title="new/delete vs malloc/free"></a>new/delete vs malloc/free</h1>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;new-delete-vs-malloc-free&quot;&gt;&lt;a href=&quot;#new-delete-vs-malloc-free&quot; class=&quot;headerlink&quot; title=&quot;new/delete vs malloc/free&quot;&gt;&lt;/a&gt;new/delete 
+      
+    
+    </summary>
+    
+      <category term="C++" scheme="http://QQ876684433.github.io/categories/C/"/>
+    
+    
+      <category term="C++" scheme="http://QQ876684433.github.io/tags/C/"/>
+    
+      <category term="new" scheme="http://QQ876684433.github.io/tags/new/"/>
+    
+      <category term="delete" scheme="http://QQ876684433.github.io/tags/delete/"/>
+    
+      <category term="malloc" scheme="http://QQ876684433.github.io/tags/malloc/"/>
+    
+      <category term="free" scheme="http://QQ876684433.github.io/tags/free/"/>
+    
+  </entry>
+  
+  <entry>
     <title>操作系统-存储管理</title>
     <link href="http://QQ876684433.github.io/2019/10/23/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/"/>
     <id>http://QQ876684433.github.io/2019/10/23/操作系统-存储管理/</id>
     <published>2019-10-23T13:23:37.000Z</published>
-    <updated>2019-10-24T01:51:45.876Z</updated>
+    <updated>2019-10-24T04:04:01.272Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="存储管理"><a href="#存储管理" class="headerlink" title="存储管理"></a>存储管理</h1><blockquote><p>参考资料：</p><ul><li>操作系统教程（第5版） - 费翔林 骆斌 编著</li></ul></blockquote><p>内存空间一般分为两部分：</p><ul><li>系统区：存放操作系统内核程序和数据结构等</li><li>用户区：存放应用程序和数据</li></ul><p>有效的存储管理也是多道程序设计技术的关键支撑，存储管理包含以下功能：</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/10/23/4QPXOMmnc6V8RBg.png" alt title>                </div>                <div class="image-caption"></div>            </figure><h2 id="存储器工作原理"><a href="#存储器工作原理" class="headerlink" title="存储器工作原理"></a>存储器工作原理</h2><h3 id="存储器层次"><a href="#存储器层次" class="headerlink" title="存储器层次"></a>存储器层次</h3><p>目前计算机均采用层次结构的存储子系统，自上至下依次为：寄存器、缓存、内存、磁盘、磁带5层。其中<strong>寄存器、缓存和内存是操作系统存储管理的管辖范畴</strong>；磁盘和磁带属于文件管理和设备管理的管辖对象。</p><h3 id="地址转换与存储保护"><a href="#地址转换与存储保护" class="headerlink" title="地址转换与存储保护"></a>地址转换与存储保护</h3><p>源程序在计算机上运行涉及的过程：</p><ul><li>编译程序或汇编程序处理源程序并生成目标代码（程序）</li><li>链接程序将目标代码链接为一个<strong>可重定位代码（程序）</strong>，此时程序处在<strong>逻辑地址空间</strong>中</li><li>装载程序将可执行代码装入物理地址空间，直到此时程序才能运行</li></ul><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/10/23/jqZwMSNIoas5r3x.png" alt title>                </div>                <div class="image-caption"></div>            </figure><h4 id="程序编译"><a href="#程序编译" class="headerlink" title="程序编译"></a>程序编译</h4><p>程序编译指的是编译程序（compiler）或汇编程序（assembly）的处理生成目标模块（目标代码）。一个程序可以由独立编写的且具有不同功能的多个源程序模块组成，由于模块包含外部引用，即指向<strong>其他模块中的数据或指令地址</strong>，或包含<strong>对库函数的引用</strong>，<strong>编译程序或汇编程序负责记录引用发生的位置</strong>，其处理结果将产生相应的多个目标模块，每个目标模块都附有<strong>供引用使用的内部符号表和外部符号表</strong>。符号表中依次给出<strong>各个符号名及在本目标模块中的名字地址</strong>，在模块<strong>被链接时</strong>进行转换</p><h4 id="程序链接"><a href="#程序链接" class="headerlink" title="程序链接"></a>程序链接</h4><p>链接程序（linker）的作用是<strong>根据目标模块之间的调用和依赖关系，将主模块、被调模块以及所用到的库函数装配和链接成一个完整的可装载执行模块</strong>。</p><p>根据程序链接发生的时刻和链接的方式，程序链接可以分成以下三种方式：</p><ul><li><p>静态链接</p><p>在程序装载到内存和运行之前，就已经将它的所有目标模块及所需要的库函数进行链接和装配成一个<strong>完整的可执行程序</strong>且此后不再拆分</p><blockquote><p>简单来说就是在链接阶段，将源文件中用到的库函数与汇编生成的目标文件.o合并生成可执行文件，该可执行文件可能会比较大</p><ul><li><p>这种链接方式的好处是：方便程序移植，因为可执行程序与库函数再无关系，放在如何环境当中都可以执行</p></li><li><p>缺点是：文件太大，一个全静态方式生成的简单print文件都有857K。而动态链接生成的一样的可执行文件却只要8.４Ｋ</p></li></ul><p>reference：<a href="https://blog.csdn.net/freestyle4568world/article/details/49817799" target="_blank" rel="noopener">https://blog.csdn.net/freestyle4568world/article/details/49817799</a></p></blockquote><p>可重定位目标程序：</p><p><img src="https://i.loli.net/2019/10/23/sSd2pJmYozEWDj5.png" alt></p></li><li><p>动态链接</p><p>程序在装入内存前并未事先进行程序各目标模块的链接，而是在程序装载时一边装载一遍链接，生成一个可执行程序。</p><ul><li>在装载目标模块时，若发生外部模块调用，将引发外部目标模块的搜索、装载和链接</li><li>同时若发现所需某部目标模块已在内存，可<strong>直接进行链接且无需再次装载，支持目标模块的共享</strong></li></ul></li><li><p>运行时链接</p><p>将某些目标模块或库函数的链接推迟到执行时才进行。在程序执行过程中，若发现被调用模块或库函数尚未链接，先在内存中进行搜索以查看其是否装入内存</p><ul><li>若已装入，则直接将其链接到调用者程序中</li><li>否则进行该模块在外存上的搜索，以及装入内存和进行链接，生成一个可执行程序</li></ul><p>运行时链接的好处：</p><ul><li>避免事先无法知道本次要运行哪些目标模块</li><li>避免程序执行过程中不被调用的某些目标模块在执行前进行链接和装载而引起的开销，提高系统资源利用率和系统效率</li></ul><p>采用运行时链接时，程序执行所需要的库函数所在的部分目标模块是伴随着其被调用才动态进行装载和链接。具体的做法是：<u>不必将程序所需的外部函数代码从系统库中提取出并链入目标模块中，而仅仅是在程序调用处登记调用信息，记录函数名及入口号，形成调用链接；一旦函数库调入内存后，就可以确定所调函数在内存的物理地址</u>。</p></li></ul><h4 id="程序装载"><a href="#程序装载" class="headerlink" title="程序装载"></a>程序装载</h4><p>装载程序（loader）把可执行程序装入内存的方式有三种：</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/10/23/UlP8L6R12y3XbVC.png" alt title>                </div>                <div class="image-caption"></div>            </figure><p>磁盘中的装载模块使用的是逻辑地址，逻辑地址的集合称为进程的<strong>逻辑地址空间</strong>：</p><ul><li>逻辑地址空间可以是一维的，这时逻辑地址限制在从0开始顺序排序的地址空间内</li><li>逻辑地址空间也可以是二维的，这时整个程序被分为若干段，每段都有不同段号，<strong>段内地址从0开始顺序编址</strong></li></ul><p>物理内存从统一的基地址开始顺序编址的存储单元称为物理地址或绝对地址，物理地址的总体构成物理地址空间</p><p><strong>可执行程序逻辑地址转换（绑定）为物理地址的过程称为地址重定位、地址映射或地址转换</strong>，基于程序装入方式的不同，可以区分三种地址重定位：</p><ul><li><p>静态地址重定位</p><p><img src="https://i.loli.net/2019/10/23/yAb246iZNMTedSD.png" alt></p></li><li><p>动态地址重定位</p><p><img src="https://i.loli.net/2019/10/23/fL1H2gUhyRE9CMT.png" alt></p><p><img src="https://i.loli.net/2019/10/23/KgY5IQmcdjeyVsH.png" alt></p></li><li><p>运行时链接地址重定位</p><p><img src="https://i.loli.net/2019/10/23/eQkOVLR5i8HtPh9.png" alt></p></li></ul><p>为了允许程序因对换或空闲区收集而被移动（会导致正在执行的程序在不同时刻处于内存的不同位置），必须使用动态地址重定位。动态地址重定位要借助于<strong>硬件地址转换机制</strong>来实现，<strong>重定位寄存器的内容通常保护在进程控制块中</strong>，每当执行进程上下文切换时，当前运行进程的重定位寄存器中的内容与其他信息被一起保护起来，新进程的重定位寄存器的内容会被恢复，这样进程就在上次中断的位置恢复运行，所使用的是与上次在此位置的同样的内存基地址。</p><p>存储保护涉及防止地址越界和控制正确存取：</p><ul><li>地址越界保护：无论采用何种地址重定位方式，通常进程运行时产生的所有内存访问地址都应进行检查，确保进程仅访问自己的内存区，以免破坏其他进程的内存区</li><li>信息存取保护：进程在访问分配给自己的内存区时，要对访问权限进行检查，如允许读、写、执行等，从而确保数据的安全性和完整性，防止有意或无意的误操作而破坏内存信息</li></ul><h2 id="连续存储管理"><a href="#连续存储管理" class="headerlink" title="连续存储管理"></a>连续存储管理</h2><h3 id="固定分区存储管理"><a href="#固定分区存储管理" class="headerlink" title="固定分区存储管理"></a>固定分区存储管理</h3><p>固定分区又称为静态分区模式，基本思想是：内存空间被划分为<strong>数目固定不变的分区，各分区大小不等，每个分区只装入一个作业</strong>，若多个分区中都装有作业，则它们可以并发执行。</p><p>为了说明各分区分配和使用情况，需要设置一张内存分配表，记录内存中划分的分区及其使用情况。<strong>内存分配表指出各分区起始地址和长度</strong>，占用标志用来指示此分区是否被使用，当其值为0时，表明此分区尚未被占用。</p><p>固定分区管理的一项任务是何时及如何把内存空间划分成分区。这项工作通常由系统管理员和操作系统初始化模块协同完成。系统初次启动时，管理员根据当天作业情况把内存划分成大小不等但数目固定的分区。</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/10/24/vj71eTxgNHQmV4u.png" alt title>                </div>                <div class="image-caption"></div>            </figure><h4 id="排队策略"><a href="#排队策略" class="headerlink" title="排队策略"></a>排队策略</h4><p>作业进入固定分区的两种排队策略：</p><ul><li>一是每个分区有单独的作业等待队列，调度程序选中作业后，创建用户进程并将其排入一个<strong>能够装入它的最小分区的进程等待队列尾部</strong>，当此分区空闲时，就装入队首进程执行<ul><li>好处是可以使装入分区浪费的空间最小</li><li>但是如果等待处理的作业大小很不均匀，将导致分区有的空闲而有的忙碌</li></ul></li><li>二是<strong>所有等待处理的作业排成一个等待队列</strong>，每当有分区空闲时，就从队首依次搜索分区长度能够容纳的作业以便装入执行；为了防止小作业占用大分区，也可以搜索<strong>分区长度能够容纳的最大作业</strong>装入执行</li></ul><h4 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h4><p>优点：</p><ul><li>实现简单，对于程序大小和出现频率已知的情形还是比较合适的</li><li>解决单道程序运行在并发环境下不能与CPU速度匹配的问题</li><li>解决了单道程序运行时内存空间利用率低的问题</li></ul><p>缺点：</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/10/24/7ctDUWL4kFdGoBe.png" alt title>                </div>                <div class="image-caption"></div>            </figure>]]></content>
+    <content type="html"><![CDATA[<h1 id="存储管理"><a href="#存储管理" class="headerlink" title="存储管理"></a>存储管理</h1><blockquote><p>参考资料：</p><ul><li>操作系统教程（第5版） - 费翔林 骆斌 编著</li></ul></blockquote><p>内存空间一般分为两部分：</p><ul><li>系统区：存放操作系统内核程序和数据结构等</li><li>用户区：存放应用程序和数据</li></ul><p>有效的存储管理也是多道程序设计技术的关键支撑，存储管理包含以下功能：</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/10/23/4QPXOMmnc6V8RBg.png" alt title>                </div>                <div class="image-caption"></div>            </figure><h2 id="存储器工作原理"><a href="#存储器工作原理" class="headerlink" title="存储器工作原理"></a>存储器工作原理</h2><h3 id="存储器层次"><a href="#存储器层次" class="headerlink" title="存储器层次"></a>存储器层次</h3><p>目前计算机均采用层次结构的存储子系统，自上至下依次为：寄存器、缓存、内存、磁盘、磁带5层。其中<strong>寄存器、缓存和内存是操作系统存储管理的管辖范畴</strong>；磁盘和磁带属于文件管理和设备管理的管辖对象。</p><h3 id="地址转换与存储保护"><a href="#地址转换与存储保护" class="headerlink" title="地址转换与存储保护"></a>地址转换与存储保护</h3><p>源程序在计算机上运行涉及的过程：</p><ul><li>编译程序或汇编程序处理源程序并生成目标代码（程序）</li><li>链接程序将目标代码链接为一个<strong>可重定位代码（程序）</strong>，此时程序处在<strong>逻辑地址空间</strong>中</li><li>装载程序将可执行代码装入物理地址空间，直到此时程序才能运行</li></ul><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/10/23/jqZwMSNIoas5r3x.png" alt title>                </div>                <div class="image-caption"></div>            </figure><h4 id="程序编译"><a href="#程序编译" class="headerlink" title="程序编译"></a>程序编译</h4><p>程序编译指的是编译程序（compiler）或汇编程序（assembly）的处理生成目标模块（目标代码）。一个程序可以由独立编写的且具有不同功能的多个源程序模块组成，由于模块包含外部引用，即指向<strong>其他模块中的数据或指令地址</strong>，或包含<strong>对库函数的引用</strong>，<strong>编译程序或汇编程序负责记录引用发生的位置</strong>，其处理结果将产生相应的多个目标模块，每个目标模块都附有<strong>供引用使用的内部符号表和外部符号表</strong>。符号表中依次给出<strong>各个符号名及在本目标模块中的名字地址</strong>，在模块<strong>被链接时</strong>进行转换</p><h4 id="程序链接"><a href="#程序链接" class="headerlink" title="程序链接"></a>程序链接</h4><p>链接程序（linker）的作用是<strong>根据目标模块之间的调用和依赖关系，将主模块、被调模块以及所用到的库函数装配和链接成一个完整的可装载执行模块</strong>。</p><p>根据程序链接发生的时刻和链接的方式，程序链接可以分成以下三种方式：</p><ul><li><p>静态链接</p><p>在程序装载到内存和运行之前，就已经将它的所有目标模块及所需要的库函数进行链接和装配成一个<strong>完整的可执行程序</strong>且此后不再拆分</p><blockquote><p>简单来说就是在链接阶段，将源文件中用到的库函数与汇编生成的目标文件.o合并生成可执行文件，该可执行文件可能会比较大</p><ul><li><p>这种链接方式的好处是：方便程序移植，因为可执行程序与库函数再无关系，放在如何环境当中都可以执行</p></li><li><p>缺点是：文件太大，一个全静态方式生成的简单print文件都有857K。而动态链接生成的一样的可执行文件却只要8.４Ｋ</p></li></ul><p>reference：<a href="https://blog.csdn.net/freestyle4568world/article/details/49817799" target="_blank" rel="noopener">https://blog.csdn.net/freestyle4568world/article/details/49817799</a></p></blockquote><p>可重定位目标程序：</p><p><img src="https://i.loli.net/2019/10/23/sSd2pJmYozEWDj5.png" alt></p></li><li><p>动态链接</p><p>程序在装入内存前并未事先进行程序各目标模块的链接，而是在程序装载时一边装载一遍链接，生成一个可执行程序。</p><ul><li>在装载目标模块时，若发生外部模块调用，将引发外部目标模块的搜索、装载和链接</li><li>同时若发现所需某部目标模块已在内存，可<strong>直接进行链接且无需再次装载，支持目标模块的共享</strong></li></ul></li><li><p>运行时链接</p><p>将某些目标模块或库函数的链接推迟到执行时才进行。在程序执行过程中，若发现被调用模块或库函数尚未链接，先在内存中进行搜索以查看其是否装入内存</p><ul><li>若已装入，则直接将其链接到调用者程序中</li><li>否则进行该模块在外存上的搜索，以及装入内存和进行链接，生成一个可执行程序</li></ul><p>运行时链接的好处：</p><ul><li>避免事先无法知道本次要运行哪些目标模块</li><li>避免程序执行过程中不被调用的某些目标模块在执行前进行链接和装载而引起的开销，提高系统资源利用率和系统效率</li></ul><p>采用运行时链接时，程序执行所需要的库函数所在的部分目标模块是伴随着其被调用才动态进行装载和链接。具体的做法是：<u>不必将程序所需的外部函数代码从系统库中提取出并链入目标模块中，而仅仅是在程序调用处登记调用信息，记录函数名及入口号，形成调用链接；一旦函数库调入内存后，就可以确定所调函数在内存的物理地址</u>。</p></li></ul><h4 id="程序装载"><a href="#程序装载" class="headerlink" title="程序装载"></a>程序装载</h4><p>装载程序（loader）把可执行程序装入内存的方式有三种：</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/10/23/UlP8L6R12y3XbVC.png" alt title>                </div>                <div class="image-caption"></div>            </figure><p>磁盘中的装载模块使用的是逻辑地址，逻辑地址的集合称为进程的<strong>逻辑地址空间</strong>：</p><ul><li>逻辑地址空间可以是一维的，这时逻辑地址限制在从0开始顺序排序的地址空间内</li><li>逻辑地址空间也可以是二维的，这时整个程序被分为若干段，每段都有不同段号，<strong>段内地址从0开始顺序编址</strong></li></ul><p>物理内存从统一的基地址开始顺序编址的存储单元称为物理地址或绝对地址，物理地址的总体构成物理地址空间</p><p><strong>可执行程序逻辑地址转换（绑定）为物理地址的过程称为地址重定位、地址映射或地址转换</strong>，基于程序装入方式的不同，可以区分三种地址重定位：</p><ul><li><p>静态地址重定位</p><p><img src="https://i.loli.net/2019/10/23/yAb246iZNMTedSD.png" alt></p></li><li><p>动态地址重定位</p><p><img src="https://i.loli.net/2019/10/23/fL1H2gUhyRE9CMT.png" alt></p><p><img src="https://i.loli.net/2019/10/23/KgY5IQmcdjeyVsH.png" alt></p></li><li><p>运行时链接地址重定位</p><p><img src="https://i.loli.net/2019/10/23/eQkOVLR5i8HtPh9.png" alt></p></li></ul><p>为了允许程序因对换或空闲区收集而被移动（会导致正在执行的程序在不同时刻处于内存的不同位置），必须使用动态地址重定位。动态地址重定位要借助于<strong>硬件地址转换机制</strong>来实现，<strong>重定位寄存器的内容通常保护在进程控制块中</strong>，每当执行进程上下文切换时，当前运行进程的重定位寄存器中的内容与其他信息被一起保护起来，新进程的重定位寄存器的内容会被恢复，这样进程就在上次中断的位置恢复运行，所使用的是与上次在此位置的同样的内存基地址。</p><p>存储保护涉及防止地址越界和控制正确存取：</p><ul><li>地址越界保护：无论采用何种地址重定位方式，通常进程运行时产生的所有内存访问地址都应进行检查，确保进程仅访问自己的内存区，以免破坏其他进程的内存区</li><li>信息存取保护：进程在访问分配给自己的内存区时，要对访问权限进行检查，如允许读、写、执行等，从而确保数据的安全性和完整性，防止有意或无意的误操作而破坏内存信息</li></ul><h2 id="连续存储管理"><a href="#连续存储管理" class="headerlink" title="连续存储管理"></a>连续存储管理</h2><h3 id="固定分区存储管理"><a href="#固定分区存储管理" class="headerlink" title="固定分区存储管理"></a>固定分区存储管理</h3><p>固定分区又称为静态分区模式，基本思想是：内存空间被划分为<strong>数目固定不变的分区，各分区大小不等，每个分区只装入一个作业</strong>，若多个分区中都装有作业，则它们可以并发执行。</p><p>为了说明各分区分配和使用情况，需要设置一张内存分配表，记录内存中划分的分区及其使用情况。<strong>内存分配表指出各分区起始地址和长度</strong>，占用标志用来指示此分区是否被使用，当其值为0时，表明此分区尚未被占用。</p><p>固定分区管理的一项任务是何时及如何把内存空间划分成分区。这项工作通常由系统管理员和操作系统初始化模块协同完成。系统初次启动时，管理员根据当天作业情况把内存划分成大小不等但数目固定的分区。</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/10/24/vj71eTxgNHQmV4u.png" alt title>                </div>                <div class="image-caption"></div>            </figure><h4 id="排队策略"><a href="#排队策略" class="headerlink" title="排队策略"></a>排队策略</h4><p>作业进入固定分区的两种排队策略：</p><ul><li>一是每个分区有单独的作业等待队列，调度程序选中作业后，创建用户进程并将其排入一个<strong>能够装入它的最小分区的进程等待队列尾部</strong>，当此分区空闲时，就装入队首进程执行<ul><li>好处是可以使装入分区浪费的空间最小</li><li>但是如果等待处理的作业大小很不均匀，将导致分区有的空闲而有的忙碌</li></ul></li><li>二是<strong>所有等待处理的作业排成一个等待队列</strong>，每当有分区空闲时，就从队首依次搜索分区长度能够容纳的作业以便装入执行；为了防止小作业占用大分区，也可以搜索<strong>分区长度能够容纳的最大作业</strong>装入执行</li></ul><h4 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h4><p>优点：</p><ul><li>实现简单，对于程序大小和出现频率已知的情形还是比较合适的</li><li>解决单道程序运行在并发环境下不能与CPU速度匹配的问题</li><li>解决了单道程序运行时内存空间利用率低的问题</li></ul><p>缺点：</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/10/24/7ctDUWL4kFdGoBe.png" alt title>                </div>                <div class="image-caption"></div>            </figure><h3 id="可变分区存储管理"><a href="#可变分区存储管理" class="headerlink" title="可变分区存储管理"></a>可变分区存储管理</h3><h4 id="可变分区内存空间的分配和去配"><a href="#可变分区内存空间的分配和去配" class="headerlink" title="可变分区内存空间的分配和去配"></a>可变分区内存空间的分配和去配</h4>]]></content>
     
     <summary type="html">
     
@@ -120,9 +153,9 @@
       <category term="笔记" scheme="http://QQ876684433.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="操作系统" scheme="http://QQ876684433.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
       <category term="中断" scheme="http://QQ876684433.github.io/tags/%E4%B8%AD%E6%96%AD/"/>
+    
+      <category term="操作系统" scheme="http://QQ876684433.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
@@ -238,9 +271,9 @@
       <category term="转载" scheme="http://QQ876684433.github.io/categories/%E7%AE%97%E6%B3%95/%E8%BD%AC%E8%BD%BD/"/>
     
     
-      <category term="leetcode" scheme="http://QQ876684433.github.io/tags/leetcode/"/>
-    
       <category term="动态规划" scheme="http://QQ876684433.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+      <category term="leetcode" scheme="http://QQ876684433.github.io/tags/leetcode/"/>
     
   </entry>
   
@@ -267,9 +300,9 @@
       <category term="转载" scheme="http://QQ876684433.github.io/categories/%E7%AE%97%E6%B3%95/%E8%BD%AC%E8%BD%BD/"/>
     
     
-      <category term="leetcode" scheme="http://QQ876684433.github.io/tags/leetcode/"/>
-    
       <category term="动态规划" scheme="http://QQ876684433.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+      <category term="leetcode" scheme="http://QQ876684433.github.io/tags/leetcode/"/>
     
   </entry>
   
@@ -508,9 +541,9 @@
       <category term="算法" scheme="http://QQ876684433.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="leetcode" scheme="http://QQ876684433.github.io/tags/leetcode/"/>
-    
       <category term="动态规划" scheme="http://QQ876684433.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+      <category term="leetcode" scheme="http://QQ876684433.github.io/tags/leetcode/"/>
     
   </entry>
   
@@ -537,38 +570,9 @@
       <category term="算法" scheme="http://QQ876684433.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="leetcode" scheme="http://QQ876684433.github.io/tags/leetcode/"/>
-    
       <category term="动态规划" scheme="http://QQ876684433.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
-  </entry>
-  
-  <entry>
-    <title>62.不同路径</title>
-    <link href="http://QQ876684433.github.io/2019/09/04/62-%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84/"/>
-    <id>http://QQ876684433.github.io/2019/09/04/62-不同路径/</id>
-    <published>2019-09-04T11:37:53.000Z</published>
-    <updated>2019-09-15T05:02:14.662Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="62-不同路径"><a href="#62-不同路径" class="headerlink" title="62.不同路径"></a>62.不同路径</h1><p>原题目如下：</p><blockquote><p>一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为“Start” ）。</p><p>机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为“Finish”）。</p><p>问总共有多少条不同的路径？</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/10/22/robot_maze.png" alt title>                </div>                <div class="image-caption"></div>            </figure><p>例如，上图是一个7 x 3 的网格。有多少可能的路径？</p><p>说明：m 和 n 的值均不超过 100。</p><p>示例 1:</p><p>输入: m = 3, n = 2</p><p>输出: 3</p><p>解释:<br>从左上角开始，总共有 3 条路径可以到达右下角。</p><ol><li>向右 -&gt; 向右 -&gt; 向下</li><li>向右 -&gt; 向下 -&gt; 向右</li><li>向下 -&gt; 向右 -&gt; 向右</li></ol><p>示例 2:</p><p>输入: m = 7, n = 3</p><p>输出: 28</p><p>来源：力扣（LeetCode）</p><p>链接：<a href="https://leetcode-cn.com/problems/unique-paths" target="_blank" rel="noopener">https://leetcode-cn.com/problems/unique-paths</a></p></blockquote><h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>这道题一看就是很典型的动态规划问题，一般来说都可以从填表入手，动态规划方程：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dp[i][j] = dp[i<span class="number">-1</span>][j] + dp[i][j<span class="number">-1</span>]</span><br></pre></td></tr></table></figure><p>所以可以从初始状态开始（即finish处开始）推导填表，最后得到的就是问题的解。举个简单的例子，m=7，n=3（其实m和n是可以互换的对结果没有影响）：</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/09/04/VC6Ub3IFT95xPNg.jpg" alt title>                </div>                <div class="image-caption"></div>            </figure><p>这样就可以通过一个二维数组来解决问题。一般来说二维数组开销太大，而且往往都能够通过压缩成一维数组来解决，因为<code>dp[i][j]</code>计算出来之后，<code>dp[i-1][j]</code>和<code>dp[i][j-1]</code>的值就不再需要了，所以最终的解答如下：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">uniquePaths</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; dp(m, <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>;j&lt;m;j++)&#123;</span><br><span class="line">                dp[j] = dp[j]+dp[j<span class="number">-1</span>];</span><br><span class="line">            &#125;   </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[m<span class="number">-1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>一次AC，惊喜满满：</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/09/04/BDZc7A9of1GuiNS.png" alt title>                </div>                <div class="image-caption"></div>            </figure><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>题解给出的方案和我的差不多，这里就没必要展开了，但是里面提供了一个数学角度的解决方案：</p><blockquote><p>思路：排列组合</p><p>因为机器到底右下角，向下几步，向右几步都是固定的，</p><p>比如，m=3, n=2，我们只要向下 1 步，向右 2 步就一定能到达终点。</p><p>所以有 C_{m+n-2}^{m-1}C<br>m+n−2<br>m−1</p><p>作者：powcai</p><p>链接：<a href="https://leetcode-cn.com/problems/unique-paths/solution/dong-tai-gui-hua-by-powcai-2/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/unique-paths/solution/dong-tai-gui-hua-by-powcai-2/</a></p><p>来源：力扣（LeetCode）</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;62-不同路径&quot;&gt;&lt;a href=&quot;#62-不同路径&quot; class=&quot;headerlink&quot; title=&quot;62.不同路径&quot;&gt;&lt;/a&gt;62.不同路径&lt;/h1&gt;&lt;p&gt;原题目如下：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;一个机器人位于一个 m x n 网格的左上角 
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="http://QQ876684433.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
       <category term="leetcode" scheme="http://QQ876684433.github.io/tags/leetcode/"/>
-    
-      <category term="动态规划" scheme="http://QQ876684433.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
   </entry>
   
