@@ -38,7 +38,8 @@
 <meta property="og:image" content="https://i.loli.net/2019/10/23/KgY5IQmcdjeyVsH.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/23/eQkOVLR5i8HtPh9.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/24/vj71eTxgNHQmV4u.png">
-<meta property="og:updated_time" content="2019-10-24T01:35:44.180Z">
+<meta property="og:image" content="https://i.loli.net/2019/10/24/7ctDUWL4kFdGoBe.png">
+<meta property="og:updated_time" content="2019-10-24T01:51:45.876Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统-存储管理">
 <meta name="twitter:description" content="存储管理 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著   内存空间一般分为两部分：  系统区：存放操作系统内核程序和数据结构等 用户区：存放应用程序和数据  有效的存储管理也是多道程序设计技术的关键支撑，存储管理包含以下功能：">
@@ -136,7 +137,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -177,7 +178,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#存储管理"><span class="post-toc-number">1.</span> <span class="post-toc-text">存储管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#存储器工作原理"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">存储器工作原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#存储器层次"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">存储器层次</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#地址转换与存储保护"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">地址转换与存储保护</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#程序编译"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text">程序编译</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#程序链接"><span class="post-toc-number">1.1.2.2.</span> <span class="post-toc-text">程序链接</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#程序装载"><span class="post-toc-number">1.1.2.3.</span> <span class="post-toc-text">程序装载</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#连续存储管理"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">连续存储管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#固定分区存储管理"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">固定分区存储管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#排队策略"><span class="post-toc-number">1.2.1.1.</span> <span class="post-toc-text">排队策略</span></a></li></ol></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#存储管理"><span class="post-toc-number">1.</span> <span class="post-toc-text">存储管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#存储器工作原理"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">存储器工作原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#存储器层次"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">存储器层次</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#地址转换与存储保护"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">地址转换与存储保护</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#程序编译"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text">程序编译</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#程序链接"><span class="post-toc-number">1.1.2.2.</span> <span class="post-toc-text">程序链接</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#程序装载"><span class="post-toc-number">1.1.2.3.</span> <span class="post-toc-text">程序装载</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#连续存储管理"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">连续存储管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#固定分区存储管理"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">固定分区存储管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#排队策略"><span class="post-toc-number">1.2.1.1.</span> <span class="post-toc-text">排队策略</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#优缺点"><span class="post-toc-number">1.2.1.2.</span> <span class="post-toc-text">优缺点</span></a></li></ol></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -332,7 +333,20 @@
 </li>
 <li>二是<strong>所有等待处理的作业排成一个等待队列</strong>，每当有分区空闲时，就从队首依次搜索分区长度能够容纳的作业以便装入执行；为了防止小作业占用大分区，也可以搜索<strong>分区长度能够容纳的最大作业</strong>装入执行</li>
 </ul>
-
+<h4 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h4><p>优点：</p>
+<ul>
+<li>实现简单，对于程序大小和出现频率已知的情形还是比较合适的</li>
+<li>解决单道程序运行在并发环境下不能与CPU速度匹配的问题</li>
+<li>解决了单道程序运行时内存空间利用率低的问题</li>
+</ul>
+<p>缺点：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/10/24/7ctDUWL4kFdGoBe.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
         </div>
 
         <blockquote class="post-copyright">
@@ -340,7 +354,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-10-24T01:35:44.180Z" itemprop="dateUpdated">2019-10-24 09:35:44</time>
+    Last updated: <time datetime="2019-10-24T01:51:45.876Z" itemprop="dateUpdated">2019-10-24 09:51:45</time>
 </span><br>
 
 
@@ -506,7 +520,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">
