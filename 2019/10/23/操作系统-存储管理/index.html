@@ -54,7 +54,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/10/25/zn2u17CGlWJvyN3.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/25/JRcqrm2G6uM7UWT.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/25/zIWV6LArS1TgpcR.png">
-<meta property="og:updated_time" content="2019-10-25T02:02:06.079Z">
+<meta property="og:updated_time" content="2019-10-25T02:03:19.727Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统-存储管理">
 <meta name="twitter:description" content="存储管理 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著   内存空间一般分为两部分：  系统区：存放操作系统内核程序和数据结构等 用户区：存放应用程序和数据  有效的存储管理也是多道程序设计技术的关键支撑，存储管理包含以下功能：">
@@ -515,7 +515,7 @@
 <li><p>页表（如下一小节）</p>
 </li>
 </ul>
-<h4 id="页表"><a href="#页表" class="headerlink" title="页表"></a>页表</h4><p>在进行内存分配时以页框为单位，进程信息有多少页，那么把它装入内存时就分配多少页框，其中进程的逻辑地址是划分成编号连续的页面的，而装入内存的页框却未必相连。</p>
+<h4 id="页表"><a href="#页表" class="headerlink" title="页表"></a>页表</h4><p>在进行内存分配时以页框为单位，进程信息有多少页，那么把它装入内存时就分配多少页框，其中进程的逻辑地址是划分成编号连续的页面的，而装入内存的页框却未必相连。每个</p>
 <p>（1）页面与被分配的页框如何建立联系？</p>
 <p><strong>页表</strong>是操作系统为进程建立的，是程序页面和内存页框的对照表，页表中的每一栏指明程序中的一个页面和分得页框之间的对应关系。</p>
 <p>为了减少系统开销，操作系统在内存中开辟存储区（软件）存放进程页表，另外设置页表寄存器（硬件）来存放当前运行进程的页表起始地址，以加快地址转换速度。</p>
@@ -550,7 +550,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-10-25T02:02:06.079Z" itemprop="dateUpdated">2019-10-25 10:02:06</time>
+    Last updated: <time datetime="2019-10-25T02:03:19.727Z" itemprop="dateUpdated">2019-10-25 10:03:19</time>
 </span><br>
 
 
