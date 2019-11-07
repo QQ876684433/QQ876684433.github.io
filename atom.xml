@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://QQ876684433.github.io/"/>
-  <updated>2019-10-29T05:58:51.348Z</updated>
+  <updated>2019-11-07T06:37:29.624Z</updated>
   <id>http://QQ876684433.github.io/</id>
   
   <author>
@@ -15,6 +15,47 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>NASM学习记录</title>
+    <link href="http://QQ876684433.github.io/2019/11/07/NASM%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+    <id>http://QQ876684433.github.io/2019/11/07/NASM学习记录/</id>
+    <published>2019-11-07T06:34:04.000Z</published>
+    <updated>2019-11-07T06:37:29.624Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="NASM学习记录"><a href="#NASM学习记录" class="headerlink" title="NASM学习记录"></a>NASM学习记录</h1><h2 id="零散知识点"><a href="#零散知识点" class="headerlink" title="零散知识点"></a>零散知识点</h2><h3 id="NASM汇编程序中的宏定义"><a href="#NASM汇编程序中的宏定义" class="headerlink" title="NASM汇编程序中的宏定义"></a>NASM汇编程序中的宏定义</h3><p>NASM汇编程序中的宏定义的格式如下:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">%macro 宏名 参数名列表 </span><br><span class="line">宏体</span><br><span class="line">%endmacro</span><br></pre></td></tr></table></figure><p>例如：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">%macro Descriptor 3</span><br><span class="line">dw %2 &amp; 0FFFFh </span><br><span class="line">dw %1 &amp; 0FFFFh </span><br><span class="line">db (%1 &gt;&gt; 16) &amp; 0FFh </span><br><span class="line">dw ((%2 &gt;&gt; 8) &amp; 0F00h) | (%3 &amp; 0F0FFh) </span><br><span class="line">db (%1 &gt;&gt; 24) &amp; 0FFh </span><br><span class="line">%endmacro ; 共 8 字节</span><br></pre></td></tr></table></figure><p>这个宏定义了操作系统中描述符的格式，宏名为：Descriptor 。使用时只需定义：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Descriptor 参数1, 参数2, 参数3</span><br></pre></td></tr></table></figure><p>即可。其中宏定义中的%1代表参数1，%2代表参数2，%3代表参数3</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;NASM学习记录&quot;&gt;&lt;a href=&quot;#NASM学习记录&quot; class=&quot;headerlink&quot; title=&quot;NASM学习记录&quot;&gt;&lt;/a&gt;NASM学习记录&lt;/h1&gt;&lt;h2 id=&quot;零散知识点&quot;&gt;&lt;a href=&quot;#零散知识点&quot; class=&quot;headerlink
+      
+    
+    </summary>
+    
+      <category term="汇编" scheme="http://QQ876684433.github.io/categories/%E6%B1%87%E7%BC%96/"/>
+    
+    
+      <category term="汇编" scheme="http://QQ876684433.github.io/tags/%E6%B1%87%E7%BC%96/"/>
+    
+      <category term="NASM" scheme="http://QQ876684433.github.io/tags/NASM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据库课堂笔记（2019-11-05）</title>
+    <link href="http://QQ876684433.github.io/2019/11/05/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0%EF%BC%882019-11-05%EF%BC%89/"/>
+    <id>http://QQ876684433.github.io/2019/11/05/数据库课堂笔记（2019-11-05）/</id>
+    <published>2019-11-05T06:00:53.000Z</published>
+    <updated>2019-11-05T06:00:53.384Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>数据库课堂笔记（2019-10-29）</title>
@@ -516,50 +557,6 @@
     <updated>2019-09-21T02:50:12.234Z</updated>
     
     <content type="html"><![CDATA[<h1 id="数据库课堂笔记"><a href="#数据库课堂笔记" class="headerlink" title="数据库课堂笔记"></a>数据库课堂笔记</h1><blockquote><p>参考资料：</p><ul><li>南大软件学院课程《数据管理基础》课程资料</li><li>《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著</li><li>《数据库系统概论》第五版 - 王珊 萨师煊 著</li><li>《数据库系统概念》</li></ul></blockquote><h2 id="数据库课堂笔记（2019-09-12）"><a href="#数据库课堂笔记（2019-09-12）" class="headerlink" title="数据库课堂笔记（2019-09-12）"></a>数据库课堂笔记（2019-09-12）</h2><h3 id="Ch2-The-Relational-Model"><a href="#Ch2-The-Relational-Model" class="headerlink" title="Ch2. The Relational Model"></a>Ch2. The Relational Model</h3><h4 id="关系代数（Relational-Algebra）"><a href="#关系代数（Relational-Algebra）" class="headerlink" title="关系代数（Relational Algebra）"></a>关系代数（Relational Algebra）</h4><h5 id="自然关系运算"><a href="#自然关系运算" class="headerlink" title="自然关系运算"></a>自然关系运算</h5><ul><li><p><strong>连接（等值连接，自然连接，JOIN）</strong></p><blockquote><p>其作用是： 根据两个关系中的<strong>同名属性的相等比较</strong>， 来实现两个关系的合并；可以表示为 <code>R join S</code> 或者 <code>R ∞ S</code></p></blockquote><p><img src="https://i.loli.net/2019/09/18/uBaTPweGtvfmRqx.png" alt></p><p>如果R和S的同名属性为B1和B2，那么这里的<code>R ∞ S</code>相当于：<code>((R × S) where R.B1 = S.B1 and R.B2 = S.B2 ) [R.A, R.B1, R.B2, S.C]</code>。注意与<code>R × S</code>的区别：<code>R × S</code>没有进行任何同名属性的比较，只是单纯进行笛卡尔积，并且新的表的表头是原来两个表的表头的拼接。</p><p><img src="https://i.loli.net/2019/09/18/12rtzW58wGhNulb.png" alt></p><blockquote><p>If Head(R) ∩ Head(S) = ∅ , then R ∞ S = R x S<br>If Head(R) = Head(S) , then R ∞ S = R ∩ S<br>If Head(R) is subset of Head(S) , then R ∞ S is subset of S</p></blockquote><p>乘积和连接运算满足交换律和结合律：</p><blockquote><p>1) R x S = S x R<br>2) R ∞ S = S ∞ R</p><p>3) (R x S) x T = R x (S x T)<br>4) (R ∞ S) ∞ T = R ∞ (S ∞ T)</p></blockquote></li><li><p><strong>除法（Division）</strong></p><p><img src="https://i.loli.net/2019/09/21/OEMaNngviY7hzc3.png" alt></p><p>注意T：<strong>the largest possible set</strong></p><p>除法有如下性质：</p><p><img src="https://i.loli.net/2019/09/21/J2BwGknFYygq6HP.png" alt></p><p>使用除法操作的场景：可以使用除法<code>division</code>运算来回答使用<strong>关键词”All、所有”</strong>的问题</p><p><img src="https://i.loli.net/2019/09/21/BP3o17HCT4hvKDr.png" alt></p><p>（1）对PRODUCTS进行投影操作PRODUCTS[pid]的原因：除数的列集合必须是被除数的列集合的子集</p><p>（2）为什么要对ORDERS在cid、pid上进行投影：因为我们最终想要的结果只需要cid的集合，因此其他属性不需要投影，而pid在进行除法运算后就没了</p></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;数据库课堂笔记&quot;&gt;&lt;a href=&quot;#数据库课堂笔记&quot; class=&quot;headerlink&quot; title=&quot;数据库课堂笔记&quot;&gt;&lt;/a&gt;数据库课堂笔记&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;参考资料：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;南大软件学院课程《数据管理基础》课程
-      
-    
-    </summary>
-    
-      <category term="数据库" scheme="http://QQ876684433.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-      <category term="笔记" scheme="http://QQ876684433.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="数据库" scheme="http://QQ876684433.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>152.乘积最大子序列</title>
-    <link href="http://QQ876684433.github.io/2019/09/10/152-%E4%B9%98%E7%A7%AF%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%88%97/"/>
-    <id>http://QQ876684433.github.io/2019/09/10/152-乘积最大子序列/</id>
-    <published>2019-09-10T03:38:00.000Z</published>
-    <updated>2019-09-15T05:02:14.662Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>数据库课堂笔记（2019-09-10）</title>
-    <link href="http://QQ876684433.github.io/2019/09/10/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0%EF%BC%882019-09-10%EF%BC%89/"/>
-    <id>http://QQ876684433.github.io/2019/09/10/数据库课堂笔记（2019-09-10）/</id>
-    <published>2019-09-10T03:25:09.000Z</published>
-    <updated>2019-09-17T14:22:52.096Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="数据库课堂笔记"><a href="#数据库课堂笔记" class="headerlink" title="数据库课堂笔记"></a>数据库课堂笔记</h1><blockquote><p>参考资料：</p><ul><li>南大软件学院课程《数据管理基础》课程资料</li><li>《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著</li><li>《数据库系统概论》第五版 - 王珊 萨师煊 著</li><li>《数据库系统概念》</li></ul></blockquote><h2 id="数据库课堂笔记（2019-09-10）"><a href="#数据库课堂笔记（2019-09-10）" class="headerlink" title="数据库课堂笔记（2019-09-10）"></a>数据库课堂笔记（2019-09-10）</h2><h3 id="Ch2-The-Relational-Model"><a href="#Ch2-The-Relational-Model" class="headerlink" title="Ch2. The Relational Model"></a>Ch2. The Relational Model</h3><h4 id="键、超键和空值（Keys，Superkeys，and-Null-Values）"><a href="#键、超键和空值（Keys，Superkeys，and-Null-Values）" class="headerlink" title="键、超键和空值（Keys，Superkeys，and Null Values）"></a>键、超键和空值（Keys，Superkeys，and Null Values）</h4><h5 id="键（Keys）"><a href="#键（Keys）" class="headerlink" title="键（Keys）"></a>键（Keys）</h5><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/09/15/oAfCMukbUgwaRxv.png" alt title>                </div>                <div class="image-caption"></div>            </figure><p>条件1说明了任意一行u在属性集K上的值是唯一的；<strong>表可能具有不止一个键</strong>；关系规则3保证了所有列的集合可以唯一区分任意两行，因此<strong>关系中至少存在一个键</strong></p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/09/15/meGc57MyshgdLJ9.png" alt title>                </div>                <div class="image-caption"></div>            </figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/09/15/RzwquBxEKGfOMIn.png" alt title>                </div>                <div class="image-caption"></div>            </figure><h5 id="超键（Superkeys）"><a href="#超键（Superkeys）" class="headerlink" title="超键（Superkeys）"></a>超键（Superkeys）</h5><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/09/15/S3cbnm4Kv1Q9qaG.png" alt title>                </div>                <div class="image-caption"></div>            </figure><p>属性集是不是键或者超键，取决于“设计者的意图”，有时候某些属性集在特定时刻它满足条件1，但是可能随着时间的改变，很有可能不再满足该条件，这样的属性集不是键或者超键</p><p><strong>空集既不是超键也不是键</strong>，因为属性集为空集时无法唯一确定某一行，因为所有行在空集上的取值都是空集</p><h5 id="候选键和主键（Candidate-Key-amp-Primary-Key）"><a href="#候选键和主键（Candidate-Key-amp-Primary-Key）" class="headerlink" title="候选键和主键（Candidate Key &amp; Primary Key）"></a>候选键和主键（Candidate Key &amp; Primary Key）</h5><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/09/15/46FHld1hWT7RkrV.png" alt title>                </div>                <div class="image-caption"></div>            </figure><ul><li><p>主键是数据库设计者从候选键中选择出来，用来唯一确定数据表某一行的键</p><p><img src="https://i.loli.net/2019/09/15/igh9kcW6peAYPBF.png" alt></p></li><li><p>它有可能被其他表用来作为<strong>对当前表特定行的引用</strong>来使用</p><p><img src="https://i.loli.net/2019/09/15/KgdHEksYv37O1fA.png" alt></p></li></ul><h5 id="空值（Null-Values）"><a href="#空值（Null-Values）" class="headerlink" title="空值（Null Values）"></a>空值（Null Values）</h5><ul><li><p>空值应该被解释为<strong>未知的或者尚未定义的</strong>，意思是当我们<strong>以后知道更多情况的时候会重新填写该值。</strong></p><blockquote><p>A null value is placed in a field of a table when a specific value is either <strong>unknown or inappropriate</strong>.</p></blockquote></li><li><p>要注意的是：<u>空值和数字0（对于数值属性）或者是空串（对于字符串属性）是不同的</u></p></li><li><p><strong>主键不能包含空值</strong>，因为表的主键是唯一区分表的单独行的，在还没确定主键的值之前，该行是不允许被存储到数据表中的</p><p><img src="https://i.loli.net/2019/09/15/jYNURDvFofVLiq6.png" alt></p><p>实体完整性规则与3NF等价</p></li><li><p><strong>空值无法与任何非空值进行比较</strong>，用属性的非空值作为条件进行查询，永远也无法查询到该属性为空值的所在行</p></li></ul><h4 id="关系代数（Relational-Algebra）"><a href="#关系代数（Relational-Algebra）" class="headerlink" title="关系代数（Relational Algebra）"></a>关系代数（Relational Algebra）</h4><p>关系代数可以看作根据查询结果来生成新表的方法的集合，这些方法称为<strong>关系代数运算</strong>。</p><p>关系代数的运算分为两种类型：</p><ul><li><p><strong>集合论运算</strong>：以行为元素单位进行的集合运算</p><p><img src="https://i.loli.net/2019/09/17/13qwasP9bMj8XuW.png" alt></p></li><li><p><strong>自然关系运算</strong>：基于行的结构的运算</p><p><img src="https://i.loli.net/2019/09/17/orM4PlgVREWiFK9.png" alt></p></li></ul><h5 id="相容表（兼容表）"><a href="#相容表（兼容表）" class="headerlink" title="相容表（兼容表）"></a><strong>相容表（兼容表）</strong></h5><p>当表R和S有相同的表头（表标题），那么表R和表S是相容表，即：</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/09/17/JmI3rojPadZEAs6.png" alt title>                </div>                <div class="image-caption"></div>            </figure><p>相同的表头的含义：相同数量的属性、属性对的域相同、属性对有相同的名字</p><p>ps：关系型数据库中，两列有相同的含义意思是<strong>他们有相同的列名（属性名）</strong>；同时<strong>属性集是无序</strong>的，因此两个数据表的表头中属性顺序不一致，并不影响它们是相容表</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/09/17/KlgNfBErdzQ1oSk.png" alt title>                </div>                <div class="image-caption"></div>            </figure><h5 id="交、并、差"><a href="#交、并、差" class="headerlink" title="交、并、差"></a><strong>交、并、差</strong></h5><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/09/17/3nQBH1dKpTbiy8f.png" alt title>                </div>                <div class="image-caption"></div>            </figure><p>并（UNION）和交（INTERACTION）是满足<strong>交换律</strong>和<strong>结合律</strong>的；差（DIFFERENCE）不满足<strong>交换律</strong></p><h5 id="赋值、别名"><a href="#赋值、别名" class="headerlink" title="赋值、别名"></a><strong>赋值、别名</strong></h5><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/09/17/i8kaOMNA1heVzu2.png" alt title>                </div>                <div class="image-caption"></div>            </figure><p>S为表R的别名，简写为<code>S:=R</code>，通常用于：“关系自身的连接运算”、用来保存计算的“中间结果”。</p><h5 id="乘积运算（R×S）"><a href="#乘积运算（R×S）" class="headerlink" title="乘积运算（R×S）"></a><strong>乘积运算（R×S）</strong></h5><p>乘积运算是基于集合运算中的笛卡尔积的，它可以允许我们建立一个包含两个表中行之间所有可能的相互联系的新表。</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/09/17/UbSqeLfFAyH1wxO.png" alt title>                </div>                <div class="image-caption"></div>            </figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/09/17/eLwW2dxrtYy5sKk.png" alt title>                </div>                <div class="image-caption"></div>            </figure><p>我们可以使用相对较小的表来构造大表，例如1000行的表的积可以有100万行</p><p>当要计算表与自身的乘积时，会存在限定符名重复的问题，例如乘积R×R是不允许的，我们<strong>可以通过使用表的别名来避免</strong>，例如S:=R，那么R与自身的乘积可以表示为：R×S</p><h5 id="自然关系运算"><a href="#自然关系运算" class="headerlink" title="自然关系运算"></a>自然关系运算</h5><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/09/17/E3XRvUaQdhzOAmi.png" alt title>                </div>                <div class="image-caption"></div>            </figure><p>用关系代数表达式回答用自然语言表达的对数据的查询要求，我们称这样的表达式为<strong>关系代数查询</strong>，简称为查询</p><ul><li><p><strong>投影运算（project）</strong></p><p><img src="https://i.loli.net/2019/09/17/u9waNYiOZhQ4ARj.png" alt></p><p><img src="https://i.loli.net/2019/09/17/COaoQDtgiY9Sb8e.png" alt></p><p>投影运算实际上是在表中选择列的运算，运算结果其实是新的表，因此它会<strong>将重复的行删除</strong>，以保证任意两行是不一样的</p></li><li><p><strong>选择运算（selection）</strong></p><p>从给定的表中选择出满足特定准则的行来构成新的表</p><p><img src="https://i.loli.net/2019/09/17/oyprhnLcR7Y2JtQ.png" alt></p><ul><li><p>C是比较表达式，比较符号有：<code>&lt;, &gt;, =, &lt;=, &gt;=, 和&lt;&gt;</code>，其中<code>&lt;&gt;</code>为不等符号，类似于<code>!=</code></p></li><li><p>如果比较的条件中有字符常量，那么要使用引号，例如<code>city=&#39;Dallas&#39;</code>，其中字符常量是按照字典顺序来比较的</p></li><li><p>比较条件可以是复合表达式，例如<code>C AND C&#39;</code>等</p><p><img src="https://i.loli.net/2019/09/17/k7g5TqnPr6dHlFs.png" alt></p></li></ul><p>进行选择运算时要避免<strong>内容依赖</strong>的问题：即对于某个特定时刻表的内容，两个查询结果相同还不足以保证这两个查询表达式是等价的，他们必须要求对于所有可能的表的内容都给出相同的结果</p></li><li><p>关系代数的优先级</p><p><img src="https://i.loli.net/2019/09/17/K2vSMUuGefiLXb6.png" alt></p></li></ul>]]></content>
     
     <summary type="html">
     
