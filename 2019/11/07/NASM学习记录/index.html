@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
 <meta property="og:description" content="NASM学习记录零散知识点NASM汇编程序中的宏定义NASM汇编程序中的宏定义的格式如下: 123%macro 宏名 参数名列表 宏体%endmacro  例如： 1234567%macro Descriptor 3dw %2 &amp;amp; 0FFFFh dw %1 &amp;amp; 0FFFFh db (%1 &amp;gt;&amp;gt; 16) &amp;amp; 0FFh dw ((%2 &amp;gt;&amp;gt; 8) &amp;am">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-11-07T07:26:13.327Z">
+<meta property="og:updated_time" content="2019-11-07T08:19:31.971Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NASM学习记录">
 <meta name="twitter:description" content="NASM学习记录零散知识点NASM汇编程序中的宏定义NASM汇编程序中的宏定义的格式如下: 123%macro 宏名 参数名列表 宏体%endmacro  例如： 1234567%macro Descriptor 3dw %2 &amp;amp; 0FFFFh dw %1 &amp;amp; 0FFFFh db (%1 &amp;gt;&amp;gt; 16) &amp;amp; 0FFh dw ((%2 &amp;gt;&amp;gt; 8) &amp;am">
@@ -167,7 +167,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#NASM学习记录"><span class="post-toc-number">1.</span> <span class="post-toc-text">NASM学习记录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#零散知识点"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">零散知识点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#NASM汇编程序中的宏定义"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">NASM汇编程序中的宏定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#EQU指令"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">EQU指令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#伪指令"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text">伪指令=</span></a></li></ol></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#NASM学习记录"><span class="post-toc-number">1.</span> <span class="post-toc-text">NASM学习记录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#零散知识点"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">零散知识点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#NASM汇编程序中的宏定义"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">NASM汇编程序中的宏定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#EQU指令"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">EQU指令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#伪指令"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text">伪指令=</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LGDT指令"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">LGDT指令</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -220,6 +220,35 @@
 <p>　　这表示，开始把符号名EMP定义为是数值7，后来把符号名EMP重新定义为代表数值9。但是不能写成：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">EMP EQU 7</span><br><span class="line"></span><br><span class="line">┋</span><br><span class="line"></span><br><span class="line">EMP EQU EMP+2</span><br></pre></td></tr></table></figure>
 
+<h3 id="LGDT指令"><a href="#LGDT指令" class="headerlink" title="LGDT指令"></a>LGDT指令</h3><blockquote>
+<p>原文：<a href="http://www.hgy413.com/hgydocs/IA32/instruct32_hh/vc155.htm" target="_blank" rel="noopener">http://www.hgy413.com/hgydocs/IA32/instruct32_hh/vc155.htm</a></p>
+</blockquote>
+<p>LGDT/LIDT - 用于加载全局/中断描述符表格寄存器</p>
+<table>
+<thead>
+<tr>
+<th>操作码</th>
+<th>指令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0F 01 /2</td>
+<td>LGDT <strong>m16&amp;32</strong></td>
+<td>将 <strong>m</strong> 加载到 GDTR</td>
+</tr>
+<tr>
+<td>0F 01 /3</td>
+<td>LIDT <strong>m16&amp;32</strong></td>
+<td>将 <strong>m</strong> 加载到 IDTR</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>将源操作数中的值加载到全局描述符表格寄存器 (GDTR) 或中断描述符表格寄存器 (IDTR)。源操作数指定 6 字节内存位置，它包含全局描述符表格 (GDT) 或中断描述符表格 (IDT) 的基址（线性地址）与限制（表格大小，以字节计）。如果操作数大小属性是 32 位，则将 16 位限制（6 字节数据操作数的 2 个低位字节）与 32 位基址（数据操作数的 4 个高位字节）加载到寄存器。如果操作数大小属性是 16 位，则加载 16 位限制（2 个低位字节）与 24 位基址（第三、四、五字节）。这里，不使用操作数的高位字节，GDTR 或 IDTR 中基址的高位字节用零填充。</p>
+</li>
+<li><p>LGDT 与 LIDT 指令仅用在操作系统软件中；它们不用在应用程序中。在保护模式中，它们是仅有的能够直接加载线性地址（即，不是段相对地址）与限制的指令。它们通常在实地址模式中执行，以便处理器在切换到保护模式之前进行初始化。</p>
+</li>
+</ul>
 
         </div>
 
@@ -228,7 +257,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-11-07T07:26:13.327Z" itemprop="dateUpdated">2019-11-07 15:26:13</time>
+    Last updated: <time datetime="2019-11-07T08:19:31.971Z" itemprop="dateUpdated">2019-11-07 16:19:31</time>
 </span><br>
 
 
