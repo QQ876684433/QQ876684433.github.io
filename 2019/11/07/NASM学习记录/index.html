@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
 <meta property="og:description" content="NASM学习记录零散知识点NASM汇编程序中的宏定义NASM汇编程序中的宏定义的格式如下: 123%macro 宏名 参数名列表 宏体%endmacro  例如： 1234567%macro Descriptor 3dw %2 &amp;amp; 0FFFFh dw %1 &amp;amp; 0FFFFh db (%1 &amp;gt;&amp;gt; 16) &amp;amp; 0FFh dw ((%2 &amp;gt;&amp;gt; 8) &amp;am">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-11-07T06:37:29.624Z">
+<meta property="og:updated_time" content="2019-11-07T07:26:13.327Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NASM学习记录">
 <meta name="twitter:description" content="NASM学习记录零散知识点NASM汇编程序中的宏定义NASM汇编程序中的宏定义的格式如下: 123%macro 宏名 参数名列表 宏体%endmacro  例如： 1234567%macro Descriptor 3dw %2 &amp;amp; 0FFFFh dw %1 &amp;amp; 0FFFFh db (%1 &amp;gt;&amp;gt; 16) &amp;amp; 0FFh dw ((%2 &amp;gt;&amp;gt; 8) &amp;am">
@@ -167,7 +167,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#NASM学习记录"><span class="post-toc-number">1.</span> <span class="post-toc-text">NASM学习记录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#零散知识点"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">零散知识点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#NASM汇编程序中的宏定义"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">NASM汇编程序中的宏定义</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#NASM学习记录"><span class="post-toc-number">1.</span> <span class="post-toc-text">NASM学习记录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#零散知识点"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">零散知识点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#NASM汇编程序中的宏定义"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">NASM汇编程序中的宏定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#EQU指令"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">EQU指令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#伪指令"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text">伪指令=</span></a></li></ol></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -203,6 +203,23 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Descriptor 参数1, 参数2, 参数3</span><br></pre></td></tr></table></figure>
 
 <p>即可。其中宏定义中的%1代表参数1，%2代表参数2，%3代表参数3</p>
+<h3 id="EQU指令"><a href="#EQU指令" class="headerlink" title="EQU指令"></a>EQU指令</h3><blockquote>
+<p>原文链接：<a href="https://blog.csdn.net/liukun321/article/details/5549023" target="_blank" rel="noopener">https://blog.csdn.net/liukun321/article/details/5549023</a></p>
+</blockquote>
+<p>有时，一个表达式在程序中会多次出现，重复书写可能较为繁杂，易出错。另一方面。如果要对该表达式进行变动，那么必须在程序中找到每一个表达式，一一做出修改，稍有不慎，就会遗漏，引出麻烦。利用EQU伪指令，就可以避免这些问题的发生。</p>
+<p>$$<br>格式：&lt;符号名&gt; EQU &lt;表达式&gt;<br>$$<br>　　该伪指令的含义是为EQU后面的&lt;表达式&gt;起一个叫做&lt;符号名&gt;的名字。这样一来，程序中凡是需要用到该表达式的地方，就都可以用这个名字代替了。这里，&lt;表达式&gt;可以是任何有效的数据，可以是能够算出值的表达式，也可以是有效的助记符等。</p>
+<p>　　例 <code>COUNT EQU 256</code></p>
+<p>　　表示赋予数256一个名字，叫做COUNT。</p>
+<p>　　<code>VAR1 EQU COUNT-2</code></p>
+<p>　　表示赋予表达式COUNT-2一个名字，叫做VAR1。如果有<code>COUNT EQU 256</code>在先，那么由于COUNT是数值256，所以VAR1就代表数值254。</p>
+<p>　　<code>PH EQU PUSH</code></p>
+<p>　　表示赋予PUSH一个名字PH。由于PUSH是汇编语言的一个助记符，因此，在程序中书写<code>PH AX</code>，就相当于 <code>PUSH AX</code>。</p>
+<h4 id="伪指令"><a href="#伪指令" class="headerlink" title="伪指令="></a>伪指令=</h4><p>　　与EQU伪指令类似的是等号伪指令“=”。它们的区别是：由EQU伪指令定义后的符号名是不能重复再定义的，而“=”伪指令中定义的符号名可重复定义。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">EMP=7</span><br><span class="line"></span><br><span class="line">┋</span><br><span class="line"></span><br><span class="line">EMP=EMP+2</span><br></pre></td></tr></table></figure>
+
+<p>　　这表示，开始把符号名EMP定义为是数值7，后来把符号名EMP重新定义为代表数值9。但是不能写成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">EMP EQU 7</span><br><span class="line"></span><br><span class="line">┋</span><br><span class="line"></span><br><span class="line">EMP EQU EMP+2</span><br></pre></td></tr></table></figure>
+
 
         </div>
 
@@ -211,7 +228,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-11-07T06:37:29.624Z" itemprop="dateUpdated">2019-11-07 14:37:29</time>
+    Last updated: <time datetime="2019-11-07T07:26:13.327Z" itemprop="dateUpdated">2019-11-07 15:26:13</time>
 </span><br>
 
 
