@@ -14,25 +14,25 @@
     
     
     
-    <title>J.U.C-深入理解ConcurrentHashMap原理 | 至繁归于至简 - chph&#39;s blog | steve_chph personal website</title>
+    <title>linux下制作ext4文件系统镜像 | 至繁归于至简 - chph&#39;s blog | steve_chph personal website</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content>
-    <meta name="description" content="the blog website of steve_chph, steve_chph的个人博客网站">
-<meta name="keywords" content="blog, chph, steve, steve_chph, 博客, 至繁归于至简">
+    <meta name="keywords" content="linux,ext4">
+    <meta name="description" content="linux下制作ext4文件系统镜像 由于网上的资料基本上都是一样的，大家抄来抄去，找不到最初的原作者，所以也没法在这里给出原文作者，但是声明一下，以下内容是转载自网络的  步骤如下：  生成一个空的2MiB文件 dd if=/dev/zero of=rootfs.ext4 bs=1024 count=2048 (指定每一块大小为1024字节，一共又2048块，那么就是2048 * 1024 B">
+<meta name="keywords" content="linux,ext4">
 <meta property="og:type" content="article">
-<meta property="og:title" content="J.U.C-深入理解ConcurrentHashMap原理">
-<meta property="og:url" content="http://QQ876684433.github.io/2019/08/09/J-U-C-深入理解ConcurrentHashMap原理/index.html">
+<meta property="og:title" content="linux下制作ext4文件系统镜像">
+<meta property="og:url" content="http://QQ876684433.github.io/2019/11/07/linux下制作ext4文件系统镜像/index.html">
 <meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
-<meta property="og:description" content="the blog website of steve_chph, steve_chph的个人博客网站">
+<meta property="og:description" content="linux下制作ext4文件系统镜像 由于网上的资料基本上都是一样的，大家抄来抄去，找不到最初的原作者，所以也没法在这里给出原文作者，但是声明一下，以下内容是转载自网络的  步骤如下：  生成一个空的2MiB文件 dd if=/dev/zero of=rootfs.ext4 bs=1024 count=2048 (指定每一块大小为1024字节，一共又2048块，那么就是2048 * 1024 B">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-09-15T05:02:14.662Z">
+<meta property="og:updated_time" content="2019-11-07T15:52:13.718Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="J.U.C-深入理解ConcurrentHashMap原理">
-<meta name="twitter:description" content="the blog website of steve_chph, steve_chph的个人博客网站">
+<meta name="twitter:title" content="linux下制作ext4文件系统镜像">
+<meta name="twitter:description" content="linux下制作ext4文件系统镜像 由于网上的资料基本上都是一样的，大家抄来抄去，找不到最初的原作者，所以也没法在这里给出原文作者，但是声明一下，以下内容是转载自网络的  步骤如下：  生成一个空的2MiB文件 dd if=/dev/zero of=rootfs.ext4 bs=1024 count=2048 (指定每一块大小为1024字节，一共又2048块，那么就是2048 * 1024 B">
     
         <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
     
@@ -120,7 +120,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">J.U.C-深入理解ConcurrentHashMap原理</div>
+        <div class="flex-col header-title ellipsis">linux下制作ext4文件系统镜像</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -142,13 +142,15 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">J.U.C-深入理解ConcurrentHashMap原理</h1>
+        <h1 class="title">linux下制作ext4文件系统镜像</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-08-09T04:21:56.000Z" itemprop="datePublished" class="page-time">
-  2019-08-09
+                <time datetime="2019-11-07T15:47:51.000Z" itemprop="datePublished" class="page-time">
+  2019-11-07
 </time>
 
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux/">linux</a></li></ul>
 
             
         </h5>
@@ -162,16 +164,25 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#linux下制作ext4文件系统镜像"><span class="post-toc-number">1.</span> <span class="post-toc-text">linux下制作ext4文件系统镜像</span></a></li></ol>
+        </nav>
+    </aside>
 
-<article id="post-J-U-C-深入理解ConcurrentHashMap原理"
+
+<article id="post-linux下制作ext4文件系统镜像"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">J.U.C-深入理解ConcurrentHashMap原理</h1>
+        <h1 class="post-card-title">linux下制作ext4文件系统镜像</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-08-09 12:21:56" datetime="2019-08-09T04:21:56.000Z"  itemprop="datePublished">2019-08-09</time>
+            <time class="post-time" title="2019-11-07 23:47:51" datetime="2019-11-07T15:47:51.000Z"  itemprop="datePublished">2019-11-07</time>
 
             
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux/">linux</a></li></ul>
+
 
 
             
@@ -182,7 +193,33 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            
+            <h1 id="linux下制作ext4文件系统镜像"><a href="#linux下制作ext4文件系统镜像" class="headerlink" title="linux下制作ext4文件系统镜像"></a>linux下制作ext4文件系统镜像</h1><blockquote>
+<p>由于网上的资料基本上都是一样的，大家抄来抄去，找不到最初的原作者，所以也没法在这里给出原文作者，但是声明一下，以下内容是转载自网络的</p>
+</blockquote>
+<p><strong>步骤如下</strong>：</p>
+<ol>
+<li><p>生成一个空的2MiB文件</p>
+<p><code>dd if=/dev/zero of=rootfs.ext4 bs=1024 count=2048</code> (指定每一块大小为1024字节，一共又2048块，那么就是2048 * 1024 B = 2MiB)</p>
+</li>
+<li><p>对生成的文件进行格式化</p>
+<p><code>mkfs.ext4 rootfs.ext4</code></p>
+</li>
+<li><p>挂载此空镜像</p>
+<p><code>mount -o loop rootfs.ext4 /mnt</code></p>
+</li>
+<li><p>向挂载好的文件系统中写入需要加入的文件</p>
+<p><code>cp everyfile /mnt</code></p>
+</li>
+<li><p>卸载根文件系统(意味着镜像已经制作完成)</p>
+<p><code>umount /mnt</code></p>
+</li>
+<li><p>将镜像写入sd卡的某个分区中</p>
+<p><code>dd if=rootfs.ext4 of=/dev/mmcblk0p3</code></p>
+</li>
+<li><p>此时挂载一下sd卡的某分区即可在发现刚才复制进去的文件</p>
+</li>
+</ol>
+
         </div>
 
         <blockquote class="post-copyright">
@@ -190,12 +227,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-09-15T05:02:14.662Z" itemprop="dateUpdated">2019-09-15 13:02:14</time>
+    最后更新时间：<time datetime="2019-11-07T15:52:13.718Z" itemprop="dateUpdated">2019-11-07 23:52:13</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/08/09/J-U-C-深入理解ConcurrentHashMap原理/" target="_blank" rel="external">http://QQ876684433.github.io/2019/08/09/J-U-C-深入理解ConcurrentHashMap原理/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/11/07/linux下制作ext4文件系统镜像/" target="_blank" rel="external">http://QQ876684433.github.io/2019/11/07/linux下制作ext4文件系统镜像/</a>
         
     </div>
     
@@ -216,6 +253,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ext4/">ext4</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
 
             
 <div class="page-share-wrap">
@@ -224,7 +263,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/08/09/J-U-C-深入理解ConcurrentHashMap原理/&title=《J.U.C-深入理解ConcurrentHashMap原理》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/11/07/linux下制作ext4文件系统镜像/&title=《linux下制作ext4文件系统镜像》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -234,22 +273,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/08/09/J-U-C-深入理解ConcurrentHashMap原理/&title=《J.U.C-深入理解ConcurrentHashMap原理》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/11/07/linux下制作ext4文件系统镜像/&title=《linux下制作ext4文件系统镜像》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/08/09/J-U-C-深入理解ConcurrentHashMap原理/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/11/07/linux下制作ext4文件系统镜像/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《J.U.C-深入理解ConcurrentHashMap原理》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/08/09/J-U-C-深入理解ConcurrentHashMap原理/&via=http://QQ876684433.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《linux下制作ext4文件系统镜像》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/11/07/linux下制作ext4文件系统镜像/&via=http://QQ876684433.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/08/09/J-U-C-深入理解ConcurrentHashMap原理/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/11/07/linux下制作ext4文件系统镜像/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -269,21 +308,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2019/09/03/数据库课堂笔记（2019-09-03）/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">数据库课堂笔记（2019-09-03）</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2019/08/09/深入理解红黑树/" id="post-next" class="post-nav-link">
+      <a href="/2019/11/07/NASM学习记录/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">深入理解红黑树</h4>
+        <h4 class="title">NASM学习记录</h4>
       </a>
     </div>
   
@@ -383,7 +415,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/08/09/J-U-C-深入理解ConcurrentHashMap原理/&title=《J.U.C-深入理解ConcurrentHashMap原理》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/11/07/linux下制作ext4文件系统镜像/&title=《linux下制作ext4文件系统镜像》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -393,22 +425,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/08/09/J-U-C-深入理解ConcurrentHashMap原理/&title=《J.U.C-深入理解ConcurrentHashMap原理》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/11/07/linux下制作ext4文件系统镜像/&title=《linux下制作ext4文件系统镜像》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/08/09/J-U-C-深入理解ConcurrentHashMap原理/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/11/07/linux下制作ext4文件系统镜像/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《J.U.C-深入理解ConcurrentHashMap原理》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/08/09/J-U-C-深入理解ConcurrentHashMap原理/&via=http://QQ876684433.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《linux下制作ext4文件系统镜像》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/11/07/linux下制作ext4文件系统镜像/&via=http://QQ876684433.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/08/09/J-U-C-深入理解ConcurrentHashMap原理/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/11/07/linux下制作ext4文件系统镜像/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -419,7 +451,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrklEQVR42u3a0U4kMQwEQP7/p5fXk9Bk23a8cFLNE4JlkgpSEtr++oqf1z/P+TOT97x+PNX3Nx88PDy8wdSfBjh/5zytp8mdxzq/oTA6Hh4e3hoved2tPbk36eoS4OHh4f0d3nz4yUGCh4eH9z/yzuAkqkgWbn7txsPDw9vm5Rt9ElgkccY53r0WheDh4eEt8PJY4e98vVLfw8PDwxtX1fPrbF7mrx4no9ni4eHhLfB6zVJ5E8B8OfKw4/GTeHh4eFd5yUR7LVnVRRlt/U+Xbzw8PLwFXq+o3zs2clgS7FYPDDw8PLy7vLwtoNcu0Ctl5VftN/PBw8PDW+Dlpf3edp8X0m6FxXh4eHh7vHxbn7dY5YdNvmSj0hceHh7egHf+5clFthr1Vnf4QnSLh4eHd5U3CXarV+RJXFsOnfHw8PDWeL0AIi/554xqEPxm0fHw8PA+wssnerfhYN7yhYeHh/dJXj6V/KY6CWp7h035PwY8PDy8Fi8fprcE5daowRK8mS0eHh7eVV4OSyKASew7aeF6tODh4eGt8eZhQXUS1Wi493k8PDy8DV7e3tQMAoqtA/msqs1beHh4eHNefqm9dRhMQtvkDxClI3h4eHhjXm+bnly4q+NWFxcPDw9vj9fbsvMNeh5S9C7rjyk1Hh4e3gKv2giVMJKCVv5b5bYGPDw8vDVedbPuXZcngW/1p3h4eHjbvHzgHr58FY6fNwcMHh4e3lXeq/jkkUH1DZODp5xS4OHh4Q141c239+q8SHZeuELRCw8PD2+ZNzkMkkt272reCynw8PDwPsmrNgFsXItvnWaPKTUeHh7eL/Gq5a7qMs2Xe3Qw4OHh4S3w8gtxr73gXJwrl83w8PDw1niThqpkQtWC2a3mBjw8PLwN3q0iVnWAalEtD4Xx8PDw1njfjkhK3wb0i64AAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtElEQVR42u3aQW4cMQwEQP//0xsgpxy8425KtB2gdFqMJyOVDhJD8uMjHq+/4/yv7958/TPePX+e5Wjg4eHhjZb+brxbVvJOgsx/v3vyxRbg4eHhrfFmB/rsTG6vonwr8fDw8H4b7/lobkPt2Qbh4eHh/V+888C3zRXg4eHh/WZe8rn2oE9C6iTl8byV13IteHh4eDFvlhr42d+L9T08PDy8g6p6fuzmBaqTpEO9Tjw8PLwF3ixczpMRyRKTEtesGIaHh4e3wUsmOznQ8+atZLvrWfDw8PAWeLODO0/4zkLwpKxVfAEPDw/vKu/5n+UJgpPyVVvoyotneHh4eBu8JN2QJyPahoD8ejgJxPHw8PC+k3cyfZ4snjUQHF0SeHh4eAe8tuiVl/bzhMIsOI6uATw8PLw13t2yfZ4+aDelTj3g4eHhLfDakachZg0BbatB3V+Gh4eHd8y72zI1w7dPiqYEPDw8vDXebLn5smbXw3lxDg8PD2+Dl4S2betqHijn4XIepuPh4eFt806ugbYANmtQmL3zSUiNh4eHt8DLg9STgtl5Q0BeVMPDw8Pb4M0ap9ryf1tCS8LrYuV4eHh4C7xbIfKtJbYXRnJV4OHh4d3lJf/5bz+aXxInIXuU8MXDw8Nb47XTt+HytbC4bF/Aw8PD2+C1R3nbatBeP/mTItzHw8PDu8qbNQTkYfesnSsJr6OV4OHh4X0L7/yAbi+JWTojmhEPDw/vKu9VjpNA/CgVG2zKJ9/Hw8PDW+DdbQIo7qJyljZNvNLjgIeHh1cmWPP2qbbh4HnpF+bFw8PDW+OdtAKcXyGz96/lWvDw8PB+iNf+bhMTeePCysWAh4eHN+LNGqTyxO6sqeuLBC4eHh7eGu9uO1S7ZXkCoi7F4eHh4S3wzgtgbYJ1liZurxY8PDy8Bd4fB299gt2GSkkAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
