@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
 <meta property="og:description" content="NASM学习记录零散知识点NASM汇编程序中的宏定义NASM汇编程序中的宏定义的格式如下: 123%macro 宏名 参数名列表 宏体%endmacro  例如： 1234567%macro Descriptor 3dw %2 &amp;amp; 0FFFFh dw %1 &amp;amp; 0FFFFh db (%1 &amp;gt;&amp;gt; 16) &amp;amp; 0FFh dw ((%2 &amp;gt;&amp;gt; 8) &amp;am">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-11-15T10:00:56.040Z">
+<meta property="og:updated_time" content="2019-11-17T15:06:58.173Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NASM学习记录">
 <meta name="twitter:description" content="NASM学习记录零散知识点NASM汇编程序中的宏定义NASM汇编程序中的宏定义的格式如下: 123%macro 宏名 参数名列表 宏体%endmacro  例如： 1234567%macro Descriptor 3dw %2 &amp;amp; 0FFFFh dw %1 &amp;amp; 0FFFFh db (%1 &amp;gt;&amp;gt; 16) &amp;amp; 0FFh dw ((%2 &amp;gt;&amp;gt; 8) &amp;am">
@@ -167,7 +167,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#NASM学习记录"><span class="post-toc-number">1.</span> <span class="post-toc-text">NASM学习记录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#零散知识点"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">零散知识点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#NASM汇编程序中的宏定义"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">NASM汇编程序中的宏定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#EQU指令"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">EQU指令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#伪指令"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text">伪指令=</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LGDT指令"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">LGDT指令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CLD指令"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">CLD指令</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#NASM学习记录"><span class="post-toc-number">1.</span> <span class="post-toc-text">NASM学习记录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#零散知识点"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">零散知识点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#NASM汇编程序中的宏定义"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">NASM汇编程序中的宏定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#EQU指令"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">EQU指令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#伪指令"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text">伪指令=</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LGDT指令"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">LGDT指令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CLD指令"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">CLD指令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#DF标志-DF-flag"><span class="post-toc-number">1.1.4.1.</span> <span class="post-toc-text">DF标志(DF flag)</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LODS指令"><span class="post-toc-number">1.1.5.</span> <span class="post-toc-text">LODS指令</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -249,7 +249,33 @@
 <li><p>LGDT 与 LIDT 指令仅用在操作系统软件中；它们不用在应用程序中。在保护模式中，它们是仅有的能够直接加载线性地址（即，不是段相对地址）与限制的指令。它们通常在实地址模式中执行，以便处理器在切换到保护模式之前进行初始化。</p>
 </li>
 </ul>
-<h3 id="CLD指令"><a href="#CLD指令" class="headerlink" title="CLD指令"></a>CLD指令</h3>
+<h3 id="CLD指令"><a href="#CLD指令" class="headerlink" title="CLD指令"></a>CLD指令</h3><blockquote>
+<p>来源：<a href="https://c9x.me/x86/html/file_module_x86_id_29.html" target="_blank" rel="noopener">https://c9x.me/x86/html/file_module_x86_id_29.html</a></p>
+</blockquote>
+<p>CLD指令主要是用来清除EFLAGS寄存器中的DF标志位，即DF = 0，对其他标志位无影响</p>
+<h4 id="DF标志-DF-flag"><a href="#DF标志-DF-flag" class="headerlink" title="DF标志(DF flag)"></a>DF标志(DF flag)</h4><p>这个方向标志(位于EFLAGS寄存器的第10位)控制串指令(MOVS, CMPS, SCAS, LODS以及STOS)。设置DF标志使得串指令自动递减（从高地址向低地址方向处理字符串），<strong>清除该标志则使得串指令自动递增</strong>。STD以及CLD指令分别用于设置以及清除DF标志。</p>
+<blockquote>
+<p>When the DF flag is set to 0, string operations increment the index registers (ESI and/or EDI).</p>
+</blockquote>
+<p>即DF = 0时，字符串操作会自动递增索引寄存器ESI和/或EDI</p>
+<h3 id="LODS指令"><a href="#LODS指令" class="headerlink" title="LODS指令"></a>LODS指令</h3><blockquote>
+<p>来源：<a href="https://baike.baidu.com/item/LODS" target="_blank" rel="noopener">https://baike.baidu.com/item/LODS</a></p>
+</blockquote>
+<p>汇编语言串装入指令（load string），规定源操作数为(DS:SI)，目的操作数隐含为AL（字节）或AX（字）寄存器。三种指令都用于<strong>将目的操作数的内容取到AL或AX寄存器</strong>，字节还是字操作由寻址方式确定，并根据寻址方式自动修改SI的内容</p>
+<ul>
+<li>LODS SRC 语法格式： LODS SI ；DST隐含为AL（字节）或AX（字）</li>
+<li>LODSB ；字节操作，DST隐含为AL，SRC隐含为SI</li>
+<li>LODSW ；字操作， DST隐含为AX，SRC隐含为SI</li>
+</ul>
+<p>注意：不影响标志位，一般不带重复前缀</p>
+<p>执行的操作：</p>
+<ul>
+<li><p>（AL）←（DS:SI），（SI）←（SI）±1(字节)</p>
+</li>
+<li><p>（AX）←（DS:SI），（SI）←（SI）±2(字)</p>
+</li>
+</ul>
+
         </div>
 
         <blockquote class="post-copyright">
@@ -257,7 +283,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-11-15T10:00:56.040Z" itemprop="dateUpdated">2019-11-15 18:00:56</time>
+    Last updated: <time datetime="2019-11-17T15:06:58.173Z" itemprop="dateUpdated">2019-11-17 23:06:58</time>
 </span><br>
 
 
