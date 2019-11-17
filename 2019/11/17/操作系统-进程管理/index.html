@@ -35,7 +35,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/11/17/4P2OSBkyueYQmaR.png">
 <meta property="og:image" content="https://i.loli.net/2019/11/17/KsPmo4Qn3SlJLCG.png">
 <meta property="og:image" content="https://i.loli.net/2019/11/17/8OiGTFmI4pnJVME.png">
-<meta property="og:updated_time" content="2019-11-17T07:13:36.367Z">
+<meta property="og:updated_time" content="2019-11-17T07:31:57.724Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统-进程管理">
 <meta name="twitter:description" content="进程管理 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著   进程定义和属性定义 从原理角度看：进程是支持程序执行的一种系统机制，它对处理器上运行程序的活动规律进行抽象 从实现角度看：进程是一种数据结构，用来准确地刻画运行程序的状态和系统动态变化状况  操作系统有两个重要的特性：程序的并发性和资源的共享性。进程的概念既能描述程序的并发执行，又能共享系统的资源  程序的并发性   正因">
@@ -280,7 +280,7 @@
             </figure>
 
 <h4 id="七态模型"><a href="#七态模型" class="headerlink" title="七态模型"></a>七态模型</h4><ul>
-<li><p>新建态（new）</p>
+<li><p><strong>新建态（new）</strong></p>
 <p>新建态对应于进程被创建时的状态，尚未进入就绪队列（有时候根据系统性能要求或内存容量限制推迟新建态被调度执行）</p>
 <p>创建进程要通过两个步骤：</p>
 <ul>
@@ -288,7 +288,22 @@
 <li>然后设置该进程为就绪态，并等待被调度执行</li>
 </ul>
 </li>
-<li><p>终止态（exit）</p>
+<li><p><strong>终止态（exit）</strong></p>
+<p>进程完成任务到达正常结束点，或出现无法克服的错误而异常终止，或被操作系统及有终止权的进程所终止时所处的状态，<strong>处于终止态的进程不再被调度执行，下一步将被系统撤销，最终从系统中消失</strong></p>
+<p>进程终止要通过两个步骤：</p>
+<ul>
+<li>先等待操作系统或相关进程进行善后处理（如抽取信息）</li>
+<li>然后回收占用的资源并被系统删除</li>
+</ul>
+</li>
+</ul>
+<p>进程挂起的原因：（1）由于不断创建进程，当系统资源尤其是内存资源已经不能满足进程运行要求时，必须把某些进程<strong>挂起（suspend）</strong>，对换到磁盘对换区中，释放它占有的某些资源，<strong>暂时不参与低级调度</strong>，起到平滑系统负荷的目的；（2）也可能系统出现故障，需要暂时挂起一些进程，以便故障消除后再解除挂起并恢复进程运行；（3）用户调试程序过程中，可以请求挂起进程，以便进行某种检查和修改</p>
+<ul>
+<li><p><strong>挂起就绪态（ready suspend）</strong></p>
+<p>进程具备运行条件，但目前在外存中，只有当它被对换到内存中才能被调度执行</p>
+</li>
+<li><p><strong>挂起等待态（blocked suspend）</strong></p>
+<p>进程正在等待某一事件发生且进程在外存中</p>
 </li>
 </ul>
 
@@ -299,7 +314,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-11-17T07:13:36.367Z" itemprop="dateUpdated">2019-11-17 15:13:36</time>
+    Last updated: <time datetime="2019-11-17T07:31:57.724Z" itemprop="dateUpdated">2019-11-17 15:31:57</time>
 </span><br>
 
 
