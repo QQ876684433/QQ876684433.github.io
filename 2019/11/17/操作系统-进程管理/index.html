@@ -41,7 +41,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/11/17/ayw9N1PrnbBsWCY.png">
 <meta property="og:image" content="http://qq876684433.github.io/home/steve/.config/Typora/typora-user-images/1573992590492.png">
 <meta property="og:image" content="https://i.loli.net/2019/11/17/sqfQYLmhcWi8bzj.png">
-<meta property="og:updated_time" content="2019-11-17T12:14:34.158Z">
+<meta property="og:updated_time" content="2019-11-17T12:41:55.093Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统-进程管理">
 <meta name="twitter:description" content="进程管理 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著   进程定义和属性定义 从原理角度看：进程是支持程序执行的一种系统机制，它对处理器上运行程序的活动规律进行抽象 从实现角度看：进程是一种数据结构，用来准确地刻画运行程序的状态和系统动态变化状况  操作系统有两个重要的特性：程序的并发性和资源的共享性。进程的概念既能描述程序的并发执行，又能共享系统的资源  程序的并发性   正因">
@@ -180,7 +180,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#进程管理"><span class="post-toc-number">1.</span> <span class="post-toc-text">进程管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#进程定义和属性"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">进程定义和属性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#定义"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程的属性"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">进程的属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程的状态和转换"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">进程的状态和转换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#三态模型"><span class="post-toc-number">1.1.3.1.</span> <span class="post-toc-text">三态模型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#三态模型的状态转换"><span class="post-toc-number">1.1.3.1.0.1.</span> <span class="post-toc-text">三态模型的状态转换</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#七态模型"><span class="post-toc-number">1.1.3.2.</span> <span class="post-toc-text">七态模型</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#进程描述和组成"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">进程描述和组成</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程映像"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">进程映像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程上下文"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">进程上下文</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程控制块"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">进程控制块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程队列及其管理"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">进程队列及其管理</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#进程上下文切换与处理器状态转换"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">进程上下文切换与处理器状态转换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程上下文切换"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">进程上下文切换</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#进程管理"><span class="post-toc-number">1.</span> <span class="post-toc-text">进程管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#进程定义和属性"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">进程定义和属性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#定义"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程的属性"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">进程的属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程的状态和转换"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">进程的状态和转换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#三态模型"><span class="post-toc-number">1.1.3.1.</span> <span class="post-toc-text">三态模型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#三态模型的状态转换"><span class="post-toc-number">1.1.3.1.0.1.</span> <span class="post-toc-text">三态模型的状态转换</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#七态模型"><span class="post-toc-number">1.1.3.2.</span> <span class="post-toc-text">七态模型</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#进程描述和组成"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">进程描述和组成</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程映像"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">进程映像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程上下文"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">进程上下文</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程控制块"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">进程控制块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程队列及其管理"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">进程队列及其管理</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#进程上下文切换与处理器状态转换"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">进程上下文切换与处理器状态转换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程上下文切换"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">进程上下文切换</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程上下文切换时机"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">进程上下文切换时机</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -427,7 +427,20 @@
 
 
 
-<h2 id="进程上下文切换与处理器状态转换"><a href="#进程上下文切换与处理器状态转换" class="headerlink" title="进程上下文切换与处理器状态转换"></a>进程上下文切换与处理器状态转换</h2><h3 id="进程上下文切换"><a href="#进程上下文切换" class="headerlink" title="进程上下文切换"></a>进程上下文切换</h3>
+<h2 id="进程上下文切换与处理器状态转换"><a href="#进程上下文切换与处理器状态转换" class="headerlink" title="进程上下文切换与处理器状态转换"></a>进程上下文切换与处理器状态转换</h2><h3 id="进程上下文切换"><a href="#进程上下文切换" class="headerlink" title="进程上下文切换"></a>进程上下文切换</h3><p>中断和异常是激活操作系统的仅有方法，它暂停当前运行进程的执行，把处理器转换至内核态，内核获得处理器控制权之后，如果需要就可以实现进程上下文切换，所以<strong>进程切换必定在内核态而非用户态发生</strong>。</p>
+<p>内核在处理中断事件或系统调用过程中可能会导致被阻塞的高优先级进程变为就绪态（等待事件发生或在等待信号到达），或在<strong>处理时钟中断事件期间</strong>发现运行进程的时间片耗尽，或当前运行进程执行阻塞型I/O指令等，均有可能引发内核实施进程上下文切换。</p>
+<p>执行上下文切换时，保存老进程的上下文并装入新进程的上下文，以便新进程运行。</p>
+<p>实现进程上下文切换的步骤：</p>
+<ul>
+<li>保存被中断进程的<strong>处理器现场信息</strong></li>
+<li>修改被中断进程<strong>PCB的有关信息</strong>，如进程状态等</li>
+<li>把被中断进程的PCB加入相关队列</li>
+<li>选择占用处理器运行的另一进程</li>
+<li>修改被选中进程<strong>PCB的有关信息</strong>，如改为就绪态</li>
+<li>设置被选中进程的<strong>地址空间</strong>，恢复<strong>存储管理信息</strong></li>
+<li>根据被选中进程的上下文信息恢复<strong>处理器现场</strong></li>
+</ul>
+<h3 id="进程上下文切换时机"><a href="#进程上下文切换时机" class="headerlink" title="进程上下文切换时机"></a>进程上下文切换时机</h3>
         </div>
 
         <blockquote class="post-copyright">
@@ -435,7 +448,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-11-17T12:14:34.158Z" itemprop="dateUpdated">2019-11-17 20:14:34</time>
+    Last updated: <time datetime="2019-11-17T12:41:55.093Z" itemprop="dateUpdated">2019-11-17 20:41:55</time>
 </span><br>
 
 
