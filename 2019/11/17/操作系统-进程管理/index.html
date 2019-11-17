@@ -41,7 +41,12 @@
 <meta property="og:image" content="https://i.loli.net/2019/11/17/ayw9N1PrnbBsWCY.png">
 <meta property="og:image" content="http://qq876684433.github.io/home/steve/.config/Typora/typora-user-images/1573992590492.png">
 <meta property="og:image" content="https://i.loli.net/2019/11/17/sqfQYLmhcWi8bzj.png">
-<meta property="og:updated_time" content="2019-11-17T12:41:55.093Z">
+<meta property="og:image" content="https://i.loli.net/2019/11/17/nzVjeEgH9GFsLc5.png">
+<meta property="og:image" content="https://i.loli.net/2019/11/17/1gqJG4L2RBe6ONl.png">
+<meta property="og:image" content="https://i.loli.net/2019/11/17/4QDebchVMPXakgE.png">
+<meta property="og:image" content="https://i.loli.net/2019/11/17/vKOf8LkMIpWFmaZ.png">
+<meta property="og:image" content="https://i.loli.net/2019/11/17/1YOJRzWAfsHgc6k.png">
+<meta property="og:updated_time" content="2019-11-17T14:35:03.519Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统-进程管理">
 <meta name="twitter:description" content="进程管理 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著   进程定义和属性定义 从原理角度看：进程是支持程序执行的一种系统机制，它对处理器上运行程序的活动规律进行抽象 从实现角度看：进程是一种数据结构，用来准确地刻画运行程序的状态和系统动态变化状况  操作系统有两个重要的特性：程序的并发性和资源的共享性。进程的概念既能描述程序的并发执行，又能共享系统的资源  程序的并发性   正因">
@@ -180,7 +185,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#进程管理"><span class="post-toc-number">1.</span> <span class="post-toc-text">进程管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#进程定义和属性"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">进程定义和属性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#定义"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程的属性"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">进程的属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程的状态和转换"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">进程的状态和转换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#三态模型"><span class="post-toc-number">1.1.3.1.</span> <span class="post-toc-text">三态模型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#三态模型的状态转换"><span class="post-toc-number">1.1.3.1.0.1.</span> <span class="post-toc-text">三态模型的状态转换</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#七态模型"><span class="post-toc-number">1.1.3.2.</span> <span class="post-toc-text">七态模型</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#进程描述和组成"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">进程描述和组成</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程映像"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">进程映像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程上下文"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">进程上下文</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程控制块"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">进程控制块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程队列及其管理"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">进程队列及其管理</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#进程上下文切换与处理器状态转换"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">进程上下文切换与处理器状态转换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程上下文切换"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">进程上下文切换</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程上下文切换时机"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">进程上下文切换时机</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#进程管理"><span class="post-toc-number">1.</span> <span class="post-toc-text">进程管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#进程定义和属性"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">进程定义和属性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#定义"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程的属性"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">进程的属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程的状态和转换"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">进程的状态和转换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#三态模型"><span class="post-toc-number">1.1.3.1.</span> <span class="post-toc-text">三态模型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#三态模型的状态转换"><span class="post-toc-number">1.1.3.1.0.1.</span> <span class="post-toc-text">三态模型的状态转换</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#七态模型"><span class="post-toc-number">1.1.3.2.</span> <span class="post-toc-text">七态模型</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#进程描述和组成"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">进程描述和组成</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程映像"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">进程映像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程上下文"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">进程上下文</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程控制块"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">进程控制块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程队列及其管理"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">进程队列及其管理</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#进程上下文切换与处理器状态转换"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">进程上下文切换与处理器状态转换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程上下文切换"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">进程上下文切换</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程上下文切换时机"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">进程上下文切换时机</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#处理器状态转换"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">处理器状态转换</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Linux中进程上下文切换与处理器状态转换"><span class="post-toc-number">1.3.4.</span> <span class="post-toc-text">Linux中进程上下文切换与处理器状态转换</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#进程控制和管理"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">进程控制和管理</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -440,7 +445,77 @@
 <li>设置被选中进程的<strong>地址空间</strong>，恢复<strong>存储管理信息</strong></li>
 <li>根据被选中进程的上下文信息恢复<strong>处理器现场</strong></li>
 </ul>
-<h3 id="进程上下文切换时机"><a href="#进程上下文切换时机" class="headerlink" title="进程上下文切换时机"></a>进程上下文切换时机</h3>
+<h3 id="进程上下文切换时机"><a href="#进程上下文切换时机" class="headerlink" title="进程上下文切换时机"></a>进程上下文切换时机</h3><p><strong>进程调度和切换</strong>是操作系统内核程序，内核处理过程中发现满足调度条件便可请求重新调度</p>
+<p>原则上，发生请求重新调度事件、执行调度程序和实施进程上下文切换工作应该连续发生，但是实际上由于种种原因不能连续完成，内核中不能立即进行调度和切换的情况有：</p>
+<ul>
+<li><p>内核正在处理中断的过程中</p>
+<p><img src="https://i.loli.net/2019/11/17/nzVjeEgH9GFsLc5.png" alt></p>
+</li>
+<li><p>进程运行在内核临界区中</p>
+<p><img src="https://i.loli.net/2019/11/17/1gqJG4L2RBe6ONl.png" alt></p>
+</li>
+<li><p>内核处在需要屏蔽中断的原子操作中</p>
+</li>
+</ul>
+<p>在上述情况中产生引起调度条件而不能马上进行调度和切换，系统采用<strong>置请求调度标志</strong>延迟到敏感性操作完成后才进行。Linux在进程task_struct设计<strong>重调度标志need_resched</strong>，当需要进程重调度时先置调度标志位，在调度时机来临时判别标志位是否为1，以决定要否进行调度。<strong>Linux调度时机</strong>分为：</p>
+<ul>
+<li><p>主动调度</p>
+<p>调用schedule()函数来释放CPU引起新一轮调度，通常发生在当前进程状态被改变，如执行了read()、write()、exit()等系统调用，导致进程终止、进程阻塞等</p>
+</li>
+<li><p>被动调度</p>
+<p>发生了引起调度的条件，通常发生在新进程产生、某个进程优先级改变、进程被唤醒、进程时间片用完等。这时仅置进程TIF_NEED_RESCHED调度标志。调度标志设置有如下情况：</p>
+<ul>
+<li>时钟中断中调用函数scheduler_tick()，它负责查看当前进程（实时进程除外）的时间片是否耗尽，如果是，则设置重调度标志</li>
+<li>函数try_to_wake_up()将阻塞的进程唤醒，把它加入运行队列中，如果其优先级比当前正在运行的进程优先级高，则设置重调度标志。此外，设置应用程序优先级参数nice值、创建新进程、SMP负载均衡时都有可能使高优先级进程进入就绪状态，也都可能设置重调度标志</li>
+<li>执行sched_setscheduler()（设置调度策略）、sched_yield()（暂时让出处理器）、pause()（暂停）等系统调用时，均要设置重调度标志</li>
+</ul>
+<p>每当<strong>中断处理和系统调用处理结束返回</strong>时，在ret_from_sys_call代码段中会主动测试调度标志，若置位则调用schedule()函数</p>
+</li>
+</ul>
+<h3 id="处理器状态转换"><a href="#处理器状态转换" class="headerlink" title="处理器状态转换"></a>处理器状态转换</h3><p>与进程上下文切换有关的是<strong>处理器状态转换（又称处理器模式转换），从用户态到内核态或从内核态到用户态是处理器的状态转换</strong>，此时仍在同一个进程中运行</p>
+<p>当发生中断或系统调用时暂停当前正在运行的进程，把处理器状态从用户态转换到内核态，执行操作系统服务例程，这是一次<strong>状态转换</strong>，此时进程仍在自己的上下文中执行，仅处理器状态发生变化，<strong>内核在被中断进程的上下文中进行处理</strong></p>
+<p>处理器状态转换步骤：</p>
+<ul>
+<li>保存被中断进程的处理器现场信息</li>
+<li>处理器从用户态转换到内核态，以便执行系统服务例程或中断处理程序</li>
+<li>如果处理中断，可根据所规定的中断级别设置中断屏蔽位</li>
+<li>根据系统调用号或中断号，从<strong>系统调用表</strong>或<strong>中断入口地址表</strong>中找到系统服务例程或中断处理程序的地址</li>
+</ul>
+<p>处理器状态转换不同于进程上下文切换，在大多数情况下，状态转换不一定引起上下文切换，在完成系统调用服务或中断处理之后，可通过逆向处理器状态转换来恢复被中断进程运行</p>
+<p>处理器执行进程在任何时刻必处于以下4个活动范围内：</p>
+<ul>
+<li>用户空间中，处于进程上下文，应用进程在用户态下运行，使用用户栈</li>
+<li>内核空间中，处于进程上下文，内核代表进程在内核下运行，使用核心栈</li>
+<li>内核空间中，处于中断上下文，与任何进程无关，中断服务例程在内核态下处理特定中断</li>
+<li>内核空间中，内核线程（无用户地址空间的进程）运行于内核态</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/17/4QDebchVMPXakgE.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/17/vKOf8LkMIpWFmaZ.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h3 id="Linux中进程上下文切换与处理器状态转换"><a href="#Linux中进程上下文切换与处理器状态转换" class="headerlink" title="Linux中进程上下文切换与处理器状态转换"></a>Linux中进程上下文切换与处理器状态转换</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/17/1YOJRzWAfsHgc6k.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+
+<h2 id="进程控制和管理"><a href="#进程控制和管理" class="headerlink" title="进程控制和管理"></a>进程控制和管理</h2>
         </div>
 
         <blockquote class="post-copyright">
@@ -448,7 +523,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-11-17T12:41:55.093Z" itemprop="dateUpdated">2019-11-17 20:41:55</time>
+    Last updated: <time datetime="2019-11-17T14:35:03.519Z" itemprop="dateUpdated">2019-11-17 22:35:03</time>
 </span><br>
 
 
