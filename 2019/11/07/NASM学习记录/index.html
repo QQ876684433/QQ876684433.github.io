@@ -29,10 +29,12 @@
 <meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
 <meta property="og:description" content="NASM学习记录零散知识点NASM汇编程序中的宏定义NASM汇编程序中的宏定义的格式如下: 123%macro 宏名 参数名列表 宏体%endmacro  例如： 1234567%macro Descriptor 3dw %2 &amp;amp; 0FFFFh dw %1 &amp;amp; 0FFFFh db (%1 &amp;gt;&amp;gt; 16) &amp;amp; 0FFh dw ((%2 &amp;gt;&amp;gt; 8) &amp;am">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-11-17T15:29:54.217Z">
+<meta property="og:image" content="https://i.loli.net/2019/11/22/gNSh8V4yFOPjXUx.png">
+<meta property="og:updated_time" content="2019-11-22T02:04:16.318Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NASM学习记录">
 <meta name="twitter:description" content="NASM学习记录零散知识点NASM汇编程序中的宏定义NASM汇编程序中的宏定义的格式如下: 123%macro 宏名 参数名列表 宏体%endmacro  例如： 1234567%macro Descriptor 3dw %2 &amp;amp; 0FFFFh dw %1 &amp;amp; 0FFFFh db (%1 &amp;gt;&amp;gt; 16) &amp;amp; 0FFh dw ((%2 &amp;gt;&amp;gt; 8) &amp;am">
+<meta name="twitter:image" content="https://i.loli.net/2019/11/22/gNSh8V4yFOPjXUx.png">
     
         <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
     
@@ -167,7 +169,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#NASM学习记录"><span class="post-toc-number">1.</span> <span class="post-toc-text">NASM学习记录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#零散知识点"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">零散知识点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#NASM汇编程序中的宏定义"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">NASM汇编程序中的宏定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#EQU指令"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">EQU指令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#伪指令"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text">伪指令=</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LGDT指令"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">LGDT指令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CLD指令"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">CLD指令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#DF标志-DF-flag"><span class="post-toc-number">1.1.4.1.</span> <span class="post-toc-text">DF标志(DF flag)</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LODS指令"><span class="post-toc-number">1.1.5.</span> <span class="post-toc-text">LODS指令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#控制寄存器cr0"><span class="post-toc-number">1.1.6.</span> <span class="post-toc-text">控制寄存器cr0</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#NASM学习记录"><span class="post-toc-number">1.</span> <span class="post-toc-text">NASM学习记录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#零散知识点"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">零散知识点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#NASM汇编程序中的宏定义"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">NASM汇编程序中的宏定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#EQU指令"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">EQU指令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#伪指令"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text">伪指令=</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LGDT指令"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">LGDT指令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CLD指令"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">CLD指令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#DF标志-DF-flag"><span class="post-toc-number">1.1.4.1.</span> <span class="post-toc-text">DF标志(DF flag)</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LODS指令"><span class="post-toc-number">1.1.5.</span> <span class="post-toc-text">LODS指令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#控制寄存器cr0"><span class="post-toc-number">1.1.6.</span> <span class="post-toc-text">控制寄存器cr0</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#retf指令"><span class="post-toc-number">1.1.7.</span> <span class="post-toc-text">retf指令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#stosb-stosw-stosd指令"><span class="post-toc-number">1.1.8.</span> <span class="post-toc-text">stosb, stosw, stosd指令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LTR指令"><span class="post-toc-number">1.1.9.</span> <span class="post-toc-text">LTR指令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DIV指令"><span class="post-toc-number">1.1.10.</span> <span class="post-toc-text">DIV指令</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -371,6 +373,57 @@
 <p>CR0的位31是分页（Paging）标志。<strong>当设置该位时即开启了分页机制；当复位时则禁止分页机制，此时所有线性地址等同于物理地址</strong>。在开启这个标志之前必须已经或者同时开启PE标志。即若要启用分页机制，那么PE和PG标志都要置位</p>
 </li>
 </ul>
+<h3 id="retf指令"><a href="#retf指令" class="headerlink" title="retf指令"></a>retf指令</h3><blockquote>
+<p>原文链接：<a href="https://blog.csdn.net/ZCMUCZX/article/details/80216145" target="_blank" rel="noopener">https://blog.csdn.net/ZCMUCZX/article/details/80216145</a></p>
+</blockquote>
+<p><strong>关于ret指令和retf指令</strong></p>
+<p>ret指令是用栈中的数据，修改IP的内容，从而实现了近转移(就是只修改IP)<br>retf指令是用栈中的数据，修改CS和IP的内容，从而实现了远转移(就是修改了CS和IP)<br>当CPU执行指令ret的时候，会进行下面的操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1、(IP)= ((ss *16)+(sp))</span><br><span class="line">2、(sp)=(sp)+2</span><br></pre></td></tr></table></figure>
+
+<p>当CPU执行指令retf的时候相当于进行了下面的操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1、(IP)= ((ss *16)+(sp))</span><br><span class="line">2、(sp)=(sp)+2</span><br><span class="line">3、(CS)=((ss *16)+(sp))</span><br><span class="line">4、(sp)=(sp)+2</span><br></pre></td></tr></table></figure>
+
+<p>其实就相当于CPU在执行ret指令的时候就是在执行下面的汇编语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pop IP</span><br></pre></td></tr></table></figure>
+
+<p>CPU在执行retf指令的时候其实就是在执行下面的汇编语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pop IP</span><br><span class="line">pop CS</span><br></pre></td></tr></table></figure>
+
+<h3 id="stosb-stosw-stosd指令"><a href="#stosb-stosw-stosd指令" class="headerlink" title="stosb, stosw, stosd指令"></a>stosb, stosw, stosd指令</h3><p>stosb, stosw, stosd这三个指令把al/ax/eax的内容存储到edi指向的内存单元中，同时edi的值根据方向标志的值增加或者减少</p>
+<h3 id="LTR指令"><a href="#LTR指令" class="headerlink" title="LTR指令"></a>LTR指令</h3><p>LTR - 加载任务寄存器：</p>
+<ul>
+<li>将源操作数加载到任务寄存器的段选择器字段。源操作数（通用寄存器或内存位置）包含指向<strong>任务状态段 (TSS)</strong> 的段选择器。段选择器加载到任务寄存器之后，处理器使用段选择器在全局描述符表格 (GDT) 中确定 TSS 的段描述符的位置。接着，它将 TSS 的段限制与基址从段描述符加载到任务寄存器。任务寄存器指向的任务标记为忙，但不发生任务切换</li>
+<li>提供的 LTR 指令用于操作系统软件；不应该在应用程序中使用它。它只能在 CPL 为 0 时在保护模式中执行。它常用在初始化代码，建立要执行的第一个任务</li>
+<li>操作数大小属性不影响此指令。</li>
+</ul>
+<h3 id="DIV指令"><a href="#DIV指令" class="headerlink" title="DIV指令"></a>DIV指令</h3><p>指令格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DIV reg8/mem8</span><br><span class="line">DIV reg16/mem16</span><br><span class="line">DIV reg32/mem32</span><br></pre></td></tr></table></figure>
+
+<p>div指令只有一个操作数，即除数，被除数保存在AX（或者DX:AX，EDX:EAX）中，计算的结果商保存在AL（或者AX，EAX），余数保存在AH（或者DX，EDX），如图：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/22/gNSh8V4yFOPjXUx.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         </div>
 
@@ -379,7 +432,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-11-17T15:29:54.217Z" itemprop="dateUpdated">2019-11-17 23:29:54</time>
+    Last updated: <time datetime="2019-11-22T02:04:16.318Z" itemprop="dateUpdated">2019-11-22 10:04:16</time>
 </span><br>
 
 
