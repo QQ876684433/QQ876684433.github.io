@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>C++面向对象之继承 | 至繁归于至简 - chph&#39;s blog | steve_chph personal website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="C++,继承,面向对象">
+    <meta name="description" content="C++面向对象之继承 参考书籍：《Primer C++, 5th》  多重继承与虚继承多重继承的派生类继承了所有父类的属性 多重继承 关键字class对应的默认访问说明符是private，关键字struct对应的是public 多重继承的派生列表只能包含已经被定义过的类，而且这些类不能是final的 派生列表中，同一个基类只能出现一次  多重继承的派生类从每个基类中继承状态多重继承关系中，派生类的">
+<meta name="keywords" content="C++,继承,面向对象">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++面向对象之继承">
+<meta property="og:url" content="http://QQ876684433.github.io/2019/11/26/CPP面向对象之继承/index.html">
+<meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
+<meta property="og:description" content="C++面向对象之继承 参考书籍：《Primer C++, 5th》  多重继承与虚继承多重继承的派生类继承了所有父类的属性 多重继承 关键字class对应的默认访问说明符是private，关键字struct对应的是public 多重继承的派生列表只能包含已经被定义过的类，而且这些类不能是final的 派生列表中，同一个基类只能出现一次  多重继承的派生类从每个基类中继承状态多重继承关系中，派生类的">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2019/11/26/GgkZVWIScfHp3xd.png">
+<meta property="og:image" content="https://i.loli.net/2019/11/26/hyInO1iSfWBeQxG.png">
+<meta property="og:image" content="https://i.loli.net/2019/11/26/WQIKwVPa67NtE2v.png">
+<meta property="og:image" content="https://i.loli.net/2019/11/26/vNV8IH3zrX4Jjla.png">
+<meta property="og:image" content="https://i.loli.net/2019/11/26/gJ7axq3sVvUAQhj.png">
+<meta property="og:updated_time" content="2019-11-26T14:21:46.658Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C++面向对象之继承">
+<meta name="twitter:description" content="C++面向对象之继承 参考书籍：《Primer C++, 5th》  多重继承与虚继承多重继承的派生类继承了所有父类的属性 多重继承 关键字class对应的默认访问说明符是private，关键字struct对应的是public 多重继承的派生列表只能包含已经被定义过的类，而且这些类不能是final的 派生列表中，同一个基类只能出现一次  多重继承的派生类从每个基类中继承状态多重继承关系中，派生类的">
+<meta name="twitter:image" content="https://i.loli.net/2019/11/26/GgkZVWIScfHp3xd.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">steve_chph</h5>
+          <a href="mailto:chph13420146901@gmail.com" title="chph13420146901@gmail.com" class="mail">chph13420146901@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/QQ876684433" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">C++面向对象之继承</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">C++面向对象之继承</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-11-26T11:06:55.000Z" itemprop="datePublished" class="page-time">
+  2019-11-26
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/C/">C++</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#C-面向对象之继承"><span class="post-toc-number">1.</span> <span class="post-toc-text">C++面向对象之继承</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#多重继承与虚继承"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">多重继承与虚继承</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多重继承"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">多重继承</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#多重继承的派生类从每个基类中继承状态"><span class="post-toc-number">1.1.1.1.</span> <span class="post-toc-text">多重继承的派生类从每个基类中继承状态</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#派生类构造函数初始化所有基类"><span class="post-toc-number">1.1.1.2.</span> <span class="post-toc-text">派生类构造函数初始化所有基类</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#继承的构造函数与多重继承"><span class="post-toc-number">1.1.1.3.</span> <span class="post-toc-text">继承的构造函数与多重继承</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#析构函数与多重继承"><span class="post-toc-number">1.1.1.4.</span> <span class="post-toc-text">析构函数与多重继承</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#多重继承的派生类的拷贝与移动操作"><span class="post-toc-number">1.1.1.5.</span> <span class="post-toc-text">多重继承的派生类的拷贝与移动操作</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#类型转换与多个基类"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">类型转换与多个基类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#基于指针类型或引用类型的查找"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text">基于指针类型或引用类型的查找</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其他知识点"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">其他知识点</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-CPP面向对象之继承"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">C++面向对象之继承</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-11-26 19:06:55" datetime="2019-11-26T11:06:55.000Z"  itemprop="datePublished">2019-11-26</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/C/">C++</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="C-面向对象之继承"><a href="#C-面向对象之继承" class="headerlink" title="C++面向对象之继承"></a>C++面向对象之继承</h1><blockquote>
+<p>参考书籍：《Primer C++, 5th》</p>
+</blockquote>
+<h2 id="多重继承与虚继承"><a href="#多重继承与虚继承" class="headerlink" title="多重继承与虚继承"></a>多重继承与虚继承</h2><p>多重继承的派生类继承了<strong>所有父类的属性</strong></p>
+<h3 id="多重继承"><a href="#多重继承" class="headerlink" title="多重继承"></a>多重继承</h3><ul>
+<li>关键字class对应的默认访问说明符是private，关键字struct对应的是public</li>
+<li>多重继承的派生列表只能包含已经被定义过的类，而且这些类不能是final的</li>
+<li>派生列表中，同一个基类只能出现一次</li>
+</ul>
+<h4 id="多重继承的派生类从每个基类中继承状态"><a href="#多重继承的派生类从每个基类中继承状态" class="headerlink" title="多重继承的派生类从每个基类中继承状态"></a>多重继承的派生类从每个基类中继承状态</h4><p>多重继承关系中，派生类的对象包含有每个基类的子对象，例如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bear</span>:</span> <span class="keyword">public</span> ZooAnimal &#123;...&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Panda</span>:</span> <span class="keyword">public</span> Bear, <span class="keyword">public</span> Endangered &#123;...&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/26/GgkZVWIScfHp3xd.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h4 id="派生类构造函数初始化所有基类"><a href="#派生类构造函数初始化所有基类" class="headerlink" title="派生类构造函数初始化所有基类"></a>派生类构造函数初始化所有基类</h4><p>构造一个派生类的对象将同时构造并初始化它的所有基类子对象，多重继承的派生类的构造函数初始值只能初始化<strong>它的直接基类</strong>（例如Panda的直接基类是Bear和Endangered）</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/26/hyInO1iSfWBeQxG.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>基类的构造顺序与<strong>派生列表中基类的出现顺序</strong>保持一致，而与派生类构造函数初始值列表中的基类顺序无关</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/26/WQIKwVPa67NtE2v.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/26/vNV8IH3zrX4Jjla.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h4 id="继承的构造函数与多重继承"><a href="#继承的构造函数与多重继承" class="headerlink" title="继承的构造函数与多重继承"></a>继承的构造函数与多重继承</h4><p>C++11中允许派生类继承多个基类的构造函数，但是如果从多个基类中继承了相同的构造函数（形参列表完全相同），那么程序将报错</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;memory&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Base1</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    Base1() = <span class="keyword">default</span>;</span><br><span class="line">    Base1(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span> &amp;);</span><br><span class="line">    Base1(<span class="built_in">std</span>::<span class="built_in">shared_ptr</span>&lt;<span class="keyword">int</span>&gt;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Base2</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    Base2() = <span class="keyword">default</span>;</span><br><span class="line">    Base2(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span> &amp;);</span><br><span class="line">    Base2(<span class="keyword">int</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">D1</span>:</span> <span class="keyword">public</span> Base1, <span class="keyword">public</span> Base2&#123;</span><br><span class="line">    <span class="keyword">using</span> Base1::Base1;</span><br><span class="line">    <span class="keyword">using</span> Base2::Base2;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    D1 d;    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>控制台输出：</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tempCodeRunnerFile.cpp:20:18: error: ‘D1::D1(const string&amp;)’ inherited from ‘Base2’</span><br><span class="line">     using Base2::Base2;</span><br><span class="line">                  ^~~~~</span><br><span class="line">tempCodeRunnerFile.cpp:19:18: error: conflicts with version inherited from ‘Base1’</span><br><span class="line">     using Base1::Base1;</span><br></pre></td></tr></table></figure>
+
+<p>此时必须在派生类中<strong>定义这个冲突构造函数的派生类自己的版本</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">D1</span>:</span> <span class="keyword">public</span> Base1, <span class="keyword">public</span> Base2&#123;</span><br><span class="line">    <span class="keyword">using</span> Base1::Base1;</span><br><span class="line">    <span class="keyword">using</span> Base2::Base2;</span><br><span class="line">    D1(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span> &amp;)&#123;&#125;</span><br><span class="line">    D1() = <span class="keyword">default</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>注意：前面版本的D1之所以只对<code>D1::D1(const string&amp;)</code>报错，是因为D1中没有定义自己版本的构造函数，编译器为D1合成了默认的构造函数，<strong>覆盖了从Base1和Base2继承过来的冲突的默认版本的构造函数</strong>；但是现在这个版本定义了自己的<code>D1(const std::string &amp;){}</code>来解决冲突，导致编译器不会为D1合成默认构造函数，因此也需要为D1显式定义默认构造函数</p>
+<h4 id="析构函数与多重继承"><a href="#析构函数与多重继承" class="headerlink" title="析构函数与多重继承"></a>析构函数与多重继承</h4><p>析构函数的调用顺序与构造函数相反：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ZooAnimal()</span><br><span class="line">Bear()</span><br><span class="line">Endangered()</span><br><span class="line">Panda()</span><br><span class="line">~Panda()</span><br><span class="line">~Endangered()</span><br><span class="line">~Bear()</span><br><span class="line">~ZooAnimal()</span><br></pre></td></tr></table></figure>
+
+<h4 id="多重继承的派生类的拷贝与移动操作"><a href="#多重继承的派生类的拷贝与移动操作" class="headerlink" title="多重继承的派生类的拷贝与移动操作"></a>多重继承的派生类的拷贝与移动操作</h4><ul>
+<li>多重继承的派生类如果定义了自己的拷贝/赋值构造函数和赋值运算符，则必须在完整的对象上执行拷贝、移动或者赋值操作</li>
+<li><strong>只有当派生类使用的是合成版本的拷贝、移动或赋值成员时，才会自动对其基类部分执行这些操作</strong></li>
+</ul>
+<p>例如Panda调用合成版本的拷贝构造函数，首先调用Bear的拷贝构造函数拷贝Bear子对象部分，而Bear又会在执行之前调用呢ZooAnimal的拷贝构造函数拷贝ZooAnimal子对象部分，Bear子对象部分拷贝完成后，又会调用Endangered拷贝构造函数拷贝Endangered子对象部分，最后才调用Panda的合成构造函数拷贝Panda部分</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/26/gJ7axq3sVvUAQhj.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+
+<h3 id="类型转换与多个基类"><a href="#类型转换与多个基类" class="headerlink" title="类型转换与多个基类"></a>类型转换与多个基类</h3><p>派生类有多个基类时，如果存在多个以基类为参数的重载函数，那么编译器会报错，因为<strong>编译器不会在派生类向基类的几种转换中进行比较和选择</strong>：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"Panda.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"Bear.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"Endangered.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"ZooAnimal.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(Bear &amp;)</span> </span>&#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">"func(Bear &amp;)"</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(Endangered &amp;)</span> </span>&#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">"func(Endangered &amp;)"</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(ZooAnimal &amp;)</span> </span>&#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">"func(ZooAnimal &amp;)"</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Panda p;</span><br><span class="line">    func(p);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>编译报错，程序有二义性：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Test01.cpp: In function ‘int main(int, const char**)’:</span><br><span class="line">Test01.cpp:<span class="number">15</span>:<span class="number">11</span>: error: call of overloaded ‘func(Panda&amp;)’ is ambiguous</span><br><span class="line">     func(p);</span><br><span class="line">           ^</span><br><span class="line">Test01.cpp:<span class="number">6</span>:<span class="number">6</span>: note: candidate: <span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(Bear&amp;)</span></span></span><br><span class="line"><span class="function"> <span class="keyword">void</span> <span class="title">func</span><span class="params">(Bear &amp;)</span> </span>&#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">"func(Bear &amp;)"</span>; &#125;</span><br><span class="line">      ^~~~</span><br><span class="line">Test01.cpp:<span class="number">8</span>:<span class="number">6</span>: note: candidate: <span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(Endangered&amp;)</span></span></span><br><span class="line"><span class="function"> <span class="keyword">void</span> <span class="title">func</span><span class="params">(Endangered &amp;)</span> </span>&#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">"func(Endangered &amp;)"</span>; &#125;</span><br><span class="line">      ^~~~</span><br><span class="line">Test01.cpp:<span class="number">10</span>:<span class="number">6</span>: note: candidate: <span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(ZooAnimal&amp;)</span></span></span><br><span class="line"><span class="function"> <span class="keyword">void</span> <span class="title">func</span><span class="params">(ZooAnimal &amp;)</span> </span>&#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">"func(ZooAnimal &amp;)"</span>; &#125;</span><br><span class="line">      ^~~~</span><br></pre></td></tr></table></figure>
+
+<p>注意：这个只限于直接基类为参数的重载，比如下面的例子：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"Panda.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"Bear.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"Endangered.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"ZooAnimal.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(Bear &amp;)</span> </span>&#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">"func(Bear &amp;)"</span> &lt;&lt;<span class="built_in">endl</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// void func(Endangered &amp;) &#123; cout &lt;&lt; "func(Endangered &amp;) &lt;&lt; endl;"; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(ZooAnimal &amp;)</span> </span>&#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">"func(ZooAnimal &amp;)"</span> &lt;&lt; <span class="built_in">endl</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Panda p;</span><br><span class="line">    func(p);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>继承关系是ZooAnimal -&gt; Bear -&gt; Panda，输出结果是：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ZooAnimal()</span><br><span class="line">Bear()</span><br><span class="line">Endangered()</span><br><span class="line">Panda()</span><br><span class="line">func(Bear &amp;)</span><br><span class="line">~Panda()</span><br><span class="line">~Endangered()</span><br><span class="line">~Bear()</span><br><span class="line">~ZooAnimal()</span><br></pre></td></tr></table></figure>
+
+<p>即会调用继承链上最近的那个重载版本</p>
+<h4 id="基于指针类型或引用类型的查找"><a href="#基于指针类型或引用类型的查找" class="headerlink" title="基于指针类型或引用类型的查找"></a>基于指针类型或引用类型的查找</h4><p>通过基类指针来引用派生类对象时，如果析构函数是非虚函数，那么delete时无法调用派生类对象的析构函数：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ZooAnimal</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="comment">/* data */</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    ZooAnimal(<span class="comment">/* args */</span>);</span><br><span class="line">    ~ZooAnimal();</span><br><span class="line">&#125;;</span><br><span class="line">... ...</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// Panda p;</span></span><br><span class="line">    ZooAnimal *z_ptr = <span class="keyword">new</span> Panda();</span><br><span class="line">    <span class="comment">// func(p);</span></span><br><span class="line">    <span class="keyword">delete</span> z_ptr;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">ZooAnimal()</span><br><span class="line">Bear()</span><br><span class="line">Endangered()</span><br><span class="line">Panda()</span><br><span class="line">~ZooAnimal()</span><br><span class="line">    </span><br><span class="line">====================================================================</span><br><span class="line">====================================================================</span><br><span class="line">    </span><br><span class="line">class ZooAnimal</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="comment">/* data */</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    ZooAnimal(<span class="comment">/* args */</span>);</span><br><span class="line">    <span class="keyword">virtual</span> ~ZooAnimal();</span><br><span class="line">&#125;;</span><br><span class="line">... ...</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// Panda p;</span></span><br><span class="line">    ZooAnimal *z_ptr = <span class="keyword">new</span> Panda();</span><br><span class="line">    <span class="comment">// func(p);</span></span><br><span class="line">    <span class="keyword">delete</span> z_ptr;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">ZooAnimal()</span><br><span class="line">Bear()</span><br><span class="line">Endangered()</span><br><span class="line">Panda()</span><br><span class="line">~Panda()</span><br><span class="line">~Endangered()</span><br><span class="line">~Bear()</span><br><span class="line">~ZooAnimal()</span><br></pre></td></tr></table></figure>
+
+<h2 id="其他知识点"><a href="#其他知识点" class="headerlink" title="其他知识点"></a>其他知识点</h2>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-11-26T14:21:46.658Z" itemprop="dateUpdated">2019-11-26 22:21:46</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/11/26/CPP面向对象之继承/" target="_blank" rel="external">http://QQ876684433.github.io/2019/11/26/CPP面向对象之继承/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://QQ876684433.github.io">
+            <img src="/img/avatar.jpg" alt="steve_chph">
+            steve_chph
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/继承/">继承</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面向对象/">面向对象</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/11/26/CPP面向对象之继承/&title=《C++面向对象之继承》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/11/26/CPP面向对象之继承/&title=《C++面向对象之继承》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/11/26/CPP面向对象之继承/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《C++面向对象之继承》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/11/26/CPP面向对象之继承/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/11/26/CPP面向对象之继承/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/11/17/操作系统-进程管理/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">操作系统-进程管理</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢你~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>steve_chph &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/11/26/CPP面向对象之继承/&title=《C++面向对象之继承》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/11/26/CPP面向对象之继承/&title=《C++面向对象之继承》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/11/26/CPP面向对象之继承/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《C++面向对象之继承》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/11/26/CPP面向对象之继承/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/11/26/CPP面向对象之继承/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACvklEQVR42u3aQW7DMAwEwP7/0ynQaxt7SYpN0I5PQWLYHhmQlCU/PuLj8XX0Pj+7Wn5+fk7zwMPDw2s9+rMjeaD84b6feX3H6yG+fmY8PDy8bV6yGESXG0ziyRDnz4yHh4f3DrzJo1x/kw8oHh4e3t/g5Rv0hJQPEB4eHt5reb3tbO+WvUFZz1rw8PDwaunBYgFs4/Mb1ffw8PD+Ge9RPE4NU/Waj9aBh4eHt8GrFu+vw4jrLW9+ryTwzVsT8PDw8H6fN2kCSK5zaiCehh14eHh4R3m9uLYaWCQNBD3ezVDi4eHhLfB6xapqA0H+fTLd9xod8PDw8E7xei1QSRiRLyHz99N8V3h4eHgDXtICNa/FJ2FHHkBECxgeHh7eAi8JBaoRbf5rc9cfb/fx8PDwtnnVKThfGJJfq8FHoWiHh4eHd5RX3RD3gt1JpDsqs+Hh4eEt8PLItdo4lQ9Wb0mothfg4eHhneJVJ9Z8U9ssWRWn+BsqHh4e3jKvWgbLw4sqo9rQEC0MeHh4eAu8U6FDL4CoNldF98XDw8Nb4E0m7vlCkg9otVULDw8Pb5uXP9akVFYNMnrHD1fAw8PDW+Alk3JexErw+erUG4Kn7xAPDw9vzJv8jc8n+iSSyJeQfIOOh4eHt8HL2wXysKBw4+KZyR+AmzACDw8Pb8zLp/LekjAvVlUXHjw8PLzX8qphazWM6BXY8jIYHh4e3gYv39pOQttqW1Wvx+HmfDw8PLxDvEfxyFsNqlP5PIYo7/3x8PDwWrxeM1NhI3uozNZbqPDw8PD2eL0mgGqxvxfy9t4PHh4e3u/wepNyL6jNt9TJEnKzvcbDw8N7KS/fTPfi3eqjR7EvHh4e3tvw8oA1b1DohSBRGQwPDw9vgVctelVT4ckg5i1fB7IWPDw8vNo5xwpgyRIyiWsPNxDg4eHhpdf5BLPKK/Dq8nGVAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'chph个人博客';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Welcome to chph's blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
