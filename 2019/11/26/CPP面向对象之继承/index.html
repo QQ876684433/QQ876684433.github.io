@@ -35,6 +35,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/11/27/e9NKbaIrXP6SoRm.png">
 <meta property="og:image" content="https://i.loli.net/2019/11/27/MvnOP58KS6wRXji.png">
 <meta property="og:image" content="https://i.loli.net/2019/11/27/rJ1tRg8UufwXIzn.png">
+<meta property="og:image" content="https://i.loli.net/2019/11/27/lkCJV72QrxT9ApB.jpg">
 <meta property="og:image" content="https://i.loli.net/2019/11/26/GgkZVWIScfHp3xd.png">
 <meta property="og:image" content="https://i.loli.net/2019/11/26/hyInO1iSfWBeQxG.png">
 <meta property="og:image" content="https://i.loli.net/2019/11/26/WQIKwVPa67NtE2v.png">
@@ -50,7 +51,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/11/27/cj6vYmDgnwN8fAr.png">
 <meta property="og:image" content="https://i.loli.net/2019/11/27/uKTDBqH8k71PjLv.png">
 <meta property="og:image" content="https://i.loli.net/2019/11/27/IXnykHGUbo2MhDq.png">
-<meta property="og:updated_time" content="2019-11-27T12:45:51.559Z">
+<meta property="og:updated_time" content="2019-11-27T13:00:11.812Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++面向对象之继承">
 <meta name="twitter:description" content="C++面向对象之继承 参考书籍：《Primer C++, 5th》  定义基类和派生类下面可能会用到的源码： 12345678910111213141516171819202122#ifndef QUOTE_H_#define QUOTE_H_#include &amp;lt;iostream&amp;gt;class Quote&amp;#123;private:    std::string bookNo;prote">
@@ -148,7 +149,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -344,7 +345,10 @@
                 <div class="image-caption"></div>
             </figure>
 
-<h5 id="引入知识点：对象切片"><a href="#引入知识点：对象切片" class="headerlink" title="引入知识点：对象切片"></a>引入知识点：对象切片</h5><figure class="image-bubble">
+<h5 id="引入知识点：对象切片"><a href="#引入知识点：对象切片" class="headerlink" title="引入知识点：对象切片"></a>引入知识点：对象切片</h5><blockquote>
+<p>原文链接：<a href="https://blog.csdn.net/beckle_ye/article/details/4700612" target="_blank" rel="noopener">https://blog.csdn.net/beckle_ye/article/details/4700612</a></p>
+</blockquote>
+<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="https://i.loli.net/2019/11/27/rJ1tRg8UufwXIzn.png" alt title>
@@ -355,6 +359,30 @@
 <blockquote>
 <p>If you upcast to an object instead of a pointer or reference, something will happen that may surprise you: the object is “sliced” until all that remains is the subobject that corresponds to the destination type of your cast.<br>—— Thinking In C++</p>
 </blockquote>
+<p>这句话的意思也就是说：在函数传参处理多态性时，如果一个派生类对象在UpCasting时，<strong>用的是传值的方式</strong>，而不是指针和引用，那么，这个派生类对象在UpCasting以后，将会被slice（切分）成基类对象，也就是说，派生类中独有的成员变量和方法都被slice掉了，只剩下和基类相同的成员变量和属性。这个派生类对象被切成了一个基类对象<br>如下例子：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Pet</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="built_in">string</span> pname;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Pet(<span class="keyword">const</span> <span class="built_in">string</span> &amp;name) : pname(name) &#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="built_in">string</span> <span class="title">name</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> pname; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="built_in">string</span> <span class="title">description</span><span class="params">()</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"This is "</span> + pname;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> :</span> <span class="keyword">public</span> Pet</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">string</span> favoriteActivity;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Dog(<span class="keyword">const</span> <span class="built_in">string</span> &amp;name, <span class="keyword">const</span> <span class="built_in">string</span> &amp;activity)</span><br><span class="line">        : Pet(name), favoriteActivity(activity) &#123;&#125;</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">description</span><span class="params">()</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Pet::name() + <span class="string">" likes to "</span> +</span><br><span class="line">               favoriteActivity;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">describe</span><span class="params">(Pet p)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">// Slices the object</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; p.description() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">Pet <span class="title">p</span><span class="params">(<span class="string">"Alfred"</span>)</span></span>;</span><br><span class="line">    <span class="function">Dog <span class="title">d</span><span class="params">(<span class="string">"Fluffy"</span>, <span class="string">"sleep"</span>)</span></span>;</span><br><span class="line">    describe(p); <span class="comment">//正常调用基类函数</span></span><br><span class="line">    describe(d); <span class="comment">//对象切片</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行结果：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">This is Alfred</span><br><span class="line">This is Fluffy</span><br></pre></td></tr></table></figure>
+
+<p>发生对象切片前后的情况是这样的：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/27/lkCJV72QrxT9ApB.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>发生Object Slicing后，原先的虚函数Dog vptr表变成了Pet vptr，Dog的成员favoriteActivity也不存在了，其实这时候执行了一些步骤：</p>
+<ul>
+<li>在正常情况下，main函数中执行describe函数，在传递Dog对象d的时候，调用了Pet类的拷贝构造函数，相当于此时，在describe函数中的那个Pet类对象p是拷贝构造的结果，所以，跟Dog对象d已经没有了关系。所以，此时，p.description()执行的会是调用的基类也就是Pet类的description函数</li>
+</ul>
+<p>但是如果将description函数声明为纯虚函数：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Pet</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="built_in">string</span> pname;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Pet(<span class="keyword">const</span> <span class="built_in">string</span> &amp;name) : pname(name) &#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="built_in">string</span> <span class="title">name</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> pname; &#125;</span><br><span class="line">    virtual string description() const；</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> :</span> <span class="keyword">public</span> Pet</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">string</span> favoriteActivity;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Dog(<span class="keyword">const</span> <span class="built_in">string</span> &amp;name, <span class="keyword">const</span> <span class="built_in">string</span> &amp;activity)</span><br><span class="line">        : Pet(name), favoriteActivity(activity) &#123;&#125;</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">description</span><span class="params">()</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Pet::name() + <span class="string">" likes to "</span> +</span><br><span class="line">               favoriteActivity;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">describe</span><span class="params">(Pet p)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">// Slices the object</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; p.description() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">Pet <span class="title">p</span><span class="params">(<span class="string">"Alfred"</span>)</span></span>;</span><br><span class="line">    <span class="function">Dog <span class="title">d</span><span class="params">(<span class="string">"Fluffy"</span>, <span class="string">"sleep"</span>)</span></span>;</span><br><span class="line">    describe(p); <span class="comment">//正常调用基类函数</span></span><br><span class="line">    describe(d); <span class="comment">//对象切片</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>那么这时候Pet类型就不能被实例化，所以在全局的describe函数中不可能有者拷贝构造函数来实例化一个Pet类对象，此时编译器就会报错</p>
+<p>这里就体现出了纯虚函数的一个重要意义：可以在编译期间<strong>避免对象切片</strong>，从而避免很多可能会出现的问题</p>
 <h2 id="多重继承与虚继承"><a href="#多重继承与虚继承" class="headerlink" title="多重继承与虚继承"></a>多重继承与虚继承</h2><p>多重继承的派生类继承了<strong>所有父类的属性</strong></p>
 <h3 id="多重继承"><a href="#多重继承" class="headerlink" title="多重继承"></a>多重继承</h3><ul>
 <li>关键字class对应的默认访问说明符是private，关键字struct对应的是public</li>
@@ -581,7 +609,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-11-27T12:45:51.559Z" itemprop="dateUpdated">2019-11-27 20:45:51</time>
+    最終更新：<time datetime="2019-11-27T13:00:11.812Z" itemprop="dateUpdated">2019-11-27 21:00:11</time>
 </span><br>
 
 
@@ -747,7 +775,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
         </p>
     </div>
     <div class="bottom">
