@@ -190,13 +190,8 @@
         C++面向对象之继承
 参考书籍：《Primer C++, 5th》
 
-多重继承与虚继承多重继承的派生类继承了所有父类的属性
-多重继承
-关键字class对应的默认访问说明符是private，关键字struct对应的是public
-多重继承的派生列表只能包含已经被定义过的类，而且这些类不能是final的
-派生列表中，同一个基类只能出现一次
-
-多重继承的派生类从每个基类中继承状态多重继承关系中，派...
+定义基类和派生类下面可能会用到的源码：
+12345678910111213141516171819202122#ifndef QUOTE_H_#define QUOTE_H_#include &lt;iostream&gt;class Quote&#123;private:    std::string bookNo;pr...
     
 
         <a href="/2019/11/26/CPP面向对象之继承/" class="post-more waves-effect waves-button">

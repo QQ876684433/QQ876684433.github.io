@@ -21,14 +21,17 @@
     
     
     <meta name="keywords" content="C++,继承,面向对象">
-    <meta name="description" content="C++面向对象之继承 参考书籍：《Primer C++, 5th》  多重继承与虚继承多重继承的派生类继承了所有父类的属性 多重继承 关键字class对应的默认访问说明符是private，关键字struct对应的是public 多重继承的派生列表只能包含已经被定义过的类，而且这些类不能是final的 派生列表中，同一个基类只能出现一次  多重继承的派生类从每个基类中继承状态多重继承关系中，派生类的">
+    <meta name="description" content="C++面向对象之继承 参考书籍：《Primer C++, 5th》  定义基类和派生类下面可能会用到的源码： 12345678910111213141516171819202122#ifndef QUOTE_H_#define QUOTE_H_#include &amp;lt;iostream&amp;gt;class Quote&amp;#123;private:    std::string bookNo;prote">
 <meta name="keywords" content="C++,继承,面向对象">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++面向对象之继承">
 <meta property="og:url" content="http://QQ876684433.github.io/2019/11/26/CPP面向对象之继承/index.html">
 <meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
-<meta property="og:description" content="C++面向对象之继承 参考书籍：《Primer C++, 5th》  多重继承与虚继承多重继承的派生类继承了所有父类的属性 多重继承 关键字class对应的默认访问说明符是private，关键字struct对应的是public 多重继承的派生列表只能包含已经被定义过的类，而且这些类不能是final的 派生列表中，同一个基类只能出现一次  多重继承的派生类从每个基类中继承状态多重继承关系中，派生类的">
+<meta property="og:description" content="C++面向对象之继承 参考书籍：《Primer C++, 5th》  定义基类和派生类下面可能会用到的源码： 12345678910111213141516171819202122#ifndef QUOTE_H_#define QUOTE_H_#include &amp;lt;iostream&amp;gt;class Quote&amp;#123;private:    std::string bookNo;prote">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2019/11/27/Xczqr6LGanyIQVN.png">
+<meta property="og:image" content="https://i.loli.net/2019/11/27/tUPW17aKvqQzmsh.png">
+<meta property="og:image" content="https://i.loli.net/2019/11/27/hvtalZF6kLwuqX2.png">
 <meta property="og:image" content="https://i.loli.net/2019/11/26/GgkZVWIScfHp3xd.png">
 <meta property="og:image" content="https://i.loli.net/2019/11/26/hyInO1iSfWBeQxG.png">
 <meta property="og:image" content="https://i.loli.net/2019/11/26/WQIKwVPa67NtE2v.png">
@@ -44,11 +47,11 @@
 <meta property="og:image" content="https://i.loli.net/2019/11/27/cj6vYmDgnwN8fAr.png">
 <meta property="og:image" content="https://i.loli.net/2019/11/27/uKTDBqH8k71PjLv.png">
 <meta property="og:image" content="https://i.loli.net/2019/11/27/IXnykHGUbo2MhDq.png">
-<meta property="og:updated_time" content="2019-11-27T03:06:46.459Z">
+<meta property="og:updated_time" content="2019-11-27T09:43:19.704Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++面向对象之继承">
-<meta name="twitter:description" content="C++面向对象之继承 参考书籍：《Primer C++, 5th》  多重继承与虚继承多重继承的派生类继承了所有父类的属性 多重继承 关键字class对应的默认访问说明符是private，关键字struct对应的是public 多重继承的派生列表只能包含已经被定义过的类，而且这些类不能是final的 派生列表中，同一个基类只能出现一次  多重继承的派生类从每个基类中继承状态多重继承关系中，派生类的">
-<meta name="twitter:image" content="https://i.loli.net/2019/11/26/GgkZVWIScfHp3xd.png">
+<meta name="twitter:description" content="C++面向对象之继承 参考书籍：《Primer C++, 5th》  定义基类和派生类下面可能会用到的源码： 12345678910111213141516171819202122#ifndef QUOTE_H_#define QUOTE_H_#include &amp;lt;iostream&amp;gt;class Quote&amp;#123;private:    std::string bookNo;prote">
+<meta name="twitter:image" content="https://i.loli.net/2019/11/27/Xczqr6LGanyIQVN.png">
     
         <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
     
@@ -183,7 +186,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#C-面向对象之继承"><span class="post-toc-number">1.</span> <span class="post-toc-text">C++面向对象之继承</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#多重继承与虚继承"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">多重继承与虚继承</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多重继承"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">多重继承</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#多重继承的派生类从每个基类中继承状态"><span class="post-toc-number">1.1.1.1.</span> <span class="post-toc-text">多重继承的派生类从每个基类中继承状态</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#派生类构造函数初始化所有基类"><span class="post-toc-number">1.1.1.2.</span> <span class="post-toc-text">派生类构造函数初始化所有基类</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#继承的构造函数与多重继承"><span class="post-toc-number">1.1.1.3.</span> <span class="post-toc-text">继承的构造函数与多重继承</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#析构函数与多重继承"><span class="post-toc-number">1.1.1.4.</span> <span class="post-toc-text">析构函数与多重继承</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#多重继承的派生类的拷贝与移动操作"><span class="post-toc-number">1.1.1.5.</span> <span class="post-toc-text">多重继承的派生类的拷贝与移动操作</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#类型转换与多个基类"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">类型转换与多个基类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#基于指针类型或引用类型的查找"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text">基于指针类型或引用类型的查找</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多重继承下的类作用域"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">多重继承下的类作用域</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#虚继承"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">虚继承</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#使用虚基类"><span class="post-toc-number">1.1.4.1.</span> <span class="post-toc-text">使用虚基类</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#虚基类成员的可见性"><span class="post-toc-number">1.1.4.2.</span> <span class="post-toc-text">虚基类成员的可见性</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#构造函数与虚继承"><span class="post-toc-number">1.1.5.</span> <span class="post-toc-text">构造函数与虚继承</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#虚继承的对象的构造方式"><span class="post-toc-number">1.1.5.1.</span> <span class="post-toc-text">虚继承的对象的构造方式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#构造函数与虚构函数的次序"><span class="post-toc-number">1.1.5.2.</span> <span class="post-toc-text">构造函数与虚构函数的次序</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其他知识点"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">其他知识点</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#C-面向对象之继承"><span class="post-toc-number">1.</span> <span class="post-toc-text">C++面向对象之继承</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#定义基类和派生类"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">定义基类和派生类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#定义基类"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">定义基类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#成员函数与继承"><span class="post-toc-number">1.1.1.1.</span> <span class="post-toc-text">成员函数与继承</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#访问控制与继承"><span class="post-toc-number">1.1.1.2.</span> <span class="post-toc-text">访问控制与继承</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#定义派生类"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">定义派生类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#派生类中的虚函数"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text">派生类中的虚函数</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#派生类对象及派生类向基类的类型转换"><span class="post-toc-number">1.1.2.2.</span> <span class="post-toc-text">派生类对象及派生类向基类的类型转换</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#派生类构造函数"><span class="post-toc-number">1.1.2.3.</span> <span class="post-toc-text">派生类构造函数</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#派生类使用基类的成员"><span class="post-toc-number">1.1.2.4.</span> <span class="post-toc-text">派生类使用基类的成员</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#继承与静态成员"><span class="post-toc-number">1.1.2.5.</span> <span class="post-toc-text">继承与静态成员</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#派生类的声明"><span class="post-toc-number">1.1.2.6.</span> <span class="post-toc-text">派生类的声明</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#被用作基类的类"><span class="post-toc-number">1.1.2.7.</span> <span class="post-toc-text">被用作基类的类</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#防止继承发生"><span class="post-toc-number">1.1.2.8.</span> <span class="post-toc-text">防止继承发生</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#类型转换与继承"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">类型转换与继承</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#多重继承与虚继承"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">多重继承与虚继承</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多重继承"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">多重继承</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#多重继承的派生类从每个基类中继承状态"><span class="post-toc-number">1.2.1.1.</span> <span class="post-toc-text">多重继承的派生类从每个基类中继承状态</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#派生类构造函数初始化所有基类"><span class="post-toc-number">1.2.1.2.</span> <span class="post-toc-text">派生类构造函数初始化所有基类</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#继承的构造函数与多重继承"><span class="post-toc-number">1.2.1.3.</span> <span class="post-toc-text">继承的构造函数与多重继承</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#析构函数与多重继承"><span class="post-toc-number">1.2.1.4.</span> <span class="post-toc-text">析构函数与多重继承</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#多重继承的派生类的拷贝与移动操作"><span class="post-toc-number">1.2.1.5.</span> <span class="post-toc-text">多重继承的派生类的拷贝与移动操作</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#类型转换与多个基类"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">类型转换与多个基类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#基于指针类型或引用类型的查找"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text">基于指针类型或引用类型的查找</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多重继承下的类作用域"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">多重继承下的类作用域</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#虚继承"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">虚继承</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#使用虚基类"><span class="post-toc-number">1.2.4.1.</span> <span class="post-toc-text">使用虚基类</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#虚基类成员的可见性"><span class="post-toc-number">1.2.4.2.</span> <span class="post-toc-text">虚基类成员的可见性</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#构造函数与虚继承"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text">构造函数与虚继承</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#虚继承的对象的构造方式"><span class="post-toc-number">1.2.5.1.</span> <span class="post-toc-text">虚继承的对象的构造方式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#构造函数与虚构函数的次序"><span class="post-toc-number">1.2.5.2.</span> <span class="post-toc-text">构造函数与虚构函数的次序</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其他知识点"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">其他知识点</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -212,7 +215,87 @@
             <h1 id="C-面向对象之继承"><a href="#C-面向对象之继承" class="headerlink" title="C++面向对象之继承"></a>C++面向对象之继承</h1><blockquote>
 <p>参考书籍：《Primer C++, 5th》</p>
 </blockquote>
-<h2 id="多重继承与虚继承"><a href="#多重继承与虚继承" class="headerlink" title="多重继承与虚继承"></a>多重继承与虚继承</h2><p>多重继承的派生类继承了<strong>所有父类的属性</strong></p>
+<h2 id="定义基类和派生类"><a href="#定义基类和派生类" class="headerlink" title="定义基类和派生类"></a>定义基类和派生类</h2><p>下面可能会用到的源码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> QUOTE_H_</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> QUOTE_H_</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Quote</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">string</span> bookNo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    <span class="keyword">double</span> price = <span class="number">0.0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Quote() = <span class="keyword">default</span>;</span><br><span class="line">    Quote(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span> &amp;book, <span class="keyword">double</span> sales_price) : bookNo(book), price(sales_price) &#123;&#125;</span><br><span class="line">    <span class="built_in">std</span>::<span class="function"><span class="built_in">string</span> <span class="title">isbn</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> bookNo; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">double</span> <span class="title">net_price</span><span class="params">(<span class="built_in">std</span>::<span class="keyword">size_t</span> n)</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> n * price; &#125;</span><br><span class="line">    <span class="keyword">virtual</span> ~Quote() = <span class="keyword">default</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="定义基类"><a href="#定义基类" class="headerlink" title="定义基类"></a>定义基类</h3><p>继承关系中，<strong>根节点的类通常会定义一个虚析构函数</strong>，即使该函数不执行任何实际操作也是如此</p>
+<h4 id="成员函数与继承"><a href="#成员函数与继承" class="headerlink" title="成员函数与继承"></a>成员函数与继承</h4><p>基类中通常有两种成员函数：</p>
+<ul>
+<li><p>虚函数：基类希望其派生类进行覆盖的函数</p>
+<ul>
+<li><p>当使用<strong>指针或者引用</strong>调用虚函数时，该调用将被动态绑定；根据引用或指针所绑定的对象类型的不同，该调用可能执行基类的版本，也可能执行某个派生类的版本</p>
+</li>
+<li><p><strong>任何构造函数之外的非静态函数都可以是虚函数</strong></p>
+</li>
+<li><p>并且virtual只能出现在类内部的声明语句之前，而不能用在类外部的函数定义</p>
+</li>
+<li><p>如果基类把一个函数声明为虚函数，则该函数<strong>在派生类中隐式地也是虚函数</strong>（即使没有virtual关键字）</p>
+</li>
+</ul>
+</li>
+<li><p>普通函数：基类希望派生类直接继承而不要改变的函数</p>
+<p>非虚成员函数的<strong>解析过程发生在编译时而非运行时</strong></p>
+</li>
+</ul>
+<h4 id="访问控制与继承"><a href="#访问控制与继承" class="headerlink" title="访问控制与继承"></a>访问控制与继承</h4><p>派生类可以继承定义在基类中的成员，但是派生类的成员函数不一定有权限访问从基类继承而来的成员</p>
+<p>（private、protected、public，过于简单，就不再赘述）</p>
+<h3 id="定义派生类"><a href="#定义派生类" class="headerlink" title="定义派生类"></a>定义派生类</h3><p>派生类必须通过使用类派生列表明确指出它从哪些基类继承而来，每个基类前面可以使用三种访问说明符中的一个：public、protected、private</p>
+<p><strong>三种继承方式不影响子类对父类的访问权限，子类对父类只看父类的访问控制权；</strong>三种继承方式都能访问父类中的public和protected成员</p>
+<p>简单来说：访问说明符的作用是控制派生类从基类继承而来的成员是否对<strong>派生类的用户</strong>可见</p>
+<p>如果一个派生是共有的，则<strong>基类的共有成员也是派生类接口的组成部分</strong>，我们能将共有派生类型的对象绑定到基类的引用或指针上</p>
+<h4 id="派生类中的虚函数"><a href="#派生类中的虚函数" class="headerlink" title="派生类中的虚函数"></a>派生类中的虚函数</h4><p>派生类经常（但不总是）覆盖它继承的虚函数；如果没有覆盖，则该虚函数的行为类似于其他普通成员，派生类<strong>会直接继承其在基类中的版本</strong></p>
+<h4 id="派生类对象及派生类向基类的类型转换"><a href="#派生类对象及派生类向基类的类型转换" class="headerlink" title="派生类对象及派生类向基类的类型转换"></a>派生类对象及派生类向基类的类型转换</h4><p>派生类对象包含多个组成部分：</p>
+<ul>
+<li>派生类自己定义的（非静态）成员的子对象</li>
+<li>与派生类继承的基类对应的子对象（如果基类有多个，那这样的子对象也有多个）</li>
+</ul>
+<p>正因为如此，我们能够</p>
+<ul>
+<li>把派生类的对象当成基类对象来使用</li>
+<li>能将基类的指针或引用绑定到派生类对象的基类部分上</li>
+<li>可以把派生类对象指针用在需要基类指针的地方</li>
+<li>可以把派生类对象或者派生类对象的引用用到需要基类引用的地方</li>
+</ul>
+<p>继承的关键所在：派生类对象中含有与基类对应的组成部分</p>
+<h4 id="派生类构造函数"><a href="#派生类构造函数" class="headerlink" title="派生类构造函数"></a>派生类构造函数</h4><p><strong>每个类控制它自己的成员的初始化过程</strong>：意味着派生类不能直接初始化继承的基类成员，需要通过基类的构造函数初始化它的基类部分</p>
+<p>我们可以通过构造函数初始化列表将实参传递给基类构造函数，同时用这个方法指定我们要调用的基类的构造函数版本，否则派生类对象的基类对象会像数据成员一样执行默认初始化</p>
+<p>首先初始化基类的部分，然后<strong>按照声明的顺序</strong>依次初始化派生类的成员</p>
+<h4 id="派生类使用基类的成员"><a href="#派生类使用基类的成员" class="headerlink" title="派生类使用基类的成员"></a>派生类使用基类的成员</h4><p>派生类可以访问基类的共有成员和受保护成员；派生类对象的作用域嵌套在基类的作用域之内，因此派生类的一个成员使用派生类其他成员的方式与使用基类成员的方式没有什么不同（除了基类private成员）</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/27/Xczqr6LGanyIQVN.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h4 id="继承与静态成员"><a href="#继承与静态成员" class="headerlink" title="继承与静态成员"></a>继承与静态成员</h4><p>如果基类定义了一个静态成员，那么整个继承体系中该静态成员只存在唯一的实例；静态成员遵循通用的访问控制规则， 如果某静态成员是可访问的，那么我们既能通过基类（及其对象）、也能通过派生类（及其对象）使用它</p>
+<h4 id="派生类的声明"><a href="#派生类的声明" class="headerlink" title="派生类的声明"></a>派生类的声明</h4><p>派生类的声明<strong>包含类名但是不包含它的派生列表</strong>；派生类列表与定义的其他细节必须与类的主体一起出现</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/27/tUPW17aKvqQzmsh.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>一条声明语句的目的是<strong>令程序知晓某个名字的存在</strong>以及<strong>该名字表示一个什么样的实体</strong>（如一个类、函数或者变量）</p>
+<h4 id="被用作基类的类"><a href="#被用作基类的类" class="headerlink" title="被用作基类的类"></a>被用作基类的类</h4><p>一个类必须已经定义而非仅仅声明才能被用作基类：</p>
+<ul>
+<li>派生类中包含并且可以使用它从基类继承而来的成员，为了使用这些成员，派生类必然要知道基类中定义了哪些成员</li>
+<li>言外之意：一个类不能派生它本身</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/27/hvtalZF6kLwuqX2.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>每个类都会继承直接基类的所有成员；在整个继承体系中，<strong>最终的派生类将包含它的直接基类的子对象以及每个间接基类的子对象</strong></p>
+<h4 id="防止继承发生"><a href="#防止继承发生" class="headerlink" title="防止继承发生"></a>防止继承发生</h4><p>C++11新标准：在<strong>类名后跟一个final</strong>，可以防止该类被继承</p>
+<h3 id="类型转换与继承"><a href="#类型转换与继承" class="headerlink" title="类型转换与继承"></a>类型转换与继承</h3><h2 id="多重继承与虚继承"><a href="#多重继承与虚继承" class="headerlink" title="多重继承与虚继承"></a>多重继承与虚继承</h2><p>多重继承的派生类继承了<strong>所有父类的属性</strong></p>
 <h3 id="多重继承"><a href="#多重继承" class="headerlink" title="多重继承"></a>多重继承</h3><ul>
 <li>关键字class对应的默认访问说明符是private，关键字struct对应的是public</li>
 <li>多重继承的派生列表只能包含已经被定义过的类，而且这些类不能是final的</li>
@@ -438,7 +521,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-11-27T03:06:46.459Z" itemprop="dateUpdated">2019-11-27 11:06:46</time>
+    Last updated: <time datetime="2019-11-27T09:43:19.704Z" itemprop="dateUpdated">2019-11-27 17:43:19</time>
 </span><br>
 
 
