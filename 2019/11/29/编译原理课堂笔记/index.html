@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>编译原理课堂笔记 | 至繁归于至简 - chph&#39;s blog | steve_chph personal website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="编译原理">
+    <meta name="description" content="Method 4 电路状态转换图 奇偶问题  电路状态转换法解题步骤：  构造电路状态转换图首先确定状态，如果有n个元素，则存在2^n个状态。然后链接状态。示例：三个元素下的所有状态转换： 确定开始状态和结束状态开始状态和结束状态是相对的，视题目具体情况确定。1）以全是0作为结束状态，以题目要求作为开始状态。2）以题目要求作为结束状态，以全是0作为开始状态。比如对于某种语言，以a或b开头，以c结尾">
+<meta name="keywords" content="编译原理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="编译原理课堂笔记">
+<meta property="og:url" content="http://QQ876684433.github.io/2019/11/29/编译原理课堂笔记/index.html">
+<meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
+<meta property="og:description" content="Method 4 电路状态转换图 奇偶问题  电路状态转换法解题步骤：  构造电路状态转换图首先确定状态，如果有n个元素，则存在2^n个状态。然后链接状态。示例：三个元素下的所有状态转换： 确定开始状态和结束状态开始状态和结束状态是相对的，视题目具体情况确定。1）以全是0作为结束状态，以题目要求作为开始状态。2）以题目要求作为结束状态，以全是0作为开始状态。比如对于某种语言，以a或b开头，以c结尾">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://artimg.ishenping.com/20190909054639960_UOPSSE.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/15/pAqFX2B5M97jOtE.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/15/afK3MUhHgSxqToY.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/15/bwYA1qXVzDrTBmU.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/20/Y5C8r9LksAnHoTc.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/20/Fr9JDSOXAdi4KTn.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/20/reB2io3j8gk5MLw.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/20/quO1FvCcx84RKUB.jpg">
+<meta property="og:image" content="http://qq876684433.github.io/home/steve/Desktop/IMG_20191120_154604.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/20/hry3jMD9sVI1CwA.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/22/ANckXvdzM5tZW8P.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/22/AdpCLI19MkqjWZz.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/22/kuDsnLWCZbhxBXY.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/22/jSguUX9w72heBrP.png">
+<meta property="og:image" content="https://i.loli.net/2019/11/22/UIH2S5XPfGkdLNY.png">
+<meta property="og:image" content="https://i.loli.net/2019/11/22/jSguUX9w72heBrP.png">
+<meta property="og:image" content="https://i.loli.net/2019/11/22/5vGJTmQxIbhFqrc.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/22/WsjRn9bzJkTNPVK.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/22/jSguUX9w72heBrP.png">
+<meta property="og:image" content="https://i.loli.net/2019/11/22/dL934kbhzXMQHCq.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/27/GRo8IMebTgdiwkF.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/27/vRKfQUrwguLeXbA.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/27/tus7oiDvdGLXTBJ.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/22/jSguUX9w72heBrP.png">
+<meta property="og:image" content="https://i.loli.net/2019/11/27/hJkRmUdfxsELwZ7.png">
+<meta property="og:image" content="https://i.loli.net/2019/11/27/bT6Uy8SpKLNaHXA.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/27/pVszXbn3yFNM5gk.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/27/Re4bN5g3yUqpOwS.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/29/qr9xQzsXUJChH2y.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/27/zmsKtNyRCl57UJM.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/27/Ie2YrDFwVCTU3bJ.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/29/KF7c5NC1ewAJjyE.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/29/4qW72ihuzRcf1KV.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/29/YApbvtnHz4hdZGw.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/29/ltvr4aVZXUz9Pjx.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/29/ph1fItWwOya5mjr.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/29/CwziMIBvphdUnmW.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/29/q8nuvSd6mWckwNb.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/29/cdG1tJlEqNjwRPz.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/29/UB9CpoSqHwuX2LN.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/29/6SkbsPRwufpYcWX.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/29/638XCMclOTwJnRA.jpg">
+<meta property="og:updated_time" content="2019-11-29T08:39:12.308Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="编译原理课堂笔记">
+<meta name="twitter:description" content="Method 4 电路状态转换图 奇偶问题  电路状态转换法解题步骤：  构造电路状态转换图首先确定状态，如果有n个元素，则存在2^n个状态。然后链接状态。示例：三个元素下的所有状态转换： 确定开始状态和结束状态开始状态和结束状态是相对的，视题目具体情况确定。1）以全是0作为结束状态，以题目要求作为开始状态。2）以题目要求作为结束状态，以全是0作为开始状态。比如对于某种语言，以a或b开头，以c结尾">
+<meta name="twitter:image" content="http://artimg.ishenping.com/20190909054639960_UOPSSE.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">steve_chph</h5>
+          <a href="mailto:chph13420146901@gmail.com" title="chph13420146901@gmail.com" class="mail">chph13420146901@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/QQ876684433" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">编译原理课堂笔记</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">编译原理课堂笔记</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-11-29T08:38:13.000Z" itemprop="datePublished" class="page-time">
+  2019-11-29
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编译原理/">编译原理</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编译原理/笔记/">笔记</a></li></ul></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Chapter-3"><span class="post-toc-number">1.</span> <span class="post-toc-text">Chapter 3</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Section-2"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Section 2</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Optimization-of-a-DFA"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Optimization of a DFA</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Section-5"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Section 5</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Method-1-Top-Down-Stepwise-Refinement"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">Method 1 Top-Down Stepwise Refinement</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Method-2-Thompson-Algorithm-Bottom-Up-Combination"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">Method 2 Thompson Algorithm Bottom-Up Combination</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Section-6"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Section 6</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Method-1-Stepwise-Refinement"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">Method 1 Stepwise Refinement</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Method-2-FA-based"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">Method 2 FA-based</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2019-11-27"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">2019-11-27</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Section-8"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">Section 8</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Chapter-4"><span class="post-toc-number">2.</span> <span class="post-toc-text">Chapter 4</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#section-1"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">section 1</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#section-2"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">section 2</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-编译原理课堂笔记"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">编译原理课堂笔记</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-11-29 16:38:13" datetime="2019-11-29T08:38:13.000Z"  itemprop="datePublished">2019-11-29</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编译原理/">编译原理</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编译原理/笔记/">笔记</a></li></ul></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>Method 4 电路状态转换图</p>
+<p>奇偶问题</p>
+<blockquote>
+<p>电路状态转换法解题步骤：</p>
+<ol>
+<li>构造电路状态转换图<br>首先确定状态，如果有n个元素，则存在2^n个状态。<br>然后链接状态。<br>示例：三个元素下的所有状态转换：<br><img src="http://artimg.ishenping.com/20190909054639960_UOPSSE.jpg" alt="在这里插入图片描述"></li>
+<li>确定开始状态和结束状态<br>开始状态和结束状态是相对的，视题目具体情况确定。<br>1）以全是0作为结束状态，以题目要求作为开始状态。<br>2）以题目要求作为结束状态，以全是0作为开始状态。<br>比如对于某种语言，以a或b开头，以c结尾，abc的数量皆是偶数，那么开始状态就不是唯一的，就不能用全是0作为开始状态。而结束状态是唯一的，所以可以拿全是0作为结束状态</li>
+<li>命名各个状态<br>初始状态用S命名，其他状态用A、B、C…命名</li>
+<li>写出相应的产生式<br>每条边上的变化都对应一条产生式<br>对结束状态要增加一条产生式：G-&gt;ε<br>严格来说，最后可以写出2^n (n+1) + 1条产生式。</li>
+</ol>
+<p>来源：<a href="http://www.ishenping.com/ArtInfo/3505373.html" target="_blank" rel="noopener">http://www.ishenping.com/ArtInfo/3505373.html</a></p>
+</blockquote>
+<p>Ω属于{a，b，c，d}，其中a、b个数是奇数，c个数是偶数</p>
+<p>（1）画出电路转换图</p>
+<p>（2）确定开始状态和结束状态</p>
+<p>全是0的状态特殊考虑：</p>
+<ul>
+<li><p>000：作为终态</p>
+<p>根据需求确定初态（那么初态是110，表示a、b个数是1奇数，c的个数是0偶数）</p>
+<p>然后将“上帝之手”指向初态</p>
+<p>（原因是，从$110-&gt;000$，无论在电路图上怎么走，最终a、b变化的都是奇数次，c是偶数次）</p>
+</li>
+<li><p>000：作为初态</p>
+<p>根据需求确定终态</p>
+</li>
+<li><p>随机</p>
+<p>例如开始状态是101，那么终态是$101+110=011$</p>
+</li>
+</ul>
+<p>（3）命名每个状态</p>
+<p>开始状态必是S，若其他7个状态表示为A-G</p>
+<p>（4）写出相应的产生式（related production）</p>
+<p>每条边对应一个产生式，例如AB之间有一条边A &lt;a&gt; B，那么A-&gt; aB</p>
+<p>对于终态Z（两个圈表示），要有Z -&gt; ∅</p>
+<p>所以最终的产生式：</p>
+<ul>
+<li>$S-&gt;aA|bC|cG|dS$</li>
+<li>$A-&gt;aS|bB|cE|dA$</li>
+<li>$B-&gt;aC|bA|cD|dB$</li>
+<li>……</li>
+</ul>
+<p>所以最终生成式的个数：$2^n*(n+m)+1$，其中+1表示的是终态$Z-&gt;∅$</p>
+<p>终态和初态可能是相同的，最后要检查最终的产生式的个数是否相同</p>
+<p>Method 5 FA-based Method</p>
+<p>子序列（subsequence）和子串（substring）的区别：子序列不要求在原串中连续</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/15/pAqFX2B5M97jOtE.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/15/afK3MUhHgSxqToY.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+
+<p>Method 6 Hybrid Method</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/15/bwYA1qXVzDrTBmU.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>Section 4 文法的二义性</p>
+<p>$E-&gt;E+E|E*E|i$</p>
+<p>$i+i*i$有不止一个分析树</p>
+<h2 id="Chapter-3"><a href="#Chapter-3" class="headerlink" title="Chapter 3"></a>Chapter 3</h2><p>写程序时，首先考虑程序<strong>外部特性</strong>：程序的输入、输出；然后再考虑<strong>内部特性</strong></p>
+<p>词法分析程序：</p>
+<ul>
+<li><p>输入：源程序</p>
+</li>
+<li><p>输出：token</p>
+<p>token（lexeme（actual word），catalog，inner_code）</p>
+<p>标识符放在标识符表中（ID Table），但是同一个word可能有多个含义，因此需要使用inner_code来进行区分，例如可以使用ID Table中的行号作为inner_code</p>
+<p>例如x=y+2，那么ID Table如下：</p>
+<p>(“X”, ID, 1)</p>
+<p>(“=”, ASSIGN_SYM, _)  // 因为赋值符号是单例的，即赋值符号没有其他的含义，那么就不需要inner_code来进行区分</p>
+<p>(“Y”, ID, 2)</p>
+<p>……</p>
+</li>
+</ul>
+<h3 id="Section-2"><a href="#Section-2" class="headerlink" title="Section 2"></a>Section 2</h3><p>单词构造规则（word construction rule），如何描述<strong>单词构造规则</strong>：</p>
+<ul>
+<li>正规文法 Regular Grammar：不直观，如abc：S-&gt;aA, A-&gt;bB, B-&gt;c</li>
+<li>正规表达式 Regular Expression，它给出了单词的一个模板template</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/20/Y5C8r9LksAnHoTc.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/20/Fr9JDSOXAdi4KTn.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+
+<p>如何通过RE来构造词法分析程序：FA（有限自动机）</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/20/reB2io3j8gk5MLw.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>FA：</p>
+<ul>
+<li><p>DFA（Deterministic） - 机器能接受的</p>
+<p>i状态下读入了a字符，它的后续状态是唯一的</p>
+<p>RE很容易变成NFA，因为a*的0次方是{空}边</p>
+</li>
+<li><p>NFA（Non-deterministic）</p>
+<p>i状态下读入了a字符，它的后续状态可能是j或者k，或者其他</p>
+</li>
+</ul>
+<p>如何将NFA转换成DFA？</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/20/quO1FvCcx84RKUB.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/home/steve/Desktop/IMG_20191120_154604.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>怎么将两种方法结合起来？<strong>表驱动</strong>，确定化（DFA）以后的表</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/20/hry3jMD9sVI1CwA.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>通过RE来生成DFA</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/22/ANckXvdzM5tZW8P.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p><strong>NFA转成DFA时，DFA中包含原NFA中终态的状态作为DFA的终态</strong></p>
+<h3 id="Optimization-of-a-DFA"><a href="#Optimization-of-a-DFA" class="headerlink" title="Optimization of a DFA"></a>Optimization of a DFA</h3><p>Idea：Reduce the number of states of DFA</p>
+<p>How to reduce?  Equivalent Class Division（等价类划分法，ECD）</p>
+<p>等价：自反、对称、传递</p>
+<p>划分等价类的方法ECD：</p>
+<ul>
+<li><p>Clustering——Bottom-Up Combination</p>
+<p>从单个元素开始，知道类中所有元素都是等价的，类外的元素都是不等价的</p>
+</li>
+<li><p>Classifying——Top-Down Division</p>
+<ul>
+<li><p>首先将所有的状态作为top</p>
+</li>
+<li><p>然后将所有的终态放到一起，所有的非终态放到另一起</p>
+</li>
+<li><p>接下来这两个类别要不要继续分解，要根据<strong>State Equivalence（状态等价）</strong>来决定</p>
+<p>状态等价：</p>
+<ul>
+<li>两个状态发出的边数相同（如果不同，说明两个状态处理的符号数不同，即处理能力不同）</li>
+<li>发出的边上标记相同</li>
+<li>后续状态要相应等价</li>
+</ul>
+<p>状态等价转换成<strong>后续状态等价</strong>的问题</p>
+<p>状态等价有两种：</p>
+<ul>
+<li><p>special case：same（strong  state equivalence，强等价）</p>
+</li>
+<li><p>special case：belong to same leaf of current division tree（weak state equivalence，弱等价）</p>
+<p>即后续状态同属于当前分解树的叶子节点，而不要求所有的后续状态都相同</p>
+</li>
+</ul>
+<p>我们希望的是第二种（弱等价），因为这样分解得到的状态相对少，达到了我们的目的</p>
+<p><img src="https://i.loli.net/2019/11/22/AdpCLI19MkqjWZz.jpg" alt></p>
+</li>
+<li><p>选择代表时，如果包含初态和其他状态，那么只能选择初态作为代表</p>
+<p><img src="https://i.loli.net/2019/11/22/kuDsnLWCZbhxBXY.jpg" alt></p>
+</li>
+</ul>
+<p>Note：<strong>lookback problem</strong>（后续状态的分解会引起前面状态的分解的改变<strong>（即继续分解）</strong>）</p>
+<ul>
+<li>一步一回首：每当有状态分解，就回头检验一下（因为会存在震荡/抖动问题，效率低）</li>
+<li>最后再回首：分解结束后再回来检验叶子节点（效率高，推荐）</li>
+</ul>
+</li>
+</ul>
+<p>$NFA=&gt;DFA=&gt;{DFA}^{0}=&gt;program$</p>
+<p>program：</p>
+<ul>
+<li>hard code：将状态转换表写死在程序中</li>
+<li>sofe code：table-driven，smart personalization configuration file（将控制转成数据，表驱动，$DFA’s;transition;table$）<ul>
+<li>loop up table</li>
+<li>terminate：如果查到空白，则看当前状态是不是终态，如果是则终止，否则出错</li>
+</ul>
+</li>
+</ul>
+<h3 id="Section-5"><a href="#Section-5" class="headerlink" title="Section 5"></a>Section 5</h3><p>如何将RE转成成NFA？</p>
+<h4 id="Method-1-Top-Down-Stepwise-Refinement"><a href="#Method-1-Top-Down-Stepwise-Refinement" class="headerlink" title="Method 1 Top-Down Stepwise Refinement"></a>Method 1 Top-Down Stepwise Refinement</h4><p>top：初始状态=(RE)=&gt;终止状态</p>
+<p>down：边上标记是<strong>单个符号</strong>或者<img src="https://i.loli.net/2019/11/22/jSguUX9w72heBrP.png" style="zoom:50%;">边</p>
+<p>按照RE本身的结构进行分解（庖丁解牛）</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/22/UIH2S5XPfGkdLNY.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>容易出错，适合人进行操作</p>
+<h4 id="Method-2-Thompson-Algorithm-Bottom-Up-Combination"><a href="#Method-2-Thompson-Algorithm-Bottom-Up-Combination" class="headerlink" title="Method 2 Thompson Algorithm Bottom-Up Combination"></a>Method 2 Thompson Algorithm Bottom-Up Combination</h4><p>从计算机角度出发，适合计算机来实现，它引入了更多的<img src="https://i.loli.net/2019/11/22/jSguUX9w72heBrP.png" style="zoom:50%;">边</p>
+<img src="https://i.loli.net/2019/11/22/5vGJTmQxIbhFqrc.jpg" style="zoom:80%;">
+
+<ul>
+<li>将点·补上，然后将中缀转成后缀：</li>
+</ul>
+<p>$$<br>(a<em>b)</em>(a|b)(a|b)* =&gt; (a<em>·b)*·(a|b)·(a|b)</em> =&gt; a<em>b·</em>ab|·ab|*·<br>$$</p>
+<ul>
+<li><p>最后扫描后缀表达式，使用算法</p>
+<p><img src="https://i.loli.net/2019/11/22/WsjRn9bzJkTNPVK.jpg" alt></p>
+<ul>
+<li><p>遇到字符：生成小的自动机</p>
+</li>
+<li><p>遇到点或者其他符号：进行连接</p>
+</li>
+</ul>
+<p>引入了太多的<img src="https://i.loli.net/2019/11/22/jSguUX9w72heBrP.png" style="zoom:50%;">边，但是能够由计算机计算完成</p>
+</li>
+</ul>
+<p>龙书第三章讲了：直接从RE=&gt;DFA</p>
+<h3 id="Section-6"><a href="#Section-6" class="headerlink" title="Section 6"></a>Section 6</h3><p>如何从语言来构造正规表达式RE？</p>
+<h4 id="Method-1-Stepwise-Refinement"><a href="#Method-1-Stepwise-Refinement" class="headerlink" title="Method 1 Stepwise Refinement"></a>Method 1 Stepwise Refinement</h4><p>看单词特征是不是可分解的</p>
+<p>一般来说是从左向右开始的</p>
+<p>例子：<br>$$<br>L={w|w\in(0,1,2,…,9)^{<em>},w;mod;5=0 }<br>$$<br>先从个位数开始，然后再考虑多位数<br>$$<br>0|5|(1|2|3|…|9)(1|2|3|…|9)^{</em>}(0|5)<br>$$<br>龙书习题：</p>
+<p><strong>先把最简单的情况写出来，后面复杂的情况可以用到简单情况</strong></p>
+<ul>
+<li><p>没有重复数字的字符串{0, 1, 2}</p>
+<p><img src="https://i.loli.net/2019/11/22/dL934kbhzXMQHCq.jpg" alt></p>
+</li>
+<li><p>只有一个重复数字的字符串{0, 1, 2}</p>
+</li>
+</ul>
+<h4 id="Method-2-FA-based"><a href="#Method-2-FA-based" class="headerlink" title="Method 2 FA-based"></a>Method 2 FA-based</h4><p>将电路状态转换图中的<strong>中间状态消除，只留下初始状态和终止状态</strong></p>
+<p>只要有一个终态，就会有正规表达式的一种情形，它是从初态到终态的路径的RE</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/27/GRo8IMebTgdiwkF.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/27/vRKfQUrwguLeXbA.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+
+
+
+<h3 id="2019-11-27"><a href="#2019-11-27" class="headerlink" title="2019-11-27"></a>2019-11-27</h3><p>如何从RG=&gt;NFA？</p>
+<p>RG有两种：</p>
+<ul>
+<li><p>*右线性正规文法：从左向右看</p>
+<p><img src="https://i.loli.net/2019/11/27/tus7oiDvdGLXTBJ.jpg" alt></p>
+</li>
+<li><p>左线性正规文法</p>
+</li>
+</ul>
+<p>language=&gt;RE</p>
+<ul>
+<li><p>Method 1：stepwise refinement</p>
+</li>
+<li><p>Method 2：FA-based</p>
+</li>
+</ul>
+<p>对特殊的语言，可以直接从language=&gt;NFA</p>
+<p>NFA至少满足其中一个情形：</p>
+<ul>
+<li>有<img src="https://i.loli.net/2019/11/22/jSguUX9w72heBrP.png" style="zoom:50%;">边</li>
+<li>从同一个边可以到达多个不唯一的后续状态</li>
+</ul>
+<p>RE、RG和FA之间的关系：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/27/hJkRmUdfxsELwZ7.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+
+<h3 id="Section-8"><a href="#Section-8" class="headerlink" title="Section 8"></a>Section 8</h3><p>对每个语言都专门写一个词法分析程序很繁琐，可以对相似的程序进行抽象出一个框架</p>
+<p>similar program：</p>
+<ul>
+<li>Framework - common</li>
+<li>Parameter - special</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/27/bT6Uy8SpKLNaHXA.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/27/pVszXbn3yFNM5gk.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>这个framework就是LEX</p>
+<p><img src="https://i.loli.net/2019/11/27/Re4bN5g3yUqpOwS.jpg" alt></p>
+<p>当有n个RE（每个RE对应一类单词）时，依然是使用同一个词法分析程序来识别所有的单词</p>
+<p>多个RE分别生成NFA，然后再将多个NFA合并成一个大的NFA<br>$$<br>NFA_{i}=&gt;aNFA=&gt;DFA=&gt;DFA^{0}<br>$$<br>$DFA^{0}$可以用来编写词法分析程序</p>
+<ul>
+<li><p>初态两两合并，是为了保证每个状态最多发出两条边，方便后面设计数据结构</p>
+</li>
+<li><p>终态不能合并，因为每个终态对应的含义不同</p>
+<ul>
+<li>优化DFA时将终态放到一起，只是以为这里没有给每个终态赋予含义</li>
+</ul>
+</li>
+</ul>
+<h2 id="Chapter-4"><a href="#Chapter-4" class="headerlink" title="Chapter 4"></a>Chapter 4</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/29/qr9xQzsXUJChH2y.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h3 id="section-1"><a href="#section-1" class="headerlink" title="section 1"></a>section 1</h3><p>词法分析程序输出token 序列，语法分析程序的输入为token序列</p>
+<ul>
+<li><p>Derivation-based：From $S=&gt;\alpha,\alpha\in V_{T}^+$，是一种top-down的分析方法</p>
+</li>
+<li><p>Reduction-based：Bottom-Up方法，Method of Construction of Parse Tree</p>
+<ul>
+<li>从句子实例本身开始，一步步进行抽象</li>
+</ul>
+</li>
+</ul>
+<p>CFGG=&gt;parser</p>
+<h3 id="section-2"><a href="#section-2" class="headerlink" title="section 2"></a>section 2</h3><p>（1）Recursive Descent Parsing（the simplest top-down method）</p>
+<ul>
+<li><p>好处：有文法就可以写语法分析程序</p>
+</li>
+<li><p>缺点：对文法有相应要求</p>
+<ul>
+<li>不能含有公共左因子，如$S=&gt;ABC|AD$，A就是公共左因子，这样会<strong>引起回溯</strong></li>
+<li>不能出现左递归，如$A=&gt;Aa|b $：会<strong>导致无限递归</strong></li>
+</ul>
+</li>
+</ul>
+<p>每个非终结符对应一个子程序</p>
+<p>每个终结符对应一个判定（decision）</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/27/zmsKtNyRCl57UJM.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>会导致回溯（backtracking）问题：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/27/Ie2YrDFwVCTU3bJ.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>$A=&gt;Aa|b$是一种左递归：会引起无限递归的问题</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">A</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">if</span> <span class="title">A</span><span class="params">()</span></span>&#123;</span><br><span class="line">		ch=getchar();</span><br><span class="line">		<span class="keyword">if</span>(ch==<span class="string">'b'</span>)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">else</span> </span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（2）预测分析法（Predictive Parsing Method）</p>
+<p>要求和上面一样：</p>
+<ul>
+<li>不能含有公共左因子，如$S=&gt;ABC|AD$，A就是公共左因子，这样会引起回溯</li>
+<li>不能出现左递归，如$A=&gt;Aa|b $：会导致无限递归</li>
+</ul>
+<p>为了避免回溯和无限递归，提出了预处理方案：</p>
+<ul>
+<li><p>提取最大的公共左因子（extract maximum common left factors）</p>
+<p>$A=&gt;\alpha\beta|\alpha\gamma, \alpha,\beta,\gamma\in(V_N,V_T)$</p>
+<p>$A=&gt;\alpha A^{‘}$</p>
+<p>$A^{`}=&gt;\beta|\gamma$</p>
+</li>
+</ul>
+<p>1）消除左递归</p>
+<p>$左递归：A=&gt;A\alpha|\beta$</p>
+<p>$右递归：A=&gt;\alpha A|\epsilon$</p>
+<ul>
+<li><p>Immediate/Direct left recursion</p>
+<p>通过语言，将左递归变成右递归</p>
+<p><img src="https://i.loli.net/2019/11/29/KF7c5NC1ewAJjyE.jpg" alt></p>
+</li>
+<li><p>Indirect left recursion</p>
+<p>间接左递归：$(1) S → Qc|c (2)Q → Rb|b (3) R → Sa|a$</p>
+<p>消除死锁（死循环）：给它们规定优先级，高优先级能够使用低优先级的资源</p>
+<p><img src="https://i.loli.net/2019/11/29/4qW72ihuzRcf1KV.jpg" alt></p>
+<p>变成左递归后，再使用消除直接左递归的方法</p>
+</li>
+<li><p>Hybrid left recursion（混合左递归）</p>
+<p>既有直接左递归，也有间接左递归</p>
+<p>$S=&gt;Sa|Ab|b$</p>
+<p>$A=&gt;Ad|Se|f$</p>
+<p><img src="https://i.loli.net/2019/11/29/YApbvtnHz4hdZGw.jpg" alt></p>
+<p>采用前面两种方法无效，无穷无尽</p>
+<p>混合左递归的特点：Loop in Loop，圈中套圈</p>
+<p>方法：</p>
+<ul>
+<li>Inner =&gt; Outer（攘外必先安内）</li>
+<li>Left =&gt; Right</li>
+</ul>
+<p>先消除内部的圈，然后再消除外部的圈</p>
+<p><img src="https://i.loli.net/2019/11/29/ltvr4aVZXUz9Pjx.jpg" alt></p>
+<p><img src="https://i.loli.net/2019/11/29/ph1fItWwOya5mjr.jpg" alt></p>
+</li>
+</ul>
+<p>2）<strong>Construct the PredictIve Parsing Table（PPT，构造预测分析表）</strong></p>
+<p>Table driven：软编码</p>
+<p>对一个输入加入左哨兵$$_L$和右哨兵$$_R$</p>
+<p>如：$i+i;=&gt;$_L;i+i;$_R$</p>
+<p>推导时将右边替换左边（即将左边出栈），同时为了实现最左推到，因此右边应该从右往左入栈</p>
+<p>如果栈顶是终结符，则比较该终结符和指针指向的符号是否相同，相同则继续，指针往后走；不同则报错</p>
+<p>$\epsilon$不压栈，例如$T=&gt;\epsilon$相当于将栈顶的T出栈</p>
+<p>如果指针指向了$$_R$，则只需判断栈中剩余的所有的非终结符能够推导出$\epsilon$</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/29/CwziMIBvphdUnmW.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>最后根据推导序列（Derivation Sequence，预测分析法的灵魂）就能够得出分析树</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/29/q8nuvSd6mWckwNb.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+
+<ul>
+<li><p>First</p>
+<p>$first(\alpha)={a|\alpha=&gt;a…,a\in V_T}$</p>
+<p>如果一个推导有多个可用产生式，那么经过如下预测，可以知道选用first($\alpha$)=a更合适，能够让推导前进一步</p>
+<p><img src="https://i.loli.net/2019/11/29/cdG1tJlEqNjwRPz.jpg" alt></p>
+<p>如果只有一个可用产生式，就只能用这个，如果最终推导无法匹配，那么将报错</p>
+<p><img src="https://i.loli.net/2019/11/29/UB9CpoSqHwuX2LN.jpg" alt></p>
+<p>迭代法求解递归</p>
+<ul>
+<li>先进行最初始假设</li>
+</ul>
+<p><img src="https://i.loli.net/2019/11/29/6SkbsPRwufpYcWX.jpg" alt></p>
+<p><img src="https://i.loli.net/2019/11/29/638XCMclOTwJnRA.jpg" alt></p>
+<p>这个为了看什么情况下才能够使用$E=&gt;TE^{`}$，根据first(E)的结果知道+和(的情况才能使用，否则报错</p>
+<p>How to solve the application of $A=&gt;\epsilon$？</p>
+<ul>
+<li><p>求$Follow(A)={a|S=&gt;…Aa…,a\in V_T}$</p>
+</li>
+<li><p>即栈中推导出的所有的终结符去掉A后，其余部分能够和表达式匹配，那么$A=&gt;\epsilon$将A出栈</p>
+</li>
+<li><p>怎么变成算法？</p>
+<p>观察相关产生式的右部，即哪些产生式的右部包含A</p>
+<p>$B=&gt;\alpha A\beta$</p>
+<p>$B=&gt;\alpha A$</p>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-11-29T08:39:12.308Z" itemprop="dateUpdated">2019-11-29 16:39:12</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/11/29/编译原理课堂笔记/" target="_blank" rel="external">http://QQ876684433.github.io/2019/11/29/编译原理课堂笔记/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://QQ876684433.github.io">
+            <img src="/img/avatar.jpg" alt="steve_chph">
+            steve_chph
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编译原理/">编译原理</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/11/29/编译原理课堂笔记/&title=《编译原理课堂笔记》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/11/29/编译原理课堂笔记/&title=《编译原理课堂笔记》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/11/29/编译原理课堂笔记/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《编译原理课堂笔记》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/11/29/编译原理课堂笔记/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/11/29/编译原理课堂笔记/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/11/26/CPP面向对象之继承/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">C++面向对象之继承</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢你~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>steve_chph &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/11/29/编译原理课堂笔记/&title=《编译原理课堂笔记》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/11/29/编译原理课堂笔记/&title=《编译原理课堂笔记》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/11/29/编译原理课堂笔记/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《编译原理课堂笔记》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/11/29/编译原理课堂笔记/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/11/29/编译原理课堂笔记/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsElEQVR42u3aQY7jMAwEwPn/p7PAnhYYZNJsibM+lE4BbMUqH0yC5NdXvF5/V3L19c96t/fnq9/v/P6flxceHh5edfR3KwEkL+Ldru6JyZnx8PDwtnnJ5z4/7vTjnvx/Ek7w8PDwnsY7Say7lD0JG3h4eHhP5p2UD5KAkSw8PDy85/CSvyvLAUHqPL26UmvBw8PDa54epbxP+L3Y38PDw8M76Kr/TsDonhXtwsPDw1vgnZRcuwJB3ujKRxA+nBwPDw/vKi8fhDr5QHfhIS9GvL0TDw8Pb42Xb8jbTvmLy0cHxs05PDw8vDXetEl/8rHOg03XACs7e3h4eHgVb6MBNk3ZkzBQBgY8PDy8BV60IS7O5mGjCw9Rso6Hh4e3wMtbSl3anXfh8vZbjsTDw8Pb4N1qO+VBJU+7z+/Hw8PD2+B1BYg8je4i1bRcm58NDw8Pb5uXH/d8yCA/3MmIAx4eHt4579bwU5dS50efjiCMKyJ4eHh4Q960XDu92o0InLfl8PDw8PZ4yeOnDaq8wJEHm/HYAR4eHt4Cr0tbp6Xe/NUk90/DCR4eHt5dXv7486GB6T35KEMU9/Dw8PCu8sbbjltTU3wZKvDw8PCWed2gwHlaPE3EB6k/Hh4e3gJvGhLKFn7eshq+4kEZFw8PD+8qLx+KSh6WjAX8fKBbRQ08PDy8PV6XRufFhemnPGlxXQgGeHh4eGu885JEl4h3Ywd4eHh427zXcHWHyMcO8vLuoMqCh4eHd5WXr3wwqwskXTJ9ofqCh4eHV/GmwSD5lCfF3O73ODDg4eHhrfHyJlNXjMjbWl1y/CEw4OHh4T2Md+tqFww+vHQ8PDy8/8rrRqBOduVDXR/aYHh4eHgLvHxAKvl850XbZG9+tXwMHh4e3pDXNcC6wYJbu6ZlDjw8PLxLvD/sSLGGrdWsUgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'chph个人博客';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Welcome to chph's blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
