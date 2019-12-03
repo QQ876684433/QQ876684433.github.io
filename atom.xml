@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://QQ876684433.github.io/"/>
-  <updated>2019-12-03T08:13:02.162Z</updated>
+  <updated>2019-12-03T09:11:47.287Z</updated>
   <id>http://QQ876684433.github.io/</id>
   
   <author>
@@ -21,9 +21,17 @@
     <link href="http://QQ876684433.github.io/2019/12/03/CPP%E6%93%8D%E4%BD%9C%E7%AC%A6%E9%87%8D%E8%BD%BD/"/>
     <id>http://QQ876684433.github.io/2019/12/03/CPP操作符重载/</id>
     <published>2019-12-03T08:12:10.000Z</published>
-    <updated>2019-12-03T08:13:02.162Z</updated>
+    <updated>2019-12-03T09:11:47.287Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul><li><p>重载的运算符是具有特殊名字的函数：函数的名字由关键字operator和其后要定义的运算符号共同组成</p></li><li><p>重载运算符函数的参数数量与该运算符作用的运算对象的数量一样多</p></li><li><p>除了重载的函数调用运算符operator()之外，其他的重载运算符不能含有默认实参</p></li><li><p>当一个重载的运算符是成员函数时，this对象指针绑定到左侧运算对象（即运算符重载函数的第一个参数）</p></li><li><p>不能重载内置类型的运算符</p></li><li><p>我们只能重载已有的运算符</p></li><li><p>对于一个重载的运算符来说，其优先级和结合律与对应的内置运算符一致</p><p>即<code>x == (y + z)</code>永远等价于<code>x == (y + z)</code></p></li></ul><p>其中<code>::</code>、<code>.*</code>、<code>.</code>和<code>?:</code>不能被重载：</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/12/03/hTq6WVGOiKXpnft.png" alt title>                </div>                <div class="image-caption"></div>            </figure>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot; title=&quot;基本概念&quot;&gt;&lt;/a&gt;基本概念&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;重载的运算符是具有特殊名字的函数：函数的名字由关键字operator和其后要定义的运算符号共同组成&lt;/p&gt;
+      
     
     </summary>
     
