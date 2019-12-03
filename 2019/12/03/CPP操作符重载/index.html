@@ -30,7 +30,9 @@
 <meta property="og:description" content="基本概念 重载的运算符是具有特殊名字的函数：函数的名字由关键字operator和其后要定义的运算符号共同组成  重载运算符函数的参数数量与该运算符作用的运算对象的数量一样多  除了重载的函数调用运算符operator()之外，其他的重载运算符不能含有默认实参  当一个重载的运算符是成员函数时，this对象指针绑定到左侧运算对象（即运算符重载函数的第一个参数）  不能重载内置类型的运算符  我们只能">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2019/12/03/hTq6WVGOiKXpnft.png">
-<meta property="og:updated_time" content="2019-12-03T09:11:47.287Z">
+<meta property="og:image" content="https://i.loli.net/2019/12/03/PzaKcW3mkhQ7jMU.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/03/cmJEn5YrWvPfaMj.png">
+<meta property="og:updated_time" content="2019-12-03T09:57:45.037Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CPP操作符重载">
 <meta name="twitter:description" content="基本概念 重载的运算符是具有特殊名字的函数：函数的名字由关键字operator和其后要定义的运算符号共同组成  重载运算符函数的参数数量与该运算符作用的运算对象的数量一样多  除了重载的函数调用运算符operator()之外，其他的重载运算符不能含有默认实参  当一个重载的运算符是成员函数时，this对象指针绑定到左侧运算对象（即运算符重载函数的第一个参数）  不能重载内置类型的运算符  我们只能">
@@ -169,7 +171,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本概念"><span class="post-toc-number">1.</span> <span class="post-toc-text">基本概念</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本概念"><span class="post-toc-number">1.</span> <span class="post-toc-text">基本概念</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#某些运算符不应该被重载"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">某些运算符不应该被重载</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -221,41 +223,19 @@
                 <div class="image-caption"></div>
             </figure>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<ul>
+<li><p>运算符重载函数是可以像普通函数一样被显式调用的</p>
+<ul>
+<li><p>非成员函数运算符重载函数的等价调用</p>
+<p><img src="https://i.loli.net/2019/12/03/PzaKcW3mkhQ7jMU.png" alt></p>
+</li>
+<li><p>成员函数运算符重载函数的等价调用</p>
+<p><img src="https://i.loli.net/2019/12/03/cmJEn5YrWvPfaMj.png" alt></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="某些运算符不应该被重载"><a href="#某些运算符不应该被重载" class="headerlink" title="某些运算符不应该被重载"></a>某些运算符不应该被重载</h3>
         </div>
 
         <blockquote class="post-copyright">
@@ -263,7 +243,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-12-03T09:11:47.287Z" itemprop="dateUpdated">2019-12-03 17:11:47</time>
+    Last updated: <time datetime="2019-12-03T09:57:45.037Z" itemprop="dateUpdated">2019-12-03 17:57:45</time>
 </span><br>
 
 
