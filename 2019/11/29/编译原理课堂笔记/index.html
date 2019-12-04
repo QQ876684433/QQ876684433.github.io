@@ -71,7 +71,25 @@
 <meta property="og:image" content="https://i.loli.net/2019/11/29/UB9CpoSqHwuX2LN.jpg">
 <meta property="og:image" content="https://i.loli.net/2019/11/29/6SkbsPRwufpYcWX.jpg">
 <meta property="og:image" content="https://i.loli.net/2019/11/29/638XCMclOTwJnRA.jpg">
-<meta property="og:updated_time" content="2019-11-29T08:39:12.308Z">
+<meta property="og:image" content="https://i.loli.net/2019/12/04/DhSObgvXnA3s1EI.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/04/W69oYkHshAxSc8N.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/04/x6nhYRG18ftE5Bz.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/04/kInLWZ5AjwGS7Fa.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/04/vHlhZwsV9puAL3m.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/04/URHEohbIpD3KdQt.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/04/N7uKlaZOjpRvP5J.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/04/TYeHgVFwvW8tSjJ.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/04/W3nrQwJVsbYzP5D.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/04/ZjLxtXGf7ERMQub.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/04/wKi5rksR1JygH4I.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/04/VqYnGBZrH14Xbkg.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/04/VtmYw2XEheNs6cd.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/04/bhvzaZXflYS5Dmj.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/04/evosuMngNI9Rb81.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/04/QUxRPSJ4she6lAb.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/04/qmYTDZcsCB6EznK.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/04/Uoiq6KZ9vxgbnFM.jpg">
+<meta property="og:updated_time" content="2019-12-04T08:33:57.576Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编译原理课堂笔记">
 <meta name="twitter:description" content="Method 4 电路状态转换图 奇偶问题  电路状态转换法解题步骤：  构造电路状态转换图首先确定状态，如果有n个元素，则存在2^n个状态。然后链接状态。示例：三个元素下的所有状态转换： 确定开始状态和结束状态开始状态和结束状态是相对的，视题目具体情况确定。1）以全是0作为结束状态，以题目要求作为开始状态。2）以题目要求作为结束状态，以全是0作为开始状态。比如对于某种语言，以a或b开头，以c结尾">
@@ -652,14 +670,12 @@
 <li>不能出现左递归，如$A=&gt;Aa|b $：会导致无限递归</li>
 </ul>
 <p>为了避免回溯和无限递归，提出了预处理方案：</p>
-<ul>
-<li><p>提取最大的公共左因子（extract maximum common left factors）</p>
+<p>1）提取最大的公共左因子（extract maximum common left factors）</p>
+<p>因为含有公共左因子时，需要进行试探，试探就会引起回溯</p>
 <p>$A=&gt;\alpha\beta|\alpha\gamma, \alpha,\beta,\gamma\in(V_N,V_T)$</p>
 <p>$A=&gt;\alpha A^{‘}$</p>
 <p>$A^{`}=&gt;\beta|\gamma$</p>
-</li>
-</ul>
-<p>1）消除左递归</p>
+<p>2）消除左递归</p>
 <p>$左递归：A=&gt;A\alpha|\beta$</p>
 <p>$右递归：A=&gt;\alpha A|\epsilon$</p>
 <ul>
@@ -669,9 +685,10 @@
 </li>
 <li><p>Indirect left recursion</p>
 <p>间接左递归：$(1) S → Qc|c (2)Q → Rb|b (3) R → Sa|a$</p>
-<p>消除死锁（死循环）：给它们规定优先级，高优先级能够使用低优先级的资源</p>
+<p>消除死锁（死循环）：给它们规定优先级，高优先级能够使用低优先级（以及自身）的资源</p>
 <p><img src="https://i.loli.net/2019/11/29/4qW72ihuzRcf1KV.jpg" alt></p>
-<p>变成左递归后，再使用消除直接左递归的方法</p>
+<p>变成直接左递归后，再使用消除直接左递归的方法</p>
+<p>（约定：开始状态的优先级最高）</p>
 </li>
 <li><p>Hybrid left recursion（混合左递归）</p>
 <p>既有直接左递归，也有间接左递归</p>
@@ -685,12 +702,12 @@
 <li>Inner =&gt; Outer（攘外必先安内）</li>
 <li>Left =&gt; Right</li>
 </ul>
-<p>先消除内部的圈，然后再消除外部的圈</p>
+<p>先消除内部的圈，然后再消除外部的圈（从左向右）</p>
 <p><img src="https://i.loli.net/2019/11/29/ltvr4aVZXUz9Pjx.jpg" alt></p>
 <p><img src="https://i.loli.net/2019/11/29/ph1fItWwOya5mjr.jpg" alt></p>
 </li>
 </ul>
-<p>2）<strong>Construct the PredictIve Parsing Table（PPT，构造预测分析表）</strong></p>
+<p>3）<strong>Construct the PredictIve Parsing Table（PPT，构造预测分析表）</strong></p>
 <p>Table driven：软编码</p>
 <p>对一个输入加入左哨兵$$_L$和右哨兵$$_R$</p>
 <p>如：$i+i;=&gt;$_L;i+i;$_R$</p>
@@ -718,7 +735,7 @@
 
 
 <ul>
-<li><p>First</p>
+<li><p>First：起到预测的作用</p>
 <p>$first(\alpha)={a|\alpha=&gt;a…,a\in V_T}$</p>
 <p>如果一个推导有多个可用产生式，那么经过如下预测，可以知道选用first($\alpha$)=a更合适，能够让推导前进一步</p>
 <p><img src="https://i.loli.net/2019/11/29/cdG1tJlEqNjwRPz.jpg" alt></p>
@@ -733,17 +750,191 @@
 <p>这个为了看什么情况下才能够使用$E=&gt;TE^{`}$，根据first(E)的结果知道+和(的情况才能使用，否则报错</p>
 <p>How to solve the application of $A=&gt;\epsilon$？</p>
 <ul>
-<li><p>求$Follow(A)={a|S=&gt;…Aa…,a\in V_T}$</p>
+<li><p>求$Follow(A)={a|S=&gt;…Aa…,a\in V_T}$，而且是对非终结符求Follow()</p>
 </li>
 <li><p>即栈中推导出的所有的终结符去掉A后，其余部分能够和表达式匹配，那么$A=&gt;\epsilon$将A出栈</p>
 </li>
-<li><p>怎么变成算法？</p>
-<p>观察相关产生式的右部，即哪些产生式的右部包含A</p>
-<p>$B=&gt;\alpha A\beta$</p>
-<p>$B=&gt;\alpha A$</p>
+<li><p>怎么变成算法（即怎么求follow）？</p>
+<p>观察相应产生式的右部，看哪些产生式的右部包含A</p>
+<ul>
+<li><p>$B=&gt;\alpha A\beta$</p>
+<p>$S=&gt;…=&gt;…B…=&gt;…\alpha A\beta…$</p>
+<p><img src="https://i.loli.net/2019/12/04/DhSObgvXnA3s1EI.jpg" alt></p>
+</li>
+<li><p>$B=&gt;\alpha A$</p>
 </li>
 </ul>
+<p>约定：对于开始符，求follow时，一定要把$$_R$放进follow(开始符)</p>
 </li>
+</ul>
+<p>例子：</p>
+<p><img src="https://i.loli.net/2019/12/04/W69oYkHshAxSc8N.jpg" alt></p>
+<p><img src="https://i.loli.net/2019/12/04/x6nhYRG18ftE5Bz.jpg" alt></p>
+<p><img src="https://i.loli.net/2019/12/04/kInLWZ5AjwGS7Fa.jpg" alt></p>
+<p><img src="https://i.loli.net/2019/12/04/vHlhZwsV9puAL3m.jpg" alt></p>
+</li>
+</ul>
+<p>4）构造预测分析程序</p>
+<p>soft code（table-driven）</p>
+<p>预测分析器：</p>
+<ul>
+<li><p>PPT</p>
+<p>空白格子报错</p>
+</li>
+<li><p>monitor</p>
+<ul>
+<li>Initialization（初始化）：栈初始化，将PPT放入内存（以二维表的方式）</li>
+<li>lookup table：查PPT（需要两个参数，栈顶的非终结符和指针指向的终结符）</li>
+<li>matching程序：栈顶终结符和指针指向的终结符相同则matched</li>
+<li>success report：异常结束、成功结束（栈顶是$$_L$，指针指向$$_R $）</li>
+</ul>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/04/URHEohbIpD3KdQt.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>对文法G进行预处理（含有公共左因子和左递归的情况需要进行预处理）得到G’后，如果G’的PPT没有冲突，那么G’称为<strong>LL(1)文法</strong>：</p>
+<ul>
+<li>L：从左向右扫描（scan from Left to right）</li>
+<li>L：最左推导（Left-most derivation）</li>
+<li>1：看读头下的一个符号进行推导（watch the character under the reader）</li>
+<li>LL（1）文法才能用预测分析法进行推导</li>
+</ul>
+<p>$G=&gt;G’=&gt;PPT$</p>
+<p>PPT里的一个格子里如果有两个产生式，那么就会产生冲突</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/04/N7uKlaZOjpRvP5J.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/04/TYeHgVFwvW8tSjJ.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/04/W3nrQwJVsbYzP5D.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+
+<p>解决二义文法？（例子：ppt4第35张）</p>
+<p>$S → iEtSS<code>|a \\$
+$S</code> → eS | \epsilon \$<br>$E →b$</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/04/ZjLxtXGf7ERMQub.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>消除左递归也不能解决二义性文法：</p>
+<ul>
+<li><p>$E=&gt;E+E|E*E|i$</p>
+<p><img src="https://i.loli.net/2019/12/04/wKi5rksR1JygH4I.jpg" alt></p>
+<p><img src="https://i.loli.net/2019/12/04/VqYnGBZrH14Xbkg.jpg" alt></p>
+</li>
+</ul>
+<p>（3）LR分析法（LR parser）</p>
+<p>L: scan from Left to right</p>
+<p>R: Leftmost Reduction</p>
+<p>思想：分层有限自动机（using Layered Finite Automata）</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/04/VtmYw2XEheNs6cd.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>CFGG: Hierarchical Structure </p>
+<p>给个产生式构造小的自动机，然后将相关的小自动机用$\epsilon$边来连接起来</p>
+<p>$S=&gt;\eta | \theta$</p>
+<ul>
+<li><p>引入0号产生式，构造最上层的小自动机</p>
+<p><img src="https://i.loli.net/2019/12/04/bhvzaZXflYS5Dmj.jpg" alt></p>
+</li>
+</ul>
+<p>$G+(0)S’=&gt;S=&gt;G’=&gt;Layered; FA（是NFA）=&gt;LR;DFA$</p>
+<p>给分层FA中的每个状态命名，使用LRitem</p>
+<p>LRitem：</p>
+<ul>
+<li>layer: 产生式本身（产生式就代表了层次）</li>
+<li>position: dot（点）</li>
+</ul>
+<p>LRitem：</p>
+<ul>
+<li>Shift item </li>
+<li>Reduction item</li>
+</ul>
+<p>对于$C=&gt;\epsilon$的小自动机（命名为$C=&gt;.$）：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/04/evosuMngNI9Rb81.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+
+<p><strong>关键：分层有限自动机、LR项</strong></p>
+<ul>
+<li><p>start point：$S’=&gt;S$</p>
+</li>
+<li><p>$\epsilon$闭包（解决$\epsilon$边的问题）和子集构造法（解决后续状态不唯一的问题）结合使用</p>
+<ul>
+<li>$\epsilon$闭包：内部状态扩展（in-state extension）</li>
+<li>子集构造法：状态间扩展（between-state extension）</li>
+</ul>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/04/QUxRPSJ4she6lAb.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>与第三章的DFA的区别：<strong>边上可以是非终结符</strong></p>
+<p>PPT中的例子：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/04/qmYTDZcsCB6EznK.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/04/Uoiq6KZ9vxgbnFM.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>LR DFA =&gt; LR parsing table</p>
+<ul>
+<li>ACTION子表处理终结符边</li>
+<li>GOTO子表处理非终结符边</li>
 </ul>
 
         </div>
@@ -753,7 +944,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-11-29T08:39:12.308Z" itemprop="dateUpdated">2019-11-29 16:39:12</time>
+    Last updated: <time datetime="2019-12-04T08:33:57.576Z" itemprop="dateUpdated">2019-12-04 16:33:57</time>
 </span><br>
 
 
