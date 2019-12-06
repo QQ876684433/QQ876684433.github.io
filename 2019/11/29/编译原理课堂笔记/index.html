@@ -89,7 +89,15 @@
 <meta property="og:image" content="https://i.loli.net/2019/12/04/QUxRPSJ4she6lAb.jpg">
 <meta property="og:image" content="https://i.loli.net/2019/12/04/qmYTDZcsCB6EznK.jpg">
 <meta property="og:image" content="https://i.loli.net/2019/12/04/Uoiq6KZ9vxgbnFM.jpg">
-<meta property="og:updated_time" content="2019-12-04T08:33:57.576Z">
+<meta property="og:image" content="https://i.loli.net/2019/12/06/zYCySflXhg1vV5a.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/06/1LPqgRuGXieVf87.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/06/E5OuasytmHT3CdW.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/06/m8kCJdpxhBTF7ty.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/06/bFkumzfQX2Twlyd.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/06/TY983ZRlkjxHLCv.jpg">
+<meta property="og:image" content="http://qq876684433.github.io/home/steve/.config/Typora/typora-user-images/1575619938033.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/06/h5Km2skJEzloPgB.jpg">
+<meta property="og:updated_time" content="2019-12-06T08:58:48.542Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编译原理课堂笔记">
 <meta name="twitter:description" content="Method 4 电路状态转换图 奇偶问题  电路状态转换法解题步骤：  构造电路状态转换图首先确定状态，如果有n个元素，则存在2^n个状态。然后链接状态。示例：三个元素下的所有状态转换： 确定开始状态和结束状态开始状态和结束状态是相对的，视题目具体情况确定。1）以全是0作为结束状态，以题目要求作为开始状态。2）以题目要求作为结束状态，以全是0作为开始状态。比如对于某种语言，以a或b开头，以c结尾">
@@ -851,7 +859,7 @@ $S</code> → eS | \epsilon \$<br>$E →b$</p>
 <p><img src="https://i.loli.net/2019/12/04/VqYnGBZrH14Xbkg.jpg" alt></p>
 </li>
 </ul>
-<p>（3）LR分析法（LR parser）</p>
+<p><strong>（3）LR分析法（LR parser）</strong></p>
 <p>L: scan from Left to right</p>
 <p>R: Leftmost Reduction</p>
 <p>思想：分层有限自动机（using Layered Finite Automata）</p>
@@ -867,16 +875,16 @@ $S</code> → eS | \epsilon \$<br>$E →b$</p>
 <p>给个产生式构造小的自动机，然后将相关的小自动机用$\epsilon$边来连接起来</p>
 <p>$S=&gt;\eta | \theta$</p>
 <ul>
-<li><p>引入0号产生式，构造最上层的小自动机</p>
+<li><p>引入0号产生式，构造最上层的小自动机（使得初始状态有且只有一个）</p>
 <p><img src="https://i.loli.net/2019/12/04/bhvzaZXflYS5Dmj.jpg" alt></p>
 </li>
 </ul>
 <p>$G+(0)S’=&gt;S=&gt;G’=&gt;Layered; FA（是NFA）=&gt;LR;DFA$</p>
-<p>给分层FA中的每个状态命名，使用LRitem</p>
-<p>LRitem：</p>
+<p><strong>给分层FA中的每个状态命名，使用LRitem</strong></p>
+<p>LRitem（实际上是一种二维的命名方法）：</p>
 <ul>
-<li>layer: 产生式本身（产生式就代表了层次）</li>
-<li>position: dot（点）</li>
+<li>layer: 产生式本身（产生式就代表了层次），即第几层</li>
+<li>position: dot（点），即该层的哪个位置</li>
 </ul>
 <p>LRitem：</p>
 <ul>
@@ -900,8 +908,12 @@ $S</code> → eS | \epsilon \$<br>$E →b$</p>
 </li>
 <li><p>$\epsilon$闭包（解决$\epsilon$边的问题）和子集构造法（解决后续状态不唯一的问题）结合使用</p>
 <ul>
-<li>$\epsilon$闭包：内部状态扩展（in-state extension）</li>
-<li>子集构造法：状态间扩展（between-state extension）</li>
+<li><p>$\epsilon$闭包：内部状态扩展（in-state extension）</p>
+<p>直到右部的首字符是终结符或者点走到最后，否则将继续进行内部状态扩展</p>
+</li>
+<li><p>子集构造法：状态间扩展（between-state extension）</p>
+<p>shift dot（将点往后移动一步）</p>
+</li>
 </ul>
 </li>
 </ul>
@@ -931,12 +943,140 @@ $S</code> → eS | \epsilon \$<br>$E →b$</p>
                 <div class="image-caption"></div>
             </figure>
 
-<p>LR DFA =&gt; LR parsing table</p>
+<p><strong>LR DFA =&gt; LR parsing table</strong></p>
 <ul>
-<li>ACTION子表处理终结符边</li>
-<li>GOTO子表处理非终结符边</li>
+<li><p>ACTION子表处理终结符边</p>
+<p>另一个参数是：读头下可以出现的符号</p>
+</li>
+<li><p>GOTO子表处理非终结符边</p>
+<p>另一个参数是：非终结符</p>
+</li>
 </ul>
+<p>从I0开始，观察每一个状态</p>
+<ul>
+<li><p>发出边（outer edges）</p>
+<ul>
+<li>非终止符$V_N$——GOTO子表</li>
+<li>终止符$V_T$——ACTION子表</li>
+</ul>
+</li>
+<li><p>Inner——可规约的LRitem（即点跑到最后的项，例如$S’=&gt;E.$）</p>
+<p>开始求Follow（…），例如求Follow(E)</p>
+<p>使用0号产生式做规约，相当于$r_0=accept$</p>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/06/zYCySflXhg1vV5a.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
 
+<p>两个栈</p>
+<ul>
+<li>状态栈state，栈底是0号状态$S’$</li>
+<li>符号栈symbol，栈底是$$_L$</li>
+</ul>
+<p>$S_i$的作用是，将读头指向的符号压入符号栈并将读头往后移动一位，同时将i状态压入状态栈，</p>
+<p>$r_i$的作用是，拿i号可规约串做规约，将可规约串右部的符号弹出符号栈（状态栈也要同步弹出），将可规约串左部压入符号栈，并将<strong>GOTO(状态栈栈顶状态，符号栈栈顶符号)</strong>压入状态栈</p>
+<p>（可规约串实际上是将右部规约成左部）</p>
+<p>将规约过程中用到的可规约串作为<strong>规约序列（reduction sequence）</strong>，然后根据这个规约序列可以反向构造出语法分析树</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/06/1LPqgRuGXieVf87.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>$G+(0)=&gt;G’=&gt;LR;DFA=&gt;LR;Parsing;Table;without;conflicts$</p>
+<p>那么G is called SLR(1) grammar</p>
+<ul>
+<li><p>S: simple</p>
+<p>SLR(1)不能够分析所有的非二义文法</p>
+</li>
+<li><p>L: scan from left to right</p>
+</li>
+<li><p>R: leftmost reduction</p>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/06/E5OuasytmHT3CdW.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>conflicts：</p>
+<ul>
+<li><p>S-R: shift-reduce-conflicts（移进-规约冲突，即同一个格子中同时有S和R）</p>
+</li>
+<li><p>R-R: reduce-reduce-conflicts（规约-规约冲突，即同一个格子中有两个及以上的R）</p>
+</li>
+<li><p>不存在S-S，因为我们是基于LR DFA的，对于一个符号，只会有一个后续状态</p>
+<p><img src="https://i.loli.net/2019/12/06/m8kCJdpxhBTF7ty.jpg" alt></p>
+</li>
+</ul>
+<p><strong>解决方案</strong></p>
+<p>通过LR(1)item，实现SLR(1)===&gt;LR(1)</p>
+<p>LR(1)item = LR item + predictive symbol（预测符号，the character after the reducible string）</p>
+<ul>
+<li><p>可归约项之后会出现的符号</p>
+</li>
+<li><p>符号栈顶已经形成了可规约串，预测符号决定是否要进行规约</p>
+</li>
+</ul>
+<p>预测符号一定属于Follow(规约项左部)</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/06/bFkumzfQX2Twlyd.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/06/TY983ZRlkjxHLCv.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/home/steve/.config/Typora/typora-user-images/1575619938033.png" alt="1575619938033" title>
+                </div>
+                <div class="image-caption">1575619938033</div>
+            </figure>
+
+<p>LR(1)DFA=&gt;LR(1) parsing table</p>
+<ul>
+<li><p>观察每个状态</p>
+<ul>
+<li><p>outer edges</p>
+<ul>
+<li>$V_T$</li>
+<li>$V_N $</li>
+</ul>
+</li>
+<li><p>inner，要带上预测符</p>
+<p>$(A=&gt;\alpha,a)$，那么在(A, a)下面填$r_{规约项}$</p>
+<p>这样就不需要求Follow(A)，直接通过预测符a来填$r_{规约项}$</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/06/h5Km2skJEzloPgB.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
         </div>
 
         <blockquote class="post-copyright">
@@ -944,7 +1084,7 @@ $S</code> → eS | \epsilon \$<br>$E →b$</p>
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-12-04T08:33:57.576Z" itemprop="dateUpdated">2019-12-04 16:33:57</time>
+    Last updated: <time datetime="2019-12-06T08:58:48.542Z" itemprop="dateUpdated">2019-12-06 16:58:48</time>
 </span><br>
 
 
