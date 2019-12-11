@@ -97,7 +97,11 @@
 <meta property="og:image" content="https://i.loli.net/2019/12/06/TY983ZRlkjxHLCv.jpg">
 <meta property="og:image" content="http://qq876684433.github.io/home/steve/.config/Typora/typora-user-images/1575619938033.png">
 <meta property="og:image" content="https://i.loli.net/2019/12/06/h5Km2skJEzloPgB.jpg">
-<meta property="og:updated_time" content="2019-12-06T08:58:48.542Z">
+<meta property="og:image" content="https://i.loli.net/2019/12/11/uwgCcAJosTxYOLG.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/11/tBqEOSby9fHgL4w.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/11/YAO3ceM6ywRuTXq.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/11/toB3F5yqn8ebXRf.jpg">
+<meta property="og:updated_time" content="2019-12-11T08:11:13.022Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编译原理课堂笔记">
 <meta name="twitter:description" content="Method 4 电路状态转换图 奇偶问题  电路状态转换法解题步骤：  构造电路状态转换图首先确定状态，如果有n个元素，则存在2^n个状态。然后链接状态。示例：三个元素下的所有状态转换： 确定开始状态和结束状态开始状态和结束状态是相对的，视题目具体情况确定。1）以全是0作为结束状态，以题目要求作为开始状态。2）以题目要求作为结束状态，以全是0作为开始状态。比如对于某种语言，以a或b开头，以c结尾">
@@ -1077,6 +1081,76 @@ $S</code> → eS | \epsilon \$<br>$E →b$</p>
                 </div>
                 <div class="image-caption"></div>
             </figure>
+
+
+
+
+
+<p>2019-12-11</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/11/uwgCcAJosTxYOLG.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/11/tBqEOSby9fHgL4w.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/11/YAO3ceM6ywRuTXq.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+
+<p>LR(1)DFA的能力比LRDFA强，但是状态更多</p>
+<p>LR(1) state的预测符拿掉后是LR(1)item的核心（core）</p>
+<p>LR(1)DFA可以通过合并同核心状态得到LALR(1)DFA，其中LA是：LookAhead，然后就可以构造LALR(1)分析表</p>
+<p>$SLR(1) \in LR(1)$</p>
+<p>$LALR(1)\in LR(1)$</p>
+<p>LRDFA和LALRDFA的状态数相同</p>
+<p>LRDFA不一定能够通过合并同心项来得到LALRDFA，可能会产生新的冲突，见PPT4第96-99页</p>
+<p>LRDFA的分析能力是最强的，能够分析非二义文法和二义文法</p>
+<p>ambiguous grammar G ==&gt; LR(1) parsing table、SLR(1) parsing table with conflicts</p>
+<p>二义文法的解决方案是：<strong>引入附加条件</strong></p>
+<ul>
+<li><p>表达式文法：$E=&gt;E+E|E*E|(E)|i$，那么引入的附加条件有：</p>
+<ul>
+<li>优先级（precedence / priority）</li>
+<li>结合性（left associativity / right associativity）</li>
+</ul>
+<p>方法：</p>
+<ul>
+<li><p>构造SLR(1)分析表，找出冲突</p>
+</li>
+<li><p>通过引入的附加条件解决冲突</p>
+<ul>
+<li><p>给出附加条件，例如*和/的优先级比+和-高，并且都是左结合性</p>
+</li>
+<li><p>解决冲突：</p>
+<p>通过比较读头下的符号和符号栈顶的符号的优先级或者结合性（这是我们引入的附加条件）来决定选择哪个动作</p>
+<p>（已经进栈的写在前面，未进栈的写在后面，然后比较前后的优先级和结合性；符号相同看结合性，符号不同则看优先级）</p>
+</li>
+<li><p>最后就可以将有冲突的分析表变成无冲突的分析表</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2019/12/11/toB3F5yqn8ebXRf.jpg" alt></p>
+</li>
+<li></li>
+</ul>
+
         </div>
 
         <blockquote class="post-copyright">
@@ -1084,7 +1158,7 @@ $S</code> → eS | \epsilon \$<br>$E →b$</p>
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-12-06T08:58:48.542Z" itemprop="dateUpdated">2019-12-06 16:58:48</time>
+    Last updated: <time datetime="2019-12-11T08:11:13.022Z" itemprop="dateUpdated">2019-12-11 16:11:13</time>
 </span><br>
 
 
