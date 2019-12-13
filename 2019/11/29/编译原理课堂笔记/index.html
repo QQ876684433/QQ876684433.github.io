@@ -101,7 +101,9 @@
 <meta property="og:image" content="https://i.loli.net/2019/12/11/tBqEOSby9fHgL4w.jpg">
 <meta property="og:image" content="https://i.loli.net/2019/12/11/YAO3ceM6ywRuTXq.jpg">
 <meta property="og:image" content="https://i.loli.net/2019/12/11/toB3F5yqn8ebXRf.jpg">
-<meta property="og:updated_time" content="2019-12-11T08:11:13.022Z">
+<meta property="og:image" content="https://i.loli.net/2019/12/13/sak5IldM2O13Lof.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/13/6Sh5fznKp8sUGCa.jpg">
+<meta property="og:updated_time" content="2019-12-13T07:52:07.968Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编译原理课堂笔记">
 <meta name="twitter:description" content="Method 4 电路状态转换图 奇偶问题  电路状态转换法解题步骤：  构造电路状态转换图首先确定状态，如果有n个元素，则存在2^n个状态。然后链接状态。示例：三个元素下的所有状态转换： 确定开始状态和结束状态开始状态和结束状态是相对的，视题目具体情况确定。1）以全是0作为结束状态，以题目要求作为开始状态。2）以题目要求作为结束状态，以全是0作为开始状态。比如对于某种语言，以a或b开头，以c结尾">
@@ -1126,10 +1128,10 @@ $S</code> → eS | \epsilon \$<br>$E →b$</p>
 <ul>
 <li><p>表达式文法：$E=&gt;E+E|E*E|(E)|i$，那么引入的附加条件有：</p>
 <ul>
-<li>优先级（precedence / priority）</li>
-<li>结合性（left associativity / right associativity）</li>
+<li><strong>优先级</strong>（precedence / priority）</li>
+<li><strong>结合性</strong>（left associativity / right associativity）</li>
 </ul>
-<p>方法：</p>
+<p>方法一（SLR(1)）：</p>
 <ul>
 <li><p>构造SLR(1)分析表，找出冲突</p>
 </li>
@@ -1147,10 +1149,46 @@ $S</code> → eS | \epsilon \$<br>$E →b$</p>
 </li>
 </ul>
 <p><img src="https://i.loli.net/2019/12/11/toB3F5yqn8ebXRf.jpg" alt></p>
-</li>
-<li></li>
+<p>方法二（LR(1)）：</p>
+<ul>
+<li>构造LR(1)分析表来找出冲突</li>
+<li>解决冲突（同方法一）</li>
 </ul>
-
+</li>
+<li><p>if-else二义文法时，引入附加条件为：else-dangling</p>
+<p>$(0)S’=&gt;S$</p>
+<p>$S=&gt;iS|iSeS|a$</p>
+<ul>
+<li><p>首先构造LR(1)/SLR(1)：$SLR(1): G+(0)=&gt;G’=&gt;LR DFA / SLR(1) DFA$</p>
+</li>
+<li><p>构造SLR(1)分析表，找出冲突</p>
+<p>$i;i;S;;eS$</p>
+</li>
+<li><p>引入附加条件假设</p>
+<ul>
+<li><p>farest: else和最远的if匹配</p>
+<p>那么先规约，再移进</p>
+</li>
+<li><p>nearest: else和最近的if匹配</p>
+<p>那么先移进，再规约</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>规约-规约冲突时引入的附加条件：位置优先法（position-precedence）</p>
+</li>
+</ul>
+<p>  <img src="https://i.loli.net/2019/12/13/sak5IldM2O13Lof.jpg" alt></p>
+<p>由程序从G生成LL(1)：Yacc（Yet another compiler-compiler）</p>
+<p>关于龙书习题4.8.1：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/13/6Sh5fznKp8sUGCa.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
         </div>
 
         <blockquote class="post-copyright">
@@ -1158,7 +1196,7 @@ $S</code> → eS | \epsilon \$<br>$E →b$</p>
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-12-11T08:11:13.022Z" itemprop="dateUpdated">2019-12-11 16:11:13</time>
+    Last updated: <time datetime="2019-12-13T07:52:07.968Z" itemprop="dateUpdated">2019-12-13 15:52:07</time>
 </span><br>
 
 
