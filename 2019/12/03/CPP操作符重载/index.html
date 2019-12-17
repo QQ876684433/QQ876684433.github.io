@@ -38,7 +38,14 @@
 <meta property="og:image" content="https://i.loli.net/2019/12/16/InHA5YWrR1tThzo.png">
 <meta property="og:image" content="https://i.loli.net/2019/12/16/si3NSTIUp5QCmA7.png">
 <meta property="og:image" content="https://i.loli.net/2019/12/16/MaeSfgPIu7NRnL8.png">
-<meta property="og:updated_time" content="2019-12-16T15:49:22.800Z">
+<meta property="og:image" content="https://i.loli.net/2019/12/17/fyW1Qhpu7Si4LvK.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/17/lVL9w1cHvq3TR7W.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/17/4ujQnv3BXtACMEf.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/17/D3qI6fjSTumyeLv.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/17/NByJ3iCsPmFtHUv.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/17/gYrFMBqdl9NUO5G.png">
+<meta property="og:image" content="http://qq876684433.github.io/home/steve/.config/Typora/typora-user-images/1576547582277.png">
+<meta property="og:updated_time" content="2019-12-17T01:53:05.193Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CPP操作符重载">
 <meta name="twitter:description" content="C++操作符重载基本概念 重载的运算符是具有特殊名字的函数：函数的名字由关键字operator和其后要定义的运算符号共同组成  重载运算符函数的参数数量与该运算符作用的运算对象的数量一样多  除了重载的函数调用运算符operator()之外，其他的重载运算符不能含有默认实参  当一个重载的运算符是成员函数时，this对象指针绑定到左侧运算对象（即运算符重载函数的第一个参数）  不能重载内置类型的运">
@@ -177,7 +184,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#C-操作符重载"><span class="post-toc-number">1.</span> <span class="post-toc-text">C++操作符重载</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本概念"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">基本概念</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#某些运算符不应该被重载"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">某些运算符不应该被重载</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用与内置类型一致的含义"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">使用与内置类型一致的含义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#选择作为成员或者非成员"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">选择作为成员或者非成员</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#输入输出运算符"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">输入输出运算符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#重载输出运算符-lt-lt"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">重载输出运算符&lt;&lt;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#输出运算符尽量减少格式化操作"><span class="post-toc-number">1.2.1.1.</span> <span class="post-toc-text">输出运算符尽量减少格式化操作</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#输入输出运算符必须是非成员函数"><span class="post-toc-number">1.2.1.2.</span> <span class="post-toc-text">输入输出运算符必须是非成员函数</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#重载输入运算符-gt-gt"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">重载输入运算符&gt;&gt;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#输入时的错误"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text">输入时的错误</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#标示错误"><span class="post-toc-number">1.2.2.2.</span> <span class="post-toc-text">标示错误</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#算术和关系运算符"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">算术和关系运算符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#相等运算符"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">相等运算符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关系运算符"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">关系运算符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#赋值运算符"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">赋值运算符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#复合赋值运算符"><span class="post-toc-number">1.3.3.1.</span> <span class="post-toc-text">复合赋值运算符</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#下标运算符"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">下标运算符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#递增和递减运算符"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">递增和递减运算符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#定义前置递增-递减运算符"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">定义前置递增/递减运算符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#区分前置和后置运算符"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">区分前置和后置运算符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#显式调用前置-后置运算符"><span class="post-toc-number">1.5.3.</span> <span class="post-toc-text">显式调用前置/后置运算符</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#成员访问运算符"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">成员访问运算符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#重载要求："><span class="post-toc-number">1.6.0.1.</span> <span class="post-toc-text">重载要求：</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#对箭头运算符返回值的限定"><span class="post-toc-number">1.6.1.</span> <span class="post-toc-text">对箭头运算符返回值的限定</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#C-操作符重载"><span class="post-toc-number">1.</span> <span class="post-toc-text">C++操作符重载</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本概念"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">基本概念</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#某些运算符不应该被重载"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">某些运算符不应该被重载</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用与内置类型一致的含义"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">使用与内置类型一致的含义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#选择作为成员或者非成员"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">选择作为成员或者非成员</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#输入输出运算符"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">输入输出运算符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#重载输出运算符-lt-lt"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">重载输出运算符&lt;&lt;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#输出运算符尽量减少格式化操作"><span class="post-toc-number">1.2.1.1.</span> <span class="post-toc-text">输出运算符尽量减少格式化操作</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#输入输出运算符必须是非成员函数"><span class="post-toc-number">1.2.1.2.</span> <span class="post-toc-text">输入输出运算符必须是非成员函数</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#重载输入运算符-gt-gt"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">重载输入运算符&gt;&gt;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#输入时的错误"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text">输入时的错误</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#标示错误"><span class="post-toc-number">1.2.2.2.</span> <span class="post-toc-text">标示错误</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#算术和关系运算符"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">算术和关系运算符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#相等运算符"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">相等运算符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关系运算符"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">关系运算符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#赋值运算符"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">赋值运算符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#复合赋值运算符"><span class="post-toc-number">1.3.3.1.</span> <span class="post-toc-text">复合赋值运算符</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#下标运算符"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">下标运算符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#递增和递减运算符"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">递增和递减运算符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#定义前置递增-递减运算符"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">定义前置递增/递减运算符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#区分前置和后置运算符"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">区分前置和后置运算符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#显式调用前置-后置运算符"><span class="post-toc-number">1.5.3.</span> <span class="post-toc-text">显式调用前置/后置运算符</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#成员访问运算符"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">成员访问运算符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#重载要求："><span class="post-toc-number">1.6.0.1.</span> <span class="post-toc-text">重载要求：</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#对箭头运算符返回值的限定"><span class="post-toc-number">1.6.1.</span> <span class="post-toc-text">对箭头运算符返回值的限定</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#函数调用运算符"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">函数调用运算符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#lambda是函数对象"><span class="post-toc-number">1.7.1.</span> <span class="post-toc-text">lambda是函数对象</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#标准库定义的函数对象"><span class="post-toc-number">1.7.2.</span> <span class="post-toc-text">标准库定义的函数对象</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#可调用对象与function"><span class="post-toc-number">1.7.3.</span> <span class="post-toc-text">可调用对象与function</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#不同类型可能具有相同的调用形式"><span class="post-toc-number">1.7.3.1.</span> <span class="post-toc-text">不同类型可能具有相同的调用形式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#标准库function类型"><span class="post-toc-number">1.7.3.2.</span> <span class="post-toc-text">标准库function类型</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#重载的函数与function"><span class="post-toc-number">1.7.3.3.</span> <span class="post-toc-text">重载的函数与function</span></a></li></ol></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -439,15 +446,90 @@
 
 
 
+<h2 id="函数调用运算符"><a href="#函数调用运算符" class="headerlink" title="函数调用运算符"></a>函数调用运算符</h2><p>如果类重载了函数调用运算符，则我们可以像使用函数一样使用该类的对象；这样的类同时能够存储状态，所以比普通函数更加灵活</p>
+<p><strong>函数调用运算符必须是成员函数</strong>；一个类可以定义多个不同版本的函数调用运算符，相互之间应该在参数数量或者类型上有区别</p>
+<p>如果类定义了调用运算符，则该类的对象称作<strong>函数对象</strong>；函数对象通常作为泛型算法的实参</p>
+<h3 id="lambda是函数对象"><a href="#lambda是函数对象" class="headerlink" title="lambda是函数对象"></a>lambda是函数对象</h3><p>（先跳过）</p>
+<h3 id="标准库定义的函数对象"><a href="#标准库定义的函数对象" class="headerlink" title="标准库定义的函数对象"></a>标准库定义的函数对象</h3><p>（先跳过）</p>
+<h3 id="可调用对象与function"><a href="#可调用对象与function" class="headerlink" title="可调用对象与function"></a>可调用对象与function</h3><p>C++中可调用对象的种类：函数、函数指针、lambda表达式、bind创建的对象以及重载了函数调用运算符的类</p>
+<ul>
+<li>lambda有它自己唯一的（未命名）类类型</li>
+<li>函数及函数指针的类型则由其返回值类型和实参类型决定</li>
+</ul>
+<p>两个不同类型的可调用对象可能共享一种<strong>调用形式（call signature）</strong>：它指明了调用<strong>返回的类型</strong>以及<strong>传递给调用的实参类型</strong>；例如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>(<span class="keyword">int</span>, <span class="keyword">int</span>)</span><br></pre></td></tr></table></figure>
 
+<p>是一个调用形式，接受两个int，返回一个int</p>
+<h4 id="不同类型可能具有相同的调用形式"><a href="#不同类型可能具有相同的调用形式" class="headerlink" title="不同类型可能具有相同的调用形式"></a>不同类型可能具有相同的调用形式</h4><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/17/fyW1Qhpu7Si4LvK.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
 
+<p>例如上面的三个函数类型具有相同的调用形式：<code>int(int, int)</code></p>
+<p>但是具有相同的调用形式却不一定可以看作是相同的类型：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/17/lVL9w1cHvq3TR7W.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
 
+<p>（《Primer C++ 5th》中说mod不是一个函数指针，不能添加到funcTable中，但是我在Linux g++下面是可以编译运行的，emmm）</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/17/4ujQnv3BXtACMEf.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
 
+<h4 id="标准库function类型"><a href="#标准库function类型" class="headerlink" title="标准库function类型"></a>标准库function类型</h4><p>标准类型function定义在头文件functional中</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/17/D3qI6fjSTumyeLv.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
 
+<p>在调用时在尖括号中提供调用形式即可：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function&lt;<span class="keyword">int</span>(<span class="keyword">int</span>,<span class="keyword">int</span>)&gt; func;</span><br></pre></td></tr></table></figure>
 
+<p>这里创建了一个function对象func，可接受的调用形式是<code>int(int,int)</code></p>
+<p>这样的func可以接受的可调用对象包括函数指针、lambda或者函数对象等</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/17/NByJ3iCsPmFtHUv.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
 
+<h4 id="重载的函数与function"><a href="#重载的函数与function" class="headerlink" title="重载的函数与function"></a>重载的函数与function</h4><p>不能直接将重载函数的名字存入function类型对象中，即使这个重载函数的调用形式不同：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/17/gYrFMBqdl9NUO5G.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
 
-
+<p>解决方法有两种：</p>
+<ul>
+<li>通过函数指针给重载函数的其中一个版本定义新名字</li>
+<li>使用lambda包装要存储的重载版本</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/home/steve/.config/Typora/typora-user-images/1576547582277.png" alt="1576547582277" title>
+                </div>
+                <div class="image-caption">1576547582277</div>
+            </figure>
 
 
 
@@ -479,7 +561,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-12-16T15:49:22.800Z" itemprop="dateUpdated">2019-12-16 23:49:22</time>
+    Last updated: <time datetime="2019-12-17T01:53:05.193Z" itemprop="dateUpdated">2019-12-17 09:53:05</time>
 </span><br>
 
 
