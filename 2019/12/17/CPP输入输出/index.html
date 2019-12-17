@@ -35,7 +35,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/12/17/em3f9dAXvhSyCG6.png">
 <meta property="og:image" content="https://i.loli.net/2019/12/17/8m3eD92tOSyKhGH.png">
 <meta property="og:image" content="https://i.loli.net/2019/12/17/GYhpF2Dny5QlzbK.png">
-<meta property="og:updated_time" content="2019-12-17T13:52:59.395Z">
+<meta property="og:updated_time" content="2019-12-17T15:15:32.777Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CPP输入输出">
 <meta name="twitter:description" content="C++输入输出重定向 参考资料：https://liam.page/2017/12/31/buffer-of-stream-in-Cpp/  C++ 中的流对象实际上是对缓冲区进行操作，因此只需要通过替换输入（cin）和输出（cout）的缓冲区即可实现输入或者输出重定向 std::basic_ios 的成员函数 rdbuf 是读取和设置流对象（std::basic_ios 的对象）绑定缓冲区的成员">
@@ -235,7 +235,7 @@
             </figure>
 
 <p>当第 6 行中的 cin.get 函数执行时，它开始从先前输入操作停止的键盘缓冲区读取，并发现了换行符，所以它无须等待用户输入另一个值。这种问题最直接的解决办法是<strong>使用 cin.ignore 函数</strong>。</p>
-<p>cin.get(字符数组名,接收字符数目)用来接收一行字符串，但是实际上接受字符数目中最后一个字符是字符串的结束字符<code>\0</code>，例如：</p>
+<p><strong>cin.get(字符数组名,接收字符数目)用来接收一行字符串</strong>，但是实际上接受字符数目中最后一个字符是字符串的结束字符<code>\0</code>，例如：</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -251,7 +251,7 @@
 <li><p>在头文件&lt;istream&gt;中，是istream类的成员函数，如cin.getline(…)，它有两种重载形式：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">istream&amp; <span class="title">getline</span> <span class="params">(<span class="keyword">char</span>* s, streamsize n )</span></span>;</span><br><span class="line"><span class="function">istream&amp; <span class="title">getline</span> <span class="params">(<span class="keyword">char</span>* s, streamsize n, <span class="keyword">char</span> delim )</span></span>;</span><br></pre></td></tr></table></figure>
 
-<p>作用是： 从istream中读取<strong>至多n个字符(包含结束标记符)</strong>保存在s对应的数组中。即使还没读够n个字符，如果遇到delim或字数达到限制，则读取终止，<strong>delim都不会被保存进s对应的数组中</strong>。</p>
+<p>作用是： 从istream中读取<strong>至多n个字符(包含结束标记符)</strong>（换行符会被丢弃）保存在s对应的数组中。即使还没读够n个字符，如果遇到delim或字数达到限制，则读取终止，<strong>delim都不会被保存进s对应的数组中</strong></p>
 <p><img src="https://i.loli.net/2019/12/17/iSGwO9phq7VLjKg.png" alt></p>
 </li>
 <li><p>在&lt;string&gt;中的getline函数有四种重载形式：</p>
@@ -331,7 +331,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-12-17T13:52:59.395Z" itemprop="dateUpdated">2019-12-17 21:52:59</time>
+    Last updated: <time datetime="2019-12-17T15:15:32.777Z" itemprop="dateUpdated">2019-12-17 23:15:32</time>
 </span><br>
 
 
