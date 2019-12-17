@@ -14,25 +14,25 @@
     
     
     
-    <title>精读Servlet源码-javax.servlet.http.HttpServlet | 至繁归于至简 - chph&#39;s blog | steve_chph personal website</title>
+    <title>CPP输入输出 | 至繁归于至简 - chph&#39;s blog | steve_chph personal website</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Java,servlet">
-    <meta name="description" content="the blog website of steve_chph, steve_chph的个人博客网站">
-<meta name="keywords" content="Java,servlet">
+    <meta name="keywords" content="C++,输入输出">
+    <meta name="description" content="C++输入输出">
+<meta name="keywords" content="C++,输入输出">
 <meta property="og:type" content="article">
-<meta property="og:title" content="精读Servlet源码-javax.servlet.http.HttpServlet">
-<meta property="og:url" content="http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/index.html">
+<meta property="og:title" content="CPP输入输出">
+<meta property="og:url" content="http://QQ876684433.github.io/2019/12/17/CPP输入输出/index.html">
 <meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
-<meta property="og:description" content="the blog website of steve_chph, steve_chph的个人博客网站">
+<meta property="og:description" content="C++输入输出">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-09-15T05:02:14.670Z">
+<meta property="og:updated_time" content="2019-12-17T10:58:37.005Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="精读Servlet源码-javax.servlet.http.HttpServlet">
-<meta name="twitter:description" content="the blog website of steve_chph, steve_chph的个人博客网站">
+<meta name="twitter:title" content="CPP输入输出">
+<meta name="twitter:description" content="C++输入输出">
     
         <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
     
@@ -120,7 +120,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">精读Servlet源码-javax.servlet.http.HttpServlet</div>
+        <div class="flex-col header-title ellipsis">CPP输入输出</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -142,15 +142,15 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">精读Servlet源码-javax.servlet.http.HttpServlet</h1>
+        <h1 class="title">CPP输入输出</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-07-18T11:57:50.000Z" itemprop="datePublished" class="page-time">
-  2019-07-18
+                <time datetime="2019-12-17T10:57:43.000Z" itemprop="datePublished" class="page-time">
+  2019-12-17
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/源码/">源码</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/C/">C++</a></li></ul>
 
             
         </h5>
@@ -164,17 +164,24 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#C-输入输出"><span class="post-toc-number">1.</span> <span class="post-toc-text">C++输入输出</span></a></li></ol>
+        </nav>
+    </aside>
 
-<article id="post-精读Servlet源码-javax-servlet-http-HttpServlet"
+
+<article id="post-CPP输入输出"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">精读Servlet源码-javax.servlet.http.HttpServlet</h1>
+        <h1 class="post-card-title">CPP输入输出</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-07-18 19:57:50" datetime="2019-07-18T11:57:50.000Z"  itemprop="datePublished">2019-07-18</time>
+            <time class="post-time" title="2019-12-17 18:57:43" datetime="2019-12-17T10:57:43.000Z"  itemprop="datePublished">2019-12-17</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/源码/">源码</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/C/">C++</a></li></ul>
 
 
 
@@ -186,7 +193,7 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            
+            <h1 id="C-输入输出"><a href="#C-输入输出" class="headerlink" title="C++输入输出"></a>C++输入输出</h1>
         </div>
 
         <blockquote class="post-copyright">
@@ -194,12 +201,12 @@
     <div class="content">
         
 <span class="post-time">
-    最終更新：<time datetime="2019-09-15T05:02:14.670Z" itemprop="dateUpdated">2019-09-15 13:02:14</time>
+    最終更新：<time datetime="2019-12-17T10:58:37.005Z" itemprop="dateUpdated">2019-12-17 18:58:37</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/" target="_blank" rel="external">http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/12/17/CPP输入输出/" target="_blank" rel="external">http://QQ876684433.github.io/2019/12/17/CPP输入输出/</a>
         
     </div>
     
@@ -220,7 +227,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/servlet/">servlet</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/输入输出/">输入输出</a></li></ul>
 
 
             
@@ -230,7 +237,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/&title=《精读Servlet源码-javax.servlet.http.HttpServlet》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/12/17/CPP输入输出/&title=《CPP输入输出》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -240,22 +247,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/&title=《精读Servlet源码-javax.servlet.http.HttpServlet》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/12/17/CPP输入输出/&title=《CPP输入输出》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/12/17/CPP输入输出/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《精读Servlet源码-javax.servlet.http.HttpServlet》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/&via=http://QQ876684433.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CPP输入输出》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/12/17/CPP输入输出/&via=http://QQ876684433.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/12/17/CPP输入输出/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -275,21 +282,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2019/07/19/精读Servlet源码-javax-servlet-ServletConfig/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">精读Servlet源码-javax.servlet.ServletConfig</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2019/07/18/精读Servlet源码-javax-servlet-GenericServlet/" id="post-next" class="post-nav-link">
+      <a href="/2019/12/04/数据库-函数依赖和范式/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">精读Servlet源码-javax.servlet.GenericServlet</h4>
+        <h4 class="title">数据库-函数依赖和范式</h4>
       </a>
     </div>
   
@@ -389,7 +389,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/&title=《精读Servlet源码-javax.servlet.http.HttpServlet》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/12/17/CPP输入输出/&title=《CPP输入输出》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -399,22 +399,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/&title=《精读Servlet源码-javax.servlet.http.HttpServlet》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/12/17/CPP输入输出/&title=《CPP输入输出》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/12/17/CPP输入输出/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《精读Servlet源码-javax.servlet.http.HttpServlet》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/&via=http://QQ876684433.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CPP输入输出》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/12/17/CPP输入输出/&via=http://QQ876684433.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/12/17/CPP输入输出/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -425,7 +425,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADMElEQVR42u3aQXLCQAwEQP7/aXKlimCPJKcCojmlMLG3l4PQaG+3+HV/eD2+8/yZV+88X331lOMnJs+97IWNjY39Iez74StZRL64/D7JOo836+TO2NjY2OvYSTk5LmlJOTl+Vg5ItuDkudjY2NhfzM4Xcfz55GreomBjY2NjVwtYtQjlxSy/2z/UbWxsbOw3Zuc/8fPCVg16qmuYPAsbGxt7Ezufir7/338y38bGxsZ+Y3Yvgq8euMkbkl78VFZgY2NjL2JPAqN8GFwNgKqBVHP92NjY2CvYzWA9CPGrHUG1pE0CKWxsbOyt7OPYvTckuCrDqd7/ZCOwsbGxF7HzdiJ/v7op86Cq91VhY2Nj72BPFpE3KtVPVlugpB16ORXBxsbGXsHOf9D3ClLy+Tww6m3uScXGxsbG/lh2b8g6KXLVoz9J6SrzsLGxsRexk3+bRP/5HaoBVm+QgI2Njb2P3ftBn7QrvU3sDQyqXw82Njb2PnYS2VRvWt3EyX2abQ82Njb2Cnbv+Msk7u+1K/lwN7onNjY29iJ2b0iQPyBf6PF2JwdxsLGxsb+ZPQmDkuC+104kG5GXzIvHvdjY2Nhvxu41Fb1DNr0jPnksVV0bNjY29g52PjrtNSTzTeyVyZNCiI2Njb2CnReA/FDOta1OtYwlW4aNjY29iT0pWr2gP9/EwhwjLo3Y2NjY+9jzMCgH9MrbpJgVRrzY2NjYK9iTqL3azOQHeqpxVSFUwsbGxl7ETlqL3si22Ru1Sleh0cLGxsZexM6XWD1qmQdP+di4utpbdW+wsbGxP5bdC2jyAzTzu1WbkHJlw8bGxl7KrsZD1c9UN2XSLJ0c2cHGxsZex65G9nlMn0c/PVLe3mBjY2NvZc8j/qSA9Z47HxJgY2Nj72PPD9PMw51Ji9IcS2NjY2MvYo/qXrHATBaXjyLyWAobGxt7E3sS6Ff3NblaDaea3yc2Njb2OvakSUiuVmOj/O9e2cPGxsbGzheX3D8PuSZNyMl8GxsbG/vr2b1WIXknv1oootjY2Njr2EmolA8JegPg/OnVovjLVWxsbOxF7L/I0vOR8FUblIRW2NjY2OvYP78am6ek507iAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJklEQVR42u3ay07DMBAFUP7/p4vECgla7h2nFbVPVhENsU8WI8/j4yO+bl/Xz/vvf/l+3fv7z2cer3XxhYGB8baMZLF2i8n/Jp+p+BAYGBgHMJIgm28oD8EJIwrKGBgYGKP7dnMYGBgYz2PM0loMDAyMlpEc6ZJKV5uIJgntxbk4BgbGGzJWGgPPvn9RfwMDA+MfM27llb9n5cBX7woDA2NrRlv0f5xGtm3LWagtTrgYGBgbMWbNyxVMHprrohsGBsZ2jHYYYjZCkSers51gYGCcwFhJLNcDa/vML3vGwMDYmjFMDldGIsrDX70uBgbGpox2qCvZ0OzJ4dEQAwNja0byillxLXkyb1v+sToGBsYBjHZzs/Q1b0+2STUGBsbejJVRiXbrjz/Z7DCKgYFxDqNtW86KZcl7ZngMDIy9GW3hvo3is9Q0KclhYGCcyWjvV1qPL5oZwcDA2ILRHtryBmR7QMxXv/srBgbG1ox8yXzYqy3A5cW4moSBgfHmjFl4nRXOrhq8uHvCxcDAOICRhMs2BU0OlLOQfXdmBAMDYzvGbEirbXnWPdXl0TEMDIydGLfyStqK69+yTYAxMDD2ZrTV9dnr8oGM2QAHBgbGCYz1IHttAjz8FQMD4wDGBVlvWVxbT2KXuhAYGBibMh5PbawMWKw0OzEwMDBmJbb2E1wQyjEwMA5gzBqQ+TJ5UtqGbAwMjBMYs9SxbVjOWgWXATAwMN6V8QlAZsxSvjsd5wAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
