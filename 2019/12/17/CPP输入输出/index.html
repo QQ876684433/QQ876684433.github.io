@@ -31,7 +31,11 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://c.biancheng.net/uploads/allimg/181114/2-1Q114130JI45.gif">
 <meta property="og:image" content="https://i.loli.net/2019/12/17/rAHeaftnWU4mEV1.png">
-<meta property="og:updated_time" content="2019-12-17T13:21:37.193Z">
+<meta property="og:image" content="https://i.loli.net/2019/12/17/iSGwO9phq7VLjKg.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/17/em3f9dAXvhSyCG6.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/17/8m3eD92tOSyKhGH.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/17/GYhpF2Dny5QlzbK.png">
+<meta property="og:updated_time" content="2019-12-17T13:52:59.395Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CPP输入输出">
 <meta name="twitter:description" content="C++输入输出重定向 参考资料：https://liam.page/2017/12/31/buffer-of-stream-in-Cpp/  C++ 中的流对象实际上是对缓冲区进行操作，因此只需要通过替换输入（cin）和输出（cout）的缓冲区即可实现输入或者输出重定向 std::basic_ios 的成员函数 rdbuf 是读取和设置流对象（std::basic_ios 的对象）绑定缓冲区的成员">
@@ -170,7 +174,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#C-输入输出"><span class="post-toc-number">1.</span> <span class="post-toc-text">C++输入输出</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#重定向"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">重定向</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取输入"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">获取输入</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#cin"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">cin</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#cin-get"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">cin.get()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#cin-getline"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">cin.getline()</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#补充"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">补充</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字符串分割"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">字符串分割</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#strtok函数"><span class="post-toc-number">1.3.1.1.</span> <span class="post-toc-text">strtok函数</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#strtok-s函数"><span class="post-toc-number">1.3.1.2.</span> <span class="post-toc-text">strtok_s函数</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#strtok-r函数"><span class="post-toc-number">1.3.1.3.</span> <span class="post-toc-text">strtok_r函数</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#用STL进行字符串的分割"><span class="post-toc-number">1.3.1.4.</span> <span class="post-toc-text">用STL进行字符串的分割</span></a></li></ol></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#C-输入输出"><span class="post-toc-number">1.</span> <span class="post-toc-text">C++输入输出</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#重定向"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">重定向</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取输入"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">获取输入</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#cin"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">cin</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#cin-get"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">cin.get()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#getline"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">getline()</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#补充"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">补充</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字符串分割"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">字符串分割</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#strtok函数"><span class="post-toc-number">1.3.1.1.</span> <span class="post-toc-text">strtok函数</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#strtok-s函数"><span class="post-toc-number">1.3.1.2.</span> <span class="post-toc-text">strtok_s函数</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#strtok-r函数"><span class="post-toc-number">1.3.1.3.</span> <span class="post-toc-text">strtok_r函数</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#用STL进行字符串的分割"><span class="post-toc-number">1.3.1.4.</span> <span class="post-toc-text">用STL进行字符串的分割</span></a></li></ol></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -240,7 +244,51 @@
                 <div class="image-caption"></div>
             </figure>
 
-<h3 id="cin-getline"><a href="#cin-getline" class="headerlink" title="cin.getline()"></a>cin.getline()</h3><h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><h3 id="字符串分割"><a href="#字符串分割" class="headerlink" title="字符串分割"></a>字符串分割</h3><blockquote>
+<h3 id="getline"><a href="#getline" class="headerlink" title="getline()"></a>getline()</h3><blockquote>
+<p>原文链接：<a href="https://blog.csdn.net/MisterLing/article/details/51697098" target="_blank" rel="noopener">https://blog.csdn.net/MisterLing/article/details/51697098</a></p>
+</blockquote>
+<ul>
+<li><p>在头文件&lt;istream&gt;中，是istream类的成员函数，如cin.getline(…)，它有两种重载形式：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">istream&amp; <span class="title">getline</span> <span class="params">(<span class="keyword">char</span>* s, streamsize n )</span></span>;</span><br><span class="line"><span class="function">istream&amp; <span class="title">getline</span> <span class="params">(<span class="keyword">char</span>* s, streamsize n, <span class="keyword">char</span> delim )</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>作用是： 从istream中读取<strong>至多n个字符(包含结束标记符)</strong>保存在s对应的数组中。即使还没读够n个字符，如果遇到delim或字数达到限制，则读取终止，<strong>delim都不会被保存进s对应的数组中</strong>。</p>
+<p><img src="https://i.loli.net/2019/12/17/iSGwO9phq7VLjKg.png" alt></p>
+</li>
+<li><p>在&lt;string&gt;中的getline函数有四种重载形式：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">istream&amp; <span class="title">getline</span> <span class="params">(istream&amp;  is, <span class="built_in">string</span>&amp; str, <span class="keyword">char</span> delim)</span></span>;</span><br><span class="line"><span class="function">istream&amp; <span class="title">getline</span> <span class="params">(istream&amp;&amp; is, <span class="built_in">string</span>&amp; str, <span class="keyword">char</span> delim)</span></span>;</span><br><span class="line"><span class="function">istream&amp; <span class="title">getline</span> <span class="params">(istream&amp;  is, <span class="built_in">string</span>&amp; str)</span></span>;</span><br><span class="line"><span class="function">istream&amp; <span class="title">getline</span> <span class="params">(istream&amp;&amp; is, <span class="built_in">string</span>&amp; str)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>用法和上第一种类似，但是读取的istream是作为参数is传进函数的。读取的字符串<strong>保存在string类型的str中</strong></p>
+<p>is   ：表示一个输入流，例如cin。</p>
+<p>str  ：string类型的<strong>引用</strong>，用来<strong>存储输入流中的流信息</strong>。</p>
+<p>delim ：char类型的变量，所设置的截断字符；在<strong>不自定义设置的情况下，遇到’\n’</strong>，则终止输入。</p>
+<p><img src="https://i.loli.net/2019/12/17/em3f9dAXvhSyCG6.png" alt></p>
+<p>getline不是C库函数，而是C++库函数。它遇到以下情况发生会导致生成的本字符串结束：</p>
+<p>(1)到文件结束，(2)遇到函数的定界符，(3)输入达到最大限度</p>
+</li>
+</ul>
+<p>getline()函数在while中作为条件判断时，while判断语句的真实判断对象是cin的状态，也就是判断当前是否存在有效的输入流；而输入流是对象，判断的是流返回的状态。所以正常的情况下，你怎么输入都是跳不出它的循环。我们可以手动输入输入流结束字符来跳出循环（<strong>按Ctrl+Z(Windows)(Ctrl+D(Linux))或键入EOF(参考MSDN)</strong>）：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/17/8m3eD92tOSyKhGH.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>当设置了分隔符之后，输入回车也不会导致getline结束一次输入，只有遇到设置的分隔符才会完成一次输入：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/17/GYhpF2Dny5QlzbK.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+
+
+
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><h3 id="字符串分割"><a href="#字符串分割" class="headerlink" title="字符串分割"></a>字符串分割</h3><blockquote>
 <p>原文链接：<a href="https://blog.csdn.net/hustfoxy/article/details/23473805" target="_blank" rel="noopener">https://blog.csdn.net/hustfoxy/article/details/23473805</a></p>
 </blockquote>
 <h4 id="strtok函数"><a href="#strtok函数" class="headerlink" title="strtok函数"></a>strtok函数</h4><p>函数原型：char * strtok (char *str, const char * delimiters);<br>参数：str，待分割的字符串（c-string）；delimiters，分割符字符串。<br>该函数用来将字符串分割成一个个片段。参数str指向欲分割的字符串，参数delimiters则为分割字符串中包含的所有字符。当strtok()在参数s的字符串中发现参数delimiters中包涵的分割字符时，则会将该字符改为\0 字符。在第一次调用时，strtok()必需给予参数s字符串，往后的调用则将参数s设置成NULL。每次调用成功则返回指向被分割出片段的指针。<br>需要注意的是，使用该函数进行字符串分割时，会破坏被分解字符串的完整，调用前和调用后的s已经不一样了。第一次分割之后，原字符串str是分割完成之后的第一个字符串，剩余的字符串存储在一个静态变量中，因此多线程同时访问该静态变量时，则会出现错误。</p>
@@ -283,7 +331,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-12-17T13:21:37.193Z" itemprop="dateUpdated">2019-12-17 21:21:37</time>
+    Last updated: <time datetime="2019-12-17T13:52:59.395Z" itemprop="dateUpdated">2019-12-17 21:52:59</time>
 </span><br>
 
 
