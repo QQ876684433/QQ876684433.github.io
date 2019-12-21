@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/12/21/5STvlp3WBaPtHUA.png">
 <meta property="og:image" content="https://i.loli.net/2019/12/21/uVN8UKqvzTlBk6d.png">
 <meta property="og:image" content="https://i.loli.net/2019/12/21/1fZcVH3OPW47qXB.png">
-<meta property="og:updated_time" content="2019-12-21T02:35:52.588Z">
+<meta property="og:updated_time" content="2019-12-21T02:45:38.052Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统-设备管理">
 <meta name="twitter:description" content="设备管理 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著   外部设备分类：  存储型设备 磁带机、磁盘机等  I/O型设备 显示器、打印机、通信设备等   设备管理通常使用I/O中断、缓冲区管理、通道、设备驱动调度等多种技术，这很好地克服了由于设备和CPU速度不匹配所引起的问题，使得主机和设备能够并行工作，提高设备的使用效率 另外操作系统将所有设备都抽象成文件，将其统一在文件系统之">
@@ -322,7 +322,18 @@
 
 <p>DMA不仅设有中断机制，还有DMA传输控制器：若出现DMA与CPU同时经总线访问内存的情况，CPU总是把总线占有权让给DAM，这种方式称为”周期窃取“，窃取时间通常是一个存取周期</p>
 <p>DMA方式实现线路简单，价格低廉，<strong>适用于小型和微型计算机</strong>，但是不能满足大中型计算机（使用通道技术）</p>
-<h4 id="通道方式"><a href="#通道方式" class="headerlink" title="通道方式"></a>通道方式</h4>
+<h4 id="通道方式"><a href="#通道方式" class="headerlink" title="通道方式"></a>通道方式</h4><p>引入通道技术的目的：</p>
+<ul>
+<li>充分发挥CPU和设备之间的并行工作能力</li>
+<li>让种类繁多且物理特性各异的设备能够以标准的接口连接到系统中</li>
+</ul>
+<p>通道又称为I/O处理器，能完成内存和设备之间的信息传送，与CPU并行地执行操作，由通道管理和控制I/O操作。具有通道装置的计算机系统的<strong>主机、通道、控制器和设备</strong>之间<strong>采用四级连接、实施三级控制</strong>：</p>
+<ul>
+<li>一个CPU通常可以连接若干通道；一个通道可以连接若干控制器；一个控制器可以连接若干设备</li>
+<li>CPU通过执行I/O指令对通道实施控制；通道通过执行通道命令对控制器实施控制；控制器发出动作序列对设备实施控制，设备执行相应的I/O操作</li>
+</ul>
+<p>通道方式下的I/O操作过程：CPU在执行主程序时遇到I/O请求，启动在指定通道上选址的设备，一旦启动成功，通道开始控制设备进行操作，这时CPU就可以执行其他任务并与通道并行工作，直到I/O操作完成；当通道发出I/O操作结束中断时，处理器才响应并停止当前工作，转而处理I/O操作结束事件</p>
+
         </div>
 
         <blockquote class="post-copyright">
@@ -330,7 +341,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-12-21T02:35:52.588Z" itemprop="dateUpdated">2019-12-21 10:35:52</time>
+    Last updated: <time datetime="2019-12-21T02:45:38.052Z" itemprop="dateUpdated">2019-12-21 10:45:38</time>
 </span><br>
 
 
