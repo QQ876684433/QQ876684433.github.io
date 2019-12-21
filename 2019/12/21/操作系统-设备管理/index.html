@@ -38,7 +38,14 @@
 <meta property="og:image" content="https://i.loli.net/2019/12/21/gOltdQhcBAF54Kk.png">
 <meta property="og:image" content="https://i.loli.net/2019/12/21/Hq67XgCUdfrAsV1.png">
 <meta property="og:image" content="https://i.loli.net/2019/12/21/Kv7YH1RzAw8F9kC.png">
-<meta property="og:updated_time" content="2019-12-21T07:13:18.931Z">
+<meta property="og:image" content="https://i.loli.net/2019/12/21/u2MPH9SX4TiZBhK.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/21/KqB9uFSQWptaNcV.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/21/DZq8jKNvBlQ9rUC.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/21/KCOaNyq7Vodt3mB.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/21/MbDGkVi1LUdwXFy.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/21/lwGQBmAJYzFc3hf.png">
+<meta property="og:image" content="http://qq876684433.github.io/home/steve/.config/Typora/typora-user-images/1576918288946.png">
+<meta property="og:updated_time" content="2019-12-21T08:51:30.753Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统-设备管理">
 <meta name="twitter:description" content="设备管理 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著   外部设备分类：  存储型设备 磁带机、磁盘机等  I/O型设备 显示器、打印机、通信设备等   设备管理通常使用I/O中断、缓冲区管理、通道、设备驱动调度等多种技术，这很好地克服了由于设备和CPU速度不匹配所引起的问题，使得主机和设备能够并行工作，提高设备的使用效率 另外操作系统将所有设备都抽象成文件，将其统一在文件系统之">
@@ -136,7 +143,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -177,7 +184,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#设备管理"><span class="post-toc-number">1.</span> <span class="post-toc-text">设备管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#I-O硬件原理"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">I/O硬件原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#I-O系统"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">I/O系统</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#I-O控制方式"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">I/O控制方式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#轮询方式"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text">轮询方式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#中断方式"><span class="post-toc-number">1.1.2.2.</span> <span class="post-toc-text">中断方式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#DMA方式"><span class="post-toc-number">1.1.2.3.</span> <span class="post-toc-text">DMA方式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#通道方式"><span class="post-toc-number">1.1.2.4.</span> <span class="post-toc-text">通道方式</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设备控制器"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">设备控制器</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#I-O软件原理"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">I/O软件原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#中断处理程序"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">中断处理程序</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设备驱动程序"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">设备驱动程序</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#独立于设备的I-O软件"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">独立于设备的I/O软件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#用户空间的I-O软件"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">用户空间的I/O软件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#缓冲技术"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">缓冲技术</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#单缓冲"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">单缓冲</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#双缓冲"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">双缓冲</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多缓冲"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">多缓冲</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#设备管理"><span class="post-toc-number">1.</span> <span class="post-toc-text">设备管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#I-O硬件原理"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">I/O硬件原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#I-O系统"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">I/O系统</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#I-O控制方式"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">I/O控制方式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#轮询方式"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text">轮询方式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#中断方式"><span class="post-toc-number">1.1.2.2.</span> <span class="post-toc-text">中断方式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#DMA方式"><span class="post-toc-number">1.1.2.3.</span> <span class="post-toc-text">DMA方式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#通道方式"><span class="post-toc-number">1.1.2.4.</span> <span class="post-toc-text">通道方式</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设备控制器"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">设备控制器</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#I-O软件原理"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">I/O软件原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#中断处理程序"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">中断处理程序</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设备驱动程序"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">设备驱动程序</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#独立于设备的I-O软件"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">独立于设备的I/O软件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#用户空间的I-O软件"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">用户空间的I/O软件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#缓冲技术"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">缓冲技术</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#单缓冲"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">单缓冲</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#双缓冲"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">双缓冲</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多缓冲"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">多缓冲</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#驱动调度技术"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">驱动调度技术</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#磁盘的物理结构"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">磁盘的物理结构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#循环排序"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">循环排序</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#优化分布"><span class="post-toc-number">1.4.3.</span> <span class="post-toc-text">优化分布</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#搜查定位"><span class="post-toc-number">1.4.4.</span> <span class="post-toc-text">搜查定位</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#先来先服务算法FIFO-FCFS"><span class="post-toc-number">1.4.4.1.</span> <span class="post-toc-text">先来先服务算法FIFO/FCFS</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#最短查找时间优先算法SSTF"><span class="post-toc-number">1.4.4.2.</span> <span class="post-toc-text">最短查找时间优先算法SSTF</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#扫描算法SCAN"><span class="post-toc-number">1.4.4.3.</span> <span class="post-toc-text">扫描算法SCAN</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#分步扫描算法N-step-Scan"><span class="post-toc-number">1.4.4.4.</span> <span class="post-toc-text">分步扫描算法N-step-Scan</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#电梯调度算法-LOOK算法"><span class="post-toc-number">1.4.4.5.</span> <span class="post-toc-text">电梯调度算法/LOOK算法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#循环扫描算法C-SCAN"><span class="post-toc-number">1.4.4.6.</span> <span class="post-toc-text">循环扫描算法C-SCAN</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#FSCAN算法"><span class="post-toc-number">1.4.4.7.</span> <span class="post-toc-text">FSCAN算法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#后进先出算法LIFO"><span class="post-toc-number">1.4.4.8.</span> <span class="post-toc-text">*后进先出算法LIFO</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#优先级Priority"><span class="post-toc-number">1.4.4.9.</span> <span class="post-toc-text">*优先级Priority</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#提高磁盘I-O速度的方法"><span class="post-toc-number">1.4.5.</span> <span class="post-toc-text">提高磁盘I/O速度的方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#提前读"><span class="post-toc-number">1.4.5.1.</span> <span class="post-toc-text">提前读</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#延迟写"><span class="post-toc-number">1.4.5.2.</span> <span class="post-toc-text">延迟写</span></a></li></ol></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -510,7 +517,159 @@
             </figure>
 
 <p>双缓冲技术实际上是两个缓冲区交替使用，即其中一个缓冲区在输入（从设备到缓冲区）时，另一个缓冲区可以读取（从缓冲区到用户区），但并不是说输入和输出同时进行，只是说把输入或者输出的两个阶段（设备和缓冲区之间、缓冲区和用户区之间）的操作分别在两个缓冲区中进行，只要两个缓冲区不同时满或者同时为空，进程或设备都无需等待</p>
-<h3 id="多缓冲"><a href="#多缓冲" class="headerlink" title="多缓冲"></a>多缓冲</h3>
+<h3 id="多缓冲"><a href="#多缓冲" class="headerlink" title="多缓冲"></a>多缓冲</h3><p>操作系统分配一组缓冲区， 每个缓冲区度有指向下一个缓冲区的链接指针，最后一个缓冲区指针指向第一个缓冲区， 构成循环缓冲，缓冲区的大小等于物理记录的大小</p>
+<ul>
+<li>解决设备和进程速度不匹配的问题</li>
+<li>为系统公共资源， 供进程共享并由系统统一分配和管理</li>
+</ul>
+<p>分类：</p>
+<ul>
+<li>输入缓冲区</li>
+<li>输出缓冲区</li>
+<li>处理缓冲区</li>
+</ul>
+<p>为了管理各类缓冲区，执行各种操作，必须引入<strong>缓冲区自动管理系统</strong></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/21/u2MPH9SX4TiZBhK.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+
+<h2 id="驱动调度技术"><a href="#驱动调度技术" class="headerlink" title="驱动调度技术"></a>驱动调度技术</h2><p>计算即可能会同时有若干传输请求来到并等待处理，必须采用一种调度策略，能够按照最佳次序执行要求访问的诸多请求，这叫做<strong>驱动调度</strong>，所使用的算法叫做<strong>驱动调度算法</strong></p>
+<p>除了<strong>I/O请求的优化分布</strong>外，信息在磁盘上的排列方式、存储空间的分配方法都能影响存取访问速度</p>
+<h3 id="磁盘的物理结构"><a href="#磁盘的物理结构" class="headerlink" title="磁盘的物理结构"></a>磁盘的物理结构</h3><ul>
+<li>一个盘面上的读写磁头的轨迹称为<strong>磁道</strong></li>
+<li>读写磁头写的所有磁道所组成的圆柱体称为<strong>柱面</strong></li>
+<li>一个磁道又可划分成多个<strong>扇区（物理块）</strong></li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/21/KqB9uFSQWptaNcV.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>文件信息通常并不记录在统一盘面的磁道上，而是<strong>记录在同一柱面的不同磁道上</strong>，这样可减少移动臂的移动次数，缩短存取信息的时间</p>
+<p>为了访问磁盘上的一条物理记录，必须给出三个参数：<strong>柱面号、磁头号、扇区号</strong></p>
+<h3 id="循环排序"><a href="#循环排序" class="headerlink" title="循环排序"></a>循环排序</h3><p>在最少的旋转圈数内完成位于同一柱面的访问请求</p>
+<p><strong>旋转位置测定硬件</strong>和<strong>多磁头同时读写技术</strong>有利于提高旋转调度的效率；如果无法测定磁头当前位置，那么就需要多花费半周时间来定位第一个读取的记录块</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/21/DZq8jKNvBlQ9rUC.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/21/KCOaNyq7Vodt3mB.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h3 id="优化分布"><a href="#优化分布" class="headerlink" title="优化分布"></a>优化分布</h3><p>信息在存储空间中的排列方式会影响存取等待时间，例子：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/21/MbDGkVi1LUdwXFy.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h3 id="搜查定位"><a href="#搜查定位" class="headerlink" title="搜查定位"></a>搜查定位</h3><p>对于磁盘，除了<strong>旋转延迟</strong>外，还有<strong>搜查寻道延迟</strong>；因此对于磁盘设备</p>
+<ul>
+<li>在启动前按<strong>驱动调度策略</strong>对访问的I/O请求进行优化排序十分必要</li>
+<li>除了使旋转圈数达到最少的调度策略外，还应该考虑<strong>移动臂的移动时间最短的调度策略</strong></li>
+</ul>
+<h4 id="先来先服务算法FIFO-FCFS"><a href="#先来先服务算法FIFO-FCFS" class="headerlink" title="先来先服务算法FIFO/FCFS"></a>先来先服务算法FIFO/FCFS</h4><p>磁盘臂是随机移动的，不考虑各I/O请求之间的相对次序和移动臂当前所处位置</p>
+<ul>
+<li>按顺序处理请求</li>
+<li>对于所有进程是公平的</li>
+</ul>
+<p>缺点：进程等待I/O请求的时间会很长，寻道性能较差</p>
+<h4 id="最短查找时间优先算法SSTF"><a href="#最短查找时间优先算法SSTF" class="headerlink" title="最短查找时间优先算法SSTF"></a>最短查找时间优先算法SSTF</h4><p>最短服务时间优先(SSTF, Shortest Service Time First)</p>
+<ul>
+<li>选择使磁头臂<strong>从当前位置开始移动最少的磁盘I/O请求</strong>， 因此SSTF策略总是选择导致最小寻道时间的请求</li>
+<li>总是选择最小寻道时间<strong>并不能保证平均寻道时间最小</strong>， 但是，它的性能比FIFO更好</li>
+</ul>
+<p>缺点：此算法存在“饥饿”现象，随着靠近当前磁头位置读写请求的不断到来，使得到来时间较早但距离当前磁头位置较远的I/O请求服务被无限期地推迟</p>
+<h4 id="扫描算法SCAN"><a href="#扫描算法SCAN" class="headerlink" title="扫描算法SCAN"></a>扫描算法SCAN</h4><ul>
+<li>要求磁头臂<strong>仅仅沿一个方向移动</strong>， 并在途中满足所有为完成的请求， <strong>直到它到达这个方向上的最后一个磁道</strong>；它与电梯调度算法不同之处在于：<ul>
+<li><strong>即使当前移动方向暂时没有I/O请求，移动臂也需要扫描到头</strong></li>
+</ul>
+</li>
+<li>接着反转服务方向， 沿着相反方向扫描， 同样按顺序完成所有请求</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>扫描算法<strong>偏爱那些最接近里面或者靠近外面（即盘面两端）的请求</strong>，对最近扫描所跨区域的I/O请求的响应速度会较慢</li>
+<li>每次都移动到柱面尽头，无论前方是否有访问请求，效率较低</li>
+</ul>
+<h4 id="分步扫描算法N-step-Scan"><a href="#分步扫描算法N-step-Scan" class="headerlink" title="分步扫描算法N-step-Scan"></a>分步扫描算法N-step-Scan</h4><p>进程重复请求同一磁道会垄断整个设备， “造成磁头臂的粘性”，采用分步扫描可避免这类问题</p>
+<ul>
+<li>把磁盘请求队列分成长度为N的子队列，按FIFO算法依次处理每个子队列，每一次用SCAN处理一个子队列</li>
+<li>在处理一个队列时， <strong>新请求必须添加到其他某个队列中</strong></li>
+<li>如果<strong>在扫描的最后剩下的请求数小于N， 则它们全部将在下一次扫描时处理</strong></li>
+</ul>
+<p>当N很大时， N-step-SCAN的性能接近SCAN； 当N=1时， 实际上是FIFO</p>
+<h4 id="电梯调度算法-LOOK算法"><a href="#电梯调度算法-LOOK算法" class="headerlink" title="电梯调度算法/LOOK算法"></a>电梯调度算法/LOOK算法</h4><p>它是扫描算法的一种改进，无访问请求时，移动臂停止不动；有访问请求时，移动臂按电梯规律移动：</p>
+<ul>
+<li>每次总是选择沿移动臂的移动方向上最近的那个柱面<ul>
+<li>若一个柱面上有多个请求，还需要旋转优化</li>
+</ul>
+</li>
+<li>如果当前移动方向上没有但相反方向有访问请求时，就改变移动臂的移动方向，然后处理所遇到的最近的I/O请求</li>
+</ul>
+<p><strong>移动臂移动方向</strong>和<strong>空闲时移动臂停留的位置</strong>都需要记录下来</p>
+<p>说明：磁盘柱面号通常由外向里递增，磁头越向外，所处的柱面号越小，反之越大</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/21/lwGQBmAJYzFc3hf.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h4 id="循环扫描算法C-SCAN"><a href="#循环扫描算法C-SCAN" class="headerlink" title="循环扫描算法C-SCAN"></a>循环扫描算法C-SCAN</h4><p>对于不断有大量柱面均匀分布的存取请求进入系统的情况，循环扫描算法效率很高</p>
+<ul>
+<li>把扫描限定在一个方向</li>
+<li>当访问到沿某个方向的最后一个磁道时， 磁头臂返回到磁盘相反方向磁道的末端， 并再次开始扫描</li>
+</ul>
+<p>移动臂总是从0号柱面至最大柱面顺序扫描，然后直接返回0号柱面重复进行，归途中不再提供服务，构成一个循环，缩短处理新来的请求的最大延迟</p>
+<h4 id="FSCAN算法"><a href="#FSCAN算法" class="headerlink" title="FSCAN算法"></a>FSCAN算法</h4><ul>
+<li>使用两个子队列</li>
+<li>当开始扫描时， <strong>所有请求都在一个队列中</strong>， 而<strong>另一个队列为空</strong></li>
+<li>在扫描过程中， <strong>所有新到的请求都被放入另一个队列中</strong></li>
+<li>因此， 对新请求的服务延迟到处理完成所有老请求之后</li>
+</ul>
+<h4 id="后进先出算法LIFO"><a href="#后进先出算法LIFO" class="headerlink" title="*后进先出算法LIFO"></a>*后进先出算法LIFO</h4><ul>
+<li>在事务处理系统中， 把设备资源提供给最近的用户， 会导致磁头臂在一个顺序文件中移动时移动得很少， 甚至不移动</li>
+<li>利用这种局部性可以提高吞吐量， 减少队列长度只要一个作业积极地使用文件系统， 它就可以尽可能快地得到处理</li>
+<li>如果由于工作量大而磁盘保持忙状态， 就有可能出现饿死的情况</li>
+<li>当一个作业已经往队列中送入一个I/O请求， 并且错过了可以提供服务的位置时， 该作业就有可能永远得不到服务， 除非它之前的队列变为空</li>
+</ul>
+<h4 id="优先级Priority"><a href="#优先级Priority" class="headerlink" title="*优先级Priority"></a>*优先级Priority</h4><ul>
+<li>这种方法并不会优化磁盘的使用率， 但可以满足操作系统的其他目标</li>
+<li>通常<strong>比较短的批作业和交互作业的优先级较高</strong>， 而<strong>较长计算时间的长作业优先级低</strong>， 这就使得大量短作业能够迅速地通过系统， 并且可以提供比较好的交互响应时间</li>
+<li>但是长作业不得不等待很长的时间</li>
+</ul>
+<h3 id="提高磁盘I-O速度的方法"><a href="#提高磁盘I-O速度的方法" class="headerlink" title="提高磁盘I/O速度的方法"></a>提高磁盘I/O速度的方法</h3><p>通常为磁盘设置数据缓冲区高速缓存，这样能够显著缩短等待磁盘I/O的时间</p>
+<h4 id="提前读"><a href="#提前读" class="headerlink" title="提前读"></a>提前读</h4><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/home/steve/.config/Typora/typora-user-images/1576918288946.png" alt="1576918288946" title>
+                </div>
+                <div class="image-caption">1576918288946</div>
+            </figure>
+
+<h4 id="延迟写"><a href="#延迟写" class="headerlink" title="延迟写"></a>延迟写</h4>
         </div>
 
         <blockquote class="post-copyright">
@@ -518,7 +677,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-12-21T07:13:18.931Z" itemprop="dateUpdated">2019-12-21 15:13:18</time>
+    最終更新：<time datetime="2019-12-21T08:51:30.753Z" itemprop="dateUpdated">2019-12-21 16:51:30</time>
 </span><br>
 
 
@@ -684,7 +843,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
         </p>
     </div>
     <div class="bottom">
