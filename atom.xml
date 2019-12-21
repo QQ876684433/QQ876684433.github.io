@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://QQ876684433.github.io/"/>
-  <updated>2019-12-21T01:53:32.524Z</updated>
+  <updated>2019-12-21T02:00:49.865Z</updated>
   <id>http://QQ876684433.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://QQ876684433.github.io/2019/12/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86/"/>
     <id>http://QQ876684433.github.io/2019/12/21/操作系统-设备管理/</id>
     <published>2019-12-21T01:44:20.000Z</published>
-    <updated>2019-12-21T01:53:32.524Z</updated>
+    <updated>2019-12-21T02:00:49.865Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="设备管理"><a href="#设备管理" class="headerlink" title="设备管理"></a>设备管理</h1><blockquote><p>参考资料：</p><ul><li>操作系统教程（第5版） - 费翔林 骆斌 编著</li></ul></blockquote><p>外部设备分类：</p><ul><li><p>存储型设备</p><p>磁带机、磁盘机等</p></li><li><p>I/O型设备</p><p>显示器、打印机、通信设备等</p></li></ul><p>设备管理通常使用I/O中断、缓冲区管理、通道、设备驱动调度等多种技术，这很好地克服了由于<strong>设备和CPU速度不匹配</strong>所引起的问题，使得主机和设备能够并行工作，提高设备的使用效率</p><p>另外操作系统将所有设备都<strong>抽象成文件</strong>，将其统一在文件系统之下，赋予文件属性，对设备的操作类似于对文件的操作，优点是：</p><ul><li>尽可能统一文件和设备的I/O的处理</li><li>尽可能把设备文件和普通文件纳入统一保护机制下</li></ul><p>为了方便用户或者高层软件使用，设备管理还<strong>对各种设备进行抽象</strong>，配置设备驱动程序，屏蔽物理细节和操作过程，提供统一使用界面，因此设备管理应该具备以下功能：</p><ul><li>设备中断处理</li><li>缓冲区管理</li><li>设备分配和去配</li><li>设备驱动调度</li><li>实现虚拟设备</li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="设备管理"><a href="#设备管理" class="headerlink" title="设备管理"></a>设备管理</h1><blockquote><p>参考资料：</p><ul><li>操作系统教程（第5版） - 费翔林 骆斌 编著</li></ul></blockquote><p>外部设备分类：</p><ul><li><p>存储型设备</p><p>磁带机、磁盘机等</p></li><li><p>I/O型设备</p><p>显示器、打印机、通信设备等</p></li></ul><p>设备管理通常使用I/O中断、缓冲区管理、通道、设备驱动调度等多种技术，这很好地克服了由于<strong>设备和CPU速度不匹配</strong>所引起的问题，使得主机和设备能够并行工作，提高设备的使用效率</p><p>另外操作系统将所有设备都<strong>抽象成文件</strong>，将其统一在文件系统之下，赋予文件属性，对设备的操作类似于对文件的操作，优点是：</p><ul><li>尽可能统一文件和设备的I/O的处理</li><li>尽可能把设备文件和普通文件纳入统一保护机制下</li></ul><p>为了方便用户或者高层软件使用，设备管理还<strong>对各种设备进行抽象</strong>，配置设备驱动程序，屏蔽物理细节和操作过程，提供统一使用界面，因此设备管理应该具备以下功能：</p><ul><li>设备中断处理</li><li>缓冲区管理</li><li>设备分配和去配</li><li>设备驱动调度</li><li>实现虚拟设备</li></ul><h2 id="I-O硬件原理"><a href="#I-O硬件原理" class="headerlink" title="I/O硬件原理"></a>I/O硬件原理</h2><h3 id="I-O系统"><a href="#I-O系统" class="headerlink" title="I/O系统"></a>I/O系统</h3><p>设备分类</p><ul><li><p>按照操作特性</p><ul><li><p>输入型设备</p></li><li><p>输出型设备</p></li><li><p>存储型设备</p><ul><li><p>顺序存取存储设备</p><p>严格依赖信息的物理位置进行定位和读写，如磁带</p></li><li><p>直接存取存储设备（随机存取存储设备）</p><p>存取任何一个物理块所需时间几乎不依赖于此信息所处位置，如磁盘</p></li></ul></li></ul></li><li><p>按照信息交换单位</p><ul><li><p>字符设备</p><p>通常是输入型设备和输出型设备，它与内存进行信息交换的单位是<strong>字节</strong>，即一次交换一个或多个字节</p></li><li><p>块设备</p><p>通常是存储型设备，所谓块是存储介质上<strong>连续信息所组成的一个区域</strong>，块设备每次与内存交换一块或多块信息</p></li></ul></li></ul><p>不同设备之间的物理特性的差异：</p><ul><li>数据传输速率差别很大</li><li>数据表示方式和传输单位不同</li><li>错误的性质、报错方式以及应对措施都不一样</li></ul><h3 id="I-O控制方式"><a href="#I-O控制方式" class="headerlink" title="I/O控制方式"></a>I/O控制方式</h3>]]></content>
     
     <summary type="html">
     
