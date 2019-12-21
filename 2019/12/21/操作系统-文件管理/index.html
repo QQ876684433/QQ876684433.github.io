@@ -21,18 +21,20 @@
     
     
     <meta name="keywords" content="操作系统,文件管理">
-    <meta name="description" content="文件管理 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著">
+    <meta name="description" content="文件管理 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著   文件 简单内容直接阅读第5章PPT1和2，这里略过  文件存取方法存取方法是指读写文件存储器上的物理记录的方法，常见的有：  顺序存取 无论是无结构的字节流文件，还是有结构的记录式文件，存取操作都是在上次操作的基础上进行；系统设置两个位置指针，指向要读出或写入的字节位置或记录位置，并且根据读出或写入的字节个数或记录号，系统">
 <meta name="keywords" content="操作系统,文件管理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="操作系统-文件管理">
 <meta property="og:url" content="http://QQ876684433.github.io/2019/12/21/操作系统-文件管理/index.html">
 <meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
-<meta property="og:description" content="文件管理 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著">
+<meta property="og:description" content="文件管理 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著   文件 简单内容直接阅读第5章PPT1和2，这里略过  文件存取方法存取方法是指读写文件存储器上的物理记录的方法，常见的有：  顺序存取 无论是无结构的字节流文件，还是有结构的记录式文件，存取操作都是在上次操作的基础上进行；系统设置两个位置指针，指向要读出或写入的字节位置或记录位置，并且根据读出或写入的字节个数或记录号，系统">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-12-21T10:18:05.788Z">
+<meta property="og:image" content="https://i.loli.net/2019/12/21/6XEkFPW1wevdTgf.png">
+<meta property="og:updated_time" content="2019-12-21T13:35:32.507Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统-文件管理">
-<meta name="twitter:description" content="文件管理 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著">
+<meta name="twitter:description" content="文件管理 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著   文件 简单内容直接阅读第5章PPT1和2，这里略过  文件存取方法存取方法是指读写文件存储器上的物理记录的方法，常见的有：  顺序存取 无论是无结构的字节流文件，还是有结构的记录式文件，存取操作都是在上次操作的基础上进行；系统设置两个位置指针，指向要读出或写入的字节位置或记录位置，并且根据读出或写入的字节个数或记录号，系统">
+<meta name="twitter:image" content="https://i.loli.net/2019/12/21/6XEkFPW1wevdTgf.png">
     
         <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
     
@@ -167,7 +169,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#文件管理"><span class="post-toc-number">1.</span> <span class="post-toc-text">文件管理</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#文件管理"><span class="post-toc-number">1.</span> <span class="post-toc-text">文件管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件存取方法"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">文件存取方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件目录"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">文件目录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件控制块、文件目录与目录文件"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">文件控制块、文件目录与目录文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#层次目录结构"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">层次目录结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一级目录结构"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text">一级目录结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#二级目录结构"><span class="post-toc-number">1.2.2.2.</span> <span class="post-toc-text">二级目录结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#树形目录结构"><span class="post-toc-number">1.2.2.3.</span> <span class="post-toc-text">树形目录结构</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件目录检索"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">文件目录检索</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件系统"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">文件系统</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -199,6 +201,89 @@
 <li>操作系统教程（第5版） - 费翔林 骆斌 编著</li>
 </ul>
 </blockquote>
+<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><blockquote>
+<p>简单内容直接阅读第5章PPT1和2，这里略过</p>
+</blockquote>
+<h3 id="文件存取方法"><a href="#文件存取方法" class="headerlink" title="文件存取方法"></a>文件存取方法</h3><p>存取方法是指<strong>读写文件存储器上的物理记录</strong>的方法，常见的有：</p>
+<ul>
+<li><p>顺序存取</p>
+<p>无论是无结构的字节流文件，还是有结构的记录式文件，存取操作都是<strong>在上次操作的基础上进行</strong>；系统设置两个位置指针，指向要读出或写入的字节位置或记录位置，并且根据读出或写入的字节个数或记录号，系统自动修改相应的指针值</p>
+<p>允许对固定长度记录的顺序文件采用随机访问（类似于数组访问）</p>
+<p>顺序存取主要用于<strong>磁带文件</strong>，但也适用于<strong>磁盘上的顺序文件</strong></p>
+</li>
+<li><p>直接存取（随机存取）</p>
+<p>可以<strong>非顺序地</strong>从文件中的<strong>任何位置</strong>存取文件内容</p>
+<p>为了实现直接存取，一个文件可以看作由顺序编号的物理块组成，这些块划分成等长，作为定位和存取的最小单位</p>
+</li>
+<li><p>索引存取</p>
+<p>基于索引文件的存取方法，由于文件中的记录<strong>不按位置而是按其记录名或记录键来编址</strong>，因此用户提供记录名或记录键之后，先按名搜索，再查找所需要的记录</p>
+<p>在实际系统中，大都采用<strong>多级索引</strong>以加速记录的查找过程</p>
+</li>
+</ul>
+<h2 id="文件目录"><a href="#文件目录" class="headerlink" title="文件目录"></a>文件目录</h2><ul>
+<li>文件目录是实现文件的<strong>按名存取</strong>的关键数据结构</li>
+<li>文件系统的基本功能之一就是负责文件目录的建立、 维护和检索， 要求编排的目录便于查找、 防止冲突</li>
+<li>文件目录需要永久保存， 因此也组织成文件存放在磁盘上， 称<strong>目录文件</strong></li>
+</ul>
+<h3 id="文件控制块、文件目录与目录文件"><a href="#文件控制块、文件目录与目录文件" class="headerlink" title="文件控制块、文件目录与目录文件"></a>文件控制块、文件目录与目录文件</h3><p>文件控制块（File Control Block, FCB）是操作系统为每个文件建立的唯一数据结构，于是一个文件由两部分组成：FCB和文件体（文件信息）；有了FCB就可以方便地实现文件的按名存取</p>
+<p>为了加快文件查找速度，通常把FCB汇集和组织在一起形成文件目录，文件目录包含许多目录项，目录项有两种，分别用来<strong>描述子目录</strong>和<strong>描述文件</strong>，全部的目录项所构成的文件称为目录文件，并保存在外存上，查找文件时调入内存工作区</p>
+<p>目录文件永远不会空，它至少包含两个目录项：当前目录项<code>.</code>和父目录项<code>..</code></p>
+<p>文件目录的作用是将文件名转换成文件信息在磁盘上的物理位置</p>
+<h3 id="层次目录结构"><a href="#层次目录结构" class="headerlink" title="层次目录结构"></a>层次目录结构</h3><h4 id="一级目录结构"><a href="#一级目录结构" class="headerlink" title="一级目录结构"></a>一级目录结构</h4><p>所有FCB排列在一张线性表中，与每个文件的相关属性占用一个目录项， 构成了一级目录结构</p>
+<p>缺点：文件重名和文件共享问题难以解决</p>
+<h4 id="二级目录结构"><a href="#二级目录结构" class="headerlink" title="二级目录结构"></a>二级目录结构</h4><ul>
+<li>第一级为主文件目录， 它用于管理所有用户文件目录， 它的目录项登记了<strong>系统接受的用户的名字</strong>及<strong>该用户文件目录的地址</strong></li>
+<li>第二级为用户的文件目录， 它为该用户的每个文件保存一个登记栏， 其内容与一级目录的目录项相同</li>
+<li><strong>每一用户只允许查看自己的文件目录</strong></li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/21/6XEkFPW1wevdTgf.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>特点：</p>
+<ul>
+<li>采用二级目录管理文件时， 因为任何文件的存取都通过主文件目录， 于是可以<strong>检查访问文件者的存取权限</strong>， 避免一个用户未经授权就存取另一个用户的文件， 使用户文件的私有性得到保证， 实现了对文件的保密和保护</li>
+<li>特别是不同用户具有同名文件时， 由于各自有不同的用户文件目录而不会导致混乱</li>
+<li>对于同一个用户而言， 同样存在文件多、 容易重名问题</li>
+</ul>
+<h4 id="树形目录结构"><a href="#树形目录结构" class="headerlink" title="树形目录结构"></a>树形目录结构</h4><ul>
+<li><p>每一级目录可以登记下一级目录， 也可以登记文件， 从而形成了层次文件目录结构</p>
+</li>
+<li><p>层次目录结构通常采用树形目录结构，它是一棵倒向的有根树， 树根是根目录； 从根向下， 每一个<strong>树分叉是一个子目录</strong>； 而<strong>树叶是文件</strong></p>
+</li>
+</ul>
+<p>特点：</p>
+<ul>
+<li>较好地反映现实世界中<strong>具有层次关系的数据集合</strong>和较确切地反映<strong>系统内部文件的组织结构</strong></li>
+<li>不同文件可以重名， 只要它们不位于同一末端的子目录中</li>
+<li>易于规定<strong>不同层次或子树中文件的不同存取权限</strong>， 便于文件的保护、 保密和共享</li>
+</ul>
+<p>一个<strong>文件的全名</strong>包括从根目录开始到文件为止， 通路上遇到的所有子目录路径， 又称为路径名</p>
+<p>如果每个文件都只有一个父目录，那么称为纯树型目录结构</p>
+<p>有向无环图目录结构中一个文件可能有多个父目录，<strong>需要为每个文件维护一个引用计数</strong>，用来记录文件的父目录个数，当且仅当引用计数值为1时，删除操作才移去文件，否则仅仅把相关记录从父目录中删除，引用计数减1</p>
+<h3 id="文件目录检索"><a href="#文件目录检索" class="headerlink" title="文件目录检索"></a>文件目录检索</h3><p>每个目录在创建时都自动含有两个特殊目录项：</p>
+<ul>
+<li><code>.</code>项指出目录自身的inode入口</li>
+<li><code>..</code>项指出其父目录的inode入口</li>
+</ul>
+<p>当<code>.</code>和<code>..</code>都指向同一个inode时，说明当前目录是根目录</p>
+<h2 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h2><p>文件系统通常采用分层结构实现：</p>
+<ul>
+<li><p>文件管理</p>
+<p>实现文件的逻辑结构，为用户提供各种文件系统调用及文件访问权限的设置等</p>
+</li>
+<li><p>目录管理</p>
+<p>负责查找文件描述符，进而找到需要访问的文件，并进行访问权限检查等工作，此外还需完成目录的添加、删除、重排等操作</p>
+</li>
+<li><p>磁盘管理</p>
+<p>管理文件空间，将文件的逻辑地址转成磁盘的物理地址（即由逻辑块号找到柱面号、磁头号和扇区号）</p>
+</li>
+</ul>
+<p>文件系统的信息空间可认为是由一系列的逻辑块所组成的，每个逻辑块长度通常为512B（一个扇区的大小）的整数倍</p>
 
         </div>
 
@@ -207,7 +292,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-12-21T10:18:05.788Z" itemprop="dateUpdated">2019-12-21 18:18:05</time>
+    Last updated: <time datetime="2019-12-21T13:35:32.507Z" itemprop="dateUpdated">2019-12-21 21:35:32</time>
 </span><br>
 
 
