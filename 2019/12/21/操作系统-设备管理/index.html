@@ -14,25 +14,25 @@
     
     
     
-    <title>精读Servlet源码-javax.servlet.http.HttpServlet | 至繁归于至简 - chph&#39;s blog | steve_chph personal website</title>
+    <title>操作系统-设备管理 | 至繁归于至简 - chph&#39;s blog | steve_chph personal website</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Java,servlet">
-    <meta name="description" content="the blog website of steve_chph, steve_chph的个人博客网站">
-<meta name="keywords" content="Java,servlet">
+    <meta name="keywords" content="操作系统,设备管理">
+    <meta name="description" content="设备管理 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著   外部设备分类：  存储型设备 磁带机、磁盘机等  I/O型设备 显示器、打印机、通信设备等   设备管理通常使用I/O中断、缓冲区管理、通道、设备驱动调度等多种技术，这很好地克服了由于设备和CPU速度不匹配所引起的问题，使得主机和设备能够并行工作，提高设备的使用效率 另外操作系统将所有设备都抽象成文件，将其统一在文件系统之">
+<meta name="keywords" content="操作系统,设备管理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="精读Servlet源码-javax.servlet.http.HttpServlet">
-<meta property="og:url" content="http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/index.html">
+<meta property="og:title" content="操作系统-设备管理">
+<meta property="og:url" content="http://QQ876684433.github.io/2019/12/21/操作系统-设备管理/index.html">
 <meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
-<meta property="og:description" content="the blog website of steve_chph, steve_chph的个人博客网站">
+<meta property="og:description" content="设备管理 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著   外部设备分类：  存储型设备 磁带机、磁盘机等  I/O型设备 显示器、打印机、通信设备等   设备管理通常使用I/O中断、缓冲区管理、通道、设备驱动调度等多种技术，这很好地克服了由于设备和CPU速度不匹配所引起的问题，使得主机和设备能够并行工作，提高设备的使用效率 另外操作系统将所有设备都抽象成文件，将其统一在文件系统之">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-09-15T05:02:14.670Z">
+<meta property="og:updated_time" content="2019-12-21T01:53:32.524Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="精读Servlet源码-javax.servlet.http.HttpServlet">
-<meta name="twitter:description" content="the blog website of steve_chph, steve_chph的个人博客网站">
+<meta name="twitter:title" content="操作系统-设备管理">
+<meta name="twitter:description" content="设备管理 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著   外部设备分类：  存储型设备 磁带机、磁盘机等  I/O型设备 显示器、打印机、通信设备等   设备管理通常使用I/O中断、缓冲区管理、通道、设备驱动调度等多种技术，这很好地克服了由于设备和CPU速度不匹配所引起的问题，使得主机和设备能够并行工作，提高设备的使用效率 另外操作系统将所有设备都抽象成文件，将其统一在文件系统之">
     
         <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
     
@@ -120,7 +120,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">精读Servlet源码-javax.servlet.http.HttpServlet</div>
+        <div class="flex-col header-title ellipsis">操作系统-设备管理</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -142,15 +142,15 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">精读Servlet源码-javax.servlet.http.HttpServlet</h1>
+        <h1 class="title">操作系统-设备管理</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-07-18T11:57:50.000Z" itemprop="datePublished" class="page-time">
-  2019-07-18
+                <time datetime="2019-12-21T01:44:20.000Z" itemprop="datePublished" class="page-time">
+  2019-12-21
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/源码/">源码</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/操作系统/">操作系统</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/操作系统/笔记/">笔记</a></li></ul></li></ul>
 
             
         </h5>
@@ -164,17 +164,24 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#设备管理"><span class="post-toc-number">1.</span> <span class="post-toc-text">设备管理</span></a></li></ol>
+        </nav>
+    </aside>
 
-<article id="post-精读Servlet源码-javax-servlet-http-HttpServlet"
+
+<article id="post-操作系统-设备管理"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">精读Servlet源码-javax.servlet.http.HttpServlet</h1>
+        <h1 class="post-card-title">操作系统-设备管理</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-07-18 19:57:50" datetime="2019-07-18T11:57:50.000Z"  itemprop="datePublished">2019-07-18</time>
+            <time class="post-time" title="2019-12-21 09:44:20" datetime="2019-12-21T01:44:20.000Z"  itemprop="datePublished">2019-12-21</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/源码/">源码</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/操作系统/">操作系统</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/操作系统/笔记/">笔记</a></li></ul></li></ul>
 
 
 
@@ -186,7 +193,36 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            
+            <h1 id="设备管理"><a href="#设备管理" class="headerlink" title="设备管理"></a>设备管理</h1><blockquote>
+<p>参考资料：</p>
+<ul>
+<li>操作系统教程（第5版） - 费翔林 骆斌 编著</li>
+</ul>
+</blockquote>
+<p>外部设备分类：</p>
+<ul>
+<li><p>存储型设备</p>
+<p>磁带机、磁盘机等</p>
+</li>
+<li><p>I/O型设备</p>
+<p>显示器、打印机、通信设备等</p>
+</li>
+</ul>
+<p>设备管理通常使用I/O中断、缓冲区管理、通道、设备驱动调度等多种技术，这很好地克服了由于<strong>设备和CPU速度不匹配</strong>所引起的问题，使得主机和设备能够并行工作，提高设备的使用效率</p>
+<p>另外操作系统将所有设备都<strong>抽象成文件</strong>，将其统一在文件系统之下，赋予文件属性，对设备的操作类似于对文件的操作，优点是：</p>
+<ul>
+<li>尽可能统一文件和设备的I/O的处理</li>
+<li>尽可能把设备文件和普通文件纳入统一保护机制下</li>
+</ul>
+<p>为了方便用户或者高层软件使用，设备管理还<strong>对各种设备进行抽象</strong>，配置设备驱动程序，屏蔽物理细节和操作过程，提供统一使用界面，因此设备管理应该具备以下功能：</p>
+<ul>
+<li>设备中断处理</li>
+<li>缓冲区管理</li>
+<li>设备分配和去配</li>
+<li>设备驱动调度</li>
+<li>实现虚拟设备</li>
+</ul>
+
         </div>
 
         <blockquote class="post-copyright">
@@ -194,12 +230,12 @@
     <div class="content">
         
 <span class="post-time">
-    最終更新：<time datetime="2019-09-15T05:02:14.670Z" itemprop="dateUpdated">2019-09-15 13:02:14</time>
+    最終更新：<time datetime="2019-12-21T01:53:32.524Z" itemprop="dateUpdated">2019-12-21 09:53:32</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/" target="_blank" rel="external">http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/12/21/操作系统-设备管理/" target="_blank" rel="external">http://QQ876684433.github.io/2019/12/21/操作系统-设备管理/</a>
         
     </div>
     
@@ -220,7 +256,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/servlet/">servlet</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设备管理/">设备管理</a></li></ul>
 
 
             
@@ -230,7 +266,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/&title=《精读Servlet源码-javax.servlet.http.HttpServlet》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/12/21/操作系统-设备管理/&title=《操作系统-设备管理》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -240,22 +276,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/&title=《精读Servlet源码-javax.servlet.http.HttpServlet》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/12/21/操作系统-设备管理/&title=《操作系统-设备管理》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/12/21/操作系统-设备管理/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《精读Servlet源码-javax.servlet.http.HttpServlet》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/&via=http://QQ876684433.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《操作系统-设备管理》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/12/21/操作系统-设备管理/&via=http://QQ876684433.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/12/21/操作系统-设备管理/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -275,21 +311,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2019/07/19/精读Servlet源码-javax-servlet-ServletConfig/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">精读Servlet源码-javax.servlet.ServletConfig</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2019/07/18/精读Servlet源码-javax-servlet-GenericServlet/" id="post-next" class="post-nav-link">
+      <a href="/2019/12/17/CPP输入输出/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">精读Servlet源码-javax.servlet.GenericServlet</h4>
+        <h4 class="title">CPP输入输出</h4>
       </a>
     </div>
   
@@ -389,7 +418,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/&title=《精读Servlet源码-javax.servlet.http.HttpServlet》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/12/21/操作系统-设备管理/&title=《操作系统-设备管理》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -399,22 +428,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/&title=《精读Servlet源码-javax.servlet.http.HttpServlet》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/12/21/操作系统-设备管理/&title=《操作系统-设备管理》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/12/21/操作系统-设备管理/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《精读Servlet源码-javax.servlet.http.HttpServlet》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/&via=http://QQ876684433.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《操作系统-设备管理》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/12/21/操作系统-设备管理/&via=http://QQ876684433.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/12/21/操作系统-设备管理/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -425,7 +454,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADMElEQVR42u3aQXLCQAwEQP7/aXKlimCPJKcCojmlMLG3l4PQaG+3+HV/eD2+8/yZV+88X331lOMnJs+97IWNjY39Iez74StZRL64/D7JOo836+TO2NjY2OvYSTk5LmlJOTl+Vg5ItuDkudjY2NhfzM4Xcfz55GreomBjY2NjVwtYtQjlxSy/2z/UbWxsbOw3Zuc/8fPCVg16qmuYPAsbGxt7Ezufir7/338y38bGxsZ+Y3Yvgq8euMkbkl78VFZgY2NjL2JPAqN8GFwNgKqBVHP92NjY2CvYzWA9CPGrHUG1pE0CKWxsbOyt7OPYvTckuCrDqd7/ZCOwsbGxF7HzdiJ/v7op86Cq91VhY2Nj72BPFpE3KtVPVlugpB16ORXBxsbGXsHOf9D3ClLy+Tww6m3uScXGxsbG/lh2b8g6KXLVoz9J6SrzsLGxsRexk3+bRP/5HaoBVm+QgI2Njb2P3ftBn7QrvU3sDQyqXw82Njb2PnYS2VRvWt3EyX2abQ82Njb2Cnbv+Msk7u+1K/lwN7onNjY29iJ2b0iQPyBf6PF2JwdxsLGxsb+ZPQmDkuC+104kG5GXzIvHvdjY2Nhvxu41Fb1DNr0jPnksVV0bNjY29g52PjrtNSTzTeyVyZNCiI2Njb2CnReA/FDOta1OtYwlW4aNjY29iT0pWr2gP9/EwhwjLo3Y2NjY+9jzMCgH9MrbpJgVRrzY2NjYK9iTqL3azOQHeqpxVSFUwsbGxl7ETlqL3si22Ru1Sleh0cLGxsZexM6XWD1qmQdP+di4utpbdW+wsbGxP5bdC2jyAzTzu1WbkHJlw8bGxl7KrsZD1c9UN2XSLJ0c2cHGxsZex65G9nlMn0c/PVLe3mBjY2NvZc8j/qSA9Z47HxJgY2Nj72PPD9PMw51Ji9IcS2NjY2MvYo/qXrHATBaXjyLyWAobGxt7E3sS6Ff3NblaDaea3yc2Njb2OvakSUiuVmOj/O9e2cPGxsbGzheX3D8PuSZNyMl8GxsbG/vr2b1WIXknv1oootjY2Njr2EmolA8JegPg/OnVovjLVWxsbOxF7L/I0vOR8FUblIRW2NjY2OvYP78am6ek507iAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACs0lEQVR42u3a226DQAwFwPz/T6fPVRt6fFmSSsNTlFDwUGnX2H484uP547j+fnKF63MeJw48PDy8cejJDRLMq7tcB508viRmPDw8vNO86xDzzSAPpXflPGY8PDy8z+Hlm0Ge3+ZbCx4eHt5/5+Vpd/45T6nx8PDw3subJL690PNC8E21Fjw8PLyYl3eRPufzkf4eHh4e3rirvlt4zbeHtWjx8PDwDvB65dfe5lFNtat3f3kmHh4e3ioveZmvDlclRYTqaEK1GYaHh4d3jlcN6zrJniTW+TeTbQMPDw9vztsdDkjKB9XrVzekl+8KeHh4eKu86qK80KoPUuHqBhPNRODh4eGNedXWVLUgW03Btx70H/9JPDw8vDFvK6DqjaupebX4i4eHh3eOt1tazUvAeUJcvVq5Mo2Hh4fXv85ogZ40sZIScFS67VV/8fDw8OKY84V+3uLKl/JJmv5ypgwPDw/vMC9vTVUHoZIUPHko0faAh4eHd4BXTaMno1TJWFVe9i2k7Hh4eHirvF4y/SwevQ2ml+5/+ys8PDy8w7wkiN4w1u4oQOF8PDw8vAO8nDTZAKpNssnjjt4b8PDw8Aa8SbO/WjjIi7Y5e6FKjYeHh9efp3pMFus80F7LbWGSCg8PD+8Ab14OyJtn8yQ+L4vg4eHhneDtFhTyYkGSLk+2KDw8PLx7eJOGU288q9rKqo5t4eHh4d3PmxRPk1+rjbRmZw8PDw9vifcsHnm5IS/d9gq+UTx4eHh4B3j5keOT0m0O2xpNwMPDw9vl9S7dC3qSxOfJNx4eHt49vHINY2lAaiEhzqfJ8PDw8N7EqwZRLXaUl/7rdwU8PDy8D+P1hgmSskWevkdDV3h4eHgHeNXmU96IShb9+a/lyQg8PDy8AW8yXNVrUOWjANUY9moYeHh4eL9+/wVsbivwyjyZDgAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
