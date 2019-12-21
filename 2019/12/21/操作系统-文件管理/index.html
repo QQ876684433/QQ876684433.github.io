@@ -30,7 +30,8 @@
 <meta property="og:description" content="文件管理 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著   文件 简单内容直接阅读第5章PPT1和2，这里略过  文件存取方法存取方法是指读写文件存储器上的物理记录的方法，常见的有：  顺序存取 无论是无结构的字节流文件，还是有结构的记录式文件，存取操作都是在上次操作的基础上进行；系统设置两个位置指针，指向要读出或写入的字节位置或记录位置，并且根据读出或写入的字节个数或记录号，系统">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2019/12/21/6XEkFPW1wevdTgf.png">
-<meta property="og:updated_time" content="2019-12-21T13:35:32.507Z">
+<meta property="og:image" content="https://i.loli.net/2019/12/21/IoDBnNhpJj4gqls.png">
+<meta property="og:updated_time" content="2019-12-21T14:42:38.518Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统-文件管理">
 <meta name="twitter:description" content="文件管理 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著   文件 简单内容直接阅读第5章PPT1和2，这里略过  文件存取方法存取方法是指读写文件存储器上的物理记录的方法，常见的有：  顺序存取 无论是无结构的字节流文件，还是有结构的记录式文件，存取操作都是在上次操作的基础上进行；系统设置两个位置指针，指向要读出或写入的字节位置或记录位置，并且根据读出或写入的字节个数或记录号，系统">
@@ -169,7 +170,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#文件管理"><span class="post-toc-number">1.</span> <span class="post-toc-text">文件管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件存取方法"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">文件存取方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件目录"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">文件目录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件控制块、文件目录与目录文件"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">文件控制块、文件目录与目录文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#层次目录结构"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">层次目录结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一级目录结构"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text">一级目录结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#二级目录结构"><span class="post-toc-number">1.2.2.2.</span> <span class="post-toc-text">二级目录结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#树形目录结构"><span class="post-toc-number">1.2.2.3.</span> <span class="post-toc-text">树形目录结构</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件目录检索"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">文件目录检索</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件系统"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">文件系统</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#文件管理"><span class="post-toc-number">1.</span> <span class="post-toc-text">文件管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件存取方法"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">文件存取方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件目录"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">文件目录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件控制块、文件目录与目录文件"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">文件控制块、文件目录与目录文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#层次目录结构"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">层次目录结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一级目录结构"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text">一级目录结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#二级目录结构"><span class="post-toc-number">1.2.2.2.</span> <span class="post-toc-text">二级目录结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#树形目录结构"><span class="post-toc-number">1.2.2.3.</span> <span class="post-toc-text">树形目录结构</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件目录检索"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">文件目录检索</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件组织与数据存储"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">文件组织与数据存储</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件逻辑结构"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">文件逻辑结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#流式文件"><span class="post-toc-number">1.3.1.1.</span> <span class="post-toc-text">流式文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#记录式文件"><span class="post-toc-number">1.3.1.2.</span> <span class="post-toc-text">记录式文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#成组和分解"><span class="post-toc-number">1.3.1.3.</span> <span class="post-toc-text">成组和分解</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件物理结构"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">文件物理结构</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件系统"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">文件系统</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -271,6 +272,90 @@
 <li><code>..</code>项指出其父目录的inode入口</li>
 </ul>
 <p>当<code>.</code>和<code>..</code>都指向同一个inode时，说明当前目录是根目录</p>
+<h2 id="文件组织与数据存储"><a href="#文件组织与数据存储" class="headerlink" title="文件组织与数据存储"></a>文件组织与数据存储</h2><h3 id="文件逻辑结构"><a href="#文件逻辑结构" class="headerlink" title="文件逻辑结构"></a>文件逻辑结构</h3><ul>
+<li><p>逻辑文件， 又称为文件的逻辑结构</p>
+<ul>
+<li><p>独立于物理环境的， 用户概念中的抽象信息组织方式</p>
+</li>
+<li><p>用户能观察到的， 并加以处理的数据集合</p>
+</li>
+</ul>
+</li>
+<li><p>文件的逻辑结构分为两种形式</p>
+<ul>
+<li>一种是流式文件</li>
+<li>一种是记录式文件</li>
+</ul>
+</li>
+</ul>
+<h4 id="流式文件"><a href="#流式文件" class="headerlink" title="流式文件"></a>流式文件</h4><p>文件内的数据不再组成记录， 只是由一串依次的字节组成的信息流序列，称为字节流文件；这种文件常常<strong>按长度来读取所需信息</strong>，也可以用插入的特殊字符作为分界</p>
+<h4 id="记录式文件"><a href="#记录式文件" class="headerlink" title="记录式文件"></a>记录式文件</h4><p>一种有结构的文件， 它是<strong>若干逻辑记录信息所组成的记录流文件</strong>，<strong>逻辑记录</strong>是文件中按信息在逻辑上的独立含义所划分的信息单位</p>
+<p>逻辑纪录是文件内独立的最小信息单位，每次总是为使用者存储、检索或更新一条逻辑记录，通过文件的记录位置来对文件信息进行访问</p>
+<p>记录式问有两种常见的记录组织和使用方法：</p>
+<ul>
+<li><p>记录式顺序文件</p>
+<p>文件的记录顺序生成并被顺序访问</p>
+</li>
+<li><p>记录式索引顺序文件</p>
+<p>使用索引表，表项包含<strong>记录键和索引指针</strong>；记录键由应用程序确定，<strong>索引指针便指向相应的记录</strong>；它可对特定记录进行存取，也保持顺序访问记录的功能</p>
+</li>
+</ul>
+<h4 id="成组和分解"><a href="#成组和分解" class="headerlink" title="成组和分解"></a>成组和分解</h4><ul>
+<li>逻辑记录是按信息在逻辑上的独立含义由用户划分的单位</li>
+<li>块是系统划分的存储介质上连续信息所组成的区域</li>
+</ul>
+<p>一条逻辑记录被存放到文件存储器的存储介质上时，可能占用一块或多块，或者一个物理块包含多条逻辑记录</p>
+<p>记录成组</p>
+<ul>
+<li>若干个逻辑记录合并成一组， 写入一个块叫记录的成组；每块中的逻辑记录数称<strong>块因子</strong></li>
+<li>成组操作先在系统输出缓冲区上进行，凑满一块后才将缓冲区的信息写到存储介质上</li>
+</ul>
+<p>记录分解</p>
+<ul>
+<li>当存储介质上的<strong>一个物理记录</strong>读进输入缓冲区后， <strong>把逻辑记录从块中分离出来</strong>的操作叫记录的分解操作</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/21/IoDBnNhpJj4gqls.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>优点：</p>
+<ul>
+<li><p>节省存储空间</p>
+<p>不会由于逻辑记录比物理记录小而导致物理空间的浪费</p>
+</li>
+<li><p>减少输入输出操作次数， 提高系统效率</p>
+<p>一次读取一个物理记录，然后将物理记录中的逻辑记录分解出来传输给用户空间，而不需要每次读取一条逻辑记录就发起一次I/O操作；</p>
+<p>当一个写请求所传送的逻辑记录刚好填满系统缓冲区时，文件管理才发出一次I/O请求，将填满的系统缓冲区内容写到存储介质相应的块中</p>
+</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>需要软件进行<strong>成组和分解的额外操作</strong></li>
+<li>需要能<strong>容纳最大块长的系统I/O缓冲区</strong></li>
+</ul>
+<p>记录成组与分解处理带来的新特征：</p>
+<ul>
+<li>用户读请求， 导致包含该逻辑记录的物理块读入输入缓冲区； 这一操作可能读入了多个逻辑记录， 这一现象称为<strong>提前读</strong></li>
+<li>用户写请求， 首先是写入输出缓冲区， 只有当该缓冲区中的逻辑记录满后才会引起实际输出， 这一现象称为<strong>推迟写</strong></li>
+</ul>
+<h3 id="文件物理结构"><a href="#文件物理结构" class="headerlink" title="文件物理结构"></a>文件物理结构</h3><ul>
+<li><strong>文件的物理结构</strong>和组织是指文件在<strong>物理存储空间</strong>中的存放方法和组织关系（这时的文件看作物理文件，即相关物理块的集合）</li>
+<li>文件的存储结构涉及块的划分、 记录的排列、 索引的组织、 信息的搜索等许多问题，其优劣直接影响文件系统的性能</li>
+</ul>
+<p>有两种构造文件物理结构的方法：</p>
+<ul>
+<li><p>计算法：对记录键进行计算转换成对应的物理地址，从而找到所需的记录；包括直接寻址文件、计算寻址文件、顺序文件等</p>
+<p>存取效率高，不必增加存储空间存放附加控制信息，能够把分布范围较广的键均匀地映射到一个存储区域</p>
+</li>
+<li><p>指针法：设置专门的指针，指明<strong>相应记录的物理地址</strong>或<strong>表达各记录之间的关联</strong>；索引文件、顺序索引文件、连接文件等均属此类</p>
+<p>优点：可将文件信息的逻辑次序与在存储介质上的物理排列依次完全分开，便于随机存取，便于更新，加快存取速度</p>
+<p>缺点：指针要占用较多存储空间，大型文件的索引查找要耗费较多处理器时间</p>
+</li>
+</ul>
 <h2 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h2><p>文件系统通常采用分层结构实现：</p>
 <ul>
 <li><p>文件管理</p>
@@ -292,7 +377,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-12-21T13:35:32.507Z" itemprop="dateUpdated">2019-12-21 21:35:32</time>
+    Last updated: <time datetime="2019-12-21T14:42:38.518Z" itemprop="dateUpdated">2019-12-21 22:42:38</time>
 </span><br>
 
 
