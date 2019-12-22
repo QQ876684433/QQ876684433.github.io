@@ -31,7 +31,13 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2019/12/21/6XEkFPW1wevdTgf.png">
 <meta property="og:image" content="https://i.loli.net/2019/12/21/IoDBnNhpJj4gqls.png">
-<meta property="og:updated_time" content="2019-12-21T14:42:38.518Z">
+<meta property="og:image" content="https://i.loli.net/2019/12/21/NEgRdVjxPnputFQ.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/21/h7LFORyQCvXgcor.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/21/K4lrXEDNZqnFgP9.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/22/6QODen4TdhIFw8b.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/22/qSvgWB6NfaHJzoe.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/22/52UKSW8lLQxtBiz.png">
+<meta property="og:updated_time" content="2019-12-22T03:16:38.249Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统-文件管理">
 <meta name="twitter:description" content="文件管理 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著   文件 简单内容直接阅读第5章PPT1和2，这里略过  文件存取方法存取方法是指读写文件存储器上的物理记录的方法，常见的有：  顺序存取 无论是无结构的字节流文件，还是有结构的记录式文件，存取操作都是在上次操作的基础上进行；系统设置两个位置指针，指向要读出或写入的字节位置或记录位置，并且根据读出或写入的字节个数或记录号，系统">
@@ -170,7 +176,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#文件管理"><span class="post-toc-number">1.</span> <span class="post-toc-text">文件管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件存取方法"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">文件存取方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件目录"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">文件目录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件控制块、文件目录与目录文件"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">文件控制块、文件目录与目录文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#层次目录结构"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">层次目录结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一级目录结构"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text">一级目录结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#二级目录结构"><span class="post-toc-number">1.2.2.2.</span> <span class="post-toc-text">二级目录结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#树形目录结构"><span class="post-toc-number">1.2.2.3.</span> <span class="post-toc-text">树形目录结构</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件目录检索"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">文件目录检索</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件组织与数据存储"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">文件组织与数据存储</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件逻辑结构"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">文件逻辑结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#流式文件"><span class="post-toc-number">1.3.1.1.</span> <span class="post-toc-text">流式文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#记录式文件"><span class="post-toc-number">1.3.1.2.</span> <span class="post-toc-text">记录式文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#成组和分解"><span class="post-toc-number">1.3.1.3.</span> <span class="post-toc-text">成组和分解</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件物理结构"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">文件物理结构</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件系统"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">文件系统</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#文件管理"><span class="post-toc-number">1.</span> <span class="post-toc-text">文件管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件存取方法"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">文件存取方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件目录"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">文件目录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件控制块、文件目录与目录文件"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">文件控制块、文件目录与目录文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#层次目录结构"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">层次目录结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一级目录结构"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text">一级目录结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#二级目录结构"><span class="post-toc-number">1.2.2.2.</span> <span class="post-toc-text">二级目录结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#树形目录结构"><span class="post-toc-number">1.2.2.3.</span> <span class="post-toc-text">树形目录结构</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件目录检索"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">文件目录检索</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件组织与数据存储"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">文件组织与数据存储</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件逻辑结构"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">文件逻辑结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#流式文件"><span class="post-toc-number">1.3.1.1.</span> <span class="post-toc-text">流式文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#记录式文件"><span class="post-toc-number">1.3.1.2.</span> <span class="post-toc-text">记录式文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#成组和分解"><span class="post-toc-number">1.3.1.3.</span> <span class="post-toc-text">成组和分解</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件物理结构"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">文件物理结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#顺序文件"><span class="post-toc-number">1.3.2.1.</span> <span class="post-toc-text">顺序文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#连接文件"><span class="post-toc-number">1.3.2.2.</span> <span class="post-toc-text">连接文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#直接文件"><span class="post-toc-number">1.3.2.3.</span> <span class="post-toc-text">直接文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#索引文件"><span class="post-toc-number">1.3.2.4.</span> <span class="post-toc-text">索引文件</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件系统功能及实现"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">文件系统功能及实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件类系统调用"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">文件类系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Linux文件系统磁盘结构"><span class="post-toc-number">1.4.1.1.</span> <span class="post-toc-text">Linux文件系统磁盘结构</span></a></li></ol></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -356,7 +362,102 @@
 <p>缺点：指针要占用较多存储空间，大型文件的索引查找要耗费较多处理器时间</p>
 </li>
 </ul>
-<h2 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h2><p>文件系统通常采用分层结构实现：</p>
+<h4 id="顺序文件"><a href="#顺序文件" class="headerlink" title="顺序文件"></a>顺序文件</h4><p>将一个文件中<strong>逻辑上连续的信息</strong>存放到<strong>存储介质的依次相邻的块中</strong>便形成顺序结构， 这类文件叫顺序文件， 又称连续文件；FCB中只需要保存<strong>文件的第一个物理块地址</strong>和<strong>文件信息块的总块数</strong></p>
+<p>优点： 顺序存取记录时速度较快</p>
+<ul>
+<li>批处理文件， 系统文件用得最多</li>
+<li>采用磁带存放顺序文件时， 总可以保持快速存取的优点</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>建立文件前需要能<strong>预先确定文件长度</strong>，以便分配存储空间</li>
+<li><strong>修改、 插入和增加文件记录有困难</strong></li>
+<li>对变长记录的处理很困难</li>
+<li>对磁盘作连续分配会造成空闲块的浪费</li>
+</ul>
+<h4 id="连接文件"><a href="#连接文件" class="headerlink" title="连接文件"></a>连接文件</h4><p>使用<strong>连接字（又称为指针）</strong>来表示文件中各个物理块之间的先后次序，称为连接文件或者串联文件，输入井、输出井都是用此类文件</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/21/NEgRdVjxPnputFQ.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>文件信息存放在磁盘的若干物理块中，<strong>第一块文件信息的物理地址由FCB给出</strong>，而每块的连接字指出文件的下一个物理块的位置；连接字内容为0时， 表示文件至本块结束</p>
+<p>优点：</p>
+<ul>
+<li>易于对文件记录做增、 删、 改， 易于动态增长记录</li>
+<li>不必预先确知文件长度</li>
+<li>存储空间利用率高</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>必须将连接字与数据信息混合存放，破坏数据块的完整性</li>
+<li>存放指针需额外的存储空间</li>
+<li>由于存取须通过缓冲区， 待获得连接字后， 才能找到下一物理块的地址，因而<strong>仅适用于顺序存取</strong></li>
+</ul>
+<h4 id="直接文件"><a href="#直接文件" class="headerlink" title="直接文件"></a>直接文件</h4><p>在直接存取存储设备上，利用哈希法<strong>将记录的关键字与其地址之间建立某种对应关系</strong>，以便实现快速存取的文件叫做直接文件（散列文件或哈希文件）</p>
+<p>计算寻址结构可能出现‘冲突’ ， 即不同的关键字可能变换出相同的地址来， 解决办法有拉链法、 循环探查法、二次散列法、 溢出区法等</p>
+<h4 id="索引文件"><a href="#索引文件" class="headerlink" title="索引文件"></a>索引文件</h4><p>系统为每个文件建立索引表（index table），可以有不同的索引形式：</p>
+<ul>
+<li><p>记录组成文件的磁盘块号，这种索引表只是磁盘块号的序列，适用于流式文件</p>
+<p><img src="https://i.loli.net/2019/12/21/h7LFORyQCvXgcor.png" alt></p>
+</li>
+<li><p>其索引表项包含记录键及其磁盘块号，适用于记录式文件</p>
+<p><img src="https://i.loli.net/2019/12/21/K4lrXEDNZqnFgP9.png" alt></p>
+</li>
+</ul>
+<p>利用索引表来搜索记录的文件称为索引文件，<strong>索引表可以存放在FCB中</strong>，查阅索引表先找到相应记录键(或逻辑记录号)， 然后获得数据存储地址，大文件的索引表会很大；有些文件系统将索引表置于<strong>单独的物理块</strong>中，且可以驻留在磁盘上，<strong>FCB仅包含索引表的地址</strong></p>
+<p>索引文件访问方式</p>
+<ul>
+<li>索引文件在文件存储器上分两个区：<strong>索引区</strong>和<strong>数据区</strong></li>
+<li>访问索引文件需两步操作： 第一步查找索引表， 第二步获得记录物理地址</li>
+<li>需要两次访问辅助存储器， 若文件索引已预先调入主存储器， 那么就可减少一次内外存信息交换</li>
+</ul>
+<p>优点：</p>
+<ul>
+<li>具有连接文件的优点</li>
+<li>记录可以散列存储</li>
+<li>具有直接读写任意记录的能力</li>
+<li>便于信息的增、删、改</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>（大文件）索引表的空间开销和查找时间的开销大</li>
+</ul>
+<p>索引的组织：</p>
+<ul>
+<li>一级索引</li>
+<li>两级索引</li>
+<li>多级索引<ul>
+<li>缺点：多次间接索引会降低查找速度</li>
+</ul>
+</li>
+</ul>
+<p>考虑到不同文件大小不一，而且差别很大的情况，一般来说都是混合使用直接索引、一级间接索引、二级间接索引和多级间接索引（不对称多级索引），这样既能够降低索引表的空间开销，同时提供了小文件的快速存取（如果都采用三级索引，对于小文件来说磁盘的I/O开销大，因此要多次索引才能找到物理记录的地址）</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/22/6QODen4TdhIFw8b.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>Unix最初的设计中, 直接地址存10个， 现代Linux系统改为15个；如图中所示，一般来说一个物理块512B，而每个盘块号占4B，因此一个盘快可以存放128个物理盘块号（Linux中不提供记录式文件，都是流式文件，因此索引中只需存储物理盘块号而不需要存储记录键）</p>
+<p>例题：</p>
+<p>在UNIX系统中， 每个i节点中分别含有10个直接地址的索引和一、 二、 三级间接索引。 若每个盘块放128个盘块地址， 则一个1MB的文件分别占用多少各级索引所使用的数据物理块？ 20MB的文件呢？ 设每个盘块有512B</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/22/qSvgWB6NfaHJzoe.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+
+<h2 id="文件系统功能及实现"><a href="#文件系统功能及实现" class="headerlink" title="文件系统功能及实现"></a>文件系统功能及实现</h2><p>文件系统通常采用分层结构实现：</p>
 <ul>
 <li><p>文件管理</p>
 <p>实现文件的逻辑结构，为用户提供各种文件系统调用及文件访问权限的设置等</p>
@@ -369,6 +470,79 @@
 </li>
 </ul>
 <p>文件系统的信息空间可认为是由一系列的逻辑块所组成的，每个逻辑块长度通常为512B（一个扇区的大小）的整数倍</p>
+<h3 id="文件类系统调用"><a href="#文件类系统调用" class="headerlink" title="文件类系统调用"></a>文件类系统调用</h3><p>文件系统提供给用户程序的一组系统调用， 包括： 创建、 删除、 打开、 关闭、 读、 写和控制， 通过这些系统调用用户能获得文件系统的各种服务</p>
+<p>在为应用程序服务时， <strong>文件系统需要沿路径查找目录以获得该文件的各种信息（FCB）</strong>， 这往往<strong>要多次访问文件存储器， 使访问速度减慢</strong>， 若把所有文件目录都复制到主存， 访问速度可加快， 但却又增加主存开销</p>
+<p>解决方案：把<strong>常用</strong>和<strong>正在使用的</strong>那些文件目录复制进主存</p>
+<p>好处：既不增加太多主存开销， 又可明显减少查找时间</p>
+<p>过程：</p>
+<ul>
+<li>系统为<strong>每个用户进程</strong>建立一张<strong>活动文件表</strong>， 用户使用文件之前先通过“ 打开” 操作， 把该文件的文件目录复制到指定主存区域</li>
+<li>当不再使用该文件时， 使用“ 关闭” 操作切断和该文件目录的联系， 这样， 文件被打开后， 可被用户多次使用， 直至文件被关闭或撤销， 大大减少访盘次数， 提高文件系统的效率。</li>
+</ul>
+<h4 id="Linux文件系统磁盘结构"><a href="#Linux文件系统磁盘结构" class="headerlink" title="Linux文件系统磁盘结构"></a>Linux文件系统磁盘结构</h4><p>内核将磁盘作为主要的文件存储器，磁盘按扇区编号，扇区序列分成三个部分：</p>
+<ul>
+<li><p>超级块： 占用1#号块，存放文件系统结构和管理信息，如记录：</p>
+<ul>
+<li>inode表所占盘块数、</li>
+<li>文件数据所占盘块数、</li>
+<li>主存中登记的空闲盘块数、</li>
+<li>主存中登记的空闲块物理块号、</li>
+<li>主存中登记的空闲inode数、</li>
+<li>主存中登记的空闲inode编号，</li>
+<li>及其他文件管理控制信息，</li>
+</ul>
+<p>可见超级块既有<strong>盘位示图的功能</strong>， 又<strong>记录整个文件卷的控制数据</strong>。<br>每当一个块设备作为文件卷被安装时， 该设备的<strong>超级块就要复制到主存系统区中备用</strong>， 而拆卸文件卷时， <strong>修改过的超级块需复制回磁盘的超级块中</strong></p>
+</li>
+<li><p>索引节点区：2#～k+1#块</p>
+<p>存放inode表， 每个文件都有各种属性， 它们被记录在称为<strong>索引节点inode的结构</strong>中； 所有inode都有相同大小， 且inode表是inode结构的列表， 文件系统中的<strong>每个文件在该表中都有一个inode</strong>。 又分：</p>
+<ul>
+<li><strong>磁盘inode表</strong></li>
+<li><strong>主存活动inode表</strong></li>
+</ul>
+<p>后者解决频繁访问磁盘inode表的效率问题</p>
+</li>
+<li><p>数据区： k+2#～n#为数据块</p>
+<p>文件的内容保存在这个区域， 磁盘上所有物理块的大小是一样的， 如果文件包含超过一块的数据， 则文件内容会存放在多个盘块中</p>
+</li>
+</ul>
+<p>重要数据结构：</p>
+<ul>
+<li><p>用户打开文件表：<br>进程的<strong>PCB结构中保留一个files_struct</strong>， 称为用户打开文件表或文件描述符表， <strong>表项的序号为文件描述符fd</strong>， 该登记项内登记系统打开文件表的一个入口指针fp， 通过此系统打开文件表项连接到打开文件的活动inode</p>
+</li>
+<li><p>系统打开文件表：</p>
+<p>是为解决<strong>多用户进程共享文件、 父子进程共享文件</strong>而设置的系统数据结构file_struct， 主存专门开辟最多可登记<strong>256项</strong>的系统打开文件表区， 当打开一个文件时， 通过此表项<strong>把用户打开文件表的表项与文件活动inode联接起来</strong>， 以实现数据的访问和信息的共享</p>
+</li>
+<li><p>主存活动inode表：<br>为解决频繁访问磁盘索引节点inode表的效率问题， 系统开辟的主存区， <strong>正在使用的文件的inode被调入主存活动索引节点inode中</strong>， 以加快文件访问速度</p>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/22/52UKSW8lLQxtBiz.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         </div>
 
@@ -377,7 +551,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-12-21T14:42:38.518Z" itemprop="dateUpdated">2019-12-21 22:42:38</time>
+    Last updated: <time datetime="2019-12-22T03:16:38.249Z" itemprop="dateUpdated">2019-12-22 11:16:38</time>
 </span><br>
 
 
