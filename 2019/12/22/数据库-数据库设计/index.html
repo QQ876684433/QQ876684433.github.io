@@ -35,7 +35,9 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/12/22/QzdJFx.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/12/22/QzdtfK.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/12/22/QzwAje.png">
-<meta property="og:updated_time" content="2019-12-22T11:45:41.659Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/12/22/QzwyDJ.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/12/22/QzD08P.png">
+<meta property="og:updated_time" content="2019-12-22T12:17:15.313Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库-数据库设计">
 <meta name="twitter:description" content="数据库 - 数据库设计 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著   候选键和主键的微小区别：  候选键：区分当前表的不同行 主键：在其他表引用当前表时唯一标识表中的行的一个候选键">
@@ -174,7 +176,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据库-数据库设计"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据库 - 数据库设计</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据库设计前言"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">数据库设计前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#E-R概念介绍"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">E-R概念介绍</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据库-数据库设计"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据库 - 数据库设计</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据库设计前言"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">数据库设计前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#E-R概念介绍"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">E-R概念介绍</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#E-R模型"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">E-R模型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#实体（entity）"><span class="post-toc-number">1.2.1.1.</span> <span class="post-toc-text">实体（entity）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#属性（attribute）"><span class="post-toc-number">1.2.1.2.</span> <span class="post-toc-text">属性（attribute）</span></a></li></ol></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -280,7 +282,56 @@
 
 
 
-<h2 id="E-R概念介绍"><a href="#E-R概念介绍" class="headerlink" title="E-R概念介绍"></a>E-R概念介绍</h2>
+<h2 id="E-R概念介绍"><a href="#E-R概念介绍" class="headerlink" title="E-R概念介绍"></a>E-R概念介绍</h2><p><strong>ER模型（Entity-Relationship model，实体关系模型）</strong>是用来描述数据库的抽象方法</p>
+<img src="https://s2.ax1x.com/2019/12/22/QzwyDJ.png" alt="QzwyDJ.png" style="zoom:80%;">
+
+<h3 id="E-R模型"><a href="#E-R模型" class="headerlink" title="E-R模型"></a>E-R模型</h3><p>三种基本的数据分类对象：</p>
+<ul>
+<li>实体</li>
+<li>属性</li>
+<li>关系</li>
+</ul>
+<h4 id="实体（entity）"><a href="#实体（entity）" class="headerlink" title="实体（entity）"></a>实体（entity）</h4><p>定义：实体是具有公共性质的可区分的现实世界对象的集合（An entity is a collection of distinguishable<br>real-world objects with common properties）</p>
+<ul>
+<li>通常一个实体会被映射成一张关系表，代表对象的集合</li>
+<li>关系表中的每一行代表一个实体事件（entity occurrence）或者实体实例（entity instance），代表一个可区分的现实世界对象</li>
+</ul>
+<p>E-R图用<strong>矩形</strong>来代表实体</p>
+<h4 id="属性（attribute）"><a href="#属性（attribute）" class="headerlink" title="属性（attribute）"></a>属性（attribute）</h4><p>定义：属性是描述<strong>实体</strong>或者<strong>关系</strong>的性质的数据项（An attribute is a data item that describes a<br>property of an entity or a relationship）；属于一个实体的所有实体实例具有共同的性质，这些性质就是属性</p>
+<p><strong>复合属性</strong>：一组简单属性，用来共同描述一个性质</p>
+<p><strong>多值属性</strong>：在<u><em>一个实体实例中</em></u>可以取多个值的属性</p>
+<p><strong>标识符（identifier</strong>，类似于关系表中的候选键）：每个实体都有一个标识符，也就是一个属性或者一个属性集合，每个实体实例在这些属性上具有不同的值；实体的标识符可以包含复合属性</p>
+<p><strong>主标识符（primary identifier</strong>，类似于关系表中的主键）：一个实体可以定义多个标识符，当数据库管理员选定一个单键属性作为整个数据库中实体实例的标识方法时，它就被称为实体的主标识符</p>
+<p><strong>描述符（descriptor）</strong>：非标识符的属性是描述性属性，被称为描述符</p>
+<p>E-R图的表示：</p>
+<ul>
+<li>简单单质属性用椭圆形表示，并用直线连接到实体</li>
+<li>复合属性同样用椭圆形表示并连接到实体，同时组成复合属性的简单属性连接到复合属性上</li>
+<li>多值属性用双线连接到它所描述的实体上（而不是单线）</li>
+<li><strong>主标识符属性加下划线标识</strong></li>
+</ul>
+<p>具有实体和属性的E-R图例</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s2.ax1x.com/2019/12/22/QzD08P.png" alt="QzD08P.png" title>
+                </div>
+                <div class="image-caption">QzD08P.png</div>
+            </figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
 
         <blockquote class="post-copyright">
@@ -288,7 +339,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-12-22T11:45:41.659Z" itemprop="dateUpdated">2019-12-22 19:45:41</time>
+    Last updated: <time datetime="2019-12-22T12:17:15.313Z" itemprop="dateUpdated">2019-12-22 20:17:15</time>
 </span><br>
 
 
