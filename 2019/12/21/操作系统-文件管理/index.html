@@ -29,6 +29,7 @@
 <meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
 <meta property="og:description" content="文件管理 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著   文件 简单内容直接阅读第5章PPT1和2，这里略过  文件存取方法存取方法是指读写文件存储器上的物理记录的方法，常见的有：  顺序存取 无论是无结构的字节流文件，还是有结构的记录式文件，存取操作都是在上次操作的基础上进行；系统设置两个位置指针，指向要读出或写入的字节位置或记录位置，并且根据读出或写入的字节个数或记录号，系统">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2019/12/22/ZwJyBzePbiRCmh1.png">
 <meta property="og:image" content="https://i.loli.net/2019/12/21/6XEkFPW1wevdTgf.png">
 <meta property="og:image" content="https://i.loli.net/2019/12/21/IoDBnNhpJj4gqls.png">
 <meta property="og:image" content="https://i.loli.net/2019/12/21/NEgRdVjxPnputFQ.png">
@@ -41,11 +42,15 @@
 <meta property="og:image" content="https://i.loli.net/2019/12/22/TXoclJjB9NnHstf.png">
 <meta property="og:image" content="https://i.loli.net/2019/12/22/aWEPZ8sGt4VMfxU.png">
 <meta property="og:image" content="https://i.loli.net/2019/12/22/JhzL8tV6rBlET3Q.png">
-<meta property="og:updated_time" content="2019-12-22T07:31:00.298Z">
+<meta property="og:image" content="https://i.loli.net/2019/12/22/WwAPBOTlCEsYXrS.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/22/Ou71wjqHrQix8tk.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/22/819AOQTwPXvrftm.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/22/5OdNqk1m7hE4LzX.png">
+<meta property="og:updated_time" content="2019-12-22T09:10:25.702Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统-文件管理">
 <meta name="twitter:description" content="文件管理 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著   文件 简单内容直接阅读第5章PPT1和2，这里略过  文件存取方法存取方法是指读写文件存储器上的物理记录的方法，常见的有：  顺序存取 无论是无结构的字节流文件，还是有结构的记录式文件，存取操作都是在上次操作的基础上进行；系统设置两个位置指针，指向要读出或写入的字节位置或记录位置，并且根据读出或写入的字节个数或记录号，系统">
-<meta name="twitter:image" content="https://i.loli.net/2019/12/21/6XEkFPW1wevdTgf.png">
+<meta name="twitter:image" content="https://i.loli.net/2019/12/22/ZwJyBzePbiRCmh1.png">
     
         <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
     
@@ -180,7 +185,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#文件管理"><span class="post-toc-number">1.</span> <span class="post-toc-text">文件管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件存取方法"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">文件存取方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件目录"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">文件目录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件控制块、文件目录与目录文件"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">文件控制块、文件目录与目录文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#层次目录结构"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">层次目录结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一级目录结构"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text">一级目录结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#二级目录结构"><span class="post-toc-number">1.2.2.2.</span> <span class="post-toc-text">二级目录结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#树形目录结构"><span class="post-toc-number">1.2.2.3.</span> <span class="post-toc-text">树形目录结构</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件目录检索"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">文件目录检索</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件组织与数据存储"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">文件组织与数据存储</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件逻辑结构"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">文件逻辑结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#流式文件"><span class="post-toc-number">1.3.1.1.</span> <span class="post-toc-text">流式文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#记录式文件"><span class="post-toc-number">1.3.1.2.</span> <span class="post-toc-text">记录式文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#成组和分解"><span class="post-toc-number">1.3.1.3.</span> <span class="post-toc-text">成组和分解</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件物理结构"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">文件物理结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#顺序文件"><span class="post-toc-number">1.3.2.1.</span> <span class="post-toc-text">顺序文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#连接文件"><span class="post-toc-number">1.3.2.2.</span> <span class="post-toc-text">连接文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#直接文件"><span class="post-toc-number">1.3.2.3.</span> <span class="post-toc-text">直接文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#索引文件"><span class="post-toc-number">1.3.2.4.</span> <span class="post-toc-text">索引文件</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件系统功能及实现"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">文件系统功能及实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件类系统调用"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">文件类系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Linux文件系统磁盘结构"><span class="post-toc-number">1.4.1.1.</span> <span class="post-toc-text">Linux文件系统磁盘结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件的创建"><span class="post-toc-number">1.4.1.2.</span> <span class="post-toc-text">文件的创建</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件的删除"><span class="post-toc-number">1.4.1.3.</span> <span class="post-toc-text">文件的删除</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件的打开"><span class="post-toc-number">1.4.1.4.</span> <span class="post-toc-text">文件的打开</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件的关闭"><span class="post-toc-number">1.4.1.5.</span> <span class="post-toc-text">文件的关闭</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件读"><span class="post-toc-number">1.4.1.6.</span> <span class="post-toc-text">文件读</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件写"><span class="post-toc-number">1.4.1.7.</span> <span class="post-toc-text">文件写</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件随机存取"><span class="post-toc-number">1.4.1.8.</span> <span class="post-toc-text">文件随机存取</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件共享"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">文件共享</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件静态共享"><span class="post-toc-number">1.4.2.1.</span> <span class="post-toc-text">文件静态共享</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件动态共享"><span class="post-toc-number">1.4.2.2.</span> <span class="post-toc-text">文件动态共享</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件符号链接共享"><span class="post-toc-number">1.4.2.3.</span> <span class="post-toc-text">文件符号链接共享</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件空间管理"><span class="post-toc-number">1.4.3.</span> <span class="post-toc-text">文件空间管理</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#文件管理"><span class="post-toc-number">1.</span> <span class="post-toc-text">文件管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件存取方法"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">文件存取方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件的安全与保护"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">文件的安全与保护</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件目录"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">文件目录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件控制块、文件目录与目录文件"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">文件控制块、文件目录与目录文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#层次目录结构"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">层次目录结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一级目录结构"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text">一级目录结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#二级目录结构"><span class="post-toc-number">1.2.2.2.</span> <span class="post-toc-text">二级目录结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#树形目录结构"><span class="post-toc-number">1.2.2.3.</span> <span class="post-toc-text">树形目录结构</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件目录检索"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">文件目录检索</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件组织与数据存储"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">文件组织与数据存储</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件逻辑结构"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">文件逻辑结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#流式文件"><span class="post-toc-number">1.3.1.1.</span> <span class="post-toc-text">流式文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#记录式文件"><span class="post-toc-number">1.3.1.2.</span> <span class="post-toc-text">记录式文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#成组和分解"><span class="post-toc-number">1.3.1.3.</span> <span class="post-toc-text">成组和分解</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件物理结构"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">文件物理结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#顺序文件"><span class="post-toc-number">1.3.2.1.</span> <span class="post-toc-text">顺序文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#连接文件"><span class="post-toc-number">1.3.2.2.</span> <span class="post-toc-text">连接文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#直接文件"><span class="post-toc-number">1.3.2.3.</span> <span class="post-toc-text">直接文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#索引文件"><span class="post-toc-number">1.3.2.4.</span> <span class="post-toc-text">索引文件</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件系统功能及实现"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">文件系统功能及实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件类系统调用"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">文件类系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Linux文件系统磁盘结构"><span class="post-toc-number">1.4.1.1.</span> <span class="post-toc-text">Linux文件系统磁盘结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件的创建"><span class="post-toc-number">1.4.1.2.</span> <span class="post-toc-text">文件的创建</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件的删除"><span class="post-toc-number">1.4.1.3.</span> <span class="post-toc-text">文件的删除</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件的打开"><span class="post-toc-number">1.4.1.4.</span> <span class="post-toc-text">文件的打开</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件的关闭"><span class="post-toc-number">1.4.1.5.</span> <span class="post-toc-text">文件的关闭</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件读"><span class="post-toc-number">1.4.1.6.</span> <span class="post-toc-text">文件读</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件写"><span class="post-toc-number">1.4.1.7.</span> <span class="post-toc-text">文件写</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件随机存取"><span class="post-toc-number">1.4.1.8.</span> <span class="post-toc-text">文件随机存取</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件共享"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">文件共享</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件静态共享"><span class="post-toc-number">1.4.2.1.</span> <span class="post-toc-text">文件静态共享</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件动态共享"><span class="post-toc-number">1.4.2.2.</span> <span class="post-toc-text">文件动态共享</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件符号链接共享"><span class="post-toc-number">1.4.2.3.</span> <span class="post-toc-text">文件符号链接共享</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件空间管理"><span class="post-toc-number">1.4.3.</span> <span class="post-toc-text">文件空间管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#磁盘空闲空间管理方法"><span class="post-toc-number">1.4.3.1.</span> <span class="post-toc-text">磁盘空闲空间管理方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#内存映射文件"><span class="post-toc-number">1.4.4.</span> <span class="post-toc-text">内存映射文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件系统的实现层次"><span class="post-toc-number">1.4.5.</span> <span class="post-toc-text">文件系统的实现层次</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -229,6 +234,51 @@
 <li><p>索引存取</p>
 <p>基于索引文件的存取方法，由于文件中的记录<strong>不按位置而是按其记录名或记录键来编址</strong>，因此用户提供记录名或记录键之后，先按名搜索，再查找所需要的记录</p>
 <p>在实际系统中，大都采用<strong>多级索引</strong>以加速记录的查找过程</p>
+</li>
+</ul>
+<h3 id="文件的安全与保护"><a href="#文件的安全与保护" class="headerlink" title="文件的安全与保护"></a>文件的安全与保护</h3><p>文件是计算机系统的重要资源， 因此， 要求文件系统具有保障文件安全的手段， 提供文件保密的措施， 有效地实现文件的共享</p>
+<ul>
+<li><p><strong>文件共享</strong>是指不同用户共同使用某些文件</p>
+</li>
+<li><p><strong>文件保护</strong>是指防止文件被破坏</p>
+<p>常用的文件保护办法</p>
+<ol>
+<li><p>文件副本：文件系统必须要有<strong>防止硬软件故障</strong>，<strong>保存信息完整性</strong>的能力</p>
+<p>文件副本是主要实现机制</p>
+<ul>
+<li><p>动态多副本技术：在多个介质上维持同一内容的文件， 并且在更新内容时同时进行</p>
+<p>这种方法需要增加设备费用和系统负载一般适用<strong>于容量较小且较为重要</strong>的文件， 例如不需更新的系统文件及专用文件， 当文件发生故障时只要切换到备用设备就可</p>
+</li>
+<li><p>转储、 备份与恢复：定时把文件复制转储到其它介质上， 当某介质上出现故障时， 复原转储文件</p>
+<p>转储又可分成两种方式：</p>
+<ul>
+<li>在一定时间间隔或一个单位处理结束时， 系统自动复写更新过的文件和数据</li>
+<li>每天或每周把文件信息全部复写一遍，需要时再通过装入转储文件来恢复系统，诸如BACKUP、 RESTORE等命令</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>文件存取矩阵与文件存取表</p>
+<p>系统为每个用户设置访问每个文件对象的存取属性；系统的全部用户对全部文件的存取属性就组成的一个二维矩阵， 称为存取控制矩阵</p>
+<p><img src="https://i.loli.net/2019/12/22/ZwJyBzePbiRCmh1.png" alt></p>
+<p>由于操作系统拥有很多用户和众多文件，存取控制矩阵是一个稀疏矩阵， 可以将其简化为一张存取控制表；每行包括： 用户、 文件、 存取属性；存取控制表<strong>仅登记那些对文件拥有存取属性的部分</strong></p>
+<p>系统通过查阅(矩阵/表)核对用户对文件的存取权限</p>
+<p>文件属主使用GRANT、 REVOKE等命令进行授权， 甚至把授权权转授给他信任的用户</p>
+<p>系统管理用户（超级用户） 等同于文件属主权限， 并获得对系统文件的授访问权权限；系统管理员/系统用户对文件的访问身份都是<strong>以文件属主的身份</strong>访问</p>
+</li>
+<li><p>文件属性</p>
+<p>存取控制表的一种<strong>简化方法</strong>是用户分类（用户分类： 属主、 合作者、 其他），再针对每类用户规定文件属性（文件属性： 读、 写、 执行、 …）</p>
+<p>文件属性可以<strong>放在文件目录项</strong>中， 管理大为简化；用户使用文件时， 通过核对文件属性，实现保护</p>
+</li>
+</ol>
+</li>
+<li><p><strong>文件保密</strong>则是指文件及其内容不能被未经文件主授权的其他用户窃取</p>
+<p>文件的保密措施有以下几种：</p>
+<ol>
+<li>隐蔽文件目录</li>
+<li>设置口令</li>
+<li>使用密码</li>
+</ol>
 </li>
 </ul>
 <h2 id="文件目录"><a href="#文件目录" class="headerlink" title="文件目录"></a>文件目录</h2><ul>
@@ -663,7 +713,101 @@
 <p>缺点：搜索文件路径开销大， 需要额外的空间查找存储路径</p>
 </li>
 </ul>
-<h3 id="文件空间管理"><a href="#文件空间管理" class="headerlink" title="文件空间管理"></a>文件空间管理</h3>
+<h3 id="文件空间管理"><a href="#文件空间管理" class="headerlink" title="文件空间管理"></a>文件空间管理</h3><p>磁盘文件空间分配采用两种办法</p>
+<ul>
+<li>连续分配： 文件存放在辅存空间连续存储区中， 在建立文件时， 用户必须给出文件大小， 然后， 查找到能满足的连续存储区供使用</li>
+<li>非连续分配： 一种方法是<strong>以块(扇区)为单位</strong>， 扇区不一定要连续， <strong>同一文件的扇区按文件记录的逻辑次序用链指针连接或位示图指示</strong></li>
+</ul>
+<p>另一种方法是以簇为单位， 簇是由若干个连续扇区组成的分配单位； 实质上是连续分配和非连续分配的结合。 各个簇可以用链指针、 索引表， 位示图来管理</p>
+<h4 id="磁盘空闲空间管理方法"><a href="#磁盘空闲空间管理方法" class="headerlink" title="磁盘空闲空间管理方法"></a>磁盘空闲空间管理方法</h4><ul>
+<li><p>位示图</p>
+<ul>
+<li>磁盘空间通常使用固定大小的块， 可方便地用位示图管理， 用若干字节构成一张位示图， 其中每一字位对应一个物理块， 字位的次序与块的相对次序一致， 字位为‘ 1’表示相应块已占用，字位为‘ 0’表示该块空闲</li>
+<li>微型机操作系统VM/SP、 Windows和Macintosh等操作系统均使用这种技术管理文件存储空间</li>
+<li>主要优点是： <strong>每个盘块仅需1个附加位</strong>， 如盘块长1KB， 位示图开销仅占0.012%； <strong>可把位示图全部或大部分保存在主存</strong>， 再配合现代机器都具有的位操作指令， 实现高速物理块分配和去配</li>
+</ul>
+</li>
+<li><p>空闲区表</p>
+<ul>
+<li>该方法常用于连续文件， 将<strong>空闲存储块的位置</strong>及<strong>其连续空闲的块数</strong>构成一张表</li>
+<li>分配时， 系统依次扫描空闲区表， 寻找合适的空闲块并修改登记项</li>
+<li>删除文件释放空闲区时， 把空闲区位置及连续的空闲区长度填入空闲区表， <strong>出现邻接的空闲区时， 还需执行合并操作并修改登记项</strong></li>
+<li>空闲区表的搜索算法有首次适应、 邻近适应、 最佳适应和最坏适应算法等， 参见pp.239</li>
+</ul>
+</li>
+<li><p>空闲块链</p>
+<ul>
+<li><p>把所有空闲块连接在一起， 系统保持指针指向第一个空闲块，每一空闲块中包含指向下一空闲块的指针</p>
+</li>
+<li><p>申请一块时， 从链头取一块并修改系统指针</p>
+</li>
+<li><p>删除时释放占用块， 使其成为空闲块并将它挂到空闲链上</p>
+</li>
+</ul>
+<p>缺点：这种方法效率低， 每申请一块都要读出空闲块并取得指针， 申请多块时要多次读盘</p>
+<p>优点：便于文件动态增长和收缩</p>
+</li>
+<li><p>空闲块列表</p>
+<p>把所有空闲块物理地址放到一个空闲块列表文件中；由于空闲块列表较大，不可能全部放在内存中，因此可以小部分保存在内存中：</p>
+<ul>
+<li><p>列表用一个下推栈实现：栈中靠前数千个元素保存在内存专用区中；当分配一个新空闲块时，从栈顶弹出；当一个物理块被解除分配时，它被压入内存专用区的栈尾中</p>
+<p>只有当下推栈中在内存的部分满或空时，才需要在内存和磁盘之间进行传送；因此该技术在大多数情况下都提供了零时间的访问</p>
+</li>
+<li><p>列表用一个FIFO队列实现：队列头和队列尾的几千项放在内存专用区中；分配空闲块时从队列头取出首项，取消分配时可以把它添加在内存专用区队列尾</p>
+<p>只有当队列头部空或内存中的队列尾部满时，才需要在磁盘和内存直接进行传送</p>
+</li>
+</ul>
+<p>在上面两种策略中，一个后台线程可以对内存中的列表慢慢地进行排序，从而使连续分配变得快速和容易</p>
+</li>
+<li><p>空闲块成组链接</p>
+<p><img src="https://i.loli.net/2019/12/22/WwAPBOTlCEsYXrS.png" alt></p>
+<p>存储空间分成512字节一块。 假定文件卷启用时共有可用文件338块， 编号从12至349。每100块划分一组， <strong>每组第一块（如图中的50、68和188）登记下一组空闲块的盘物理块号和空闲总数</strong>；在最后一组中，第1项是0，作为结束标志，表明系统空闲盘块链已经结束</p>
+<p>操作系统启动时，将磁盘专用块复制到内存系统工作区中，访问内存专用块就可以完成申请或释放空闲盘块的操作</p>
+<ul>
+<li>分配空闲盘块时：先把专用块中的空闲块计数减1，以它为指针找到专用块的相应表项，其内容就是要分配的空闲磁盘块号；<strong>当空闲块计数减1后等于0时，专用块仅剩1个磁盘块号</strong>，此时要取出表项中的磁盘块号（设为i），再把此盘块中所保存的<strong>下一组空闲磁盘块链接</strong>信息经缓冲区复制到内存专用块中，然后把当前磁盘块i分配出去</li>
+<li>释放存储块时，将磁盘块号记录在由专用块所指示的表项中，然后空闲块计数加1；若发现此表已满（达100项），则应把整个表的内容经缓冲区复制到下面要释放的磁盘块中，然后将释放块的块号写入专用块的第一个位置，置空闲块计数为1；搜索到磁盘块的第一项是0时，系统要发出警告，表明空闲块已经用完</li>
+</ul>
+</li>
+</ul>
+<h3 id="内存映射文件"><a href="#内存映射文件" class="headerlink" title="内存映射文件"></a>内存映射文件</h3><p>解决文件读写效率低下的基本思路：把磁盘访问转变为内存访问，实现这种转变的手段是<strong>内存映射文件（Memory Mapped File，MMF）</strong></p>
+<p>基本原理：把进程需要访问的文件映射到其虚地址空间中，于是便可通过读写这段虚地址进行文件访问，而磁盘访问变成内存访问</p>
+<p>内存映射文件是按照文件名来访问的，多个进程可以把同一个文件映射到各自的虚地址空间中，且虚地址不必相同；随着进程的运行，被引用的映射文件由存储管理程序装入内存，多个进程读写虚存的映射文件区就可以共享文件信息</p>
+<p>优点是： 方便易用、 节省空间、 便于共享、 灵活高</p>
+<p>系统提供两个新的系统调用：</p>
+<ul>
+<li>映射文件mmap()， 有两个参数： 一个文件名和一个虚拟地址， 把一个文件映射到进程地址空间</li>
+<li>移去映射文件unmmap()， 让文件与进程地址空间断开， 并把映射文件的数据写回磁盘文件</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/22/Ou71wjqHrQix8tk.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>只需要让进程映射的进程虚存空间的页表项的外存地址指向文件所在的磁盘块，就很容易实现映射文件和移去映射文件系统调用；当多进程共享文件时，实现技术是：<strong>把共享映射文件的进程的虚页面指向相同的页框，而页框则保存磁盘的页面副本</strong></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/22/819AOQTwPXvrftm.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h3 id="文件系统的实现层次"><a href="#文件系统的实现层次" class="headerlink" title="文件系统的实现层次"></a>文件系统的实现层次</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/22/5OdNqk1m7hE4LzX.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+
+
+
+
         </div>
 
         <blockquote class="post-copyright">
@@ -671,7 +815,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-12-22T07:31:00.298Z" itemprop="dateUpdated">2019-12-22 15:31:00</time>
+    Last updated: <time datetime="2019-12-22T09:10:25.702Z" itemprop="dateUpdated">2019-12-22 17:10:25</time>
 </span><br>
 
 
