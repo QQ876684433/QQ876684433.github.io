@@ -37,7 +37,8 @@
 <meta property="og:image" content="https://i.loli.net/2019/12/22/6QODen4TdhIFw8b.png">
 <meta property="og:image" content="https://i.loli.net/2019/12/22/qSvgWB6NfaHJzoe.png">
 <meta property="og:image" content="https://i.loli.net/2019/12/22/52UKSW8lLQxtBiz.png">
-<meta property="og:updated_time" content="2019-12-22T03:16:38.249Z">
+<meta property="og:image" content="https://i.loli.net/2019/12/22/8lvHEbzBA5xIRwL.png">
+<meta property="og:updated_time" content="2019-12-22T04:02:20.094Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统-文件管理">
 <meta name="twitter:description" content="文件管理 参考资料：  操作系统教程（第5版） - 费翔林 骆斌 编著   文件 简单内容直接阅读第5章PPT1和2，这里略过  文件存取方法存取方法是指读写文件存储器上的物理记录的方法，常见的有：  顺序存取 无论是无结构的字节流文件，还是有结构的记录式文件，存取操作都是在上次操作的基础上进行；系统设置两个位置指针，指向要读出或写入的字节位置或记录位置，并且根据读出或写入的字节个数或记录号，系统">
@@ -176,7 +177,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#文件管理"><span class="post-toc-number">1.</span> <span class="post-toc-text">文件管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件存取方法"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">文件存取方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件目录"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">文件目录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件控制块、文件目录与目录文件"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">文件控制块、文件目录与目录文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#层次目录结构"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">层次目录结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一级目录结构"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text">一级目录结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#二级目录结构"><span class="post-toc-number">1.2.2.2.</span> <span class="post-toc-text">二级目录结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#树形目录结构"><span class="post-toc-number">1.2.2.3.</span> <span class="post-toc-text">树形目录结构</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件目录检索"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">文件目录检索</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件组织与数据存储"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">文件组织与数据存储</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件逻辑结构"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">文件逻辑结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#流式文件"><span class="post-toc-number">1.3.1.1.</span> <span class="post-toc-text">流式文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#记录式文件"><span class="post-toc-number">1.3.1.2.</span> <span class="post-toc-text">记录式文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#成组和分解"><span class="post-toc-number">1.3.1.3.</span> <span class="post-toc-text">成组和分解</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件物理结构"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">文件物理结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#顺序文件"><span class="post-toc-number">1.3.2.1.</span> <span class="post-toc-text">顺序文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#连接文件"><span class="post-toc-number">1.3.2.2.</span> <span class="post-toc-text">连接文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#直接文件"><span class="post-toc-number">1.3.2.3.</span> <span class="post-toc-text">直接文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#索引文件"><span class="post-toc-number">1.3.2.4.</span> <span class="post-toc-text">索引文件</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件系统功能及实现"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">文件系统功能及实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件类系统调用"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">文件类系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Linux文件系统磁盘结构"><span class="post-toc-number">1.4.1.1.</span> <span class="post-toc-text">Linux文件系统磁盘结构</span></a></li></ol></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#文件管理"><span class="post-toc-number">1.</span> <span class="post-toc-text">文件管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件存取方法"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">文件存取方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件目录"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">文件目录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件控制块、文件目录与目录文件"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">文件控制块、文件目录与目录文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#层次目录结构"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">层次目录结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一级目录结构"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text">一级目录结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#二级目录结构"><span class="post-toc-number">1.2.2.2.</span> <span class="post-toc-text">二级目录结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#树形目录结构"><span class="post-toc-number">1.2.2.3.</span> <span class="post-toc-text">树形目录结构</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件目录检索"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">文件目录检索</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件组织与数据存储"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">文件组织与数据存储</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件逻辑结构"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">文件逻辑结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#流式文件"><span class="post-toc-number">1.3.1.1.</span> <span class="post-toc-text">流式文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#记录式文件"><span class="post-toc-number">1.3.1.2.</span> <span class="post-toc-text">记录式文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#成组和分解"><span class="post-toc-number">1.3.1.3.</span> <span class="post-toc-text">成组和分解</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件物理结构"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">文件物理结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#顺序文件"><span class="post-toc-number">1.3.2.1.</span> <span class="post-toc-text">顺序文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#连接文件"><span class="post-toc-number">1.3.2.2.</span> <span class="post-toc-text">连接文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#直接文件"><span class="post-toc-number">1.3.2.3.</span> <span class="post-toc-text">直接文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#索引文件"><span class="post-toc-number">1.3.2.4.</span> <span class="post-toc-text">索引文件</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件系统功能及实现"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">文件系统功能及实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件类系统调用"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">文件类系统调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Linux文件系统磁盘结构"><span class="post-toc-number">1.4.1.1.</span> <span class="post-toc-text">Linux文件系统磁盘结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件的创建"><span class="post-toc-number">1.4.1.2.</span> <span class="post-toc-text">文件的创建</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件的删除"><span class="post-toc-number">1.4.1.3.</span> <span class="post-toc-text">文件的删除</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件的打开"><span class="post-toc-number">1.4.1.4.</span> <span class="post-toc-text">文件的打开</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件的关闭"><span class="post-toc-number">1.4.1.5.</span> <span class="post-toc-text">文件的关闭</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件读"><span class="post-toc-number">1.4.1.6.</span> <span class="post-toc-text">文件读</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件写"><span class="post-toc-number">1.4.1.7.</span> <span class="post-toc-text">文件写</span></a></li></ol></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -523,26 +524,61 @@
                 <div class="image-caption"></div>
             </figure>
 
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/22/8lvHEbzBA5xIRwL.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
 
+<h4 id="文件的创建"><a href="#文件的创建" class="headerlink" title="文件的创建"></a>文件的创建</h4><p>系统调用C语言格式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> fd, mode;</span><br><span class="line"><span class="keyword">char</span> *filenamep;</span><br><span class="line">fd = create (filenamep, mode);</span><br></pre></td></tr></table></figure>
 
+<ul>
+<li>为新文件分配<strong>索引节点（磁盘inode）和活动索引节点（活动inode）</strong>， 并把索引节点编号（inode号）与文件分量名（即不包含路径的文件名）组成新目录项， 记到目录中</li>
+<li>在新文件所对应的活动索引节点（活动inode）中置初值， 如置存取权限i_mode， 连接计数i_nlink等</li>
+<li>分配<strong>用户打开文件表项</strong>和<strong>系统打开文件表项</strong>， 置表项初值，读写位移f_offset清“0”</li>
+<li>把用户打开文件表项、系统打开文件表项以及文件对应的活动inode用指针连接起来， 把文件描述字fd返回给调用者</li>
+</ul>
+<h4 id="文件的删除"><a href="#文件的删除" class="headerlink" title="文件的删除"></a>文件的删除</h4><ul>
+<li><p>删除把指定文件从所在的目录文件中除去。</p>
+</li>
+<li><p>如果没有连接用户(i_nlink 为“1”)， 还要把文件占用的存储空间释放。 删除系统调用形式为： </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unlink (filenamep);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在执行删除时， 必须要求用户对该文件具有“写”操作权</p>
+</li>
+</ul>
+<h4 id="文件的打开"><a href="#文件的打开" class="headerlink" title="文件的打开"></a>文件的打开</h4><p>调用方式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> fd, mode;</span><br><span class="line"><span class="keyword">char</span> * filenamep;</span><br><span class="line">fd = open (filenamep, mode);</span><br></pre></td></tr></table></figure>
 
+<p>文件在使用之前必须先打开，以建立进程与文件之间的联系，而<strong>文件描述符唯一地标识这种连接</strong>，其任务是<strong>把文件的磁盘inode复制到内存活动inode表中</strong>，同时建立一个独立的读写文件的数据结构，即系统打开文件表的一个表项</p>
+<p>执行过程：</p>
+<ul>
+<li>检索目录，要求打开的文件应该是已经创建的文件，它应该登记在文件目录中，否则出错；检索到文件后，把它的外存索引节点（磁盘inode）复制到活动索引节点inode表中</li>
+<li>根据参数mode与活动inode中在创建文件时所记录的文件访问权限进行比较， 如果非法， 则这次打开失败</li>
+<li>当“打开” 合法时， 为文件分配<strong>用户打开文件表项</strong>和<strong>系统打开文件表项</strong>， 并为后者设置初值。 通过指针建立这些表项与活动索引节点inode之间的联系， 把文件描述字fd， 即用户打开文件表中相应文件表项的序号返回给调用者</li>
+</ul>
+<p>可见，不论是打开成功还是失败（例如权限不符合），对应的磁盘inode都会被复制到活动inode表中</p>
+<p>另外要注意：如果在执行文件打开过程之前，其他用户已经打开同一文件，则活动inode表中已经有此文件的inode，于是不需要再进行inode复制工作，而仅仅把活动inode的计数器i_count加1即可；i_count表示<strong>通过不同系统打开文件表项来共享同一活动inode</strong>的进程数目，它是以后执行文件关闭操作时活动inode能够被释放的依据</p>
+<h4 id="文件的关闭"><a href="#文件的关闭" class="headerlink" title="文件的关闭"></a>文件的关闭</h4><p>文件使用完毕，执行关闭系统调用来切断应用程序与文件的联系，调用方式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> fd;</span><br><span class="line">close (fd);</span><br></pre></td></tr></table></figure>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<p>显然要关闭的文件先前已打开，故文件描述符fd一定存在，执行过程如下：</p>
+<ul>
+<li>根据fd找到用户打开文件表项， 再找到系统打开文件表项；释放用户打开文件表项</li>
+<li>把对应系统打开文件表项中的f_count减“1”， 如果非“0”， 说明还有<strong>进程共享这一表项</strong>， 不用释放直接返回；否则释放表项，并找到与之连接的活动inode</li>
+<li>把活动inode中的i_count减“1”， 若不为“0”， 表明还有<strong>用户进程正在使用该文件</strong>， 不用释放而直接返回，否则把该活动inode中的内容复制回文件卷上的相应磁盘inode中， 释放该活动inode</li>
+</ul>
+<p>f_count（系统打开文件表中）和i_count（活动inode表中）分别反映进程动态地共享一个文件的两种方式：</p>
+<ul>
+<li>f_count反映不同进程通过同一个系统打开文件表项共享一个文件的情况</li>
+<li>i_count反映不同进程通过不同系统打开文件表项共享一个文件的情况</li>
+</ul>
+<p>通过两种方式， 进程之间既可用<strong>相同的位移指针f_offset</strong>，也可用<strong>不同位移指针f_offset</strong>共享同一个文件</p>
+<h4 id="文件读"><a href="#文件读" class="headerlink" title="文件读"></a>文件读</h4><p>文件读指文件的内容读入用户数据区，由系统打开文件表项的f_offset决定从哪个逻辑位置读入数据</p>
+<h4 id="文件写"><a href="#文件写" class="headerlink" title="文件写"></a>文件写</h4><p>文件写指把用户数据区中的信息写入文件，由系统打开文件表项的f_offset决定把数据写入文件的哪个逻辑位置</p>
 
         </div>
 
@@ -551,7 +587,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-12-22T03:16:38.249Z" itemprop="dateUpdated">2019-12-22 11:16:38</time>
+    Last updated: <time datetime="2019-12-22T04:02:20.094Z" itemprop="dateUpdated">2019-12-22 12:02:20</time>
 </span><br>
 
 
