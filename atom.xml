@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://QQ876684433.github.io/"/>
-  <updated>2019-12-22T11:01:22.774Z</updated>
+  <updated>2019-12-22T11:10:44.026Z</updated>
   <id>http://QQ876684433.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://QQ876684433.github.io/2019/12/22/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%AE%8C%E6%95%B4%E6%80%A7%E3%80%81%E8%A7%86%E5%9B%BE%E3%80%81%E5%AE%89%E5%85%A8%E6%80%A7%E5%92%8C%E7%9B%AE%E5%BD%95/"/>
     <id>http://QQ876684433.github.io/2019/12/22/数据库-完整性、视图、安全性和目录/</id>
     <published>2019-12-22T10:54:53.000Z</published>
-    <updated>2019-12-22T11:01:22.774Z</updated>
+    <updated>2019-12-22T11:10:44.026Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="数据库-完整性、视图、安全性和目录"><a href="#数据库-完整性、视图、安全性和目录" class="headerlink" title="数据库 - 完整性、视图、安全性和目录"></a>数据库 - 完整性、视图、安全性和目录</h1><blockquote><p>参考资料：</p><ul><li>南大软件学院课程《数据管理基础》课程资料</li><li>《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著</li></ul></blockquote><p>从数据库设计到物理形式</p><ul><li><p>创建表</p><ul><li>完整性约束（integrity constraints）</li></ul></li><li><p>创建视图</p></li><li><p>安全性</p><ul><li>GRANT和REVOKE语句</li></ul></li><li><p>目录</p><ul><li>模式（Schemes）</li></ul></li></ul><h2 id="完整性约束"><a href="#完整性约束" class="headerlink" title="完整性约束"></a>完整性约束</h2>]]></content>
+    <content type="html"><![CDATA[<h1 id="数据库-完整性、视图、安全性和目录"><a href="#数据库-完整性、视图、安全性和目录" class="headerlink" title="数据库 - 完整性、视图、安全性和目录"></a>数据库 - 完整性、视图、安全性和目录</h1><blockquote><p>参考资料：</p><ul><li>南大软件学院课程《数据管理基础》课程资料</li><li>《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著</li></ul></blockquote><p>从数据库设计到物理形式</p><ul><li><p>创建表</p><ul><li>完整性约束（integrity constraints）</li></ul></li><li><p>创建视图</p></li><li><p>安全性</p><ul><li>GRANT和REVOKE语句</li></ul></li><li><p>目录</p><ul><li>模式（Schemes）</li></ul></li></ul><h2 id="完整性约束（Integrity-Constraints）"><a href="#完整性约束（Integrity-Constraints）" class="headerlink" title="完整性约束（Integrity Constraints）"></a>完整性约束（Integrity Constraints）</h2><p>所有违背完整性约束的更新操作——Insert、Update或Delete——都是不能执行的</p><h3 id="CREATE-TABLE"><a href="#CREATE-TABLE" class="headerlink" title="CREATE TABLE"></a>CREATE TABLE</h3><h4 id="CREATE-TABLE语句"><a href="#CREATE-TABLE语句" class="headerlink" title="CREATE TABLE语句"></a>CREATE TABLE语句</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> customers (</span><br><span class="line">    cid <span class="built_in">char</span>(<span class="number">4</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    cname <span class="built_in">varchar</span>(<span class="number">13</span>),</span><br><span class="line">    city <span class="built_in">varchar</span>(<span class="number">20</span>),</span><br><span class="line">    discnt <span class="built_in">real</span>,</span><br><span class="line">    primary <span class="keyword">key</span>(cid)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
