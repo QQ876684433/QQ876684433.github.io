@@ -14,25 +14,32 @@
     
     
     
-    <title>数据库课堂笔记（2019-10-29） | 至繁归于至简 - chph&#39;s blog | steve_chph personal website</title>
+    <title>数据库-数据库设计 | 至繁归于至简 - chph&#39;s blog | steve_chph personal website</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="数据库">
-    <meta name="description" content="数据库课堂笔记 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著 《数据库系统概论》第五版 - 王珊 萨师煊 著 《数据库系统概念》   数据库课堂笔记（2019-10-29）Ch06 Database Design">
+    <meta name="description" content="数据库 - 数据库设计 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著   候选键和主键的微小区别：  候选键：区分当前表的不同行 主键：在其他表引用当前表时唯一标识表中的行的一个候选键">
 <meta name="keywords" content="数据库">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据库课堂笔记（2019-10-29）">
-<meta property="og:url" content="http://QQ876684433.github.io/2019/10/29/数据库课堂笔记（2019-10-29）/index.html">
+<meta property="og:title" content="数据库-数据库设计">
+<meta property="og:url" content="http://QQ876684433.github.io/2019/12/22/数据库-数据库设计/index.html">
 <meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
-<meta property="og:description" content="数据库课堂笔记 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著 《数据库系统概论》第五版 - 王珊 萨师煊 著 《数据库系统概念》   数据库课堂笔记（2019-10-29）Ch06 Database Design">
+<meta property="og:description" content="数据库 - 数据库设计 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著   候选键和主键的微小区别：  候选键：区分当前表的不同行 主键：在其他表引用当前表时唯一标识表中的行的一个候选键">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-10-29T05:58:51.348Z">
+<meta property="og:image" content="https://i.loli.net/2019/12/22/AdlFXq4rBOGjThf.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/22/yeHPordXahWzq69.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/22/bPEFZCgrQe93yBk.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/12/22/QzdJFx.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/12/22/QzdtfK.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/12/22/QzwAje.png">
+<meta property="og:updated_time" content="2019-12-22T11:45:41.659Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据库课堂笔记（2019-10-29）">
-<meta name="twitter:description" content="数据库课堂笔记 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著 《数据库系统概论》第五版 - 王珊 萨师煊 著 《数据库系统概念》   数据库课堂笔记（2019-10-29）Ch06 Database Design">
+<meta name="twitter:title" content="数据库-数据库设计">
+<meta name="twitter:description" content="数据库 - 数据库设计 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著   候选键和主键的微小区别：  候选键：区分当前表的不同行 主键：在其他表引用当前表时唯一标识表中的行的一个候选键">
+<meta name="twitter:image" content="https://i.loli.net/2019/12/22/AdlFXq4rBOGjThf.png">
     
         <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
     
@@ -120,7 +127,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">数据库课堂笔记（2019-10-29）</div>
+        <div class="flex-col header-title ellipsis">数据库-数据库设计</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -142,11 +149,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">数据库课堂笔记（2019-10-29）</h1>
+        <h1 class="title">数据库-数据库设计</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-10-29T05:58:08.000Z" itemprop="datePublished" class="page-time">
-  2019-10-29
+                <time datetime="2019-12-22T11:18:08.000Z" itemprop="datePublished" class="page-time">
+  2019-12-22
 </time>
 
 
@@ -167,18 +174,18 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据库课堂笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据库课堂笔记</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据库课堂笔记（2019-10-29）"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">数据库课堂笔记（2019-10-29）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Ch06-Database-Design"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">Ch06 Database Design</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据库-数据库设计"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据库 - 数据库设计</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据库设计前言"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">数据库设计前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#E-R概念介绍"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">E-R概念介绍</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-数据库课堂笔记（2019-10-29）"
+<article id="post-数据库-数据库设计"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">数据库课堂笔记（2019-10-29）</h1>
+        <h1 class="post-card-title">数据库-数据库设计</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-10-29 13:58:08" datetime="2019-10-29T05:58:08.000Z"  itemprop="datePublished">2019-10-29</time>
+            <time class="post-time" title="2019-12-22 19:18:08" datetime="2019-12-22T11:18:08.000Z"  itemprop="datePublished">2019-12-22</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/数据库/">数据库</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/数据库/笔记/">笔记</a></li></ul></li></ul>
@@ -193,16 +200,87 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="数据库课堂笔记"><a href="#数据库课堂笔记" class="headerlink" title="数据库课堂笔记"></a>数据库课堂笔记</h1><blockquote>
+            <h1 id="数据库-数据库设计"><a href="#数据库-数据库设计" class="headerlink" title="数据库 - 数据库设计"></a>数据库 - 数据库设计</h1><blockquote>
 <p>参考资料：</p>
 <ul>
 <li>南大软件学院课程《数据管理基础》课程资料</li>
 <li>《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著</li>
-<li>《数据库系统概论》第五版 - 王珊 萨师煊 著</li>
-<li>《数据库系统概念》</li>
 </ul>
 </blockquote>
-<h2 id="数据库课堂笔记（2019-10-29）"><a href="#数据库课堂笔记（2019-10-29）" class="headerlink" title="数据库课堂笔记（2019-10-29）"></a>数据库课堂笔记（2019-10-29）</h2><h3 id="Ch06-Database-Design"><a href="#Ch06-Database-Design" class="headerlink" title="Ch06 Database Design"></a>Ch06 Database Design</h3>
+<p>候选键和主键的微小区别：</p>
+<ul>
+<li>候选键：区分当前表的不同行</li>
+<li>主键：在其他表引用当前表时唯一标识表中的行的一个候选键</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/22/AdlFXq4rBOGjThf.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>表的键的正确性描述是由数据库系统维护的</p>
+<h2 id="数据库设计前言"><a href="#数据库设计前言" class="headerlink" title="数据库设计前言"></a>数据库设计前言</h2><p>Logical Database Design<br>➢also known as</p>
+<ul>
+<li>Database Design</li>
+<li>Database Modeling</li>
+</ul>
+<p>如何进行数据库设计？</p>
+<ul>
+<li>analyze an enterprise</li>
+<li>list the data items for a database</li>
+<li>decide how to place these data items columns in relational tables</li>
+</ul>
+<p>案例：学生课程数据库（student-course database）</p>
+<p>学生属性：sno, sname, dept, sage</p>
+<p>课程属性：cno, cname</p>
+<p>学生&amp;课程属性：grade</p>
+<p>把这些属性全部放进同一张表中：<code>R(sno, sname, dept, sage, cno, cname, grade)</code>，结果如下：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/22/yeHPordXahWzq69.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>存在的问题有哪些？</p>
+<ol>
+<li><p>redundency（数据冗余）</p>
+<p>相同的数据重复存储，造成磁盘空间的浪费</p>
+<p><img src="https://i.loli.net/2019/12/22/bPEFZCgrQe93yBk.png" alt></p>
+</li>
+<li><p>abnormity of update（修改异常）</p>
+<p>对于冗余存储的数据，如果需要修改的话，则需要修改所有重复存储的版本</p>
+<ul>
+<li>浪费时间</li>
+<li>用户很容易操作出错</li>
+</ul>
+</li>
+<li><p>abnormity of delete（删除异常）</p>
+<p>可能会丢失一些有用的信息</p>
+<p><img src="https://s2.ax1x.com/2019/12/22/QzdJFx.png" alt="QzdJFx.png"></p>
+<p><img src="https://s2.ax1x.com/2019/12/22/QzdtfK.png" alt="QzdtfK.png"></p>
+</li>
+</ol>
+<ol start="4">
+<li><p>abnormity of insert（插入异常）</p>
+<p>可能会插入失败，比如要添加新的学生信息，但是该学生目前尚未选任何课程，这时候就会出现插入异常</p>
+</li>
+</ol>
+<p>因此一个比较好的设计方案是将SCG数据表拆分成多张表：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s2.ax1x.com/2019/12/22/QzwAje.png" alt="QzwAje.png" title>
+                </div>
+                <div class="image-caption">QzwAje.png</div>
+            </figure>
+
+
+
+<h2 id="E-R概念介绍"><a href="#E-R概念介绍" class="headerlink" title="E-R概念介绍"></a>E-R概念介绍</h2>
         </div>
 
         <blockquote class="post-copyright">
@@ -210,12 +288,12 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-10-29T05:58:51.348Z" itemprop="dateUpdated">2019-10-29 13:58:51</time>
+    Last updated: <time datetime="2019-12-22T11:45:41.659Z" itemprop="dateUpdated">2019-12-22 19:45:41</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/10/29/数据库课堂笔记（2019-10-29）/" target="_blank" rel="external">http://QQ876684433.github.io/2019/10/29/数据库课堂笔记（2019-10-29）/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/12/22/数据库-数据库设计/" target="_blank" rel="external">http://QQ876684433.github.io/2019/12/22/数据库-数据库设计/</a>
         
     </div>
     
@@ -246,7 +324,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/10/29/数据库课堂笔记（2019-10-29）/&title=《数据库课堂笔记（2019-10-29）》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/12/22/数据库-数据库设计/&title=《数据库-数据库设计》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -256,22 +334,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/10/29/数据库课堂笔记（2019-10-29）/&title=《数据库课堂笔记（2019-10-29）》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/12/22/数据库-数据库设计/&title=《数据库-数据库设计》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/10/29/数据库课堂笔记（2019-10-29）/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/12/22/数据库-数据库设计/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《数据库课堂笔记（2019-10-29）》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/10/29/数据库课堂笔记（2019-10-29）/&via=http://QQ876684433.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《数据库-数据库设计》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/12/22/数据库-数据库设计/&via=http://QQ876684433.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/10/29/数据库课堂笔记（2019-10-29）/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/12/22/数据库-数据库设计/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -291,21 +369,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2019/11/07/NASM学习记录/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">NASM学习记录</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2019/10/24/使用Oracle嵌入式SQL预处理器Pro-C过程记录/" id="post-next" class="post-nav-link">
+      <a href="/2019/12/22/数据库-完整性、视图、安全性和目录/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">使用Oracle嵌入式SQL预处理器Pro*C过程记录</h4>
+        <h4 class="title">数据库-完整性、视图、安全性和目录</h4>
       </a>
     </div>
   
@@ -405,7 +476,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/10/29/数据库课堂笔记（2019-10-29）/&title=《数据库课堂笔记（2019-10-29）》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/12/22/数据库-数据库设计/&title=《数据库-数据库设计》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -415,22 +486,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/10/29/数据库课堂笔记（2019-10-29）/&title=《数据库课堂笔记（2019-10-29）》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/12/22/数据库-数据库设计/&title=《数据库-数据库设计》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/10/29/数据库课堂笔记（2019-10-29）/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/12/22/数据库-数据库设计/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《数据库课堂笔记（2019-10-29）》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/10/29/数据库课堂笔记（2019-10-29）/&via=http://QQ876684433.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《数据库-数据库设计》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/12/22/数据库-数据库设计/&via=http://QQ876684433.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/10/29/数据库课堂笔记（2019-10-29）/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/12/22/数据库-数据库设计/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -441,7 +512,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsklEQVR42u3awW7rMAwEwPz/T+cBPbVoay9JMekDxqegcWWPDhKz1OMRX8+P6/Pnz39J7r++87d7nt+ux8aFh4eH13r13678nmtkPlnf/2v0Pnh4eHhrvHxxT6YgGaG3tufvjIeHh/cXeMnyXf12Pll4eHh4/yPvugi+Bkzux8PDw3svrzd0HkkkgcJKOIKHh4e3m7sWGmDv/bze38PDw8NrddV7y25SiG80vX4YGQ8PD2+Bl4eqvW9z3nWB3ot68fDw8PZ41YZ9FdaLNpKJOPArAQ8PD6/IO7vgVgvl5NWvG103T8TDw8Nb5vWOnFYfP2m85ce5fsha8PDw8A7xJoVs9dBAsjFUi/gkyMDDw8M7y8sBeQMs3zaqxXrebPuy7+Hh4eGt8SYRQLX4rh4ayMv0L2Pi4eHhLfMmAUEvLMiL6WbxjYeHh7f1u/4xedjkhELO7k0BHh4e3h5vHtRWF/1qhNE7yoCHh4e3wdtb7pM4ozfFhZHx8PDwFnh5uNAreXtHE04d5MLDw8Pb4E2aT73DAdWjXb2/4OHh4e3xkmX3VM6RxBaTMvqmWMfDw8M7yqu++uF5PRox3/xiwMPDwxvz5q36XrybLP1JsX4zMh4eHt4LeXkG3LszjzwmpTkeHh7eHi8PXqvhRTJ+XqznjTo8PDy8Pd4kaOi1u3rNtnxkPDw8vG1esqxPIoNqi6v6XDw8PLzX8/Ya/3nwOm+YHWi24eHh4cW8Z/HKC+KzcW1zM8DDw8Nb4PU2hvmRrPnxgjwQwcPDw9vgJZtBvm1UN5W8QE+eiIeHh/dKXh5AzNOO3sGCfFOJ9jQ8PDy8N/Hmx6eqZXR+Dx4eHt5f4OULd7Xx3yudD28MeHh4eEXeJGLIC+hkynrRxs3GgIeHh3eUN2lrnV30o1h24xgBHh4eXjrOPzrt+T4gtWCGAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrUlEQVR42u3awW7jMAwE0P7/T6fAnrYomsyQUpvD82nhZm09HSxiyI+P+Hr8u/Jf/v/773eSt3z/fb6G+sLDw8MbLf2nK3l0+4Tkyc83KHkjHh4e3m1e/pnOMe1mJaT8CXh4eHjvwBu+YF0Wr96Oh4eH96e8WWDxPIx4lBceHh7e+/DaEnkWTORBbVJSH85a8PDw8GJe2wB7h39f7O/h4eHhLbrq7YExO0L20fCP/wsPDw/vAq8dipqNSSWF76lSO8qA8fDw8Na8ZHFtOz8JETbLrQcL8PDw8A7x2jGpvJXVHir5neLIwcPDw7vAm5XFpxaabF9SiL/YVjw8PLxrvHYgICl/N1HsbLNeTEbg4eHhHeW1wcGmTTU7Hp4z8PDw8P6Kt2mSFZlxXC6363mRuODh4eEd4m3Gp9qwII8zNvfx8PDwbvPyz2s7MjV7wizOWM1E4OHh4Y14+dDVrJE/iyQOHFF4eHh413j3xqf2x8CBGAIPDw/vAi8pi/PPdxsobIa0XrwLDw8P7ygvH59KWvs3nta+8ct9PDw8vAu8NlB4/oGetf/z328ODDw8PLyzvE1Quw9hZwV3sdF4eHh4R3ltOZssuqW2IUg+gIWHh4d3j7efUNqMHeTLHQYQeHh4eEd57cd63+DPP/RXZsrw8PDwDvGKrLfMOdq21mxEIDpy8PDw8I7yNi/Lj418OzZ3onMPDw8P7xBvFqS2Me5mrKqOcfHw8PAu8B7ltanZzwYc0cGAh4eHd4GXX+3nPn/mfrBgmL7g4eHhLXh5gbsB74cShsU3Hh4e3jVeG1K0B0D+1/rUSiIJPDw8vDfg5Z36NiZoD4Ni3AoPDw/v13ltK6sdGthvEx4eHt5v8jaN/Pz+prWWjy/g4eHh3eZtGmD3ots8zF119vDw8PA63ic/g0rf1dFDEwAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 

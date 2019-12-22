@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://QQ876684433.github.io/"/>
-  <updated>2019-12-22T11:10:44.026Z</updated>
+  <updated>2019-12-22T11:45:41.659Z</updated>
   <id>http://QQ876684433.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据库-数据库设计</title>
+    <link href="http://QQ876684433.github.io/2019/12/22/%E6%95%B0%E6%8D%AE%E5%BA%93-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/"/>
+    <id>http://QQ876684433.github.io/2019/12/22/数据库-数据库设计/</id>
+    <published>2019-12-22T11:18:08.000Z</published>
+    <updated>2019-12-22T11:45:41.659Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="数据库-数据库设计"><a href="#数据库-数据库设计" class="headerlink" title="数据库 - 数据库设计"></a>数据库 - 数据库设计</h1><blockquote><p>参考资料：</p><ul><li>南大软件学院课程《数据管理基础》课程资料</li><li>《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著</li></ul></blockquote><p>候选键和主键的微小区别：</p><ul><li>候选键：区分当前表的不同行</li><li>主键：在其他表引用当前表时唯一标识表中的行的一个候选键</li></ul><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/12/22/AdlFXq4rBOGjThf.png" alt title>                </div>                <div class="image-caption"></div>            </figure><p>表的键的正确性描述是由数据库系统维护的</p><h2 id="数据库设计前言"><a href="#数据库设计前言" class="headerlink" title="数据库设计前言"></a>数据库设计前言</h2><p>Logical Database Design<br>➢also known as</p><ul><li>Database Design</li><li>Database Modeling</li></ul><p>如何进行数据库设计？</p><ul><li>analyze an enterprise</li><li>list the data items for a database</li><li>decide how to place these data items columns in relational tables</li></ul><p>案例：学生课程数据库（student-course database）</p><p>学生属性：sno, sname, dept, sage</p><p>课程属性：cno, cname</p><p>学生&amp;课程属性：grade</p><p>把这些属性全部放进同一张表中：<code>R(sno, sname, dept, sage, cno, cname, grade)</code>，结果如下：</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/12/22/yeHPordXahWzq69.png" alt title>                </div>                <div class="image-caption"></div>            </figure><p>存在的问题有哪些？</p><ol><li><p>redundency（数据冗余）</p><p>相同的数据重复存储，造成磁盘空间的浪费</p><p><img src="https://i.loli.net/2019/12/22/bPEFZCgrQe93yBk.png" alt></p></li><li><p>abnormity of update（修改异常）</p><p>对于冗余存储的数据，如果需要修改的话，则需要修改所有重复存储的版本</p><ul><li>浪费时间</li><li>用户很容易操作出错</li></ul></li><li><p>abnormity of delete（删除异常）</p><p>可能会丢失一些有用的信息</p><p><img src="https://s2.ax1x.com/2019/12/22/QzdJFx.png" alt="QzdJFx.png"></p><p><img src="https://s2.ax1x.com/2019/12/22/QzdtfK.png" alt="QzdtfK.png"></p></li></ol><ol start="4"><li><p>abnormity of insert（插入异常）</p><p>可能会插入失败，比如要添加新的学生信息，但是该学生目前尚未选任何课程，这时候就会出现插入异常</p></li></ol><p>因此一个比较好的设计方案是将SCG数据表拆分成多张表：</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://s2.ax1x.com/2019/12/22/QzwAje.png" alt="QzwAje.png" title>                </div>                <div class="image-caption">QzwAje.png</div>            </figure><h2 id="E-R概念介绍"><a href="#E-R概念介绍" class="headerlink" title="E-R概念介绍"></a>E-R概念介绍</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;数据库-数据库设计&quot;&gt;&lt;a href=&quot;#数据库-数据库设计&quot; class=&quot;headerlink&quot; title=&quot;数据库 - 数据库设计&quot;&gt;&lt;/a&gt;数据库 - 数据库设计&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;参考资料：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;南大软件学院
+      
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://QQ876684433.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="笔记" scheme="http://QQ876684433.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="数据库" scheme="http://QQ876684433.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
   
   <entry>
     <title>数据库-完整性、视图、安全性和目录</title>
@@ -342,36 +372,6 @@
       <category term="汇编" scheme="http://QQ876684433.github.io/tags/%E6%B1%87%E7%BC%96/"/>
     
       <category term="NASM" scheme="http://QQ876684433.github.io/tags/NASM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据库课堂笔记（2019-10-29）</title>
-    <link href="http://QQ876684433.github.io/2019/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0%EF%BC%882019-10-29%EF%BC%89/"/>
-    <id>http://QQ876684433.github.io/2019/10/29/数据库课堂笔记（2019-10-29）/</id>
-    <published>2019-10-29T05:58:08.000Z</published>
-    <updated>2019-10-29T05:58:51.348Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="数据库课堂笔记"><a href="#数据库课堂笔记" class="headerlink" title="数据库课堂笔记"></a>数据库课堂笔记</h1><blockquote><p>参考资料：</p><ul><li>南大软件学院课程《数据管理基础》课程资料</li><li>《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著</li><li>《数据库系统概论》第五版 - 王珊 萨师煊 著</li><li>《数据库系统概念》</li></ul></blockquote><h2 id="数据库课堂笔记（2019-10-29）"><a href="#数据库课堂笔记（2019-10-29）" class="headerlink" title="数据库课堂笔记（2019-10-29）"></a>数据库课堂笔记（2019-10-29）</h2><h3 id="Ch06-Database-Design"><a href="#Ch06-Database-Design" class="headerlink" title="Ch06 Database Design"></a>Ch06 Database Design</h3>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;数据库课堂笔记&quot;&gt;&lt;a href=&quot;#数据库课堂笔记&quot; class=&quot;headerlink&quot; title=&quot;数据库课堂笔记&quot;&gt;&lt;/a&gt;数据库课堂笔记&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;参考资料：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;南大软件学院课程《数据管理基础》课程
-      
-    
-    </summary>
-    
-      <category term="数据库" scheme="http://QQ876684433.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-      <category term="笔记" scheme="http://QQ876684433.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="数据库" scheme="http://QQ876684433.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
