@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://QQ876684433.github.io/"/>
-  <updated>2019-12-22T09:10:25.702Z</updated>
+  <updated>2019-12-22T11:01:22.774Z</updated>
   <id>http://QQ876684433.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据库-完整性、视图、安全性和目录</title>
+    <link href="http://QQ876684433.github.io/2019/12/22/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%AE%8C%E6%95%B4%E6%80%A7%E3%80%81%E8%A7%86%E5%9B%BE%E3%80%81%E5%AE%89%E5%85%A8%E6%80%A7%E5%92%8C%E7%9B%AE%E5%BD%95/"/>
+    <id>http://QQ876684433.github.io/2019/12/22/数据库-完整性、视图、安全性和目录/</id>
+    <published>2019-12-22T10:54:53.000Z</published>
+    <updated>2019-12-22T11:01:22.774Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="数据库-完整性、视图、安全性和目录"><a href="#数据库-完整性、视图、安全性和目录" class="headerlink" title="数据库 - 完整性、视图、安全性和目录"></a>数据库 - 完整性、视图、安全性和目录</h1><blockquote><p>参考资料：</p><ul><li>南大软件学院课程《数据管理基础》课程资料</li><li>《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著</li></ul></blockquote><p>从数据库设计到物理形式</p><ul><li><p>创建表</p><ul><li>完整性约束（integrity constraints）</li></ul></li><li><p>创建视图</p></li><li><p>安全性</p><ul><li>GRANT和REVOKE语句</li></ul></li><li><p>目录</p><ul><li>模式（Schemes）</li></ul></li></ul><h2 id="完整性约束"><a href="#完整性约束" class="headerlink" title="完整性约束"></a>完整性约束</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;数据库-完整性、视图、安全性和目录&quot;&gt;&lt;a href=&quot;#数据库-完整性、视图、安全性和目录&quot; class=&quot;headerlink&quot; title=&quot;数据库 - 完整性、视图、安全性和目录&quot;&gt;&lt;/a&gt;数据库 - 完整性、视图、安全性和目录&lt;/h1&gt;&lt;blockquo
+      
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://QQ876684433.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="笔记" scheme="http://QQ876684433.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="数据库" scheme="http://QQ876684433.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
   
   <entry>
     <title>操作系统-文件管理</title>
@@ -315,20 +342,6 @@
       <category term="汇编" scheme="http://QQ876684433.github.io/tags/%E6%B1%87%E7%BC%96/"/>
     
       <category term="NASM" scheme="http://QQ876684433.github.io/tags/NASM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据库课堂笔记（2019-11-05）</title>
-    <link href="http://QQ876684433.github.io/2019/11/05/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0%EF%BC%882019-11-05%EF%BC%89/"/>
-    <id>http://QQ876684433.github.io/2019/11/05/数据库课堂笔记（2019-11-05）/</id>
-    <published>2019-11-05T06:00:53.000Z</published>
-    <updated>2019-11-05T06:00:53.384Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
     
   </entry>
   

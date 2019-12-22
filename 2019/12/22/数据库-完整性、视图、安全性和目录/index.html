@@ -14,25 +14,25 @@
     
     
     
-    <title>数据库课堂笔记（2019-11-05） | 至繁归于至简 - chph&#39;s blog | steve_chph personal website</title>
+    <title>数据库-完整性、视图、安全性和目录 | 至繁归于至简 - chph&#39;s blog | steve_chph personal website</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content>
-    <meta name="description" content="the blog website of steve_chph, steve_chph的个人博客网站">
-<meta name="keywords" content="blog, chph, steve, steve_chph, 博客, 至繁归于至简">
+    <meta name="keywords" content="数据库">
+    <meta name="description" content="数据库 - 完整性、视图、安全性和目录 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著   从数据库设计到物理形式  创建表  完整性约束（integrity constraints）   创建视图  安全性  GRANT和REVOKE语句   目录  模式（Schemes）">
+<meta name="keywords" content="数据库">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据库课堂笔记（2019-11-05）">
-<meta property="og:url" content="http://QQ876684433.github.io/2019/11/05/数据库课堂笔记（2019-11-05）/index.html">
+<meta property="og:title" content="数据库-完整性、视图、安全性和目录">
+<meta property="og:url" content="http://QQ876684433.github.io/2019/12/22/数据库-完整性、视图、安全性和目录/index.html">
 <meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
-<meta property="og:description" content="the blog website of steve_chph, steve_chph的个人博客网站">
+<meta property="og:description" content="数据库 - 完整性、视图、安全性和目录 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著   从数据库设计到物理形式  创建表  完整性约束（integrity constraints）   创建视图  安全性  GRANT和REVOKE语句   目录  模式（Schemes）">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-11-05T06:00:53.384Z">
+<meta property="og:updated_time" content="2019-12-22T11:01:22.774Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据库课堂笔记（2019-11-05）">
-<meta name="twitter:description" content="the blog website of steve_chph, steve_chph的个人博客网站">
+<meta name="twitter:title" content="数据库-完整性、视图、安全性和目录">
+<meta name="twitter:description" content="数据库 - 完整性、视图、安全性和目录 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著   从数据库设计到物理形式  创建表  完整性约束（integrity constraints）   创建视图  安全性  GRANT和REVOKE语句   目录  模式（Schemes）">
     
         <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
     
@@ -120,7 +120,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">数据库课堂笔记（2019-11-05）</div>
+        <div class="flex-col header-title ellipsis">数据库-完整性、视图、安全性和目录</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -142,13 +142,15 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">数据库课堂笔记（2019-11-05）</h1>
+        <h1 class="title">数据库-完整性、视图、安全性和目录</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-11-05T06:00:53.000Z" itemprop="datePublished" class="page-time">
-  2019-11-05
+                <time datetime="2019-12-22T10:54:53.000Z" itemprop="datePublished" class="page-time">
+  2019-12-22
 </time>
 
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/数据库/">数据库</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/数据库/笔记/">笔记</a></li></ul></li></ul>
 
             
         </h5>
@@ -162,16 +164,25 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据库-完整性、视图、安全性和目录"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据库 - 完整性、视图、安全性和目录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#完整性约束"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">完整性约束</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
 
-<article id="post-数据库课堂笔记（2019-11-05）"
+
+<article id="post-数据库-完整性、视图、安全性和目录"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">数据库课堂笔记（2019-11-05）</h1>
+        <h1 class="post-card-title">数据库-完整性、视图、安全性和目录</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-11-05 14:00:53" datetime="2019-11-05T06:00:53.000Z"  itemprop="datePublished">2019-11-05</time>
+            <time class="post-time" title="2019-12-22 18:54:53" datetime="2019-12-22T10:54:53.000Z"  itemprop="datePublished">2019-12-22</time>
 
             
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/数据库/">数据库</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/数据库/笔记/">笔记</a></li></ul></li></ul>
+
 
 
             
@@ -182,7 +193,34 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            
+            <h1 id="数据库-完整性、视图、安全性和目录"><a href="#数据库-完整性、视图、安全性和目录" class="headerlink" title="数据库 - 完整性、视图、安全性和目录"></a>数据库 - 完整性、视图、安全性和目录</h1><blockquote>
+<p>参考资料：</p>
+<ul>
+<li>南大软件学院课程《数据管理基础》课程资料</li>
+<li>《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著</li>
+</ul>
+</blockquote>
+<p>从数据库设计到物理形式</p>
+<ul>
+<li><p>创建表</p>
+<ul>
+<li>完整性约束（integrity constraints）</li>
+</ul>
+</li>
+<li><p>创建视图</p>
+</li>
+<li><p>安全性</p>
+<ul>
+<li>GRANT和REVOKE语句</li>
+</ul>
+</li>
+<li><p>目录</p>
+<ul>
+<li>模式（Schemes）</li>
+</ul>
+</li>
+</ul>
+<h2 id="完整性约束"><a href="#完整性约束" class="headerlink" title="完整性约束"></a>完整性约束</h2>
         </div>
 
         <blockquote class="post-copyright">
@@ -190,12 +228,12 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-11-05T06:00:53.384Z" itemprop="dateUpdated">2019-11-05 14:00:53</time>
+    Last updated: <time datetime="2019-12-22T11:01:22.774Z" itemprop="dateUpdated">2019-12-22 19:01:22</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/11/05/数据库课堂笔记（2019-11-05）/" target="_blank" rel="external">http://QQ876684433.github.io/2019/11/05/数据库课堂笔记（2019-11-05）/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/12/22/数据库-完整性、视图、安全性和目录/" target="_blank" rel="external">http://QQ876684433.github.io/2019/12/22/数据库-完整性、视图、安全性和目录/</a>
         
     </div>
     
@@ -216,6 +254,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
+
 
             
 <div class="page-share-wrap">
@@ -224,7 +264,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/11/05/数据库课堂笔记（2019-11-05）/&title=《数据库课堂笔记（2019-11-05）》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/12/22/数据库-完整性、视图、安全性和目录/&title=《数据库-完整性、视图、安全性和目录》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -234,22 +274,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/11/05/数据库课堂笔记（2019-11-05）/&title=《数据库课堂笔记（2019-11-05）》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/12/22/数据库-完整性、视图、安全性和目录/&title=《数据库-完整性、视图、安全性和目录》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/11/05/数据库课堂笔记（2019-11-05）/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/12/22/数据库-完整性、视图、安全性和目录/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《数据库课堂笔记（2019-11-05）》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/11/05/数据库课堂笔记（2019-11-05）/&via=http://QQ876684433.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《数据库-完整性、视图、安全性和目录》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/12/22/数据库-完整性、视图、安全性和目录/&via=http://QQ876684433.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/11/05/数据库课堂笔记（2019-11-05）/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/12/22/数据库-完整性、视图、安全性和目录/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -269,21 +309,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2019/11/07/NASM学习记录/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">NASM学习记录</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2019/10/29/数据库课堂笔记（2019-10-29）/" id="post-next" class="post-nav-link">
+      <a href="/2019/12/21/操作系统-文件管理/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">数据库课堂笔记（2019-10-29）</h4>
+        <h4 class="title">操作系统-文件管理</h4>
       </a>
     </div>
   
@@ -383,7 +416,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/11/05/数据库课堂笔记（2019-11-05）/&title=《数据库课堂笔记（2019-11-05）》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/12/22/数据库-完整性、视图、安全性和目录/&title=《数据库-完整性、视图、安全性和目录》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -393,22 +426,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/11/05/数据库课堂笔记（2019-11-05）/&title=《数据库课堂笔记（2019-11-05）》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/12/22/数据库-完整性、视图、安全性和目录/&title=《数据库-完整性、视图、安全性和目录》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/11/05/数据库课堂笔记（2019-11-05）/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/12/22/数据库-完整性、视图、安全性和目录/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《数据库课堂笔记（2019-11-05）》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/11/05/数据库课堂笔记（2019-11-05）/&via=http://QQ876684433.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《数据库-完整性、视图、安全性和目录》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/12/22/数据库-完整性、视图、安全性和目录/&via=http://QQ876684433.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/11/05/数据库课堂笔记（2019-11-05）/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/12/22/数据库-完整性、视图、安全性和目录/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -419,7 +452,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsUlEQVR42u3awW7rMAwEwPz/T/cBPT2gSbBLSk0P41PhGjJHBSyW5OMRX1/f1887/99Pnnm18qtnvn5cjxsXHh4e3ij0V9f+mfebNdumJB48PDy827wkiGTp9/j3b8wPjyRmPDw8vL/Aa0NMeMkxk28QHh4e3t/n7VPwzfN4eHh4n+XlS8/Kr8kWnC2O4OHh4d3jtQ2wv/Dzxf4eHh4e3qKr3n52Z6nzqabXk5Xx8PDwLvDy1yevzBtX+fqbUi8eHh7eb/LyQdU8oFkz7P36q/8G8PDw8Ea8tsnUvvjGCkVqjoeHh3eNl4eyOTw2TbLkXU/+YHh4eHjXeG2r/tSd2QrFKAMeHh7eBd6s897mq235IxpCLQvQeHh4eLd5efs//+1+a9ohBjw8PLwbvFnjf1+W/aXkGw8PD+/W//XRuXF4WmE0xtpuAR4eHt4NXpu8tkdF+8lO4lkNXeHh4eEd4s1Kq7PibFspyWEvDwY8PDy8o7z8o5y0x/KhqE3brC2g4OHh4Z3ltQdDG2he2khKIfkdPDw8vHu85OPbtvY3RdtNGl2PW+Hh4eEteLOUN2+SFZ23UcPsWMUFDw8PL+DNwm3LsslqbREkWhkPDw/vAm/W/s+bWPn4VFuozZ/Hw8PDO8trA21Lt6fKxHmxIxpXxcPDw1vw2kfzNHdWrs03NN90PDw8vLO8NvE9NZLVpuyzLcDDw8O7wWvLrLPyxI1ix3CAAA8PD2/N+yqvTeK7KdcePgzw8PDwFrzZwFPLa98yW3kFxsPDwyt5yWEwuz9LqdtBgaLigoeHh3eUl483tSHORrJmWfHLKgseHh7eR3lJKG36e2pc4AkSDw8P76O85ABIjod9+n7lYMDDw8MreZvRgc0AVr6VbcECDw8P7x5v1gBrhw82afH1MQI8PDy8dJ1/MuA3K41GAbcAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADOUlEQVR42u3aQZLiQAwEwPn/p2eve8FUSZ4I3KRPhAG70xyESv3zEx+/l0fyrfzd/88k97pew+rAxsbGfgg7ISXnr6+fg9t7Xa/z5QqxsbGxj2NfL/f69WYp7eNOPh8VOWxsbOyvZ+c3aM8k5Sf5SbCxsbGxh5crw6O8jUmugI2Njf3N7Pwv/l1DglmolBfX27I0bGxs7I9n51PRz3/9J/NtbGxs7A9mzyL75Dqbd/ejgjdXw8bGxj6IvQmG8og/HxLkkVNbwLCxsbHPZudNyCy4uT6/2e6Tl1JsbGzsU9ltszE707YZs7sXW4uwsbGxj2NvxrF3PYK2+UmGwS8/iY2NjX00e1au2hFsHv1vAqmXd8TGxsY+iD0L+mclJC9C7a6bYYCFjY2NfRB7drSAZAzcbvfJRxG3HdjY2NgPYbeNwWaJCbgdHq9m2tjY2NiPYu/HrnmIP/tN8vCoKJDY2NjYB7Hb0CffgtOWmXbM0I6lh88MGxsb++PZ+7BmMyr+iwFzsWUHGxsb+wh28se9bST2YVBStJIiGrUi2NjY2Mex2+g//3weYCWNR7sds55OYGNjYz+EvSkDbYFpG4z2xyi+i42NjX0QexPNJIFUHgnlTcisHYoGvdjY2NgPZG/agL+YObeD5Pbx1Z0NNjY29kPY+8007SOYRUtJmYwGFdjY2NjHsfNoph0At4u+a5D8ZiXY2NjYB7HboKd9NPk4eb9JqA6/sLGxsY9gz8YAm7inLXJ56Ur252BjY2Ofx26XkkdCs2IThfvlwy3m29jY2NgPZ+elqygSMXXWqGweFjY2Nvb3sGfB036hm/Ymugs2Njb2oexNbJSEPrP2ox0PRENfbGxs7OPYs8h+Vmxm225mW4LeFDBsbGzsh7N/y6NdXBIqtQHTDWMGbGxs7IPYm40vSYFpN/QkjdCsFZlt98HGxsZ+Cns2HkjCo9lwNx9F5I/4tkEvNjY29gezk0sny9ps+klamhz25r7Y2NjYX8yuN8eM4qS2ONWrxcbGxv5i9iYMype4bzyiUAkbGxv7IHZbWjYbdDbD4NnIod64g42Njf0o9iZLz4e+d30rn123Pxs2Njb2A9n/ALROm6f1sD41AAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 
