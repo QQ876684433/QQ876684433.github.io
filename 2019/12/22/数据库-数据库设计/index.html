@@ -37,7 +37,16 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/12/22/QzwAje.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/12/22/QzwyDJ.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/12/22/QzD08P.png">
-<meta property="og:updated_time" content="2019-12-22T12:17:15.313Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/12/22/Qz7zbd.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/12/22/QzbqXD.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/12/22/QzqZAs.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/23/FoItMcQ5L2XJSN4.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/23/1STFUhnHRYAOzM9.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/23/gNEvdq7a2eCfsno.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/23/PhU2OyNQHD1qs3I.png">
+<meta property="og:image" content="https://media.geeksforgeeks.org/wp-content/uploads/20190520181337/Untitled-Diagram-231.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/23/6JjnoVqdNSGRzDs.png">
+<meta property="og:updated_time" content="2019-12-23T04:09:08.937Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库-数据库设计">
 <meta name="twitter:description" content="数据库 - 数据库设计 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著   候选键和主键的微小区别：  候选键：区分当前表的不同行 主键：在其他表引用当前表时唯一标识表中的行的一个候选键">
@@ -176,7 +185,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据库-数据库设计"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据库 - 数据库设计</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据库设计前言"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">数据库设计前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#E-R概念介绍"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">E-R概念介绍</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#E-R模型"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">E-R模型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#实体（entity）"><span class="post-toc-number">1.2.1.1.</span> <span class="post-toc-text">实体（entity）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#属性（attribute）"><span class="post-toc-number">1.2.1.2.</span> <span class="post-toc-text">属性（attribute）</span></a></li></ol></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据库-数据库设计"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据库 - 数据库设计</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据库设计前言"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">数据库设计前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#E-R概念介绍"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">E-R概念介绍</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#E-R模型"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">E-R模型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#实体（entity）"><span class="post-toc-number">1.2.1.1.</span> <span class="post-toc-text">实体（entity）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#属性（attribute）"><span class="post-toc-number">1.2.1.2.</span> <span class="post-toc-text">属性（attribute）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#转换实体和属性到关系"><span class="post-toc-number">1.2.1.3.</span> <span class="post-toc-text">转换实体和属性到关系</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#转换规则1"><span class="post-toc-number">1.2.1.3.1.</span> <span class="post-toc-text">转换规则1</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#转换规则2"><span class="post-toc-number">1.2.1.3.2.</span> <span class="post-toc-text">转换规则2</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#实体间联系"><span class="post-toc-number">1.2.1.4.</span> <span class="post-toc-text">实体间联系</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#E-R模型的细节"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">E-R模型的细节</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关系中实体参与的基数"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">关系中实体参与的基数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一对一、多对一、多对多关系"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">一对一、多对一、多对多关系</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将二元联系转化成关系"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">将二元联系转化成关系</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#转换规则3-N-N联系"><span class="post-toc-number">1.3.3.0.1.</span> <span class="post-toc-text">转换规则3 N-N联系</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#转换规则4-N-1联系"><span class="post-toc-number">1.3.3.0.2.</span> <span class="post-toc-text">转换规则4 N-1联系</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#转换规则5-1-1联系，可选参与"><span class="post-toc-number">1.3.3.0.3.</span> <span class="post-toc-text">转换规则5 1-1联系，可选参与</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#转换规则6-1-1联系，强制参与"><span class="post-toc-number">1.3.3.0.4.</span> <span class="post-toc-text">转换规则6 1-1联系，强制参与</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其他E-R概念"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">其他E-R概念</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#属性的基数"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">属性的基数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#弱实体"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">弱实体</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -319,6 +328,181 @@
                 <div class="image-caption">QzD08P.png</div>
             </figure>
 
+<h4 id="转换实体和属性到关系"><a href="#转换实体和属性到关系" class="headerlink" title="转换实体和属性到关系"></a>转换实体和属性到关系</h4><h5 id="转换规则1"><a href="#转换规则1" class="headerlink" title="转换规则1"></a>转换规则1</h5><ul>
+<li>每个实体映射到关系数据库中的一个表，并用实体名来命名这个表</li>
+<li>表的列代表了连接到实体的所有简单单值属性（对于<strong>复合属性，本身不变成表的列</strong>，而是将复合属性所对应的多个简单单值属性映射为表的多个列）</li>
+<li>实体的标识符映射为该表的候选键</li>
+<li>实体的主标识符映射为该表的主键（主标识符可以是一个复合属性，所以它将变成关系表中的一个属性集合），主键加下划线表示</li>
+<li>实体实例映射为该表中的行</li>
+</ul>
+<h5 id="转换规则2"><a href="#转换规则2" class="headerlink" title="转换规则2"></a>转换规则2</h5><p>对于实体E，主标识符是p，如果一个多值属性a在E-R图中连接到R，那么<strong>a映射成自身的一张表</strong>，该表按复数形式的多值属性名命名；这个新表的列用p和a命名（p或a都有可能由几个属性组成），<strong>表的行对应（p，a）值对</strong>，表示与E的实体实例关联的a的属性值对；这个<strong>表的主键属性是p和a中列的集合</strong></p>
+<p>但是这个转换规则在对象-关系型数据库中是不成立的</p>
+<h4 id="实体间联系"><a href="#实体间联系" class="headerlink" title="实体间联系"></a>实体间联系</h4><p>联系：给定m个实体的有序列表：E1、E2、…、Em（列表中同一实体可以出现多于一次），一个联系R定义了这些实体实例之间的对应规则；特别地R代表了一个m元组，它是笛卡尔积E1×E2×…×Em的子集</p>
+<ul>
+<li><p>联系可以有附加属性，它是每个联系实例的值（例如下图中percent代表了一个员工实例在该项目上的工作时间百分比）</p>
+</li>
+<li><p>联系一个实体到这个实体自身的二元联系（Ei×Ei的子集）叫做环，有时也叫做递归联系（recursive relationship）</p>
+</li>
+<li><p>三元关系：三个不同实体上的联系（甚至有更多元的关系，因此联系不是只能存在与两个实体之间）</p>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s2.ax1x.com/2019/12/22/Qz7zbd.png" alt="Qz7zbd.png" title>
+                </div>
+                <div class="image-caption">Qz7zbd.png</div>
+            </figure>
+
+
+
+<h2 id="E-R模型的细节"><a href="#E-R模型的细节" class="headerlink" title="E-R模型的细节"></a>E-R模型的细节</h2><h3 id="关系中实体参与的基数"><a href="#关系中实体参与的基数" class="headerlink" title="关系中实体参与的基数"></a>关系中实体参与的基数</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s2.ax1x.com/2019/12/22/QzbqXD.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<ul>
+<li><p>如果实体E中所有的点最多只有一条出边，那么：</p>
+<p>$max-card(E, R) = 1$</p>
+</li>
+<li><p>如果实体E中的点有超过一条出边，那么：</p>
+<p>$max-card(E,R) = N$</p>
+</li>
+<li><p>如果实体E中所有的点至少有一条出边，那么：</p>
+<p>$min-card(E,R)=1$</p>
+</li>
+<li><p>如果实体E中有的点没有出边，那么：</p>
+<p>$min-card(E,R)=0$</p>
+</li>
+<li><p>如果$min-card(E,R)=x$，$max-card(E,R)=y$，那么最小最大有序对是：$card(E,R)=(x,y)$</p>
+</li>
+</ul>
+<p>例子：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s2.ax1x.com/2019/12/22/QzqZAs.png" alt="QzqZAs.png" title>
+                </div>
+                <div class="image-caption">QzqZAs.png</div>
+            </figure>
+
+<p>即$card(E,R)=(0,N)$，$card(F,R)=(1,1)$</p>
+<ul>
+<li><p>如果$max-card(X,R)=1$，那么在关系R中X是<strong>单值参与（single-valued participation）</strong></p>
+</li>
+<li><p>如果$max-card(X,R)=N$，那么在关系R中X是<strong>多值参与（multi-valued participation）</strong></p>
+</li>
+<li><p>如果$min-card(X,R)=1$，那么在关系R中X是<strong>强制参与（mandatory participation）</strong></p>
+</li>
+<li><p>如果$min-card(X,R)=0$，那么在关系R中X是<strong>可选参与（optional participation）</strong></p>
+</li>
+</ul>
+<h3 id="一对一、多对一、多对多关系"><a href="#一对一、多对一、多对多关系" class="headerlink" title="一对一、多对一、多对多关系"></a>一对一、多对一、多对多关系</h3><p>只是针对max-card概念而言的</p>
+<ul>
+<li>一对一：两个实体都是单值参与</li>
+<li>多对一：一个实体是单值参与，另一个实体是多值参与</li>
+<li>多对多：两个实体都是多值参与</li>
+</ul>
+<h3 id="将二元联系转化成关系"><a href="#将二元联系转化成关系" class="headerlink" title="将二元联系转化成关系"></a>将二元联系转化成关系</h3><h5 id="转换规则3-N-N联系"><a href="#转换规则3-N-N联系" class="headerlink" title="转换规则3 N-N联系"></a>转换规则3 N-N联系</h5><p>当两个实体E和F参与一个多对多的二元联系R时，在相关的关系数据库设计中，联系映射成一个表T</p>
+<ul>
+<li>表T包括从E和F转化而来的两个表的主键的所有属性，这些列构成了表T的主键</li>
+<li>表T还包含了<strong>连结到联系的所有属性</strong>的列</li>
+</ul>
+<p>联系实例用表的行表示，相关联的实体实例可以通过这些行的主键值唯一地标识出来</p>
+<img src="https://i.loli.net/2019/12/23/FoItMcQ5L2XJSN4.png" style="zoom:80%;">
+
+<h5 id="转换规则4-N-1联系"><a href="#转换规则4-N-1联系" class="headerlink" title="转换规则4 N-1联系"></a>转换规则4 N-1联系</h5><p>当两个实体E和F参与一个多对一的二元联系R时，这个联系在关系数据库设计中不能映射为自身的一张表；相反，如果我们假设实体F具有$max-card(F,R)=1$，并表示联系关系中的“多”方，那么从实体F转化成的关系表T中应当包括从实体E转换出来的关系表的主键属性列，这被称为<strong>T的外键</strong>。由于$max-card(F,R)=1$，T的每一行都通过一个外键值联系到实体E的一个实例，如果F在R中是强制参与的($min-card(F,R)=1$)，那么它必须恰恰与E的一个实例相联系，这意味着T的上述外键不能取空值；如果F在R中是可选参与的($min-card(F,R)=0$)，那么T中不与E的实例相联系的行在外键的所有列可以取空值</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/23/1STFUhnHRYAOzM9.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>其中Course_sections是“多”方，因此在它转换出来的关系表中包含Instructors的主键insid作为外键</p>
+<h5 id="转换规则5-1-1联系，可选参与"><a href="#转换规则5-1-1联系，可选参与" class="headerlink" title="转换规则5 1-1联系，可选参与"></a>转换规则5 1-1联系，可选参与</h5><p>给定两个实体E和F，他们参与一对一二元联系R，二者的参与都是可选的，首先按照转换规则1建立表S表示实体E、表T表示实体F，然后向表T中添加一组列（作为外键），这些列在表S构成主键；对于R的任何联系实例，都有唯一一个E的实例联系到唯一一个F的实例——在S和T的对应行中，外键列填写的值引用另一张表相应行，这一联系是R的实例确定的</p>
+<h5 id="转换规则6-1-1联系，强制参与"><a href="#转换规则6-1-1联系，强制参与" class="headerlink" title="转换规则6 1-1联系，强制参与"></a>转换规则6 1-1联系，强制参与</h5><p>对于一个两方都是强制参与的一对一联系，最好将两个实体对应的两个表<strong>合并成一个表</strong>，这一可以<strong>避免使用外键</strong></p>
+<p>对于N元联系（N&gt;2）的转换规则，通常将这些N元联系转换成自己对应的表；如果除去一个实体外其余参与联系的所有实体都带有$max-card=1$（类似于星状结构），那么可以在那个具有较大基数的参与实体对应的表中，加入N-1个外键来表示这个联系</p>
+<h2 id="其他E-R概念"><a href="#其他E-R概念" class="headerlink" title="其他E-R概念"></a>其他E-R概念</h2><h3 id="属性的基数"><a href="#属性的基数" class="headerlink" title="属性的基数"></a>属性的基数</h3><p>$min-card/max-card$可以用来描述实体属性的基数</p>
+<ul>
+<li>$(0,?)$表示属性不需要声明为<code>not null</code>（可选的，optional）</li>
+<li>$(1,?)$表示属性声明为<code>not null</code>（强制的，mandatory）</li>
+<li>$(?,1)$表示单值属性</li>
+<li>$(?,N)$表示多值属性</li>
+</ul>
+<img src="https://i.loli.net/2019/12/23/gNEvdq7a2eCfsno.png" style="zoom:80%;">
+
+<img src="https://i.loli.net/2019/12/23/PhU2OyNQHD1qs3I.png" style="zoom:80%;">
+
+<h3 id="弱实体"><a href="#弱实体" class="headerlink" title="弱实体"></a>弱实体</h3><p>定义：如果实体的所有实例都<strong>通过一个联系R</strong>依赖于另一个实体的实例而存在，那么这个实体就是<strong>弱实体</strong>，而另一个实体称为<strong>强实体</strong></p>
+<blockquote>
+<p><strong>Strong Entity:</strong><br>Strong entity is not dependent of any other entity in schema. Strong entity always has primary key. <a href="https://practice.geeksforgeeks.org/problems/what-is-the-difference-between-strong-and-weak-entity" target="_blank" rel="noopener">Strong entity</a> is represented by single rectangle. Two strong entity’s relationship is represented by single diamond.<br>Various strong entities together makes the strong entity set.</p>
+<p><strong><a href="https://practice.geeksforgeeks.org/problems/explain-weak-entity-types" target="_blank" rel="noopener">Weak Entity</a>:</strong><br>Weak entity is depend on strong entity to ensure the existance of weak entity. Like strong entity weak entity does not have any primary key, It has partial discriminator key. Weak entity is represented by double rectangle.<br>The relation between one strong and one weak entity is represented by double diamond.</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20190520181337/Untitled-Diagram-231.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p><strong>Difference between Strong and Weak Entity:</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">S.NO</th>
+<th align="center">STRONG ENTITY</th>
+<th align="center">WEAK ENTITY</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1.</td>
+<td align="center">Strong entity always has primary key.</td>
+<td align="center">While weak entity has partial discriminator key.</td>
+</tr>
+<tr>
+<td align="center">2.</td>
+<td align="center">Strong entity is not dependent of any other entity.</td>
+<td align="center">Weak entity is depend on strong entity.</td>
+</tr>
+<tr>
+<td align="center">3.</td>
+<td align="center">Strong entity is represented by single rectangle.</td>
+<td align="center">Weak entity is represented by double rectangle.</td>
+</tr>
+<tr>
+<td align="center">4.</td>
+<td align="center">Two strong entity’s relationship is represented by single diamond.</td>
+<td align="center">While the relation between one strong and one weak entity is represented by double diamond.</td>
+</tr>
+<tr>
+<td align="center">5.</td>
+<td align="center">Strong entity have either total participation or not.</td>
+<td align="center">While weak entity always has total participation.</td>
+</tr>
+</tbody></table>
+<p>—— reference: <a href="https://www.geeksforgeeks.org/difference-between-strong-and-weak-entity/" target="_blank" rel="noopener">https://www.geeksforgeeks.org/difference-between-strong-and-weak-entity/</a></p>
+</blockquote>
+<img src="https://i.loli.net/2019/12/23/6JjnoVqdNSGRzDs.png" style="zoom:80%;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -339,7 +523,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-12-22T12:17:15.313Z" itemprop="dateUpdated">2019-12-22 20:17:15</time>
+    Last updated: <time datetime="2019-12-23T04:09:08.937Z" itemprop="dateUpdated">2019-12-23 12:09:08</time>
 </span><br>
 
 
