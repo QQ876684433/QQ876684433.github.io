@@ -64,7 +64,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/12/23/l91dtU.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/12/23/l91whF.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/12/23/l91HBt.png">
-<meta property="og:updated_time" content="2019-12-23T15:32:16.829Z">
+<meta property="og:updated_time" content="2019-12-23T15:57:10.791Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库-数据库设计">
 <meta name="twitter:description" content="数据库 - 数据库设计 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著   候选键和主键的微小区别：  候选键：区分当前表的不同行 主键：在其他表引用当前表时唯一标识表中的行的一个候选键">
@@ -720,6 +720,7 @@
 <p>画蓝线的部分是求J的函数依赖集的闭包$X^+$，然后看$X^+$是否包含A，如果是的话，说明去掉该函数依赖之后，得到的函数依赖集依然是和之前的函数依赖集等价</p>
 </li>
 <li><p>从函数依赖集H，顺次用左边具有更少属性的函数依赖替换原来的函数依赖，只要不会导致$H^+$改变</p>
+<p>要注意，<strong>如果在步骤3的计算过程中，函数依赖集发生了变化，那么需要返回到步骤2，消除冗余的函数依赖</strong></p>
 <p><img src="https://s2.ax1x.com/2019/12/23/l91dtU.png" alt="l91dtU.png"></p>
 <p><img src="https://s2.ax1x.com/2019/12/23/l91whF.png" alt="l91whF.png"></p>
 </li>
@@ -736,7 +737,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-12-23T15:32:16.829Z" itemprop="dateUpdated">2019-12-23 23:32:16</time>
+    Last updated: <time datetime="2019-12-23T15:57:10.791Z" itemprop="dateUpdated">2019-12-23 23:57:10</time>
 </span><br>
 
 
