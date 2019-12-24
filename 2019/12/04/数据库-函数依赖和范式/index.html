@@ -21,18 +21,18 @@
     
     
     <meta name="keywords" content="数据库,函数依赖,范式">
-    <meta name="description" content="数据库-函数依赖和范式 链接：https://www.nowcoder.com/questionTerminal/1acb9fc7610a4781b87363204f83609b?toCommentId=229287 来源：牛客网  ​    数据库表中不存在非关键字段对任一候选关键字段的        部分函数依赖（部分函数依赖指的是存在组合关键字中的某些字段决定非关键字段的情况），也即所有非关">
+    <meta name="description" content="数据库-函数依赖和范式 链接：https://www.nowcoder.com/questionTerminal/1acb9fc7610a4781b87363204f83609b?toCommentId=229287 来源：牛客网  范式第1范式定义：如果关系R 中所有属性的值域都是单纯域，那么关系模式R是第一范式的 那么符合第一模式的特点就有 1)有主关键字 2)主键不能为空， 3)主键不能重复">
 <meta name="keywords" content="数据库,函数依赖,范式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据库-函数依赖和范式">
 <meta property="og:url" content="http://QQ876684433.github.io/2019/12/04/数据库-函数依赖和范式/index.html">
 <meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
-<meta property="og:description" content="数据库-函数依赖和范式 链接：https://www.nowcoder.com/questionTerminal/1acb9fc7610a4781b87363204f83609b?toCommentId=229287 来源：牛客网  ​    数据库表中不存在非关键字段对任一候选关键字段的        部分函数依赖（部分函数依赖指的是存在组合关键字中的某些字段决定非关键字段的情况），也即所有非关">
+<meta property="og:description" content="数据库-函数依赖和范式 链接：https://www.nowcoder.com/questionTerminal/1acb9fc7610a4781b87363204f83609b?toCommentId=229287 来源：牛客网  范式第1范式定义：如果关系R 中所有属性的值域都是单纯域，那么关系模式R是第一范式的 那么符合第一模式的特点就有 1)有主关键字 2)主键不能为空， 3)主键不能重复">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-12-04T14:29:04.265Z">
+<meta property="og:updated_time" content="2019-12-24T06:41:23.603Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库-函数依赖和范式">
-<meta name="twitter:description" content="数据库-函数依赖和范式 链接：https://www.nowcoder.com/questionTerminal/1acb9fc7610a4781b87363204f83609b?toCommentId=229287 来源：牛客网  ​    数据库表中不存在非关键字段对任一候选关键字段的        部分函数依赖（部分函数依赖指的是存在组合关键字中的某些字段决定非关键字段的情况），也即所有非关">
+<meta name="twitter:description" content="数据库-函数依赖和范式 链接：https://www.nowcoder.com/questionTerminal/1acb9fc7610a4781b87363204f83609b?toCommentId=229287 来源：牛客网  范式第1范式定义：如果关系R 中所有属性的值域都是单纯域，那么关系模式R是第一范式的 那么符合第一模式的特点就有 1)有主关键字 2)主键不能为空， 3)主键不能重复">
     
         <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
     
@@ -167,7 +167,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据库-函数依赖和范式"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据库-函数依赖和范式</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据库-函数依赖和范式"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据库-函数依赖和范式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#范式"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">范式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第1范式"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">第1范式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第2范式"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">第2范式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第3范式"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">第3范式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#BCNF（-鲍依斯-科得范式-）："><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">BCNF（ 鲍依斯-科得范式 ）：</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#依赖关系"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">依赖关系</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -197,14 +197,26 @@
 <p>链接：<a href="https://www.nowcoder.com/questionTerminal/1acb9fc7610a4781b87363204f83609b?toCommentId=229287" target="_blank" rel="noopener">https://www.nowcoder.com/questionTerminal/1acb9fc7610a4781b87363204f83609b?toCommentId=229287</a></p>
 <p>来源：牛客网</p>
 </blockquote>
-<p>​    数据库表中<strong>不存在非关键字段</strong>对任一<a href="http://baike.baidu.com/view/549695.htm" target="_blank" rel="noopener">候选关键字</a>段的        <strong><a href="http://baike.baidu.com/view/4807244.htm" target="_blank" rel="noopener">部分函数依赖</a></strong>（部分函数依赖指的是存在组合关键字中的某些字段决定非关键字段的情况），也即所有非关键字段都完全依赖于任意一组候选关键字。  </p>
-<p>​<br>​      </p>
-<p>​    第3范式：  </p>
-<p>​    在第二范式的基础上，数据表中如果<strong>不存在非关键字段</strong>对任一候选关键字段的        <strong><a href="http://baike.baidu.com/view/550979.htm" target="_blank" rel="noopener">传递函数依赖</a></strong>则符合第三范式。所谓传递函数依赖，指的是如果存在”A → B      → C”的决定关系，则C传递函数依赖于A。因此，满足第三范式的数据库表应该不存在如下依赖关系：  </p>
-<p>​            关键字段 → 非关键字段x → 非关键字段y  </p>
-<p>​<br>​      </p>
-<p>​    BCNF（ 鲍依斯-科得范式 ）：  </p>
-<p>​    在第三范式的基础上，数据库表中如果<strong>不存在任何字段</strong>对任一候选关键字段的        <strong><a href="http://baike.baidu.com/view/550979.htm" target="_blank" rel="noopener">传递函数依赖</a></strong>则符合BCNF。<br>​<br> 依赖关系：<br>​    1.数据依赖<br> 数据依赖指的是通过一个关系中属性间的相等与否体现出来的数据间的相互关系，其中最重要的是函数依赖和多值依赖。<br>​<br> 2.函数依赖<br> 设X,Y是关系R的两个属性集合，当任何时刻R中的任意两个元组中的X属性值相同时，则它们的Y属性值也相同，则称X函数决定Y，或Y函数依赖于X。<br>​<br> 3.平凡函数依赖<br> 当关系中属性集合Y是属性集合X的子集时(Y?X)，存在函数依赖X→Y，即一组属性函数决定它的所有子集，这种函数依赖称为平凡函数依赖。<br>​<br> 4.非平凡函数依赖<br> 当关系中属性集合Y不是属性集合X的子集时，存在函数依赖X→Y，则称这种函数依赖为非平凡函数依赖。<br>​<br> 5.完全函数依赖<br> 设X,Y是关系R的两个属性集合，X’是X的真子集，存在X→Y，但对每一个X’都有X’!→Y，则称Y完全函数依赖于X。<br>​<br> 6.部分函数依赖<br> 设X,Y是关系R的两个属性集合，存在X→Y，若X’是X的真子集，存在X’→Y，则称Y部分函数依赖于X。<br>​<br> 7.传递函数依赖<br> 设X,Y,Z是关系R中互不相同的属性集合，存在X→Y(Y !→X),Y→Z，则称Z传递函数依赖于X。</p>
+<h2 id="范式"><a href="#范式" class="headerlink" title="范式"></a>范式</h2><h3 id="第1范式"><a href="#第1范式" class="headerlink" title="第1范式"></a>第1范式</h3><p>定义：如果关系R 中所有属性的值域都是单纯域，那么关系模式R是第一范式的</p>
+<p>那么符合第一模式的特点就有</p>
+<p>1)有主关键字</p>
+<p>2)主键不能为空，</p>
+<p>3)主键不能重复,</p>
+<p>4)字段不可以再分</p>
+<h3 id="第2范式"><a href="#第2范式" class="headerlink" title="第2范式"></a>第2范式</h3><p>数据库表中<strong>不存在非关键字段</strong>对任一<a href="http://baike.baidu.com/view/549695.htm" target="_blank" rel="noopener">候选关键字</a>段的 <strong><a href="http://baike.baidu.com/view/4807244.htm" target="_blank" rel="noopener">部分函数依赖</a></strong>（部分函数依赖指的是存在组合关键字中的某些字段决定非关键字段的情况），也即所有非关键字段都完全依赖于任意一组候选关键字。</p>
+<h3 id="第3范式"><a href="#第3范式" class="headerlink" title="第3范式"></a>第3范式</h3><p>在第二范式的基础上，数据表中如果<strong>不存在非关键字段</strong>对任一候选关键字段的<strong><a href="http://baike.baidu.com/view/550979.htm" target="_blank" rel="noopener">传递函数依赖</a></strong>则符合第三范式。所谓传递函数依赖，指的是如果存在”A → B      → C”的决定关系，则C传递函数依赖于A。因此，满足第三范式的数据库表应该不存在如下依赖关系：           </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">关键字段 → 非关键字段x → 非关键字段y</span><br></pre></td></tr></table></figure>
+
+<h3 id="BCNF（-鲍依斯-科得范式-）："><a href="#BCNF（-鲍依斯-科得范式-）：" class="headerlink" title="BCNF（ 鲍依斯-科得范式 ）："></a>BCNF（ 鲍依斯-科得范式 ）：</h3><p>​    在第三范式的基础上，数据库表中如果<strong>不存在任何字段</strong>对任一候选关键字段的<strong><a href="http://baike.baidu.com/view/550979.htm" target="_blank" rel="noopener">传递函数依赖</a></strong>则符合BCNF。<br>​      </p>
+<h2 id="依赖关系"><a href="#依赖关系" class="headerlink" title="依赖关系"></a>依赖关系</h2><ol>
+<li>数据依赖<br> 数据依赖指的是通过一个关系中属性间的相等与否体现出来的数据间的相互关系，其中最重要的是函数依赖和多值依赖。<br>​    </li>
+<li>函数依赖<br> 设X,Y是关系R的两个属性集合，当任何时刻R中的任意两个元组中的X属性值相同时，则它们的Y属性值也相同，则称X函数决定Y，或Y函数依赖于X。<br>​    </li>
+<li>平凡函数依赖<br> 当关系中属性集合Y是属性集合X的子集时(Y?X)，存在函数依赖X→Y，即一组属性函数决定它的所有子集，这种函数依赖称为平凡函数依赖。<br>​    </li>
+<li>非平凡函数依赖<br> 当关系中属性集合Y不是属性集合X的子集时，存在函数依赖X→Y，则称这种函数依赖为非平凡函数依赖。<br>​    </li>
+<li>完全函数依赖<br> 设X,Y是关系R的两个属性集合，X’是X的真子集，存在X→Y，但对每一个X’都有X’!→Y，则称Y完全函数依赖于X。<br>​    </li>
+<li>部分函数依赖<br> 设X,Y是关系R的两个属性集合，存在X→Y，若X’是X的真子集，存在X’→Y，则称Y部分函数依赖于X。<br>​    </li>
+<li>传递函数依赖<br> 设X,Y,Z是关系R中互不相同的属性集合，存在X→Y(Y !→X),Y→Z，则称Z传递函数依赖于X。</li>
+</ol>
 
         </div>
 
@@ -213,7 +225,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-12-04T14:29:04.265Z" itemprop="dateUpdated">2019-12-04 22:29:04</time>
+    Last updated: <time datetime="2019-12-24T06:41:23.603Z" itemprop="dateUpdated">2019-12-24 14:41:23</time>
 </span><br>
 
 
