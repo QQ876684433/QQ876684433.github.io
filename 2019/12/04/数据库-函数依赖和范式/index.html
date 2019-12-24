@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
 <meta property="og:description" content="数据库-函数依赖和范式 链接：https://www.nowcoder.com/questionTerminal/1acb9fc7610a4781b87363204f83609b?toCommentId=229287 来源：牛客网  范式第1范式定义：如果关系R 中所有属性的值域都是单纯域，那么关系模式R是第一范式的 那么符合第一模式的特点就有 1)有主关键字 2)主键不能为空， 3)主键不能重复">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-12-24T06:41:23.603Z">
+<meta property="og:updated_time" content="2019-12-24T06:43:30.846Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库-函数依赖和范式">
 <meta name="twitter:description" content="数据库-函数依赖和范式 链接：https://www.nowcoder.com/questionTerminal/1acb9fc7610a4781b87363204f83609b?toCommentId=229287 来源：牛客网  范式第1范式定义：如果关系R 中所有属性的值域都是单纯域，那么关系模式R是第一范式的 那么符合第一模式的特点就有 1)有主关键字 2)主键不能为空， 3)主键不能重复">
@@ -204,7 +204,7 @@
 <p>3)主键不能重复,</p>
 <p>4)字段不可以再分</p>
 <h3 id="第2范式"><a href="#第2范式" class="headerlink" title="第2范式"></a>第2范式</h3><p>数据库表中<strong>不存在非关键字段</strong>对任一<a href="http://baike.baidu.com/view/549695.htm" target="_blank" rel="noopener">候选关键字</a>段的 <strong><a href="http://baike.baidu.com/view/4807244.htm" target="_blank" rel="noopener">部分函数依赖</a></strong>（部分函数依赖指的是存在组合关键字中的某些字段决定非关键字段的情况），也即所有非关键字段都完全依赖于任意一组候选关键字。</p>
-<h3 id="第3范式"><a href="#第3范式" class="headerlink" title="第3范式"></a>第3范式</h3><p>在第二范式的基础上，数据表中如果<strong>不存在非关键字段</strong>对任一候选关键字段的<strong><a href="http://baike.baidu.com/view/550979.htm" target="_blank" rel="noopener">传递函数依赖</a></strong>则符合第三范式。所谓传递函数依赖，指的是如果存在”A → B      → C”的决定关系，则C传递函数依赖于A。因此，满足第三范式的数据库表应该不存在如下依赖关系：           </p>
+<h3 id="第3范式"><a href="#第3范式" class="headerlink" title="第3范式"></a>第3范式</h3><p>在第二范式的基础上，数据表中如果<strong>不存在非关键字段</strong>对任一候选关键字段的<strong><a href="http://baike.baidu.com/view/550979.htm" target="_blank" rel="noopener">传递函数依赖</a></strong>则符合第三范式。因此，满足第三范式的数据库表应该不存在如下依赖关系：           </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">关键字段 → 非关键字段x → 非关键字段y</span><br></pre></td></tr></table></figure>
 
 <h3 id="BCNF（-鲍依斯-科得范式-）："><a href="#BCNF（-鲍依斯-科得范式-）：" class="headerlink" title="BCNF（ 鲍依斯-科得范式 ）："></a>BCNF（ 鲍依斯-科得范式 ）：</h3><p>​    在第三范式的基础上，数据库表中如果<strong>不存在任何字段</strong>对任一候选关键字段的<strong><a href="http://baike.baidu.com/view/550979.htm" target="_blank" rel="noopener">传递函数依赖</a></strong>则符合BCNF。<br>​      </p>
@@ -225,7 +225,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-12-24T06:41:23.603Z" itemprop="dateUpdated">2019-12-24 14:41:23</time>
+    Last updated: <time datetime="2019-12-24T06:43:30.846Z" itemprop="dateUpdated">2019-12-24 14:43:30</time>
 </span><br>
 
 
