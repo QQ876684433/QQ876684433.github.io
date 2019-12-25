@@ -45,7 +45,10 @@
 <meta property="og:image" content="https://i.loli.net/2019/12/25/HZn1c9XDgkxGjzR.png">
 <meta property="og:image" content="https://i.loli.net/2019/12/25/O2iv1LKZaSECz7m.png">
 <meta property="og:image" content="https://i.loli.net/2019/12/25/8kiDNSKn1IXZ6Gj.png">
-<meta property="og:updated_time" content="2019-12-25T02:32:51.270Z">
+<meta property="og:image" content="https://i.loli.net/2019/12/25/3YhzKrIQ1UWoiOa.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/25/9OiGBuxCtq6TrFI.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/25/Z5XxKfn6MsgiRNb.png">
+<meta property="og:updated_time" content="2019-12-25T03:18:09.500Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库-完整性、视图、安全性和目录">
 <meta name="twitter:description" content="数据库 - 完整性、视图、安全性和目录 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著   从数据库设计到物理形式  创建表  完整性约束（integrity constraints）   创建视图  安全性  GRANT和REVOKE语句   目录  模式（Schemes）">
@@ -184,7 +187,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据库-完整性、视图、安全性和目录"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据库 - 完整性、视图、安全性和目录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#完整性约束（Integrity-Constraints）"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">完整性约束（Integrity Constraints）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CREATE-TABLE"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">CREATE TABLE</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#CREATE-TABLE语句"><span class="post-toc-number">1.1.1.1.</span> <span class="post-toc-text">CREATE TABLE语句</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#完整性约束"><span class="post-toc-number">1.1.1.2.</span> <span class="post-toc-text">完整性约束</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#列约束"><span class="post-toc-number">1.1.1.2.1.</span> <span class="post-toc-text">列约束</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#表约束"><span class="post-toc-number">1.1.1.2.2.</span> <span class="post-toc-text">表约束</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#主键、外键和参照完整性"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">主键、外键和参照完整性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#外键（Foreign-Key）"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text">外键（Foreign Key）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#参照完整性（Referential-Integrity）"><span class="post-toc-number">1.1.2.2.</span> <span class="post-toc-text">参照完整性（Referential Integrity）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#外键约束（Foreign-Key-Constraints）"><span class="post-toc-number">1.1.2.3.</span> <span class="post-toc-text">外键约束（Foreign Key Constraints）</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ALTER-TABLE语句"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">ALTER TABLE语句</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据库触发器"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">数据库触发器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#触发器"><span class="post-toc-number">1.1.4.1.</span> <span class="post-toc-text">触发器</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建视图"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">创建视图</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#视图（View）"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">视图（View）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#视图表（View-Table）"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">视图表（View Table）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建视图的语句"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">创建视图的语句</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#嵌套视图定义（Nested-View-definition）"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">嵌套视图定义（Nested View definition）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建视图语句的执行"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text">创建视图语句的执行</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#通过视图的操作"><span class="post-toc-number">1.2.6.</span> <span class="post-toc-text">通过视图的操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#视图的特权"><span class="post-toc-number">1.2.7.</span> <span class="post-toc-text">视图的特权</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#例子"><span class="post-toc-number">1.2.8.</span> <span class="post-toc-text">例子</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建视图-1"><span class="post-toc-number">1.2.8.1.</span> <span class="post-toc-text">创建视图</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#基于视图的查询"><span class="post-toc-number">1.2.8.2.</span> <span class="post-toc-text">基于视图的查询</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#查询修改"><span class="post-toc-number">1.2.8.3.</span> <span class="post-toc-text">查询修改</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#非法视图定义"><span class="post-toc-number">1.2.8.4.</span> <span class="post-toc-text">非法视图定义</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建带有WITH-CHECK-OPTION的视图定义"><span class="post-toc-number">1.2.8.5.</span> <span class="post-toc-text">创建带有WITH CHECK OPTION的视图定义</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#嵌套视图"><span class="post-toc-number">1.2.8.6.</span> <span class="post-toc-text">嵌套视图</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#列出已定义的视图"><span class="post-toc-number">1.2.9.</span> <span class="post-toc-text">列出已定义的视图</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除表和视图"><span class="post-toc-number">1.2.10.</span> <span class="post-toc-text">删除表和视图</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#可更新和只读视图"><span class="post-toc-number">1.2.11.</span> <span class="post-toc-text">可更新和只读视图</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ORACLE中的可更新视图"><span class="post-toc-number">1.2.12.</span> <span class="post-toc-text">ORACLE中的可更新视图</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据库-完整性、视图、安全性和目录"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据库 - 完整性、视图、安全性和目录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#完整性约束（Integrity-Constraints）"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">完整性约束（Integrity Constraints）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CREATE-TABLE"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">CREATE TABLE</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#CREATE-TABLE语句"><span class="post-toc-number">1.1.1.1.</span> <span class="post-toc-text">CREATE TABLE语句</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#完整性约束"><span class="post-toc-number">1.1.1.2.</span> <span class="post-toc-text">完整性约束</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#列约束"><span class="post-toc-number">1.1.1.2.1.</span> <span class="post-toc-text">列约束</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#表约束"><span class="post-toc-number">1.1.1.2.2.</span> <span class="post-toc-text">表约束</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#主键、外键和参照完整性"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">主键、外键和参照完整性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#外键（Foreign-Key）"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text">外键（Foreign Key）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#参照完整性（Referential-Integrity）"><span class="post-toc-number">1.1.2.2.</span> <span class="post-toc-text">参照完整性（Referential Integrity）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#外键约束（Foreign-Key-Constraints）"><span class="post-toc-number">1.1.2.3.</span> <span class="post-toc-text">外键约束（Foreign Key Constraints）</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ALTER-TABLE语句"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">ALTER TABLE语句</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据库触发器"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">数据库触发器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#触发器"><span class="post-toc-number">1.1.4.1.</span> <span class="post-toc-text">触发器</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建视图"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">创建视图</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#视图（View）"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">视图（View）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#视图表（View-Table）"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">视图表（View Table）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建视图的语句"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">创建视图的语句</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#嵌套视图定义（Nested-View-definition）"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">嵌套视图定义（Nested View definition）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建视图语句的执行"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text">创建视图语句的执行</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#通过视图的操作"><span class="post-toc-number">1.2.6.</span> <span class="post-toc-text">通过视图的操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#视图的特权"><span class="post-toc-number">1.2.7.</span> <span class="post-toc-text">视图的特权</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#例子"><span class="post-toc-number">1.2.8.</span> <span class="post-toc-text">例子</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建视图-1"><span class="post-toc-number">1.2.8.1.</span> <span class="post-toc-text">创建视图</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#基于视图的查询"><span class="post-toc-number">1.2.8.2.</span> <span class="post-toc-text">基于视图的查询</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#查询修改"><span class="post-toc-number">1.2.8.3.</span> <span class="post-toc-text">查询修改</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#非法视图定义"><span class="post-toc-number">1.2.8.4.</span> <span class="post-toc-text">非法视图定义</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建带有WITH-CHECK-OPTION的视图定义"><span class="post-toc-number">1.2.8.5.</span> <span class="post-toc-text">创建带有WITH CHECK OPTION的视图定义</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#嵌套视图"><span class="post-toc-number">1.2.8.6.</span> <span class="post-toc-text">嵌套视图</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#列出已定义的视图"><span class="post-toc-number">1.2.9.</span> <span class="post-toc-text">列出已定义的视图</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除表和视图"><span class="post-toc-number">1.2.10.</span> <span class="post-toc-text">删除表和视图</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#可更新和只读视图"><span class="post-toc-number">1.2.11.</span> <span class="post-toc-text">可更新和只读视图</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ORACLE中的可更新视图"><span class="post-toc-number">1.2.12.</span> <span class="post-toc-text">ORACLE中的可更新视图</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#视图的价值"><span class="post-toc-number">1.2.13.</span> <span class="post-toc-text">视图的价值</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安全性"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">安全性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#SQL中的GRANT语句"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">SQL中的GRANT语句</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#SQL中的REVOKE语句"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">SQL中的REVOKE语句</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#系统目录和模式"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">系统目录和模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#思想"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">思想</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#数据字典（data-dictionary）"><span class="post-toc-number">1.4.1.1.</span> <span class="post-toc-text">数据字典（data dictionary）</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#模式（scheme）"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">模式（scheme）</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -571,29 +574,103 @@
 <li>第二个视图定义中subquery的Select子句出现了表达式：sum(dollars)</li>
 </ul>
 <h3 id="ORACLE中的可更新视图"><a href="#ORACLE中的可更新视图" class="headerlink" title="ORACLE中的可更新视图"></a>ORACLE中的可更新视图</h3><ul>
-<li>可以更新join视图，当一下两个条件同时成立：<ul>
+<li><p>可以更新join视图，当一下两个条件同时成立：</p>
+<ul>
 <li>join是一个N-1（多对一）联系</li>
-<li>视图的列包含“N方”表的主键</li>
+<li>视图的列包含“N方”表的主键（这样得到的是无损连接）</li>
+</ul>
+<p><img src="https://i.loli.net/2019/12/25/8kiDNSKn1IXZ6Gj.png" alt></p>
+</li>
+<li><p>并且我们<strong>只能更新视图中原先位于“N方”表中的属性</strong></p>
+<p>如下的例子中，我们只能更新与表orders一对一的列，不能更新列aname，acity和percent，也不能修改决定连接的列aid</p>
+<p>例子：</p>
+<img src="https://i.loli.net/2019/12/25/3YhzKrIQ1UWoiOa.png" style="zoom:67%;">
+
+<img src="https://i.loli.net/2019/12/25/9OiGBuxCtq6TrFI.png" style="zoom:67%;">
+</li>
+<li><p>显示该视图中的可更新列</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> column_name, updatable</span><br><span class="line"><span class="keyword">from</span> user_updatable_columns</span><br><span class="line"><span class="keyword">where</span> table_name = ‘AGENTORDERS’</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="视图的价值"><a href="#视图的价值" class="headerlink" title="视图的价值"></a>视图的价值</h3><ul>
+<li><p>视图提供了一种方法，使复杂的、经常用到的查询写起来更容易</p>
+</li>
+<li><p>视图允许过时的表和引用过时表的程序不被重新组织</p>
+<ul>
+<li>通过这种方法，可以使得对数据的访问独立于其物理结构的改变，这一特性被称为<strong>程序数据独立性</strong>（program-data independence）</li>
+</ul>
+</li>
+<li><p>视图加入了一种安全措施，让不同的用户以不同的方式看相同的数据</p>
+<ul>
+<li>例如我们可以对同一个表employeess建立不同的视图，对访问这些视图的不同用户采用不同的安全措施</li>
 </ul>
 </li>
 </ul>
+<h2 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h2><h3 id="SQL中的GRANT语句"><a href="#SQL中的GRANT语句" class="headerlink" title="SQL中的GRANT语句"></a>SQL中的GRANT语句</h3><p>助记：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> ... <span class="keyword">ON</span> ... <span class="keyword">TO</span> ... ;</span><br></pre></td></tr></table></figure>
+
+<p>完整的语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> &#123;<span class="keyword">ALL</span> <span class="keyword">PRIVILEGES</span>|privilege &#123;, privilege … &#125;&#125;</span><br><span class="line">    <span class="keyword">ON</span> [ <span class="keyword">TABLE</span> ] tablename | viewname</span><br><span class="line">    <span class="keyword">TO</span> &#123; <span class="keyword">PUBLIC</span> | <span class="keyword">user</span>-<span class="keyword">name</span> &#123; , <span class="keyword">user</span>-<span class="keyword">name</span> … &#125; &#125;</span><br><span class="line">    [ <span class="keyword">WITH</span> <span class="keyword">GRANT</span> <span class="keyword">OPTION</span> ]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>GRANT语句是被表的拥有者使用的</p>
+<ul>
+<li>表的拥有者拥有该表的所有特权，并且不能被取消</li>
+<li>其他用户如果没有相关的权限就不能访问该表</li>
+</ul>
+</li>
+<li><p><strong>列特权（column privileges）</strong>可以通过视图来实现</p>
+</li>
+<li><p>特权（privileges）</p>
+<p>若要在一个视图上授予插入、删除或更新权限，<strong>视图必须是可更新的</strong></p>
+<ul>
+<li><p>SELECT, DELETE, INSERT</p>
+</li>
+<li><p>UPDATE [ col_name {, col_name …} ]</p>
+<p>如果UPDATE权限中没有指定列名列表，表中现有或将会有的所有列都会加上这一权限</p>
+</li>
+<li><p>REFERENCES [ col_name {, col_name …} ]</p>
+<ul>
+<li>允许用户在引用该表的表上建立外键约束</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>PUBLIC</p>
+<p>数据库中现在以及将来的用户</p>
+</li>
+<li><p>WITH GRANT OPTION</p>
+<p>可选的，允许有这个权限的用户授予其他用户同样的权限</p>
+</li>
+</ul>
+<p>例子：</p>
+<ul>
+<li><p>表特权</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">select</span> <span class="keyword">on</span> customers <span class="keyword">to</span> eoneil;</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">select</span>, <span class="keyword">update</span>, <span class="keyword">insert</span> <span class="keyword">on</span> orders <span class="keyword">to</span> eoneil;</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">privileges</span> <span class="keyword">on</span> products <span class="keyword">to</span> eoneil;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>视图特权</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">view</span> custview <span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> cid, cname, city <span class="keyword">from</span> customers;</span><br><span class="line"></span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">select</span>, <span class="keyword">delete</span>, <span class="keyword">insert</span>,</span><br><span class="line">    	<span class="keyword">update</span>(cname, city) <span class="keyword">on</span> custview</span><br><span class="line">    <span class="keyword">to</span> eoneil;</span><br></pre></td></tr></table></figure>
+
+<p>这种情况下，被授权的用户enoneil<strong>不需要拥有对基本表的相应权限</strong></p>
+</li>
+</ul>
+<h3 id="SQL中的REVOKE语句"><a href="#SQL中的REVOKE语句" class="headerlink" title="SQL中的REVOKE语句"></a>SQL中的REVOKE语句</h3><p>助记：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">REVOKE</span> ... <span class="keyword">ON</span> ... <span class="keyword">FROM</span> ... ;</span><br></pre></td></tr></table></figure>
+
+<p>完整语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">REVOKE</span> &#123; <span class="keyword">ALL</span> <span class="keyword">PRIVILEGES</span></span><br><span class="line">    	| privilege &#123;, privilege …&#125; &#125;</span><br><span class="line">    <span class="keyword">ON</span> tablename | viewname</span><br><span class="line">    <span class="keyword">FROM</span> &#123; <span class="keyword">PUBLIC</span> | <span class="keyword">user</span>-<span class="keyword">name</span> &#123;, <span class="keyword">user</span>-<span class="keyword">name</span> … &#125;&#125;</span><br><span class="line">    &#123; <span class="keyword">CASCADE</span> | RESTRICT &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="系统目录和模式"><a href="#系统目录和模式" class="headerlink" title="系统目录和模式"></a>系统目录和模式</h2><h3 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h3><h4 id="数据字典（data-dictionary）"><a href="#数据字典（data-dictionary）" class="headerlink" title="数据字典（data dictionary）"></a>数据字典（data dictionary）</h4><p>所有由SQL命令创建出来的对象都作为表的对象列举出来，并且由系统来维护</p>
+<h3 id="模式（scheme）"><a href="#模式（scheme）" class="headerlink" title="模式（scheme）"></a>模式（scheme）</h3><p><strong>模式是表、视图、索引及其他与数据库有关的对象的集合，这些对象通常是为单个用户设计的</strong>；数据库目录中表的完整名是：<code>模式名.表格名</code>（模式名通常是一个用户名）</p>
+<p>这样的命名系统允许不同的用户使用同名的表，而不会在整个数据库中造成混淆</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://i.loli.net/2019/12/25/8kiDNSKn1IXZ6Gj.png" alt title>
+                    <img src="https://i.loli.net/2019/12/25/Z5XxKfn6MsgiRNb.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
-
-
-
-
-
-
-
-
-
-
 
 
         </div>
@@ -603,7 +680,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-12-25T02:32:51.270Z" itemprop="dateUpdated">2019-12-25 10:32:51</time>
+    Last updated: <time datetime="2019-12-25T03:18:09.500Z" itemprop="dateUpdated">2019-12-25 11:18:09</time>
 </span><br>
 
 
