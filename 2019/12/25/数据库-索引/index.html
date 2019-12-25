@@ -35,7 +35,18 @@
 <meta property="og:image" content="https://i.loli.net/2019/12/25/hiF2Q781nOsZKMa.png">
 <meta property="og:image" content="https://i.loli.net/2019/12/25/78KNgAbwClcRzJS.png">
 <meta property="og:image" content="https://i.loli.net/2019/12/25/vn5RuSc4seQ6dFX.png">
-<meta property="og:updated_time" content="2019-12-25T10:15:45.489Z">
+<meta property="og:image" content="https://i.loli.net/2019/12/25/nDh5CBizUeOA7XV.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/25/CANEXM4jFJZPftD.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/25/xu8rn4GJDfCycXt.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/25/eJXpaH5GocqWIFj.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/25/d51aHty2rRM9JLq.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/25/GYdMsfLyj5CUz8k.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/25/NQrqFsU94XwiDJZ.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/25/J3ZhPuUnDpQyBco.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/25/ckiIeFx4d8aGUSu.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/25/e94CBYy2QKPiRm5.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/25/yVrkUvwDB8hGWYz.png">
+<meta property="og:updated_time" content="2019-12-25T15:12:51.101Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库-索引">
 <meta name="twitter:description" content="数据库 - 索引 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著   索引的概念数据库索引，简称索引，它是由一系列存储在磁盘上的索引项组成，每个索引项的格式是：(keyvalue, row-pointer)：  keyvalue 索引键，由行的某些列（通常是一列）中的值串接而成，是">
@@ -133,7 +144,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -174,7 +185,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据库-索引"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据库 - 索引</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#索引的概念"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">索引的概念</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#SQL中的索引语句"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">SQL中的索引语句</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#磁盘存储"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">磁盘存储</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据库存储"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">数据库存储</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#磁盘访问"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">磁盘访问</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#内存缓冲区（Memory-Buffer）"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">内存缓冲区（Memory Buffer）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#优点"><span class="post-toc-number">1.2.3.1.</span> <span class="post-toc-text">优点</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在ORACLE中创建表空间"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">在ORACLE中创建表空间</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#表空间（Tablespace）"><span class="post-toc-number">1.2.4.1.</span> <span class="post-toc-text">表空间（Tablespace）</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据存储页面和行指针"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text">数据存储页面和行指针</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#磁盘页面的行布局"><span class="post-toc-number">1.2.5.1.</span> <span class="post-toc-text">磁盘页面的行布局</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#B-Tree索引"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">B-Tree索引</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ORACLE中创建索引的语句"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">ORACLE中创建索引的语句</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据库-索引"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据库 - 索引</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#索引的概念"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">索引的概念</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#SQL中的索引语句"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">SQL中的索引语句</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#磁盘存储"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">磁盘存储</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据库存储"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">数据库存储</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#磁盘访问"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">磁盘访问</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#内存缓冲区（Memory-Buffer）"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">内存缓冲区（Memory Buffer）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#优点"><span class="post-toc-number">1.2.3.1.</span> <span class="post-toc-text">优点</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在ORACLE中创建表空间"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">在ORACLE中创建表空间</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#表空间（Tablespace）"><span class="post-toc-number">1.2.4.1.</span> <span class="post-toc-text">表空间（Tablespace）</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据存储页面和行指针"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text">数据存储页面和行指针</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#磁盘页面的行布局"><span class="post-toc-number">1.2.5.1.</span> <span class="post-toc-text">磁盘页面的行布局</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#B-Tree索引"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">B-Tree索引</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ORACLE中创建索引的语句"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">ORACLE中创建索引的语句</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#B树的结构"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">B树的结构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#B树节点的结构"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">B树节点的结构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如何创建一个索引"><span class="post-toc-number">1.3.4.</span> <span class="post-toc-text">如何创建一个索引</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Fanout-f-of-B-Tree"><span class="post-toc-number">1.3.4.1.</span> <span class="post-toc-text">Fanout f of B-Tree</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#B树的深度"><span class="post-toc-number">1.3.4.2.</span> <span class="post-toc-text">B树的深度</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#B树的动态修改"><span class="post-toc-number">1.3.5.</span> <span class="post-toc-text">B树的动态修改</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#B树（B-树）的属性"><span class="post-toc-number">1.3.6.</span> <span class="post-toc-text">B树（B+树）的属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#索引节点布局"><span class="post-toc-number">1.3.7.</span> <span class="post-toc-text">索引节点布局</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ORACLE中的位图索引（Bitmap-Index）"><span class="post-toc-number">1.3.8.</span> <span class="post-toc-text">ORACLE中的位图索引（Bitmap Index）</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#聚簇索引和非聚簇索引"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">聚簇索引和非聚簇索引</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -393,7 +404,140 @@
 </ul>
 <h3 id="ORACLE中创建索引的语句"><a href="#ORACLE中创建索引的语句" class="headerlink" title="ORACLE中创建索引的语句"></a>ORACLE中创建索引的语句</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> [ <span class="keyword">UNIQUE</span> | <span class="keyword">BITMAP</span> ] <span class="keyword">INDEX</span></span><br><span class="line">    [schema.]indexname <span class="keyword">ON</span> tablename</span><br><span class="line">    ( colname [ <span class="keyword">ASC</span> | <span class="keyword">DESC</span> ]</span><br><span class="line">    	&#123; , colname [ <span class="keyword">ASC</span> | <span class="keyword">DESC</span> ] … &#125; )</span><br><span class="line">    [ <span class="keyword">TABLESPACE</span> tblespace ] [ <span class="keyword">STORAGE</span> . . . ]</span><br><span class="line">    [ PCTFREE n ] [ ...... ]</span><br><span class="line">    [ NOSORT ]</span><br></pre></td></tr></table></figure>
 
+<ul>
+<li><p>UNIQUE | BITMAP</p>
+</li>
+<li><p>ASC | DESC</p>
+</li>
+<li><p>TABLESPACE</p>
+</li>
+<li><p>PCTFREE</p>
+</li>
+<li><p>NOSORT</p>
+<p>表明表中的行已经按索引的键值排序并按此顺序存放在磁盘上了；因此可以通过连续访问表中的行得到升序的索引项，所以排序的步骤花费的时间就省下了；ORACLE将检查键值是否真的按升序排序，如果不是则将返回一个错误的代码</p>
+</li>
+</ul>
+<p>创建索引的过程：</p>
+<ul>
+<li><p>读取磁盘上的所有行（假设为N）</p>
+</li>
+<li><p>为每一行计算出(keyvalue, rowid)对</p>
+</li>
+<li><p>将下面的列表按照keyvals排序然后存放在磁盘上</p>
+<p>(keyval1, rowid1) (keyval2, rowid2) . . . (keyvalN, rowidN)</p>
+</li>
+</ul>
+<p>如果有NOSORT子句，那么行已经处于正确的顺序，因此不需要排序</p>
+<p>例子：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/25/nDh5CBizUeOA7XV.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
 
+<h3 id="B树的结构"><a href="#B树的结构" class="headerlink" title="B树的结构"></a>B树的结构</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/25/CANEXM4jFJZPftD.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h3 id="B树节点的结构"><a href="#B树节点的结构" class="headerlink" title="B树节点的结构"></a>B树节点的结构</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/25/xu8rn4GJDfCycXt.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/25/eJXpaH5GocqWIFj.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>例子：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/25/d51aHty2rRM9JLq.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/25/GYdMsfLyj5CUz8k.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h3 id="如何创建一个索引"><a href="#如何创建一个索引" class="headerlink" title="如何创建一个索引"></a>如何创建一个索引</h3><ul>
+<li>将叶子节点上的所有索引项排序</li>
+<li>创建目录以及目录的目录</li>
+</ul>
+<h4 id="Fanout-f-of-B-Tree"><a href="#Fanout-f-of-B-Tree" class="headerlink" title="Fanout f of B-Tree"></a>Fanout f of B-Tree</h4><p>B树节点中含有的最大索引项数目f</p>
+<h4 id="B树的深度"><a href="#B树的深度" class="headerlink" title="B树的深度"></a>B树的深度</h4><p>如果所有的行数是N，那么$depth = log_f(N)$</p>
+<h3 id="B树的动态修改"><a href="#B树的动态修改" class="headerlink" title="B树的动态修改"></a>B树的动态修改</h3><p>Insert following key values into BTree ( n = 3 ):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7, 96, 41, 39, 88, 65, 55, 62</span><br></pre></td></tr></table></figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/25/NQrqFsU94XwiDJZ.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h3 id="B树（B-树）的属性"><a href="#B树（B-树）的属性" class="headerlink" title="B树（B+树）的属性"></a>B树（B+树）的属性</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/25/J3ZhPuUnDpQyBco.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h3 id="索引节点布局"><a href="#索引节点布局" class="headerlink" title="索引节点布局"></a>索引节点布局</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/25/ckiIeFx4d8aGUSu.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h3 id="ORACLE中的位图索引（Bitmap-Index）"><a href="#ORACLE中的位图索引（Bitmap-Index）" class="headerlink" title="ORACLE中的位图索引（Bitmap Index）"></a>ORACLE中的位图索引（Bitmap Index）</h3><p>如果有多个行有重复键值的时候，就可以使用位图索引了</p>
+<p>位图的思想：</p>
+<ul>
+<li><p>有N个行的表中每一行都有一个原始编号，依次是0,1,2, …, N-1（连续编号的行在磁盘上是物理连续的，而且一定有一个函数能进行原始编号到ROWID的转换）</p>
+</li>
+<li><p>位图是一个有N位的序列（每一位的值是0或者1），位图能表示任何一个ROWID的列表L：</p>
+<ul>
+<li><p>如果原始编号为k的ROWID值在列表L中，那么N位位图的第k位被设置为1，否则被设置为0</p>
+</li>
+<li><p>例如：</p>
+<p><img src="https://i.loli.net/2019/12/25/e94CBYy2QKPiRm5.png" alt></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>位图索引例子：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/25/yVrkUvwDB8hGWYz.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+
+<h2 id="聚簇索引和非聚簇索引"><a href="#聚簇索引和非聚簇索引" class="headerlink" title="聚簇索引和非聚簇索引"></a>聚簇索引和非聚簇索引</h2>
         </div>
 
         <blockquote class="post-copyright">
@@ -401,7 +545,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-12-25T10:15:45.489Z" itemprop="dateUpdated">2019-12-25 18:15:45</time>
+    最后更新时间：<time datetime="2019-12-25T15:12:51.101Z" itemprop="dateUpdated">2019-12-25 23:12:51</time>
 </span><br>
 
 
@@ -567,7 +711,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">
