@@ -119,7 +119,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/12/20/MhaGWmOLwZ4uDgd.jpg">
 <meta property="og:image" content="https://i.loli.net/2019/12/20/RPboFL7DamvAJ8M.jpg">
 <meta property="og:image" content="https://i.loli.net/2019/12/20/SLMR8W5brjYgDcX.jpg">
-<meta property="og:updated_time" content="2019-12-20T07:54:57.917Z">
+<meta property="og:updated_time" content="2019-12-25T06:20:35.082Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编译原理课堂笔记">
 <meta name="twitter:description" content="Method 4 电路状态转换图 奇偶问题  电路状态转换法解题步骤：  构造电路状态转换图首先确定状态，如果有n个元素，则存在2^n个状态。然后链接状态。示例：三个元素下的所有状态转换： 确定开始状态和结束状态开始状态和结束状态是相对的，视题目具体情况确定。1）以全是0作为结束状态，以题目要求作为开始状态。2）以题目要求作为结束状态，以全是0作为开始状态。比如对于某种语言，以a或b开头，以c结尾">
@@ -217,7 +217,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -1378,9 +1378,9 @@ $S</code> → eS | \epsilon \$<br>$E →b$</p>
                 <div class="image-caption"></div>
             </figure>
 
-
-
-<p>复杂的条件表达式转简单的条件表达式</p>
+<p>$Address(a[i, j]) = addrA + ((i-l_1)<em>n+(j-l_2))</em>w = addrA-(l_1<em>n+l_2)</em>w+(i<em>n+j)</em>w$</p>
+<p>由于C语言的数组下标以0开始，因此常量部分为0</p>
+<p>复杂的条件表达式（&amp;&amp;、||和复杂的数据对象，例如数组元素）转简单的条件表达式</p>
 <p>—— 短路码（Short-circuit Code）</p>
 <p>$(a&lt;&gt;b)&amp;&amp;(c&lt;&gt;d)$</p>
 <p>=&gt;</p>
@@ -1398,12 +1398,27 @@ $S</code> → eS | \epsilon \$<br>$E →b$</p>
 <p>$goto;L_3$</p>
 <p>$L_1:;…$</p>
 <p>$L_3:;…$</p>
+<p>复杂的数据对象：$if(a[i,j]!=x)…$</p>
 <h3 id="Backpatching（标号回填技术）"><a href="#Backpatching（标号回填技术）" class="headerlink" title="Backpatching（标号回填技术）"></a>Backpatching（标号回填技术）</h3><p>（有利于使用计算机来完成）</p>
 <ul>
-<li><p>引入记忆机制（Memory Mechanism）：记忆要回填的指令（remember the instructions backpatched）</p>
+<li><p>引入记忆机制（Memory Mechanism）：记忆要回填的指令（remember the instructions backpatched），用goto 0表示</p>
 <p>对于未知的标号，使用0来占位（因为0不是任何一个指令的编号，编号从1开始）</p>
 <p>$(5)goto;0$</p>
 </li>
+<li><p>Merge</p>
+<p>两个goto 0的转移目标地址相同</p>
+</li>
+<li><p>Backpatch</p>
+<p>修改文法，找到合适的回填时机</p>
+<p>$E=&gt;E_1;and; E_2$</p>
+<p>$E^A=&gt;E_1;and$</p>
+<p>$E=&gt;E^AE_2$</p>
+</li>
+</ul>
+<p>  $S=&gt;if;E;then;S_1|if;E;then;S_1;else;S_2$</p>
+<p>  $C=&gt;if;E;then$</p>
+<p>  $T=&gt;CS_1;else;$</p>
+<ul>
 <li><p>使用指令的编号代替标号（replace label with Instruction No.）</p>
 <p>assign  a number to each instruction</p>
 </li>
@@ -1465,7 +1480,7 @@ $S</code> → eS | \epsilon \$<br>$E →b$</p>
     <div class="content">
         
 <span class="post-time">
-    最終更新：<time datetime="2019-12-20T07:54:57.917Z" itemprop="dateUpdated">2019-12-20 15:54:57</time>
+    Last updated: <time datetime="2019-12-25T06:20:35.082Z" itemprop="dateUpdated">2019-12-25 14:20:35</time>
 </span><br>
 
 
@@ -1638,7 +1653,7 @@ $S</code> → eS | \epsilon \$<br>$E →b$</p>
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">
