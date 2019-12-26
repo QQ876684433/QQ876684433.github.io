@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>软件系统设计复习 - Part2 | 至繁归于至简 - chph&#39;s blog | steve_chph personal website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="架构">
+    <meta name="description" content="软件系统设计复习 - Part2简答，分析，设计 简答：基本概念（不考细枝末节，主要是理解） 分析题：原则（和设计模式的关系）、目的（角色的设置的目的，如果不是这样，后果怎样）、相似模式的比较、优缺点的分析 设计题：给出问题描述和约束条件，给出设计，UML图（要标准）有可能是模式的简单应用，更多是模式的变体（课上讲的）、联用（防止过度模式化、即不需要很多个模式一起使用，一般都是很明确的，模式可由可">
+<meta name="keywords" content="架构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件系统设计复习 - Part2">
+<meta property="og:url" content="http://QQ876684433.github.io/2019/12/23/软件系统设计复习 - Part2/index.html">
+<meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
+<meta property="og:description" content="软件系统设计复习 - Part2简答，分析，设计 简答：基本概念（不考细枝末节，主要是理解） 分析题：原则（和设计模式的关系）、目的（角色的设置的目的，如果不是这样，后果怎样）、相似模式的比较、优缺点的分析 设计题：给出问题描述和约束条件，给出设计，UML图（要标准）有可能是模式的简单应用，更多是模式的变体（课上讲的）、联用（防止过度模式化、即不需要很多个模式一起使用，一般都是很明确的，模式可由可">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2019/12/26/eS8GIzRPoLFMj54.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/26/anBhNfGsAlRK52c.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/26/JcH1oYiKBRn9bxC.png">
+<meta property="og:updated_time" content="2019-12-26T01:13:41.500Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="软件系统设计复习 - Part2">
+<meta name="twitter:description" content="软件系统设计复习 - Part2简答，分析，设计 简答：基本概念（不考细枝末节，主要是理解） 分析题：原则（和设计模式的关系）、目的（角色的设置的目的，如果不是这样，后果怎样）、相似模式的比较、优缺点的分析 设计题：给出问题描述和约束条件，给出设计，UML图（要标准）有可能是模式的简单应用，更多是模式的变体（课上讲的）、联用（防止过度模式化、即不需要很多个模式一起使用，一般都是很明确的，模式可由可">
+<meta name="twitter:image" content="https://i.loli.net/2019/12/26/eS8GIzRPoLFMj54.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">steve_chph</h5>
+          <a href="mailto:chph13420146901@gmail.com" title="chph13420146901@gmail.com" class="mail">chph13420146901@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/QQ876684433" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">软件系统设计复习 - Part2</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">软件系统设计复习 - Part2</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-12-23T05:53:02.000Z" itemprop="datePublished" class="page-time">
+  2019-12-23
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/笔记/">笔记</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/笔记/软件系统设计/">软件系统设计</a></li></ul></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#软件系统设计复习-Part2"><span class="post-toc-number">1.</span> <span class="post-toc-text">软件系统设计复习 - Part2</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#软件模式"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">软件模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设计模式"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">设计模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#定义"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基本要素"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">基本要素</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#分类"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">分类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设计模式与类库框架对比"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">设计模式与类库框架对比</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设计原则"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">设计原则</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#重构-Refactoring"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">重构(Refactoring)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#单一职责原则-Single-Responsibility-Principle-SRP"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">单一职责原则(Single Responsibility Principle, SRP)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开闭原则-Open-Closed-Principle-OCP"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">开闭原则(Open-Closed Principle, OCP)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#里氏代换原则-Liskov-Substitution-Principle-LSP"><span class="post-toc-number">1.3.4.</span> <span class="post-toc-text">里氏代换原则(Liskov Substitution Principle, LSP)</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-软件系统设计复习 - Part2"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">软件系统设计复习 - Part2</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-12-23 13:53:02" datetime="2019-12-23T05:53:02.000Z"  itemprop="datePublished">2019-12-23</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/笔记/">笔记</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/笔记/软件系统设计/">软件系统设计</a></li></ul></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="软件系统设计复习-Part2"><a href="#软件系统设计复习-Part2" class="headerlink" title="软件系统设计复习 - Part2"></a>软件系统设计复习 - Part2</h1><p>简答，分析，设计</p>
+<p>简答：基本概念（不考细枝末节，主要是理解）</p>
+<p>分析题：原则（和设计模式的关系）、目的（角色的设置的目的，如果不是这样，后果怎样）、相似模式的比较、优缺点的分析</p>
+<p>设计题：给出问题描述和约束条件，给出设计，UML图（要标准）有可能是模式的简单应用，更多是模式的变体（课上讲的）、联用（防止过度模式化、即不需要很多个模式一起使用，一般都是很明确的，模式可由可无时尽量就不要加上去，同一类模式的联用少见，一般是不同类的模式在多个角度上正交联用，审题很重要，看清楚核心）</p>
+<p>设计题写代码：一般是写设计中不能体现的部分，能画类图的一般不需要写代码（很重要、但是设计中无法体现的部分）</p>
+<h2 id="软件模式"><a href="#软件模式" class="headerlink" title="软件模式"></a>软件模式</h2><h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>设计模式(Design Pattern)是一套被<strong>反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结</strong>，使用设计模式是为了可重用代码、让代码更容易被他人理解、保证代码可靠性</p>
+<h3 id="基本要素"><a href="#基本要素" class="headerlink" title="基本要素"></a>基本要素</h3><p>模式名称、问题、目的、解决方案、效果、实例代码和相关设计模式</p>
+<p>其中的关键元素包括以下四个方面：</p>
+<ul>
+<li>模式名称 (Pattern name)</li>
+<li>问题 (Problem)</li>
+<li>解决方案 (Solution)</li>
+<li>效果 (Consequences)</li>
+</ul>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>根据其<strong>目的（模式是用来做什么的）</strong>来分类：</p>
+<ul>
+<li><p><strong>创建型模式</strong>主要用于创建对象</p>
+</li>
+<li><p><strong>结构型模式</strong>主要用于处理类或对象的组合（处理的是类和对象的接口）</p>
+</li>
+<li><p><strong>行为型模式</strong>主要用于描述对类或对象的交互和职责分配</p>
+</li>
+</ul>
+<p>根据<strong>范围，即模式主要是用于处理类之间关系还是处理对象之间的关系</strong>来分类：</p>
+<ul>
+<li><p><strong>类模式</strong>处理类和子类之间的关系，这些关系通过继承建立，在编译时刻就被确定下来，是属于静态的</p>
+</li>
+<li><p><strong>对象模式</strong>处理对象间的关系，这些关系在运行时刻变化，更具动态性</p>
+</li>
+</ul>
+<p>分类如下：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/26/eS8GIzRPoLFMj54.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h3 id="设计模式与类库框架对比"><a href="#设计模式与类库框架对比" class="headerlink" title="设计模式与类库框架对比"></a>设计模式与类库框架对比</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/26/anBhNfGsAlRK52c.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+
+<h2 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h2><ul>
+<li><p>对于面向对象的软件系统设计来说，在支持<strong>可维护性</strong>的同时，需要提高系统的<strong>可复用性</strong></p>
+</li>
+<li><p>软件的复用(Reuse)或重用可以提高软件的开发效率， 提高软件质量， 节约开发成本， 恰当的复用还可以改善系统的可维护性</p>
+</li>
+<li><p>面向对象设计复用的目标在于实现支持<strong>可维护性的复用</strong></p>
+</li>
+</ul>
+<h3 id="重构-Refactoring"><a href="#重构-Refactoring" class="headerlink" title="重构(Refactoring)"></a>重构(Refactoring)</h3><p>是在不改变软件现有功能的基础上， 通过调整程序代码改善软件的质量、 性能， 使其程序的设计模式和架构更趋合理， 提高软件的扩展性和维护性</p>
+<h3 id="单一职责原则-Single-Responsibility-Principle-SRP"><a href="#单一职责原则-Single-Responsibility-Principle-SRP" class="headerlink" title="单一职责原则(Single Responsibility Principle, SRP)"></a>单一职责原则(Single Responsibility Principle, SRP)</h3><p>定义：一个对象应该只包含单一的职责，并且该职责被完整地封装在一个类中</p>
+<p>另一种表述：就一个类而言，应该<strong>仅有一个引起它变化的原因</strong></p>
+<p>分析：</p>
+<ul>
+<li><p>一个类（或者大到模块，小到方法）承担的职责越多，它被复用的可能性越小</p>
+</li>
+<li><p>类的职责主要包括两个方面： 数据职责和行为职责</p>
+<ul>
+<li>数据职责通过其属性来体现</li>
+<li>行为职责通过其方法来体现</li>
+</ul>
+</li>
+<li><p>单一职责原则是实现高内聚、低耦合的指导方针</p>
+</li>
+</ul>
+<h3 id="开闭原则-Open-Closed-Principle-OCP"><a href="#开闭原则-Open-Closed-Principle-OCP" class="headerlink" title="开闭原则(Open-Closed Principle, OCP)"></a>开闭原则(Open-Closed Principle, OCP)</h3><p>一个软件实体应当<strong>对扩展开放，对修改关闭</strong>。也就是说在设计一个模块的时候，应当使这个模块可以在<strong>不被修改的前提下被扩展</strong>，即实现在不修改源代码的情况下改变这个模块的行为</p>
+<p>分析：</p>
+<ul>
+<li><p><strong>抽象化</strong>是开闭原则的关键</p>
+</li>
+<li><p>开闭原则还可以通过一个更加具体的“对可变性封装原则”来描述，<strong>对可变性封装原则(Principle of Encapsulation ofVariation, EVP)</strong>要求<strong>找到系统的可变因素并将其封装起来</strong></p>
+<p>例如可以将变化的部分（实现的部分）放入元数据，把不变的部分（抽象部分）写入代码</p>
+<p><img src="https://i.loli.net/2019/12/26/JcH1oYiKBRn9bxC.png" alt></p>
+</li>
+</ul>
+<h3 id="里氏代换原则-Liskov-Substitution-Principle-LSP"><a href="#里氏代换原则-Liskov-Substitution-Principle-LSP" class="headerlink" title="里氏代换原则(Liskov Substitution Principle, LSP)"></a>里氏代换原则(Liskov Substitution Principle, LSP)</h3><p>定义：所有引用基类（父类）的地方必须能<strong>透明地</strong>使用其子类的对象</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-12-26T01:13:41.500Z" itemprop="dateUpdated">2019-12-26 09:13:41</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/12/23/软件系统设计复习 - Part2/" target="_blank" rel="external">http://QQ876684433.github.io/2019/12/23/软件系统设计复习 - Part2/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://QQ876684433.github.io">
+            <img src="/img/avatar.jpg" alt="steve_chph">
+            steve_chph
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/架构/">架构</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/12/23/软件系统设计复习 - Part2/&title=《软件系统设计复习 - Part2》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/12/23/软件系统设计复习 - Part2/&title=《软件系统设计复习 - Part2》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/12/23/软件系统设计复习 - Part2/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《软件系统设计复习 - Part2》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/12/23/软件系统设计复习 - Part2/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/12/23/软件系统设计复习 - Part2/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/12/25/数据库-索引/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">数据库-索引</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/12/22/数据库-数据库设计/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">数据库-数据库设计</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢你~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>steve_chph &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/12/23/软件系统设计复习 - Part2/&title=《软件系统设计复习 - Part2》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/12/23/软件系统设计复习 - Part2/&title=《软件系统设计复习 - Part2》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/12/23/软件系统设计复习 - Part2/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《软件系统设计复习 - Part2》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/12/23/软件系统设计复习 - Part2/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/12/23/软件系统设计复习 - Part2/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACu0lEQVR42u3aQW4jMQwEQP//01lgTwsEtrtJKfECNafAsGdUOgyZph6P+Pr6e33/5N/Pv55cr+/z+rff7/+4ceHh4eGNlp7fOnlkvqzXG5R/89mv8PDw8O7x2gcnL/12m5JP8jXj4eHhfQJv1sHmXW6yWXh4eHj/F+/1ol+XhHwj2iKBh4eH91u8JIyI/vkP2uV9qHEla8HDw8Pr1lMMwD7h74vzPTw8PLzFVD0JC24UjPZowtOn4+Hh4V3gJYFpvri8/Z1t0yyewMPDw7vBS0LV/JU962z347E6zMXDw8Nb8Iph0rXysI9Cnm40Hh4e3lHePjxtG99ZQ5yT8PDw8G7zzi5ocxRgFjdEZQYPDw/vKK9thfPDT7OQYhZ2RP8r4OHh4R3lbZD1IGpUkIbzLDw8PLwLvBbZvrjzJjhv0OvDXnh4eHhHee04aj/Qal/0q+3Dw8PDu8CbRbdJiNBGEm3IW1x4eHh413j5jeqefT1y2xzYwsPDwzvLawOF/DH7w1ibmPjpmTI8PDy8NW8zWEpihfbzvFkflg08PDy8Na+NFdpYdjbcyjf6zffx8PDwLvPaaXtbc2YtexIBF0cH8PDw8Na81ZGmeLiVj9aSAwF1PIGHh4d3lDcLSdugtm2U2wLwtNjg4eHhXeOdanBnL/22lc8jDzw8PLzbvOHLNwb8fKiBh4eHd4OXt7/tS7yNhvPxW11C8PDw8I7y2pg1LySz8X9yKOExqzl4eHh4F3j70dfswEFSKmbRMB4eHt4N3iYwbW93toScjYPx8PDwWl5SDE613W1pmR1HwMPDw/sZ3qwYJC/o14veDMOiWoeHh4f3q7x2uDUbYrXreXNPPDw8vI/htcFBS0qa9SKMwMPDw7vAS8KI/KZJWJA30G1IgYeHh3ebNxuAzQ4Q5FvWNugHjmfh4eHhvef9AbQ6c6hwhSgcAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'chph个人博客';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Welcome to chph's blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
