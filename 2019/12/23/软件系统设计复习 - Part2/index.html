@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/12/26/anBhNfGsAlRK52c.png">
 <meta property="og:image" content="https://i.loli.net/2019/12/26/JcH1oYiKBRn9bxC.png">
 <meta property="og:image" content="https://i.loli.net/2019/12/26/X96ZlVCqDaSYGAf.png">
-<meta property="og:updated_time" content="2019-12-26T02:14:29.937Z">
+<meta property="og:updated_time" content="2019-12-26T05:52:21.354Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="软件系统设计复习 - Part2">
 <meta name="twitter:description" content="软件系统设计复习 - Part2简答，分析，设计 简答：基本概念（不考细枝末节，主要是理解） 分析题：原则（和设计模式的关系）、目的（角色的设置的目的，如果不是这样，后果怎样）、相似模式的比较、优缺点的分析 设计题：给出问题描述和约束条件，给出设计，UML图（要标准）有可能是模式的简单应用，更多是模式的变体（课上讲的）、联用（防止过度模式化、即不需要很多个模式一起使用，一般都是很明确的，模式可由可">
@@ -172,7 +172,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#软件系统设计复习-Part2"><span class="post-toc-number">1.</span> <span class="post-toc-text">软件系统设计复习 - Part2</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#软件模式"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">软件模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设计模式"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">设计模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#定义"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基本要素"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">基本要素</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#分类"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">分类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设计模式与类库框架对比"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">设计模式与类库框架对比</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设计原则"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">设计原则</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#重构-Refactoring"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">重构(Refactoring)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#单一职责原则-Single-Responsibility-Principle-SRP"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">单一职责原则(Single Responsibility Principle, SRP)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开闭原则-Open-Closed-Principle-OCP"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">开闭原则(Open-Closed Principle, OCP)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#里氏代换原则-Liskov-Substitution-Principle-LSP"><span class="post-toc-number">1.3.4.</span> <span class="post-toc-text">里氏代换原则(Liskov Substitution Principle, LSP)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#依赖倒转原则-Dependence-Inversion-Principle-DIP"><span class="post-toc-number">1.3.5.</span> <span class="post-toc-text">依赖倒转原则(Dependence Inversion Principle, DIP)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#接口隔离原则-Interface-Segregation-Principle-ISP"><span class="post-toc-number">1.3.6.</span> <span class="post-toc-text">接口隔离原则(Interface Segregation Principle, ISP)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#合成复用原则-Composite-Reuse-Principle-CRP"><span class="post-toc-number">1.3.7.</span> <span class="post-toc-text">合成复用原则(Composite Reuse Principle, CRP)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#迪米特法则-Law-of-Demeter-LoD"><span class="post-toc-number">1.3.8.</span> <span class="post-toc-text">迪米特法则(Law of Demeter, LoD)</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#软件系统设计复习-Part2"><span class="post-toc-number">1.</span> <span class="post-toc-text">软件系统设计复习 - Part2</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#软件模式"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">软件模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设计模式"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">设计模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#定义"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基本要素"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">基本要素</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#分类"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">分类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设计模式与类库框架对比"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">设计模式与类库框架对比</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设计原则"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">设计原则</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#重构-Refactoring"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">重构(Refactoring)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#单一职责原则-Single-Responsibility-Principle-SRP"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">单一职责原则(Single Responsibility Principle, SRP)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开闭原则-Open-Closed-Principle-OCP"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">开闭原则(Open-Closed Principle, OCP)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#里氏代换原则-Liskov-Substitution-Principle-LSP"><span class="post-toc-number">1.3.4.</span> <span class="post-toc-text">里氏代换原则(Liskov Substitution Principle, LSP)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#依赖倒转原则-Dependence-Inversion-Principle-DIP"><span class="post-toc-number">1.3.5.</span> <span class="post-toc-text">依赖倒转原则(Dependence Inversion Principle, DIP)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#接口隔离原则-Interface-Segregation-Principle-ISP"><span class="post-toc-number">1.3.6.</span> <span class="post-toc-text">接口隔离原则(Interface Segregation Principle, ISP)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#合成复用原则-Composite-Reuse-Principle-CRP"><span class="post-toc-number">1.3.7.</span> <span class="post-toc-text">合成复用原则(Composite Reuse Principle, CRP)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#迪米特法则-Law-of-Demeter-LoD"><span class="post-toc-number">1.3.8.</span> <span class="post-toc-text">迪米特法则(Law of Demeter, LoD)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#小结"><span class="post-toc-number">1.3.9.</span> <span class="post-toc-text">小结</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设计模式-1"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">设计模式</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -359,11 +359,21 @@
 <li>在类的划分上，应当尽量创建松耦合的类，类之间的耦合度越低，就越有利于复用，一个处在松耦合中的类一旦被修改，不会对关联的类造成太大波及；</li>
 <li>在类的结构设计上，每一个类都应当尽量降低其成员变量和成员函数的访问权限；</li>
 <li>在类的设计上，只要有可能， 一个类型应当设计成不变类；</li>
-<li>在对其他类的引用上， 一个对象对其他对象的引用应当降到最低</li>
+<li>在对其他类的引用上， <strong>一个对象对其他对象的引用应当降到最低</strong></li>
 </ul>
 </li>
 </ul>
-
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ul>
+<li><p>目标：开闭原则</p>
+</li>
+<li><p>指导：最小知识原则</p>
+</li>
+<li><p>基础：单一职责原则、可变性封装原则</p>
+</li>
+<li><p>实现：依赖倒转原则、合成复用原则、里氏代换原则、接口隔离原则</p>
+</li>
+</ul>
+<h2 id="设计模式-1"><a href="#设计模式-1" class="headerlink" title="设计模式"></a>设计模式</h2>
         </div>
 
         <blockquote class="post-copyright">
@@ -371,7 +381,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-12-26T02:14:29.937Z" itemprop="dateUpdated">2019-12-26 10:14:29</time>
+    Last updated: <time datetime="2019-12-26T05:52:21.354Z" itemprop="dateUpdated">2019-12-26 13:52:21</time>
 </span><br>
 
 
