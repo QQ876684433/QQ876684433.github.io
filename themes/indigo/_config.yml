@@ -25,8 +25,15 @@ menu:
 #    url: https://github.com/QQ876684433
 #    target: _blank
   link:
-    text: 测试
-    url: /custom
+#    text: 测试
+#    url: /custom
+    text: Projects
+    url: http://107.182.188.221:23333/
+  demo:
+    #    text: 测试
+    #    url: /custom
+    text: Projects
+    url: https://107.182.188.221:23334/
 
 # 你的头像url
 avatar: /img/avatar.jpg
@@ -118,10 +125,10 @@ gitment: false
 
 # use gitalk://github.com/gitalk/gitalk
 gitalk: false
-#  owner: 
-#  repo: 
-#  client_id: 
-#  client_secret: 
+#  owner:
+#  repo:
+#  client_id:
+#  client_secret:
 
 # Valine Comment system. https://valine.js.org
 valine:
