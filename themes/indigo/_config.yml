@@ -27,12 +27,12 @@ menu:
   link:
 #    text: 测试
 #    url: /custom
-    text: Projects
+    text: Project(HTTP)
     url: http://107.182.188.221:23333/
   demo:
     #    text: 测试
     #    url: /custom
-    text: Projects
+    text: Project(HTTPS)
     url: https://107.182.188.221:23334/
 
 # 你的头像url
