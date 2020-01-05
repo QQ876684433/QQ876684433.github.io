@@ -36,9 +36,11 @@
 <meta property="og:image" content="https://i.loli.net/2019/10/22/rXlRbBpLfgZJNEu.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/22/ywjF8oRn42peHrc.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/22/MUkJDqIZuyFw9Ng.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/05/lDvJDH.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/22/VXsY1jQ8m4TPZdf.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/05/lDxJzT.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/23/3COt2zYwkmI5XRL.png">
-<meta property="og:updated_time" content="2019-10-23T07:12:45.518Z">
+<meta property="og:updated_time" content="2020-01-05T13:59:31.483Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库课堂笔记（2019-10-22）">
 <meta name="twitter:description" content="数据库课堂笔记 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著 《数据库系统概论》第五版 - 王珊 萨师煊 著 《数据库系统概念》   数据库课堂笔记（2019-10-22）Ch4. Object-Relational SQL (Oracle)Object Types（对象类型）类">
@@ -143,7 +145,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -246,7 +248,7 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TYPE</span> dependents_t <span class="keyword">AS</span> <span class="keyword">TABLE</span> <span class="keyword">OF</span> person_t;</span><br></pre></td></tr></table></figure>
 
 <p>这样就可以通过表类型（dependents_t）来定义新的表，而dependents_t则形成一个嵌套表：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> employees (</span><br><span class="line">    eid <span class="built_in">int</span>,</span><br><span class="line">    eperson person_t,</span><br><span class="line">    dependents dependents_t,</span><br><span class="line">    primary <span class="keyword">key</span> (eid)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> employees (</span><br><span class="line">    eid <span class="built_in">int</span>,</span><br><span class="line">    eperson person_t,</span><br><span class="line">    dependents dependents_t,</span><br><span class="line">    primary <span class="keyword">key</span> (eid)</span><br><span class="line">) <span class="keyword">nested</span> <span class="keyword">table</span> dependents <span class="keyword">store</span> <span class="keyword">as</span> dependents_tab;</span><br></pre></td></tr></table></figure>
 
 <p>如上，dependents属性的类型就是一个表类型（dependents_t），它是employees的嵌套表</p>
 <figure class="image-bubble">
@@ -264,9 +266,19 @@
 <li><p>嵌套表属性不能直接使用统计函数，比如count(…)等，同样需要使用转换函数table(…)</p>
 <p><img src="https://i.loli.net/2019/10/22/MUkJDqIZuyFw9Ng.png" alt></p>
 </li>
-<li><p>Oracle 数据库没有提供 nested table 的相等比较运算，但是提供了单个对象的相等比较功能</p>
+<li><p>Oracle 数据库没有提供 nested table 的相等比较运算（可以使用 IN 操作符来实现某些需要通过 nested table 进行的查询功能）</p>
+<p><img src="https://s2.ax1x.com/2020/01/05/lDvJDH.png" alt="lDvJDH.png"></p>
+</li>
+<li><p>Oracle提供了单个对象的相等比较功能</p>
 <p><img src="https://i.loli.net/2019/10/22/VXsY1jQ8m4TPZdf.png" alt></p>
 </li>
+<li><p>Oracle 不支持直接对嵌套表属性的统计查询功能， 即下述的统计查询操作是错误的</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(e.dependents)</span><br><span class="line"><span class="keyword">from</span> employees e</span><br><span class="line"><span class="keyword">where</span> e.eid = <span class="number">101</span>;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<ul>
 <li><p>Oracle是支持嵌套表与表自身的联接查询的</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> e.eid, d.ssno</span><br><span class="line"><span class="keyword">from</span> employees e, <span class="keyword">table</span>(e.dependents) d</span><br></pre></td></tr></table></figure>
 
@@ -290,6 +302,14 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> * <span class="keyword">from</span> t_A a,t_B b <span class="keyword">where</span> a.id(+)=b.id;</span><br></pre></td></tr></table></figure>
 
 <p>而对于全外联接，左表和右表都不做限制，所有的记录都显示，两表不足的地方均为NULL。 <strong>全外连接不支持（+）写法</strong>。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s2.ax1x.com/2020/01/05/lDxJzT.png" alt="lDxJzT.png" title>
+                </div>
+                <div class="image-caption">lDxJzT.png</div>
+            </figure>
+
 <h5 id="嵌套游标（Nested-Cursors）"><a href="#嵌套游标（Nested-Cursors）" class="headerlink" title="嵌套游标（Nested Cursors）"></a>嵌套游标（Nested Cursors）</h5><p>可以使用嵌套游标来实现对嵌套表的查询，例如对于普通的查询操作：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> e.eid, d.ssno <span class="keyword">as</span> dep_sso</span><br><span class="line"><span class="keyword">from</span> employees e, <span class="keyword">table</span>(e.dependents) d</span><br><span class="line"><span class="keyword">where</span> d.age &lt; <span class="number">16</span>;</span><br></pre></td></tr></table></figure>
 
@@ -310,7 +330,18 @@
 
 
 
-<h4 id="Array-Types（数组类型）"><a href="#Array-Types（数组类型）" class="headerlink" title="Array Types（数组类型）"></a>Array Types（数组类型）</h4><p>嵌套表类型（Nested Table）和数组类型（VARRAY）的对比：</p>
+<h4 id="Array-Types（数组类型）"><a href="#Array-Types（数组类型）" class="headerlink" title="Array Types（数组类型）"></a>Array Types（数组类型）</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">type</span> extensions_t <span class="keyword">as</span> <span class="keyword">varray</span>(<span class="number">4</span>) <span class="keyword">of</span> <span class="built_in">int</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Type name: extensions_t</li>
+<li>Element type: int</li>
+<li><strong>Maximum number: 4</strong></li>
+</ul>
+<p>使用 Array Types 定义表中的属性：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> phonebook (</span><br><span class="line">    phperson person_t,</span><br><span class="line">    extensions extensions_t</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p><u><em>可以使用 table ( … ) 将一个VARRAY属性转换成一张嵌套表</em></u></p>
+<p>嵌套表类型（Nested Table）和数组类型（VARRAY）的对比：</p>
 <table>
 <thead>
 <tr>
@@ -348,7 +379,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-10-23T07:12:45.518Z" itemprop="dateUpdated">2019-10-23 15:12:45</time>
+    最終更新：<time datetime="2020-01-05T13:59:31.483Z" itemprop="dateUpdated">2020-01-05 21:59:31</time>
 </span><br>
 
 
@@ -521,11 +552,11 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
         </p>
     </div>
     <div class="bottom">
-        <p><span>steve_chph &copy; 2015 - 2019</span>
+        <p><span>steve_chph &copy; 2015 - 2020</span>
             <span>
                 
                 Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>

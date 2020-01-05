@@ -36,8 +36,10 @@
 <meta property="og:image" content="https://i.loli.net/2019/10/15/8JBQ6jSWw1ehUpH.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/15/zAnDOIjicFoG1wK.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/15/JN4XUpO1E6GwadZ.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/05/lDHTAK.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/15/OPnxQpyh635CqWk.png">
-<meta property="og:updated_time" content="2019-10-22T06:15:38.487Z">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/05/lDq0oV.png">
+<meta property="og:updated_time" content="2020-01-05T13:25:02.279Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库课堂笔记（2019-10-15）">
 <meta name="twitter:description" content="数据库课堂笔记 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著 《数据库系统概论》第五版 - 王珊 萨师煊 著 《数据库系统概念》   数据库课堂笔记（2019-10-15）Ch4. Object-Relational SQL (Oracle)对象关系型数据表相关例子如下：">
@@ -142,7 +144,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -243,7 +245,7 @@
 <blockquote>
 <p>这些数据类型一经定义， 便以持久形式保存在数据库系统中， 用户可以<strong>像使用系统内置的数据类型</strong>一样使用这些复杂的数据类型， 以此来扩充系统的数据类型</p>
 </blockquote>
-<p>创建对象类型的语法跟创建表的语法差不多，只不过对象类型的定义中没有约束条件的定义（constraint define），创建一个person_t的类型如下：</p>
+<p>创建对象类型的语法跟创建表的语法差不多，只不过<strong>对象类型的定义中没有约束条件的定义（constraint define）</strong>，创建一个person_t的类型如下：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TYPE</span> person_t <span class="keyword">AS</span> <span class="keyword">OBJECT</span></span><br><span class="line">(</span><br><span class="line">    ssno <span class="built_in">int</span>,</span><br><span class="line">    pname name_t,</span><br><span class="line">    age <span class="built_in">int</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 
 <h5 id="对象类型的使用"><a href="#对象类型的使用" class="headerlink" title="对象类型的使用"></a>对象类型的使用</h5><p>自定义的对象类型可以有以下用法：</p>
@@ -310,7 +312,7 @@
                 <div class="image-caption"></div>
             </figure>
 
-<p>对象值的查询（使用连续的点运算符）：</p>
+<p>对象值的查询（使用<strong>连续的点运算符</strong>）：</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -324,7 +326,7 @@
 <li><p>修改整个对象值</p>
 <p>可以用对象值直接给对象属性进行赋值（即直接使用对象构造函数构造的新对象值替换表中的对象属性值），例如：</p>
 <p><img src="https://i.loli.net/2019/10/15/8JBQ6jSWw1ehUpH.png" alt></p>
-<p>如果某张表是基于“对象类型”创建的，那么可以<strong>用“对象”值直接修改整个元组</strong></p>
+<p>如果某张表是<strong>基于“对象类型”创建</strong>的，那么可以<strong>用“对象”值直接修改整个元组</strong></p>
 <p><img src="https://i.loli.net/2019/10/15/zAnDOIjicFoG1wK.png" alt></p>
 </li>
 <li><p>修改对象中成员属性的值</p>
@@ -341,10 +343,19 @@
 </ul>
 <p>在使用含有REF类型的对象类型(Object Type)来创建关系表时， <strong>必须使用Scope for子句来限制REF属性的取值范</strong>围。</p>
 <p>定义<strong>类型之间的引用关系</strong>的基本方法：</p>
+<ul>
+<li>先定义一个对象类型X</li>
+<li>然后再定义一个对象类型Y， 在类型Y中含有一个对类型X的引用属性(REF属性)，从而构成了类型X与类型Y之间的引用关系</li>
+<li>其中：<ul>
+<li>X 被称为‘基本对象类型’ (被引用类型)</li>
+<li>Y 被称为‘引用类型’</li>
+</ul>
+</li>
+</ul>
 <p>​    假设当前已经定义了三个对象类型customer_t, agents_t, products_t，那么可以通过如下方式来定义<strong>类型之间的引用关系</strong>：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">create type order_t as object (</span><br><span class="line">    ordno int,</span><br><span class="line">    month char(3),</span><br><span class="line">    cid char(4),</span><br><span class="line">    aid char(3),</span><br><span class="line">    pid char(3),</span><br><span class="line">    qty int,</span><br><span class="line">    dollars double precision,</span><br><span class="line">    ordcust ref customer_t,</span><br><span class="line">    ordagent ref agent_t,</span><br><span class="line">    ordprod ref product_t</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 
-<p>最后三行新增三个REF属性， 分别引用（指向） 三个不同的元组对象（Row Object）</p>
+<p>最后三行新增三个REF属性， 分别引用（指向） 三个不同的<strong>元组对象（Row Object）</strong></p>
 <p>创建<strong>含有引用类型的关系表</strong>的基本方法：</p>
 <ul>
 <li><p>先使用基本对象类型创建相应的基本关系表</p>
@@ -354,10 +365,11 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> orders <span class="keyword">of</span> order_t (</span><br><span class="line">    primary <span class="keyword">key</span> (ordno),</span><br><span class="line">    <span class="keyword">scope</span> <span class="keyword">for</span> (ordcust) <span class="keyword">is</span> customers,</span><br><span class="line">    <span class="keyword">scope</span> <span class="keyword">for</span> (ordagent) <span class="keyword">is</span> agents,</span><br><span class="line">    <span class="keyword">scope</span> <span class="keyword">for</span> (ordprod) <span class="keyword">is</span> products</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 
 <p>其中<code>scope for</code>是用来限制REF属性的取值范围的，在创建关系表时如果表中含有引用类型，那么必须使用<code>scope for</code>来指定属性要引用的对象</p>
+<p><img src="https://s2.ax1x.com/2020/01/05/lDHTAK.png" alt="lDHTAK.png"></p>
 </li>
 </ul>
 <p>根据元组之间的REF引用关系进行查询和普通的查询是一样的，都可以使用点运算符，例如：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> o.ordcust.cname,</span><br><span class="line">				o.ordagent.aname</span><br><span class="line"><span class="keyword">from</span> orders o</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> o.ordcust.cname,</span><br><span class="line">				o.ordagent.aname</span><br><span class="line"><span class="keyword">from</span> orders o</span><br><span class="line"><span class="keyword">where</span> o.dollars &gt; <span class="number">200.00</span>;</span><br></pre></td></tr></table></figure>
 
 <p>其中ordcust和ordagent都是引用类型</p>
 <p>引用类型两个函数和两个谓词：</p>
@@ -370,8 +382,9 @@
 <p>Ø <strong>The object id assigned can be seen by using ref function.</strong></p>
 <p>reference：<a href="http://oracle-knowledgeshare.blogspot.com/2011/09/ref-deref-value.html" target="_blank" rel="noopener">http://oracle-knowledgeshare.blogspot.com/2011/09/ref-deref-value.html</a></p>
 </blockquote>
-<p>从上面可以看出，ref实际返回的是引用对象的id，因此如果需要查询并查看引用对象的内容，需要使用下面要介绍的deref。可以用来判断一个引用类型的引用对象是不是给定的对象，例如：</p>
+<p>从上面可以看出，<strong>ref实际返回的是引用对象的id</strong>，因此如果需要查询并查看引用对象的内容，需要使用下面要介绍的deref。可以用来判断一个引用类型的引用对象是不是给定的对象，例如：</p>
 <p><img src="https://i.loli.net/2019/10/15/OPnxQpyh635CqWk.png" alt></p>
+<p><img src="https://s2.ax1x.com/2020/01/05/lDq0oV.png" alt="lDq0oV.png"></p>
 </li>
 <li><p>返回引用指针所指向对象的值: DEREF(……)</p>
 <blockquote>
@@ -390,7 +403,7 @@
 <ul>
 <li>用于判断所引用的元组对象是否存在</li>
 <li>如果<strong>所引用的元组对象不存在， 那么该谓词返回逻辑真(TRUE)</strong>， 否则返回逻辑假(FALSE)</li>
-<li>该谓词主要用于检查那些错误的对象引用指针</li>
+<li>该谓词主要用于检查那些<strong>错误的对象引用指针</strong></li>
 </ul>
 <p>例如：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> o.cid <span class="keyword">from</span> orders o</span><br><span class="line"><span class="keyword">where</span> o.ordcust <span class="keyword">IS</span> DANGLING;</span><br></pre></td></tr></table></figure>
@@ -398,11 +411,11 @@
 <p>等价于</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> o.cid <span class="keyword">from</span> orders o</span><br><span class="line"><span class="keyword">where</span> o.ordcust &lt;&gt;</span><br><span class="line">    (<span class="keyword">select</span> <span class="keyword">ref</span>(c) <span class="keyword">from</span> customers c</span><br><span class="line">    	<span class="keyword">where</span> c.cid = o.cid)</span><br></pre></td></tr></table></figure>
 
-<p>即可以用来检索cid和引用的对象是否一致</p>
+<p>即可以用来<strong>检索cid和引用的对象是否一致</strong></p>
 </li>
 <li><p>IS NULL</p>
 <ul>
-<li>可以使用 IS NULL 谓词来查找取值为空(NULL) 的 <strong>REF 属性</strong>，但是‘is dangling’不等于‘is null’</li>
+<li>可以使用 IS NULL 谓词来查找<strong>取值为空(NULL)</strong> 的 <strong>REF 属性</strong>，但是‘is dangling’不等于‘is null’</li>
 <li>对象引用指针的使用规则<ul>
 <li>A dangling REF is non-null but useless</li>
 <li>If o.ordcust is null or dangling, then o.ordcust.cname is null</li>
@@ -423,7 +436,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-10-22T06:15:38.487Z" itemprop="dateUpdated">2019-10-22 14:15:38</time>
+    最終更新：<time datetime="2020-01-05T13:25:02.279Z" itemprop="dateUpdated">2020-01-05 21:25:02</time>
 </span><br>
 
 
@@ -596,11 +609,11 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
         </p>
     </div>
     <div class="bottom">
-        <p><span>steve_chph &copy; 2015 - 2019</span>
+        <p><span>steve_chph &copy; 2015 - 2020</span>
             <span>
                 
                 Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
