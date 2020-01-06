@@ -52,7 +52,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/09/15/2YerOAFicub759g.png">
 <meta property="og:image" content="https://i.loli.net/2019/09/15/njuJqea9ZcNTSfA.png">
 <meta property="og:image" content="https://i.loli.net/2019/09/15/TbAfJF4jM5exQk6.png">
-<meta property="og:updated_time" content="2019-09-15T05:02:14.666Z">
+<meta property="og:updated_time" content="2020-01-06T03:46:43.329Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库课堂笔记（2019-09-03）">
 <meta name="twitter:description" content="数据库课堂笔记 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著 《数据库系统概论》第五版 - 王珊 萨师煊 著 《数据库系统概念》   数据库课堂笔记（2019-09-03）Ch1. Introduction术语 数据库管理系统（DataBase Management System">
@@ -157,7 +157,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -240,14 +240,14 @@
 <p>The <a href="https://en.wikipedia.org/wiki/Database#Database_management_system" target="_blank" rel="noopener">database management system</a> (DBMS) is the <a href="https://en.wikipedia.org/wiki/Software" target="_blank" rel="noopener">software</a> that interacts with <a href="https://en.wikipedia.org/wiki/End_user" target="_blank" rel="noopener">end users</a>, applications, and the database itself to capture and analyze the data.</p>
 <p>—— from wikipedia</p>
 </blockquote>
-<p>简单理解就是，数据库管理系统是终端用户、应用程序同数据库本身交互的软件</p>
+<p>简单理解就是，数据库管理系统是终端用户、应用程序同<strong>数据库本身</strong>交互的软件</p>
 </li>
 <li><p>数据库（Database）</p>
 <blockquote>
 <p>A <strong>database</strong> is an organized collection of <a href="https://en.wikipedia.org/wiki/Data_(computing)" target="_blank" rel="noopener">data</a>, generally stored and accessed electronically from a computer system. Where databases are more complex they are often developed using formal <a href="https://en.wikipedia.org/wiki/Database#Design_and_modeling" target="_blank" rel="noopener">design and modeling</a> techniques.</p>
 <p>—— from wikipedia</p>
 </blockquote>
-<p>简单理解就是，数据库是一个有组织的数据集合</p>
+<p>简单理解就是，数据库是<strong>一个有组织的数据集合</strong></p>
 </li>
 <li><p>数据库用户（DataBase User）</p>
 <ul>
@@ -259,7 +259,7 @@
 </li>
 <li><p>应用程序员——编写菜单程序的程序员</p>
 </li>
-<li><p>数据库管理员（Database Administrator，DBA）——管理DBMS的专家</p>
+<li><p>数据库管理员（Database Administrator，<strong>DBA）——管理DBMS的专家</strong></p>
 <p><img src="https://i.loli.net/2019/09/03/EOwYuHP6gxaQci4.png" alt></p>
 </li>
 </ul>
@@ -275,10 +275,11 @@
 
 <p>主要有<strong>两层C/S架构</strong>和<strong>三层B/S架构</strong>两种：</p>
 <ul>
-<li><p>两层C/S架构：数据库和DBMS运行在数据库服务器，数据库应用程序运行在客户机中，两者之间通过局域网实现数据访问（<em>但是更多的时候， 数据库服务器及其应用程序可能分布在距</em><br><em>离遥远的不同地方，这是得使用三层B/S架构来解决</em>）</p>
+<li>两层C/S架构：数据库和DBMS运行在数据库服务器，数据库应用程序运行在客户机中，两者之间通过局域网实现数据访问（<em>但是更多的时候， 数据库服务器及其应用程序可能分布在距离遥远的不同地方，这时得使用三层B/S架构来解决</em>）</li>
+</ul>
 <p><img src="https://i.loli.net/2019/09/03/mv7GcaV85YwBzZp.png" alt></p>
-</li>
-<li><p>三层B/S架构：数据库和DBMS运行在数据库服务器中，<br>数据库应用程序运行在应用服务器（也称“Web服务器”）<br>中， 用户客户端只需要安装常用的浏览器， 负责接收用户<br>输入和结果展示</p>
+<ul>
+<li><p>三层B/S架构：数据库和DBMS运行在数据库服务器中，数据库应用程序运行在应用服务器（也称“Web服务器”）中， 用户客户端只需要安装常用的浏览器， 负责接收用户输入和结果展示</p>
 <p><img src="https://i.loli.net/2019/09/03/NUSipYC8havWjgk.png" alt></p>
 </li>
 </ul>
@@ -308,14 +309,15 @@
 <li>有且只有一个结点没有双亲结点，这个结点称为根结点</li>
 <li>根以外的其他结点有且只有一个双亲结点</li>
 </ul>
-<p>层次模型中，每个结点表示一个记录类型，记录类型之间的联系用结点之间的有向边表示，这种联系是父子之间的一对多的联系，可以看做有向树结构</p>
-<h5 id="网状数据模型（Network-Data-Model）"><a href="#网状数据模型（Network-Data-Model）" class="headerlink" title="网状数据模型（Network Data Model）"></a>网状数据模型（Network Data Model）</h5><p>满足两个条件：</p>
+<p>层次模型中，每个结点表示一个记录类型，记录类型之间的联系用结点之间的有向边表示，这种联系是父子之间的一对多的联系，可以看做<strong>有向树结构</strong></p>
+<h5 id="网状数据模型（Network-Data-Model）"><a href="#网状数据模型（Network-Data-Model）" class="headerlink" title="网状数据模型（Network Data Model）"></a>网状数据模型（Network Data Model）</h5><p>即有向无环图</p>
+<p>满足两个条件：</p>
 <ul>
 <li>允许一个以上的结点无双亲</li>
 <li>一个结点可以有多于一个的双亲</li>
 </ul>
 <p>层次模型中子女结点与双亲结点的关系是唯一的，在网状模型中，这种关系可以不唯一</p>
-<h5 id="关系模型（Relational-Model）"><a href="#关系模型（Relational-Model）" class="headerlink" title="关系模型（Relational Model）"></a>关系模型（Relational Model）</h5><p>从用户的观点看，关系模型由一组关系组成，每个关系的数据结构都是一张规范化的二维表：</p>
+<h5 id="关系模型（Relational-Model）"><a href="#关系模型（Relational-Model）" class="headerlink" title="关系模型（Relational Model）"></a>关系模型（Relational Model）</h5><p>从用户的观点看，关系模型由一组关系组成，每个关系的数据结构都是一张<strong>规范化的二维表</strong>：</p>
 <ul>
 <li>关系：一个关系对应通常说的一张表</li>
 <li>元组：表中的一行即为一个元组</li>
@@ -382,9 +384,9 @@
 
 <h4 id="数据库各部分的命名"><a href="#数据库各部分的命名" class="headerlink" title="数据库各部分的命名"></a>数据库各部分的命名</h4><p>由于数据库的行是经常改变的，而列通常来说不会改变，一般推荐数据库用户使用列来进行数据库查询</p>
 <h5 id="程序数据独立性（Program-Data-Independence-）"><a href="#程序数据独立性（Program-Data-Independence-）" class="headerlink" title="程序数据独立性（Program-Data Independence ）"></a>程序数据独立性（Program-Data Independence ）</h5><blockquote>
-<p>when asked to make up a query to answer a<br>question, query must still answer the<br>question even if all the data changes.</p>
+<p>when asked to make up a query to answer a question, query must still answer the question even if all the data changes.</p>
 </blockquote>
-<p>查询语句和表的数据无关，二者是相互独立的，即使数据库中的表数据改变了，原有的查询依然能够执行（但是查询结果可能发生了改变）</p>
+<p><u>查询语句</u>和<u>表的数据</u>无关，二者是相互独立的，即使数据库中的表数据改变了，原有的查询依然能够执行（但是查询结果可能发生了改变）</p>
 <h5 id="域类型（Column-type，也称-Domain和-Datatype）"><a href="#域类型（Column-type，也称-Domain和-Datatype）" class="headerlink" title="域类型（Column type，也称 Domain和 Datatype）"></a>域类型（Column type，也称 Domain和 Datatype）</h5><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -519,7 +521,7 @@
     <div class="content">
         
 <span class="post-time">
-    最終更新：<time datetime="2019-09-15T05:02:14.666Z" itemprop="dateUpdated">2019-09-15 13:02:14</time>
+    Last updated: <time datetime="2020-01-06T03:46:43.329Z" itemprop="dateUpdated">2020-01-06 11:46:43</time>
 </span><br>
 
 
@@ -692,7 +694,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">

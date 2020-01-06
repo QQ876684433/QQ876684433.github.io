@@ -73,11 +73,12 @@
 <meta property="og:image" content="https://i.loli.net/2019/12/24/oSLM3q784pNWQEF.png">
 <meta property="og:image" content="https://i.loli.net/2019/12/24/irFUARCZoLpQWuI.png">
 <meta property="og:image" content="https://i.loli.net/2019/12/24/15zMjJX2QLaCEYr.png">
+<meta property="og:image" content="http://hi.csdn.net/attachment/201108/1/0_13122049151J1Q.gif">
 <meta property="og:image" content="https://i.loli.net/2019/12/24/xf2ASa6YHLpG8Cz.png">
 <meta property="og:image" content="https://i.loli.net/2019/12/24/9JmpYQZsAluo3HO.png">
 <meta property="og:image" content="https://i.loli.net/2019/12/24/WqBF6vNzfUtDPlp.png">
 <meta property="og:image" content="https://i.loli.net/2019/12/24/w5ZcB7hHqWkroF1.png">
-<meta property="og:updated_time" content="2019-12-25T15:49:14.797Z">
+<meta property="og:updated_time" content="2020-01-06T09:47:24.052Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库-数据库设计">
 <meta name="twitter:description" content="数据库 - 数据库设计 参考资料：  南大软件学院课程《数据管理基础》课程资料 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著   候选键和主键的微小区别：  候选键：区分当前表的不同行 主键：在其他表引用当前表时唯一标识表中的行的一个候选键">
@@ -182,7 +183,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -446,13 +447,13 @@
 </ul>
 <h3 id="将二元联系转化成关系"><a href="#将二元联系转化成关系" class="headerlink" title="将二元联系转化成关系"></a>将二元联系转化成关系</h3><h5 id="转换规则3-N-N联系"><a href="#转换规则3-N-N联系" class="headerlink" title="转换规则3 N-N联系"></a>转换规则3 N-N联系</h5><p>当两个实体E和F参与一个多对多的二元联系R时，在相关的关系数据库设计中，联系映射成一个表T</p>
 <ul>
-<li>表T包括从E和F转化而来的两个表的主键的所有属性，这些列构成了表T的主键</li>
+<li>表T包括从E和F转化而来的<strong>两个表的主键的所有属性</strong>，这些列构成了表T的主键</li>
 <li>表T还包含了<strong>连结到联系的所有属性</strong>的列</li>
 </ul>
 <p>联系实例用表的行表示，相关联的实体实例可以通过这些行的主键值唯一地标识出来</p>
 <img src="https://i.loli.net/2019/12/23/FoItMcQ5L2XJSN4.png" style="zoom:80%;">
 
-<h5 id="转换规则4-N-1联系"><a href="#转换规则4-N-1联系" class="headerlink" title="转换规则4 N-1联系"></a>转换规则4 N-1联系</h5><p>当两个实体E和F参与一个多对一的二元联系R时，这个联系在关系数据库设计中不能映射为自身的一张表；相反，如果我们假设实体F具有$max-card(F,R)=1$，并表示联系关系中的“多”方，那么从实体F转化成的关系表T中应当包括从实体E转换出来的关系表的主键属性列，这被称为<strong>T的外键</strong>。由于$max-card(F,R)=1$，T的每一行都通过一个外键值联系到实体E的一个实例，如果F在R中是强制参与的($min-card(F,R)=1$)，那么它必须恰恰与E的一个实例相联系，这意味着T的上述外键不能取空值；如果F在R中是可选参与的($min-card(F,R)=0$)，那么T中不与E的实例相联系的行在外键的所有列可以取空值</p>
+<h5 id="转换规则4-N-1联系"><a href="#转换规则4-N-1联系" class="headerlink" title="转换规则4 N-1联系"></a>转换规则4 N-1联系</h5><p>当两个实体E和F参与一个多对一的二元联系R时，这个联系在关系数据库设计中不能映射为自身的一张表；相反，如果我们假设实体F具有$max-card(F,R)=1$，并表示联系关系中的“多”方，那么从实体F转化成的关系表T中应当<strong>包括从实体E转换出来的关系表的主键属性列</strong>，这被称为<strong>T的外键</strong>。由于$max-card(F,R)=1$，T的每一行都通过一个外键值联系到实体E的一个实例，如果F在R中是强制参与的($min-card(F,R)=1$)，那么它必须恰恰与E的一个实例相联系，这意味着T的上述外键不能取空值；如果F在R中是可选参与的($min-card(F,R)=0$)，那么T中不与E的实例相联系的行在外键的所有列可以取空值</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -464,7 +465,7 @@
 <p>其中Course_sections是“多”方，因此在它转换出来的关系表中包含Instructors的主键insid作为外键</p>
 <h5 id="转换规则5-1-1联系，可选参与"><a href="#转换规则5-1-1联系，可选参与" class="headerlink" title="转换规则5 1-1联系，可选参与"></a>转换规则5 1-1联系，可选参与</h5><p>给定两个实体E和F，他们参与一对一二元联系R，二者的参与都是可选的，首先按照转换规则1建立表S表示实体E、表T表示实体F，然后向表T中添加一组列（作为外键），这些列在表S构成主键；对于R的任何联系实例，都有唯一一个E的实例联系到唯一一个F的实例——在S和T的对应行中，外键列填写的值引用另一张表相应行，这一联系是R的实例确定的</p>
 <h5 id="转换规则6-1-1联系，强制参与"><a href="#转换规则6-1-1联系，强制参与" class="headerlink" title="转换规则6 1-1联系，强制参与"></a>转换规则6 1-1联系，强制参与</h5><p>对于一个两方都是强制参与的一对一联系，最好将两个实体对应的两个表<strong>合并成一个表</strong>，这一可以<strong>避免使用外键</strong></p>
-<p>对于N元联系（N&gt;2）的转换规则，通常将这些N元联系转换成自己对应的表；如果除去一个实体外其余参与联系的所有实体都带有$max-card=1$（类似于星状结构），那么可以在那个具有较大基数的参与实体对应的表中，加入N-1个外键来表示这个联系</p>
+<p>对于N元联系（N&gt;2）的转换规则，通常将这些N元联系转换成自己对应的表；如果除去一个实体外其余参与联系的所有实体都带有$max-card=1$（类似于星状结构），那么可以在那个具有较大基数的参与实体对应的表中，加入<strong>N-1个外键</strong>来表示这个联系</p>
 <h2 id="其他E-R概念"><a href="#其他E-R概念" class="headerlink" title="其他E-R概念"></a>其他E-R概念</h2><h3 id="属性的基数"><a href="#属性的基数" class="headerlink" title="属性的基数"></a>属性的基数</h3><p>$min-card/max-card$可以用来描述实体属性的基数</p>
 <ul>
 <li>$(0,?)$表示属性不需要声明为<code>not null</code>（可选的，optional）</li>
@@ -804,9 +805,15 @@
                 <div class="image-caption"></div>
             </figure>
 
-<h3 id="超键"><a href="#超键" class="headerlink" title="超键"></a>超键</h3><p>给定表T和函数依赖集F、属性集X，<strong>X是一个超键当且仅当X函数决定T中的所有属性</strong><br>$$<br> X→Head(T);or;X^+_F = Head(T)<br>$$<br>候选键查找算法（候选键可能有多个）：</p>
+<h3 id="超键"><a href="#超键" class="headerlink" title="超键"></a>超键</h3><p>给定表T和函数依赖集F、属性集X，<strong>X是一个超键当且仅当X函数决定T中的所有属性</strong><br>$$<br> X→Head(T);or;X^+_F = Head(T)<br>$$<br><strong>候选键</strong>查找算法（候选键可能有多个）：</p>
 <img src="https://i.loli.net/2019/12/24/sHvmf6TVSwxrWEU.png" style="zoom:67%;">
 
+<blockquote>
+<p>另一种解题套路：</p>
+<p>第一步：用“LRN法”求出L、R、N、LR各有哪些元素。</p>
+<p>第二步：根据三个定理、两个推论，一般都是先求L中元素的闭包。如果是U，则符合推论1，候选码唯一。如果不是U，这时就要并上LR中的元素，继续求闭包，一般都是两两组合。然后如果其中有一组闭包是U，其他一组不是U，那就不用再三个组合了，因为这样会产生冗余，除非三个一组里面不包含前面求到的闭包是U的两个元素。</p>
+<p>原文链接：<a href="https://blog.csdn.net/Wonz5130/article/details/80464679" target="_blank" rel="noopener">https://blog.csdn.net/Wonz5130/article/details/80464679</a></p>
+</blockquote>
 <h3 id="主属性（Primary-Attribute）"><a href="#主属性（Primary-Attribute）" class="headerlink" title="主属性（Primary Attribute）"></a>主属性（Primary Attribute）</h3><p>表T的一个主属性是表T的键（不需要是一个主键）的任何一个属性；除此之外都是非主属性（Non-primary Attribute）</p>
 <p>或者说在表T中，一个属性A称为是主属性当且仅当<strong>属性A存在这个表的某个键K中</strong></p>
 <img src="https://i.loli.net/2019/12/24/oSLM3q784pNWQEF.png" style="zoom:80%;">
@@ -831,6 +838,16 @@
                 <div class="image-caption"></div>
             </figure>
 
+<blockquote>
+<p>BCNF分解（正确性待考证）：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://hi.csdn.net/attachment/201108/1/0_13122049151J1Q.gif" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+</blockquote>
 <h3 id="3NF（Third-Normal-Form，第三范式）"><a href="#3NF（Third-Normal-Form，第三范式）" class="headerlink" title="3NF（Third Normal Form，第三范式）"></a>3NF（Third Normal Form，第三范式）</h3><p>对任何由F推导出来并存在于表T中的函数依赖$X→A$（这里A是单个属性且不在X中），下面两个属性之一必须成立：</p>
 <ul>
 <li>（A是T的一个非主属性时）X是T的一个超键</li>
@@ -854,7 +871,7 @@
                 <div class="image-caption"></div>
             </figure>
 
-<p>获得良好的3NF分解的算法（它产生一个符合第三范式且保持F中的函数依赖的如孙连接分解，算法的输出是数据库模式中表的标题（属性集合）的一个集合）：</p>
+<p>获得良好的3NF分解的算法（它产生一个符合第三范式且保持F中的函数依赖的无损连接分解，算法的输出是数据库模式中表的标题（属性集合）的一个集合）：</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -910,7 +927,7 @@
     <div class="content">
         
 <span class="post-time">
-    最終更新：<time datetime="2019-12-25T15:49:14.797Z" itemprop="dateUpdated">2019-12-25 23:49:14</time>
+    Last updated: <time datetime="2020-01-06T09:47:24.052Z" itemprop="dateUpdated">2020-01-06 17:47:24</time>
 </span><br>
 
 
@@ -1083,7 +1100,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">
