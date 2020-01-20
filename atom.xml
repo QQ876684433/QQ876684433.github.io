@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://QQ876684433.github.io/"/>
-  <updated>2020-01-20T14:14:06.879Z</updated>
+  <updated>2020-01-20T14:21:57.020Z</updated>
   <id>http://QQ876684433.github.io/</id>
   
   <author>
@@ -21,12 +21,28 @@
     <link href="http://QQ876684433.github.io/2020/01/20/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E7%9A%84%E5%8F%82%E7%85%A7%E5%AE%8C%E6%95%B4%E6%80%A7/"/>
     <id>http://QQ876684433.github.io/2020/01/20/数据库中的参照完整性/</id>
     <published>2020-01-20T14:14:06.000Z</published>
-    <updated>2020-01-20T14:14:06.879Z</updated>
+    <updated>2020-01-20T14:21:57.020Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="数据库中的参照完整性"><a href="#数据库中的参照完整性" class="headerlink" title="数据库中的参照完整性"></a>数据库中的参照完整性</h1><blockquote><p>参考来源：</p><ul><li><a href="https://blog.csdn.net/u011156012/article/details/46831471" target="_blank" rel="noopener">https://blog.csdn.net/u011156012/article/details/46831471</a></li></ul></blockquote><p>比如我们有两个表，一个表(department)存放的是部门的信息，例如部门id，部门名称等；另一个表是员工表(staff)，员工表里面肯定要存放每个员工所在的部门。那问题来了，如果我们这个时候删除了部门表中的某条记录，在staff表中会发生什么？</p><p>为了解答上面的问题，让我们先来回顾一下什么是参照完整性。</p><p>我们常常希望保证在一个关系中给定属性集上的取值也在另一个关系的特定属性集的取值中出现。这种情况称为参照完整性(referential integrity)</p><p>正如我们可以用外码在SQL中的create table语句一部分的foreign key子句来声名。</p><p>例如staff表中的我们可以用  foreign key(dep_name) references department  来表明在每个员工组中指定的部门名称dep_name必须在department关系中存在。</p><p>更一般地，令关系r1和r2的属性集分别为R1和R2，主码分别为K1和K2。如果要求对r2中任意元祖t2，均存在r1中元祖t1使得t1.K1 = t2.α，我们称R2的子集α为参照关系r1中K1的外码(foreign key)</p><p>当我们违反了参照完整性约束时，通常的处理是拒绝执行导致完整性破坏的操作（即进行更新操作的事务被回滚）。但是，在foreign key子句中可以指明：如果被参照关系上的删除或更新动作违反了约束，那么系统必须<strong>采取一些步骤通过修改参照关系中的元组来恢复完整性约束</strong>，而不是拒绝这样的操作。</p><blockquote><p>参考来源：</p><ul><li><a href="https://blog.csdn.net/u010398493/article/details/76222567" target="_blank" rel="noopener">https://blog.csdn.net/u010398493/article/details/76222567</a></li></ul></blockquote><p>关系的完整性主要包括域完整性、实体完整性和参照完整性三种。<br>1．域（列）完整性<br>     域完整性是对数据表中字段属性的约束，通常指<strong>数据的有效性</strong>,它包括字段的值域、字段的类型及字段的有效规则等约束，它是<strong>由确定关系结构时所定义的字段的属性决定</strong>的。限制数据类型,缺省值,规则,约束,是否可以为空,<strong>域完整性可以确保不会输入无效的值</strong><br>2．实体（行）完整性<br>      <strong>实体完整性是对关系中的记录唯一性，也就是主键的约束</strong>。准确地说，实体完整性是指关系中的主属性值不能为Null且不能有相同值。定义表中的所有行能唯一的标识,一般用主键,唯一索引 unique关键字,及identity属性比如说我们的身份证号码,可以唯一标识一个人<br>3．参照完整性<br>      参照完整性是对关系数据库中<strong>建立关联关系的数据表间数据参照引用的约束，也就是对外键的约束</strong>。准确地说，参照完整性是指<strong>关系中的外键必须是另一个关系的主键有效值，或者是NULL</strong>。参考完整性维护表间数据的有效性,完整性,通常通过建立外部键联系另一表的主键实现,还<strong>可以用触发器来维护参考完整性</strong></p>]]></content>
     
     <summary type="html">
     
+      
+      
+        &lt;h1 id=&quot;数据库中的参照完整性&quot;&gt;&lt;a href=&quot;#数据库中的参照完整性&quot; class=&quot;headerlink&quot; title=&quot;数据库中的参照完整性&quot;&gt;&lt;/a&gt;数据库中的参照完整性&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;参考来源：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a hre
+      
+    
     </summary>
     
+      <category term="数据库" scheme="http://QQ876684433.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="数据库" scheme="http://QQ876684433.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="参照完整性" scheme="http://QQ876684433.github.io/tags/%E5%8F%82%E7%85%A7%E5%AE%8C%E6%95%B4%E6%80%A7/"/>
     
   </entry>
   
