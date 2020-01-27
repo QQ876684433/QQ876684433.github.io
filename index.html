@@ -371,7 +371,12 @@ organization：共同的商业目标
 《数据库原理、编程与性能》原书第二版 - Patrick O‘Neil、Elizabeth O’Neil 著
 
 
+当事务仍处于执行状态时，它所做的任何更新对并行用户而言都是不可见的，并且数据读不能被更新；标准的SQL中关于事务的执行有两条语句：
 
+Commit语句：
+1exec sql commit work;
+
+...
     
 
         <a href="/2019/12/25/数据库-更新事务/" class="post-more waves-effect waves-button">
