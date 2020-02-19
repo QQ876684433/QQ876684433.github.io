@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>数据库开发技术-2020/02/19开发成功数据库应用的要点-并发控制 | 至繁归于至简 - chph&#39;s blog | steve_chph personal website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="数据库,并发控制">
+    <meta name="description" content="2.1 开发成功数据库应用的要点-并发控制课前预习视频                                                                                             3kOs8x.png">
+<meta name="keywords" content="数据库,并发控制">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库开发技术-2020&#x2F;02&#x2F;19开发成功数据库应用的要点-并发控制">
+<meta property="og:url" content="http://QQ876684433.github.io/2020/02/19/数据库开发技术-2020-02-19开发成功数据库应用的要点-并发控制/index.html">
+<meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
+<meta property="og:description" content="2.1 开发成功数据库应用的要点-并发控制课前预习视频                                                                                             3kOs8x.png">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/18/3kOs8x.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/18/3kOfVH.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/18/3kX9zV.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/18/3kX5mF.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/18/3kxmJs.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/18/3kxDeO.png">
+<meta property="og:image" content="https://imgchr.com/i/3kzHHO">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/18/3ASpKP.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/18/3ASNKx.png">
+<meta property="og:image" content="https://imgchr.com/i/3AT0Fx">
+<meta property="og:updated_time" content="2020-02-19T03:47:17.643Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据库开发技术-2020&#x2F;02&#x2F;19开发成功数据库应用的要点-并发控制">
+<meta name="twitter:description" content="2.1 开发成功数据库应用的要点-并发控制课前预习视频                                                                                             3kOs8x.png">
+<meta name="twitter:image" content="https://s2.ax1x.com/2020/02/18/3kOs8x.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">steve_chph</h5>
+          <a href="mailto:chph13420146901@gmail.com" title="chph13420146901@gmail.com" class="mail">chph13420146901@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/QQ876684433" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://107.182.188.221:23333/"  >
+                <i class="icon icon-lg icon-link"></i>
+                Project(HTTP)
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://107.182.188.221:23334/"  >
+                <i class="icon icon-lg icon-demo"></i>
+                Project(HTTPS)
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">数据库开发技术-2020/02/19开发成功数据库应用的要点-并发控制</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">数据库开发技术-2020/02/19开发成功数据库应用的要点-并发控制</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-02-19T03:46:21.000Z" itemprop="datePublished" class="page-time">
+  2020-02-19
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/数据库开发技术/">数据库开发技术</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/数据库开发技术/笔记/">笔记</a></li></ul></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-1-开发成功数据库应用的要点-并发控制"><span class="post-toc-number">1.</span> <span class="post-toc-text">2.1 开发成功数据库应用的要点-并发控制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#课前预习视频"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">课前预习视频</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#课后习题"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">课后习题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#课堂小测"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">课堂小测</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-数据库开发技术-2020-02-19开发成功数据库应用的要点-并发控制"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">数据库开发技术-2020/02/19开发成功数据库应用的要点-并发控制</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-02-19 11:46:21" datetime="2020-02-19T03:46:21.000Z"  itemprop="datePublished">2020-02-19</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/数据库开发技术/">数据库开发技术</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/数据库开发技术/笔记/">笔记</a></li></ul></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="2-1-开发成功数据库应用的要点-并发控制"><a href="#2-1-开发成功数据库应用的要点-并发控制" class="headerlink" title="2.1 开发成功数据库应用的要点-并发控制"></a>2.1 开发成功数据库应用的要点-并发控制</h1><h2 id="课前预习视频"><a href="#课前预习视频" class="headerlink" title="课前预习视频"></a>课前预习视频</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s2.ax1x.com/2020/02/18/3kOs8x.png" alt="3kOs8x.png" title>
+                </div>
+                <div class="image-caption">3kOs8x.png</div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s2.ax1x.com/2020/02/18/3kOfVH.png" alt="3kOfVH.png" title>
+                </div>
+                <div class="image-caption">3kOfVH.png</div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s2.ax1x.com/2020/02/18/3kX9zV.png" alt="3kX9zV.png" title>
+                </div>
+                <div class="image-caption">3kX9zV.png</div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s2.ax1x.com/2020/02/18/3kX5mF.png" alt="3kX5mF.png" title>
+                </div>
+                <div class="image-caption">3kX5mF.png</div>
+            </figure>
+
+<p>注：因为Oracle的隔离级别默认是ReadCommited，即申请读锁且使用完之后立即释放（短期锁），因此事务2可以正常执行并修改数据，事务1也能提交，但是读出来的是错误的数据</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s2.ax1x.com/2020/02/18/3kxmJs.png" alt="3kxmJs.png" title>
+                </div>
+                <div class="image-caption">3kxmJs.png</div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s2.ax1x.com/2020/02/18/3kxDeO.png" alt="3kxDeO.png" title>
+                </div>
+                <div class="image-caption">3kxDeO.png</div>
+            </figure>
+
+<p>注：多版本，读一致性模型：Oracle可以读取某个指定时间点的数据而不受后续更新的影响</p>
+<p>[<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://imgchr.com/i/3kzHHO" alt="3kzHHO.png](https://s2.ax1x.com/2020/02/18/3kzHHO.png)" title>
+                </div>
+                <div class="image-caption">3kzHHO.png](https://s2.ax1x.com/2020/02/18/3kzHHO.png)</div>
+            </figure></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s2.ax1x.com/2020/02/18/3ASpKP.png" alt="3ASpKP.png" title>
+                </div>
+                <div class="image-caption">3ASpKP.png</div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s2.ax1x.com/2020/02/18/3ASNKx.png" alt="3ASNKx.png" title>
+                </div>
+                <div class="image-caption">3ASNKx.png</div>
+            </figure>
+
+<h2 id="课后习题"><a href="#课后习题" class="headerlink" title="课后习题"></a>课后习题</h2><p>1、对大多数码农而言，数据库锁机制好像都是自动和透明实现的，那么深入了解每个数据库的锁机制实现细节，对码农编码有什么影响嘛？ </p>
+<ul>
+<li>当数据库的访问量和并发量增加的时候，数据库的性能比如吞吐量会随之下降，如果能够深入了解所用数据库的锁机制的实现细节，开发人员就能够分析出数据库的瓶颈所在，然后可以编写出高效的SQL语句，并且可以优化已有的SQL语句</li>
+<li>当数据库查询或者业务出现bug的时候，例如出现死锁等等，深入了解所用数据库的锁机制的实现细节有助于开发人员迅速定位错误的根源并找到解决方案</li>
+</ul>
+<p>2、根据这节课Oracle的锁机制特征的分析，你尝试去了解一下MySQL、SQLServer这些其它数据库锁机制实现的特征。</p>
+<p>MySQL的锁机制实现特征分析</p>
+<blockquote>
+<p>参考来源：<a href="https://github.com/javagrowing/JGrowing/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E5%BF%85%E9%A1%BB%E8%A6%81%E4%BA%86%E8%A7%A3%E6%95%B0%E6%8D%AE%E5%BA%93%E9%94%81%EF%BC%9F.md" target="_blank" rel="noopener">https://github.com/javagrowing/JGrowing/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E5%BF%85%E9%A1%BB%E8%A6%81%E4%BA%86%E8%A7%A3%E6%95%B0%E6%8D%AE%E5%BA%93%E9%94%81%EF%BC%9F.md</a></p>
+</blockquote>
+<ul>
+<li><p>MySQL中的InnoDB的锁类型</p>
+<ul>
+<li><p>共享锁和排他锁</p>
+<p>这两者都是行级锁，也即读锁和写锁</p>
+<ul>
+<li>S-共享锁：又叫读锁，其他事务可以继续加共享锁，但是不能继续加排他锁。</li>
+<li>X-排他锁: 又叫写锁，一旦加了写锁之后，其他事务就不能加锁了。</li>
+</ul>
+</li>
+<li><p>意向锁</p>
+<p>意向锁是表级锁，可以避免遍历数据表中的每一行来判断该行记录是否加锁，提供效率</p>
+<ul>
+<li>意向共享锁:表达一个事务想要获取一张表中某几行的共享锁。</li>
+<li>意向排他锁:表达一个事务想要获取一张表中某几行的排他锁。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>MySQL中的锁算法</p>
+<ul>
+<li><p>记录锁</p>
+<p>记录锁是对索引记录加锁而不是对真正的数据记录加锁，它有如下的特征：</p>
+<ul>
+<li>如果锁的是非主键索引，会在自己的索引上面加锁之后然后再去主键上面加锁锁住</li>
+<li>如果没有表上没有索引(包括没有主键)，则会使用隐藏的主键索引进行加锁</li>
+<li>如果要锁的列没有索引，则会进行全表记录加锁</li>
+</ul>
+</li>
+<li><p>间隙锁</p>
+<p>间隙锁是对索引范围加锁而不是对记录加锁，间隙锁并不会阻塞其他的间隙锁，但是会阻塞插入间隙锁</p>
+</li>
+<li><p>next-key锁</p>
+<p>本质上next-key锁是记录锁+间隙锁，它是InnoDB在可重复读的默认隔离级别下的行锁定扫描算法</p>
+<ul>
+<li>如果查询扫描中有唯一索引会退化成只使用记录锁，因为唯一索引能确定行数，而其他索引不能确定行数</li>
+</ul>
+</li>
+<li><p>插入意向锁</p>
+<p>可以看出插入意向锁是在插入的时候产生的,在多个事务同时写入不同数据至同一索引间隙的时候，并不需要等待其他事务完成，不会发生锁等待。假设有一个记录索引包含键值4和7，不同的事务分别插入5和6，每个事务都会产生一个加在4-7之间的插入意向锁，获取在插入行上的排它锁，但是不会被互相锁住，因为数据行并不冲突</p>
+<p>但是如果已经存在了间隙锁，那么插入意向锁会被阻塞</p>
+</li>
+</ul>
+</li>
+<li><p>InnoDB的多版本控制技术MVCC</p>
+<p>在InnoDB中，在每一行记录的后面增加两个隐藏列，记录创建版本号和删除版本号。通过版本号和行锁，从而提高数据库系统并发性能。</p>
+<p>在MVCC中，对于读操作可以分为两种读:</p>
+<ul>
+<li>快照读:读取的历史数据，简单的select语句，不加锁，MVCC实现可重复读，使用的是MVCC机制读取undo中的已经提交的数据。所以它的读取是非阻塞的。</li>
+<li>当前读:需要加锁的语句,update,insert,delete,select…for update等等都是当前读。</li>
+</ul>
+<p>在RR隔离级别下的快照读，不是以begin事务开始的时间点作为snapshot建立时间点，而是以第一条select语句的时间点作为snapshot建立的时间点。以后的select都会读取当前时间点的快照值。</p>
+<p>在RC隔离级别下每次快照读均会创建新的快照。</p>
+<blockquote>
+<p>具体的原理是通过每行会有两个隐藏的字段一个是用来记录当前事务，一个是用来记录回滚的指向Undolog。利用undolog就可以读取到之前的快照，不需要单独开辟空间记录。</p>
+</blockquote>
+</li>
+<li><p>实例分析</p>
+<p>对于表user(id, name, comment)，其中id是主键，name添加了非唯一索引，comment没有加索引，存储引擎使用InnoDB，默认隔离级别可重复读（ReadRepeatable）</p>
+<p>添加如下数据：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">user</span> <span class="keyword">select</span> <span class="number">20</span>,<span class="number">333</span>,<span class="number">333</span>;</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">user</span> <span class="keyword">select</span> <span class="number">25</span>,<span class="number">555</span>,<span class="number">555</span>;</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">user</span> <span class="keyword">select</span> <span class="number">20</span>,<span class="number">999</span>,<span class="number">999</span>;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>案例一</p>
+<table>
+<thead>
+<tr>
+<th>时间点</th>
+<th>事务A</th>
+<th>事务B</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>begin;</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>select * from user where name = ‘555’ for update;</td>
+<td>begin;</td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td>insert user select 31,’556’,’556’;</td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+<td>ERROR 1205 (HY000): Lock wait timeout exceeded; try restarting transaction</td>
+</tr>
+</tbody></table>
+<p>在事务A中给555加了Next-key锁，事务B插入的时候会首先进行插入意向锁的插入，事务B由于间隙锁和插入意向锁的冲突，导致了阻塞</p>
+</li>
+<li><p>案例二</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>时间点</td>
+<td>事务A</td>
+<td>事务B</td>
+</tr>
+<tr>
+<td>1</td>
+<td>begin;</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>select * from user where id = 25 for update;</td>
+<td>begin;</td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td>insert user select 26,’666’,’666’;</td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+<td>Query OK, 1 row affected (0.00 sec)</td>
+</tr>
+<tr>
+<td>Records: 1 Duplicates: 0 Warnings: 0</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>id是主键，默认生成唯一索引，唯一索引明确了唯一的数据行，所以不需要添加间隙锁解决幻读，因此会降级记录锁</p>
+</li>
+<li><p>案例三</p>
+<table>
+<thead>
+<tr>
+<th>时间点</th>
+<th>事务A</th>
+<th>事务B</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>begin;</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>select * from user where comment = ‘555’ for update;</td>
+<td>begin;</td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td>insert user select 26,’666’,’666’;</td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+<td>ERROR 1205 (HY000): Lock wait timeout exceeded; try restarting transaction</td>
+</tr>
+<tr>
+<td>5</td>
+<td></td>
+<td>insert user select 31,’3131’,’3131’;</td>
+</tr>
+<tr>
+<td>6</td>
+<td></td>
+<td>ERROR 1205 (HY000): Lock wait timeout exceeded; try restarting transaction</td>
+</tr>
+<tr>
+<td>7</td>
+<td></td>
+<td>insert user select 10,’100’,’100’;</td>
+</tr>
+<tr>
+<td>8</td>
+<td></td>
+<td>ERROR 1205 (HY000): Lock wait timeout exceeded; try restarting transaction</td>
+</tr>
+</tbody></table>
+<p>comment字段没有索引，因此会对所有的聚簇索引加上next-key锁，即相当于表锁，因此事务B会一直阻塞</p>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="课堂小测"><a href="#课堂小测" class="headerlink" title="课堂小测"></a>课堂小测</h2><p>[<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://imgchr.com/i/3AT0Fx" alt="3AT0Fx.png](https://s2.ax1x.com/2020/02/19/3AT0Fx.png)" title>
+                </div>
+                <div class="image-caption">3AT0Fx.png](https://s2.ax1x.com/2020/02/19/3AT0Fx.png)</div>
+            </figure></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2020-02-19T03:47:17.643Z" itemprop="dateUpdated">2020-02-19 11:47:17</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2020/02/19/数据库开发技术-2020-02-19开发成功数据库应用的要点-并发控制/" target="_blank" rel="external">http://QQ876684433.github.io/2020/02/19/数据库开发技术-2020-02-19开发成功数据库应用的要点-并发控制/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://QQ876684433.github.io">
+            <img src="/img/avatar.jpg" alt="steve_chph">
+            steve_chph
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/并发控制/">并发控制</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2020/02/19/数据库开发技术-2020-02-19开发成功数据库应用的要点-并发控制/&title=《数据库开发技术-2020/02/19开发成功数据库应用的要点-并发控制》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2020/02/19/数据库开发技术-2020-02-19开发成功数据库应用的要点-并发控制/&title=《数据库开发技术-2020/02/19开发成功数据库应用的要点-并发控制》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2020/02/19/数据库开发技术-2020-02-19开发成功数据库应用的要点-并发控制/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《数据库开发技术-2020/02/19开发成功数据库应用的要点-并发控制》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2020/02/19/数据库开发技术-2020-02-19开发成功数据库应用的要点-并发控制/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2020/02/19/数据库开发技术-2020-02-19开发成功数据库应用的要点-并发控制/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2020/02/19/需求与商业模式创新-2020-02-17课堂笔记/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">需求与商业模式创新-2020/02/17课堂笔记</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢你~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>steve_chph &copy; 2015 - 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2020/02/19/数据库开发技术-2020-02-19开发成功数据库应用的要点-并发控制/&title=《数据库开发技术-2020/02/19开发成功数据库应用的要点-并发控制》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2020/02/19/数据库开发技术-2020-02-19开发成功数据库应用的要点-并发控制/&title=《数据库开发技术-2020/02/19开发成功数据库应用的要点-并发控制》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2020/02/19/数据库开发技术-2020-02-19开发成功数据库应用的要点-并发控制/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《数据库开发技术-2020/02/19开发成功数据库应用的要点-并发控制》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2020/02/19/数据库开发技术-2020-02-19开发成功数据库应用的要点-并发控制/&via=http://QQ876684433.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2020/02/19/数据库开发技术-2020-02-19开发成功数据库应用的要点-并发控制/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAAD6UlEQVR42u3aO3bDMAwEwNz/0kmbIpJ3ASp2Mar8EokixwWMz9dXfH3/un7/5f7z1TpXK189e/X2qyvZyerCgQMHDhzxUe+Xbl95tcLVX+7J8qdmfDhw4MCB4yxHcpgkWLZhMg/tsy8vPyMOHDhw4HgvR5J65WTJfvJgnCeWOHDgwIHjEzj2idO+Upc/iwMHDhw43sWRt3CSBKnlmwX19s7DtVIcOHDgwDGJdEWh8JM/PzLfgQMHDhw44gQpCUj5kMHmv21xcHPhwIEDB449R9vmycPbgTRpMfqwaobhwIEDB44Fx76UlozNnQq0s/G4IoTjwIEDB47HOPIkKmkjzZKuNpxHwwr3Pxpw4MCBA8eaI0mW2qZOElbbp1qOvBQYTXngwIEDB46jHAnErEG1Ad0E4KiAiAMHDhw4RhzJhtpy2ypxiptYmzTvcg84cODAgeMoR97+vw+3syGDfAwi33M9ZoEDBw4cOB7m2KRk+5JinozNkrfht40DBw4cOGKOUwlYEtjaoD4MnG2ChwMHDhw4DnFsulXJttqBtmSFU081jTkcOHDgwBFGtNWRZonW2eJgdMg8TcWBAwcOHAuOzehAPgAxa2WdKiMmDTAcOHDgwHGK44nrO7jadWap4Czk48CBAweOUxyzADZjysPzbCBvll7iwIEDB449R/Ky5HN+sHbNPL3c7x8HDhw4cJziaANVe7BNoM0LkbM7ceDAgQPHf3LkjaJkW23il7PuU0ocOHDgwHGKoz1wG7o2o2x5InfqJwIOHDhw4DjF0Rbd7l3b4l0+HjcLyfetrz/uxIEDBw4cD3Dk6dmpDSWg7T6Tt0eBFgcOHDhwjDjaIJocJl9/9jXkIbkYocOBAwcOHAuO2cBZW5hLinr3O9n8CChSOBw4cODAseZog2Weqm0SthluS1934XDgwIEDx7o4mJTY2jA5S95OpXM4cODAgeNpjs0Q22yUIRmhmxX4kpVf/AjAgQMHDhxrjiTRytOqWZLWcrcjFMMuHA4cOHDgWHfw22ZSu608TM7euC814sCBAweOUxz7hlBejGtH9JKEsP37i18cOHDgwIFjW4sbNnuSkBxlkKOrpa+XxoEDBw4ca4i2kZMPImyStLyttb8fBw4cOHDsOfYxKE/JZmW+2WhF26aqsXDgwIEDxy1H3gTKt9uG5yQly0cu8kD7Yr4DBw4cOHAsOPblv3y1tlg5G60bJng4cODAgeMDOPKUbDZO1+5qlnDiwIEDB453cczaV+06SVCc3f/idDhw4MCB4xBHPnxwNjRu2k4brANtJxw4cODAsR5o2ATI/EjJRpPkbTbigAMHDhw4Fhw/v6Q0NqlWjlsAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'chph个人博客';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Welcome to chph's blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
