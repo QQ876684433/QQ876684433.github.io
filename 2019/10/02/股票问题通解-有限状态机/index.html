@@ -25,7 +25,7 @@
 <meta name="keywords" content="动态规划,leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="股票问题通解-有限状态机">
-<meta property="og:url" content="http://QQ876684433.github.io/2019/10/02/股票问题通解-有限状态机/index.html">
+<meta property="og:url" content="http://chphong.github.io/2019/10/02/股票问题通解-有限状态机/index.html">
 <meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
 <meta property="og:description" content="【转载】股票问题通解 - 有限状态机很多读者抱怨股票系列问题奇技淫巧太多，如果面试真的遇到这类问题，基本不会想到那些巧妙的办法，怎么办？所以本文拒绝奇技淫巧，而是稳扎稳打，只用一种通用方法解决所用问题，以不变应万变。 这篇文章用状态机的技巧来解决，可以全部提交通过。不要觉得这个名词高大上，文学词汇而已，实际上就是 DP table，看一眼就明白了。 先随便抽出一道题，看看别人的解法： 123456">
 <meta property="og:locale" content="zh_CN">
@@ -98,7 +98,7 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://github.com/QQ876684433" target="_blank" >
+              <a href="https://github.com/chphong" target="_blank" >
                 <i class="icon icon-lg icon-github"></i>
                 Github
               </a>
@@ -135,7 +135,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -320,17 +320,17 @@
     <div class="content">
         
 <span class="post-time">
-    最終更新：<time datetime="2019-10-07T11:36:52.747Z" itemprop="dateUpdated">2019-10-07 19:36:52</time>
+    最后更新时间：<time datetime="2019-10-07T11:36:52.747Z" itemprop="dateUpdated">2019-10-07 19:36:52</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/10/02/股票问题通解-有限状态机/" target="_blank" rel="external">http://QQ876684433.github.io/2019/10/02/股票问题通解-有限状态机/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/10/02/股票问题通解-有限状态机/" target="_blank" rel="external">http://chphong.github.io/2019/10/02/股票问题通解-有限状态机/</a>
         
     </div>
     
     <footer>
-        <a href="http://QQ876684433.github.io">
+        <a href="http://chphong.github.io">
             <img src="/img/avatar.jpg" alt="steve_chph">
             steve_chph
         </a>
@@ -356,7 +356,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/10/02/股票问题通解-有限状态机/&title=《股票问题通解-有限状态机》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://chphong.github.io/2019/10/02/股票问题通解-有限状态机/&title=《股票问题通解-有限状态机》 — 至繁归于至简 - chph's blog&pic=http://chphong.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -366,22 +366,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/10/02/股票问题通解-有限状态机/&title=《股票问题通解-有限状态机》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://chphong.github.io/2019/10/02/股票问题通解-有限状态机/&title=《股票问题通解-有限状态机》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/10/02/股票问题通解-有限状态机/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://chphong.github.io/2019/10/02/股票问题通解-有限状态机/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《股票问题通解-有限状态机》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/10/02/股票问题通解-有限状态机/&via=http://QQ876684433.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《股票问题通解-有限状态机》 — 至繁归于至简 - chph's blog&url=http://chphong.github.io/2019/10/02/股票问题通解-有限状态机/&via=http://chphong.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/10/02/股票问题通解-有限状态机/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://chphong.github.io/2019/10/02/股票问题通解-有限状态机/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -493,7 +493,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">
@@ -515,7 +515,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/10/02/股票问题通解-有限状态机/&title=《股票问题通解-有限状态机》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://chphong.github.io/2019/10/02/股票问题通解-有限状态机/&title=《股票问题通解-有限状态机》 — 至繁归于至简 - chph's blog&pic=http://chphong.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -525,22 +525,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/10/02/股票问题通解-有限状态机/&title=《股票问题通解-有限状态机》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://chphong.github.io/2019/10/02/股票问题通解-有限状态机/&title=《股票问题通解-有限状态机》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/10/02/股票问题通解-有限状态机/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://chphong.github.io/2019/10/02/股票问题通解-有限状态机/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《股票问题通解-有限状态机》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/10/02/股票问题通解-有限状态机/&via=http://QQ876684433.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《股票问题通解-有限状态机》 — 至繁归于至简 - chph's blog&url=http://chphong.github.io/2019/10/02/股票问题通解-有限状态机/&via=http://chphong.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/10/02/股票问题通解-有限状态机/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://chphong.github.io/2019/10/02/股票问题通解-有限状态机/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -551,7 +551,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACvUlEQVR42u3aQXKkMBAEQP//07MRjr3twlR1I3sOycmBgVHqgJpSf33Fx+v7+PdMfr69ZnN9feDh4eGNhn513F9z9fPJmauJu39CPmY8PDy807z7xWD2up+9+u8nMR8zHh4e3ifwkmHl7ORMO3F4eHh4n8nLy9z8/OxKPDw8vN/lzcrZNqTIQ+FZOIKHh4f3M7x2A+wT/j64v4eHh4e3CE+TRSI/k4cX+3H+fTIeHh7eAV4SAeRLRV4o50/LJ6L4YsDDw8Nb8PLXd/6TeSTRNiXUhT4eHh7eAd4mdLgvo2dBbb5ctWPDw8PDO8HbxxDFLJbTutmiw8PDw3uWl5fLbYmcLw95IDIsoPHw8PAe5bXD3cSvs+J4FhlfboDh4eHhrXmb7aU2xk0GmpfgDywJeHh4eAte+6LfB7KzIDhffvDw8PDO8ZKbk1hhH0BsQt6vdiXBw8PDWyec7Wb/bONq9oS2jeCypwwPDw/vAC/5yG8bnmZld75svHkOHh4e3jFeHhDkA52VxTkpmlY8PDy8A7zNp/6zAUQe4NYThIeHh/cor+3PenYi6nAhuAsPDw/vNG8W4LaNAsld7ZZY0YaFh4eH9yhvs+GUN0Xl/521akUpNR4eHt5DvE0cUG9HjYZ+f00eIuPh4eGd4OVRQh0HlMFuHuPOGg7w8PDwNrxNUPsKjvbeDQkPDw/vt3izUjsPBfLNrXzBeNMTgYeHh/cobza4PN59dmstH/Obe/Hw8PAWvFd5tF0JbYvVbGstKqnx8PDwHuJt9ok2/22bBtpfWfVq4eHh4cVNA0kQMFskNiX48JsADw8P70d4+8UgL3Pzonk2lXh4eHifw2sXj7aAfnaK8fDw8D6flw9u03SVjOc//RF4eHh4B3j5S38WKLST2Ma1l3fh4eHhHeBtNsDu27M222nn2rPw8PDwFrw/+zCSlyiU6boAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrklEQVR42u3aQW4bMRAEQP//0841QKJ19wwp20DtSZBkLmsNkKMefnzE1+df1/M77etX7zyPf/jCw8PDW0z9eeh/33+e9PP3n8fJH83zvfDw8PDu8V6tqMnQ+TjPq/czcngvPDw8vB/Da5f4pNbNv4OHh4f3u3h5Md0u6/lmgIeHh/cTeHmEOmPPwoU28MXDw8N7Dy/vIv2c11f6e3h4eHjrrnre9MpHbsPZfDP4z73w8PDwLvD20UA+oWTL2ZfLeHh4eO/kzQ5Cbaa72WaKGeLh4eEd5eUHSfN2137bmJX49ZPGw8PDu8DLW2Jt7Ds7WFBHvXh4eHgXeHnpnC/K+YaRjDkrwfHw8PDu8ZLm02yJPzXpfA4v+3t4eHh4b+El05pFq+2G0QYleHh4eO/ntYHs7KBAu4XkW8LLBhgeHh7eUV57NCqfUBsNH36geHh4eLfW6tUSPMtON4lrOwc8PDy8s7z29m3M2jb+88ZbBMbDw8O7wGvDgna4GfuLiGFzpAAPDw9vzdvECvmyPmuJHdjA8PDw8N7Cy49VtbVrW6And/9i48HDw8P7Jt7m130bELcBR3ToCg8PD+8oL/l4EyjMIoZZmlKnLHh4eHiHeLNadNYey2OIPFCOen14eHh4a96+PZ9vHpuNIQ848PDw8L6X1046L6DbxtgspMDDw8N7J68toM9+mh9K+CKYwMPDw7vMa8OIfQGdF+vJyh99jIeHh7fgfZZXfoP2+3mLq9h48PDw8C7w8qstdmfNsDwgLkpqPDw8vAu8WfzaFtCza9YAKwprPDw8vAWvPRCwKaCTAwqzR/Py6AAeHh7et/LaA1jtOJt498DGgIeHh3eBt084ZlvOsOjHw8PDu8ZL/vhUODt7TMN/Ax4eHt4F3o04NZlQHjqcjYbx8PDwFrw/wQh9gg55UZYAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 

@@ -25,7 +25,7 @@
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="精读Java源码-String类">
-<meta property="og:url" content="http://QQ876684433.github.io/2019/07/16/精读Java源码-String类/index.html">
+<meta property="og:url" content="http://chphong.github.io/2019/07/16/精读Java源码-String类/index.html">
 <meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
 <meta property="og:description" content="精读Java源码 - String类 基于jdk1.8 推荐资料：  https://www.kaelli.com/33.html http://cmsblogs.com/?p=5256 http://cmsblogs.com/?p=5258   类定义public没什么好说的，final修饰符则决定了String类是不可继承的且对象是不可变的，你无法自己写一个继承自String的类，而Strin">
 <meta property="og:locale" content="zh_CN">
@@ -96,7 +96,7 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://github.com/QQ876684433" target="_blank" >
+              <a href="https://github.com/chphong" target="_blank" >
                 <i class="icon icon-lg icon-github"></i>
                 Github
               </a>
@@ -133,7 +133,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -362,17 +362,17 @@
     <div class="content">
         
 <span class="post-time">
-    最終更新：<time datetime="2019-09-15T05:02:14.670Z" itemprop="dateUpdated">2019-09-15 13:02:14</time>
+    最后更新时间：<time datetime="2019-09-15T05:02:14.670Z" itemprop="dateUpdated">2019-09-15 13:02:14</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/07/16/精读Java源码-String类/" target="_blank" rel="external">http://QQ876684433.github.io/2019/07/16/精读Java源码-String类/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/07/16/精读Java源码-String类/" target="_blank" rel="external">http://chphong.github.io/2019/07/16/精读Java源码-String类/</a>
         
     </div>
     
     <footer>
-        <a href="http://QQ876684433.github.io">
+        <a href="http://chphong.github.io">
             <img src="/img/avatar.jpg" alt="steve_chph">
             steve_chph
         </a>
@@ -398,7 +398,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/07/16/精读Java源码-String类/&title=《精读Java源码-String类》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://chphong.github.io/2019/07/16/精读Java源码-String类/&title=《精读Java源码-String类》 — 至繁归于至简 - chph's blog&pic=http://chphong.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -408,22 +408,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/07/16/精读Java源码-String类/&title=《精读Java源码-String类》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://chphong.github.io/2019/07/16/精读Java源码-String类/&title=《精读Java源码-String类》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/07/16/精读Java源码-String类/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://chphong.github.io/2019/07/16/精读Java源码-String类/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《精读Java源码-String类》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/07/16/精读Java源码-String类/&via=http://QQ876684433.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《精读Java源码-String类》 — 至繁归于至简 - chph's blog&url=http://chphong.github.io/2019/07/16/精读Java源码-String类/&via=http://chphong.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/07/16/精读Java源码-String类/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://chphong.github.io/2019/07/16/精读Java源码-String类/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -535,7 +535,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">
@@ -557,7 +557,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/07/16/精读Java源码-String类/&title=《精读Java源码-String类》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://chphong.github.io/2019/07/16/精读Java源码-String类/&title=《精读Java源码-String类》 — 至繁归于至简 - chph's blog&pic=http://chphong.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -567,22 +567,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/07/16/精读Java源码-String类/&title=《精读Java源码-String类》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://chphong.github.io/2019/07/16/精读Java源码-String类/&title=《精读Java源码-String类》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/07/16/精读Java源码-String类/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://chphong.github.io/2019/07/16/精读Java源码-String类/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《精读Java源码-String类》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/07/16/精读Java源码-String类/&via=http://QQ876684433.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《精读Java源码-String类》 — 至繁归于至简 - chph's blog&url=http://chphong.github.io/2019/07/16/精读Java源码-String类/&via=http://chphong.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/07/16/精读Java源码-String类/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://chphong.github.io/2019/07/16/精读Java源码-String类/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -593,7 +593,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsElEQVR42u3awW7rMAwEwP7/T7fXAg+Od0krzQPGp8BJLI0OEk3y6yu+vn9d/95J7v/+Nnny688PX3h4eHiLqSeTvnpCwk5GnI1y+V88PDy8Y7zkcbPN+qlJJ+Pi4eHhfSavDbuTKDeZKB4eHt7/zpth8kRGHqDj4eHh/RUvD2HzdGqbon2d/D2ea8HDw8PrcqTRRD/n85H6Hh4eHt66qr7ZcNvkbDJi/V88PDy8A7xZinYTUifLsf8NHh4e3nt4SQog3/TbDT1nJCldPDw8vPfw2mJ/y87TuG3rwM2BgYeHh/coL9mU85LVCUYbZN+8K+Dh4eGtefuiV5uwaLf+tvHr4ZoeHh4e3oiXpxg2wfRrUns4RWA8PDy8h3ibjfvE/XbJ8PDw8E7z2s16NrkNJi+h3fRE4OHh4R3gzcLrPAHRhtp50Hy5NHh4eHjHeG2qND8kWkzephAloPHw8PAO814/Ih+yLX3NDomoAIaHh4d3gDcLppPQdrZ8M9jmCMHDw8NreW36dRZSb0j5nZsCGB4eHt6jvLYFKt+s2wNj37yFh4eHd5rXvtJvCv8zWD7DywXFw8PDO8CLiknr5MKscaoN0OuMCx4eHt6al5f2ZwFu0i7QpkLylAoeHh7es7y2vLQBtC0IszQHHh4e3jleMmS+TslytCWu4mSb9Yvh4eHhLXizBERb1M8PjwcCdzw8PLxjvDZZMFuOGTu/oncFPDw8vAVvVpRKQtt2OTZNXZezwsPDwzvAazfctrSfh7/5QbIppOHh4eE9xWubn05s3K+PhHwh8PDw8N7Ja5ur8rOlXbiDuRY8PDy8P+K1QXYbgrfh9c2i4+Hh4X0Ar3h0+ftZ4H5zUOHh4eEd4yWB76xZKg/BZznmm1Hw8PDwDvDal/xNYmI/reQ4wcPDwzvG+wGpE5xxJq/JFQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACs0lEQVR42u3awW7bQAwE0Pz/T6dATwWSyDPkrtsCTydBtpV9DiDSw/34iI/P38ef51+Pr+//ev2nOzz/3eSdqwMPDw9vtPTnRSfnz3d+fv9nfORrxsPDw7vNS4rB86faJW5KSLJmPDw8vH+Bl7e2yaI3V/Dw8PD+F14CmJE253h4eHh/i5f/+M+j3g0y4R3OWvDw8PBi3mwA9nfPr8/38PDw8EZT9U3ByLca5JFHvUI8PDy8C7y8Xc43BOTbDjZNdlEw8PDw8I7y2qH+2bAgDzvacOTHuoeHh4e35u0jiZzUtumnNiXg4eHhvZN3NpJ47nJb6mrchYeHh7fgzYbubRTbburKqS++Yjw8PLw38jaDqHtbrNqRGx4eHt4NXtsQz/BtxHBgppd033h4eHgL3iy63SyiLSr5V4+Hh4d3m3ejwc3xeSAy+xQeHh7eDV4bwu6b6c3YrA2R8fDw8N7PuxFbJJHEJrz45lN4eHh4R3lJQ9xupUquzNh5zIGHh4f3Hl4bRuTlJG+FNwn0NxY8PDy8a7xTj/K24W7jifzfgIeHh3ebd2oE1Ua0+3FXFODi4eHhXeDlEcOMOtuw1b76zRU8PDy8C7xTD/pZMNFuBZgVDDw8PLwbvFm4kEcVm/u0ofCL3w14eHh4h3htnNpGq7OxVl6Eovvj4eHhHeXNHvFJn95uOMgf93lTjoeHh3ePV29pGg37240IbQl5MQbDw8PDW/M+y6MdR80KzOZudTONh4eHN1nPx+zhO4stZhtYN3uo8PDw8G7w8mLQtsV5a97GuMeyFjw8PLwFL39A70OHtpDkpavIWvDw8PDeyJtR26FXWySOFQY8PDy8o7wkAmhHWW28W5cNPDw8vGu8duiVFIC2kMy2EbwA4+Hh4V3g7YtH/mp+PtuwdWC+h4eHh/d0/1+OO/k+OkAxuQAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 

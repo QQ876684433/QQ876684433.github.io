@@ -25,7 +25,7 @@
 <meta name="keywords" content="Java,servlet">
 <meta property="og:type" content="article">
 <meta property="og:title" content="精读Servlet源码-javax.servlet.http.HttpServlet">
-<meta property="og:url" content="http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/index.html">
+<meta property="og:url" content="http://chphong.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/index.html">
 <meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
 <meta property="og:description" content="the blog website of steve_chph, steve_chph的个人博客网站">
 <meta property="og:locale" content="zh_CN">
@@ -96,7 +96,7 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://github.com/QQ876684433" target="_blank" >
+              <a href="https://github.com/chphong" target="_blank" >
                 <i class="icon icon-lg icon-github"></i>
                 Github
               </a>
@@ -133,7 +133,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -201,17 +201,17 @@
     <div class="content">
         
 <span class="post-time">
-    最終更新：<time datetime="2019-09-15T05:02:14.670Z" itemprop="dateUpdated">2019-09-15 13:02:14</time>
+    最后更新时间：<time datetime="2019-09-15T05:02:14.670Z" itemprop="dateUpdated">2019-09-15 13:02:14</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/" target="_blank" rel="external">http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/" target="_blank" rel="external">http://chphong.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/</a>
         
     </div>
     
     <footer>
-        <a href="http://QQ876684433.github.io">
+        <a href="http://chphong.github.io">
             <img src="/img/avatar.jpg" alt="steve_chph">
             steve_chph
         </a>
@@ -237,7 +237,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/&title=《精读Servlet源码-javax.servlet.http.HttpServlet》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://chphong.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/&title=《精读Servlet源码-javax.servlet.http.HttpServlet》 — 至繁归于至简 - chph's blog&pic=http://chphong.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -247,22 +247,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/&title=《精读Servlet源码-javax.servlet.http.HttpServlet》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://chphong.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/&title=《精读Servlet源码-javax.servlet.http.HttpServlet》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://chphong.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《精读Servlet源码-javax.servlet.http.HttpServlet》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/&via=http://QQ876684433.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《精读Servlet源码-javax.servlet.http.HttpServlet》 — 至繁归于至简 - chph's blog&url=http://chphong.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/&via=http://chphong.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://chphong.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -374,7 +374,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">
@@ -396,7 +396,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/&title=《精读Servlet源码-javax.servlet.http.HttpServlet》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://chphong.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/&title=《精读Servlet源码-javax.servlet.http.HttpServlet》 — 至繁归于至简 - chph's blog&pic=http://chphong.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -406,22 +406,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/&title=《精读Servlet源码-javax.servlet.http.HttpServlet》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://chphong.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/&title=《精读Servlet源码-javax.servlet.http.HttpServlet》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://chphong.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《精读Servlet源码-javax.servlet.http.HttpServlet》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/&via=http://QQ876684433.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《精读Servlet源码-javax.servlet.http.HttpServlet》 — 至繁归于至简 - chph's blog&url=http://chphong.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/&via=http://chphong.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://chphong.github.io/2019/07/18/精读Servlet源码-javax-servlet-http-HttpServlet/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -432,7 +432,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADMElEQVR42u3aQXLCQAwEQP7/aXKlimCPJKcCojmlMLG3l4PQaG+3+HV/eD2+8/yZV+88X331lOMnJs+97IWNjY39Iez74StZRL64/D7JOo836+TO2NjY2OvYSTk5LmlJOTl+Vg5ItuDkudjY2NhfzM4Xcfz55GreomBjY2NjVwtYtQjlxSy/2z/UbWxsbOw3Zuc/8fPCVg16qmuYPAsbGxt7Ezufir7/338y38bGxsZ+Y3Yvgq8euMkbkl78VFZgY2NjL2JPAqN8GFwNgKqBVHP92NjY2CvYzWA9CPGrHUG1pE0CKWxsbOyt7OPYvTckuCrDqd7/ZCOwsbGxF7HzdiJ/v7op86Cq91VhY2Nj72BPFpE3KtVPVlugpB16ORXBxsbGXsHOf9D3ClLy+Tww6m3uScXGxsbG/lh2b8g6KXLVoz9J6SrzsLGxsRexk3+bRP/5HaoBVm+QgI2Njb2P3ftBn7QrvU3sDQyqXw82Njb2PnYS2VRvWt3EyX2abQ82Njb2Cnbv+Msk7u+1K/lwN7onNjY29iJ2b0iQPyBf6PF2JwdxsLGxsb+ZPQmDkuC+104kG5GXzIvHvdjY2Nhvxu41Fb1DNr0jPnksVV0bNjY29g52PjrtNSTzTeyVyZNCiI2Njb2CnReA/FDOta1OtYwlW4aNjY29iT0pWr2gP9/EwhwjLo3Y2NjY+9jzMCgH9MrbpJgVRrzY2NjYK9iTqL3azOQHeqpxVSFUwsbGxl7ETlqL3si22Ru1Sleh0cLGxsZexM6XWD1qmQdP+di4utpbdW+wsbGxP5bdC2jyAzTzu1WbkHJlw8bGxl7KrsZD1c9UN2XSLJ0c2cHGxsZex65G9nlMn0c/PVLe3mBjY2NvZc8j/qSA9Z47HxJgY2Nj72PPD9PMw51Ji9IcS2NjY2MvYo/qXrHATBaXjyLyWAobGxt7E3sS6Ff3NblaDaea3yc2Njb2OvakSUiuVmOj/O9e2cPGxsbGzheX3D8PuSZNyMl8GxsbG/vr2b1WIXknv1oootjY2Njr2EmolA8JegPg/OnVovjLVWxsbOxF7L/I0vOR8FUblIRW2NjY2OvYP78am6ek507iAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADMElEQVR42u3ay27iQBAF0Pz/TzPbiRSce6uChJvjFcLg7tMsinp8fcXX478reefZ3WSVfMX8ycMLGxsb+ybsx+WVfObZhq5XucYkh359WL/sDRsbG/s4dhJO2mB2/cwclhxcvS42Njb2B7PbVOQ6kLSBsz0sbGxsbOz8736y0aQ8lBensLGxsbFni+WV9lli05aiXl5Lw8bGxn57dt4Vff/XL+lvY2NjY78x+1FebWs2D1HJO7MC1g8KbGxs7IPY7VhkXuLJy0b7tm67f2xsbOyT2HljoP27v/lW0kJYNaqxsbGxP4zd1mT2xan2OOphIGxsbOyD2MmjZ23gZCvJiE/SMJ4lP9jY2NhnsDeBp6UWqcIoLBVPw8bGxj6OnScbbXKyv3sd9pLXP9zFxsbGPog9q5a3ozybwlP7yTx8YmNjY5/BbkNFW8pvg8r+4IZxGxsbG/vm7ISaF/dn6cSs/NS2jbGxsbHPY89Sjs1n9hnBpg28yrSwsbGx35LdFtZnaUOylVm6kgfOpxkYNjY29s3Zm3Cy2VY+cDNrURThEBsbG/vm7Hw0px24yYPKbJXZmBE2Njb2Z7LzFkKyrbz0397Ni1nY2NjYJ7FbwKwxnANmK87SEmxsbOzz2LMtzspMeSJRMOIRTGxsbOyz2bPEY/OtPIDty1hPAxg2Njb2Eey2KNOmB7NGcpLwXF9FUQkbGxv7huwZOP9Mnhi0hapZSPvW6MXGxsY+gt0mDG0qkgeYtqQ1G/cpGr3Y2NjYN2HnBfec/Yowtm8kf3sfGxsb+yD2bBwnL/S0DYM2RG32ho2NjX0Se/Z3f8PIGwmbdnLdFcHGxsY+gp0kA0ki0aYo19Rk3TpNwsbGxj6O/eqUYD/Q0w7uRE0CbGxs7JuzZ8MuLSln/FXg/CXdwsbGxj6IPRusyQ/ibzfdtnuHfRJsbGzsG7JnJfg8Adg0HtqkpUhdsLGxsY9j54A25LRJwixQ1U/GxsbG/mB2O4izT3iuf4Dhj4SNjY39wey8Zfu37d72WKP+NjY2NvZB7ASwST/yos9s3Re2B7CxsbHfnr0p+rdtg7zonx9EfhzY2NjYx7H/AcNY7pqaQnuAAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 

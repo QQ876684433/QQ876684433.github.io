@@ -5,9 +5,9 @@
   <subtitle>steve_chph personal website</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://QQ876684433.github.io/"/>
+  <link href="http://chphong.github.io/"/>
   <updated>2020-02-19T03:51:08.874Z</updated>
-  <id>http://QQ876684433.github.io/</id>
+  <id>http://chphong.github.io/</id>
   
   <author>
     <name>steve_chph</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>数据库开发技术-2020/02/19开发成功数据库应用的要点-并发控制</title>
-    <link href="http://QQ876684433.github.io/2020/02/19/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF-2020-02-19%E5%BC%80%E5%8F%91%E6%88%90%E5%8A%9F%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BA%94%E7%94%A8%E7%9A%84%E8%A6%81%E7%82%B9-%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6/"/>
-    <id>http://QQ876684433.github.io/2020/02/19/数据库开发技术-2020-02-19开发成功数据库应用的要点-并发控制/</id>
+    <link href="http://chphong.github.io/2020/02/19/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF-2020-02-19%E5%BC%80%E5%8F%91%E6%88%90%E5%8A%9F%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BA%94%E7%94%A8%E7%9A%84%E8%A6%81%E7%82%B9-%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6/"/>
+    <id>http://chphong.github.io/2020/02/19/数据库开发技术-2020-02-19开发成功数据库应用的要点-并发控制/</id>
     <published>2020-02-19T03:46:21.000Z</published>
     <updated>2020-02-19T03:51:08.874Z</updated>
     
@@ -34,21 +34,21 @@
     
     </summary>
     
-      <category term="数据库开发技术" scheme="http://QQ876684433.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/"/>
+      <category term="数据库开发技术" scheme="http://chphong.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="笔记" scheme="http://QQ876684433.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="http://chphong.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="数据库" scheme="http://QQ876684433.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://chphong.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="并发控制" scheme="http://QQ876684433.github.io/tags/%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6/"/>
+      <category term="并发控制" scheme="http://chphong.github.io/tags/%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6/"/>
     
   </entry>
   
   <entry>
     <title>需求与商业模式创新-2020/02/17课堂笔记</title>
-    <link href="http://QQ876684433.github.io/2020/02/19/%E9%9C%80%E6%B1%82%E4%B8%8E%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F%E5%88%9B%E6%96%B0-2020-02-17%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/"/>
-    <id>http://QQ876684433.github.io/2020/02/19/需求与商业模式创新-2020-02-17课堂笔记/</id>
+    <link href="http://chphong.github.io/2020/02/19/%E9%9C%80%E6%B1%82%E4%B8%8E%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F%E5%88%9B%E6%96%B0-2020-02-17%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/"/>
+    <id>http://chphong.github.io/2020/02/19/需求与商业模式创新-2020-02-17课堂笔记/</id>
     <published>2020-02-19T03:42:45.000Z</published>
     <updated>2020-02-19T03:45:00.485Z</updated>
     
@@ -63,19 +63,19 @@
     
     </summary>
     
-      <category term="需求与商业模式创新" scheme="http://QQ876684433.github.io/categories/%E9%9C%80%E6%B1%82%E4%B8%8E%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F%E5%88%9B%E6%96%B0/"/>
+      <category term="需求与商业模式创新" scheme="http://chphong.github.io/categories/%E9%9C%80%E6%B1%82%E4%B8%8E%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F%E5%88%9B%E6%96%B0/"/>
     
-      <category term="笔记" scheme="http://QQ876684433.github.io/categories/%E9%9C%80%E6%B1%82%E4%B8%8E%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F%E5%88%9B%E6%96%B0/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="http://chphong.github.io/categories/%E9%9C%80%E6%B1%82%E4%B8%8E%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F%E5%88%9B%E6%96%B0/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="需求工程" scheme="http://QQ876684433.github.io/tags/%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B/"/>
+      <category term="需求工程" scheme="http://chphong.github.io/tags/%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>sql语句执行顺序</title>
-    <link href="http://QQ876684433.github.io/2020/01/23/sql%E8%AF%AD%E5%8F%A5%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F/"/>
-    <id>http://QQ876684433.github.io/2020/01/23/sql语句执行顺序/</id>
+    <link href="http://chphong.github.io/2020/01/23/sql%E8%AF%AD%E5%8F%A5%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F/"/>
+    <id>http://chphong.github.io/2020/01/23/sql语句执行顺序/</id>
     <published>2020-01-23T02:48:48.000Z</published>
     <updated>2020-01-23T03:13:52.853Z</updated>
     
@@ -93,21 +93,21 @@
     
     </summary>
     
-      <category term="数据库" scheme="http://QQ876684433.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://chphong.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="转载" scheme="http://QQ876684433.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/%E8%BD%AC%E8%BD%BD/"/>
+      <category term="转载" scheme="http://chphong.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/%E8%BD%AC%E8%BD%BD/"/>
     
     
-      <category term="数据库" scheme="http://QQ876684433.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://chphong.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="sql" scheme="http://QQ876684433.github.io/tags/sql/"/>
+      <category term="sql" scheme="http://chphong.github.io/tags/sql/"/>
     
   </entry>
   
   <entry>
     <title>数据库中的参照完整性</title>
-    <link href="http://QQ876684433.github.io/2020/01/20/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E7%9A%84%E5%8F%82%E7%85%A7%E5%AE%8C%E6%95%B4%E6%80%A7/"/>
-    <id>http://QQ876684433.github.io/2020/01/20/数据库中的参照完整性/</id>
+    <link href="http://chphong.github.io/2020/01/20/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E7%9A%84%E5%8F%82%E7%85%A7%E5%AE%8C%E6%95%B4%E6%80%A7/"/>
+    <id>http://chphong.github.io/2020/01/20/数据库中的参照完整性/</id>
     <published>2020-01-20T14:14:06.000Z</published>
     <updated>2020-01-20T14:21:57.020Z</updated>
     
@@ -125,19 +125,19 @@
     
     </summary>
     
-      <category term="数据库" scheme="http://QQ876684433.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://chphong.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="数据库" scheme="http://QQ876684433.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://chphong.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="参照完整性" scheme="http://QQ876684433.github.io/tags/%E5%8F%82%E7%85%A7%E5%AE%8C%E6%95%B4%E6%80%A7/"/>
+      <category term="参照完整性" scheme="http://chphong.github.io/tags/%E5%8F%82%E7%85%A7%E5%AE%8C%E6%95%B4%E6%80%A7/"/>
     
   </entry>
   
   <entry>
     <title>软件系统设计复习 - Part1</title>
-    <link href="http://QQ876684433.github.io/2019/12/26/%E8%BD%AF%E4%BB%B6%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%20-%20Part1/"/>
-    <id>http://QQ876684433.github.io/2019/12/26/软件系统设计复习 - Part1/</id>
+    <link href="http://chphong.github.io/2019/12/26/%E8%BD%AF%E4%BB%B6%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%20-%20Part1/"/>
+    <id>http://chphong.github.io/2019/12/26/软件系统设计复习 - Part1/</id>
     <published>2019-12-26T02:08:43.000Z</published>
     <updated>2019-12-31T04:21:06.611Z</updated>
     
@@ -153,19 +153,19 @@
     
     </summary>
     
-      <category term="笔记" scheme="http://QQ876684433.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="http://chphong.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="软件系统设计" scheme="http://QQ876684433.github.io/categories/%E7%AC%94%E8%AE%B0/%E8%BD%AF%E4%BB%B6%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/"/>
+      <category term="软件系统设计" scheme="http://chphong.github.io/categories/%E7%AC%94%E8%AE%B0/%E8%BD%AF%E4%BB%B6%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/"/>
     
     
-      <category term="架构" scheme="http://QQ876684433.github.io/tags/%E6%9E%B6%E6%9E%84/"/>
+      <category term="架构" scheme="http://chphong.github.io/tags/%E6%9E%B6%E6%9E%84/"/>
     
   </entry>
   
   <entry>
     <title>数据库-更新事务</title>
-    <link href="http://QQ876684433.github.io/2019/12/25/%E6%95%B0%E6%8D%AE%E5%BA%93-%E6%9B%B4%E6%96%B0%E4%BA%8B%E5%8A%A1/"/>
-    <id>http://QQ876684433.github.io/2019/12/25/数据库-更新事务/</id>
+    <link href="http://chphong.github.io/2019/12/25/%E6%95%B0%E6%8D%AE%E5%BA%93-%E6%9B%B4%E6%96%B0%E4%BA%8B%E5%8A%A1/"/>
+    <id>http://chphong.github.io/2019/12/25/数据库-更新事务/</id>
     <published>2019-12-25T15:45:55.000Z</published>
     <updated>2020-01-27T09:50:36.001Z</updated>
     
@@ -183,21 +183,21 @@
     
     </summary>
     
-      <category term="数据库" scheme="http://QQ876684433.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://chphong.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="笔记" scheme="http://QQ876684433.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="http://chphong.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="数据库" scheme="http://QQ876684433.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://chphong.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="更新事务" scheme="http://QQ876684433.github.io/tags/%E6%9B%B4%E6%96%B0%E4%BA%8B%E5%8A%A1/"/>
+      <category term="更新事务" scheme="http://chphong.github.io/tags/%E6%9B%B4%E6%96%B0%E4%BA%8B%E5%8A%A1/"/>
     
   </entry>
   
   <entry>
     <title>数据库-索引</title>
-    <link href="http://QQ876684433.github.io/2019/12/25/%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%B4%A2%E5%BC%95/"/>
-    <id>http://QQ876684433.github.io/2019/12/25/数据库-索引/</id>
+    <link href="http://chphong.github.io/2019/12/25/%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%B4%A2%E5%BC%95/"/>
+    <id>http://chphong.github.io/2019/12/25/数据库-索引/</id>
     <published>2019-12-25T03:19:14.000Z</published>
     <updated>2020-01-06T09:34:39.460Z</updated>
     
@@ -215,21 +215,21 @@
     
     </summary>
     
-      <category term="数据库" scheme="http://QQ876684433.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://chphong.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="笔记" scheme="http://QQ876684433.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="http://chphong.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="数据库" scheme="http://QQ876684433.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://chphong.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="索引" scheme="http://QQ876684433.github.io/tags/%E7%B4%A2%E5%BC%95/"/>
+      <category term="索引" scheme="http://chphong.github.io/tags/%E7%B4%A2%E5%BC%95/"/>
     
   </entry>
   
   <entry>
     <title>软件系统设计复习 - Part2</title>
-    <link href="http://QQ876684433.github.io/2019/12/23/%E8%BD%AF%E4%BB%B6%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%20-%20Part2/"/>
-    <id>http://QQ876684433.github.io/2019/12/23/软件系统设计复习 - Part2/</id>
+    <link href="http://chphong.github.io/2019/12/23/%E8%BD%AF%E4%BB%B6%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0%20-%20Part2/"/>
+    <id>http://chphong.github.io/2019/12/23/软件系统设计复习 - Part2/</id>
     <published>2019-12-23T05:53:02.000Z</published>
     <updated>2019-12-28T10:58:15.096Z</updated>
     
@@ -245,19 +245,19 @@
     
     </summary>
     
-      <category term="笔记" scheme="http://QQ876684433.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="http://chphong.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="软件系统设计" scheme="http://QQ876684433.github.io/categories/%E7%AC%94%E8%AE%B0/%E8%BD%AF%E4%BB%B6%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/"/>
+      <category term="软件系统设计" scheme="http://chphong.github.io/categories/%E7%AC%94%E8%AE%B0/%E8%BD%AF%E4%BB%B6%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/"/>
     
     
-      <category term="架构" scheme="http://QQ876684433.github.io/tags/%E6%9E%B6%E6%9E%84/"/>
+      <category term="架构" scheme="http://chphong.github.io/tags/%E6%9E%B6%E6%9E%84/"/>
     
   </entry>
   
   <entry>
     <title>数据库-数据库设计</title>
-    <link href="http://QQ876684433.github.io/2019/12/22/%E6%95%B0%E6%8D%AE%E5%BA%93-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/"/>
-    <id>http://QQ876684433.github.io/2019/12/22/数据库-数据库设计/</id>
+    <link href="http://chphong.github.io/2019/12/22/%E6%95%B0%E6%8D%AE%E5%BA%93-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/"/>
+    <id>http://chphong.github.io/2019/12/22/数据库-数据库设计/</id>
     <published>2019-12-22T11:18:08.000Z</published>
     <updated>2020-01-06T10:35:07.301Z</updated>
     
@@ -275,21 +275,21 @@
     
     </summary>
     
-      <category term="数据库" scheme="http://QQ876684433.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://chphong.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="笔记" scheme="http://QQ876684433.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="http://chphong.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="数据库" scheme="http://QQ876684433.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://chphong.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="数据库设计" scheme="http://QQ876684433.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/"/>
+      <category term="数据库设计" scheme="http://chphong.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/"/>
     
   </entry>
   
   <entry>
     <title>数据库-完整性、视图、安全性和目录</title>
-    <link href="http://QQ876684433.github.io/2019/12/22/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%AE%8C%E6%95%B4%E6%80%A7%E3%80%81%E8%A7%86%E5%9B%BE%E3%80%81%E5%AE%89%E5%85%A8%E6%80%A7%E5%92%8C%E7%9B%AE%E5%BD%95/"/>
-    <id>http://QQ876684433.github.io/2019/12/22/数据库-完整性、视图、安全性和目录/</id>
+    <link href="http://chphong.github.io/2019/12/22/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%AE%8C%E6%95%B4%E6%80%A7%E3%80%81%E8%A7%86%E5%9B%BE%E3%80%81%E5%AE%89%E5%85%A8%E6%80%A7%E5%92%8C%E7%9B%AE%E5%BD%95/"/>
+    <id>http://chphong.github.io/2019/12/22/数据库-完整性、视图、安全性和目录/</id>
     <published>2019-12-22T10:54:53.000Z</published>
     <updated>2020-01-06T07:27:59.909Z</updated>
     
@@ -304,27 +304,27 @@
     
     </summary>
     
-      <category term="数据库" scheme="http://QQ876684433.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://chphong.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="笔记" scheme="http://QQ876684433.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="http://chphong.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="数据库" scheme="http://QQ876684433.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://chphong.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="完整性" scheme="http://QQ876684433.github.io/tags/%E5%AE%8C%E6%95%B4%E6%80%A7/"/>
+      <category term="完整性" scheme="http://chphong.github.io/tags/%E5%AE%8C%E6%95%B4%E6%80%A7/"/>
     
-      <category term="视图" scheme="http://QQ876684433.github.io/tags/%E8%A7%86%E5%9B%BE/"/>
+      <category term="视图" scheme="http://chphong.github.io/tags/%E8%A7%86%E5%9B%BE/"/>
     
-      <category term="安全性" scheme="http://QQ876684433.github.io/tags/%E5%AE%89%E5%85%A8%E6%80%A7/"/>
+      <category term="安全性" scheme="http://chphong.github.io/tags/%E5%AE%89%E5%85%A8%E6%80%A7/"/>
     
-      <category term="目录" scheme="http://QQ876684433.github.io/tags/%E7%9B%AE%E5%BD%95/"/>
+      <category term="目录" scheme="http://chphong.github.io/tags/%E7%9B%AE%E5%BD%95/"/>
     
   </entry>
   
   <entry>
     <title>操作系统-文件管理</title>
-    <link href="http://QQ876684433.github.io/2019/12/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
-    <id>http://QQ876684433.github.io/2019/12/21/操作系统-文件管理/</id>
+    <link href="http://chphong.github.io/2019/12/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
+    <id>http://chphong.github.io/2019/12/21/操作系统-文件管理/</id>
     <published>2019-12-21T10:17:13.000Z</published>
     <updated>2019-12-22T09:10:25.702Z</updated>
     
@@ -343,21 +343,21 @@
     
     </summary>
     
-      <category term="操作系统" scheme="http://QQ876684433.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+      <category term="操作系统" scheme="http://chphong.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
-      <category term="笔记" scheme="http://QQ876684433.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="http://chphong.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="操作系统" scheme="http://QQ876684433.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+      <category term="操作系统" scheme="http://chphong.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
-      <category term="文件管理" scheme="http://QQ876684433.github.io/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
+      <category term="文件管理" scheme="http://chphong.github.io/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
     
   </entry>
   
   <entry>
     <title>操作系统-设备管理</title>
-    <link href="http://QQ876684433.github.io/2019/12/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86/"/>
-    <id>http://QQ876684433.github.io/2019/12/21/操作系统-设备管理/</id>
+    <link href="http://chphong.github.io/2019/12/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86/"/>
+    <id>http://chphong.github.io/2019/12/21/操作系统-设备管理/</id>
     <published>2019-12-21T01:44:20.000Z</published>
     <updated>2019-12-21T10:16:05.344Z</updated>
     
@@ -376,21 +376,21 @@
     
     </summary>
     
-      <category term="操作系统" scheme="http://QQ876684433.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+      <category term="操作系统" scheme="http://chphong.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
-      <category term="笔记" scheme="http://QQ876684433.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="http://chphong.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="操作系统" scheme="http://QQ876684433.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+      <category term="操作系统" scheme="http://chphong.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
-      <category term="设备管理" scheme="http://QQ876684433.github.io/tags/%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86/"/>
+      <category term="设备管理" scheme="http://chphong.github.io/tags/%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86/"/>
     
   </entry>
   
   <entry>
     <title>CPP输入输出</title>
-    <link href="http://QQ876684433.github.io/2019/12/17/CPP%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/"/>
-    <id>http://QQ876684433.github.io/2019/12/17/CPP输入输出/</id>
+    <link href="http://chphong.github.io/2019/12/17/CPP%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/"/>
+    <id>http://chphong.github.io/2019/12/17/CPP输入输出/</id>
     <published>2019-12-17T10:57:43.000Z</published>
     <updated>2019-12-17T15:15:32.777Z</updated>
     
@@ -405,19 +405,19 @@
     
     </summary>
     
-      <category term="C++" scheme="http://QQ876684433.github.io/categories/C/"/>
+      <category term="C++" scheme="http://chphong.github.io/categories/C/"/>
     
     
-      <category term="C++" scheme="http://QQ876684433.github.io/tags/C/"/>
+      <category term="C++" scheme="http://chphong.github.io/tags/C/"/>
     
-      <category term="输入输出" scheme="http://QQ876684433.github.io/tags/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/"/>
+      <category term="输入输出" scheme="http://chphong.github.io/tags/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/"/>
     
   </entry>
   
   <entry>
     <title>数据库-函数依赖和范式</title>
-    <link href="http://QQ876684433.github.io/2019/12/04/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96%E5%92%8C%E8%8C%83%E5%BC%8F/"/>
-    <id>http://QQ876684433.github.io/2019/12/04/数据库-函数依赖和范式/</id>
+    <link href="http://chphong.github.io/2019/12/04/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96%E5%92%8C%E8%8C%83%E5%BC%8F/"/>
+    <id>http://chphong.github.io/2019/12/04/数据库-函数依赖和范式/</id>
     <published>2019-12-04T14:26:41.000Z</published>
     <updated>2019-12-24T06:43:30.846Z</updated>
     
@@ -433,23 +433,23 @@
     
     </summary>
     
-      <category term="数据库" scheme="http://QQ876684433.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://chphong.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="转载" scheme="http://QQ876684433.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/%E8%BD%AC%E8%BD%BD/"/>
+      <category term="转载" scheme="http://chphong.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/%E8%BD%AC%E8%BD%BD/"/>
     
     
-      <category term="数据库" scheme="http://QQ876684433.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://chphong.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="函数依赖" scheme="http://QQ876684433.github.io/tags/%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96/"/>
+      <category term="函数依赖" scheme="http://chphong.github.io/tags/%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96/"/>
     
-      <category term="范式" scheme="http://QQ876684433.github.io/tags/%E8%8C%83%E5%BC%8F/"/>
+      <category term="范式" scheme="http://chphong.github.io/tags/%E8%8C%83%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>CPP操作符重载</title>
-    <link href="http://QQ876684433.github.io/2019/12/03/CPP%E6%93%8D%E4%BD%9C%E7%AC%A6%E9%87%8D%E8%BD%BD/"/>
-    <id>http://QQ876684433.github.io/2019/12/03/CPP操作符重载/</id>
+    <link href="http://chphong.github.io/2019/12/03/CPP%E6%93%8D%E4%BD%9C%E7%AC%A6%E9%87%8D%E8%BD%BD/"/>
+    <id>http://chphong.github.io/2019/12/03/CPP操作符重载/</id>
     <published>2019-12-03T08:12:10.000Z</published>
     <updated>2020-01-07T07:11:41.913Z</updated>
     
@@ -464,19 +464,19 @@
     
     </summary>
     
-      <category term="C++" scheme="http://QQ876684433.github.io/categories/C/"/>
+      <category term="C++" scheme="http://chphong.github.io/categories/C/"/>
     
     
-      <category term="C++" scheme="http://QQ876684433.github.io/tags/C/"/>
+      <category term="C++" scheme="http://chphong.github.io/tags/C/"/>
     
-      <category term="操作符重载" scheme="http://QQ876684433.github.io/tags/%E6%93%8D%E4%BD%9C%E7%AC%A6%E9%87%8D%E8%BD%BD/"/>
+      <category term="操作符重载" scheme="http://chphong.github.io/tags/%E6%93%8D%E4%BD%9C%E7%AC%A6%E9%87%8D%E8%BD%BD/"/>
     
   </entry>
   
   <entry>
     <title>编译原理课堂笔记</title>
-    <link href="http://QQ876684433.github.io/2019/11/29/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/"/>
-    <id>http://QQ876684433.github.io/2019/11/29/编译原理课堂笔记/</id>
+    <link href="http://chphong.github.io/2019/11/29/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/"/>
+    <id>http://chphong.github.io/2019/11/29/编译原理课堂笔记/</id>
     <published>2019-11-29T08:38:13.000Z</published>
     <updated>2020-01-04T15:29:17.815Z</updated>
     
@@ -496,19 +496,19 @@
     
     </summary>
     
-      <category term="编译原理" scheme="http://QQ876684433.github.io/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
+      <category term="编译原理" scheme="http://chphong.github.io/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
     
-      <category term="笔记" scheme="http://QQ876684433.github.io/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="http://chphong.github.io/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="编译原理" scheme="http://QQ876684433.github.io/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
+      <category term="编译原理" scheme="http://chphong.github.io/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
     
   </entry>
   
   <entry>
     <title>C++面向对象之继承</title>
-    <link href="http://QQ876684433.github.io/2019/11/26/CPP%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%B9%8B%E7%BB%A7%E6%89%BF/"/>
-    <id>http://QQ876684433.github.io/2019/11/26/CPP面向对象之继承/</id>
+    <link href="http://chphong.github.io/2019/11/26/CPP%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%B9%8B%E7%BB%A7%E6%89%BF/"/>
+    <id>http://chphong.github.io/2019/11/26/CPP面向对象之继承/</id>
     <published>2019-11-26T11:06:55.000Z</published>
     <updated>2020-01-07T04:04:48.950Z</updated>
     
@@ -525,21 +525,21 @@
     
     </summary>
     
-      <category term="C++" scheme="http://QQ876684433.github.io/categories/C/"/>
+      <category term="C++" scheme="http://chphong.github.io/categories/C/"/>
     
     
-      <category term="C++" scheme="http://QQ876684433.github.io/tags/C/"/>
+      <category term="C++" scheme="http://chphong.github.io/tags/C/"/>
     
-      <category term="继承" scheme="http://QQ876684433.github.io/tags/%E7%BB%A7%E6%89%BF/"/>
+      <category term="继承" scheme="http://chphong.github.io/tags/%E7%BB%A7%E6%89%BF/"/>
     
-      <category term="面向对象" scheme="http://QQ876684433.github.io/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+      <category term="面向对象" scheme="http://chphong.github.io/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
     
   </entry>
   
   <entry>
     <title>操作系统-进程管理</title>
-    <link href="http://QQ876684433.github.io/2019/11/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/"/>
-    <id>http://QQ876684433.github.io/2019/11/17/操作系统-进程管理/</id>
+    <link href="http://chphong.github.io/2019/11/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/"/>
+    <id>http://chphong.github.io/2019/11/17/操作系统-进程管理/</id>
     <published>2019-11-17T03:18:33.000Z</published>
     <updated>2019-11-17T14:35:03.519Z</updated>
     
@@ -558,21 +558,21 @@
     
     </summary>
     
-      <category term="操作系统" scheme="http://QQ876684433.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+      <category term="操作系统" scheme="http://chphong.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
-      <category term="笔记" scheme="http://QQ876684433.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="http://chphong.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="操作系统" scheme="http://QQ876684433.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+      <category term="操作系统" scheme="http://chphong.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
-      <category term="进程管理" scheme="http://QQ876684433.github.io/tags/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/"/>
+      <category term="进程管理" scheme="http://chphong.github.io/tags/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/"/>
     
   </entry>
   
   <entry>
     <title>linux下制作ext4文件系统镜像</title>
-    <link href="http://QQ876684433.github.io/2019/11/07/linux%E4%B8%8B%E5%88%B6%E4%BD%9Cext4%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E9%95%9C%E5%83%8F/"/>
-    <id>http://QQ876684433.github.io/2019/11/07/linux下制作ext4文件系统镜像/</id>
+    <link href="http://chphong.github.io/2019/11/07/linux%E4%B8%8B%E5%88%B6%E4%BD%9Cext4%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E9%95%9C%E5%83%8F/"/>
+    <id>http://chphong.github.io/2019/11/07/linux下制作ext4文件系统镜像/</id>
     <published>2019-11-07T15:47:51.000Z</published>
     <updated>2019-11-07T15:52:13.718Z</updated>
     
@@ -587,19 +587,19 @@
     
     </summary>
     
-      <category term="linux" scheme="http://QQ876684433.github.io/categories/linux/"/>
+      <category term="linux" scheme="http://chphong.github.io/categories/linux/"/>
     
     
-      <category term="linux" scheme="http://QQ876684433.github.io/tags/linux/"/>
+      <category term="linux" scheme="http://chphong.github.io/tags/linux/"/>
     
-      <category term="ext4" scheme="http://QQ876684433.github.io/tags/ext4/"/>
+      <category term="ext4" scheme="http://chphong.github.io/tags/ext4/"/>
     
   </entry>
   
   <entry>
     <title>NASM学习记录</title>
-    <link href="http://QQ876684433.github.io/2019/11/07/NASM%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
-    <id>http://QQ876684433.github.io/2019/11/07/NASM学习记录/</id>
+    <link href="http://chphong.github.io/2019/11/07/NASM%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+    <id>http://chphong.github.io/2019/11/07/NASM学习记录/</id>
     <published>2019-11-07T06:34:04.000Z</published>
     <updated>2019-11-23T08:56:55.869Z</updated>
     
@@ -614,12 +614,12 @@
     
     </summary>
     
-      <category term="汇编" scheme="http://QQ876684433.github.io/categories/%E6%B1%87%E7%BC%96/"/>
+      <category term="汇编" scheme="http://chphong.github.io/categories/%E6%B1%87%E7%BC%96/"/>
     
     
-      <category term="汇编" scheme="http://QQ876684433.github.io/tags/%E6%B1%87%E7%BC%96/"/>
+      <category term="汇编" scheme="http://chphong.github.io/tags/%E6%B1%87%E7%BC%96/"/>
     
-      <category term="NASM" scheme="http://QQ876684433.github.io/tags/NASM/"/>
+      <category term="NASM" scheme="http://chphong.github.io/tags/NASM/"/>
     
   </entry>
   

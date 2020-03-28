@@ -25,7 +25,7 @@
 <meta name="keywords" content="Java,servlet">
 <meta property="og:type" content="article">
 <meta property="og:title" content="精读Servlet源码-javax.servlet.GenericServlet">
-<meta property="og:url" content="http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-GenericServlet/index.html">
+<meta property="og:url" content="http://chphong.github.io/2019/07/18/精读Servlet源码-javax-servlet-GenericServlet/index.html">
 <meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
 <meta property="og:description" content="精读Servlet源码-javax.servlet.GenericServletGenericServlet定义了通用的、协议独立的servlet，HTTP协议版的servlet即HttpServlet直接继承了GenericServlet；GenericServlet实现了Servlet和ServletConfig接口，它提供了Servlet接口生命周期方法的简单实现版本（init和destro">
 <meta property="og:locale" content="zh_CN">
@@ -96,7 +96,7 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://github.com/QQ876684433" target="_blank" >
+              <a href="https://github.com/chphong" target="_blank" >
                 <i class="icon icon-lg icon-github"></i>
                 Github
               </a>
@@ -133,7 +133,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -246,17 +246,17 @@
     <div class="content">
         
 <span class="post-time">
-    最終更新：<time datetime="2019-09-15T05:02:14.670Z" itemprop="dateUpdated">2019-09-15 13:02:14</time>
+    最后更新时间：<time datetime="2019-09-15T05:02:14.670Z" itemprop="dateUpdated">2019-09-15 13:02:14</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/07/18/精读Servlet源码-javax-servlet-GenericServlet/" target="_blank" rel="external">http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-GenericServlet/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/07/18/精读Servlet源码-javax-servlet-GenericServlet/" target="_blank" rel="external">http://chphong.github.io/2019/07/18/精读Servlet源码-javax-servlet-GenericServlet/</a>
         
     </div>
     
     <footer>
-        <a href="http://QQ876684433.github.io">
+        <a href="http://chphong.github.io">
             <img src="/img/avatar.jpg" alt="steve_chph">
             steve_chph
         </a>
@@ -282,7 +282,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-GenericServlet/&title=《精读Servlet源码-javax.servlet.GenericServlet》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://chphong.github.io/2019/07/18/精读Servlet源码-javax-servlet-GenericServlet/&title=《精读Servlet源码-javax.servlet.GenericServlet》 — 至繁归于至简 - chph's blog&pic=http://chphong.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -292,22 +292,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-GenericServlet/&title=《精读Servlet源码-javax.servlet.GenericServlet》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://chphong.github.io/2019/07/18/精读Servlet源码-javax-servlet-GenericServlet/&title=《精读Servlet源码-javax.servlet.GenericServlet》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-GenericServlet/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://chphong.github.io/2019/07/18/精读Servlet源码-javax-servlet-GenericServlet/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《精读Servlet源码-javax.servlet.GenericServlet》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-GenericServlet/&via=http://QQ876684433.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《精读Servlet源码-javax.servlet.GenericServlet》 — 至繁归于至简 - chph's blog&url=http://chphong.github.io/2019/07/18/精读Servlet源码-javax-servlet-GenericServlet/&via=http://chphong.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-GenericServlet/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://chphong.github.io/2019/07/18/精读Servlet源码-javax-servlet-GenericServlet/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -419,7 +419,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">
@@ -441,7 +441,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-GenericServlet/&title=《精读Servlet源码-javax.servlet.GenericServlet》 — 至繁归于至简 - chph's blog&pic=http://QQ876684433.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://chphong.github.io/2019/07/18/精读Servlet源码-javax-servlet-GenericServlet/&title=《精读Servlet源码-javax.servlet.GenericServlet》 — 至繁归于至简 - chph's blog&pic=http://chphong.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -451,22 +451,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-GenericServlet/&title=《精读Servlet源码-javax.servlet.GenericServlet》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://chphong.github.io/2019/07/18/精读Servlet源码-javax-servlet-GenericServlet/&title=《精读Servlet源码-javax.servlet.GenericServlet》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-GenericServlet/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://chphong.github.io/2019/07/18/精读Servlet源码-javax-servlet-GenericServlet/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《精读Servlet源码-javax.servlet.GenericServlet》 — 至繁归于至简 - chph's blog&url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-GenericServlet/&via=http://QQ876684433.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《精读Servlet源码-javax.servlet.GenericServlet》 — 至繁归于至简 - chph's blog&url=http://chphong.github.io/2019/07/18/精读Servlet源码-javax-servlet-GenericServlet/&via=http://chphong.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://QQ876684433.github.io/2019/07/18/精读Servlet源码-javax-servlet-GenericServlet/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://chphong.github.io/2019/07/18/精读Servlet源码-javax-servlet-GenericServlet/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -477,7 +477,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADKUlEQVR42u3a0U7rQAwEUP7/p3ul+wpNZ7wBgXvyhELI5mwlprbz8REfj//H55+vr3l2Zb7K5zskZ247sLGxsf8I+3F5JNRnV7a/nd35+vzTVbCxsbHXsfM4ac8nZ06iqw1XbGxs7HdmX4dE8p1/drfkDtjY2NjYJy2ekwdtm1DXwYaNjY39zuykqXQePOfDhtlTYWNjY+9mnwx6f9vPPzTfxsbGxv417Ed5JA2jvMhph8p5vL1QYGNjYy9iJ22avM00++qflxx5UynaRGxsbOx17FmcnFQ/ecupbWBFrwFhY2Njr2C3pHZrkmg8KVeS14C+WAsbGxt7EftkjDpr9LQr5ufzcTU2Njb2JvZJU/5kPHzS2Dopn7CxsbH3sWcLXEdLPhK+awyctKXqzxAbGxv7j7DbYmBWBpxsRH6HejyAjY2NvYg9a8rnL9a0f3Ueky+2DBsbG3s1u20htfHTDo9n2/riDtjY2Njr2LOXY+4qNmZjhvZ5nlZg2NjY2KvZSXjkhU0SQrNGUr4WNjY29lZ2Eh4nY4DvK06SkKsrMGxsbOx17FnLqS4P4hZVG6hfPAM2Njb2anZy5mQL8gKmLUuK32JjY2OvY+cxlj/6ySBh9tpQXqJgY2Nj72bnkXbycHcNmIcbjY2Njb2OnUfXbASbX5MXISdhiY2Njf0O7CSK2tJlFm8nYfZUio2Njb2a3W5EXrTMRgLf0vDCxsbGXseehcds4DorLWYD46erY2NjYy9l54VEHlHJlp20ivJY/aIUwcbGxl7KbttJ14y26TPbvjqGsbGxsRex23ZMsgUJNYmZNrraNhY2Njb2Dnb9Tz9Ysh0A3Bt4UUMKGxsbex17FlH5yzf5jLUdIcxGv9jY2Nj72O2j5MVGHkX5x5Bs/YtnwMbGxl7EviEMyoVng9u2yEmuxMbGxt7EzkPirnb/XcPd2TAYGxsbeys7KRLawUDbZjoZP7RFDjY2NvZ7ss9HrW05cVIIvQhabGxs7Ddm5+AWk29u27oq+mTY2NjYf5bdDlPbllM7Hm5LmjoasbGxsRex7xr05gVJXmzksdQOFbCxsbFXsP8BePMmOZC8mykAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADK0lEQVR42u3aS27DMAwFwNz/0um2RRHnkbSBmBmtAqO2NOqC4OfxiNfz13q01qsv/H7y//fxk/9vnbywsbGxb8J+Hq78EJNDH19rslduwcbGxt7KfrVZHiSOD3e8Y/Lu8b+kuiM2NjY2dvI8CSR54OxdFjY2NjZ2Hk6SxKOalvQSHmxsbOzvZOeb5alFrw2Qpx/J8xNqadjY2Ngfz867op//+5L+NjY2NvYHs5/FlZf4qyGq1zzoLWxsbOxN7EkTd/78rLZu8/zY2NjYi9i9BsBxotIr5SSk5EkhRcHGxsZex07aAJMD9QpDk+ZuoTeCjY2NfXP2pIreC4rzq8xTmkuaB9jY2NgfwJ6Ek0kjIdlxUpZ68zVsbGzsdeze4OPVTdnkm/m+f97CxsbGXsQ+LWuJi1N5MajaTihbsLGxsVewqyWbaiMhKdNXdzyhkYCNjY29jj3/aD7W0xvoSRKhQmjExsbGXsTuJRXVUJRcRHUcp5pTFJIrbGxs7FuxqylBNc2ohpzehZZ3x8bGxl7Evq4Y1Gvr5gFscipsbGzsTexqOWmykhQiuY5J0QobGxt7H7sXqJKj56X55JsnzCVV7wkbGxv7huz5EOQVVzZpRbwJadjY2Njr2Hl60EP2EoleAyMa3MTGxsZewc5L83kbtVqcyq/+tMYDNjY29jp2Hnhy9oTUG8QsjJBiY2NjL2LnfzRpBsyvoHdZyb8NGxsb++7sZLPq9tUwkxenkjAWXR82Njb2F7B7wzHV4ZtqCSmfvXkTVrGxsbEXsZNG7KSU0xvWqTaDm0UobGxs7HXsamkpGfGpJjzVtm4vlGJjY2PvZlcbt0l4q6YTkyvIW9TY2NjY+9jzlGPS7q0G0fy6X76FjY2NvYL9LK68NVst8eS75GlMoTGAjY2NfVv2ZLCmmpZMEpuc1CwwYWNjY9+cPS/BV++yOqxTLSFFp8LGxsZex54EhjxoTa6vGoHffBkbGxv7i9lJwtBrOVRDaf77ZVcEGxsb+4vZVzQS8jSjNzCEjY2NvZudA/JSfi/x6DUPLmwPYGNjY388u1fQPz7iJOzlu/TCGDY2NvYi9g8V07qWWoF5ewAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
