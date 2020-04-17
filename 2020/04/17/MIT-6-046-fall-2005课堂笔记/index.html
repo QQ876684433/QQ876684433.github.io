@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>MIT-6.046-fall-2005课堂笔记 | 至繁归于至简 - chph&#39;s blog | steve_chph personal website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="算法,数据结构,MIT6.046">
+    <meta name="description" content="Course Notes 数学理解+工程直觉  Lecture 01 课程简介及算法分析软件开发中比性能更重要的是什么？正确性、安全、用户友好、可维护性、简洁性等等 但是为什么还要研究性能？因为性能往往决定着一个方案可行或者不可行 性能处于这些要求的最底层，因为只有性能达到了要求，上面提到的这些才变成可能，比如性能是用户友好性和安全等等的前提 为什么要学习算法：  第一，算法可以将不可行变成可行">
+<meta name="keywords" content="算法,数据结构,MIT6.046">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MIT-6.046-fall-2005课堂笔记">
+<meta property="og:url" content="http://chphong.github.io/2020/04/17/MIT-6-046-fall-2005课堂笔记/index.html">
+<meta property="og:site_name" content="至繁归于至简 - chph&#39;s blog">
+<meta property="og:description" content="Course Notes 数学理解+工程直觉  Lecture 01 课程简介及算法分析软件开发中比性能更重要的是什么？正确性、安全、用户友好、可维护性、简洁性等等 但是为什么还要研究性能？因为性能往往决定着一个方案可行或者不可行 性能处于这些要求的最底层，因为只有性能达到了要求，上面提到的这些才变成可能，比如性能是用户友好性和安全等等的前提 为什么要学习算法：  第一，算法可以将不可行变成可行">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2020/03/28/GkZdXT.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/03/28/GEPYLQ.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/04/09/G4roX6.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/04/09/G4y92R.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/04/09/G5kgSK.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/04/09/G5eSDU.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/04/09/G5muQ0.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/04/09/G5UD7d.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/04/09/G5BbOf.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/04/11/GH70RH.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/04/11/GbudzD.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/04/12/GLvGtA.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/04/12/GOflE8.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/04/12/GOq9Rf.png">
+<meta property="og:updated_time" content="2020-04-17T13:42:28.711Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MIT-6.046-fall-2005课堂笔记">
+<meta name="twitter:description" content="Course Notes 数学理解+工程直觉  Lecture 01 课程简介及算法分析软件开发中比性能更重要的是什么？正确性、安全、用户友好、可维护性、简洁性等等 但是为什么还要研究性能？因为性能往往决定着一个方案可行或者不可行 性能处于这些要求的最底层，因为只有性能达到了要求，上面提到的这些才变成可能，比如性能是用户友好性和安全等等的前提 为什么要学习算法：  第一，算法可以将不可行变成可行">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/03/28/GkZdXT.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="至繁归于至简 - chph&#39;s blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">steve_chph</h5>
+          <a href="mailto:chph13420146901@gmail.com" title="chph13420146901@gmail.com" class="mail">chph13420146901@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/chphong" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://107.182.188.221:23333/"  >
+                <i class="icon icon-lg icon-link"></i>
+                Project(HTTP)
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://107.182.188.221:23334/"  >
+                <i class="icon icon-lg icon-demo"></i>
+                Project(HTTPS)
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">MIT-6.046-fall-2005课堂笔记</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">MIT-6.046-fall-2005课堂笔记</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-04-17T13:40:17.000Z" itemprop="datePublished" class="page-time">
+  2020-04-17
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/国外公开课/">国外公开课</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/国外公开课/课堂笔记/">课堂笔记</a></li></ul></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Course-Notes"><span class="post-toc-number">1.</span> <span class="post-toc-text">Course Notes</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Lecture-01-课程简介及算法分析"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Lecture 01 课程简介及算法分析</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#排序问题"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">排序问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#插入排序（Insertion-Sort）"><span class="post-toc-number">1.1.1.1.</span> <span class="post-toc-text">插入排序（Insertion Sort）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#归并排序"><span class="post-toc-number">1.1.1.2.</span> <span class="post-toc-text">归并排序</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#算法分析"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">算法分析</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#插入排序的分析"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text">插入排序的分析</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#算法的大局观（BIG-IDEA-OF-ALGORITHM）：渐进分析"><span class="post-toc-number">1.1.2.2.</span> <span class="post-toc-text">算法的大局观（BIG IDEA OF ALGORITHM）：渐进分析</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Lecture-02-渐进符号、递归及解法"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Lecture 02 渐进符号、递归及解法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#渐进符号"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">渐进符号</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#O-notation"><span class="post-toc-number">1.2.1.1.</span> <span class="post-toc-text">O-notation</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#宏约定（Macro-Convention）"><span class="post-toc-number">1.2.1.1.1.</span> <span class="post-toc-text">宏约定（Macro Convention）</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Ω​-notation"><span class="post-toc-number">1.2.1.2.</span> <span class="post-toc-text">Ω​-notation</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Theta-notation"><span class="post-toc-number">1.2.1.3.</span> <span class="post-toc-text">$\Theta$-notation</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#omicron-和-omega-notation"><span class="post-toc-number">1.2.1.4.</span> <span class="post-toc-text">$\omicron$和$\omega$-notation</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解决递归问题"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">解决递归问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#代换方法（substitution-method）"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text">代换方法（substitution method）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#递归树法（Recursion-tree-method）"><span class="post-toc-number">1.2.2.2.</span> <span class="post-toc-text">递归树法（Recursion-tree method）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#主方法（Master-method）"><span class="post-toc-number">1.2.2.3.</span> <span class="post-toc-text">主方法（Master method）</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Lecture-03-分治法"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Lecture 03 分治法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Divide-and-Conquer"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">Divide and Conquer</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Merge-Sort"><span class="post-toc-number">1.3.1.1.</span> <span class="post-toc-text">Merge Sort</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#常见的分治算法"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">常见的分治算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Binary-Search"><span class="post-toc-number">1.3.2.1.</span> <span class="post-toc-text">Binary Search</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Powering-a-number"><span class="post-toc-number">1.3.2.2.</span> <span class="post-toc-text">Powering a number</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Fibonacci-numbers"><span class="post-toc-number">1.3.2.3.</span> <span class="post-toc-text">Fibonacci numbers</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Matrix-multiplication"><span class="post-toc-number">1.3.2.4.</span> <span class="post-toc-text">Matrix multiplication</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#VLSI-layout"><span class="post-toc-number">1.3.2.5.</span> <span class="post-toc-text">VLSI layout</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Lecture-04-快排及随机化算法"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Lecture 04  快排及随机化算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Quick-Sort"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">Quick Sort</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#算法步骤"><span class="post-toc-number">1.4.1.1.</span> <span class="post-toc-text">算法步骤</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#算法分析-1"><span class="post-toc-number">1.4.1.2.</span> <span class="post-toc-text">算法分析</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Randomized-Quicksort（随机化快速排序算法）"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">Randomized Quicksort（随机化快速排序算法）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#指示器随机变量"><span class="post-toc-number">1.4.2.1.</span> <span class="post-toc-text">指示器随机变量</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Lecture-05-线性时间排序"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">Lecture 05 线性时间排序</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#How-fast-can-we-sort"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">How fast can we sort</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Comparison-sorting-model"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">Comparison sorting (model)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Decision-tree-model"><span class="post-toc-number">1.5.3.</span> <span class="post-toc-text">Decision-tree model</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Decision-trees-model-comparison-sorts"><span class="post-toc-number">1.5.4.</span> <span class="post-toc-text">Decision trees model comparison sorts</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Lower-bound-on-decision-tree-sorting"><span class="post-toc-number">1.5.5.</span> <span class="post-toc-text">Lower bound on decision-tree sorting</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Sorting-in-linearing-time"><span class="post-toc-number">1.5.6.</span> <span class="post-toc-text">Sorting in linearing time</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Counting-sort（计数排序）"><span class="post-toc-number">1.5.6.1.</span> <span class="post-toc-text">Counting sort（计数排序）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Radix-sort（基数排序）"><span class="post-toc-number">1.5.6.2.</span> <span class="post-toc-text">Radix sort（基数排序）</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Lecture-06-顺序统计、中值"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">Lecture 06 顺序统计、中值</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Order-statistics"><span class="post-toc-number">1.6.1.</span> <span class="post-toc-text">Order statistics</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Naive-algorithm"><span class="post-toc-number">1.6.1.1.</span> <span class="post-toc-text">Naive algorithm</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Randomized-divide-amp-conquer"><span class="post-toc-number">1.6.1.2.</span> <span class="post-toc-text">Randomized divide&amp;conquer</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Intuition-for-analysis"><span class="post-toc-number">1.6.1.2.1.</span> <span class="post-toc-text">Intuition for analysis:</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Analysis-of-expected-time"><span class="post-toc-number">1.6.1.2.2.</span> <span class="post-toc-text">Analysis of expected time</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Conclusion"><span class="post-toc-number">1.6.1.2.3.</span> <span class="post-toc-text">Conclusion</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Worst-case-linear-time-order-statistics"><span class="post-toc-number">1.6.1.3.</span> <span class="post-toc-text">Worst-case linear-time order statistics</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Lecture-07-哈希表"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">Lecture 07 哈希表</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Symbol-table-problem"><span class="post-toc-number">1.7.1.</span> <span class="post-toc-text">Symbol-table problem</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-MIT-6-046-fall-2005课堂笔记"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">MIT-6.046-fall-2005课堂笔记</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-04-17 21:40:17" datetime="2020-04-17T13:40:17.000Z"  itemprop="datePublished">2020-04-17</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/国外公开课/">国外公开课</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/国外公开课/课堂笔记/">课堂笔记</a></li></ul></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Course-Notes"><a href="#Course-Notes" class="headerlink" title="Course Notes"></a>Course Notes</h1><blockquote>
+<p>数学理解+工程直觉</p>
+</blockquote>
+<h2 id="Lecture-01-课程简介及算法分析"><a href="#Lecture-01-课程简介及算法分析" class="headerlink" title="Lecture 01 课程简介及算法分析"></a>Lecture 01 课程简介及算法分析</h2><p>软件开发中比性能更重要的是什么？正确性、安全、用户友好、可维护性、简洁性等等</p>
+<p>但是为什么还要研究性能？因为性能往往决定着一个方案可行或者不可行</p>
+<p>性能处于这些要求的最底层，因为只有性能达到了要求，上面提到的这些才变成可能，比如性能是用户友好性和安全等等的前提</p>
+<p>为什么要学习算法：</p>
+<ul>
+<li>第一，算法可以将不可行变成可行</li>
+<li>第二，算法是其他的前提，可以通过性能来获得其他的软件特性</li>
+<li>第三，算法有趣，速度永远让人渴望</li>
+</ul>
+<h3 id="排序问题"><a href="#排序问题" class="headerlink" title="排序问题"></a>排序问题</h3><h4 id="插入排序（Insertion-Sort）"><a href="#插入排序（Insertion-Sort）" class="headerlink" title="插入排序（Insertion Sort）"></a>插入排序（Insertion Sort）</h4><p>运行时间的影响因素：</p>
+<ul>
+<li><p>输入本身</p>
+<p>如果输入是排好序的，那么需要的工作将很少；逆序时，工作量最大</p>
+</li>
+<li><p>输入规模</p>
+<p>将输入规模参数化，那么运行时间是输入规模的某个函数</p>
+</li>
+</ul>
+<p>运行时间的上界，它代表了对用户的承诺</p>
+<h4 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h4><p>Merge sort A[1..n]</p>
+<ol>
+<li>If n=1, done    -&gt;    $\theta(1)$</li>
+<li>Recursively sort  A[1 .. [n/2] and A[[n/2]+1 .. n] (其中[n/2]是向上取整)        -&gt;        $2T(n/2)$</li>
+<li>Merge 2 sorted lists        -&gt;        $\theta(n)$</li>
+</ol>
+<p>Key subroutine - Merge</p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list1：20，13，9，2		&lt;- [1..[n/2]]</span><br><span class="line">list2：12，11，3，1		&lt;- [[n/2]+1..n]</span><br></pre></td></tr></table></figure>
+
+<p>归并上面两个有序列表的时间：$Time=\theta(n)$，也叫作线性时间</p>
+<p>递归过程：<br>$$<br>T(n)=<br>\begin{equation}<br>\left{<br>    \begin{array}{lr}<br>    \theta(1)&amp;, &amp; if;n=1 &amp;(usually;omit)\<br>    2T(\frac2n)+\theta(n)&amp;, &amp; if;n&gt;1<br>    \end{array}<br>\right.<br>\end{equation}<br>$$<br><strong>递归树方法（Recursion tree）：</strong>在递归式上应该使用这种方法——$T(n)=2T(\frac2n)+cn,const;c&gt;0$</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s1.ax1x.com/2020/03/28/GkZdXT.jpg" alt="GkZdXT.jpg" title>
+                </div>
+                <div class="image-caption">GkZdXT.jpg</div>
+            </figure>
+
+<p>在输入规模为30以内时，插入排序比归并排序有优势；而当输入规模增大，渐进分析情况下归并排序效率比插入排序高</p>
+<h3 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h3><ul>
+<li><p>最糟情况（worst-case，通常），定义为T(n)为输入规模为n的情况下所有可能输入的最长运行时间，这是一种函数关系</p>
+</li>
+<li><p>平均情况（average-case，有时），定义T(n)为输入规模为n的情况下所有可能输入的期望值，数学上意味着是每种输入的运行时间×那种输入出现的概率</p>
+<p>对于如何获知输入出现的概率，我们需要一个假设：一个有关于统计分布的假设</p>
+<p>最常见的假设是，所有的输入等概率出现，即均匀分布</p>
+</li>
+<li><p>最好情况分析（best-case，假象Bogus），一般没啥用</p>
+</li>
+</ul>
+<h4 id="插入排序的分析"><a href="#插入排序的分析" class="headerlink" title="插入排序的分析"></a>插入排序的分析</h4><p>运行时间取决于运行的计算机，因此我们比较算法时通常比较的是其相对速度，即两个算法在相同一台计算机上的表现<br>$$<br>运行时间=\sum^n_{j=2}\theta(j)=\theta(n^2)<br>$$<br>即对于每个j，它执行的操作次数是固定的常数，因此上面那个式子是一个算术级数</p>
+<h4 id="算法的大局观（BIG-IDEA-OF-ALGORITHM）：渐进分析"><a href="#算法的大局观（BIG-IDEA-OF-ALGORITHM）：渐进分析" class="headerlink" title="算法的大局观（BIG IDEA OF ALGORITHM）：渐进分析"></a>算法的大局观（BIG IDEA OF ALGORITHM）：渐进分析</h4><p>渐进分析（asymptotic analysis）：忽略依赖于机器的常量，以及不去检查实际运行时间，而是关注运行时间的增长</p>
+<p>渐进符号：</p>
+<ul>
+<li>Θ-notation：写个公式，弃去它的低阶项，并忽略前面的常数因子，例如：<br>$$<br>3n^3+90n^2-5n+6046=\theta(n^3)<br>$$<br>当n趋于无穷时，存在$n_0$，当$n&gt;n_0$时，$\theta(n^3)$的开销会比$\theta(n^2)$，但是有时候$n_0$大到没有计算机能够运行，因此有些时候我们也会去关注相对低效的算法，因为低效算法在合理规模下也许运行的也比较快</li>
+</ul>
+<h2 id="Lecture-02-渐进符号、递归及解法"><a href="#Lecture-02-渐进符号、递归及解法" class="headerlink" title="Lecture 02 渐进符号、递归及解法"></a>Lecture 02 渐进符号、递归及解法</h2><h3 id="渐进符号"><a href="#渐进符号" class="headerlink" title="渐进符号"></a>渐进符号</h3><h4 id="O-notation"><a href="#O-notation" class="headerlink" title="O-notation"></a>O-notation</h4><p>$f(n)=O(g(n))$ means there are consts $c&gt;0,n_0&gt;0$ such that $0\le f(n)\le cg(n)$ for all $n\ge n_0$</p>
+<p>即$g(n)$是$f(n)$的上界，$f(n)$是非负的，例如：$2n^2=O(n^3)$，我们只能理解为$2n^2$属于函数集$O(n^3)$</p>
+<p>把$2n^2$去掉系数，去掉低阶项，得到$n^2\le n^3$，因此大O可以粗略认为是小于等于</p>
+<p>准确定义：<br>$$<br>O(g(n))={f(n):there;are;consts;c\gt0,n_0\gt0,;such;that;<br>0\le f(n)\le cg(n);for;all;n\ge n_0}<br>$$</p>
+<h5 id="宏约定（Macro-Convention）"><a href="#宏约定（Macro-Convention）" class="headerlink" title="宏约定（Macro Convention）"></a>宏约定（Macro Convention）</h5><p>A set in a formula represents an anonymous function in that set, Ex:<br>$$<br>f(n)=n^3+O(n^2)<br>$$<br>定义了一个误差界限误差项是$O(n^2)$，意思是$f(n)$主要是$n^3$，但是还有一些低阶项$O(n^2)$，具体来说：在集合$O(n^2)$中存在函数$h(n)$，使得$f(n)=n^3+h(n)$</p>
+<p>有时会在求和（summation）计算中使用集合（即O-notation）表示某个函数</p>
+<p>当集合出现在等号左边时：<br>$$<br>n^2+O(n)=O(n^2)\<br>means:for; any; f(n)\in O(n),\<br>there; is; an; h(n)\in O(n^2); \<br>such; that; n^2+f(n)=h(n)<br>$$<br>即任何$n^2+O(n)$都是$O (n^2)$</p>
+<h4 id="Ω​-notation"><a href="#Ω​-notation" class="headerlink" title="Ω​-notation"></a>Ω​-notation</h4><p>大O记号很好地表示了上界，但我们还需要下界</p>
+<p>集合版定义：<br>$$<br>Ω(g(n))={f(n):there; exist; consts; c&gt;0,n_0&gt;0,; such; that; 0\le cg(n)\le f(n); for; all; n\ge n_0}<br>$$<br>例如：<br>$$<br>\sqrt n=Ω(lg;n)<br>$$</p>
+<h4 id="Theta-notation"><a href="#Theta-notation" class="headerlink" title="$\Theta$-notation"></a>$\Theta$-notation</h4><p>定义：<br>$$<br>\Theta(g(n))=\Omicron(g(n))\cap \Omega(g(n))<br>$$<br>例如：<br>$$<br>n^2=\Theta(n^2),;n^2+\Omicron(n)=\Theta(n^2)<br>$$</p>
+<h4 id="omicron-和-omega-notation"><a href="#omicron-和-omega-notation" class="headerlink" title="$\omicron$和$\omega$-notation"></a>$\omicron$和$\omega$-notation</h4><p>对于<strong>任意的c</strong>都成立，而$n_0$取决于c，例子：<br>$$<br>2n^2=\omicron(n^3),;(n_0=\frac2c) \<br>\frac12n^2=\Theta(n^2)\ne\omicron(n^2)<br>$$<br>因为$\omicron$是严格小于，$\omega$是严格大于</p>
+<p>总结一下上述符号：<br>$$<br>\Omicron :;\le\<br>\Omega :;\ge\<br>\Theta :;=<br>$$</p>
+<h3 id="解决递归问题"><a href="#解决递归问题" class="headerlink" title="解决递归问题"></a>解决递归问题</h3><h4 id="代换方法（substitution-method）"><a href="#代换方法（substitution-method）" class="headerlink" title="代换方法（substitution method）"></a>代换方法（substitution method）</h4><ol>
+<li><p>Guess the form of the solution</p>
+<p>不需要很精确，比如不需要关系系数、常量等等，只需要知道大概的形式，例如$n^2$等等</p>
+</li>
+<li><p>Verify by induction</p>
+<p>验证猜测的形式是否按照数学归纳满足条件</p>
+</li>
+<li><p>Solve for consts</p>
+<p>获得常数系数，设法找出什么系数可以使得问题成立</p>
+</li>
+</ol>
+<p>例子：$T(n)=4T(n/2)+n,;T(1)=\Theta(1)$</p>
+<p>（从$4T(n/2)$看出n乘以2后T(n)增长至4倍，因此可以猜测是$\Theta(n^2)$，接下来要证明它）</p>
+<ul>
+<li><p>Guess：$T(n)=\Omicron(n^3)$，</p>
+</li>
+<li><p>Assume：$T(k)\le ck^3; for; k\le;n$</p>
+</li>
+<li><p>$T(n)=4T(n/2)+n\le4c(n/2)^3+n$（因为$n/2\le n$，所以可以使用Assume中的式子）</p>
+</li>
+<li><p>$=\frac12cn^3+n=cn^3-(\frac12cn^3-n)\le cn^3$，要使得最后的部分成立，需要证明余项$\frac12cn^3-n$非负，例如$c\ge 1,n\ge1$</p>
+</li>
+</ul>
+<p>下面是证明$\Omicron(n^2)$</p>
+<ul>
+<li>Assume：$T(k)\le ck^2; for; k\le; n $</li>
+<li>$T(n)=4T(n/2)+n\le 4c(n/2)^2+n=cn^2+n=cn^2-(-n)$，因此$\le cn^2$不成立</li>
+<li>但是$cn^2$是$\Omicron(n^2)$，$-n$是$\Omicron(n)$，因此$cn^2-(-n)=\Omicron(n^2)-\Omicron(n)=\Omicron(n^2)$是成立的</li>
+</ul>
+<p>上面的推导是没有意义的，因为假设中去掉了低阶项，导致没法推导出我们想要的结果</p>
+<ul>
+<li><p>Assume：$T(k)\le c_1k^2-c_2k,; for; k\le n$</p>
+</li>
+<li><p>$T(n)=4T(n/2)+n\le 4(c_1(n/2)^2-c_2(n/2))+n$</p>
+</li>
+<li><p>$=c_1n^2-2c_2n+n=c_1n^2-c_2n-(c_2-1)n$</p>
+</li>
+<li><p>$\le c_1n^2-c_2n,;if; c_2\ge 1$</p>
+</li>
+<li><p>而对于$c_1$，它必须相对于$c_2$足够大，因为Base-case：$T(1)\le c_1-c_2,;T(1)=\Theta(1)$</p>
+</li>
+</ul>
+<h4 id="递归树法（Recursion-tree-method）"><a href="#递归树法（Recursion-tree-method）" class="headerlink" title="递归树法（Recursion-tree method）"></a>递归树法（Recursion-tree method）</h4><p>递归树法有些不严谨，但是可以通过递归树法猜测答案，然后使用代换方法证明</p>
+<p>例子：<br>$$<br>T(n)=T(n/4)+T(n/2)+2n^2<br>$$<br>Lecture 01中提到过，就是将每层计算出来，然后在将所有的层加起来</p>
+<p>（计算过程待补充。。。）</p>
+<h4 id="主方法（Master-method）"><a href="#主方法（Master-method）" class="headerlink" title="主方法（Master method）"></a>主方法（Master method）</h4><p>只能应用到特定的递归式上：$T(n)=aT(n/b)+f(n),;where; a\ge 1,;b\ge1,;f(n);is;asymptotically; positive$</p>
+<p>（asymptotically positive渐进趋正：对于足够大的n，f(n)是正的）</p>
+<p>比较$f(n)$和$n^{log_ba}$（它是递归树的叶子节点数）</p>
+<ul>
+<li><p>Case1 $f(n)=\Omicron(n^{log_ba-\epsilon});for; some; \epsilon\gt0$，即$f(n)$渐进小于等于$n^{log_ba}$</p>
+<p>$=&gt;T(n)=\Theta(n^{log_ba})$</p>
+</li>
+<li><p>Case2 $f(n)=\Theta(n^{log_ba};lg^kn);for; some; k\ge0$，即$f(n)$渐进等于$n^{log_ba}$</p>
+<p>$=&gt;T(n)=\Theta(n^{log_ba};lg^{k+1}n)$</p>
+</li>
+<li><p>Case3 $f(n)=\Omega(n^{log_ba+\epsilon});for; some; \epsilon\gt0;&amp;;af(n/b)\le (1-\epsilon^<code>)f(n)\;for\; some\; \epsilon^</code>\gt0$，即$f(n)$渐进大于等于$n^{log_ba}$</p>
+<p>$=&gt;T(n)=\Theta(f(n))$</p>
+</li>
+</ul>
+<p>通过递归树法进行证明：</p>
+<p>（树省略，截个图算了orz）</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s1.ax1x.com/2020/03/28/GEPYLQ.png" alt="GEPYLQ.png" title>
+                </div>
+                <div class="image-caption">GEPYLQ.png</div>
+            </figure>
+
+<p>高度是$log_bn$，由于分支数是a，所以可以计算出叶子节点的个数：$a^h=a^{log_bn}=(神奇的换底)=n^{log_ba}$</p>
+<p>（后面还有不少听不懂的orz。。。）</p>
+<p>例子：<br>$$<br>T(n)=4T(n/2)+n;=&gt;; a:4,;b:2,;f(n):n<br>$$<br>可以计算出：$n^{log_ba}=n^2$，因此适用于Case1 =&gt; $T(n)=\Omega(n^2)$</p>
+<p>再者：<br>$$<br>T(n)=4T(n/2)+n^2;=&gt;; a:4,;b:2,;f(n):n^2<br>$$<br>可以计算出：$n^{log_ba}=n^2$，k=0，适用于Case2 =&gt; $T(n)=n^2lg;n$</p>
+<p>还有：<br>$$<br>T(n)=4T(n/2)+n^3;=&gt;; a:4,;b:2,;f(n):n^3<br>$$<br>可以计算出：$n^{log_ba}=n^2$，适用于Case3 =&gt; $T(n)=\Theta(n^3)$</p>
+<p>最后：<br>$$<br>T(n)=4T(n/2)+n^2/lg;n;=&gt;; a:4,;b:2,;f(n):n^2/lg;n<br>$$<br>（master method不适用，因为计算出来的k小于0了，是-1，不符合Case2的条件）结果是：$T(n)=\Theta(n^2lglgn)$</p>
+<h2 id="Lecture-03-分治法"><a href="#Lecture-03-分治法" class="headerlink" title="Lecture 03 分治法"></a>Lecture 03 分治法</h2><h3 id="Divide-and-Conquer"><a href="#Divide-and-Conquer" class="headerlink" title="Divide and Conquer"></a>Divide and Conquer</h3><ol>
+<li><p>Divide the problem (instance) into one or more subproblems</p>
+<p>更小的问题意味着原问题的规模n更小了</p>
+</li>
+<li><p>Conquer each subproblems recursively</p>
+</li>
+<li><p>Combine solutions</p>
+</li>
+</ol>
+<h4 id="Merge-Sort"><a href="#Merge-Sort" class="headerlink" title="Merge Sort"></a>Merge Sort</h4><p>Running Time: $T(n)=2T(n/2)+\Theta (n)$</p>
+<p>满足case2，解出k=0，所以最终：$T(n)=\Theta(nlog n)$</p>
+<h3 id="常见的分治算法"><a href="#常见的分治算法" class="headerlink" title="常见的分治算法"></a>常见的分治算法</h3><h4 id="Binary-Search"><a href="#Binary-Search" class="headerlink" title="Binary Search"></a>Binary Search</h4><p>find x in sorted array</p>
+<p>1、Divide, compare x with middle </p>
+<p>2、Conquer, recursse in one subarray</p>
+<p>3、Combine, trivial</p>
+<p>区别在于：二分查找只有一个子问题，因此$T(n)=T(n/2)+\Theta(1)$</p>
+<p>满足case2，计算出k=0，因此$T(n)=\Theta(lgn)$</p>
+<h4 id="Powering-a-number"><a href="#Powering-a-number" class="headerlink" title="Powering a number"></a>Powering a number</h4><p>given number x, integer n&gt;=0, compute $x^n$</p>
+<ul>
+<li><p>Naive algorithm: 累乘，$T(n)=\Theta(n)$</p>
+</li>
+<li><p>Divide-and-conquer algo（快速幂算法）:<br>$$<br>x^n=<br>\begin{equation}<br>\left{</p>
+<pre><code>\begin{array}{lr}
+x^{n/2}.x^{n/2}&amp;, &amp; if\;n\;even \\
+x^{(n-1)/2}.x^{(n-1)/2}.x&amp;, &amp; if\;n\;odd
+\end{array}</code></pre><p>\right.<br>\end{equation}<br>$$<br>因此$T(n)=T(n/2)+\Theta(1)=\Theta(lgn)$</p>
+</li>
+</ul>
+<h4 id="Fibonacci-numbers"><a href="#Fibonacci-numbers" class="headerlink" title="Fibonacci numbers"></a>Fibonacci numbers</h4><p>$$<br>F_n=<br>\begin{equation}<br>\left{<br>    \begin{array}{lr}<br>    0&amp;, &amp; if;n=0 \<br>    1&amp;, &amp; if;n=1 \<br>    F_{n-1}+F_{n-2}&amp;,&amp;if;n\ge2<br>    \end{array}<br>\right.<br>\end{equation}<br>$$</p>
+<blockquote>
+<p>参考：<a href="https://www.cnblogs.com/zhoutaotao/p/3964997.html" target="_blank" rel="noopener">https://www.cnblogs.com/zhoutaotao/p/3964997.html</a></p>
+</blockquote>
+<ul>
+<li><p>Naive recursive algo</p>
+<p>Time $\Omega(\Phi^n),;\Phi=\frac {1+\sqrt5}2（即黄金分割率）$</p>
+<p>note: <strong>exponential time is bad; polynomial time is good</strong></p>
+</li>
+<li><p>Bottom-up algo</p>
+<p>Compute F0, F1, F2, …, Fn, Time $\Theta(n)$</p>
+</li>
+<li><p>Naive recursive squaring（朴素平方递归算法）</p>
+<blockquote>
+<p>这个算法主要根据斐波那契数列的一条数学性质而来。该性质表明，斐波那契数列F(n)即为$\frac{φ^n}{ \sqrt5}$向下取整。这样，问题的求解于是变成了一个求x的n次方的问题，<a href="http://www.cnblogs.com/zhoutaotao/p/3959611.html" target="_blank" rel="noopener">在之前的文章里有讲解，链接请进</a>。 所以算法的效率为Θ(lgn)。但是这个方法是不太靠谱的，主要是当n比较大时，由于硬件的限制计算机中的浮点运算得到的结果与真实值就产生误差了。实用价值也不大，只能用做理论分析。</p>
+</blockquote>
+</li>
+<li><p>Recursive squaring（平方递归算法）</p>
+<p>Thm:<br>$$<br>\left[<br>\begin{matrix}</p>
+<pre><code>F_{n+1} &amp; F_{n}\\
+F_{n} &amp; F_{n-1}</code></pre><p>\end{matrix}<br>\right]<br>=<br>\left[<br>\begin{matrix}</p>
+<pre><code>1 &amp; 1\\
+1 &amp; 0</code></pre><p>\end{matrix}<br>\right]^n<br>$$<br>$=&gt;\Theta(lgn);time$ ，因为矩阵只有4个数，故矩阵运算可以看作常量时间</p>
+<ul>
+<li><p>Proof by induction on n（归纳法）</p>
+<p>Base:<br>$$<br>\left[<br>\begin{matrix}</p>
+<pre><code>1 &amp; 1\\
+1 &amp; 0</code></pre><p>\end{matrix}<br>\right]^1<br>=<br>\left[<br>\begin{matrix}</p>
+<pre><code>F_{2} &amp; F_{1}\\
+F_{1} &amp; F_{0}</code></pre><p>\end{matrix}<br>\right]<br>$$<br>Step:<br>$$<br>\left[<br>\begin{matrix}</p>
+<pre><code>F_{n+1} &amp; F_{n}\\
+F_{n} &amp; F_{n-1}</code></pre><p>\end{matrix}<br>\right]<br>=<br>\left[<br>\begin{matrix}</p>
+<pre><code>F_{n} &amp; F_{n-1}\\
+F_{n-1} &amp; F_{n-2}</code></pre><p>\end{matrix}<br>\right]<br>.<br>\left[<br>\begin{matrix}</p>
+<pre><code>F_{1} &amp; F_{1}\\
+F_{1} &amp; F_{0}</code></pre><p>\end{matrix}<br>\right]<br>$$<br>End</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Matrix-multiplication"><a href="#Matrix-multiplication" class="headerlink" title="Matrix multiplication"></a>Matrix multiplication</h4><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s1.ax1x.com/2020/04/09/G4roX6.png" alt="G4roX6.png" title>
+                </div>
+                <div class="image-caption">G4roX6.png</div>
+            </figure>
+
+<ul>
+<li><p>Standard algo $\Theta(n^3)$</p>
+<p>即矩阵乘法</p>
+</li>
+<li><p>Divide-and-conquer algo</p>
+<p>Idea：n×n matrix = 2*2 block matrix of n/2 * n/2 sub matrix</p>
+<p><img src="https://s1.ax1x.com/2020/04/09/G4y92R.png" alt="G4y92R.png"></p>
+<p>需要8次递归计算子矩阵和4次中间结果累加（分解后的问题包含了8次矩阵相乘和4次矩阵相加），因此$T(n)=8T(n/2)+\Theta(n^2)=\Theta(n^3)$ case1</p>
+</li>
+<li><p>Strassen’s algorithm（斯特拉森算法）</p>
+<p>Idea：reduce # multis -&gt; 7（减少乘法的次数，即变成7次）</p>
+<p>1、Divide A、B</p>
+<p>​    Compute terms for products - $\Theta (n^2)$</p>
+<p>2、Conquer recursively</p>
+<p>​    Compute P1, P2, P3, …, P7</p>
+<p>3、Combine r, s, t, u    - $\Theta(n^2)$</p>
+<p>最后得出$T(n)=7T(n/2)+\Theta(n^2)=\Theta(n^{lg7})=\Omicron(n^{2.81})$ case1</p>
+<blockquote>
+<p>Strassen算法的原理。</p>
+<p>仍然把每个矩阵分割为4份，然后创建如下10个中间矩阵：</p>
+<p>S1 = B12 - B22<br>S2 = A11 + A12<br>S3 = A21 + A22<br>S4 = B21 - B11<br>S5 = A11 + A22<br>S6 = B11 + B22<br>S7 = A12 - A22<br>S8 = B21 + B22<br>S9 = A11 - A21<br>S10 = B11 + B12</p>
+<p>接着，计算7次矩阵乘法：</p>
+<p>P1 = A11 • S1<br>P2 = S2 • B22<br>P3 = S3 • B11<br>P4 = A22 • S4<br>P5 = S5 • S6<br>P6 = S7 • S8<br>P7 = S9 • S10</p>
+<p>最后，根据这7个结果就可以计算出C矩阵：<br>C11 = P5 + P4 - P2 + P6<br>C12 = P1 + P2<br>C21 = P3 + P4<br>C22 = P5 + P1 - P3 - P7</p>
+<p>是不是很神奇呢？话说我第一次看到这个算法的时候真的是惊呆了，10个S矩阵和7个P矩阵究竟是怎么凑出来的，简直不可思议。</p>
+<p>我们可以把P矩阵和S矩阵展开，并带入最后的式子计算，会发现恰好是公式3中的四个式子。也就是说，Strassen为了计算公式3，绕了一大圈，用了更多的步骤，成功的把计算量变成了7个矩阵乘法和18个矩阵加法。虽然矩阵加法增加了好几倍，而矩阵乘法只减小了1个，但在数量级面前，18个加法仍然渐进快于1个乘法。这就是该算法的精妙之处。</p>
+<p>——来源：<a href="https://www.jianshu.com/p/6e21f8e872fd" target="_blank" rel="noopener">https://www.jianshu.com/p/6e21f8e872fd</a></p>
+</blockquote>
+</li>
+</ul>
+<h4 id="VLSI-layout"><a href="#VLSI-layout" class="headerlink" title="VLSI layout"></a>VLSI layout</h4><p>Problem. Embed a complete binary tree on n leaves in a grid with minimum area（将一个有n个叶节点的完全二叉树嵌入到一个网格中，并且使得占据的空间最小）</p>
+<ul>
+<li><p>Naive embedding</p>
+<p><img src="https://s1.ax1x.com/2020/04/09/G5kgSK.png" alt="G5kgSK.png"></p>
+<p>$H(n)=H(n/2)+\Theta(1)=\Theta(lgn)$</p>
+<p>$W(n)=2W(n/2)+\Omicron(1)=\Theta(n)$</p>
+<p>$Area=H(n)*W(n)=\Theta(nlgn)$</p>
+</li>
+<li><p>改进方法</p>
+<p>Goal:<br>$$<br>W(n)=\Theta(\sqrt n) \<br>H(n)=\Theta(\sqrt n) \<br>=&gt; Area=\Theta(n)<br>$$<br>由于$log_ba=log_42=\frac12$，那么我们可以假设$T(n)=2T(n/4)+\Theta(n^{\frac12-\epsilon})$，$\epsilon$的作用是使得$n^{log_ba}=n^{\frac12}$占主导（即渐进大于$f(n)=n^{\frac12-\epsilon}$）</p>
+<p><strong>H布局</strong></p>
+<p><img src="https://s1.ax1x.com/2020/04/09/G5eSDU.png" alt="G5eSDU.png"></p>
+<p><img src="https://s1.ax1x.com/2020/04/09/G5muQ0.png" alt="G5muQ0.png"></p>
+<p>最后计算出来：<br>$$<br>L(n)=2L(n/4)+\Theta(1)=\Theta(\sqrt n);;(case 1)\<br>Area=L(n)*L(n)=\Theta(n)<br>$$</p>
+</li>
+</ul>
+<h2 id="Lecture-04-快排及随机化算法"><a href="#Lecture-04-快排及随机化算法" class="headerlink" title="Lecture 04  快排及随机化算法"></a>Lecture 04  快排及随机化算法</h2><h3 id="Quick-Sort"><a href="#Quick-Sort" class="headerlink" title="Quick Sort"></a>Quick Sort</h3><ul>
+<li><p>Divide and conquer</p>
+</li>
+<li><p>Sorts “in place”</p>
+<p>即本地排序，不需要额外的空间开销，类似于插入排序；但是归并排序需要额外的空间开销</p>
+</li>
+<li><p>Very practical (with tuning)</p>
+<p>经过调节和优化后性能会很好</p>
+</li>
+</ul>
+<h4 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h4><ol>
+<li>Divide: Partition array into 2 subarrays around <strong>pivot</strong> x, such that elems in lower subarray &lt;= x &lt;= elems in upper subarray</li>
+<li>Conquer: Recursivly sort 2 subarrays</li>
+<li>Combine: Trivial</li>
+</ol>
+<p>Key: Linear-time($\Theta(n)$) partitioning subroutine</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Partition(A, p, q)	<span class="comment">// A[p..q]</span></span><br><span class="line">    x &lt;- A[p]		<span class="comment">// pivot A[p]</span></span><br><span class="line">    i &lt;- p</span><br><span class="line">    <span class="keyword">for</span> j &lt;- p+<span class="number">1</span> to q</span><br><span class="line">        <span class="keyword">do</span> <span class="keyword">if</span> A[j] &lt;= x</span><br><span class="line">            then i &lt;- i+<span class="number">1</span></span><br><span class="line">            	 each A[i] &lt;-&gt; A[j]</span><br><span class="line">    each A[p] &lt;-&gt; A[i]</span><br><span class="line">    <span class="keyword">return</span> i</span><br></pre></td></tr></table></figure>
+
+<p>$Time;is:;T(n)=\Theta(n);for;n-elem;subarray$</p>
+<p>例子：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s1.ax1x.com/2020/04/09/G5UD7d.png" alt="G5UD7d.png" title>
+                </div>
+                <div class="image-caption">G5UD7d.png</div>
+            </figure>
+
+<p>Quicksort routine:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Quicktsort(A, p, q)</span><br><span class="line">	<span class="keyword">if</span> p &lt; q	<span class="comment">// 在n=0或者1的时候，不需要进行排序，因此条件为: p&lt;q</span></span><br><span class="line">        then r &lt;- Partition(A, p, q)</span><br><span class="line">        	 Quicksort(A, p, r<span class="number">-1</span>)</span><br><span class="line">        	 Quicksort(A, r+<span class="number">1</span>, q)</span><br></pre></td></tr></table></figure>
+
+<p>Init Call: </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Quitsort(A, <span class="number">1</span>, n)</span><br></pre></td></tr></table></figure>
+
+<p>优化方法：</p>
+<ul>
+<li>可以在subarray元素较少的时候，比如少于5个元素的时候，不再进行Quicksort递归，而是使用其他的对小规模数据集更有效的排序算法</li>
+</ul>
+<h4 id="算法分析-1"><a href="#算法分析-1" class="headerlink" title="算法分析"></a>算法分析</h4><ul>
+<li><p>T(n)=worst-case-time</p>
+<ul>
+<li><p>Input sorted or reversed sorted, one side of partition has no elems</p>
+</li>
+<li><p>实际中更常见的情况是，输入的数组已经有序或者几乎有序</p>
+</li>
+<li><p>$T(n)=T(0)+T(n-1)+\Theta(n)=\Theta(1)+T(n-1)+\Theta(n)=T(n-1)+\Theta(n)=\Theta(n^2)$</p>
+<p>类似于插入排序，等差级数</p>
+</li>
+</ul>
+</li>
+<li><p>T(n)=average-case-time</p>
+<p><img src="https://s1.ax1x.com/2020/04/09/G5BbOf.png" alt="G5BbOf.png"></p>
+<p>最后$T(n)=\Theta(n)+\Theta(n^2)=\Theta(n^2)$ （递归树中的左子树有n个$\Theta(1)$）</p>
+</li>
+<li><p>Best-case analysis（intuition only!）</p>
+<p>If we are really lucky, Partition splits the array n/2 : n/2, then</p>
+<p>$T(n)=2T(n/2)+\Theta(n)=\Theta(nlogn)$ (case 2)</p>
+</li>
+</ul>
+<blockquote>
+<p>to say yes or no and be right or wrong, because you have some emotional commitment to it, and we will remember better, rather than just sitting and being quiet. You don’t manipulate your own emotions, well enough to remember things well. Those people who voted win over the people who don’t vote, whether they are right or wrong.</p>
+</blockquote>
+<h3 id="Randomized-Quicksort（随机化快速排序算法）"><a href="#Randomized-Quicksort（随机化快速排序算法）" class="headerlink" title="Randomized Quicksort（随机化快速排序算法）"></a>Randomized Quicksort（随机化快速排序算法）</h3><ul>
+<li><p>好处</p>
+<ul>
+<li><p>running time is independent of input ordering</p>
+</li>
+<li><p>no assumptions about input distributions</p>
+</li>
+<li><p>no specific input elicit worst case behavior</p>
+</li>
+<li><p>worst case determined only by random number generator</p>
+</li>
+</ul>
+</li>
+<li><p>pivot on random elem（即主元是随机选择的）</p>
+<p>在进行传统的划分之前，先随机选择一个元素与首元素互换，被选中的元素即为主元，它被交换到了首元素，接下来的情况与传统的快排差不多</p>
+</li>
+</ul>
+<h4 id="指示器随机变量"><a href="#指示器随机变量" class="headerlink" title="指示器随机变量"></a>指示器随机变量</h4><blockquote>
+<p>参考：<a href="https://www.cnblogs.com/xubenben/archive/2012/12/18/2823098.html" target="_blank" rel="noopener">https://www.cnblogs.com/xubenben/archive/2012/12/18/2823098.html</a></p>
+</blockquote>
+<p>（过程省略。。）</p>
+<p>最后证明出随机化快排算法的期望运行时间为：$T(n)=\Theta(nlgn)$，它通常比归并排序快三倍以上，并且它<strong>在虚拟内存的缓存中性能很好</strong></p>
+<h2 id="Lecture-05-线性时间排序"><a href="#Lecture-05-线性时间排序" class="headerlink" title="Lecture 05 线性时间排序"></a>Lecture 05 线性时间排序</h2><h3 id="How-fast-can-we-sort"><a href="#How-fast-can-we-sort" class="headerlink" title="How fast can we sort"></a>How fast can we sort</h3><p>It depends on model of what you can do of elements（取决于允许对元素进行的操作）</p>
+<p>e.g.<br>$$<br>\begin{equation}<br>\left{<br>    \begin{array}{lr}<br>    quicksort&amp; - &amp; \Theta(nlgn) \<br>    heapsort&amp; - &amp; \Theta(nlgn) \<br>    merge;sort&amp; - &amp; \Theta(nlgn) \<br>    insertion;sort&amp; - &amp; \Theta(n^n) \<br>    \end{array}<br>\right.<br>\end{equation}<br>$$</p>
+<h3 id="Comparison-sorting-model"><a href="#Comparison-sorting-model" class="headerlink" title="Comparison sorting (model)"></a>Comparison sorting (model)</h3><p>only use comparison to determine rel. order of elements（只通过比较来决定元素的相对位置）</p>
+<h3 id="Decision-tree-model"><a href="#Decision-tree-model" class="headerlink" title="Decision-tree model"></a>Decision-tree model</h3><p>example: sort &lt;a1, a2, a3&gt;</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s1.ax1x.com/2020/04/11/GH70RH.png" alt="GH70RH.png" title>
+                </div>
+                <div class="image-caption">GH70RH.png</div>
+            </figure>
+
+<p>In general &lt;a1, a2, a3, …, an&gt;</p>
+<ul>
+<li>each internal node has label i:j, $i,j\in{1,2,…,n}$<ul>
+<li>means compare $a_i$ vs $a_j$ </li>
+<li>left subtree gives subsequent comparisons if $a_i\le a_j$</li>
+<li>right subtree gives subsequent comparisons if $a_i&gt;a_j$</li>
+<li>each leaf gives a permutation $&lt;\pi(1), \pi(2),…,\pi(n)&gt;$ such that $a_{\pi(1)}\le a_{\pi(2)}\le…\le a_{\pi(n)}$</li>
+</ul>
+</li>
+</ul>
+<p>任何比较排序算法都可以写成决策树算法的形式</p>
+<h3 id="Decision-trees-model-comparison-sorts"><a href="#Decision-trees-model-comparison-sorts" class="headerlink" title="Decision trees model comparison sorts"></a>Decision trees model comparison sorts</h3><ul>
+<li><p>(at least) <strong>one tree</strong> for each n</p>
+</li>
+<li><p>view algorithm as splitting whenever it makes a comparison </p>
+</li>
+<li><p>tree lists comparisons along all possible instruction traces</p>
+</li>
+<li><p>running time (# comparisons) = length of path</p>
+</li>
+<li><p>worst-case run time = height of tree（即最长的比较路径）</p>
+</li>
+<li><p>叶节点的数目 = 输入数据的全排列的个数，即：n!</p>
+</li>
+</ul>
+<h3 id="Lower-bound-on-decision-tree-sorting"><a href="#Lower-bound-on-decision-tree-sorting" class="headerlink" title="Lower bound on decision-tree sorting"></a>Lower bound on decision-tree sorting</h3><p>定理[决策树排序的下界]：Any decision tree sorting n elems has height $\Omega(nlgn)$</p>
+<p>Proof: </p>
+<ul>
+<li><p>#leaves must be $\ge n!$</p>
+</li>
+<li><p>height h =&gt; # leaves $\le 2^h$</p>
+</li>
+</ul>
+<p>=&gt; $n! \le 2^h$</p>
+<p>=&gt; $h\ge lg;n!$</p>
+<p>=&gt; $h\ge lg(n/e)^n=nlg(n/e)=n(lgn-lge)$[斯特林公式]</p>
+<p>而$lge=\Omicron(1)$，因此：</p>
+<p>=&gt; $h\ge n(lgn-lge)=\Omega(nlgn)$</p>
+<p>Merge sort &amp; heapsort are asymptotically optimal comparison sorts. （归并排序和堆排序是渐进最优的比较排序算法）</p>
+<p>Randomized quicksort is asymptotically optimal in expectation.（理想情况下随机快排是渐进最优的）</p>
+<h3 id="Sorting-in-linearing-time"><a href="#Sorting-in-linearing-time" class="headerlink" title="Sorting in linearing time"></a>Sorting in linearing time</h3><p>（整数范围的排序）</p>
+<h4 id="Counting-sort（计数排序）"><a href="#Counting-sort（计数排序）" class="headerlink" title="Counting sort（计数排序）"></a>Counting sort（计数排序）</h4><p>Input: A[1..n], each A[i] $\le$ {1, 2, 3, …, k}</p>
+<p>Output: B[1..n] = sorting of A</p>
+<p>Aux storage: C[1..k]</p>
+<p>算法步骤：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i &lt;- <span class="number">1</span> to k						<span class="comment">// Θ(k)</span></span><br><span class="line">    <span class="keyword">do</span> C[i] &lt;- <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> j &lt;- <span class="number">1</span> to n						<span class="comment">// Θ(n)</span></span><br><span class="line">    <span class="keyword">do</span> C[A[j]] &lt;- C[A[j]]+<span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> i &lt;- <span class="number">2</span> to k        				<span class="comment">// Θ(k)</span></span><br><span class="line">    <span class="keyword">do</span> C[i] &lt;- C[i] + C[i<span class="number">-1</span>]</span><br><span class="line"><span class="keyword">for</span> j &lt;- n downto <span class="number">1</span>					<span class="comment">// Θ(n)</span></span><br><span class="line">    <span class="keyword">do</span> B[C[A[i]]] &lt;- A[j]</span><br><span class="line">        C[A[j]] &lt;- C[A[j]] - <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>因此运行时间是：$T(n)=k+n$</p>
+<p>当k是$n^2或者n^3$时，性能会很差；如果$k=\Omicron(n)或者k&lt;\Theta(nlgn)$，那么计数算法表现很好（空间开销大）</p>
+<p>案例：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s1.ax1x.com/2020/04/11/GbudzD.png" alt="GbudzD.png" title>
+                </div>
+                <div class="image-caption">GbudzD.png</div>
+            </figure>
+
+<p>（被挡住的地方是：A = 4,1,3,4,3  B=1,3,3,4,4）</p>
+<h4 id="Radix-sort（基数排序）"><a href="#Radix-sort（基数排序）" class="headerlink" title="Radix sort（基数排序）"></a>Radix sort（基数排序）</h4><p>Stable sort（稳定排序）preserves the relative order of equal elements</p>
+<blockquote>
+<p>exercise: which other sorts are stable?</p>
+</blockquote>
+<p>基数排序是稳定排序算法</p>
+<p>Example:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">    ↓		  ↓			↓</span><br><span class="line"><span class="number">3</span> <span class="number">2</span> <span class="number">9</span>	  	<span class="number">7</span> <span class="number">2</span> <span class="number">0</span>		<span class="number">7</span> <span class="number">2</span> <span class="number">0</span>		<span class="number">3</span> <span class="number">2</span> <span class="number">9</span></span><br><span class="line"><span class="number">4</span> <span class="number">5</span> <span class="number">7</span>		<span class="number">3</span> <span class="number">5</span> <span class="number">5</span>		<span class="number">3</span> <span class="number">2</span> <span class="number">9</span>		<span class="number">3</span> <span class="number">5</span> <span class="number">5</span></span><br><span class="line"><span class="number">6</span> <span class="number">5</span> <span class="number">7</span>		<span class="number">4</span> <span class="number">3</span> <span class="number">6</span>		<span class="number">4</span> <span class="number">3</span> <span class="number">6</span>		<span class="number">4</span> <span class="number">3</span> <span class="number">6</span></span><br><span class="line"><span class="number">8</span> <span class="number">3</span> <span class="number">9</span>	-&gt;	<span class="number">4</span> <span class="number">5</span> <span class="number">7</span>	-&gt;	<span class="number">8</span> <span class="number">3</span> <span class="number">9</span>	-&gt;	<span class="number">4</span> <span class="number">5</span> <span class="number">7</span></span><br><span class="line"><span class="number">4</span> <span class="number">3</span> <span class="number">6</span>		<span class="number">6</span> <span class="number">5</span> <span class="number">7</span>		<span class="number">3</span> <span class="number">5</span> <span class="number">5</span>		<span class="number">6</span> <span class="number">5</span> <span class="number">7</span></span><br><span class="line"><span class="number">3</span> <span class="number">2</span> <span class="number">0</span>		<span class="number">3</span> <span class="number">2</span> <span class="number">9</span>		<span class="number">4</span> <span class="number">5</span> <span class="number">7</span>		<span class="number">7</span> <span class="number">2</span> <span class="number">0</span></span><br><span class="line"><span class="number">3</span> <span class="number">5</span> <span class="number">5</span>		<span class="number">8</span> <span class="number">3</span> <span class="number">9</span>		<span class="number">6</span> <span class="number">5</span> <span class="number">7</span>		<span class="number">8</span> <span class="number">3</span> <span class="number">9</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Correctness</strong></p>
+<p>induct on digit position t</p>
+<ul>
+<li><p>assume by induction sorted on low-order t-1 digits（假设低t-1位已经有序）</p>
+</li>
+<li><p>sort on digit t</p>
+<ul>
+<li><p>if tow elems have same $t^{th}$ digit    -&gt; 意味着不需要交互两个元素的位置</p>
+<p>stability =&gt; same order （即对相同的值，它们的相对位置不会在排序过程中被改变）</p>
+<p>根据推导假设，这两个元素是有序的（加上第t位之后）</p>
+</li>
+<li><p>if different $t^{th}$ digit =&gt; sorted order（即第t位不同时，将它们调整到有序）</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Analysis</strong></p>
+<ul>
+<li><p>use counting sort each digit（在对每一位的排序使用计数排序）</p>
+</li>
+<li><p>say n integers, each b bits（range: 0 ~ $2^b-1$）</p>
+<p>因为如果按十进制逐位进行排序，那么每个计数排序的规模是k=10；但是排序元素的整数可以有很多种表示形式，例如使用二进制表示，但是如果将元素划分为b位，那么需要进行b次计数排序，很不划算</p>
+</li>
+<li><p>split into b/r “digits”, each r bits</p>
+<p>即将每个元素划分为b/r位，每一位包含r个比特，实际上就是使用了$2^r$进制，因此在计数排序中$k=2^r$</p>
+</li>
+<li><p>Time: $T(n)=\Omicron(b/r<em>(n+k))=\Omicron(b/r</em>(n+2^r))$</p>
+<p>虽然r值可以任意取，但是我们的目的是通过选择最优的r来尽可能减少运行时间</p>
+<ul>
+<li><p>可以对r求导，然后求解导数等于0时得出驻点，即为r的取值</p>
+</li>
+<li><p>另一个直观的方法：</p>
+<p>$\Omicron(b/r*(n+2^r))=\Omicron(bn/r+2^rb/r)$</p>
+<ul>
+<li><p>对于$bn/r$希望r尽可能大，使得$bn/r$可以尽可能小</p>
+</li>
+<li><p>但是r不能太大因为在$2^rb/r$中$2^r$比r高阶，所以如果$2^r$比n高阶，那么项$n+2^r$中$2^r$将变成主导，最终$\Omicron(b/r*(n+2^r))$将会随着n快速增长，故r应该尽可能小</p>
+</li>
+<li><p>=&gt; n应该是$2^r$的上界，所以r最大可以取$r=lgn$</p>
+</li>
+<li><p>=&gt; $T(n)=\Omicron(\frac{bn}{lgn})$</p>
+<p>if numbers in range $0..2^b-1$, that is $0..n^d-1$, then time=$\Omicron(dn)$</p>
+<p>（令$2^b=n^d$解出$b=dlgn$，带入原式得出time=$\Omicron (dn)$）</p>
+<p>$if; d=\Omicron(1); then;T(n)=\Omicron(n)$</p>
+<p>可以看出只要$d\lt lgn$，即排序元素$\lt n^{lgn}$，那么就可以击败原来的$nlgn$算法；所以只需要我们的排序元素是$lgn$比特长即可（上面的$r =lgn$）</p>
+<p>但是计数排序对缓存的要求更多，因此在实践中计数排序并不那么快，除非数更小（k更小 ）</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>目前最好的排序算法：期望运行时间为$\Theta(\sqrt {lglgn})$，这是一个随机算法</p>
+<p>另一个相对简单一点的算法：worst-case run time is $\Theta(nlglgn)$</p>
+<h2 id="Lecture-06-顺序统计、中值"><a href="#Lecture-06-顺序统计、中值" class="headerlink" title="Lecture 06 顺序统计、中值"></a>Lecture 06 顺序统计、中值</h2><h3 id="Order-statistics"><a href="#Order-statistics" class="headerlink" title="Order statistics"></a>Order statistics</h3><p>given n elements in array, find kth smallest element (element of rank k )</p>
+<ul>
+<li>k=1: 相当于求最小值</li>
+<li>k=n: 相当于求最大值</li>
+<li>k=[(n-1)/2]: 相当于求中位数</li>
+</ul>
+<h4 id="Naive-algorithm"><a href="#Naive-algorithm" class="headerlink" title="Naive algorithm"></a>Naive algorithm</h4><p>sort A, return A[k]    =&gt;    $T(n)=\Theta(nlg n)$</p>
+<h4 id="Randomized-divide-amp-conquer"><a href="#Randomized-divide-amp-conquer" class="headerlink" title="Randomized divide&amp;conquer"></a>Randomized divide&amp;conquer</h4><p>Random-select(A, p, q, i): 即在数组A[p, q]中找到排序后第i个数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> p=q then <span class="keyword">return</span> A[p]</span><br><span class="line">r &lt;- Rand-Partition(A,p,q)	<span class="comment">// 快速排序中的partition例程, r是pivot的位置</span></span><br><span class="line">k &lt;- r-p+<span class="number">1</span>				</span><br><span class="line"><span class="keyword">if</span> i=k then <span class="keyword">return</span> A[r]</span><br><span class="line"><span class="keyword">if</span> i&lt;k then </span><br><span class="line">    <span class="keyword">return</span> Rand-select(A,p,r<span class="number">-1</span>,i)</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">return</span> Rand-select(A,r+<span class="number">1</span>,q,i-k)</span><br></pre></td></tr></table></figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s1.ax1x.com/2020/04/12/GLvGtA.png" alt="GLvGtA.png" title>
+                </div>
+                <div class="image-caption">GLvGtA.png</div>
+            </figure>
+
+<h5 id="Intuition-for-analysis"><a href="#Intuition-for-analysis" class="headerlink" title="Intuition for analysis:"></a>Intuition for analysis:</h5><p>(assume: elements are distinct)</p>
+<ul>
+<li><p>lucky case: 1/10 : 9/10</p>
+<p>$T(n)\le T((9/10)n)+\Theta(n)$</p>
+<p>case 3 =&gt; $T(n)=\Theta(n)$</p>
+</li>
+<li><p>unlucky case: 0 : n-1</p>
+<p>$T(n)=T(n-1)+\Theta(n)=\Theta(n^2)$    （算术级数）</p>
+</li>
+</ul>
+<h5 id="Analysis-of-expected-time"><a href="#Analysis-of-expected-time" class="headerlink" title="Analysis of expected time"></a>Analysis of expected time</h5><ul>
+<li><p>let T(n) be the random variable for running time of Rand-select on input of size n </p>
+<p>assuming random numbers are chosen independently</p>
+</li>
+<li><p>define indicate random variable $X_k,k=0,1,…,n-1$<br>$$<br>X_k=<br>\begin{equation}<br>\left{</p>
+<pre><code>\begin{array}{lr}
+1&amp; , &amp; if\;partition\;generates\;k:(n-k-1)\; split \\
+0&amp; , &amp; otherwise \\
+\end{array}</code></pre><p>\right.<br>\end{equation}<br>$$<br>then<br>$$<br>T(n)\le<br>\begin{equation}<br>\left{</p>
+<pre><code>\begin{array}{lr}
+T(max\{0,n-1\})+\Theta(n)&amp; , &amp; if\;0:(n-1) \\
+T(max\{1,n-2\})+\Theta(n)&amp; , &amp; if\;1:(n-2) \\
+...\\
+T(max\{n-1,0\})+\Theta(n)&amp; , &amp; if\;(n-1):0
+\end{array}</code></pre><p>\right.<br>\end{equation}<br>\<br>=\sum^{n-1}<em>{k=0}X_k(T(max{k,n-k-1})+\Theta(n))<br>$$<br>计算期望运行时间<br>$$<br>E[T(n)]=E[\sum^{n-1}</em>{k=0}X_k(T(max{k,n-k-1})+\Theta(n))]\<br>=\sum^{n-1}<em>{k=0}E[X_k(T(max{k,n-k-1})+\Theta(n))]\<br>=\sum^{n-1}</em>{k=0}E[X_k].E[(T(max{k,n-k-1})+\Theta(n))]\<br>=\frac1n\sum^{n-1}<em>{k=0}E[T(max{k,n-k-1})]+\frac1n\sum^{n-1}</em>{k=0}\Theta(n) \<br>\le\frac2n\sum^{n-1}_{k=\lfloor n/2\rfloor}E[T(k)]+\Theta(n);\（因为k=\lfloor n/2\rfloor取的是下界，因此当n为奇数时有一个值重复计算了） \<br>$$<br>使用代换法，claim: $E[T(n)]\le cn$ for sufficient large c &gt; 0</p>
+<p>Assume: true for &lt; n （即假设对于小于n的情况都成立，要证明n的情况）<br>$$<br>E[T(n)]=\frac2n\sum^{n-1}<em>{k=\lfloor n/2\rfloor}E[T(k)]+\Theta(n) \<br>\le\frac2n\sum^{n-1}</em>{k=\lfloor n/2\rfloor}ck+\Theta(n)（根据推导假设：E[T(k)]\le ck）\<br>=\frac{2c}n\sum^{n-1}<em>{k=\lfloor n/2\rfloor}k+\Theta(n)）（经过计算：\sum^{n-1}</em>{k=\lfloor n/2\rfloor}k\le \frac38n^2）\<br>=cn-(\frac14cn-\Theta(n))（因此总是存在c，使得\frac14cn-\Theta(n)非负）\<br>\le cn ; (for; sufficient; large; c)<br>$$</p>
+</li>
+</ul>
+<h5 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h5><p>Rand-select has $\Theta(n)$ expected running time, $\Theta(n^2)$ worst-case</p>
+<h4 id="Worst-case-linear-time-order-statistics"><a href="#Worst-case-linear-time-order-statistics" class="headerlink" title="Worst-case linear-time order statistics"></a>Worst-case linear-time order statistics</h4><ul>
+<li>idea. generate good pivot recursively</li>
+</ul>
+<p>Select(i, n)</p>
+<ol>
+<li><p>Divide the n elements into $\lfloor \frac5n\rfloor$ groups of 5 elements each</p>
+<p><img src="https://s1.ax1x.com/2020/04/12/GOflE8.png" alt="GOflE8.png"></p>
+<p>（下面看不清的那个是：$\lfloor \frac n5 \rfloor$）</p>
+<p>then find the medium of each group $(\Theta(n))$</p>
+</li>
+<li><p>Recursively select the medium x of the $\lfloor \frac n5 \rfloor$  group  mediums $(\Theta(n/5))$</p>
+</li>
+<li><p>Partition with x as pivot. Let k=rank(x) $(\Theta(n))$</p>
+</li>
+<li><p>if i=k then return</p>
+<p>if i&lt;k then recursively select $i^{th}$ smallest element in the lower part of array </p>
+<p>​         else recursively select $(i-k)^{th}$ smallest element in the upper part of array </p>
+<p>($(\Theta(3n/4))$，证明在下面)</p>
+</li>
+</ol>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s1.ax1x.com/2020/04/12/GOq9Rf.png" alt="GOq9Rf.png" title>
+                </div>
+                <div class="image-caption">GOq9Rf.png</div>
+            </figure>
+
+<p>从图中可以看到有$\ge 3\lfloor \lfloor n/5 \rfloor/2\rfloor$个元素的值$\le$x，同样有$\ge 3\lfloor \lfloor n/5 \rfloor/2\rfloor$个元素的值$\ge$x</p>
+<p>即大概有$3\lfloor \lfloor n/5 \rfloor/2\rfloor=3\lfloor n/10\rfloor$个元素在不等式的一边，因此不等式两边最多有$7\lfloor n/10\rfloor$个元素</p>
+<p>Simplification: for $n\ge50$, there must have $3\lfloor n/10\rfloor\ge n/4$</p>
+<p>即表明每个组至少有n/4个元素，至多有3n/4个元素</p>
+<p>因此：$T(n)\le T(n/5)+T(3n/4)+\Theta(n)$</p>
+<p><strong>Substitution</strong></p>
+<ul>
+<li><p>Claim. $T(n)\le cn$</p>
+</li>
+<li><p>Proof. </p>
+<p>$T(n)\le \frac c5n+\frac{3c}4n+\Theta(n)=\frac{19}{20}cn+\Theta(n)=cn-(\frac n{20}-\Theta(n))$</p>
+<p>$=cn;(for; c; is; sufficient; large)$</p>
+</li>
+</ul>
+<blockquote>
+<p>Exercise: why we use groups of 5?</p>
+<p>hint: 当每组是3个元素时结果不成立，5是这个算法能够成功的最小数字；当7个元素为一组时算法也成立，但理论上性能不会提高很多</p>
+</blockquote>
+<h2 id="Lecture-07-哈希表"><a href="#Lecture-07-哈希表" class="headerlink" title="Lecture 07 哈希表"></a>Lecture 07 哈希表</h2><h3 id="Symbol-table-problem"><a href="#Symbol-table-problem" class="headerlink" title="Symbol-table problem"></a>Symbol-table problem</h3>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最終更新：<time datetime="2020-04-17T13:42:28.711Z" itemprop="dateUpdated">2020-04-17 21:42:28</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2020/04/17/MIT-6-046-fall-2005课堂笔记/" target="_blank" rel="external">http://chphong.github.io/2020/04/17/MIT-6-046-fall-2005课堂笔记/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://chphong.github.io">
+            <img src="/img/avatar.jpg" alt="steve_chph">
+            steve_chph
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MIT6-046/">MIT6.046</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://chphong.github.io/2020/04/17/MIT-6-046-fall-2005课堂笔记/&title=《MIT-6.046-fall-2005课堂笔记》 — 至繁归于至简 - chph's blog&pic=http://chphong.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://chphong.github.io/2020/04/17/MIT-6-046-fall-2005课堂笔记/&title=《MIT-6.046-fall-2005课堂笔记》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://chphong.github.io/2020/04/17/MIT-6-046-fall-2005课堂笔记/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MIT-6.046-fall-2005课堂笔记》 — 至繁归于至简 - chph's blog&url=http://chphong.github.io/2020/04/17/MIT-6-046-fall-2005课堂笔记/&via=http://chphong.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://chphong.github.io/2020/04/17/MIT-6-046-fall-2005课堂笔记/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2020/02/19/数据库开发技术-2020-02-19开发成功数据库应用的要点-并发控制/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">数据库开发技术-2020/02/19开发成功数据库应用的要点-并发控制</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢你~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>steve_chph &copy; 2015 - 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://chphong.github.io/2020/04/17/MIT-6-046-fall-2005课堂笔记/&title=《MIT-6.046-fall-2005课堂笔记》 — 至繁归于至简 - chph's blog&pic=http://chphong.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://chphong.github.io/2020/04/17/MIT-6-046-fall-2005课堂笔记/&title=《MIT-6.046-fall-2005课堂笔记》 — 至繁归于至简 - chph's blog&source=the blog website of steve_chph, steve_chph的个人博客网站" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://chphong.github.io/2020/04/17/MIT-6-046-fall-2005课堂笔记/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MIT-6.046-fall-2005课堂笔记》 — 至繁归于至简 - chph's blog&url=http://chphong.github.io/2020/04/17/MIT-6-046-fall-2005课堂笔记/&via=http://chphong.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://chphong.github.io/2020/04/17/MIT-6-046-fall-2005课堂笔记/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACv0lEQVR42u3a0W6DMAwFUP7/pztpT5s62LWdwCYdniqgNCeV4mD7OOLj9Xm8f/565vr8+9WzpyVjWHzg4eHhtYZ+dpwBzq5ef+t6gq5/6/oXTycRDw8PbxsvCQbJ0BNGMk3JxEXBAw8PD+9RXjLoZPlOwkN1DHh4eHj/l5eHlrUJETw8PLz7efkifv3onJpstashBw8PD+8e3mRRfurzTfU9PDw8vGJVPV/o8yU+uX8ywm9Pw8PDw9vAmxSZ8iW72o7Qi2+FNwY8PDy8MS8va+XLcRJUJi1Z5SQvHh4e3lJengjIr1bPVzf012PAw8PDu5OX70WTxMSqNHE1mYuHh4e3jzfZvOYJiN5kLRgJHh4e3mZetdC1Y1nvbe5P78fDw8PbwMuDQV7K6jUB5IFh9MaAh4eHt5Q3L2VVt9TJ1QUlNDw8PLylvLzdKr9nMil5KIqCBB4eHt42XlLOzwv81QTuJNlRKIDh4eHhLeLl4aGXaOgV1fIQlfwleHh4eGt5vRf+Xiq2N03VdocoGYGHh4c35k02r3lyNg8Vk6arHwIDHh4e3mbepKGquohX07L5WwIeHh7enbzqkj2vOlXDUjNLjYeHh7eIVx1QNVmQfLeXCsHDw8N7ird26MlWuHe+2o5w7Phn8PDw8MaFrnnwmGzZ80CCh4eHt5ZXTYzmJbFJ4arXmoCHh4f3FK8aGHrJgmRSqq0GhWQEHh4e3oCXb1irCdZ8oc8nrhp+8PDw8HbwXsUjTwokS3wvPCTPjApgeHh4eC1eL62QBIPqcJOB9u7Ew8PD28GrbnyTxoJkFqvNAc3SGh4eHt423jwYTKZpkhT+ZVrx8PDwHuXlG+K8TNVrSkhKdHh4eHh/jddbrJOtcL7Vju7Hw8PD28abNGBVkwuTJEW56QoPDw9vA2++0JdTq60nTxqz8PDw8BbxPgD6beQpbLKoSwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'chph个人博客';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Welcome to chph's blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
